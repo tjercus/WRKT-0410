@@ -1,0 +1,198 @@
+import moment from "moment";
+
+export function findTraining(uuid, trainings) {
+	trainings = clone(trainings);
+	// TODO use an iterator that sypports break
+	//return trainings.find(training => training.uuid === uuid);
+	let needle = null;
+	for (let i = 0, len = trainings.length; i < len; i++) {
+		console.log("looking at training: " + trainings[i].name);
+		if (trainings[i].uuid === uuid) {
+			console.log("found training: " + trainings[i].name);
+			needle = trainings[i];
+			break;
+		}
+	}
+	return needle;
+}
+
+/**
+ * @param array
+ * @return Object
+ */
+export function makeTrainingTotal(segments) {	
+	let totalObj = {
+		distance: 0,
+		duration: "00:00:00",
+		pace: "00:00"
+	};
+	if (segments.length === 0) {
+		return totalObj;
+	} else {
+		console.log("2: size " + segments.length);
+		segments.forEach((segment) => {
+			segment = augmentSegmentData(segment);
+			totalObj.distance += parseFloat(segment.distance);
+			let totalDurationObj = moment.duration(totalObj.duration).add(segment.duration);
+			console.log("segment: " + JSON.stringify(segment));
+			totalObj.duration = formatDuration(totalDurationObj);
+			console.log("LOOP: dist " + totalObj.distance + ", dur " + totalObj.duration);
+		});
+		if (hasNoRealValue(totalObj, "pace", totalObj.pace)) {
+			totalObj.pace = makePace(totalObj);
+			console.log("2.5: making pace based on duration, pace: " + totalObj.pace + ", dur: " + totalObj.duration);
+		} else if (hasNoRealValue(totalObj, "duration", totalObj.duration)) {
+			totalObj.duration = makeDuration(totalObj);
+			console.log("3: making duration based on pace: " + totalObj.pace + ", dur: " + totalObj.duration);
+		}
+	}
+	return totalObj;
+}
+
+export function augmentSegmentData(segment) {
+	segment = clone(segment);
+	console.log("augment from " + JSON.stringify(segment));
+	if (canAugment(segment)) {
+		if (hasNoRealValue(segment, "duration", segment.duration)) {
+			segment.duration = makeDuration(segment);
+		}
+		if (hasNoRealValue(segment, "pace", segment.pace)) {
+			segment.pace = makePace(segment);
+		}
+		if (hasNoRealValue(segment, "distance", segment.distance)) {
+			segment.distance = makeDistance(segment);
+		}
+		console.log("augment to " + segment.distance);
+	}
+	if (isValidSegment(segment)) {
+		segment.isValid = true;
+	} else {
+		segment.isValid = false;
+	}
+	return segment;
+}
+
+export function isDirtySegment(segment, segments) {
+	segment = clone(segment);
+	segments = clone(segments);
+	let storedSegment = null;
+	for (let i = 0, len = segments.length; i < len; i++) {
+		console.log("trainingUtils.isDirtySegment looking at segment: " + segments[i].uuid);
+		if (segments[i].uuid === segment.uuid) {
+			console.log("trainingUtils.isDirtySegment found segment: " + segments[i].uuid);
+			storedSegment = segments[i];
+			break;
+		}
+	}
+	if (storedSegment === null) {
+		return false;
+	}
+	let isDirtySegment = (storedSegment.distance !== segment.distance || storedSegment.duration !== segment.duration || storedSegment.pace !== segment.pace);
+	console.log("trainingUtils.isDirtySegment: " + JSON.stringify(segment) + " versus " + JSON.stringify(storedSegment) + ", dirty? " + isDirtySegment);
+	return isDirtySegment;
+}
+
+export function canAugment(segment) {
+	segment = clone(segment);
+	return (segment && (!segment.hasOwnProperty("distance") || segment.distance === "" || !segment.hasOwnProperty("duration") || segment.duration === "" || !segment.hasOwnProperty("pace") || segment.pace === ""));
+}
+
+export function isValidSegment(segment) {
+	let segmentClone = clone(segment);
+	// if (makeDistance(segmentClone).toString() !== Number(segmentClone.distance).toFixed(3).toString()) {
+	// 	console.log("isValidSegment: false: " + Number(segmentClone.distance).toFixed(3) + "/" + makeDistance(segmentClone));
+	// 	return false;
+	// }	
+	if (makeDuration(segmentClone) !== segmentClone.duration) {
+		console.log("isValidSegment: false: " + segmentClone.duration);
+		return false;
+	}
+	if (makePace(segmentClone) !== segmentClone.pace) {
+		console.log("isValidSegment: false: " + segmentClone.pace);
+		return false;
+	}
+	return true;
+}
+
+export function createUuid() {
+	let uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+		let r = Math.random() * 16 | 0,
+			v = c === "x" ? r : (r & 0x3 | 0x8);
+		return v.toString(16);
+	});
+	return uuid;
+}
+
+/* ----------------------------------------------------------------------------------- */
+
+const clone = (obj) => JSON.parse(JSON.stringify(obj));
+
+function lpad(num) {
+	num = ("" + num).trim();
+	while (num.length < 2) {
+		num = "0" + num;
+	}
+	return num.substr(num.length - 2);
+}
+
+function hasNoRealValue(obj, name, value) {
+	let hasNoRealValue = (!obj.hasOwnProperty(name) || value === undefined || value === null || value === "" || value === "00:00" || value === "00:00:00" || value <= 0);
+	console.log("hasNoRealValue: " + obj + ", " + name + ", " + value + " = " + hasNoRealValue);
+	return hasNoRealValue;
+}
+
+/**    
+ * @param moment.duration obj
+ * @return hh:mm:ss String
+ */
+function formatDuration(duration) {
+	console.log("formatDuration: " + duration.hours());
+	return lpad(duration.hours()) + ":" + lpad(duration.minutes()) + ":" + lpad(duration.seconds());
+}
+
+/**
+ * @return mm:ss String
+ */
+function makePace(segment) {
+	segment = clone(segment);
+	let durationObj = moment.duration(segment.duration),
+		seconds = durationObj.asSeconds(),
+		paceObj = moment.duration(Math.round(seconds / segment.distance), "seconds");
+	return lpad(paceObj.minutes()) + ":" + lpad(paceObj.seconds());
+};
+
+/**    
+ * @return hh:mm:ss String as: pace * distance. ex: 5:10 * 12.93 km = 1:6:48
+ */
+function makeDuration(segment) {
+	segment = clone(segment);
+	let paceObj = moment.duration(segment.pace),
+		seconds = paceObj.asSeconds() / 60,
+		totalSeconds = Math.round(seconds * segment.distance),
+		durationObj = moment.duration(totalSeconds, "seconds");
+	let formattedDuration = formatDuration(durationObj);
+	console.log("formattedDuration: " + formattedDuration + ", " + paceObj.asSeconds());
+	return formattedDuration;
+};
+
+/**
+ * @return a real float. Calculated distance based on duration / pace
+ */
+function makeDistance(segment) {
+	segment = clone(segment);
+	let paceObj = moment.duration(segment.pace),
+		durationObj = moment.duration(segment.duration),
+		durationSeconds = durationObj.asSeconds(),
+		paceSeconds = paceObj.asSeconds() / 60;
+	console.log("makeDistance: seconds? " + durationSeconds + ", paceSeconds? " + paceSeconds);
+	// TODO debug rounding with decimals
+	if (paceSeconds === 0 || durationSeconds === 0) {
+		return 0;
+	}
+	let rawDistance = durationSeconds / paceSeconds;
+	let distance = Math.round(rawDistance * 1000) / 1000;
+	let isNumeric = (typeof distance == 'number');
+	let isString = (typeof distance == 'string');
+	console.log("makeDistance: " + distance + ", nr? " + isNumeric + ", string? " + isString);
+	return distance;
+};
