@@ -14,17 +14,19 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- button to switch metric/imperial
 - yellow hint of change
 - notification feature
 - button click 'animation'
 - favicon
 - deploy on github pages
+- button to switch metric/imperial
 
 ### Training
-- use standard paces (MP, LT, 21KP, 10KP etc.)
+- start unit tests for TrainingComponent
+- fix bug where sometimes the wrong segments are loaded for a training
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
+- support comments for a training
 - save
 - save dialog
 - import

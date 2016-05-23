@@ -203,6 +203,19 @@ test('augmentSegmentData should augment with distance', (assert) => {
   assert.end();
 });
 
+test('augmentSegmentData should work with named paces', (assert) => {
+  let segment = {    
+    duration: "01:06:48",
+    pace: "@RECOV"
+  };
+  var augmentedSegment = augmentSegmentData(segment);
+  console.log("CONCLUSIE: " + JSON.stringify(augmentedSegment));
+  assert.equal(augmentedSegment.distance, 12.929);
+  assert.equal(augmentedSegment.duration, "01:06:48");
+  assert.equal(augmentedSegment.pace, "05:10");
+  assert.end();
+});
+
 test('isDirtySegment should detect a dirty segment', (assert) => {
   let segments = [{
     uuid: "segment1",
@@ -265,7 +278,6 @@ test('canAugment should return false when 3 out of 3 items are present', (assert
   assert.notOk(itCan);
   assert.end();
 });
-
 
 test('isValidSegment should detect a valid segment', (assert) => {
   let segment = {

@@ -1,0 +1,515 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"state",
+				"stateOptions"
+			],
+			[
+				"o",
+				"onBlurHandler"
+			],
+			[
+				"onC",
+				"onChange"
+			],
+			[
+				"on",
+				"onBlurHandler"
+			],
+			[
+				"onBlur",
+				"onBlurHandler"
+			],
+			[
+				"cu",
+				"currentFormPart"
+			],
+			[
+				"Reg",
+				"RegistrationSummaryComponent"
+			],
+			[
+				"Registration",
+				"RegistrationPerson"
+			],
+			[
+				"conso",
+				"console"
+			],
+			[
+				"v",
+				"value"
+			],
+			[
+				"add",
+				"addErrorMessage"
+			],
+			[
+				"validate",
+				"validateUser"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"vali",
+				"validateName"
+			],
+			[
+				"error",
+				"errorLis"
+			],
+			[
+				"err",
+				"errorMessages"
+			],
+			[
+				"new",
+				"newIndex"
+			],
+			[
+				"rendere",
+				"renderedElement"
+			],
+			[
+				"eventbus",
+				"eventbusSpy"
+			],
+			[
+				"Re",
+				"RegistationComponent"
+			],
+			[
+				"e",
+				"event"
+			],
+			[
+				"get",
+				"getCartAmount"
+			],
+			[
+				"CART",
+				"CARTSTORE_GETALL_EVT"
+			],
+			[
+				"remo",
+				"removeButton"
+			],
+			[
+				"remove",
+				"removebutton"
+			],
+			[
+				"Offer",
+				"OfferRowComponent"
+			],
+			[
+				"re",
+				"removeOfferFromCart"
+			],
+			[
+				"padding-",
+				"padding-bottom"
+			],
+			[
+				"O",
+				"OfferRowComponent"
+			],
+			[
+				"panel",
+				"panelClassName"
+			],
+			[
+				"off",
+				"offersStore"
+			],
+			[
+				"offers",
+				"OffersStore"
+			],
+			[
+				"offer",
+				"offersClone"
+			],
+			[
+				"messag",
+				"messages"
+			],
+			[
+				"E",
+				"EventEmitter"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"en",
+				"entrypointSelectedCb"
+			],
+			[
+				"entry",
+				"entrypointSelectComponent"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 1060,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 159.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 82.0,
+		"history":
+		[
+			">>> npm test",
+			"pwd",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/tvalentijn/projects/lab/WRKT-0410"
+	],
+	"file_history":
+	[
+		"/home/tvalentijn/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/node_modules/es6-enum/lib/enum.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/RegistrationContactComponent.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/RegistrationPaymentComponent.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/RegistrationSummaryComponent.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/RegistrationComponent.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/models/Result.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/models/UsersStore.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/OfferRowComponent.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/App.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/models/User.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/models/CartStore.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/MenuComponent.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/PanelComponent.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/styles/hotelbooking-screen.scss",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/test/OffersComponent.spec.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/package.json",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/styles/pure-ebpi-screen.scss",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/OffersComponent.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/models/Offer.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/README.md",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/CartComponent.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/models/OffersStore.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/gulpfile.babel.js",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/styles/purecss/base-min.scss",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/src/Index.js",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/index.html",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/home/tvalentijn/projects/lab/hotelbooking-angular2/app/services/HotelbookingServiceImpl.ts",
+		"/home/tvalentijn/projects/lab/hotelbooking-react/dist/index.html",
+		"/home/tvalentijn/projects/lab/react-eventemitter/src/Index.js",
+		"/home/tvalentijn/projects/lab/react-eventemitter/index.html",
+		"/home/tvalentijn/projects/lab/react-eventemitter/README.md",
+		"/home/tvalentijn/projects/lab/react-eventemitter/.gitignore",
+		"/home/tvalentijn/projects/lab/react-eventemitter/src/styles/main.scss",
+		"/home/tvalentijn/projects/lab/react-eventemitter/gulpfile.babel.js",
+		"/home/tvalentijn/projects/lab/react-eventemitter/.eslintrc",
+		"/home/tvalentijn/projects/lab/react-eventemitter/package.json",
+		"/home/tvalentijn/projects/lab/react-eventemitter/dist/js/app.js",
+		"/home/tvalentijn/projects/lab/react-eventemitter/src/components/App.js",
+		"/home/tvalentijn/projects/lab/react-eventemitter/.babelrc",
+		"/home/tvalentijn/projects/lab/react-eventemitter/src/components/NotificationPanelComponent.js",
+		"/home/tvalentijn/projects/lab/react-eventemitter/.travis.yml",
+		"/home/tvalentijn/projects/lab/react-eventemitter/.editorconfig",
+		"/home/tvalentijn/projects/lab/react-eventemitter/src/components/About.js",
+		"/home/tvalentijn/projects/sep/duo/client/js/pages/LandingPage.js",
+		"/home/tvalentijn/projects/sep/duo/client/package.json",
+		"/home/tvalentijn/projects/sep/duo/client/js/services/AuthenticationService.js",
+		"/home/tvalentijn/projects/sep/duo/client/js/services/HuskyRestService.js",
+		"/home/tvalentijn/projects/sep/duo/client/js/pages/UitlogPage.js",
+		"/home/tvalentijn/projects/sep/duo/client/js/pages/InlogPage.js",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/tvalentijn/projects/sep/duo/client/config.dev.js",
+		"/home/tvalentijn/projects/sep/duo/client/config.prod.js",
+		"/home/tvalentijn/projects/sep/duo/client/stylesheets/rijkshuisstijl_duo.less",
+		"/home/tvalentijn/projects/sep/duo/client/.babelrc",
+		"/home/tvalentijn/projects/sep/duo/client/js/pages/FormPage.js",
+		"/home/tvalentijn/projects/sep/duo/client/js/components/NavbarMenuComponent.js",
+		"/home/tvalentijn/projects/sep/duo/client/js/pages/BasePage.js",
+		"/home/tvalentijn/projects/sep/duo/client/stylesheets/variables.less",
+		"/home/tvalentijn/projects/sep/duo/client/js/components/EntrypointSelectComponent.js",
+		"/home/tvalentijn/projects/sep/duo/client/formspecs/duo-hbo-wo.json",
+		"/home/tvalentijn/projects/sep/duo/client/js/components/__tests__/EntrypointSelectComponent-test.js",
+		"/home/tvalentijn/projects/sep/duo/client/stylesheets/index.js",
+		"/home/tvalentijn/projects/sep/duo/client/index.html",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/Babel/Babel.sublime-settings",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Plain text.sublime-settings",
+		"/home/tvalentijn/projects/lab/innolab/microservices/angular2-client/app/app.ts",
+		"/home/tvalentijn/.squirrel-sql/SQLAliases23.xml"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/tvalentijn/projects/lab/hotelbooking-react/src",
+			"/home/tvalentijn/projects/lab/hotelbooking-react",
+			"/home/tvalentijn/projects/lab/react-eventemitter"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"window",
+			"folder",
+			"console.log",
+			"onChange=",
+			"this.props.user.",
+			"errorLis",
+			"new Result()",
+			"goNext",
+			"goPrevious",
+			"for=\"",
+			"for",
+			"}</",
+			"currentFOrmPart",
+			"public",
+			"(click)=",
+			"[(ng-model)]",
+			"class=",
+			"CARTSTORE_CHANGED_EVT",
+			"'",
+			"OFFERSSTORE_CHANGED_EVT",
+			"'",
+			"class=",
+			"[router-link]",
+			"Eventfrom",
+			"'",
+			"noroute",
+			"starterify",
+			"btn-prim",
+			"this.toggle",
+			"widest",
+			"togglePageWidth"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"onBlur=",
+			"this.state.",
+			"onNextClick",
+			"onPreviousClick",
+			"htmlFor=\"",
+			"",
+			"onClick=",
+			"data-model",
+			"className=",
+			"\"",
+			"className=",
+			"href",
+			"\"",
+			"this.onTogglePageWidth",
+			"this.toggleWidth",
+			"isWidest",
+			"onTogglePageWidthClick"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1060,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								183
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "WRKT-0410.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 220.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

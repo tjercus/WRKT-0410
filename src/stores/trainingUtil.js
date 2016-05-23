@@ -20,7 +20,7 @@ export function findTraining(uuid, trainings) {
  * @param array
  * @return Object
  */
-export function makeTrainingTotal(segments) {	
+export function makeTrainingTotal(segments) {
 	let totalObj = {
 		distance: 0,
 		duration: "00:00:00",
@@ -51,6 +51,7 @@ export function makeTrainingTotal(segments) {
 
 export function augmentSegmentData(segment) {
 	segment = clone(segment);
+	segment.pace = translateNamedPace(segment.pace);
 	console.log("augment from " + JSON.stringify(segment));
 	if (canAugment(segment)) {
 		if (hasNoRealValue(segment, "duration", segment.duration)) {
@@ -196,3 +197,22 @@ function makeDistance(segment) {
 	console.log("makeDistance: " + distance + ", nr? " + isNumeric + ", string? " + isString);
 	return distance;
 };
+
+function translateNamedPace(pace) {
+	if (pace === undefined || pace === null || !pace.startsWith("@")) {
+		return pace;
+	}
+	switch (pace) {
+		case "@RECOV": return "05:30"; break;
+		case "@LRP": return "04:45"; break;
+		case "@MP": return "04:10"; break;
+		case "@MP+5%": return "04:22"; break;
+		case "@21KP": return "03:55"; break;
+		case "@16KP": return "03:50"; break;
+		case "@10KP": return "03:40"; break;
+		case "@5KP": return "03:33"; break;
+		case "@3KP": return "03:24"; break;
+		case "@1MIP": return "03:10"; break;
+		default: return pace; break;
+	};
+}

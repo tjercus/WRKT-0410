@@ -4,15 +4,15 @@ export const trainings = [
 			"name": "4 x 1m @10KP",
 		  "segments": [
 		  	{"uuid": "99", "distance": 2.000, "duration": "00:11:00"},
-		    {"uuid": "100", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "100", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "101", "distance": 0.600, "duration": "00:03:00"},
-		    {"uuid": "102", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "102", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "103", "distance": 0.600, "duration": "00:03:00"},
-		    {"uuid": "104", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "104", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "105", "distance": 0.600, "duration": "00:03:00"},
-		    {"uuid": "106", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "106", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "107", "distance": 0.600, "duration": "00:03:00"},		    
-		    {"uuid": "108", "distance": 3.200, "pace": "05:30"}
+		    {"uuid": "108", "distance": 3.200, "pace": "@RECOV"}
 		  ]
 		},
 		{
@@ -20,17 +20,17 @@ export const trainings = [
 			"name": "10k #1, 6 x 1m @10KP",
 		  "segments": [
 		  	{"uuid": "1", "distance": 2.000, "duration": "00:12:00"},
-		    {"uuid": "2", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "2", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "3", "distance": 0.600, "duration": "00:03:30"},
-		    {"uuid": "4", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "4", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "5", "distance": 0.600, "duration": "00:03:30"},
-		    {"uuid": "6", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "6", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "7", "distance": 0.600, "duration": "00:03:30"},
-		    {"uuid": "8", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "8", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "9", "distance": 0.600, "duration": "00:03:30"},
-		    {"uuid": "10", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "10", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "11", "distance": 0.600, "duration": "00:03:30"},
-		    {"uuid": "12", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "12", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "13", "distance": 1.000, "duration": "00:05:30"}
 		  ]
 		},
@@ -39,15 +39,15 @@ export const trainings = [
 			"name": "10k #2, 2m + 4 x 1m @10KP",
 		  "segments": [
 		  	{"uuid": "14", "distance": 2.000, "duration": "00:12:00"},
-		    {"uuid": "15", "distance": 3.200, "pace": "03:40"},
+		    {"uuid": "15", "distance": 3.200, "pace": "@10KP"},
 		    {"uuid": "16", "distance": 0.800, "duration": "00:05:00"},
-		    {"uuid": "17", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "17", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "18", "distance": 0.600, "duration": "00:03:30"},
-		    {"uuid": "19", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "19", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "20", "distance": 0.600, "duration": "00:03:30"},
-		    {"uuid": "21", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "21", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "22", "distance": 0.600, "duration": "00:03:30"},
-		    {"uuid": "23", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "23", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "24", "distance": 1.000, "duration": "00:05:30"}
 		  ]
 		},
@@ -56,13 +56,13 @@ export const trainings = [
 			"name": "10k #3, 2 x 2m + 2 x 1m @10KP",
 		  "segments": [
 		  	{"uuid": "25", "distance": 2.000, "duration": "00:12:00"},
-		    {"uuid": "26", "distance": 3.200, "pace": "03:40"},
+		    {"uuid": "26", "distance": 3.200, "pace": "@10KP"},
 		    {"uuid": "27", "distance": 0.800, "duration": "00:05:00"},
-		    {"uuid": "28", "distance": 3.200, "pace": "03:40"},
+		    {"uuid": "28", "distance": 3.200, "pace": "@10KP"},
 		    {"uuid": "29", "distance": 0.800, "duration": "00:05:00"},
-		    {"uuid": "30", "distance": 1.600, "pace": "03:40"},
+		    {"uuid": "30", "distance": 1.600, "pace": "@10KP"},
 		    {"uuid": "31", "distance": 0.600, "duration": "00:03:00"},
-		    {"uuid": "32", "distance": 1.600, "pace": "03:40"},		   
+		    {"uuid": "32", "distance": 1.600, "pace": "@10KP"},		   
 		    {"uuid": "33", "distance": 1.000, "duration": "00:05:30"}
 		  ]
 		},
@@ -71,11 +71,11 @@ export const trainings = [
 			"name": "10k #4, 3 x 2m @10KP",
 		  "segments": [
 		  	{"uuid": "34", "distance": 2.000, "duration": "00:12:00"},
-		    {"uuid": "35", "distance": 3.200, "pace": "03:40"},
+		    {"uuid": "35", "distance": 3.200, "pace": "@10KP"},
 		    {"uuid": "36", "distance": 0.800, "duration": "00:05:00"},
-		    {"uuid": "37", "distance": 3.200, "pace": "03:40"},
+		    {"uuid": "37", "distance": 3.200, "pace": "@10KP"},
 		    {"uuid": "38", "distance": 0.800, "duration": "00:05:00"},
-		    {"uuid": "39", "distance": 3.200, "pace": "03:40"},		    		    
+		    {"uuid": "39", "distance": 3.200, "pace": "@10KP"},		    		    
 		    {"uuid": "40", "distance": 1.000, "duration": "00:05:30"}
 		  ]
 		},
@@ -87,7 +87,7 @@ export const trainings = [
 				{"uuid": "42", "distance": 5.000, "pace": "04:40"},
 				{"uuid": "43", "distance": 5.000, "pace": "04:30"},
 				{"uuid": "44", "distance": 5.000, "pace": "04:20"},
-				{"uuid": "45", "distance": 10.000, "pace": "04:10"},
+				{"uuid": "45", "distance": 10.000, "pace": "@MP"},
 			]
 		},
 		{
@@ -113,21 +113,21 @@ export const trainings = [
 			"uuid": "9f6f5697-6b78-4cd5-85d4-2062ba24da9a",
 			"name": "7 x 1km @10KP",
 		  "segments": [
-		  	{"uuid": "1", "distance": 3.000, "pace": "05:30"},
-		    {"uuid": "2", "distance": 1.000, "pace": "03:40"},
-		    {"uuid": "3", "distance": 0.500, "pace": "05:30"},
-		    {"uuid": "4", "distance": 1.000, "pace": "03:40"},
-		    {"uuid": "5", "distance": 0.500, "pace": "05:30"},
-		    {"uuid": "6", "distance": 1.000, "pace": "03:40"},
-		    {"uuid": "7", "distance": 0.500, "pace": "05:30"},
-		    {"uuid": "8", "distance": 1.000, "pace": "03:40"},
-		    {"uuid": "9", "distance": 0.500, "pace": "05:30"},
-		    {"uuid": "10", "distance": 1.000, "pace": "03:40"},
-		    {"uuid": "11", "distance": 0.500, "pace": "05:30"},
-		    {"uuid": "12", "distance": 1.000, "pace": "03:40"},
-		    {"uuid": "13", "distance": 0.500, "pace": "05:30"},
-		    {"uuid": "14", "distance": 1.000, "pace": "03:40"},
-		    {"uuid": "15", "distance": 0.500, "pace": "05:30"}
+		  	{"uuid": "1", "distance": 3.000, "pace": "@RECOV"},
+		    {"uuid": "2", "distance": 1.000, "pace": "@10KP"},
+		    {"uuid": "3", "distance": 0.500, "pace": "@RECOV"},
+		    {"uuid": "4", "distance": 1.000, "pace": "@10KP"},
+		    {"uuid": "5", "distance": 0.500, "pace": "@RECOV"},
+		    {"uuid": "6", "distance": 1.000, "pace": "@10KP"},
+		    {"uuid": "7", "distance": 0.500, "pace": "@RECOV"},
+		    {"uuid": "8", "distance": 1.000, "pace": "@10KP"},
+		    {"uuid": "9", "distance": 0.500, "pace": "@RECOV"},
+		    {"uuid": "10", "distance": 1.000, "pace": "@10KP"},
+		    {"uuid": "11", "distance": 0.500, "pace": "@RECOV"},
+		    {"uuid": "12", "distance": 1.000, "pace": "@10KP"},
+		    {"uuid": "13", "distance": 0.500, "pace": "@RECOV"},
+		    {"uuid": "14", "distance": 1.000, "pace": "@10KP"},
+		    {"uuid": "15", "distance": 0.500, "pace": "@RECOV"}
 		  ]
 		},
 		{
@@ -144,7 +144,7 @@ export const trainings = [
 			"uuid": "9cf64a2b-0e60-4d10-9512-a6fd7510c421",
 			"name": "16k @MP",
 		  "segments": [
-		  	{"uuid": "47", "distance": 16.000, "pace": "04:10"}
+		  	{"uuid": "47", "distance": 16.000, "pace": "@MP"}
 		  ]
 		},		
 		{
@@ -158,14 +158,14 @@ export const trainings = [
 			"uuid": "bfe7be06-8052-4b18-8acc-5a5f031b5ff1",
 			"name": "Steady state long run",
 		  "segments": [
-		  	{"uuid": "49", "distance": 17.700, "pace": "04:45"}
+		  	{"uuid": "49", "distance": 17.700, "pace": "@LRP"}
 		  ]
 		},		
 		{
 			"uuid": "53999aa8-1d8e-11e6-b7a8-3715f4688b6a",
 			"name": "20k Steady state long run",
 		  "segments": [
-		  	{"uuid": "999", "distance": 20.000, "pace": "04:45"}
+		  	{"uuid": "999", "distance": 20.000, "pace": "@LRP"}
 		  ]
 		},
 		{
@@ -181,29 +181,29 @@ export const trainings = [
 		  "segments": [
 		  	{"uuid": "1", "distance": 2.000, "duration": "00:13:00"},
 			  {"uuid": "51", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "52", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "52", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "53", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "54", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "54", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "55", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "56", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "56", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "57", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "58", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "58", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "59", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "60", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "60", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "61", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "62", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "62", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "63", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "64", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "64", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "65", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "66", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "66", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "67", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "68", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "68", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "69", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "70", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "70", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "71", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "72", "distance": 0.100, "pace": "05:30"},
+			  {"uuid": "72", "distance": 0.100, "pace": "@RECOV"},
 			  {"uuid": "73", "distance": 0.400, "pace": "03:18"},
-			  {"uuid": "74", "distance": 0.100, "pace": "05:30"}			  
+			  {"uuid": "74", "distance": 0.100, "pace": "@RECOV"}			  
 		  ]
 		},
 		{
@@ -211,15 +211,15 @@ export const trainings = [
 			"name": "10k progression",
 		  "segments": [
 		  	{"uuid": "75", "distance": 4.000, "pace": "05:00"},
-		  	{"uuid": "76", "distance": 3.000, "pace": "4:10"},
-		  	{"uuid": "77", "distance": 3.000, "pace": "03:40"}
+		  	{"uuid": "76", "distance": 3.000, "pace": "@MP"},
+		  	{"uuid": "77", "distance": 3.000, "pace": "@10KP"}
 		  ]
 		},
 		{
 			"uuid": "f8605768-1d87-11e6-a0c9-efa9b44172fb",
 			"name": "Tempo run @21KP",
 		  "segments": [
-		  	{"uuid": "78", "distance": 2.000, "pace": "05:30"},
+		  	{"uuid": "78", "distance": 2.000, "pace": "@RECOV"},
 		  	{"uuid": "79", "distance": 10.000, "pace": "03:55"}
 		  ]
 		},		
@@ -227,36 +227,36 @@ export const trainings = [
 			"uuid": "5374118e-1d89-11e6-b014-a7739b3e7391",
 			"name": "6 x 800 @5KP",
 		  "segments": [
-		  	{"uuid": "80", "distance": 2.000, "duration": "00:13:00"},
-			  {"uuid": "81", "distance": 0.800, "duration": "00:02:50"},
-			  {"uuid": "82", "distance": 0.400, "pace": "05:30"},
-			  {"uuid": "83", "distance": 0.800, "pace": "03:33"},
-			  {"uuid": "84", "distance": 0.400, "pace": "05:30"},
-			  {"uuid": "85", "distance": 0.800, "pace": "03:33"},
-			  {"uuid": "86", "distance": 0.400, "pace": "05:30"},
-			  {"uuid": "87", "distance": 0.800, "pace": "03:33"},
-			  {"uuid": "88", "distance": 0.400, "pace": "05:30"},
-			  {"uuid": "89", "distance": 0.800, "pace": "03:33"},
-			  {"uuid": "90", "distance": 0.400, "pace": "05:30"},
-			  {"uuid": "91", "distance": 0.800, "pace": "03:33"},
-			  {"uuid": "92", "distance": 2.000, "pace": "05:30"}
+		  	{"uuid": "80", "distance": 2.000, "duration": "@RECOV"},
+			  {"uuid": "81", "distance": 0.800, "duration": "@5KP"},
+			  {"uuid": "82", "distance": 0.400, "pace": "@RECOV"},
+			  {"uuid": "83", "distance": 0.800, "pace": "@5KP"},
+			  {"uuid": "84", "distance": 0.400, "pace": "@RECOV"},
+			  {"uuid": "85", "distance": 0.800, "pace": "@5KP"},
+			  {"uuid": "86", "distance": 0.400, "pace": "@RECOV"},
+			  {"uuid": "87", "distance": 0.800, "pace": "@5KP"},
+			  {"uuid": "88", "distance": 0.400, "pace": "@RECOV"},
+			  {"uuid": "89", "distance": 0.800, "pace": "@5KP"},
+			  {"uuid": "90", "distance": 0.400, "pace": "@RECOV"},
+			  {"uuid": "91", "distance": 0.800, "pace": "@5KP"},
+			  {"uuid": "92", "distance": 2.000, "pace": "@RECOV"}
 		  ]
 		},
 		{
 			"uuid": "104d0462-1d91-11e6-9f88-1fe276846484",
 			"name": "5K time-trial",
 		  "segments": [
-		  	{"uuid": "109", "distance": 2.000, "pace": "05:30"},
-		  	{"uuid": "110", "distance": 5.000, "pace": "03:40"}
+		  	{"uuid": "109", "distance": 2.000, "pace": "@RECOV"},
+		  	{"uuid": "110", "distance": 5.000, "pace": "@10KP"}
 		  ]
 		},		
 		{
 			"uuid": "b4417c14-20a8-11e6-8e88-338757ec9820",
 			"name": "20k progression",
 		  "segments": [		  	
-		  	{"uuid": "1235", "distance": 10.000, "pace": "04:50"}, // @LRP
-		  	{"uuid": "1236", "distance": 7.000, "pace": "04:10"}, // @MP		  	
-		  	{"uuid": "1238", "distance": 3.000, "pace": "03:40"}, // @10KP
+		  	{"uuid": "1235", "distance": 10.000, "pace": "@LRP"},
+		  	{"uuid": "1236", "distance": 7.000, "pace": "@MP"},
+		  	{"uuid": "1238", "distance": 3.000, "pace": "@10KP"}
 		  ]
 		},
 ];
