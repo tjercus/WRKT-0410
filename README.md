@@ -1,5 +1,5 @@
 
-# Trainingplanner, React version
+# WRKT-0410 a trainingplanner, React version
 
 Based on 'React eventemitter'.
 
@@ -14,13 +14,12 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- src to github
-- deploy on github pages
 - button to switch metric/imperial
 - yellow hint of change
 - notification feature
 - button click 'animation'
 - favicon
+- deploy on github pages
 
 ### Training
 - use standard paces (MP, LT, 21KP, 10KP etc.)

@@ -1,11 +1,11 @@
 {
-  "name": "trainingplanner-react",
-  "version": "0.0.1",
-  "description": "",
+  "name": "WRKT-0410",
+  "version": "1.0.0",
+  "description": "Plan running workouts",
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjercus/trainingplanner-react"
+    "url": "https://github.com/tjercus/WRKT-0410"
   },
   "keywords": [],
   "scripts": {
@@ -16,9 +16,9 @@
   "author": "Tjerk Valentijn",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tjercus/trainingplanner-react/issues"
+    "url": "https://github.com/tjercus/WRKT-0410/issues"
   },
-  "homepage": "https://github.com/tjercus/trainingplanner-react",
+  "homepage": "https://github.com/tjercus/WRKT-0410",
   "dependencies": {
     "eventemitter2": "^1.0.3",
     "history": "^2.0.1",
