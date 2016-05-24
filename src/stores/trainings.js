@@ -1,5 +1,12 @@
 export const trainings = [		
 	{
+			"uuid": "new-training",
+			"name": "New training",
+		  "segments": [
+		  	{"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5", "distance": 0, "duration": "00:00:00", "pace": "00:00"}
+		  ]
+		},	
+		{
 			"uuid": "ce4a4aca-1d86-11e6-beaa-8b0878fc7d2a",
 			"name": "4 x 1m @10KP",
 		  "segments": [

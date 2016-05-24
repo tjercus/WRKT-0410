@@ -20,7 +20,8 @@ export default class AppComponent extends React.Component {
   }
   
   componentDidMount() {
-    //this.eventbus.emit("ECHO_CMD", "echoing works!");
+    this.eventbus.emit("TRAINING_LOAD_CMD", "new-training");
+    this.eventbus.emit("MENU_CLICK_EVT", "menu-item-training");
   }
   
   render() {

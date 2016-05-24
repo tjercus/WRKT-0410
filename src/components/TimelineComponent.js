@@ -55,13 +55,14 @@ export default class TimelineComponent extends React.Component {
     	// if (i % (this.state.cycleLength + 1) === 0) {
      //  	lies.push(<section key={"cycle" + i} className="day cycle-summary">Section summary</section>);
      //  }
+     // TODO support multiple workouts per day
       lies.push(
        	<section key={i} className={sectionClassName}>
       		<h3>{day.nr}. {dateStr}</h3>
-        	<p className="workout-name">{day.workout.name}</p>
-          <p className="workout-distance">Distance: {(day.workout.total.distance).toFixed(2)} km</p>
+        	<p className="workout-name">{day.workout.name}, {(day.workout.total.distance).toFixed(2)} km</p>
+          <button className="button-small button-flat">edit</button>          
         </section>
-      );      
+      );
       
     });
 

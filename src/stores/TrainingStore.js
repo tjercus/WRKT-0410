@@ -44,7 +44,7 @@ export default class TrainingStore {
         eventbus.emit("TRAINING_LOAD_EVT", {uuid: this.uuid, name: this.name, segments: this.segments, total: this.total});
       }
       // TODO handle else
-      console.log("TrainingStore finished TRAINING_LOAD_CMD");            
+      console.log("TrainingStore finished TRAINING_LOAD_CMD for: " + uuid);            
     }));
 
 		eventbus.on("SEGMENT_UPDATE_CMD", ((segment) => {
