@@ -1,4 +1,4 @@
-import test from 'tape';
+import test from "tape";
 import {
   findTraining,
   makeTrainingTotal,
@@ -12,13 +12,6 @@ import {
 /**
  * Tests for {@link trainingUtil.js}
  */
-/*
-test('A passing test', (assert) => {
-  assert.pass('This test will pass.');
-  assert.end();
-});
-*/
-
 let trainings = [{
     uuid: "blah-10",
     name: "name10"
@@ -30,21 +23,21 @@ let trainings = [{
     name: "name12"
 }];
 
-test('findTraining should find a training by uuid', (assert) => {  
+test("findTraining should find a training by uuid", (assert) => {  
   let training = findTraining("blah-11", trainings);  
-  assert.equal(true, (typeof training === 'object'));
+  assert.equal(true, (typeof training === "object"));
   assert.equal(training.uuid, "blah-11");
   assert.equal(training.name, "name11");
   assert.end();
 });
 
-test('findTraining should return null when not found', (assert) => {  
+test("findTraining should return null when not found", (assert) => {  
   let training = findTraining("125-456", trainings);  
   assert.equal(null, training);
   assert.end();
 });
 
-test('makeTrainingTotal should return an object with zeros when there is no data', (assert) => {
+test("makeTrainingTotal should return an object with zeros when there is no data", (assert) => {
   var total = makeTrainingTotal([]);
   assert.equal(total.distance, 0);
   assert.equal(total.duration, "00:00:00");
@@ -52,7 +45,7 @@ test('makeTrainingTotal should return an object with zeros when there is no data
   assert.end();
 });
 
-test('makeTrainingTotal should calculate complete data on one segment without pace', (assert) => {
+test("makeTrainingTotal should calculate complete data on one segment without pace", (assert) => {
   let segment = {
     distance: 16,
     duration: "01:10:23"
@@ -64,7 +57,7 @@ test('makeTrainingTotal should calculate complete data on one segment without pa
   assert.end();
 });
 
-test('makeTrainingTotal should return an object with complete data on two segments', (assert) => {
+test("makeTrainingTotal should return an object with complete data on two segments", (assert) => {
   let segments = [{
     distance: 16,
     duration: "01:10:23"
@@ -79,7 +72,7 @@ test('makeTrainingTotal should return an object with complete data on two segmen
   assert.end();
 });
 
-test('makeTrainingTotal with three digit decimal precision distances should return an object with complete data with on two segments', (assert) => {
+test("makeTrainingTotal with three digit decimal precision distances should return an object with complete data with on two segments", (assert) => {
   let segments = [{
     distance: 1.08,
     duration: "00:07:43"
@@ -94,7 +87,7 @@ test('makeTrainingTotal with three digit decimal precision distances should retu
   assert.end();
 });
 
-test('makeTrainingTotal should return an object with complete data on one segment with missing duration', (assert) => {
+test("makeTrainingTotal should return an object with complete data on one segment with missing duration", (assert) => {
   let segments = [{
     distance: 12.930,
     pace: "05:10"
@@ -107,7 +100,7 @@ test('makeTrainingTotal should return an object with complete data on one segmen
   assert.end();
 });
 
-test('makeTrainingTotal should return an object with complete data on two segments with missing duration', (assert) => {
+test("makeTrainingTotal should return an object with complete data on two segments with missing duration", (assert) => {
   let segments = [{
     distance: 12.930,
     pace: "04:10"
@@ -120,7 +113,7 @@ test('makeTrainingTotal should return an object with complete data on two segmen
   assert.end();
 });
 
-test('makeTrainingTotal with two segments with mixed missing data should return an object with complete data', (assert) => {
+test("makeTrainingTotal with two segments with mixed missing data should return an object with complete data", (assert) => {
   let segments = [{
     distance: 12.930,
     pace: "04:10"
@@ -133,7 +126,7 @@ test('makeTrainingTotal with two segments with mixed missing data should return 
   assert.end();
 });
 
-test('makeTrainingTotal with an empty segment should return an object with complete data', (assert) => {
+test("makeTrainingTotal with an empty segment should return an object with complete data", (assert) => {
   let segments = [{
     distance: "",
     duration: "00:00:00",
@@ -150,21 +143,21 @@ test('makeTrainingTotal with an empty segment should return an object with compl
   assert.end();
 });
 
-test('augmentSegmentData should augment with distance', (assert) => {
+test("augmentSegmentData should augment with distance", (assert) => {
   let segment = {    
     duration: "01:06:48",
     pace: "05:10"
   };
   var augmentedSegment = augmentSegmentData(segment);
   console.log("CONCLUSIE: " + JSON.stringify(augmentedSegment));
-  assert.equal(true, (typeof augmentedSegment.distance === 'number'));
+  assert.equal(true, (typeof augmentedSegment.distance === "number"));
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");
   assert.end();
 });
 
-test('augmentSegmentData should augment with duration', (assert) => {
+test("augmentSegmentData should augment with duration", (assert) => {
   let segment = {
     distance: 12.929,
     pace: "05:10"
@@ -177,7 +170,7 @@ test('augmentSegmentData should augment with duration', (assert) => {
   assert.end();
 });
 
-test('augmentSegmentData should augment with pace', (assert) => {
+test("augmentSegmentData should augment with pace", (assert) => {
   let segment = {
     distance: 12.929,
     duration: "01:06:48"
@@ -190,7 +183,7 @@ test('augmentSegmentData should augment with pace', (assert) => {
   assert.end();
 });
 
-test('augmentSegmentData should augment with distance', (assert) => {
+test("augmentSegmentData should augment with distance", (assert) => {
   let segment = {    
     duration: "01:06:48",
     pace: "05:10"
@@ -203,20 +196,20 @@ test('augmentSegmentData should augment with distance', (assert) => {
   assert.end();
 });
 
-test('augmentSegmentData should work with named paces', (assert) => {
+test("augmentSegmentData should work with named paces", (assert) => {
   let segment = {    
     duration: "01:06:48",
     pace: "@RECOV"
   };
   var augmentedSegment = augmentSegmentData(segment);
   console.log("CONCLUSIE: " + JSON.stringify(augmentedSegment));
-  assert.equal(augmentedSegment.distance, 12.929);
+  assert.equal(augmentedSegment.distance, 12.145);
   assert.equal(augmentedSegment.duration, "01:06:48");
-  assert.equal(augmentedSegment.pace, "05:10");
+  assert.equal(augmentedSegment.pace, "05:30");
   assert.end();
 });
 
-test('isDirtySegment should detect a dirty segment', (assert) => {
+test("isDirtySegment should detect a dirty segment", (assert) => {
   let segments = [{
     uuid: "segment1",
     distance: 12.929,
@@ -236,7 +229,7 @@ test('isDirtySegment should detect a dirty segment', (assert) => {
   assert.end();
 });
 
-test('isDirtySegment should NOT detect a dirty segment', (assert) => {
+test("isDirtySegment should NOT detect a dirty segment", (assert) => {
   let segments = [{
     uuid: "segment1",
     distance: 12.929,
@@ -256,7 +249,7 @@ test('isDirtySegment should NOT detect a dirty segment', (assert) => {
   assert.end();
 });
 
-test('canAugment should return true when 2 out of 3 items are present', (assert) => {
+test("canAugment should return true when 2 out of 3 items are present", (assert) => {
   let segment = {
     duration: "01:06:48",
     pace: "05:10"
@@ -267,7 +260,7 @@ test('canAugment should return true when 2 out of 3 items are present', (assert)
   assert.end();
 });
 
-test('canAugment should return false when 3 out of 3 items are present', (assert) => {
+test("canAugment should return false when 3 out of 3 items are present", (assert) => {
   let segment = {
     distance: 12.929,
     duration: "01:06:48",
@@ -279,7 +272,7 @@ test('canAugment should return false when 3 out of 3 items are present', (assert
   assert.end();
 });
 
-test('isValidSegment should detect a valid segment', (assert) => {
+test("isValidSegment should detect a valid segment", (assert) => {
   let segment = {
     distance: 12.929,
     duration: "01:06:48",
@@ -291,7 +284,7 @@ test('isValidSegment should detect a valid segment', (assert) => {
   assert.end();
 });
 
-test('isValidSegment should detect a NOT valid segment', (assert) => {
+test("isValidSegment should detect a NOT valid segment", (assert) => {
   let segment = {
     distance: 5,
     duration: "01:012:12",
@@ -303,7 +296,7 @@ test('isValidSegment should detect a NOT valid segment', (assert) => {
   assert.end();
 });
 
-test('createUuid should create a unique valid uuid', (assert) => {
+test("createUuid should create a unique valid uuid", (assert) => {
   let uuid = createUuid();
   let uuid2 = createUuid();
   assert.equal(uuid.length, 36);

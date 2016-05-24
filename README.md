@@ -14,18 +14,23 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- yellow hint of change
+- autotest?
+- start app on Training with empty training
+- use const instead of let when possible
+- use arrow functions when possible
 - notification feature
+- yellow hint of change
 - button click 'animation'
-- favicon
+- favicon (debug gulp)
 - deploy on github pages
 - button to switch metric/imperial
+- events as constants
 
 ### Training
-- start unit tests for TrainingComponent
 - fix bug where sometimes the wrong segments are loaded for a training
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
+- display list of paces relative to mp/10kp/etc.
 - support comments for a training
 - save
 - save dialog

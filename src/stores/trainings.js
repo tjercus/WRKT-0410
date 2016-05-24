@@ -252,11 +252,11 @@ export const trainings = [
 		},		
 		{
 			"uuid": "b4417c14-20a8-11e6-8e88-338757ec9820",
-			"name": "20k progression",
+			"name": "21k fast-finish",
 		  "segments": [		  	
-		  	{"uuid": "1235", "distance": 10.000, "pace": "@LRP"},
-		  	{"uuid": "1236", "distance": 7.000, "pace": "@MP"},
-		  	{"uuid": "1238", "distance": 3.000, "pace": "@10KP"}
+		  	{"uuid": "1235", "distance": 4.000, "pace": "@LRP"},
+		  	{"uuid": "1236", "distance": 11.700, "pace": "04:25"},
+		  	{"uuid": "1238", "distance": 5.700, "pace": "04:00"}
 		  ]
 		},
 ];

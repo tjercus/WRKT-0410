@@ -1,5 +1,4 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
 
 export default class TrainingComponent extends React.Component {
@@ -26,8 +25,7 @@ export default class TrainingComponent extends React.Component {
         this.setState({isVisible: false});
       }
     }));
-    this.props.eventbus.on("TRAINING_LOAD_EVT", ((training) => {
-      console.log("TrainingComponent TRAINING_LOAD_EVT " + JSON.stringify(training));
+    this.props.eventbus.on("TRAINING_LOAD_EVT", ((training) => {      
       this.setState({uuid: training.uuid, name: training.name, segments: training.segments, total: training.total});
     }));
     this.props.eventbus.on("SEGMENT_ADD_EVT", ((training) => {
@@ -50,7 +48,8 @@ export default class TrainingComponent extends React.Component {
   }
   
   clearTraining() {
-    this.setState({     
+    this.setState({
+      isVisible: true,
       uuid: null,
       name: "",
       segments: [],

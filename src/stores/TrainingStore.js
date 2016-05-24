@@ -91,7 +91,7 @@ export default class TrainingStore {
       i++;
     });
     console.log("TrainingStore.updateSegment: [" + i + "] " + JSON.stringify(this.segments[i]));
-    this.eventbus.emit("SEGMENT_UPDATE_EVT", {segment: this.segments[i], total: this.total});
+    this.eventbus.emit(events.SEGMENT_UPDATE_EVT, {segment: this.segments[i], total: this.total});
   }
 
   removeSegment(segment) {
@@ -105,7 +105,7 @@ export default class TrainingStore {
       }
       i++;      
     });
-    this.eventbus.emit("SEGMENT_REMOVE_EVT", {segments: this.segments, total: this.total});
+    this.eventbus.emit(events.SEGMENT_REMOVE_EVT, {segments: this.segments, total: this.total});
     console.log("TrainingStore.removeSegment (2): " + this.segments.length);
   }  
 

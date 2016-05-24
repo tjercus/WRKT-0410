@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import App from "./components/App";
+import AppComponent from "./components/AppComponent";
 
 window.React = React;
 
-render(<App />, document.getElementById("app"));
+render(<AppComponent />, document.getElementById("app"));

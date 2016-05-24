@@ -20,8 +20,8 @@ export const plans = [
 		  	{"nr": "13", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
 		  	{"nr": "14", "workout": "6a0653f5-45dd-46fa-bccf-d8dfe289b441"},
 
-		  	{"nr": "15", "workout": "9f6f5697-6b78-4cd5-85d4-2062ba24da9a"},
-		  	{"nr": "16", "workout": "bfe7be06-8052-4b18-8acc-5a5f031b5ff1"},		  	
+		  	{"nr": "15", "workout": "6a0653f5-45dd-46fa-bccf-d8dfe289b441"},
+		  	{"nr": "16", "workout": "b4417c14-20a8-11e6-8e88-338757ec9820"},		  	
 		  	{"nr": "17", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
 		  	{"nr": "18", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
 		  	{"nr": "19", "workout": "ce4a4aca-1d86-11e6-beaa-8b0878fc7d2a"},
@@ -34,14 +34,14 @@ export const plans = [
 		  	{"nr": "25", "workout": "5374118e-1d89-11e6-b014-a7739b3e7391"},
 		  	{"nr": "26", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
 		  	{"nr": "27", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
-		  	{"nr": "28", "workout": "9cf64a2b-0e60-4d10-9512-a6fd7510c421"},
+		  	{"nr": "28", "workout": "6a0653f5-45dd-46fa-bccf-d8dfe289b441"},
 
-		  	{"nr": "29", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
+		  	{"nr": "29", "workout": "9cf64a2b-0e60-4d10-9512-a6fd7510c421"},
 		  	{"nr": "30", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
-		  	{"nr": "31", "workout": "104d0462-1d91-11e6-9f88-1fe276846484"},
-		  	{"nr": "32", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
+		  	{"nr": "31", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
+		  	{"nr": "32", "workout": "104d0462-1d91-11e6-9f88-1fe276846484"},
 		  	{"nr": "33", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
-		  	{"nr": "34", "workout": "9f6f5697-6b78-4cd5-85d4-2062ba24da9a"},
+		  	{"nr": "34", "workout": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
 		  	{"nr": "35", "workout": "6a0653f5-45dd-46fa-bccf-d8dfe289b441"}
 		  ]
 		}

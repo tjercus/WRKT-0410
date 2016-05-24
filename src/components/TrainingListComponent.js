@@ -3,10 +3,11 @@ import EventEmitter from "eventemitter2";
 
 export default class TrainingListComponent extends React.Component {
 
-  constructor(props) {
+  constructor(props) {    
     super(props);
-    this.state = {
+    this.state = {      
       isVisible: false,
+      selectedUid: null,
       trainings: []
     };
     this.onClick = this.onClick.bind(this);
@@ -30,17 +31,19 @@ export default class TrainingListComponent extends React.Component {
   onClick(evt) {
     evt.preventDefault();
     console.log("clicked on: " + evt.target.value);
+    this.setState({selectedUid: evt.target.value});
     this.props.eventbus.emit("TRAINING_LOAD_CMD", evt.target.value);
   }
   
   render() {
-    let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
+    let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";    
     return (
       <section className={panelClassName}>       
         <div className="panel-body">
            <ul>
             {this.state.trainings.map(function(training, i) {
-              return <li key={i}><a href="#" onClick={this.onClick} value={training.uuid}>{training.name}</a></li>;
+              let itemClassName = (this.state.selectedUid === training.uuid) ? "menu-item-selected" : "";
+              return <li key={i} className={itemClassName}><a href="#" onClick={this.onClick} value={training.uuid}>{training.name}</a></li>;
             }.bind(this))}
            </ul>
         </div>
