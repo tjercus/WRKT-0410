@@ -272,6 +272,10 @@ div.days-list section p.workout-name {
   
 }
 
+div.days-list section.day button {
+  float: right;
+}
+
 .invalid input {
   background-color: orange;
 }

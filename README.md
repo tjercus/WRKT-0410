@@ -15,6 +15,7 @@ Based on 'React eventemitter'.
 
 ### App
 - autotest?
+- tests for stores
 - use const instead of let when possible
 - use arrow functions when possible
 - notification feature
@@ -40,6 +41,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- plan.workout should be plan.workoutId
 - feature to add a training to a day, iaw: implement 'edit' button
 - show total km for a cycle
 - training type icons

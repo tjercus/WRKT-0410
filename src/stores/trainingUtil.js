@@ -1,16 +1,20 @@
 import moment from "moment";
 
 export function findTraining(uuid, trainings) {
-	trainings = clone(trainings);
+	console.log("findTraining before cloning: " + JSON.stringify(trainings));	
+	//trainings = clone(trainings);
+	console.log("findTraining after cloning: " + JSON.stringify(trainings));
 	// TODO use an iterator that sypports break
 	//return trainings.find(training => training.uuid === uuid);
 	let needle = null;
 	for (let i = 0, len = trainings.length; i < len; i++) {
-		console.log("looking at training: " + trainings[i].name);
+		console.log("findTraining looking at training: " + trainings[i].uuid + "/" + trainings[i].name);
 		if (trainings[i].uuid === uuid) {
-			console.log("found training: " + trainings[i].name);
+			console.log("findTraining found training: " + trainings[i].name);
 			needle = trainings[i];
 			break;
+		} else {
+			console.log("findTraining NOT equal " + trainings[i].uuid + " and " + uuid);
 		}
 	}
 	return needle;
@@ -138,7 +142,7 @@ function lpad(num) {
 
 function hasNoRealValue(obj, name, value) {
 	let hasNoRealValue = (!obj.hasOwnProperty(name) || value === undefined || value === null || value === "" || value === "00:00" || value === "00:00:00" || value <= 0);
-	console.log("hasNoRealValue: " + obj + ", " + name + ", " + value + " = " + hasNoRealValue);
+	console.log("hasNoRealValue: " + JSON.stringify(obj) + ", " + name + ", " + value + " = " + hasNoRealValue);
 	return hasNoRealValue;
 }
 

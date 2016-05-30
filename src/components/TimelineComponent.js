@@ -15,6 +15,7 @@ export default class TimelineComponent extends React.Component {
     	cycleLength: 7
     };    
     this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
+    this.onEditClick = this.onEditClick.bind(this);
   }
 
   componentDidMount() {
@@ -31,12 +32,20 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.emit("PLAN_LOAD_CMD");
   }
 
+  // TODO extract method
+  // TODO days from config
   isNonWorkday(aDay) {
   	return (aDay.day() === 0 || aDay.day() === 3 || aDay.day() === 6);
   }
 
   onCycleLengthButtonClick(evt) {  	
   	this.setState({cycleLength: evt.target.value});
+  }
+
+  onEditClick(evt) {
+    let dayNr = evt.target.value;
+    // TODO change to edit component
+    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", dayNr);
   }
 
   render() {
@@ -60,7 +69,7 @@ export default class TimelineComponent extends React.Component {
        	<section key={i} className={sectionClassName}>
       		<h3>{day.nr}. {dateStr}</h3>
         	<p className="workout-name">{day.workout.name}, {(day.workout.total.distance).toFixed(2)} km</p>
-          <button className="button-small button-flat">edit</button>          
+          <button className="button-small button-flat" onClick={this.onEditClick} value={day.nr}>edit</button>          
         </section>
       );
       

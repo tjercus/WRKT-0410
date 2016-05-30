@@ -148,8 +148,7 @@ test("augmentSegmentData should augment with distance", (assert) => {
     duration: "01:06:48",
     pace: "05:10"
   };
-  var augmentedSegment = augmentSegmentData(segment);
-  console.log("CONCLUSIE: " + JSON.stringify(augmentedSegment));
+  var augmentedSegment = augmentSegmentData(segment);  
   assert.equal(true, (typeof augmentedSegment.distance === "number"));
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
@@ -162,11 +161,22 @@ test("augmentSegmentData should augment with duration", (assert) => {
     distance: 12.929,
     pace: "05:10"
   };
-  var augmentedSegment = augmentSegmentData(segment);
-  console.log("CONCLUSIE: " + JSON.stringify(augmentedSegment));
+  var augmentedSegment = augmentSegmentData(segment);  
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");
+  assert.end();
+});
+
+test("augmentSegmentData should work with duration as int minutes", (assert) => {
+  let segment = {
+    duration: 65,
+    pace: "05:00"
+  };
+  var augmentedSegment = augmentSegmentData(segment);  
+  assert.equal(augmentedSegment.distance, 13.000);
+  assert.equal(augmentedSegment.duration, "01:05:00");
+  assert.equal(augmentedSegment.pace, "05:00");
   assert.end();
 });
 
@@ -175,8 +185,7 @@ test("augmentSegmentData should augment with pace", (assert) => {
     distance: 12.929,
     duration: "01:06:48"
   };
-  var augmentedSegment = augmentSegmentData(segment);
-  console.log("CONCLUSIE: " + JSON.stringify(augmentedSegment));
+  var augmentedSegment = augmentSegmentData(segment);  
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");

@@ -8,6 +8,7 @@ import TrainingListComponent from "./TrainingListComponent";
 import TrainingStore from "../stores/TrainingStore";
 import TimelineComponent from "./TimelineComponent";
 import TimelineStore from "../stores/TimelineStore";
+import DayEditComponent from "./DayEditComponent";
 
 export default class AppComponent extends React.Component {
 
@@ -41,6 +42,7 @@ export default class AppComponent extends React.Component {
             <TrainingComponent eventbus={this.eventbus} name="Training" from="menu-item-training" />
             <TimelineComponent eventbus={this.eventbus} name="Timeline" from="menu-item-timeline" />
             <PanelComponent eventbus={this.eventbus} name="Settings" from="menu-item-settings" />
+            <DayEditComponent eventbus={this.eventbus} name="DayEdit" from="menu-item-dayedit" />
           </main>
         </article>
       </div>
