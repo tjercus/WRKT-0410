@@ -136,9 +136,10 @@ export const trainings = [
     ]
 }, {
     "uuid": "7daa0f2b-7457-4305-8d51-1d6cceb6e030",
-    "name": "40-20 intervals",
+    "name": "40-20 intervals @MIP",
     "segments": [
-    	{ "uuid": "1", "distance": 2.000, "duration": "00:13:00" }
+    	{ "uuid": "9987", "distance": 2.000, "duration": "00:13:00" }
+
     ]
 }, {
     "uuid": "9cf64a2b-0e60-4d10-9512-a6fd7510c421",

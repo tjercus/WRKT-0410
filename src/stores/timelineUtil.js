@@ -62,6 +62,4 @@ function augmentDay(day, trainings = []) {
   return _day;
 }
 
-function clone(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
+const clone = (obj) => JSON.parse(JSON.stringify(obj));

@@ -6,7 +6,8 @@ import {
   isDirtySegment,
   canAugment,
   isValidSegment,
-  createUuid
+  createUuid,
+  parseDuration
 } from "../src/stores/trainingUtil";
 
 /**
@@ -168,18 +169,6 @@ test("augmentSegmentData should augment with duration", (assert) => {
   assert.end();
 });
 
-test("augmentSegmentData should work with duration as int minutes", (assert) => {
-  let segment = {
-    duration: 65,
-    pace: "05:00"
-  };
-  var augmentedSegment = augmentSegmentData(segment);  
-  assert.equal(augmentedSegment.distance, 13.000);
-  assert.equal(augmentedSegment.duration, "01:05:00");
-  assert.equal(augmentedSegment.pace, "05:00");
-  assert.end();
-});
-
 test("augmentSegmentData should augment with pace", (assert) => {
   let segment = {
     distance: 12.929,
@@ -311,5 +300,18 @@ test("createUuid should create a unique valid uuid", (assert) => {
   assert.equal(uuid.length, 36);
   assert.equal(uuid2.length, 36);
   assert.notEqual(uuid, uuid2);
+  assert.end();
+});
+
+test("parseDuration should parse duration as int minutes to duration as string", (assert) => {
+  const data = [    
+    {input: 60, output: "01:00:00"},
+    {input: 59, output: "00:59:00"},
+    {input: 65, output: "01:05:00"},
+    {input:121, output: "02:01:00"}
+  ];
+  for (let i = 0, len = data.length; i < len; i++) {
+    assert.equal(parseDuration(data[i].input), data[i].output);
+  }
   assert.end();
 });

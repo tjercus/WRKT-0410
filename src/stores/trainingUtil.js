@@ -128,6 +128,19 @@ export function createUuid() {
 	return uuid;
 }
 
+/**
+* parse a duration from int minutes to a duration as string 00:00:00
+*/
+export function parseDuration(duration) {
+	if (duration === null || duration === undefined || duration === "") {
+		return "00:00:00";
+	}
+	if ((typeof distance == 'string') && duration.indexOf(":") !== -1) {
+		return duration;
+	}
+	return moment("2016-01-01").minutes(duration).format("HH:mm:ss");
+}
+
 /* ----------------------------------------------------------------------------------- */
 
 const clone = (obj) => JSON.parse(JSON.stringify(obj));
@@ -216,7 +229,7 @@ function translateNamedPace(pace) {
 		case "@10KP": return "03:40"; break;
 		case "@5KP": return "03:33"; break;
 		case "@3KP": return "03:24"; break;
-		case "@1MIP": return "03:10"; break;
+		case "@MIP": return "03:10"; break;
 		default: return pace; break;
 	};
 }

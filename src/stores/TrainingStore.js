@@ -107,7 +107,5 @@ export default class TrainingStore {
     });
     this.eventbus.emit("SEGMENT_REMOVE_EVT", {segments: this.segments, total: this.total});
     console.log("TrainingStore.removeSegment (2): " + this.segments.length);
-  }  
-
-  
+  }    
 }

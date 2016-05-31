@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import {isDirtySegment, canAugment, isValidSegment} from "../stores/trainingUtil";
+import {isDirtySegment, canAugment, isValidSegment, parseDuration} from "../stores/trainingUtil";
 
 export default class SegmentComponent extends React.Component {
 
@@ -48,20 +48,25 @@ export default class SegmentComponent extends React.Component {
           this.setState({distance: val});
         break;
         case "duration":
+          // TODO perhaps move parseDuration to onBlur
           this.setState({duration: val});
         break;
         case "pace":
           this.setState({pace: val});
         break;
-      }      
+      }
       if (this.state.uuid == null) {
         this.setState({uuid: this.createUuid()});
       }     
     }    
   }
 
-  onBlur(evt) {    
+  onBlur(evt) {
+    let val = evt.target.value;
     let name = evt.target.name;
+    if (name === "duration") {
+      this.setState({duration: parseDuration(val)});
+    }
     // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)
     if (canAugment(this.state)) {
       this.props.eventbus.emit("SEGMENT_UPDATE_CMD", this.state);
