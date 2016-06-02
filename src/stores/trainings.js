@@ -220,8 +220,8 @@ export const trainings = [
     "uuid": "5374118e-1d89-11e6-b014-a7739b3e7391",
     "name": "6 x 800 @5KP",
     "segments": [
-        { "uuid": "80", "distance": 2.000, "duration": "@RECOV" },
-        { "uuid": "81", "distance": 0.800, "duration": "@5KP" },
+        { "uuid": "80", "distance": 2.000, "pace": "@RECOV" },
+        { "uuid": "81", "distance": 0.800, "pace": "@5KP" },
         { "uuid": "82", "distance": 0.400, "pace": "@RECOV" },
         { "uuid": "83", "distance": 0.800, "pace": "@5KP" },
         { "uuid": "84", "distance": 0.400, "pace": "@RECOV" },
@@ -256,6 +256,31 @@ export const trainings = [
         { "uuid": "8765", "distance": 4.000, "pace": "@RECOV" },
         { "uuid": "8764", "distance": 6.000, "pace": "@16KP" },
         { "uuid": "8763", "distance": 2.000, "pace": "@RECOV" }
+    ]
+}, {
+    "uuid": "5394118e-1d89-11e6-b014-a7739b4e7391",
+    "name": "Short ladders @5KP",
+    "segments": [
+        { "uuid": "801", "distance": 2.000, "pace": "@RECOV" },
+        { "uuid": "812", "distance": 0.400, "pace": "@5KP" },
+        { "uuid": "823", "distance": 0.400, "pace": "@RECOV" },
+        { "uuid": "834", "distance": 0.800, "pace": "@5KP" },
+        { "uuid": "845", "distance": 0.400, "pace": "@RECOV" },
+        { "uuid": "856", "distance": 1.200, "pace": "@5KP" },
+        { "uuid": "867", "distance": 0.400, "pace": "@RECOV" },
+        { "uuid": "878", "distance": 0.400, "pace": "@5KP" },
+        { "uuid": "889", "distance": 0.400, "pace": "@RECOV" },
+        { "uuid": "890", "distance": 0.800, "pace": "@5KP" },
+        { "uuid": "901", "distance": 0.400, "pace": "@RECOV" },
+        { "uuid": "912", "distance": 1.200, "pace": "@5KP" },
+        { "uuid": "903", "distance": 0.400, "pace": "@RECOV" },
+        { "uuid": "874", "distance": 0.400, "pace": "@5KP" },
+        { "uuid": "905", "distance": 0.400, "pace": "@RECOV" },
+        { "uuid": "876", "distance": 0.400, "pace": "@5KP" },
+        { "uuid": "907", "distance": 0.400, "pace": "@RECOV" },
+        { "uuid": "878", "distance": 0.400, "pace": "@5KP" },
+
+        { "uuid": "929", "distance": 2.000, "pace": "@RECOV" }
     ]
 }
 ];
