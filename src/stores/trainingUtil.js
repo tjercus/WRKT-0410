@@ -1,11 +1,6 @@
 import moment from "moment";
 
-export function findTraining(uuid, trainings) {
-	console.log("findTraining before cloning: " + JSON.stringify(trainings));	
-	//trainings = clone(trainings);
-	console.log("findTraining after cloning: " + JSON.stringify(trainings));
-	// TODO use an iterator that sypports break
-	//return trainings.find(training => training.uuid === uuid);
+export function findTraining(uuid, trainings) {	
 	let needle = null;
 	for (let i = 0, len = trainings.length; i < len; i++) {
 		console.log("findTraining looking at training: " + trainings[i].uuid + "/" + trainings[i].name);
@@ -14,7 +9,7 @@ export function findTraining(uuid, trainings) {
 			needle = trainings[i];
 			break;
 		} else {
-			console.log("findTraining NOT equal " + trainings[i].uuid + " and " + uuid);
+			console.log("findTraining NOT equal " + trainings[i].uuid + " and " + JSON.stringify(uuid));
 		}
 	}
 	return needle;
@@ -132,10 +127,10 @@ export function createUuid() {
 * parse a duration from int minutes to a duration as string 00:00:00
 */
 export function parseDuration(duration) {
-	if (duration === null || duration === undefined || duration === "") {
+	if (hasNoRealValue(duration)) {
 		return "00:00:00";
 	}
-	if ((typeof distance == 'string') && duration.indexOf(":") !== -1) {
+	if ((typeof distance === "string") && duration.indexOf(":") !== -1) {
 		return duration;
 	}
 	return moment("2016-01-01").minutes(duration).format("HH:mm:ss");

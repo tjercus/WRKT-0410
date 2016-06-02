@@ -2,17 +2,19 @@ import React from "react";
 import EventEmitter from "eventemitter2";
 import {isDirtySegment, canAugment, isValidSegment, parseDuration} from "../stores/trainingUtil";
 
+const clone = (obj) => JSON.parse(JSON.stringify(obj));
+
 export default class SegmentComponent extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      uuid: this.cloneValue(props.segment.uuid),
-      distance: this.cloneValue(props.segment.distance),
-      duration: this.cloneValue(props.segment.duration),
-      pace: this.cloneValue(props.segment.pace),
-      isValid: this.cloneValue(props.segment.isValid)
+      uuid: clone(props.segment.uuid),
+      distance: clone(props.segment.distance),
+      duration: clone(props.segment.duration),
+      pace: clone(props.segment.pace),
+      isValid: clone(props.segment.isValid)
     }
     this.onChange = this.onChange.bind(this);
     this.onBlur = this.onBlur.bind(this);
@@ -47,8 +49,7 @@ export default class SegmentComponent extends React.Component {
         case "distance":
           this.setState({distance: val});
         break;
-        case "duration":
-          // TODO perhaps move parseDuration to onBlur
+        case "duration":          
           this.setState({duration: val});
         break;
         case "pace":
@@ -65,7 +66,8 @@ export default class SegmentComponent extends React.Component {
     let val = evt.target.value;
     let name = evt.target.name;
     if (name === "duration") {
-      this.setState({duration: parseDuration(val)});
+      // TODO debug this
+      //this.setState({duration: parseDuration(val)});      
     }
     // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)
     if (canAugment(this.state)) {
@@ -88,20 +90,17 @@ export default class SegmentComponent extends React.Component {
     let isDirty = (this.state[name] !== value);
     console.log("SegmentComponent.isDirtyValue: " + name + "/" + value + ", " + isDirty);
     return isDirty;
-  }
-
-  cloneValue(val) {
-    return JSON.parse(JSON.stringify(val));
-  }
+  }  
   
   render() {
     let rowClassName = (this.state.isValid) ? "valid" : "invalid";
     return (
       <tr className={rowClassName}>
-        <td><input type="text" name="distance" className="type-double" value={this.state.distance} onChange={this.onChange} onBlur={this.onBlur} /></td>
-        <td><input type="text" name="duration" className="type-duration" value={this.state.duration} onChange={this.onChange} onBlur={this.onBlur} /></td>
-        <td><input type="text" name="pace" className="type-time" value={this.state.pace} onChange={this.onChange} onBlur={this.onBlur} /></td>
+        <td><input type="text" name="distance" value={this.state.distance} onChange={this.onChange} className="type-double" /></td>
+        <td><input type="text" name="duration" value={this.state.duration} onChange={this.onChange} className="type-duration"  /></td>
+        <td><input type="text" name="pace" value={this.state.pace} onChange={this.onChange} className="type-time" /></td>
         <td>
+          <button className="button-small button-primary" onClick={this.onBlur}>Calc</button>
           <button className="button-small" onClick={this.onCloneButtonClick}>Clone</button>
           <button className="button-small button-warning" onClick={this.onRemoveButtonClick}>Remove</button>
         </td>

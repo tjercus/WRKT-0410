@@ -29,23 +29,15 @@ export function findPlan(uuid, plans = [], trainings = []) {
 
 export function findDay(dayNr, days = [], trainings = []) {
   const _days = clone(days);
-  const _trainings = clone(trainings);
-
-  console.log("findDay days: " + JSON.stringify(_days));
-  let found = null;  
-  
-  /*
-  let found = _days.find((_day) => {
-    console.log("looking at " + _day.nr + ", against " + dayNr);
-    if (_day.nr === dayNr) return augmentDay(_day);
-  });  
-  */
-    
+  const _trainings = clone(trainings);  
+  let found = null;    
   for (let i = 0, len = _days.length; i < len; i++) {
-    if (_days[0] !== null && _days[i]["nr"] === dayNr) {    
+    console.log("findDay comparing: " + _days[i].nr + " with " + dayNr);
+    if (_days[0] !== null && _days[i]["nr"] == dayNr) {    
       found = augmentDay(_days[i], _trainings);
     }
-  }  
+  }
+  console.log("findDay found: " + JSON.stringify(found));
   return found;
 }
 
@@ -55,9 +47,10 @@ export function findDay(dayNr, days = [], trainings = []) {
 function augmentDay(day, trainings = []) {  
   const _day = clone(day);
   const _trainings = clone(trainings);
-  let uuid = _day.workout;
+  let uuid = (typeof _day.workout === "string") ? _day.workout : _day.workout.uuid;  
   console.log("augmentDay: " + JSON.stringify(uuid));
   _day.workout = findTraining(uuid, _trainings);
+  // TODO catch when not found
   _day.workout.total = makeTrainingTotal(_day.workout.segments);
   return _day;
 }
