@@ -169,6 +169,18 @@ test("augmentSegmentData should augment with duration", (assert) => {
   assert.end();
 });
 
+test("augmentSegmentData should augment with a duration in only seconds", (assert) => {
+  let segment = {
+    duration: "00:00:40",
+    pace: "06:00"
+  };
+  var augmentedSegment = augmentSegmentData(segment);  
+  assert.equal(augmentedSegment.distance, 0.111);
+  assert.equal(augmentedSegment.duration, "00:00:40");
+  assert.equal(augmentedSegment.pace, "06:00");
+  assert.end();
+});
+
 test("augmentSegmentData should augment with pace", (assert) => {
   let segment = {
     distance: 12.929,

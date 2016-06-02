@@ -47,8 +47,7 @@ export default class SegmentComponent extends React.Component {
         case "distance":
           this.setState({distance: val});
         break;
-        case "duration":
-          // TODO perhaps move parseDuration to onBlur
+        case "duration":          
           this.setState({duration: val});
         break;
         case "pace":
@@ -65,7 +64,8 @@ export default class SegmentComponent extends React.Component {
     let val = evt.target.value;
     let name = evt.target.name;
     if (name === "duration") {
-      this.setState({duration: parseDuration(val)});
+      // TODO debug this
+      //this.setState({duration: parseDuration(val)});      
     }
     // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)
     if (canAugment(this.state)) {

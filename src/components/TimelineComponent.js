@@ -43,9 +43,8 @@ export default class TimelineComponent extends React.Component {
   }
 
   onEditClick(evt) {
-    let dayNr = evt.target.value;
-    // TODO change to edit component
-    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", dayNr);
+    let dayNr = evt.target.value;    
+    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", dayNr);    
   }
 
   render() {

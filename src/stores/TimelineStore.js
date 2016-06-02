@@ -11,18 +11,22 @@ export default class TimelineStore {
     this.day = {};
 
     // TODO allow input from a GUI-list (ex: 'PlansListComponent')
-    this.uuid = "acc3d1b8-33ae-4d70-dda3-d0e885f516f4";
-
+    this.uuid = "acc3d1b8-33ae-4d70-dda3-d0e885f516f4";    
+    
     eventbus.on("PLAN_LOAD_CMD", (() => {
+      console.log("TimelineStore: received PLAN_LOAD_CMD for default plan");
       let plan = findPlan(this.uuid, plans, trainings);
       this.days = plan.days;
-      console.log("PLAN_LOAD_CMD after findPlan set days to: " + JSON.stringify(this.days));
+      console.log("PLAN_LOAD_CMD after findPlan nr of days: " + JSON.stringify(this.days.length));
       eventbus.emit("PLAN_LOAD_EVT", plan.days);
-    }));
+    }));    
 
     eventbus.on("DAY_LOAD_CMD", ((dayNr) => {
-      let day = findDay(dayNr, this.days, trainings);
-      this.day = day;
+      console.log("TimelineStore: received DAY_LOAD_CMD for " + dayNr + ", currently holding " + this.days.length);
+      let day = this.day;
+      if (!this.day || this.day.nr !== dayNr) {
+        this.day = findDay(dayNr, this.days, trainings);
+      }
       eventbus.emit("DAY_LOAD_EVT", this.day);
     }));
   }    

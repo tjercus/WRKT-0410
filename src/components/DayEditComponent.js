@@ -17,6 +17,7 @@ export default class DayEditComponent extends React.Component {
 
   componentDidMount() {
     this.props.eventbus.on("MENU_CLICK_EVT", ((menuItemName, dayNr) => {
+      console.log("DayEditComponent: received MENU_CLICK_EVT " + dayNr);
       this.setState({
         dayNr: dayNr
       });
@@ -29,10 +30,17 @@ export default class DayEditComponent extends React.Component {
           isVisible: false
         });
       }
+      if (dayNr !== null) {
+        console.log("DayEditComponent: sending DAY_LOAD_CMD " + dayNr);
+        this.props.eventbus.emit("DAY_LOAD_CMD", dayNr);
+      }
     }));
 
     this.props.eventbus.on("DAY_LOAD_EVT", ((day) => {
-      this.day = day;
+      console.log("DayEditComponent: received DAY_LOAD_EVT " + JSON.stringify(day));
+      this.setState({
+        day: day
+      });
     }));
   }
 
@@ -48,13 +56,17 @@ export default class DayEditComponent extends React.Component {
 
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
-     return (
+    let workoutName = "no workout selected";
+    if (this.state.day !== null && this.state.day.workout !== undefined) {
+      workoutName = this.state.day.workout.name;
+    }
+    return (
       <section className={panelClassName}>
         <header className="panel-header">
-          <h2>Day Edit Screen</h2>
+          <p>Day Edit Screen</p>
         </header>
         <div className="panel-body">
-           {this.state.day.workout.name}
+           {workoutName}
         </div>
       </section>
     );
