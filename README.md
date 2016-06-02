@@ -28,6 +28,7 @@ Based on 'React eventemitter'.
 
 ### Training
 - fix bug where sometimes the wrong segments are loaded for a training
+- related: fix bug with first segment being set as null
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
 - display list of paces relative to mp/10kp/etc.
