@@ -2,6 +2,7 @@ import {
   findTraining,
   makeTrainingTotal
 } from "./trainingUtil";
+import {clone} from "./miscUtil";
 
 export function findPlan(uuid, plans = [], trainings = []) {
   const _plans = clone(plans);
@@ -51,8 +52,7 @@ function augmentDay(day, trainings = []) {
   console.log("augmentDay: " + JSON.stringify(uuid));
   _day.workout = findTraining(uuid, _trainings);
   // TODO catch when not found
+  console.log("augmentDay calling makeTrainingTotal for " + uuid);
   _day.workout.total = makeTrainingTotal(_day.workout.segments);
   return _day;
 }
-
-const clone = (obj) => JSON.parse(JSON.stringify(obj));

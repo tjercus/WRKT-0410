@@ -1,8 +1,8 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
 import {isDirtySegment, canAugment, isValidSegment, parseDuration} from "../stores/trainingUtil";
+import {createUuid, clone} from "../stores/miscUtil";
 
-const clone = (obj) => JSON.parse(JSON.stringify(obj));
 
 export default class SegmentComponent extends React.Component {
 
@@ -17,9 +17,10 @@ export default class SegmentComponent extends React.Component {
       isValid: clone(props.segment.isValid)
     }
     this.onChange = this.onChange.bind(this);
-    this.onBlur = this.onBlur.bind(this);
+    this.onCalcButtonClick = this.onCalcButtonClick.bind(this);
     this.onCloneButtonClick = this.onCloneButtonClick.bind(this);
     this.onRemoveButtonClick = this.onRemoveButtonClick.bind(this);
+    this.onDurationBlur = this.onDurationBlur.bind(this);
   }
   
   componentDidMount() {
@@ -57,23 +58,22 @@ export default class SegmentComponent extends React.Component {
         break;
       }
       if (this.state.uuid == null) {
-        this.setState({uuid: this.createUuid()});
+        this.setState({uuid: createUuid()});
       }     
     }    
   }
 
-  onBlur(evt) {
+  onDurationBlur(evt) {
     let val = evt.target.value;
-    let name = evt.target.name;
-    if (name === "duration") {
-      // TODO debug this
-      //this.setState({duration: parseDuration(val)});      
-    }
+    this.setState({duration: parseDuration(val)});
+  }
+
+  onCalcButtonClick(evt) {    
     // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)
     if (canAugment(this.state)) {
       this.props.eventbus.emit("SEGMENT_UPDATE_CMD", this.state);
     } else {
-      console.log("onBlur (" + name + ") not sending event because segment was NOT eligable for augmentation");      
+      console.log("onCalcButtonClick (" + name + ") not sending event because segment was NOT eligable for augmentation");      
       this.setState({isValid: isValidSegment(this.state)});
     }
   }
@@ -97,10 +97,10 @@ export default class SegmentComponent extends React.Component {
     return (
       <tr className={rowClassName}>
         <td><input type="text" name="distance" value={this.state.distance} onChange={this.onChange} className="type-double" /></td>
-        <td><input type="text" name="duration" value={this.state.duration} onChange={this.onChange} className="type-duration"  /></td>
+        <td><input type="text" name="duration" value={this.state.duration} onChange={this.onChange} onBlur={this.onDurationBlur} className="type-duration"  /></td>
         <td><input type="text" name="pace" value={this.state.pace} onChange={this.onChange} className="type-time" /></td>
         <td>
-          <button className="button-small button-primary" onClick={this.onBlur}>Calc</button>
+          <button className="button-small button-primary" onClick={this.onCalcButtonClick}>Calc</button>
           <button className="button-small" onClick={this.onCloneButtonClick}>Clone</button>
           <button className="button-small button-warning" onClick={this.onRemoveButtonClick}>Remove</button>
         </td>

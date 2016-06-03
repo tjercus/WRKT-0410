@@ -31,7 +31,7 @@ export default class AppComponent extends React.Component {
     return (
       <div>
         <header id="app-header">
-          <h1>Trainingplanner {version}</h1>  
+          <h1>WRKT-0410 {version}</h1>  
           <MenuComponent eventbus={this.eventbus} />
         </header>
         <article id="container">

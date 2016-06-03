@@ -5,8 +5,7 @@ import {
   augmentSegmentData,
   isDirtySegment,
   canAugment,
-  isValidSegment,
-  createUuid,
+  isValidSegment,  
   parseDuration
 } from "../src/stores/trainingUtil";
 
@@ -198,8 +197,7 @@ test("augmentSegmentData should augment with distance", (assert) => {
     duration: "01:06:48",
     pace: "05:10"
   };
-  var augmentedSegment = augmentSegmentData(segment);
-  console.log("CONCLUSIE: " + JSON.stringify(augmentedSegment));
+  var augmentedSegment = augmentSegmentData(segment);  
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");
@@ -211,8 +209,7 @@ test("augmentSegmentData should work with named paces", (assert) => {
     duration: "01:06:48",
     pace: "@RECOV"
   };
-  var augmentedSegment = augmentSegmentData(segment);
-  console.log("CONCLUSIE: " + JSON.stringify(augmentedSegment));
+  var augmentedSegment = augmentSegmentData(segment);  
   assert.equal(augmentedSegment.distance, 12.145);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:30");
@@ -306,12 +303,10 @@ test("isValidSegment should detect a NOT valid segment", (assert) => {
   assert.end();
 });
 
-test("createUuid should create a unique valid uuid", (assert) => {
-  let uuid = createUuid();
-  let uuid2 = createUuid();
-  assert.equal(uuid.length, 36);
-  assert.equal(uuid2.length, 36);
-  assert.notEqual(uuid, uuid2);
+test("parseDuration should NOT parse duration when input is not parsable from int", (assert) => {  
+  assert.equal(parseDuration(null), "00:00:00", "should return zero duration on null");
+  assert.equal(parseDuration(""), "00:00:00", "should return zero duration on empty string");
+  assert.equal(parseDuration(0), "00:00:00", "should return zero duration on zero int");
   assert.end();
 });
 

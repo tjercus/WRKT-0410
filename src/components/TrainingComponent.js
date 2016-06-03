@@ -26,6 +26,8 @@ export default class TrainingComponent extends React.Component {
       }
     }));
     this.props.eventbus.on("TRAINING_LOAD_EVT", ((training) => {      
+      this.clearTraining();
+      console.log("TrainingComponent TRAINING_LOAD_EVT nr of segments " + training.segments.length + ", 0: " + JSON.stringify(training.segments[0]));
       this.setState({uuid: training.uuid, name: training.name, segments: training.segments, total: training.total});
     }));
     this.props.eventbus.on("SEGMENT_ADD_EVT", ((training) => {

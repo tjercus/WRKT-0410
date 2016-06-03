@@ -1,15 +1,16 @@
 import moment from "moment";
+import {createUuid, clone, lpad, hasNoRealValue} from "./miscUtil";
 
 export function findTraining(uuid, trainings) {	
 	let needle = null;
 	for (let i = 0, len = trainings.length; i < len; i++) {
-		console.log("findTraining looking at training: " + trainings[i].uuid + "/" + trainings[i].name);
+		//console.log("findTraining looking at training: " + trainings[i].uuid + "/" + trainings[i].name);
 		if (trainings[i].uuid === uuid) {
 			console.log("findTraining found training: " + trainings[i].name);
 			needle = trainings[i];
 			break;
 		} else {
-			console.log("findTraining NOT equal " + trainings[i].uuid + " and " + JSON.stringify(uuid));
+			//console.log("findTraining NOT equal " + trainings[i].uuid + " and " + JSON.stringify(uuid));
 		}
 	}
 	return needle;
@@ -28,21 +29,21 @@ export function makeTrainingTotal(segments) {
 	if (segments.length === 0) {
 		return totalObj;
 	} else {
-		console.log("2: size " + segments.length);
+		console.log("makeTrainingTotal 2: size " + segments.length);
 		segments.forEach((segment) => {
 			segment = augmentSegmentData(segment);
 			totalObj.distance += parseFloat(segment.distance);
 			let totalDurationObj = moment.duration(totalObj.duration).add(segment.duration);
-			console.log("segment: " + JSON.stringify(segment));
+			console.log("makeTrainingTotal segment: " + JSON.stringify(segment));
 			totalObj.duration = formatDuration(totalDurationObj);
-			console.log("LOOP: dist " + totalObj.distance + ", dur " + totalObj.duration);
+			//console.log("LOOP: dist " + totalObj.distance + ", dur " + totalObj.duration);
 		});
 		if (hasNoRealValue(totalObj, "pace", totalObj.pace)) {
 			totalObj.pace = makePace(totalObj);
-			console.log("2.5: making pace based on duration, pace: " + totalObj.pace + ", dur: " + totalObj.duration);
+			console.log("makeTrainingTotal 2.5: making pace based on duration, pace: " + totalObj.pace + ", dur: " + totalObj.duration);
 		} else if (hasNoRealValue(totalObj, "duration", totalObj.duration)) {
 			totalObj.duration = makeDuration(totalObj);
-			console.log("3: making duration based on pace: " + totalObj.pace + ", dur: " + totalObj.duration);
+			console.log("makeTrainingTotal 3: making duration based on pace: " + totalObj.pace + ", dur: " + totalObj.duration);
 		}
 	}
 	return totalObj;
@@ -51,24 +52,25 @@ export function makeTrainingTotal(segments) {
 export function augmentSegmentData(segment) {
 	segment = clone(segment);
 	segment.pace = translateNamedPace(segment.pace);
-	console.log("augment from " + JSON.stringify(segment));
+	console.log("augmentSegmentData augment from " + JSON.stringify(segment));
 	if (canAugment(segment)) {
-		if (hasNoRealValue(segment, "duration", segment.duration)) {
+		if (hasNoRealValue(segment, "duration")) {
 			segment.duration = makeDuration(segment);
 		}
-		if (hasNoRealValue(segment, "pace", segment.pace)) {
+		if (hasNoRealValue(segment, "pace")) {
 			segment.pace = makePace(segment);
 		}
-		if (hasNoRealValue(segment, "distance", segment.distance)) {
+		if (hasNoRealValue(segment, "distance")) {
 			segment.distance = makeDistance(segment);
 		}
-		console.log("augment to " + segment.distance);
+		console.log("augmentSegmentData augment pace to " + segment.pace);
 	}
 	if (isValidSegment(segment)) {
 		segment.isValid = true;
 	} else {
 		segment.isValid = false;
 	}
+	console.log("augmentSegmentData augment TO " + JSON.stringify(segment));
 	return segment;
 }
 
@@ -92,9 +94,11 @@ export function isDirtySegment(segment, segments) {
 	return isDirtySegment;
 }
 
-export function canAugment(segment) {
+export function canAugment(segment) {	
 	segment = clone(segment);
-	return (segment && (!segment.hasOwnProperty("distance") || segment.distance === "" || !segment.hasOwnProperty("duration") || segment.duration === "" || !segment.hasOwnProperty("pace") || segment.pace === ""));
+	const can = (segment && (!segment.hasOwnProperty("distance") || segment.distance === "" || !segment.hasOwnProperty("duration") || segment.duration === "" || !segment.hasOwnProperty("pace") || segment.pace === ""));
+	console.log("canAugment: uuid: " + segment.uuid + ", can? " + can);
+	return can;
 }
 
 export function isValidSegment(segment) {
@@ -114,52 +118,31 @@ export function isValidSegment(segment) {
 	return true;
 }
 
-export function createUuid() {
-	let uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-		let r = Math.random() * 16 | 0,
-			v = c === "x" ? r : (r & 0x3 | 0x8);
-		return v.toString(16);
-	});
-	return uuid;
-}
-
 /**
 * parse a duration from int minutes to a duration as string 00:00:00
 */
-export function parseDuration(duration) {
-	if (hasNoRealValue(duration)) {
-		return "00:00:00";
+export function parseDuration(duration) {	
+	const defaultDuration = "00:00:00";
+	if (duration !== null) {	
+		if ((typeof duration === "string") && duration.indexOf(":") !== -1) {
+			return duration;
+		}
+		if (!isNaN(duration)) {
+			let parsed = moment("2016-01-01").minutes(duration).format("HH:mm:ss");
+			console.log("parseDuration: " + duration + ", to " + parsed);
+			return parsed;
+		}
 	}
-	if ((typeof distance === "string") && duration.indexOf(":") !== -1) {
-		return duration;
-	}
-	return moment("2016-01-01").minutes(duration).format("HH:mm:ss");
+	return defaultDuration;	
 }
 
 /* ----------------------------------------------------------------------------------- */
-
-const clone = (obj) => JSON.parse(JSON.stringify(obj));
-
-function lpad(num) {
-	num = ("" + num).trim();
-	while (num.length < 2) {
-		num = "0" + num;
-	}
-	return num.substr(num.length - 2);
-}
-
-function hasNoRealValue(obj, name, value) {
-	let hasNoRealValue = (!obj.hasOwnProperty(name) || value === undefined || value === null || value === "" || value === "00:00" || value === "00:00:00" || value <= 0);
-	console.log("hasNoRealValue: " + JSON.stringify(obj) + ", " + name + ", " + value + " = " + hasNoRealValue);
-	return hasNoRealValue;
-}
 
 /**    
  * @param moment.duration obj
  * @return hh:mm:ss String
  */
-function formatDuration(duration) {
-	console.log("formatDuration: " + duration.hours());
+function formatDuration(duration) {	
 	return lpad(duration.hours()) + ":" + lpad(duration.minutes()) + ":" + lpad(duration.seconds());
 }
 

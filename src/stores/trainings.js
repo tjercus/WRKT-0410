@@ -278,7 +278,7 @@ export const trainings = [
     "segments": [
         { "uuid": "1235", "distance": 4.000, "pace": "@LRP" },
         { "uuid": "1236", "distance": 11.700, "pace": "04:25" },
-        { "uuid": "1238", "distance": 5.700, "pace": "04:00" }
+        { "uuid": "1238", "distance": 5.700, "pace": "@21KP" }
     ]
 }, {
     "uuid": "85069ab6-2638-11e6-a921-9370424918be",

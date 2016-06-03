@@ -39,12 +39,14 @@ export default class TrainingStore {
           console.log("TrainingStore: augmented in a loop: " + JSON.stringify(segment));
           this.segments.push(segment);
         });
+        console.log("TrainingStore.constructor TRAINING_LOAD_CMD calling makeTrainingTotal for " + this.uuid);
         this.total = makeTrainingTotal(this.segments);
         training.total = this.total;
+        console.log("TRAINING_LOAD_EVT now emitted with " + ", segment 0: " + JSON.stringify(this.segments[0]));
         eventbus.emit("TRAINING_LOAD_EVT", {uuid: this.uuid, name: this.name, segments: this.segments, total: this.total});
       }
       // TODO handle else
-      console.log("TrainingStore finished TRAINING_LOAD_CMD for: " + uuid);            
+      console.log("TrainingStore finished TRAINING_LOAD_CMD for: " + uuid + ", segment 0: " + JSON.stringify(this.segments[0]));
     }));
 
 		eventbus.on("SEGMENT_UPDATE_CMD", ((segment) => {
@@ -73,6 +75,7 @@ export default class TrainingStore {
     }
     segment = augmentSegmentData(segment);
     this.segments.push(segment);
+    console.log("addSegment calling makeTrainingTotal for " + this.uuid);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_ADD_EVT", {segments: this.segments, total: this.total});
   }
@@ -85,6 +88,7 @@ export default class TrainingStore {
       if (_segment.uuid === segment.uuid) {
         console.log("TrainingStore.updateSegment found segment: " + segment.uuid);
         this.segments[i] = segment;
+        console.log("updateSegment calling makeTrainingTotal for " + this.uuid);
         this.total = makeTrainingTotal(this.segments);
         return true;
       }
@@ -100,6 +104,7 @@ export default class TrainingStore {
     this.segments.some((segment) => {
       if (segment.uuid === segment.uuid) {
         this.segments.splice(i, 1);
+        console.log("removeSegment calling makeTrainingTotal for " + this.uuid);
         this.total = makeTrainingTotal(this.segments);
         return true;
       }
