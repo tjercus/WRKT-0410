@@ -304,9 +304,9 @@ test("isValidSegment should detect a NOT valid segment", (assert) => {
 });
 
 test("parseDuration should NOT parse duration when input is not parsable from int", (assert) => {  
-  assert.equal(parseDuration(null), "00:00:00", "should return zero duration on null");
-  assert.equal(parseDuration(""), "00:00:00", "should return zero duration on empty string");
-  assert.equal(parseDuration(0), "00:00:00", "should return zero duration on zero int");
+  assert.equal(parseDuration(null), null, "should return null on null");
+  assert.equal(parseDuration(""), "", "should return empty string on empty string");
+  assert.equal(parseDuration(0), "00:00:00", "should 00:00:00 on zero int");
   assert.end();
 });
 

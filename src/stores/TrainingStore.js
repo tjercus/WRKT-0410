@@ -1,6 +1,7 @@
 import EventEmitter from "eventemitter2";
 import {trainings} from "./trainings";
-import {findTraining, makeTrainingTotal, createUuid, isDirtySegment, augmentSegmentData, isValidSegment} from "./trainingUtil";
+import {findTraining, makeTrainingTotal, isDirtySegment, augmentSegmentData, isValidSegment} from "./trainingUtil";
+import {createUuid} from "./miscUtil";
 
 export default class TrainingStore {
 	

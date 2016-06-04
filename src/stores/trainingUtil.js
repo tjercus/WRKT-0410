@@ -122,18 +122,12 @@ export function isValidSegment(segment) {
 * parse a duration from int minutes to a duration as string 00:00:00
 */
 export function parseDuration(duration) {	
-	const defaultDuration = "00:00:00";
-	if (duration !== null) {	
-		if ((typeof duration === "string") && duration.indexOf(":") !== -1) {
-			return duration;
-		}
-		if (!isNaN(duration)) {
-			let parsed = moment("2016-01-01").minutes(duration).format("HH:mm:ss");
-			console.log("parseDuration: " + duration + ", to " + parsed);
-			return parsed;
-		}
+	if (duration !== null && duration !== "" && !isNaN(duration)) {
+		let parsed = moment("2016-01-01").minutes(duration).format("HH:mm:ss");
+		console.log("parseDuration: " + duration + ", to " + parsed);
+		return parsed;
 	}
-	return defaultDuration;	
+	return duration;	
 }
 
 /* ----------------------------------------------------------------------------------- */
