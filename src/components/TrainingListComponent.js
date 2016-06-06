@@ -26,15 +26,16 @@ export default class TrainingListComponent extends React.Component {
       this.setState({trainings: trainings});
     }));
     this.props.eventbus.emit("TRAINING_LIST_CMD");
-  }
+  }  
 
   onClick(evt) {
     evt.preventDefault();
     console.log("clicked on: " + evt.target.value);
     this.setState({selectedUid: evt.target.value});
+    //this.props.eventbus.emit("TRAINING_CLEAR_CMD", evt.target.value);
     this.props.eventbus.emit("TRAINING_LOAD_CMD", evt.target.value);
   }
-  
+
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";    
     return (

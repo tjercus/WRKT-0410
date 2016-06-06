@@ -10,7 +10,11 @@ export default class TrainingComponent extends React.Component {
       uuid: null,
       name: "",
       segments: [],
-      total: {distance: 0.0}
+      total: {
+        distance: 0,
+        duration: "00:00:00",
+        pace: "00:00"
+      }
     };
     this.exportTraining = this.exportTraining.bind(this);
     this.clearTraining = this.clearTraining.bind(this);
@@ -37,6 +41,19 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.on("SEGMENT_REMOVE_EVT", ((training) => {
       this.setState({segments: training.segments, total: training.total});
     }));
+    this.props.eventbus.on("TRAINING_CLEAR_EVT", ((uuid) => {
+      this.setState({
+        isVisible: true,
+        uuid: null,
+        name: "",
+        segments: [],
+        total: {
+          distance: 0,
+          duration: "00:00:00",
+          pace: "00:00"
+        }
+      });
+    }));
   }
 
   addEmptySegment() {
@@ -50,18 +67,20 @@ export default class TrainingComponent extends React.Component {
   }
   
   clearTraining() {
-    this.setState({
-      isVisible: true,
-      uuid: null,
-      name: "",
-      segments: [],
-      total: {distance: 0.0}
-    });
-
+    this.props.eventbus.emit("TRAINING_CLEAR_CMD", this.state.uuid);
   }
   
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
+    let segmentComponents = [];
+    console.log("TrainingComponent.render() starting with " + segmentComponents.length);
+    console.log("TrainingComponent.render() segment 0: " + JSON.stringify(this.state.segments[0]));
+
+    this.state.segments.forEach((segment, i) => {
+      console.log("TrainingComponent: re-rendering segment, segment: " + JSON.stringify(segment));
+      segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />);
+    });
+
     if (this.state.uuid) {
       return (
         <section className={panelClassName}>
@@ -74,18 +93,14 @@ export default class TrainingComponent extends React.Component {
               <tr><th>Distance</th><th>Duration</th><th>Pace</th><th>Actions</th></tr>
             </thead>
             <tbody>
-
-            {this.state.segments.map(function(segment, i) {
-              return <SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />;
-            }.bind(this))}
-
+              {segmentComponents}
             </tbody>
             </table>
             <output name="totals">
               <p>
-                Total distance: <em>{(this.state.total.distance).toFixed(3)}</em> km,
-                duration: <em>{this.state.total.duration}</em>,
-                average pace: <em><time>{this.state.total.pace}</time></em>
+                {"Total distance:"} <em>{(this.state.total.distance).toFixed(3)}</em> km,
+                {"duration:"} <em>{this.state.total.duration}</em>,
+                {"average pace:"} <em><time>{this.state.total.pace}</time></em>
               </p>
               <p>UUID: {this.state.uuid}</p>
             </output>

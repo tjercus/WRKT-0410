@@ -36,9 +36,7 @@ test("TrainingComponent should render the right DOM structure", (assert) => {
 //test("TrainingComponent should be visible after a MENU_CLICK_EVT containing it's name", (assert) => {
 //  // TODO implement
 //});
-
 /*
-// TODO fix
 test("TrainingComponent should render a training", (assert) => {
   //const eventbus = sinon.stub(eventbus, "on", onStub);
   //eventbus.on
@@ -53,12 +51,20 @@ test("TrainingComponent should render a training", (assert) => {
   const renderer = createRenderer();
   
   renderer.render(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
+
+  eventbus.on("TRAINING_LOAD_EVT", ((training) => {
+    console.dir("EVT");
+    const result = renderer.getRenderOutput();
+    const childComponents = result.props.children;
+    const bodyComponent = childComponents[1];
+    console.dir(bodyComponent);
+    assert.ok(bodyComponent.props.children.indexOf("my training") !== -1, "training is not rendered after event");
+  }));
+
   eventbus.emit("TRAINING_LOAD_EVT", training);
 
-  setTimeout(function() {
-    const result = renderer.getRenderOutput();
-    assert.ok(result.contains("Easy run"));
+  setTimeout(function() {    
     assert.end();
-  }, 5000);  
+  }, 1000);  
 });
 */

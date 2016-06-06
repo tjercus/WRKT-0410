@@ -8,25 +8,25 @@ Based on 'React eventemitter'.
  2. npm run watch
 
 ## tests
- 1. npm install -g babel-tape-runner faucet
+ 1. npm install -g babel-tape-runner faucet tape-watch
  2. babel-tape-runner test/*-spec.js | faucet
+ 3. tape-watch -r babel-register test/*-spec.js | faucet
 
 ## TODOS
 
 ### App
-- autotest?
 - tests for stores
 - use const instead of let when possible
 - use arrow functions when possible
 - notification feature
 - yellow hint of change
 - button click 'animation'
-- favicon (debug gulp)
 - deploy on github pages
 - button to switch metric/imperial
 - events as constants
 
 ### Training
+- fix bug where remove segment removes wrong segment
 - fix bug where sometimes the wrong segments are loaded for a training
 - related: fix bug with first segment being set as null
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests

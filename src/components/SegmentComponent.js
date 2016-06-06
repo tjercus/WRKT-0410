@@ -93,6 +93,7 @@ export default class SegmentComponent extends React.Component {
   }  
   
   render() {
+    console.log("SegmentComponent.render() distance: " + this.state.distance);
     let rowClassName = (this.state.isValid) ? "valid" : "invalid";
     return (
       <tr className={rowClassName}>

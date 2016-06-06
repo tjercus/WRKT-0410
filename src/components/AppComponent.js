@@ -20,9 +20,9 @@ export default class AppComponent extends React.Component {
     this.TimelineStore = new TimelineStore(this.eventbus);
   }
   
-  componentDidMount() {
-    this.eventbus.emit("TRAINING_LOAD_CMD", "new-training");
+  componentDidMount() {    
     this.eventbus.emit("MENU_CLICK_EVT", "menu-item-training");
+    setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"), 2000);
   }
   
   render() {
