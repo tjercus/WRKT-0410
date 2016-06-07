@@ -1,7 +1,7 @@
 import EventEmitter from "eventemitter2";
 import {trainings} from "./trainings";
 import {findTraining, makeTrainingTotal, isDirtySegment, augmentSegmentData, isValidSegment} from "./trainingUtil";
-import {createUuid} from "./miscUtil";
+import {createUuid, clone} from "./miscUtil";
 
 export default class TrainingStore {
 	
@@ -21,8 +21,8 @@ export default class TrainingStore {
     }));
 
     eventbus.on("TRAINING_LOAD_CMD", ((uuid) => {
-      this.clearTraining();
-      console.log("TrainingStore TRAINING_LOAD_CMD " + uuid);
+      //this.clearTraining();
+      console.log("TrainingStore TRAINING_LOAD_CMD " + uuid + ", now holds " + this.segments.length + " segments");
       let training = findTraining(uuid, trainings);
       if (training !== null) {
         console.log("TrainingStore TRAINING_LOAD_CMD, segment 0: " + JSON.stringify(this.segments[0]));
@@ -31,12 +31,13 @@ export default class TrainingStore {
         let _segments = training.segments.map((segment) => {
           return augmentSegmentData(segment);
         });
-        this.segments = _segments;        
+        this.segments = _segments;
         console.log("TrainingStore.constructor TRAINING_LOAD_CMD calling makeTrainingTotal for, segment 0: " + JSON.stringify(this.segments[0]));
         this.total = makeTrainingTotal(this.segments);
         console.log("TRAINING_LOAD_EVT now emitted with " + ", segment 0: " + JSON.stringify(this.segments[0]));
         eventbus.emit("TRAINING_LOAD_EVT", {uuid: this.uuid, name: this.name, segments: this.segments, total: this.total});
       }
+      console.log("TrainingStore TRAINING_LOAD_CMD (2) " + uuid + ", now holds " + this.segments.length + " segments");
       // TODO handle else
       console.log("TrainingStore finished TRAINING_LOAD_CMD for: " + uuid + ", segment 0: " + JSON.stringify(this.segments[0]));
     }));
@@ -95,20 +96,24 @@ export default class TrainingStore {
     this.eventbus.emit("SEGMENT_UPDATE_EVT", {segment: this.segments[i], total: this.total});
   }
 
-  removeSegment(segment) {
-    let i = 0;
+  removeSegment(segment) {    
     console.log("TrainingStore.removeSegment (1): " + this.segments.length);
-    this.segments.some((segment) => {
-      if (segment.uuid === segment.uuid) {
-        this.segments.splice(i, 1);
-        console.log("removeSegment calling makeTrainingTotal for " + this.uuid);
-        this.total = makeTrainingTotal(this.segments);
-        return true;
+    let _segments = clone(this.segments);
+    for (let i = 0, len = _segments.length; i < len; i++) {
+      console.log("_segments[i] LOOKING " + JSON.stringify(_segments[i].uuid) + ", versus " + _segments[i].uuid);
+      if (_segments[i].uuid == segment.uuid) {
+        //_segments[i] = {"uuid": segment.uuid, "distance": 0, "duration": "00:00:00", pace: "00:00"};
+        console.log("TrainingStore.removeSegment (1b): FOUND " + _segments[i].uuid);
+        let deletedSegments = _segments.splice(i, 1);
+        console.log("TrainingStore.removeSegment (1d): DELETED " + JSON.stringify(deletedSegments));
+        break;
       }
-      i++;      
-    });
-    this.eventbus.emit("SEGMENT_REMOVE_EVT", {segments: this.segments, total: this.total});
-    console.log("TrainingStore.removeSegment (2): " + this.segments.length);
+    }
+    this.segments = _segments;
+    this.total = makeTrainingTotal(_segments);    
+    console.log("TrainingStore.removeSegment (1c): " + JSON.stringify(this.segments));
+    this.eventbus.emit("SEGMENT_REMOVE_EVT", {segments: _segments, total: this.total});
+    console.log("TrainingStore.removeSegment (2): " + segment.uuid + ", len: " + this.segments.length);
   }    
 
   clearTraining() {

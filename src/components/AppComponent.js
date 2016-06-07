@@ -22,7 +22,7 @@ export default class AppComponent extends React.Component {
   
   componentDidMount() {    
     this.eventbus.emit("MENU_CLICK_EVT", "menu-item-training");
-    setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"), 2000);
+    //setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"), 2000);
   }
   
   render() {

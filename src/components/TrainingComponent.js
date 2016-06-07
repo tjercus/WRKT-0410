@@ -30,16 +30,19 @@ export default class TrainingComponent extends React.Component {
       }
     }));
     this.props.eventbus.on("TRAINING_LOAD_EVT", ((training) => {      
-      this.clearTraining();
-      console.log("TrainingComponent TRAINING_LOAD_EVT nr of segments " + training.segments.length + ", 0: " + JSON.stringify(training.segments[0]));
+      //this.clearTraining();
+      console.log("TrainingComponent TRAINING_LOAD_EVT nr of segments, len:" + training.segments.length + ", 0: " + JSON.stringify(training.segments[0]));
       this.setState({uuid: training.uuid, name: training.name, segments: training.segments, total: training.total});
     }));
     this.props.eventbus.on("SEGMENT_ADD_EVT", ((training) => {
       console.log("TrainingComponent after adding received " + JSON.stringify(training));
-      this.setState({segments: training.segments, total: training.total});
+      this.setState({segments: training.segments, total: training.total});      
     }));
-    this.props.eventbus.on("SEGMENT_REMOVE_EVT", ((training) => {
-      this.setState({segments: training.segments, total: training.total});
+    this.props.eventbus.on("SEGMENT_REMOVE_EVT", ((training) => {      
+      console.log("TrainingComponent: caught SEGMENT_REMOVE_EVT, segments length: " + training.segments.length);      
+      this.setState({segments: training.segments, total: training.total}, function() {
+        console.log("TrainingComponent finished updating state with new segments");
+      });
     }));
     this.props.eventbus.on("TRAINING_CLEAR_EVT", ((uuid) => {
       this.setState({
@@ -73,13 +76,19 @@ export default class TrainingComponent extends React.Component {
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     let segmentComponents = [];
-    console.log("TrainingComponent.render() starting with " + segmentComponents.length);
+    console.log("TrainingComponent.render() starting with local array len: " + segmentComponents.length);
     console.log("TrainingComponent.render() segment 0: " + JSON.stringify(this.state.segments[0]));
 
     this.state.segments.forEach((segment, i) => {
       console.log("TrainingComponent: re-rendering segment, segment: " + JSON.stringify(segment));
-      segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />);
+      let cEl = <SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />;
+      segmentComponents.push(cEl);
     });
+
+    let totalDistance = 0;
+    if (this.state.total && this.state.total.distance) { 
+      totalDistance = (this.state.total.distance).toFixed(3);
+    };
 
     if (this.state.uuid) {
       return (
@@ -98,7 +107,7 @@ export default class TrainingComponent extends React.Component {
             </table>
             <output name="totals">
               <p>
-                {"Total distance:"} <em>{(this.state.total.distance).toFixed(3)}</em> km,
+                {"Total distance:"} <em>{totalDistance}</em> km,
                 {"duration:"} <em>{this.state.total.duration}</em>,
                 {"average pace:"} <em><time>{this.state.total.pace}</time></em>
               </p>

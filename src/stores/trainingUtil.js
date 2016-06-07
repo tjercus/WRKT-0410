@@ -4,13 +4,13 @@ import {createUuid, clone, lpad, hasNoRealValue} from "./miscUtil";
 export function findTraining(uuid, trainings) {	
 	let needle = null;
 	for (let i = 0, len = trainings.length; i < len; i++) {
-		//console.log("findTraining looking at training: " + trainings[i].uuid + "/" + trainings[i].name);
+		//// console.log("findTraining looking at training: " + trainings[i].uuid + "/" + trainings[i].name);
 		if (trainings[i].uuid === uuid) {
-			console.log("findTraining found training: " + trainings[i].name);
+			// console.log("findTraining found training: " + trainings[i].name);
 			needle = trainings[i];
 			break;
 		} else {
-			//console.log("findTraining NOT equal " + trainings[i].uuid + " and " + JSON.stringify(uuid));
+			//// console.log("findTraining NOT equal " + trainings[i].uuid + " and " + JSON.stringify(uuid));
 		}
 	}
 	return needle;
@@ -29,21 +29,21 @@ export function makeTrainingTotal(segments) {
 	if (segments.length === 0) {
 		return totalObj;
 	} else {
-		console.log("makeTrainingTotal 2: size " + segments.length);
+		// console.log("makeTrainingTotal 2: size " + segments.length);
 		segments.forEach((segment) => {
 			segment = augmentSegmentData(segment);
 			totalObj.distance += parseFloat(segment.distance);
 			let totalDurationObj = moment.duration(totalObj.duration).add(segment.duration);
-			console.log("makeTrainingTotal segment: " + JSON.stringify(segment));
+			// console.log("makeTrainingTotal segment: " + JSON.stringify(segment));
 			totalObj.duration = formatDuration(totalDurationObj);
-			//console.log("LOOP: dist " + totalObj.distance + ", dur " + totalObj.duration);
+			//// console.log("LOOP: dist " + totalObj.distance + ", dur " + totalObj.duration);
 		});
 		if (hasNoRealValue(totalObj, "pace", totalObj.pace)) {
 			totalObj.pace = makePace(totalObj);
-			console.log("makeTrainingTotal 2.5: making pace based on duration, pace: " + totalObj.pace + ", dur: " + totalObj.duration);
+			// console.log("makeTrainingTotal 2.5: making pace based on duration, pace: " + totalObj.pace + ", dur: " + totalObj.duration);
 		} else if (hasNoRealValue(totalObj, "duration", totalObj.duration)) {
 			totalObj.duration = makeDuration(totalObj);
-			console.log("makeTrainingTotal 3: making duration based on pace: " + totalObj.pace + ", dur: " + totalObj.duration);
+			// console.log("makeTrainingTotal 3: making duration based on pace: " + totalObj.pace + ", dur: " + totalObj.duration);
 		}
 	}
 	return totalObj;
@@ -52,7 +52,7 @@ export function makeTrainingTotal(segments) {
 export function augmentSegmentData(segment) {
 	segment = clone(segment);
 	segment.pace = translateNamedPace(segment.pace);
-	console.log("augmentSegmentData augment from " + JSON.stringify(segment));
+	// console.log("augmentSegmentData augment from " + JSON.stringify(segment));
 	if (canAugment(segment)) {
 		if (hasNoRealValue(segment, "duration")) {
 			segment.duration = makeDuration(segment);
@@ -63,14 +63,14 @@ export function augmentSegmentData(segment) {
 		if (hasNoRealValue(segment, "distance")) {
 			segment.distance = makeDistance(segment);
 		}
-		console.log("augmentSegmentData augment pace to " + segment.pace);
+		// console.log("augmentSegmentData augment pace to " + segment.pace);
 	}
 	if (isValidSegment(segment)) {
 		segment.isValid = true;
 	} else {
 		segment.isValid = false;
 	}
-	console.log("augmentSegmentData augment TO " + JSON.stringify(segment));
+	// console.log("augmentSegmentData augment TO " + JSON.stringify(segment));
 	return segment;
 }
 
@@ -79,9 +79,9 @@ export function isDirtySegment(segment, segments) {
 	segments = clone(segments);
 	let storedSegment = null;
 	for (let i = 0, len = segments.length; i < len; i++) {
-		console.log("trainingUtils.isDirtySegment looking at segment: " + segments[i].uuid);
+		// console.log("trainingUtils.isDirtySegment looking at segment: " + segments[i].uuid);
 		if (segments[i].uuid === segment.uuid) {
-			console.log("trainingUtils.isDirtySegment found segment: " + segments[i].uuid);
+			// console.log("trainingUtils.isDirtySegment found segment: " + segments[i].uuid);
 			storedSegment = segments[i];
 			break;
 		}
@@ -90,29 +90,29 @@ export function isDirtySegment(segment, segments) {
 		return false;
 	}
 	let isDirtySegment = (storedSegment.distance !== segment.distance || storedSegment.duration !== segment.duration || storedSegment.pace !== segment.pace);
-	console.log("trainingUtils.isDirtySegment: " + JSON.stringify(segment) + " versus " + JSON.stringify(storedSegment) + ", dirty? " + isDirtySegment);
+	// console.log("trainingUtils.isDirtySegment: " + JSON.stringify(segment) + " versus " + JSON.stringify(storedSegment) + ", dirty? " + isDirtySegment);
 	return isDirtySegment;
 }
 
 export function canAugment(segment) {	
 	segment = clone(segment);
 	const can = (segment && (!segment.hasOwnProperty("distance") || segment.distance === "" || !segment.hasOwnProperty("duration") || segment.duration === "" || !segment.hasOwnProperty("pace") || segment.pace === ""));
-	console.log("canAugment: uuid: " + segment.uuid + ", can? " + can);
+	// console.log("canAugment: uuid: " + segment.uuid + ", can? " + can);
 	return can;
 }
 
 export function isValidSegment(segment) {
 	let segmentClone = clone(segment);
 	// if (makeDistance(segmentClone).toString() !== Number(segmentClone.distance).toFixed(3).toString()) {
-	// 	console.log("isValidSegment: false: " + Number(segmentClone.distance).toFixed(3) + "/" + makeDistance(segmentClone));
+	// 	// console.log("isValidSegment: false: " + Number(segmentClone.distance).toFixed(3) + "/" + makeDistance(segmentClone));
 	// 	return false;
 	// }	
 	if (makeDuration(segmentClone) !== segmentClone.duration) {
-		console.log("isValidSegment: false: " + segmentClone.duration);
+		// console.log("isValidSegment: false: " + segmentClone.duration);
 		return false;
 	}
 	if (makePace(segmentClone) !== segmentClone.pace) {
-		console.log("isValidSegment: false: " + segmentClone.pace);
+		// console.log("isValidSegment: false: " + segmentClone.pace);
 		return false;
 	}
 	return true;
@@ -124,7 +124,7 @@ export function isValidSegment(segment) {
 export function parseDuration(duration) {	
 	if (duration !== null && duration !== "" && !isNaN(duration)) {
 		let parsed = moment("2016-01-01").minutes(duration).format("HH:mm:ss");
-		console.log("parseDuration: " + duration + ", to " + parsed);
+		// console.log("parseDuration: " + duration + ", to " + parsed);
 		return parsed;
 	}
 	return duration;	
@@ -161,7 +161,7 @@ function makeDuration(segment) {
 		totalSeconds = Math.round(seconds * segment.distance),
 		durationObj = moment.duration(totalSeconds, "seconds");
 	let formattedDuration = formatDuration(durationObj);
-	console.log("formattedDuration: " + formattedDuration + ", " + paceObj.asSeconds());
+	// console.log("formattedDuration: " + formattedDuration + ", " + paceObj.asSeconds());
 	return formattedDuration;
 };
 
@@ -174,7 +174,7 @@ function makeDistance(segment) {
 		durationObj = moment.duration(segment.duration),
 		durationSeconds = durationObj.asSeconds(),
 		paceSeconds = paceObj.asSeconds() / 60;
-	console.log("makeDistance: seconds? " + durationSeconds + ", paceSeconds? " + paceSeconds);
+	// console.log("makeDistance: seconds? " + durationSeconds + ", paceSeconds? " + paceSeconds);
 	// TODO debug rounding with decimals
 	if (paceSeconds === 0 || durationSeconds === 0) {
 		return 0;
@@ -183,7 +183,7 @@ function makeDistance(segment) {
 	let distance = Math.round(rawDistance * 1000) / 1000;
 	let isNumeric = (typeof distance == 'number');
 	let isString = (typeof distance == 'string');
-	console.log("makeDistance: " + distance + ", nr? " + isNumeric + ", string? " + isString);
+	// console.log("makeDistance: " + distance + ", nr? " + isNumeric + ", string? " + isString);
 	return distance;
 };
 

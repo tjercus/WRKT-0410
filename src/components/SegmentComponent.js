@@ -7,6 +7,7 @@ import {createUuid, clone} from "../stores/miscUtil";
 export default class SegmentComponent extends React.Component {
 
   constructor(props) {
+    console.log("SegmentComponent constructed " + JSON.stringify(props.segment));
     super(props);
 
     this.state = {
@@ -26,7 +27,7 @@ export default class SegmentComponent extends React.Component {
   componentDidMount() {
     this.props.eventbus.on("SEGMENT_UPDATE_EVT", ((training) => {
       console.log("SegmentComponent caught SEGMENT_UPDATE_EVT " + JSON.stringify(training));
-      if (this.state.uuid === training.segment.uuid) { // && isDirtySegment(training.segment, [this.state])
+      if (this.state.uuid == training.segment.uuid) { // && isDirtySegment(training.segment, [this.state])
         // TODO fix
         this.setState({
           distance: training.segment.distance,
@@ -57,9 +58,9 @@ export default class SegmentComponent extends React.Component {
           this.setState({pace: val});
         break;
       }
-      if (this.state.uuid == null) {
+      if (this.state.uuid == null) { 
         this.setState({uuid: createUuid()});
-      }     
+      }
     }    
   }
 
@@ -82,7 +83,17 @@ export default class SegmentComponent extends React.Component {
     console.log("SegmentComponent.onCloneButtonClick");
     this.props.eventbus.emit("SEGMENT_CLONE_CMD", this.state);
   }
+
   onRemoveButtonClick() {
+    /*
+    let mountNode = ReactDOM.findDOMNode(this.refs.mount);
+    try {
+      React.unmountComponentAtNode(mountNode);
+    } catch (e) {
+      console.error(e);
+    }
+    */
+    //this.setState({uuid: null, distance: 0, duration: "00:00:00", pace: "00:00", isValid: true});
     this.props.eventbus.emit("SEGMENT_REMOVE_CMD", this.state);
   }
 
@@ -93,8 +104,9 @@ export default class SegmentComponent extends React.Component {
   }  
   
   render() {
-    console.log("SegmentComponent.render() distance: " + this.state.distance);
+    console.log("SegmentComponent.render(): uuid: " + this.state.uuid+ ", distance: " + this.state.distance);
     let rowClassName = (this.state.isValid) ? "valid" : "invalid";
+
     return (
       <tr className={rowClassName}>
         <td><input type="text" name="distance" value={this.state.distance} onChange={this.onChange} className="type-double" /></td>

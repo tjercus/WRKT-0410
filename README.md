@@ -16,6 +16,7 @@ Based on 'React eventemitter'.
 
 ### App
 - tests for stores
+- Redux?
 - use const instead of let when possible
 - use arrow functions when possible
 - notification feature
@@ -42,10 +43,10 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- training type icons and colors
 - plan.workout should be plan.workoutId
 - feature to add a training to a day, iaw: implement 'edit' button
 - show total km for a cycle
-- training type icons
 - use standard paces (MP, LT, 21KP, 10KP etc.)
 - buttons smaller or different type of nav
 - feature to allow adding a date to a start or end of a timeline (rest is calculated)
