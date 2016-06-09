@@ -62,16 +62,15 @@ export default class TrainingComponent extends React.Component {
           pace: "00:00"
         }
       }, 
-        function(_training) {
-          console.log("TrainingComponent.loadTraining clearTrainingFromLocalState cb: " + training.uuid);
-          this.setState({
-            uuid: training.uuid,
-            name: training.name,
-            segments: training.segments,
-            total: training.total
-          });
-        }
-      );
+      function() {
+        console.log("TrainingComponent.loadTraining clearTrainingFromLocalState cb: " + training.uuid);
+        this.setState({
+          uuid: training.uuid,
+          name: training.name,
+          segments: training.segments,
+          total: training.total
+        });
+      });
     // TODO get this working
     // this.clearTrainingFromLocalState(function(training) {      
     //   console.log("TrainingComponent.loadTraining clearTrainingFromLocalState cb: " + training.uuid);
@@ -93,8 +92,7 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.emit("TRAINING_CLEAR_CMD", this.state.uuid);
   }
 
-  clearTrainingFromLocalState(cb) {
-    console.log("clearTrainingFromLocalState");
+  clearTrainingFromLocalState() {    
     this.setState({
         isVisible: true,
         uuid: null,
@@ -105,7 +103,7 @@ export default class TrainingComponent extends React.Component {
           duration: "00:00:00",
           pace: "00:00"
         }
-      }, cb());
+      });
   }
   
   render() {
