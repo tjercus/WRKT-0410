@@ -28,8 +28,11 @@ Based on 'React eventemitter'.
 
 ### Training
 - fix bug where remove segment removes wrong segment
+- introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
+- move segment up or down
+- info as 400 pace (800, 1200, 1600)
 - display list of paces relative to mp/10kp/etc.
 - support comments for a training
 - save
@@ -42,7 +45,10 @@ Based on 'React eventemitter'.
 
 ### Timeline
 - better display of a day, ex: training type icons and colors
+- toggle list/calendar modus
 - feature to add a training to a day, iaw: implement 'edit' button
+- introduce plan selection component
+- 
 - show total km for a cycle
 - use standard paces (MP, LT, 21KP, 10KP etc.)
 - feature to allow adding a date to a start or end of a timeline (rest is calculated)
