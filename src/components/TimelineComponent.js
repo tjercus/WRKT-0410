@@ -3,6 +3,9 @@ import React from "react";
 import EventEmitter from "eventemitter2";
 import moment from "moment";
 
+import {clone} from "../stores/miscUtil";
+import {filterNonEasyDays} from "../stores/timelineUtil";
+
 const DAY_HEADER_DATE_FORMAT = "ddd, DD-MM-YYYY";
 
 export default class TimelineComponent extends React.Component {
@@ -16,6 +19,7 @@ export default class TimelineComponent extends React.Component {
     };    
     this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
+    this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
   }
 
   componentDidMount() {
@@ -43,7 +47,8 @@ export default class TimelineComponent extends React.Component {
   }
 
   onHideEasyRunsButtonClick(evt) {
-    //
+    let daysClone = clone(this.state.days);
+    this.setState({days: filterNonEasyDays(daysClone)});
   }
 
   onEditClick(evt) {

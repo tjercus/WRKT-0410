@@ -43,6 +43,18 @@ export function findDay(dayNr, days = [], trainings = []) {
 }
 
 /**
+* If support for multiple trainingsforday, then refactor to filterNonEasyTrainings/Workouts
+*/
+export function filterNonEasyDays(days = []) {
+  return days.filter((_day) => {
+    console.log("_day: " + JSON.stringify(_day));
+    if (_day.workout.name.toLowerCase().indexOf("easy") === -1) {
+      return true;
+    }
+  });  
+}
+
+/**
 * lookup training for a day by uuid and add it to itself
 */
 function augmentDay(day, trainings = []) {  
@@ -56,3 +68,4 @@ function augmentDay(day, trainings = []) {
   _day.workout.total = makeTrainingTotal(_day.workout.segments);
   return _day;
 }
+
