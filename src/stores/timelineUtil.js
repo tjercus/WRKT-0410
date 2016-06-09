@@ -43,29 +43,17 @@ export function findDay(dayNr, days = [], trainings = []) {
 }
 
 /**
-* If support for multiple trainingsforday, then refactor to filterNonEasyTrainings/Workouts
-*/
-export function filterNonEasyDays(days = []) {
-  return days.filter((_day) => {
-    console.log("_day: " + JSON.stringify(_day));
-    if (_day.workout.name.toLowerCase().indexOf("easy") === -1) {
-      return true;
-    }
-  });  
-}
-
-/**
 * lookup training for a day by uuid and add it to itself
 */
 function augmentDay(day, trainings = []) {  
   const _day = clone(day);
   const _trainings = clone(trainings);
-  let uuid = (typeof _day.workout === "string") ? _day.workout : _day.workout.uuid;  
+  let uuid = (typeof _day.trainingId === "string") ? _day.trainingId : null;
   // console.log("augmentDay: " + JSON.stringify(uuid));
-  _day.workout = findTraining(uuid, _trainings);
+  _day.training = findTraining(uuid, _trainings);
   // TODO catch when not found
   // console.log("augmentDay calling makeTrainingTotal for " + uuid);
-  _day.workout.total = makeTrainingTotal(_day.workout.segments);
+  _day.training.total = makeTrainingTotal(_day.training.segments);
   return _day;
 }
 

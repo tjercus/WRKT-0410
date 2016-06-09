@@ -16,7 +16,6 @@ Based on 'React eventemitter'.
 
 ### App
 - tests for stores
-- Redux?
 - use const instead of let when possible
 - use arrow functions when possible
 - notification feature
@@ -25,11 +24,10 @@ Based on 'React eventemitter'.
 - deploy on github pages
 - button to switch metric/imperial
 - events as constants
+- Flux architecture?
 
 ### Training
 - fix bug where remove segment removes wrong segment
-- fix bug where sometimes the wrong segments are loaded for a training
-- related: fix bug with first segment being set as null
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
 - display list of paces relative to mp/10kp/etc.
@@ -44,7 +42,6 @@ Based on 'React eventemitter'.
 
 ### Timeline
 - training type icons and colors
-- plan.workout should be plan.workoutId
 - feature to add a training to a day, iaw: implement 'edit' button
 - show total km for a cycle
 - use standard paces (MP, LT, 21KP, 10KP etc.)

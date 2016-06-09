@@ -9,7 +9,7 @@ export default class DayEditComponent extends React.Component {
       isVisible: false,
       dayNr: null,
       day: {
-        workout: {}
+        training: {}
       }
     };
     //this.onButtonClick = this.onButtonClick.bind(this); // TODO phat arrow
@@ -56,9 +56,9 @@ export default class DayEditComponent extends React.Component {
 
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
-    let workoutName = "no workout selected";
-    if (this.state.day !== null && this.state.day.workout !== undefined) {
-      workoutName = this.state.day.workout.name;
+    let trainingName = "no training selected";
+    if (this.state.day !== null && this.state.day.training !== undefined) {
+      trainingName = this.state.day.training.name;
     }
     return (
       <section className={panelClassName}>
@@ -66,7 +66,7 @@ export default class DayEditComponent extends React.Component {
           <p>Day Edit Screen</p>
         </header>
         <div className="panel-body">
-           {workoutName}
+           {trainingName}
         </div>
       </section>
     );
