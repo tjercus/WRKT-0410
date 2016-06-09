@@ -41,13 +41,11 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- training type icons and colors
+- better display of a day, ex: training type icons and colors
 - feature to add a training to a day, iaw: implement 'edit' button
 - show total km for a cycle
 - use standard paces (MP, LT, 21KP, 10KP etc.)
-- buttons smaller or different type of nav
 - feature to allow adding a date to a start or end of a timeline (rest is calculated)
 - import
 - export
-- subtle coloring grouping indication
 - import runkeeper csv

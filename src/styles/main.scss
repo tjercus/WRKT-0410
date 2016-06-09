@@ -268,7 +268,9 @@ div.days-list section.day-nowork {
 div.days-list section.day-easy {
   background-color: white;
 }
-
+div.days-list section.today {
+  border: 2px solid orange;
+}
 div.days-list section p {
   padding: 0.2em;
 }

@@ -69,6 +69,9 @@ export default class TimelineComponent extends React.Component {
         console.log("hiding day as easy " + day.training.name);
         sectionClassName += " day-easy";
       }
+      if (aDay.isSame(moment(new Date()), "day")) {
+        sectionClassName += " today";
+      }
 
     	if (i % this.state.cycleLength === 0) {    		
     		lies.push(<div key={"div" + i}>&nbsp;</div>);
@@ -80,7 +83,7 @@ export default class TimelineComponent extends React.Component {
       lies.push(
        	<section key={i} className={sectionClassName}>
       		<h3>{day.nr}. {dateStr}</h3>
-        	<p className="training-name">{day.training.name}, {(day.training.total.distance).toFixed(2)} km</p>
+        	<p className="training-name">{day.training.name}, {"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>
           <button className="button-small button-flat" onClick={this.onEditClick} value={day.nr}>edit</button>          
         </section>
       );
