@@ -17,7 +17,7 @@ export default class TrainingComponent extends React.Component {
       }
     };
     this.exportTraining = this.exportTraining.bind(this);
-    this.clearTraining = this.clearTraining.bind(this);
+    this.emitClearTraining = this.emitClearTraining.bind(this);
     this.clearTrainingFromLocalState = this.clearTrainingFromLocalState.bind(this);
     this.addEmptySegment = this.addEmptySegment.bind(this);
     this.loadTraining = this.loadTraining.bind(this);
@@ -32,7 +32,7 @@ export default class TrainingComponent extends React.Component {
       }
     }));
     this.props.eventbus.on("TRAINING_LOAD_EVT", ((training) => {
-      this.loadTraining(training);      
+      this.loadTraining(training);
     }));
     this.props.eventbus.on("SEGMENT_ADD_EVT", ((training) => {
       console.log("TrainingComponent after adding received " + JSON.stringify(training));
@@ -51,7 +51,32 @@ export default class TrainingComponent extends React.Component {
 
   loadTraining(training) {
     console.log("TrainingComponent TRAINING_LOAD_EVT nr of segments, len:" + training.segments.length + ", 0: " + JSON.stringify(training.segments[0]));
-    this.setState({uuid: training.uuid, name: training.name, segments: training.segments, total: training.total});
+    this.setState({
+        isVisible: true,
+        uuid: null,
+        name: "",
+        segments: [],
+        total: {
+          distance: 0,
+          duration: "00:00:00",
+          pace: "00:00"
+        }
+      }, 
+        function(_training) {
+          console.log("TrainingComponent.loadTraining clearTrainingFromLocalState cb: " + training.uuid);
+          this.setState({
+            uuid: training.uuid,
+            name: training.name,
+            segments: training.segments,
+            total: training.total
+          });
+        }
+      );
+    // TODO get this working
+    // this.clearTrainingFromLocalState(function(training) {      
+    //   console.log("TrainingComponent.loadTraining clearTrainingFromLocalState cb: " + training.uuid);
+    //   this.setState({uuid: training.uuid, name: training.name, segments: training.segments, total: training.total});
+    // }.bind(this));
   }
 
   addEmptySegment() {
@@ -64,11 +89,12 @@ export default class TrainingComponent extends React.Component {
     console.log(JSON.stringify({uuid: this.state.uuid, name: this.state.name, segments: this.state.segments}));    
   }
   
-  clearTraining() {
+  emitClearTraining() {
     this.props.eventbus.emit("TRAINING_CLEAR_CMD", this.state.uuid);
   }
 
-  clearTrainingFromLocalState() {
+  clearTrainingFromLocalState(cb) {
+    console.log("clearTrainingFromLocalState");
     this.setState({
         isVisible: true,
         uuid: null,
@@ -79,7 +105,7 @@ export default class TrainingComponent extends React.Component {
           duration: "00:00:00",
           pace: "00:00"
         }
-      });
+      }, cb());
   }
   
   render() {
@@ -126,7 +152,7 @@ export default class TrainingComponent extends React.Component {
               <button onClick={this.addEmptySegment} className="button-flat">add empty segment</button>
               <button onClick={this.exportTraining} className="button-flat">export training</button>
               <button onClick={this.openSaveDialog} className="button-flat">open save dialog</button>
-              <button onClick={this.clearTraining} className="button-flat button-warning">clear training</button>
+              <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>
             </menu>            
           </div>        
         </section>
