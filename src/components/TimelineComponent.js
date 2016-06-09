@@ -42,6 +42,10 @@ export default class TimelineComponent extends React.Component {
   	this.setState({cycleLength: evt.target.value});
   }
 
+  onHideEasyRunsButtonClick(evt) {
+    //
+  }
+
   onEditClick(evt) {
     let dayNr = evt.target.value;    
     this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", dayNr);    
@@ -79,6 +83,7 @@ export default class TimelineComponent extends React.Component {
         <header className="panel-header">
           <button className="button-small" onClick={this.onCycleLengthButtonClick} value="7">7 day cycle</button>
           <button className="button-small" onClick={this.onCycleLengthButtonClick} value="9">9 day cycle</button>
+          <button className="button-small" onClick={this.onHideEasyRunsButtonClick}>hide easy days</button>
         </header>
         <div className="panel-body">
            <div className="days-list">

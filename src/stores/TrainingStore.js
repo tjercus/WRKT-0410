@@ -21,25 +21,8 @@ export default class TrainingStore {
     }));
 
     eventbus.on("TRAINING_LOAD_CMD", ((uuid) => {
-      //this.clearTraining();
-      console.log("TrainingStore TRAINING_LOAD_CMD " + uuid + ", now holds " + this.segments.length + " segments");
-      let training = findTraining(uuid, trainings);
-      if (training !== null) {
-        console.log("TrainingStore TRAINING_LOAD_CMD, segment 0: " + JSON.stringify(this.segments[0]));
-        this.uuid = training.uuid;
-        this.name = training.name;
-        let _segments = training.segments.map((segment) => {
-          return augmentSegmentData(segment);
-        });
-        this.segments = _segments;
-        console.log("TrainingStore.constructor TRAINING_LOAD_CMD calling makeTrainingTotal for, segment 0: " + JSON.stringify(this.segments[0]));
-        this.total = makeTrainingTotal(this.segments);
-        console.log("TRAINING_LOAD_EVT now emitted with " + ", segment 0: " + JSON.stringify(this.segments[0]));
-        eventbus.emit("TRAINING_LOAD_EVT", {uuid: this.uuid, name: this.name, segments: this.segments, total: this.total});
-      }
-      console.log("TrainingStore TRAINING_LOAD_CMD (2) " + uuid + ", now holds " + this.segments.length + " segments");
-      // TODO handle else
-      console.log("TrainingStore finished TRAINING_LOAD_CMD for: " + uuid + ", segment 0: " + JSON.stringify(this.segments[0]));
+      this.clearTraining();
+      this.loadTraining(uuid, trainings);
     }));
 
     eventbus.on("TRAINING_CLEAR_CMD", ((uuid) => {
@@ -121,5 +104,27 @@ export default class TrainingStore {
     this.name = "undefined";
     this.segments = [];
     this.total = {};
+  }
+
+  loadTraining(uuid, trainings) {
+    let training = findTraining(uuid, trainings);
+    if (training !== null) {
+      console.log("TrainingStore TRAINING_LOAD_CMD, segment 0: " + JSON.stringify(this.segments[0]));
+      this.uuid = training.uuid;
+      this.name = training.name;
+      let _segments = training.segments.map((segment) => {
+        return augmentSegmentData(segment);
+      });
+      this.segments = _segments;
+      console.log("TrainingStore.constructor TRAINING_LOAD_CMD calling makeTrainingTotal for, segment 0: " + JSON.stringify(this.segments[0]));
+      this.total = makeTrainingTotal(this.segments);
+      console.log("TRAINING_LOAD_EVT now emitted with " + ", segment 0: " + JSON.stringify(this.segments[0]));
+      this.eventbus.emit("TRAINING_LOAD_EVT", {
+        uuid: this.uuid,
+        name: this.name,
+        segments: this.segments,
+        total: this.total
+      });
+    }
   }
 }
