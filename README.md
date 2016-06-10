@@ -15,6 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- ES6 string concatenation
 - tests for stores
 - use const instead of let when possible
 - use arrow functions when possible
@@ -28,6 +29,7 @@ Based on 'React eventemitter'.
 
 ### Training
 - fix bug where remove segment removes wrong segment
+- recalculate total after 'calc' buttonclick
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
@@ -48,7 +50,6 @@ Based on 'React eventemitter'.
 - toggle list/calendar modus
 - feature to add a training to a day, iaw: implement 'edit' button
 - introduce plan selection component
-- 
 - show total km for a cycle
 - use standard paces (MP, LT, 21KP, 10KP etc.)
 - feature to allow adding a date to a start or end of a timeline (rest is calculated)

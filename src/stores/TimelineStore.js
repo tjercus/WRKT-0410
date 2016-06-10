@@ -16,10 +16,10 @@ export default class TimelineStore {
     eventbus.on("PLAN_LOAD_CMD", (() => {
       console.log("TimelineStore: received PLAN_LOAD_CMD for default plan");
       let plan = findPlan(this.uuid, plans, trainings);
-      this.days = plan.days;
-      console.log("PLAN_LOAD_CMD after findPlan nr of days: " + JSON.stringify(this.days.length));
-      eventbus.emit("PLAN_LOAD_EVT", plan.days);
-    }));    
+      this.microcycles = plan.microcycles;
+      console.log("PLAN_LOAD_CMD after findPlan nr of microcycles: " + this.microcycles.length);
+      eventbus.emit("PLAN_LOAD_EVT", plan.microcycles);
+    }));
 
     eventbus.on("DAY_LOAD_CMD", ((dayNr) => {
       console.log("TimelineStore: received DAY_LOAD_CMD for " + dayNr + ", currently holding " + this.days.length);
