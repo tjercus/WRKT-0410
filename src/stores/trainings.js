@@ -338,5 +338,83 @@ export const trainings = [
         { "uuid": "929", "distance": 2.000, "pace": "@RECOV" }
     ]
 },
-{"uuid":"5374128e-1d89-11e7-b014-a7739b3e7391","name":"6 x 860 hills @5KP/10KP","segments":[{"uuid":"80","distance":2,"pace":"05:30","duration":"00:11:00","isValid":true},{"uuid":"81","distance":"0.860","duration":"00:03:11","pace":"03:42","isValid":true},{"uuid":"82","distance":"0.3","duration":"00:02:00","pace":"06:40","isValid":true},{"uuid":"83","distance":"0.860","duration":"00:03:19","pace":"03:51","isValid":true},{"uuid":"84","distance":"0.3","duration":"00:02:00","pace":"06:40","isValid":true},{"uuid":"85","distance":"0.860","duration":"00:03:11","pace":"03:42","isValid":true},{"uuid":"86","distance":"0.3","duration":"00:01:30","pace":"05:00","isValid":true},{"uuid":"87","distance":"0.860","duration":"00:03:05","pace":"03:35","isValid":true},{"uuid":"88","distance":"0.3","duration":"00:01:30","pace":"05:00","isValid":true},{"uuid":"89","distance":"0.860","duration":"00:03:01","pace":"03:30","isValid":true},{"uuid":"90","distance":"0.3","duration":"00:01:30","pace":"05:00","isValid":true},{"uuid":"91","distance":"0.860","duration":"00:03:01","pace":"03:30","isValid":true},{"uuid":"92","distance":"1.5","duration":"00:08:15","pace":"05:30","isValid":true}]}
+{"uuid":"5374128e-1d89-11e7-b014-a7739b3e7391","name":"6 x 860 hills @5KP/10KP","segments":[
+{"uuid":"80","distance":2,"pace":"05:30","duration":"00:11:00","isValid":true},
+{"uuid":"81","distance":"0.860","duration":"00:03:11","pace":"03:42","isValid":true},
+{"uuid":"82","distance":"0.3","duration":"00:02:00","pace":"06:40","isValid":true},{"uuid":"83","distance":"0.860","duration":"00:03:19","pace":"03:51","isValid":true},
+{"uuid":"84","distance":"0.3","duration":"00:02:00","pace":"06:40","isValid":true},{"uuid":"85","distance":"0.860","duration":"00:03:11","pace":"03:42","isValid":true},
+{"uuid":"86","distance":"0.3","duration":"00:01:30","pace":"05:00","isValid":true},{"uuid":"87","distance":"0.860","duration":"00:03:05","pace":"03:35","isValid":true},
+{"uuid":"88","distance":"0.3","duration":"00:01:30","pace":"05:00","isValid":true},{"uuid":"89","distance":"0.860","duration":"00:03:01","pace":"03:30","isValid":true},
+{"uuid":"90","distance":"0.3","duration":"00:01:30","pace":"05:00","isValid":true},{"uuid":"91","distance":"0.860","duration":"00:03:01","pace":"03:30","isValid":true},
+{"uuid":"92","distance":"1.5","duration":"00:08:15","pace":"05:30","isValid":true}]},
+
+  {
+  "uuid": "acc3d1b9-33ae-4d70-dda3-d0e885f516f4",
+  "name": "5 x 1.5km @10KP",
+  "segments": [{
+    "uuid": "1",
+    "distance": "3",
+    "duration": "00:15:30",
+    "pace": "05:10",
+    "isValid": true
+  }, {
+    "uuid": "2",
+    "distance": "1.5",
+    "duration": "00:05:51",
+    "pace": "03:54",
+    "isValid": true
+  }, {
+    "uuid": "3",
+    "distance": "0.5",
+    "duration": "00:02:55",
+    "pace": "05:50",
+    "isValid": true
+  }, {
+    "uuid": "4",
+    "distance": "1.5",
+    "duration": "00:05:33",
+    "pace": "03:42",
+    "isValid": true
+  }, {
+    "uuid": "5",
+    "distance": "0.5",
+    "duration": "00:02:55",
+    "pace": "05:50",
+    "isValid": true
+  }, {
+    "uuid": "6",
+    "distance": "1.5",
+    "duration": "00:05:20",
+    "pace": "03:33",
+    "isValid": true
+  }, {
+    "uuid": "7",
+    "distance": "0.5",
+    "duration": "00:02:55",
+    "pace": "05:50",
+    "isValid": true
+  }, {
+    "uuid": "8",
+    "distance": "1.5",
+    "duration": "00:05:34",
+    "pace": "03:37"
+  }, {
+    "uuid": "9",
+    "distance": "0.5",
+    "duration": "00:03:00",
+    "pace": "06:00",
+    "isValid": true
+  }, {
+    "uuid": "10",
+    "distance": "1.5",
+    "duration": "00:05:28",
+    "pace": "03:39"
+  }, {
+    "uuid": "13",
+    "distance": 2,
+    "pace": "05:32",
+    "isValid": true
+  }]
+}
+
 ];

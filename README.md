@@ -29,7 +29,6 @@ Based on 'React eventemitter'.
 
 ### Training
 - fix bug where remove segment removes wrong segment
-- recalculate total after 'calc' buttonclick
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type

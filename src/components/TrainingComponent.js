@@ -24,33 +24,36 @@ export default class TrainingComponent extends React.Component {
   }
   
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", ((menuItemName) => {
+    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
       if (menuItemName === this.props.from) {
         this.setState({isVisible: true});
       } else {
         this.setState({isVisible: false});
       }
-    }));
-    this.props.eventbus.on("TRAINING_LOAD_EVT", ((training) => {
+    });
+    this.props.eventbus.on("TRAINING_LOAD_EVT", (training) => {
       this.loadTraining(training);
-    }));
-    this.props.eventbus.on("SEGMENT_ADD_EVT", ((training) => {
-      console.log("TrainingComponent after adding received " + JSON.stringify(training));
+    });
+    this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
       this.setState({segments: training.segments, total: training.total});      
-    }));
-    this.props.eventbus.on("SEGMENT_REMOVE_EVT", ((training) => {      
-      console.log("TrainingComponent: caught SEGMENT_REMOVE_EVT, segments length: " + training.segments.length);      
+    });
+    this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {   
       this.setState({segments: training.segments, total: training.total}, function() {
-        console.log("TrainingComponent finished updating state with new segments");
+        //console.log("TrainingComponent finished updating state with new segments");
       });
-    }));
-    this.props.eventbus.on("TRAINING_CLEAR_EVT", ((uuid) => {
+    });
+    this.props.eventbus.on("TRAINING_CLEAR_EVT", (uuid) => {
       this.clearTrainingFromLocalState();
-    }));
+    });
+    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (segment) => {      
+      //console.log("TrainingComponent: caught SEGMENT_UPDATE_EVT");      
+      this.setState({total: segment.total}, function() {
+        console.log("TrainingComponent finished updating state with total");
+      });
+    });
   }
 
   loadTraining(training) {
-    console.log("TrainingComponent TRAINING_LOAD_EVT nr of segments, len:" + training.segments.length + ", 0: " + JSON.stringify(training.segments[0]));
     this.setState({
         isVisible: true,
         uuid: null,
@@ -63,7 +66,6 @@ export default class TrainingComponent extends React.Component {
         }
       }, 
       function() {
-        console.log("TrainingComponent.loadTraining clearTrainingFromLocalState cb: " + training.uuid);
         this.setState({
           uuid: training.uuid,
           name: training.name,
@@ -109,13 +111,9 @@ export default class TrainingComponent extends React.Component {
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     let segmentComponents = [];
-    console.log("TrainingComponent.render() starting with local array len: " + segmentComponents.length);
-    console.log("TrainingComponent.render() segment 0: " + JSON.stringify(this.state.segments[0]));
 
     this.state.segments.forEach((segment, i) => {
-      console.log("TrainingComponent: re-rendering segment, segment: " + JSON.stringify(segment));
-      let cEl = <SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />;
-      segmentComponents.push(cEl);
+      segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />);
     });
 
     let totalDistance = 0;

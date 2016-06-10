@@ -7,9 +7,7 @@ import {createUuid, clone} from "../stores/miscUtil";
 export default class SegmentComponent extends React.Component {
 
   constructor(props) {
-    console.log("SegmentComponent constructed " + JSON.stringify(props.segment));
     super(props);
-
     this.state = {
       uuid: clone(props.segment.uuid),
       distance: clone(props.segment.distance),
@@ -25,8 +23,8 @@ export default class SegmentComponent extends React.Component {
   }
   
   componentDidMount() {
-    this.props.eventbus.on("SEGMENT_UPDATE_EVT", ((training) => {
-      console.log("SegmentComponent caught SEGMENT_UPDATE_EVT " + JSON.stringify(training));
+    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (training) => {
+      //console.log("SegmentComponent caught SEGMENT_UPDATE_EVT " + JSON.stringify(training));
       if (this.state.uuid == training.segment.uuid) { // && isDirtySegment(training.segment, [this.state])
         // TODO fix
         this.setState({
@@ -36,7 +34,7 @@ export default class SegmentComponent extends React.Component {
           isValid: training.segment.isValid
         });
       }
-    }));
+    });
   }
 
   componentWillUnmount() {
@@ -69,42 +67,33 @@ export default class SegmentComponent extends React.Component {
     this.setState({duration: parseDuration(val)});
   }
 
-  onCalcButtonClick(evt) {    
+  onCalcButtonClick(evt) {
     // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)
     if (canAugment(this.state)) {
       this.props.eventbus.emit("SEGMENT_UPDATE_CMD", this.state);
     } else {
-      console.log("onCalcButtonClick (" + name + ") not sending event because segment was NOT eligable for augmentation");      
+      //console.log("onCalcButtonClick (" + name + ") not sending event because segment was NOT eligable for augmentation");      
       this.setState({isValid: isValidSegment(this.state)});
     }
   }
 
   onCloneButtonClick() {
-    console.log("SegmentComponent.onCloneButtonClick");
+    //console.log("SegmentComponent.onCloneButtonClick");
     this.props.eventbus.emit("SEGMENT_CLONE_CMD", this.state);
   }
 
   onRemoveButtonClick() {
-    /*
-    let mountNode = ReactDOM.findDOMNode(this.refs.mount);
-    try {
-      React.unmountComponentAtNode(mountNode);
-    } catch (e) {
-      console.error(e);
-    }
-    */
-    //this.setState({uuid: null, distance: 0, duration: "00:00:00", pace: "00:00", isValid: true});
     this.props.eventbus.emit("SEGMENT_REMOVE_CMD", this.state);
   }
 
   isDirtyValue(name, value) {
     let isDirty = (this.state[name] !== value);
-    console.log("SegmentComponent.isDirtyValue: " + name + "/" + value + ", " + isDirty);
+    //console.log("SegmentComponent.isDirtyValue: " + name + "/" + value + ", " + isDirty);
     return isDirty;
   }  
   
   render() {
-    console.log("SegmentComponent.render(): uuid: " + this.state.uuid+ ", distance: " + this.state.distance);
+    //console.log("SegmentComponent.render(): uuid: " + this.state.uuid+ ", distance: " + this.state.distance);
     let rowClassName = (this.state.isValid) ? "valid" : "invalid";
 
     return (

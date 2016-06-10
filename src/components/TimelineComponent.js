@@ -22,16 +22,16 @@ export default class TimelineComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", ((menuItemName) => {
+    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
       if (menuItemName === this.props.from) {
         this.setState({isVisible: true});
       } else {
         this.setState({isVisible: false});
       }
-    }));
-    this.props.eventbus.on("PLAN_LOAD_EVT", ((microcycles) => {
+    });
+    this.props.eventbus.on("PLAN_LOAD_EVT", (microcycles) => {
     	this.setState({microcycles: microcycles});
-    }));
+    });
     this.props.eventbus.emit("PLAN_LOAD_CMD");
   }
 
@@ -55,14 +55,12 @@ export default class TimelineComponent extends React.Component {
   }
 
   render() {
-    console.log("render " + this.state.microcycles.length);
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
     let aDay = moment("2016-05-07");
 
     let microcycleElements = [];
     this.state.microcycles.forEach((microcycle, i) => {
-      //console.log("looping over microcycle " + i);
 
       microcycle.days.forEach((day, j) => {        
   			aDay.add(1, "days");
