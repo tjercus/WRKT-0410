@@ -27,15 +27,23 @@ let training = {
 
 test("removeSegment should find and destroy a segment", (assert) => {  
   let eventbus = new EventEmitter({wildcard: true, maxListeners: 1}); //sinon.spy();
-  const store = new TrainingStore(eventbus);
-  assert.equal(store.segments.length, 0);
+  const trainings = [];
+  trainings.push(training);
+  //assert.equal(store.segments.length, 0);
+  const store = new TrainingStore(eventbus, trainings);
+
+  eventbus.on("TRAINING_LOAD_EVT", (obj) => {
+    assert.equal(store.segments.length, 10, "should have loaded 10 segments after TRAINING_LOAD_EVT");
+  });
   
   // ask store to load training
   eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
-  assert.equal(store.segments.length, 3);
 
   store.removeSegment({"uuid": "blah-11"});
-  assert.equal(store.segments.length, 2);
+  setTimeout(function () {
+    assert.equal(store.segments.length, 9);
+     assert.end();
+  }, 100);
   // TODO assert spy was called
-  assert.end();
+ 
 });

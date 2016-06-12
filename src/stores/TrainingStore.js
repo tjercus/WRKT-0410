@@ -5,7 +5,7 @@ import {createUuid, clone} from "./miscUtil";
 
 export default class TrainingStore {
 	
-	constructor(eventbus) {
+	constructor(eventbus, _trainings = null) {
     this.eventbus = eventbus;
 		this.uuid = null;
     this.name = "undefined";
@@ -14,7 +14,9 @@ export default class TrainingStore {
       distance: 0,
       duration: "00:00:00",
       pace: "00:00"
-    };    
+    };
+    // first look at optional constructor parameter then look at imported trainings.js
+    this.trainings = _trainings || trainings;
 
     eventbus.on("TRAINING_LIST_CMD", () => {
       eventbus.emit("TRAINING_LIST_EVT", trainings);
@@ -22,7 +24,7 @@ export default class TrainingStore {
 
     eventbus.on("TRAINING_LOAD_CMD", (uuid) => {
       this.clearTraining();
-      this.loadTraining(uuid, trainings);
+      this.loadTraining(uuid, this.trainings);
     });
 
     eventbus.on("TRAINING_CLEAR_CMD", (uuid) => {
@@ -79,7 +81,7 @@ export default class TrainingStore {
     this.eventbus.emit("SEGMENT_UPDATE_EVT", {segment: this.segments[i], total: this.total});
   }
 
-  removeSegment(segment) {    
+  removeSegment(segment) {
     //console.log("TrainingStore.removeSegment (1): " + this.segments.length);
     let _segments = clone(this.segments);
     for (let i = 0, len = _segments.length; i < len; i++) {
