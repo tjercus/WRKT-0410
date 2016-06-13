@@ -60,3 +60,11 @@ test("hasNoRealValue should should work for null", (assert) => {
   assert.notOk(hasNoRealValue(value), "should be false for [" + value + "]");
   assert.end();
 });
+
+test("clone should clone with real numerics", (assert) => {
+  const obj = {
+    age: 40
+  };
+  assert.equal((typeof clone(obj).age), "number", "should be number for [" + obj.age + "]");
+  assert.end();
+});

@@ -100,10 +100,8 @@ test("findPlan should find and augment the default plan", (assert) => {
 
 test("findDay should find a day by nr", (assert) => {
   console.log("@ " + JSON.stringify(plans[0]));
-  let days = plans[0]["microcycles"][0]["days"];
-  assert.equal(days.length, 7, "not enough days where found");
-  assert.notOk(days[0] === null, "day not found in testdata");
-  let day = findDay(2, days, trainings);
+  let microcycles = plans[0]["microcycles"];  
+  let day = findDay(2, microcycles, trainings);
   assert.notOk(day === null);
   assert.ok(typeof day === "object");    
   assert.equal(day.nr, 2);  

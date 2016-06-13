@@ -18,12 +18,12 @@ Based on 'React eventemitter'.
 - ES6 string concatenation
 - Better tests for stores, test eventemitter with spies (and/or do actual work in util that returns a promise)
 - Tape coverage
+- TrainingListComponent should supports categories as accordion or tagcloud
 - use const instead of let when possible
 - use arrow functions when possible
 - notification feature
 - yellow hint of change
 - button click 'animation'
-- deploy on github pages
 - button to switch metric/imperial
 - events as constants
 - Flux architecture?

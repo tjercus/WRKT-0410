@@ -5,9 +5,10 @@ import {findPlan, findDay} from "./timelineUtil";
 
 export default class TimelineStore {
 	
+  // TODO pass trainings as optional constructor param
 	constructor(eventbus) {
     this.eventbus = eventbus;
-    this.days = [];
+    this.microcycles = [];
     this.day = {};
 
     // TODO allow input from a GUI-list (ex: 'PlansListComponent')
@@ -22,10 +23,10 @@ export default class TimelineStore {
     }));
 
     eventbus.on("DAY_LOAD_CMD", ((dayNr) => {
-      console.log("TimelineStore: received DAY_LOAD_CMD for " + dayNr + ", currently holding " + this.days.length);
+      console.log("TimelineStore: received DAY_LOAD_CMD for " + dayNr + ", number? " + !isNaN(dayNr) + " currently holding cycles: " + this.microcycles.length);
       let day = this.day;
-      if (!this.day || this.day.nr !== dayNr) {
-        this.day = findDay(dayNr, this.days, trainings);
+      if (!this.day || this.day.nr != dayNr) {
+        this.day = findDay(dayNr, this.microcycles, trainings);
       }
       eventbus.emit("DAY_LOAD_EVT", this.day);
     }));

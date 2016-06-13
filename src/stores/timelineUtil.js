@@ -16,31 +16,35 @@ export function findPlan(uuid, plans = [], trainings = []) {
 
   let plan = _plans.find((_plan) => {
     if (_plan.uuid === uuid) return _plan;
-  });  
+  });
   let _days = [];
   let _microcycles = [];
+  if (plan === null || plan === undefined) {
+    throw new Error(`plan not found ${uuid}`);
+  }
   plan.microcycles.forEach((_microcycle, i) => {
     _days = [];
     _microcycle.days.forEach((_day, j) => {
       _days.push(augmentDay(_day, _trainings));
     });
     _microcycle.days = _days;
-    _microcycles.push(_microcycle);    
+    _microcycles.push(_microcycle);
   });
-  plan.microcycles = _microcycles;  
+  plan.microcycles = _microcycles;
   return plan;
 }
 
-export function findDay(dayNr, days = [], trainings = []) {
-  const _days = clone(days);
+export function findDay(dayNr, microcycles = [], trainings = []) {
+  const _microcycles = clone(microcycles);
   const _trainings = clone(trainings);
   let found = null;
-  // TODO use higher order function like find/map whatever
-  for (let i = 0, len = _days.length; i < len; i++) {
-    if (_days[0] !== null && _days[i]["nr"] == dayNr) {
-      found = augmentDay(_days[i], _trainings);
-    }
-  }
+  _microcycles.map(_microcycle => {
+    _microcycle.days.forEach((_day, j) => {
+      if (_day["nr"] == dayNr) {
+        found = augmentDay(_day, _trainings);
+      }
+    });
+  });
   return found;
 }
 
