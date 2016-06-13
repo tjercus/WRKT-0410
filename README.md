@@ -16,7 +16,8 @@ Based on 'React eventemitter'.
 
 ### App
 - ES6 string concatenation
-- tests for stores
+- Better tests for stores, test eventemitter with spies (and/or do actual work in util that returns a promise)
+- Tape coverage
 - use const instead of let when possible
 - use arrow functions when possible
 - notification feature
@@ -28,7 +29,6 @@ Based on 'React eventemitter'.
 - Flux architecture?
 
 ### Training
-- fix bug where remove segment removes wrong segment
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type

@@ -24,9 +24,7 @@ export default class SegmentComponent extends React.Component {
   
   componentDidMount() {
     this.props.eventbus.on("SEGMENT_UPDATE_EVT", (training) => {
-      //console.log("SegmentComponent caught SEGMENT_UPDATE_EVT " + JSON.stringify(training));
-      if (this.state.uuid == training.segment.uuid) { // && isDirtySegment(training.segment, [this.state])
-        // TODO fix
+      if (this.state.uuid == training.segment.uuid) {
         this.setState({
           distance: training.segment.distance,
           duration: training.segment.duration,
@@ -71,29 +69,25 @@ export default class SegmentComponent extends React.Component {
     // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)
     if (canAugment(this.state)) {
       this.props.eventbus.emit("SEGMENT_UPDATE_CMD", this.state);
-    } else {
-      //console.log("onCalcButtonClick (" + name + ") not sending event because segment was NOT eligable for augmentation");      
+    } else {      
       this.setState({isValid: isValidSegment(this.state)});
     }
   }
 
-  onCloneButtonClick() {
-    //console.log("SegmentComponent.onCloneButtonClick");
+  onCloneButtonClick() {    
     this.props.eventbus.emit("SEGMENT_CLONE_CMD", this.state);
   }
 
   onRemoveButtonClick() {
+    console.log("SegmentComponent.onRemoveButtonClick() SEGMENT_REMOVE_CMD: " + JSON.stringify(this.state));
     this.props.eventbus.emit("SEGMENT_REMOVE_CMD", this.state);
   }
 
-  isDirtyValue(name, value) {
-    let isDirty = (this.state[name] !== value);
-    //console.log("SegmentComponent.isDirtyValue: " + name + "/" + value + ", " + isDirty);
-    return isDirty;
+  isDirtyValue(name, value) {    
+    return (this.state[name] !== value);
   }  
   
   render() {
-    //console.log("SegmentComponent.render(): uuid: " + this.state.uuid+ ", distance: " + this.state.distance);
     let rowClassName = (this.state.isValid) ? "valid" : "invalid";
 
     return (

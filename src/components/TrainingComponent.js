@@ -36,17 +36,20 @@ export default class TrainingComponent extends React.Component {
     });
     this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
       this.setState({segments: training.segments, total: training.total});      
-    });
-    this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {   
-      this.setState({segments: training.segments, total: training.total}, function() {
-        //console.log("TrainingComponent finished updating state with new segments");
-      });
+    });   
+    
+    this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
+      this.setState({segments: [], total: {}}, function() {
+        console.log("TrainingComponent emptied segments");
+        this.setState({segments: training.segments, total: training.total}, function() {
+          console.log("TrainingComponent finished updating state with new segments");
+        });
+      });      
     });
     this.props.eventbus.on("TRAINING_CLEAR_EVT", (uuid) => {
       this.clearTrainingFromLocalState();
     });
-    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (segment) => {      
-      //console.log("TrainingComponent: caught SEGMENT_UPDATE_EVT");      
+    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (segment) => {
       this.setState({total: segment.total}, function() {
         console.log("TrainingComponent finished updating state with total");
       });
