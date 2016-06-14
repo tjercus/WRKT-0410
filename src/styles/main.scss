@@ -240,17 +240,20 @@ a {
 
 div.days-list {
   list-style: none;
-  font-size: x-small;
+  font-size: small;
   display: inline;
 }
 div.days-list section.day {
-  display: inline-block;
-  list-style-type: none;  
+  display: inline-block;  
   border: 0;
-  margin: 0.1em;
-  padding: 0;
-  width: 15em;
-  height: auto;  
+  margin: 0.2em;
+  padding: 0.2em;
+  width: 17em;
+  height: 8em;
+}
+div.days-list section.day p {
+  margin-bottom: 0.1em;
+  margin-top: 0.1em;
 }
 div.days-list section.day h3 {
   font-size: 1em;
@@ -266,7 +269,11 @@ div.days-list section.day-nowork {
   background-color: #ffe6e6;
 }
 div.days-list section.day-easy {
-  background-color: white;
+  background-color: white;  
+}
+div.days-list section.day-workout p.training-name {
+  font-weight: bold;
+  color: red;
 }
 div.days-list section.today {
   border: 2px solid orange;

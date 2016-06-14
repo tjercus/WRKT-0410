@@ -5,7 +5,7 @@ import moment from "moment";
 
 import {clone} from "../stores/miscUtil";
 
-const DAY_HEADER_DATE_FORMAT = "ddd, DD-MM-YYYY";
+const DAY_HEADER_DATE_FORMAT = "dddd, DD-MM-YYYY";
 
 export default class TimelineComponent extends React.Component {
 	
@@ -66,13 +66,19 @@ export default class TimelineComponent extends React.Component {
   			aDay.add(1, "days");
 
         let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
-      	let sectionClassName = this.isNonWorkday(aDay) ? "day day-nowork" : "day day-work";
+      	let sectionClassNames = [];
+        this.isNonWorkday(aDay) ?
+          sectionClassNames.push("day day-nowork") :
+          sectionClassNames.push("day day-work");
+
         if (this.state.showEasyDays === false && day.training.type === "easy") {
-          console.log("hiding day as easy " + day.training.name);
-          sectionClassName += " day-easy";
-        }
+          sectionClassNames.push("day-easy");
+        } 
+        if (day.training.type === "workout") {
+          sectionClassNames.push("day-workout");
+        }        
         if (aDay.isSame(moment(new Date()), "day")) {
-          sectionClassName += " today";
+          sectionClassNames.push("today");
         }
 
       	if (j % 7 === 0) {
@@ -81,9 +87,10 @@ export default class TimelineComponent extends React.Component {
       	
        // TODO support multiple trainings per day
         microcycleElements.push(
-         	<section key={i + "-" + j} className={sectionClassName}>
+         	<section key={i + "-" + j} className={sectionClassNames.join(" ")}>
         		<h3>{day.nr}. {dateStr}</h3>
-          	<p className="training-name">{day.training.name}, {"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>
+          	<p className="training-name">{day.training.name}</p>
+            <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>
             <button className="button-small button-flat" onClick={this.onEditClick} value={day.nr}>edit</button>          
           </section>
         );
