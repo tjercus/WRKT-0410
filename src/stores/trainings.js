@@ -334,21 +334,27 @@ export const trainings = [
         { "uuid": "876", "distance": 0.400, "pace": "@5KP" },
         { "uuid": "907", "distance": 0.400, "pace": "@RECOV" },
         { "uuid": "878", "distance": 0.400, "pace": "@5KP" },
-
         { "uuid": "929", "distance": 2.000, "pace": "@RECOV" }
     ]
-},
-{"uuid":"5374128e-1d89-11e7-b014-a7739b3e7391","name":"6 x 860 hills @5KP/10KP","segments":[
-{"uuid":"80","distance":2,"pace":"05:30","duration":"00:11:00","isValid":true},
-{"uuid":"81","distance":"0.860","duration":"00:03:11","pace":"03:42","isValid":true},
-{"uuid":"82","distance":"0.3","duration":"00:02:00","pace":"06:40","isValid":true},{"uuid":"83","distance":"0.860","duration":"00:03:19","pace":"03:51","isValid":true},
-{"uuid":"84","distance":"0.3","duration":"00:02:00","pace":"06:40","isValid":true},{"uuid":"85","distance":"0.860","duration":"00:03:11","pace":"03:42","isValid":true},
-{"uuid":"86","distance":"0.3","duration":"00:01:30","pace":"05:00","isValid":true},{"uuid":"87","distance":"0.860","duration":"00:03:05","pace":"03:35","isValid":true},
-{"uuid":"88","distance":"0.3","duration":"00:01:30","pace":"05:00","isValid":true},{"uuid":"89","distance":"0.860","duration":"00:03:01","pace":"03:30","isValid":true},
-{"uuid":"90","distance":"0.3","duration":"00:01:30","pace":"05:00","isValid":true},{"uuid":"91","distance":"0.860","duration":"00:03:01","pace":"03:30","isValid":true},
-{"uuid":"92","distance":"1.5","duration":"00:08:15","pace":"05:30","isValid":true}]},
-
-  {
+}, {
+    "uuid":"5374128e-1d89-11e7-b014-a7739b3e7391",
+    "name":"6 x 860 hills @5KP/10KP",
+    "segments":[
+        {"uuid":"80","distance":2,"pace":"05:30","duration":"00:11:00"},
+        {"uuid":"81","distance":"0.860","duration":"00:03:11","pace":"03:42"},
+        {"uuid":"82","distance":"0.3","duration":"00:02:00","pace":"06:40"},
+        {"uuid":"83","distance":"0.860","duration":"00:03:19","pace":"03:51"},
+        {"uuid":"84","distance":"0.3","duration":"00:02:00","pace":"06:40"},
+        {"uuid":"85","distance":"0.860","duration":"00:03:11","pace":"03:42"},
+        {"uuid":"86","distance":"0.3","duration":"00:01:30","pace":"05:00"},
+        {"uuid":"87","distance":"0.860","duration":"00:03:05","pace":"03:35"},
+        {"uuid":"88","distance":"0.3","duration":"00:01:30","pace":"05:00"},
+        {"uuid":"89","distance":"0.860","duration":"00:03:01","pace":"03:30"},
+        {"uuid":"90","distance":"0.3","duration":"00:01:30","pace":"05:00"},
+        {"uuid":"91","distance":"0.860","duration":"00:03:01","pace":"03:30"},
+        {"uuid":"92","distance":"1.5","duration":"00:08:15","pace":"05:30"}
+    ]
+}, {
   "uuid": "acc3d1b9-33ae-4d70-dda3-d0e885f516f4",
   "name": "5 x 1.5km @10KP",
   "segments": [{
@@ -415,6 +421,21 @@ export const trainings = [
     "pace": "05:32",
     "isValid": true
   }]
+}, {
+    "uuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+    "name": "4 x 2km Cruise intervals",
+    "type": "workout",
+    "segments": [
+        { "uuid": "8011", "distance": 2.000, "pace": "@RECOV" },
+        { "uuid": "8121", "distance": 2.000, "pace": "@LT" },
+        { "uuid": "8231", "duration": "00:01:00", "pace": "@RECOV" },        
+        { "uuid": "8121", "distance": 2.000, "pace": "@LT" },
+        { "uuid": "8231", "duration": "00:01:00", "pace": "@RECOV" },
+        { "uuid": "8121", "distance": 2.000, "pace": "@LT" },
+        { "uuid": "8231", "duration": "00:01:00", "pace": "@RECOV" },
+        { "uuid": "8121", "distance": 2.000, "pace": "@LT" },
+        { "uuid": "8231", "duration": "00:01:00", "pace": "@RECOV" },
+        { "uuid": "9291", "distance": 2.000, "pace": "@RECOV" }
+    ]
 }
-
 ];

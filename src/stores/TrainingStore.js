@@ -33,22 +33,16 @@ export default class TrainingStore {
     });
 
 		eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {
-      //if (isDirtySegment(segment, this.segments)) {
         this.updateSegment(segment);
-        //console.log("TrainingStore: updated to " + JSON.stringify(segment));
-      //}
     });
     eventbus.on("SEGMENT_ADD_CMD", (segment) => {
       this.addSegment(segment);
-      //console.log("TrainingStore: added " + JSON.stringify(segment));
     });
     eventbus.on("SEGMENT_REMOVE_CMD", (segment) => {
       this.removeSegment(segment);
-      //console.log("TrainingStore: removed " + JSON.stringify(segment));
     });
     eventbus.on("SEGMENT_CLONE_CMD", (segment) => {      
       this.addSegment(segment, true);
-      //console.log("TrainingStore: cloned " + JSON.stringify(segment));
     });    
 	}  
 
@@ -58,26 +52,21 @@ export default class TrainingStore {
     }
     segment = augmentSegmentData(segment);
     this.segments.push(segment);
-    //console.log("addSegment calling makeTrainingTotal for " + this.uuid);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_ADD_EVT", {segments: this.segments, total: this.total});
   }
   
   updateSegment(segment) {
-    //console.log("TrainingStore.updateSegment looking at segment: " + segment.uuid);
     segment = augmentSegmentData(segment);
     let i = 0;
     this.segments.some((_segment) => {
       if (_segment.uuid === segment.uuid) {
-        //console.log("TrainingStore.updateSegment found segment: " + segment.uuid);
         this.segments[i] = segment;
-        //console.log("updateSegment calling makeTrainingTotal for " + this.uuid);
         this.total = makeTrainingTotal(this.segments);
         return true;
       }
       i++;
     });
-    //console.log("TrainingStore.updateSegment: [" + i + "] " + JSON.stringify(this.segments[i]));
     this.eventbus.emit("SEGMENT_UPDATE_EVT", {segment: this.segments[i], total: this.total});
   }
 
@@ -106,16 +95,13 @@ export default class TrainingStore {
   loadTraining(uuid, trainings) {
     let training = findTraining(uuid, trainings);
     if (training !== null) {
-      //console.log("TrainingStore TRAINING_LOAD_CMD, segment 0: " + JSON.stringify(this.segments[0]));
       this.uuid = training.uuid;
       this.name = training.name;
       let _segments = training.segments.map((segment) => {
         return augmentSegmentData(segment);
       });
       this.segments = _segments;
-      //console.log("TrainingStore.constructor TRAINING_LOAD_CMD calling makeTrainingTotal for, segment 0: " + JSON.stringify(this.segments[0]));
       this.total = makeTrainingTotal(this.segments);
-      //console.log("TRAINING_LOAD_EVT now emitted with " + ", segment 0: " + JSON.stringify(this.segments[0]));
       this.eventbus.emit("TRAINING_LOAD_EVT", {
         uuid: this.uuid,
         name: this.name,

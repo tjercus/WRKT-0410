@@ -29,7 +29,6 @@ export function hasNoRealValue(obj, name) {
       const value = obj[name];
       hasNo = (!obj.hasOwnProperty(name) || value === undefined || hasNothing(value));
     }
-    // console.log("hasNoRealValue: " + (name || "unknown") + ", input: [" + JSON.stringify(obj) + "], noValue? = [" + hasNo + "]");
   }  
   return hasNo;
 }

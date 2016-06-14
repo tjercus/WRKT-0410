@@ -141,8 +141,8 @@ export default class TrainingComponent extends React.Component {
             </table>
             <output name="totals">
               <p>
-                {"Total distance:"} <em>{totalDistance}</em> km,
-                {"duration:"} <em>{this.state.total.duration}</em>,
+                {"Total distance:"} <em>{totalDistance}</em> {"km, "}
+                {"duration:"} <em>{this.state.total.duration}</em> {", "}
                 {"average pace:"} <em><time>{this.state.total.pace}</time></em>
               </p>
               <p>UUID: {this.state.uuid}</p>
