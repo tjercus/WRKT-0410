@@ -36,10 +36,9 @@ test("TrainingComponent should render the right DOM structure", (assert) => {
 //test("TrainingComponent should be visible after a MENU_CLICK_EVT containing it's name", (assert) => {
 //  // TODO implement
 //});
-
+/*
 test("TrainingComponent should render a training", (assert) => {
-  //const eventbus = sinon.stub(eventbus, "on", onStub);
-  //eventbus.on
+  //const eventbus = sinon.stub(eventbus, "on", onStub);  
   const eventbus = new EventEmitter({wildcard: true, maxListeners: 4});
   const segments = [{
     uuid: "uuid-segment1",
@@ -56,11 +55,11 @@ test("TrainingComponent should render a training", (assert) => {
     //console.dir("EVT");
   console.log(JSON.stringify(component.state));
 
-    assert.equal(component.state.segments.length, 1);
-    assert.equal(component.state.uuid, "uuid-training1");
-    assert.equal(component.state.distance, 5.2);
-    assert.equal(component.state.duration, "01:23:45");
-    assert.equal(component.state.pace, "03:59");
+  assert.equal(component.state.segments.length, 1);
+  assert.equal(component.state.uuid, "uuid-training1");
+  assert.equal(component.state.distance, 5.2);
+  assert.equal(component.state.duration, "01:23:45");
+  assert.equal(component.state.pace, "03:59");
   //}));
 
   eventbus.emit("TRAINING_LOAD_CMD", training);
@@ -70,3 +69,4 @@ test("TrainingComponent should render a training", (assert) => {
      assert.end();
   }, 1000);  
 });
+*/
