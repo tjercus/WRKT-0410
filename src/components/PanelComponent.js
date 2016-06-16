@@ -26,7 +26,7 @@ export default class PanelComponent extends React.Component {
           {this.props.name}
         </header>
         <div className="panel-body">
-           {"This panel listens to menu item: " + this.props.from}
+           {`This panel listens to menu item: ${this.props.from}`}
         </div>
       </section>
     );

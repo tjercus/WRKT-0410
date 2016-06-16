@@ -103,10 +103,9 @@ export function isValidSegment(segment) {
 /**
 * parse a duration from int minutes to a duration as string 00:00:00
 */
-export function parseDuration(duration) {	
+export function parseDuration(duration) {
 	if (duration !== null && duration !== "" && !isNaN(duration)) {
 		let parsed = moment("2016-01-01").minutes(duration).format("HH:mm:ss");
-		// console.log("parseDuration: " + duration + ", to " + parsed);
 		return parsed;
 	}
 	return duration;	
@@ -119,7 +118,7 @@ export function parseDuration(duration) {
  * @return hh:mm:ss String
  */
 function formatDuration(duration) {	
-	return lpad(duration.hours()) + ":" + lpad(duration.minutes()) + ":" + lpad(duration.seconds());
+	return `${lpad(duration.hours())}:${lpad(duration.minutes())}:${lpad(duration.seconds())}`;
 }
 
 /**
@@ -130,7 +129,7 @@ function makePace(segment) {
 	let durationObj = moment.duration(segment.duration),
 		seconds = durationObj.asSeconds(),
 		paceObj = moment.duration(Math.round(seconds / segment.distance), "seconds");
-	return lpad(paceObj.minutes()) + ":" + lpad(paceObj.seconds());
+	return `${lpad(paceObj.minutes())}:${lpad(paceObj.seconds())}`;
 };
 
 /**    
@@ -159,10 +158,7 @@ function makeDistance(segment) {
 		return 0;
 	}
 	let rawDistance = durationSeconds / paceSeconds;
-	let distance = Math.round(rawDistance * 1000) / 1000;
-	let isNumeric = (typeof distance == 'number');
-	let isString = (typeof distance == 'string');
-	return distance;
+	return Math.round(rawDistance * 1000) / 1000;	
 };
 
 function translateNamedPace(pace) {

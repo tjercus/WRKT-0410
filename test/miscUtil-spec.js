@@ -1,6 +1,6 @@
 import test from "tape";
 
-import {createUuid, clone, hasNoRealValue} from "../src/stores/miscUtil";
+import {createUuid, clone, hasNoRealValue, lpad} from "../src/stores/miscUtil";
 
 // miscUtil-spec.js 
 test("createUuid should create a unique valid uuid", (assert) => {
@@ -68,3 +68,27 @@ test("clone should clone with real numerics", (assert) => {
   assert.equal((typeof clone(obj).age), "number", "should be number for [" + obj.age + "]");
   assert.end();
 });
+
+test("lpad should work with a string", (assert) => {
+  const num = "4";
+  const padded = lpad(num);
+  assert.equal((typeof padded), "string", "should be string for [" + num + "]");
+  assert.equal(padded, "04", "should be padded with one zero for [" + num + "]");
+  assert.end();
+});
+
+
+test("lpad should work with real numerics", (assert) => {
+  const num = 4;
+  const padded = lpad(num);
+  assert.equal((typeof padded), "string", "should be string for [" + num + "]");
+  assert.equal(padded, "04", "should be padded with one zero for [" + num + "]");
+  assert.end();
+});
+
+test("lpad should work with previously padded string", (assert) => {
+  const num = "04";
+  assert.equal(lpad(num), "04", "should still be padded with one zero for [" + num + "]");
+  assert.end();
+});
+

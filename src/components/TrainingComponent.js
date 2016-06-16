@@ -78,7 +78,6 @@ export default class TrainingComponent extends React.Component {
       });
     // TODO get this working
     // this.clearTrainingFromLocalState(function(training) {      
-    //   console.log("TrainingComponent.loadTraining clearTrainingFromLocalState cb: " + training.uuid);
     //   this.setState({uuid: training.uuid, name: training.name, segments: training.segments, total: training.total});
     // }.bind(this));
   }

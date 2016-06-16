@@ -17,7 +17,6 @@ export default class DayEditComponent extends React.Component {
 
   componentDidMount() {
     this.props.eventbus.on("MENU_CLICK_EVT", ((menuItemName, dayNr) => {
-      console.log("DayEditComponent: received MENU_CLICK_EVT " + dayNr);
       this.setState({
         dayNr: dayNr
       });
@@ -31,13 +30,13 @@ export default class DayEditComponent extends React.Component {
         });
       }
       if (dayNr !== null) {
-        console.log("DayEditComponent: sending DAY_LOAD_CMD " + dayNr);
+        console.log(`DayEditComponent: sending DAY_LOAD_CMD ${dayNr}`);
         this.props.eventbus.emit("DAY_LOAD_CMD", dayNr);
       }
     }));
 
     this.props.eventbus.on("DAY_LOAD_EVT", ((day) => {
-      console.log("DayEditComponent: received DAY_LOAD_EVT " + JSON.stringify(day));
+      console.log(`DayEditComponent: received DAY_LOAD_EVT ${JSON.stringify(day)}`);
       this.setState({
         day: day
       });

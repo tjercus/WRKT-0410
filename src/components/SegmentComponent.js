@@ -78,8 +78,7 @@ export default class SegmentComponent extends React.Component {
     this.props.eventbus.emit("SEGMENT_CLONE_CMD", this.state);
   }
 
-  onRemoveButtonClick() {
-    console.log("SegmentComponent.onRemoveButtonClick() SEGMENT_REMOVE_CMD: " + JSON.stringify(this.state));
+  onRemoveButtonClick() {    
     this.props.eventbus.emit("SEGMENT_REMOVE_CMD", this.state);
   }
 

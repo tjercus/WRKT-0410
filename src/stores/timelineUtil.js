@@ -52,7 +52,6 @@ export function findDay(dayNr, microcycles = [], trainings = []) {
  * lookup training for a day by uuid and add it to itself
  */
 function augmentDay(day, trainings = []) {
-  JSON.stringify("augmentDay: " + JSON.stringify(day));
   const _day = clone(day);
   const _trainings = clone(trainings);
   let uuid = (typeof _day.trainingId === "string") ? _day.trainingId : null;

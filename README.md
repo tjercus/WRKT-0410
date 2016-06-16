@@ -15,7 +15,8 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- ES6 string concatenation
+- refactor plain es6 classes to factories
+- casper js
 - Better tests for stores, test eventemitter with spies (and/or do actual work in util that returns a promise)
 - TrainingListComponent should supports categories as accordion or tagcloud
 - use const instead of let when possible

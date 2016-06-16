@@ -30,9 +30,7 @@ export default class TrainingListComponent extends React.Component {
 
   onClick(evt) {
     evt.preventDefault();
-    console.log("clicked on: " + evt.target.value);
     this.setState({selectedUid: evt.target.value});
-    //this.props.eventbus.emit("TRAINING_CLEAR_CMD", evt.target.value);
     this.props.eventbus.emit("TRAINING_LOAD_CMD", evt.target.value);
   }
 
