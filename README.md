@@ -29,7 +29,7 @@ Based on 'React eventemitter'.
 - Flux architecture?
 
 ### Training
-- bug where re-calculate total results in an outdated total
+- bug where re-calculate total results in an outdated total, clone/remove buttons
 - introduce tags
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
