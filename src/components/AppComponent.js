@@ -10,17 +10,19 @@ import TimelineComponent from "./TimelineComponent";
 import TimelineStore from "../stores/TimelineStore";
 import DayEditComponent from "./DayEditComponent";
 
+import { trainings } from "../stores/trainings";
+
 export default class AppComponent extends React.Component {
 
   constructor(props) {
     super(props);
     this.eventbus = new EventEmitter({wildcard: true, maxListeners: 99});
     // singleton SegmentStore
-    this.trainingStore = new TrainingStore(this.eventbus);
-    this.TimelineStore = new TimelineStore(this.eventbus);
+    TrainingStore(this.eventbus, trainings);
+    TimelineStore(this.eventbus);
   }
   
-  componentDidMount() {    
+  componentDidMount() {
     this.eventbus.emit("MENU_CLICK_EVT", "menu-item-training");
     setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"), 500);
   }

@@ -15,8 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- refactor plain es6 classes to factories
-- casper js
+- casper js or smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
 - Better tests for stores, test eventemitter with spies (and/or do actual work in util that returns a promise)
 - TrainingListComponent should supports categories as accordion or tagcloud
 - use const instead of let when possible
@@ -30,6 +29,9 @@ Based on 'React eventemitter'.
 - Flux architecture?
 
 ### Training
+- bug on clone
+- bug where re-calculate total results in an outdated total
+- introduce tags
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type

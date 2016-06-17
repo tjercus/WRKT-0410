@@ -6,13 +6,14 @@ import {
   isDirtySegment,
   canAugment,
   isValidSegment,  
-  parseDuration
+  parseDuration,
+  removeSegment
 } from "../src/stores/trainingUtil";
 
 /**
  * Tests for {@link trainingUtil.js}
  */
-let trainings = [{
+const trainings = [{
     uuid: "blah-10",
     name: "name10"
 },{
@@ -22,6 +23,19 @@ let trainings = [{
     uuid: "blah-12",
     name: "name12"
 }];
+
+const segments = [
+  { "uuid": "99", "distance": 2.000, "duration": "00:11:00" },
+  { "uuid": "100", "distance": 1.600, "pace": "@10KP" },
+  { "uuid": "101", "distance": 0.600, "duration": "00:03:00" },
+  { "uuid": "102", "distance": 1.600, "pace": "@10KP" },
+  { "uuid": "103", "distance": 0.600, "duration": "00:03:00" },
+  { "uuid": "104", "distance": 1.600, "pace": "@10KP" },
+  { "uuid": "105", "distance": 0.600, "duration": "00:03:00" },
+  { "uuid": "106", "distance": 1.600, "pace": "@10KP" },
+  { "uuid": "107", "distance": 0.600, "duration": "00:03:00" },
+  { "uuid": "108", "distance": 3.200, "pace": "@RECOV" }
+];
 
 test("findTraining should find a training by uuid", (assert) => {  
   let training = findTraining("blah-11", trainings);  
@@ -320,5 +334,27 @@ test("parseDuration should parse duration as int minutes to duration as string",
   for (let i = 0, len = data.length; i < len; i++) {
     assert.equal(parseDuration(data[i].input), data[i].output);
   }
+  assert.end();
+});
+
+test("removeSegment should find and remove a segment", (assert) => {
+  const segment = {
+    uuid: "101"
+  };
+  assert.equal(segments.length, 10, "initially there should be 10 segments");
+  const newSegments = removeSegment(segment, segments);
+  assert.equal(segments.length, 10, "removing should not alter the original list");
+  assert.equal(newSegments.length, 9, "after removing one there should be 9 segments");
+  assert.end();
+});
+
+test("removeSegment should not remove an unfound segment", (assert) => {
+  const segment = {
+    uuid: "99999"
+  };
+  assert.equal(segments.length, 10, "initially there should be 10 segments");
+  const newSegments = removeSegment(segment, segments);
+  assert.equal(segments.length, 10, "removing should not alter the original list");
+  assert.equal(newSegments.length, 10, "after there should be 10 segments");
   assert.end();
 });

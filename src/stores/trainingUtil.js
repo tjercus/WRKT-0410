@@ -111,6 +111,16 @@ export function parseDuration(duration) {
 	return duration;	
 }
 
+export function removeSegment(segment, segments) {
+  let _segments = clone(segments);
+  const isSeg = (_segment) => {
+  	return _segment.uuid == segment.uuid;
+  }
+  const index = _segments.findIndex(isSeg);
+  _segments.splice((index > -1) ? index : _segments.length, 1);
+  return _segments;  
+}
+
 /* ----------------------------------------------------------------------------------- */
 
 /**    
@@ -161,6 +171,7 @@ function makeDistance(segment) {
 	return Math.round(rawDistance * 1000) / 1000;	
 };
 
+// TODO extract to config
 function translateNamedPace(pace) {
 	if (pace === undefined || pace === null || !pace.startsWith("@")) {
 		return pace;

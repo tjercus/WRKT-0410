@@ -104,7 +104,7 @@ test("findDay should find a day by nr", (assert) => {
   let day = findDay(2, microcycles, trainings);
   assert.notOk(day === null);
   assert.ok(typeof day === "object");    
-  assert.equal(day.nr, 2);  
+  assert.equal(day.nr, 2);
   assert.equal(day.training.uuid, "blah-11");
   assert.equal(day.training.name, "name11");
   assert.end();
