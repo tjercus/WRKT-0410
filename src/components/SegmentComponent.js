@@ -74,7 +74,8 @@ export default class SegmentComponent extends React.Component {
     }
   }
 
-  onCloneButtonClick() {    
+  onCloneButtonClick() {
+    console.log(`onCloneButtonClick ${this.state.uuid}`);
     this.props.eventbus.emit("SEGMENT_CLONE_CMD", this.state);
   }
 

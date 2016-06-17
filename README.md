@@ -29,7 +29,6 @@ Based on 'React eventemitter'.
 - Flux architecture?
 
 ### Training
-- bug on clone
 - bug where re-calculate total results in an outdated total
 - introduce tags
 - introduce concept of training versus instance

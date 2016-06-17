@@ -7,7 +7,8 @@ import {
   canAugment,
   isValidSegment,  
   parseDuration,
-  removeSegment
+  removeSegment,
+  addSegment
 } from "../src/stores/trainingUtil";
 
 /**
@@ -356,5 +357,53 @@ test("removeSegment should not remove an unfound segment", (assert) => {
   const newSegments = removeSegment(segment, segments);
   assert.equal(segments.length, 10, "removing should not alter the original list");
   assert.equal(newSegments.length, 10, "after there should be 10 segments");
+  assert.end();
+});
+
+test("addSegment should add a segment", (assert) => {
+  const segment = {
+    uuid: "99999",
+    pace: "55:55"
+  };
+  assert.equal(segments.length, 10, "initially there should be 10 segments");
+  const newSegments = addSegment(segment, segments);
+  assert.equal(segments.length, 10, "adding should not alter the original list");
+  assert.equal(newSegments.length, 11, "after adding there should be 11 segments");
+  const index = newSegments.findIndex((_segment) => {
+    return _segment.uuid === "99999";
+  });
+  assert.ok((index !== -1), "original uuid should be found = " + index);
+  assert.end();
+});
+
+test("addSegment should add a segment with a new UUID if asked to do so", (assert) => {
+  const segment = {
+    uuid: "99999",
+    pace: "66:66"
+  };
+  assert.equal(segments.length, 10, "initially there should be 10 segments");
+  const newSegments = addSegment(segment, segments, true);
+  assert.equal(newSegments.length, 11, "after adding there should be 11 segments");
+  const index = newSegments.findIndex((_segment) => {
+    return _segment.uuid === "99999";
+  });
+  console.log(JSON.stringify(newSegments));
+  assert.ok((index === -1), "original uuid should not be found = " + index);
+  assert.end();
+});
+
+test("addSegment should add a segment twice", (assert) => {
+  const segment = {
+    uuid: "88888",
+    pace: "44:44"
+  };
+  const segment2 = {
+    uuid: "99999",
+    pace: "55:55"
+  };
+  assert.equal(segments.length, 10, "initially there should be 10 segments");
+  const newSegments = addSegment(segment2, addSegment(segment, segments));  
+  assert.equal(segments.length, 10, "adding should not alter the original list");
+  assert.equal(newSegments.length, 12, "after adding there should be 11 segments");  
   assert.end();
 });
