@@ -57,6 +57,15 @@ export const plans = [
 			  	{"nr": 40, "trainingId": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a"},
 			  	{"nr": 41, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
 			  	{"nr": 42, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"}
+			  ]},
+    		{"days": [
+			  	{"nr": 43, "trainingId": "b8487e03-d9e8-4c32-978e-da6db0ce653a"},
+			  	{"nr": 44, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
+			  	{"nr": 45, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
+			  	{"nr": 46, "trainingId": "bfe7be06-8052-4b18-8acc-5a5f031b5ff1"},
+			  	{"nr": 47, "trainingId": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a"},
+			  	{"nr": 48, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
+			  	{"nr": 49, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"}
 			  ]}
 		  ]
 		}

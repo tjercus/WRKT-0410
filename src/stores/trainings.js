@@ -339,6 +339,7 @@ export const trainings = [
 }, {
     "uuid":"5374128e-1d89-11e7-b014-a7739b3e7391",
     "name":"6 x 860 hills @5KP/10KP",
+    "type": "workout",
     "segments":[
         {"uuid":"80","distance":2,"pace":"05:30","duration":"00:11:00"},
         {"uuid":"81","distance":"0.860","duration":"00:03:11","pace":"03:42"},
@@ -357,6 +358,7 @@ export const trainings = [
 }, {
   "uuid": "acc3d1b9-33ae-4d70-dda3-d0e885f516f4",
   "name": "5 x 1.5km @10KP",
+  "type": "workout",
   "segments": [{
     "uuid": "1",
     "distance": "3",
