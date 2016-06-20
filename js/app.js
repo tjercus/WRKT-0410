@@ -434,12 +434,19 @@ process.umask = function() { return 0; };
       }
       for (i = 0, l = handler.length; i < l; i++) {
         this.event = type;
+
+        //console.log("EventEmitter: " + JSON.stringify(arguments[1]));
+        var loggableString = "no args";
+        if (arguments[1]) { 
+          loggableString = JSON.stringify(arguments[1]).substring(0, 50);
+        }
+        console.log("EventEmitter2.js: " + this.event + ": " + loggableString);
+
         switch (al) {
         case 1:
           handler[i].call(this);
           break;
-        case 2:
-          console.log("EventEmitter: " + JSON.stringify(arguments[1]));
+        case 2:          
           handler[i].call(this, arguments[1]);
           break;
         case 3:
@@ -24514,7 +24521,8 @@ module.exports={
     "watch": "gulp watch",
     "build": "gulp build",
     "deploy": "gulp deploy",
-    "test": "babel-tape-runner test/*-spec.js | faucet"
+    "test": "babel-tape-runner test/*-spec.js | faucet",
+    "test-e2e": "casperjs test test/e2e/*-spec.js"
   },
   "author": "Tjerk Valentijn",
   "license": "MIT",
@@ -24651,6 +24659,8 @@ var _DayEditComponent = require("./DayEditComponent");
 
 var _DayEditComponent2 = _interopRequireDefault(_DayEditComponent);
 
+var _trainings = require("../stores/trainings");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24669,8 +24679,8 @@ var AppComponent = function (_React$Component) {
 
     _this.eventbus = new _eventemitter2.default({ wildcard: true, maxListeners: 99 });
     // singleton SegmentStore
-    _this.trainingStore = new _TrainingStore2.default(_this.eventbus);
-    _this.TimelineStore = new _TimelineStore2.default(_this.eventbus);
+    new _TrainingStore2.default(_this.eventbus, _trainings.trainings);
+    new _TimelineStore2.default(_this.eventbus, _trainings.trainings);
     return _this;
   }
 
@@ -24730,7 +24740,7 @@ var AppComponent = function (_React$Component) {
 exports.default = AppComponent;
 ;
 
-},{"../../package.json":170,"../stores/TimelineStore":180,"../stores/TrainingStore":181,"./DayEditComponent":173,"./MenuComponent":174,"./PanelComponent":175,"./TimelineComponent":177,"./TrainingComponent":178,"./TrainingListComponent":179,"eventemitter2":2,"react":169}],173:[function(require,module,exports){
+},{"../../package.json":170,"../stores/TimelineStore":180,"../stores/TrainingStore":181,"../stores/trainings":186,"./DayEditComponent":173,"./MenuComponent":174,"./PanelComponent":175,"./TimelineComponent":177,"./TrainingComponent":178,"./TrainingListComponent":179,"eventemitter2":2,"react":169}],173:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24780,7 +24790,6 @@ var DayEditComponent = function (_React$Component) {
       var _this2 = this;
 
       this.props.eventbus.on("MENU_CLICK_EVT", function (menuItemName, dayNr) {
-        console.log("DayEditComponent: received MENU_CLICK_EVT " + dayNr);
         _this2.setState({
           dayNr: dayNr
         });
@@ -25133,12 +25142,12 @@ var SegmentComponent = function (_React$Component) {
   }, {
     key: "onCloneButtonClick",
     value: function onCloneButtonClick() {
+      console.log("onCloneButtonClick " + this.state.uuid);
       this.props.eventbus.emit("SEGMENT_CLONE_CMD", this.state);
     }
   }, {
     key: "onRemoveButtonClick",
     value: function onRemoveButtonClick() {
-      console.log("SegmentComponent.onRemoveButtonClick() SEGMENT_REMOVE_CMD: " + JSON.stringify(this.state));
       this.props.eventbus.emit("SEGMENT_REMOVE_CMD", this.state);
     }
   }, {
@@ -25229,7 +25238,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var DAY_HEADER_DATE_FORMAT = "ddd, DD-MM-YYYY";
+var DAY_HEADER_DATE_FORMAT = "dddd, DD-MM-YYYY";
 
 var TimelineComponent = function (_React$Component) {
   _inherits(TimelineComponent, _React$Component);
@@ -25308,13 +25317,17 @@ var TimelineComponent = function (_React$Component) {
           aDay.add(1, "days");
 
           var dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
-          var sectionClassName = _this3.isNonWorkday(aDay) ? "day day-nowork" : "day day-work";
+          var sectionClassNames = [];
+          _this3.isNonWorkday(aDay) ? sectionClassNames.push("day day-nowork") : sectionClassNames.push("day day-work");
+
           if (_this3.state.showEasyDays === false && day.training.type === "easy") {
-            console.log("hiding day as easy " + day.training.name);
-            sectionClassName += " day-easy";
+            sectionClassNames.push("day-easy");
+          }
+          if (day.training.type === "workout") {
+            sectionClassNames.push("day-workout");
           }
           if (aDay.isSame((0, _moment2.default)(new Date()), "day")) {
-            sectionClassName += " today";
+            sectionClassNames.push("today");
           }
 
           if (j % 7 === 0) {
@@ -25328,7 +25341,7 @@ var TimelineComponent = function (_React$Component) {
           // TODO support multiple trainings per day
           microcycleElements.push(_react2.default.createElement(
             "section",
-            { key: i + "-" + j, className: sectionClassName },
+            { key: i + "-" + j, className: sectionClassNames.join(" ") },
             _react2.default.createElement(
               "h3",
               null,
@@ -25339,8 +25352,11 @@ var TimelineComponent = function (_React$Component) {
             _react2.default.createElement(
               "p",
               { className: "training-name" },
-              day.training.name,
-              ", ",
+              day.training.name
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
               "(",
               day.training.total.distance.toFixed(2),
               " ",
@@ -25502,7 +25518,6 @@ var TrainingComponent = function (_React$Component) {
       });
       // TODO get this working
       // this.clearTrainingFromLocalState(function(training) {     
-      //   console.log("TrainingComponent.loadTraining clearTrainingFromLocalState cb: " + training.uuid);
       //   this.setState({uuid: training.uuid, name: training.name, segments: training.segments, total: training.total});
       // }.bind(this));
     }
@@ -25618,7 +25633,8 @@ var TrainingComponent = function (_React$Component) {
                   null,
                   totalDistance
                 ),
-                " km,",
+                " ",
+                "km, ",
                 "duration:",
                 " ",
                 _react2.default.createElement(
@@ -25626,7 +25642,8 @@ var TrainingComponent = function (_React$Component) {
                   null,
                   this.state.total.duration
                 ),
-                ",",
+                " ",
+                ", ",
                 "average pace:",
                 " ",
                 _react2.default.createElement(
@@ -25755,6 +25772,10 @@ var TrainingListComponent = function (_React$Component) {
       });
 
       this.props.eventbus.on("TRAINING_LIST_EVT", function (trainings) {
+        if (trainings === undefined || trainings === null) {
+          throw new Error("TRAINING_LIST_EVT was caught without a list of trainings");
+        }
+        console.log("TrainingListComponent.componentDidMount on TRAINING_LIST_EVT " + trainings.length);
         _this2.setState({ trainings: trainings });
       });
       this.props.eventbus.emit("TRAINING_LIST_CMD");
@@ -25763,9 +25784,7 @@ var TrainingListComponent = function (_React$Component) {
     key: "onClick",
     value: function onClick(evt) {
       evt.preventDefault();
-      console.log("clicked on: " + evt.target.value);
       this.setState({ selectedUid: evt.target.value });
-      //this.props.eventbus.emit("TRAINING_CLEAR_CMD", evt.target.value);
       this.props.eventbus.emit("TRAINING_LOAD_CMD", evt.target.value);
     }
   }, {
@@ -25818,47 +25837,43 @@ var _eventemitter2 = _interopRequireDefault(_eventemitter);
 
 var _plans = require("./plans");
 
-var _trainings = require("./trainings");
-
 var _timelineUtil = require("./timelineUtil");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var TimelineStore = function TimelineStore(eventbus) {
+var TimelineStore = function TimelineStore(eventbus, trainings) {
   var _this = this;
 
   _classCallCheck(this, TimelineStore);
 
-  this.eventbus = eventbus;
-  this.days = [];
-  this.day = {};
-
-  // TODO allow input from a GUI-list (ex: 'PlansListComponent')
+  // TODO allow input from a GUI-list (ex: 'PlansListComponent') 
   this.uuid = "acc3d1b8-33ae-4d70-dda3-d0e885f516f4";
+  this.microcycles = [];
+  this.day = {};
 
   eventbus.on("PLAN_LOAD_CMD", function () {
     console.log("TimelineStore: received PLAN_LOAD_CMD for default plan");
-    var plan = (0, _timelineUtil.findPlan)(_this.uuid, _plans.plans, _trainings.trainings);
+    // TODO move plans from import to constructor
+    var plan = (0, _timelineUtil.findPlan)(_this.uuid, _plans.plans, trainings);
     _this.microcycles = plan.microcycles;
-    console.log("PLAN_LOAD_CMD after findPlan nr of microcycles: " + _this.microcycles.length);
     eventbus.emit("PLAN_LOAD_EVT", plan.microcycles);
   });
 
   eventbus.on("DAY_LOAD_CMD", function (dayNr) {
-    console.log("TimelineStore: received DAY_LOAD_CMD for " + dayNr + ", currently holding " + _this.days.length);
     var day = _this.day;
-    if (!_this.day || _this.day.nr !== dayNr) {
-      _this.day = (0, _timelineUtil.findDay)(dayNr, _this.days, _trainings.trainings);
+    if (!_this.day || _this.day.nr != dayNr) {
+      _this.day = (0, _timelineUtil.findDay)(dayNr, _this.microcycles, trainings);
     }
     eventbus.emit("DAY_LOAD_EVT", _this.day);
   });
 };
 
 exports.default = TimelineStore;
+;
 
-},{"./plans":183,"./timelineUtil":184,"./trainings":186,"eventemitter2":2}],181:[function(require,module,exports){
+},{"./plans":183,"./timelineUtil":184,"eventemitter2":2}],181:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25871,8 +25886,6 @@ var _eventemitter = require("eventemitter2");
 
 var _eventemitter2 = _interopRequireDefault(_eventemitter);
 
-var _trainings2 = require("./trainings");
-
 var _trainingUtil = require("./trainingUtil");
 
 var _miscUtil = require("./miscUtil");
@@ -25882,14 +25895,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var TrainingStore = function () {
-  function TrainingStore(eventbus) {
+  function TrainingStore(eventbus, trainings) {
     var _this = this;
-
-    var _trainings = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
 
     _classCallCheck(this, TrainingStore);
 
     this.eventbus = eventbus;
+    this.trainings = trainings;
     this.uuid = null;
     this.name = "undefined";
     this.segments = [];
@@ -25898,11 +25910,9 @@ var TrainingStore = function () {
       duration: "00:00:00",
       pace: "00:00"
     };
-    // first look at optional constructor parameter then look at imported trainings.js
-    this.trainings = _trainings || _trainings2.trainings;
 
     eventbus.on("TRAINING_LIST_CMD", function () {
-      eventbus.emit("TRAINING_LIST_EVT", _trainings2.trainings);
+      eventbus.emit("TRAINING_LIST_EVT", _this.trainings);
     });
 
     eventbus.on("TRAINING_LOAD_CMD", function (uuid) {
@@ -25912,77 +25922,57 @@ var TrainingStore = function () {
 
     eventbus.on("TRAINING_CLEAR_CMD", function (uuid) {
       _this.clearTraining();
-      eventbus.emit("TRAINING_CLEAR_EVT", uuid);
+      _this.eventbus.emit("TRAINING_CLEAR_EVT", uuid);
     });
 
     eventbus.on("SEGMENT_UPDATE_CMD", function (segment) {
-      //if (isDirtySegment(segment, this.segments)) {
-      _this.updateSegment(segment);
-      //console.log("TrainingStore: updated to " + JSON.stringify(segment));
-      //}
+      _this.updateSegment(segment, _this.segments);
     });
     eventbus.on("SEGMENT_ADD_CMD", function (segment) {
-      _this.addSegment(segment);
-      //console.log("TrainingStore: added " + JSON.stringify(segment));
+      console.log("SEGMENT_ADD_CMD " + segment.uuid);
+      _this.addSegmentToStore(segment, _this.segments);
     });
     eventbus.on("SEGMENT_REMOVE_CMD", function (segment) {
-      _this.removeSegment(segment);
-      //console.log("TrainingStore: removed " + JSON.stringify(segment));
+      _this.removeSegmentFromStore(segment, _this.segments);
     });
     eventbus.on("SEGMENT_CLONE_CMD", function (segment) {
-      _this.addSegment(segment, true);
-      //console.log("TrainingStore: cloned " + JSON.stringify(segment));
+      console.log("SEGMENT_CLONE_CMD " + segment.uuid);
+      _this.addSegmentToStore(segment, _this.segments, true);
     });
   }
 
   _createClass(TrainingStore, [{
-    key: "addSegment",
-    value: function addSegment(segment, overwriteUuid) {
-      if (!segment.uuid || overwriteUuid === true) {
-        segment.uuid = (0, _miscUtil.createUuid)();
-      }
-      segment = (0, _trainingUtil.augmentSegmentData)(segment);
-      this.segments.push(segment);
-      //console.log("addSegment calling makeTrainingTotal for " + this.uuid);
+    key: "addSegmentToStore",
+    value: function addSegmentToStore(segment, segments, overwriteUuid) {
+      console.log("addSegmentToStore (" + segments.length + ") " + segment.uuid + " overwrite? " + overwriteUuid);
+      this.segments = (0, _trainingUtil.addSegment)(segment, segments, overwriteUuid);
       this.total = (0, _trainingUtil.makeTrainingTotal)(this.segments);
       this.eventbus.emit("SEGMENT_ADD_EVT", { segments: this.segments, total: this.total });
     }
   }, {
     key: "updateSegment",
-    value: function updateSegment(segment) {
+    value: function updateSegment(segment, segments) {
       var _this2 = this;
 
-      //console.log("TrainingStore.updateSegment looking at segment: " + segment.uuid);
       segment = (0, _trainingUtil.augmentSegmentData)(segment);
       var i = 0;
-      this.segments.some(function (_segment) {
+      segments.some(function (_segment) {
         if (_segment.uuid === segment.uuid) {
-          //console.log("TrainingStore.updateSegment found segment: " + segment.uuid);
           _this2.segments[i] = segment;
-          //console.log("updateSegment calling makeTrainingTotal for " + this.uuid);
-          _this2.total = (0, _trainingUtil.makeTrainingTotal)(_this2.segments);
+          _this2.total = (0, _trainingUtil.makeTrainingTotal)(segments);
           return true;
         }
         i++;
       });
-      //console.log("TrainingStore.updateSegment: [" + i + "] " + JSON.stringify(this.segments[i]));
       this.eventbus.emit("SEGMENT_UPDATE_EVT", { segment: this.segments[i], total: this.total });
     }
   }, {
-    key: "removeSegment",
-    value: function removeSegment(segment) {
-      var originalLen = this.segments.length;
-      var _segments = (0, _miscUtil.clone)(this.segments);
-      for (var i = 0, len = _segments.length; i < len; i++) {
-        if (_segments[i].uuid == segment.uuid) {
-          var deletedSegments = _segments.splice(i, 1);
-          break;
-        }
-      }
-      this.segments = _segments;
-      this.total = (0, _trainingUtil.makeTrainingTotal)(_segments);
-      this.eventbus.emit("SEGMENT_REMOVE_EVT", { segments: _segments, total: this.total });
-      console.log("TrainingStore.removeSegment SEGMENT_REMOVE_EVT: " + segment.uuid + ", len: " + this.segments.length + ", before: " + originalLen);
+    key: "removeSegmentFromStore",
+    value: function removeSegmentFromStore(segment, segments) {
+      this.segments = (0, _trainingUtil.removeSegment)(segment, segments);
+      this.total = (0, _trainingUtil.makeTrainingTotal)(this.segments);
+      this.eventbus.emit("SEGMENT_REMOVE_EVT", { segments: this.segments, total: this.total });
+      console.log("TrainingStore.removeSegment SEGMENT_REMOVE_EVT: " + segment.uuid);
     }
   }, {
     key: "clearTraining",
@@ -25990,27 +25980,28 @@ var TrainingStore = function () {
       this.uuid = null;
       this.name = "undefined";
       this.segments = [];
-      this.total = {};
+      this.total = {
+        distance: 0,
+        duration: "00:00:00",
+        pace: "00:00"
+      };
     }
   }, {
     key: "loadTraining",
     value: function loadTraining(uuid, trainings) {
       var training = (0, _trainingUtil.findTraining)(uuid, trainings);
       if (training !== null) {
-        //console.log("TrainingStore TRAINING_LOAD_CMD, segment 0: " + JSON.stringify(this.segments[0]));
         this.uuid = training.uuid;
         this.name = training.name;
         var _segments = training.segments.map(function (segment) {
           return (0, _trainingUtil.augmentSegmentData)(segment);
         });
         this.segments = _segments;
-        //console.log("TrainingStore.constructor TRAINING_LOAD_CMD calling makeTrainingTotal for, segment 0: " + JSON.stringify(this.segments[0]));
-        this.total = (0, _trainingUtil.makeTrainingTotal)(this.segments);
-        //console.log("TRAINING_LOAD_EVT now emitted with " + ", segment 0: " + JSON.stringify(this.segments[0]));
+        this.total = (0, _trainingUtil.makeTrainingTotal)(_segments);
         this.eventbus.emit("TRAINING_LOAD_EVT", {
           uuid: this.uuid,
           name: this.name,
-          segments: this.segments,
+          segments: _segments,
           total: this.total
         });
       }
@@ -26022,7 +26013,7 @@ var TrainingStore = function () {
 
 exports.default = TrainingStore;
 
-},{"./miscUtil":182,"./trainingUtil":185,"./trainings":186,"eventemitter2":2}],182:[function(require,module,exports){
+},{"./miscUtil":182,"./trainingUtil":185,"eventemitter2":2}],182:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26066,7 +26057,6 @@ function hasNoRealValue(obj, name) {
       var value = obj[name];
       hasNo = !obj.hasOwnProperty(name) || value === undefined || hasNothing(value);
     }
-    // console.log("hasNoRealValue: " + (name || "unknown") + ", input: [" + JSON.stringify(obj) + "], noValue? = [" + hasNo + "]");
   }
   return hasNo;
 }
@@ -26084,7 +26074,7 @@ Object.defineProperty(exports, "__esModule", {
 var plans = exports.plans = [{
 	"uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4",
 	"name": "10k plan #1",
-	"microcycles": [{ "days": [{ "nr": 1, "trainingId": "2a63ef62-fb2c-4b92-8971-59db6e58394c" }, { "nr": 2, "trainingId": "bfe7be06-8052-4b18-8acc-5a5f031b5ff1" }, { "nr": 3, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 4, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 5, "trainingId": "9f6f5697-6b78-4cd5-85d4-2062ba24da9a" }, { "nr": 6, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 7, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441" }] }, { "days": [{ "nr": 8, "trainingId": "83225310-1d83-11e6-a675-2fda5598bced" }, { "nr": 9, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 10, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 11, "trainingId": "b8487e03-d9e8-4c32-978e-da6db0ce653a" }, { "nr": 12, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 13, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 14, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441" }] }, { "days": [{ "nr": 15, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441" }, { "nr": 16, "trainingId": "b4417c14-20a8-11e6-8e88-338757ec9820" }, { "nr": 17, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 18, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 19, "trainingId": "ce4a4aca-1d86-11e6-beaa-8b0878fc7d2a" }, { "nr": 20, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 21, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441" }] }, { "days": [{ "nr": 22, "trainingId": "85069ab6-2638-11e6-a921-9370424918be" }, { "nr": 23, "trainingId": "53999aa8-1d8e-11e6-b7a8-3715f4688b6a" }, { "nr": 24, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 25, "trainingId": "5374118e-1d89-11e6-b014-a7739b3e7391" }, { "nr": 26, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 27, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 28, "trainingId": "5374128e-1d89-11e7-b014-a7739b3e7391" }] }, { "days": [{ "nr": 29, "trainingId": "2a63ef62-fb2c-4b92-8971-59db6e58394c" }, { "nr": 30, "trainingId": "bfe7be06-8052-4b18-8acc-5a5f031b5ff1" }, { "nr": 31, "trainingId": "83225310-1d83-11e6-a675-2fda5598bced" }, { "nr": 32, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 33, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 34, "trainingId": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4" }, { "nr": 35, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441" }] }]
+	"microcycles": [{ "days": [{ "nr": 1, "trainingId": "2a63ef62-fb2c-4b92-8971-59db6e58394c" }, { "nr": 2, "trainingId": "bfe7be06-8052-4b18-8acc-5a5f031b5ff1" }, { "nr": 3, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 4, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 5, "trainingId": "9f6f5697-6b78-4cd5-85d4-2062ba24da9a" }, { "nr": 6, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 7, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441" }] }, { "days": [{ "nr": 8, "trainingId": "83225310-1d83-11e6-a675-2fda5598bced" }, { "nr": 9, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 10, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 11, "trainingId": "b8487e03-d9e8-4c32-978e-da6db0ce653a" }, { "nr": 12, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 13, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 14, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441" }] }, { "days": [{ "nr": 15, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441" }, { "nr": 16, "trainingId": "b4417c14-20a8-11e6-8e88-338757ec9820" }, { "nr": 17, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 18, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 19, "trainingId": "ce4a4aca-1d86-11e6-beaa-8b0878fc7d2a" }, { "nr": 20, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 21, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441" }] }, { "days": [{ "nr": 22, "trainingId": "85069ab6-2638-11e6-a921-9370424918be" }, { "nr": 23, "trainingId": "53999aa8-1d8e-11e6-b7a8-3715f4688b6a" }, { "nr": 24, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 25, "trainingId": "5374118e-1d89-11e6-b014-a7739b3e7391" }, { "nr": 26, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 27, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 28, "trainingId": "5374128e-1d89-11e7-b014-a7739b3e7391" }] }, { "days": [{ "nr": 29, "trainingId": "2a63ef62-fb2c-4b92-8971-59db6e58394c" }, { "nr": 30, "trainingId": "bfe7be06-8052-4b18-8acc-5a5f031b5ff1" }, { "nr": 31, "trainingId": "83225310-1d83-11e6-a675-2fda5598bced" }, { "nr": 32, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 33, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 34, "trainingId": "acc3d1b9-33ae-4d70-dda3-d0e885f516f4" }, { "nr": 35, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }] }, { "days": [{ "nr": 36, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 37, "trainingId": "9cf64a2b-0e60-4d10-9512-a6fd7510c421" }, { "nr": 38, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 39, "trainingId": "bfe7be06-8052-4b18-8acc-5a5f031b5ff1" }, { "nr": 40, "trainingId": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a" }, { "nr": 41, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 42, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }] }, { "days": [{ "nr": 43, "trainingId": "b8487e03-d9e8-4c32-978e-da6db0ce653a" }, { "nr": 44, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 45, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 46, "trainingId": "bfe7be06-8052-4b18-8acc-5a5f031b5ff1" }, { "nr": 47, "trainingId": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a" }, { "nr": 48, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }, { "nr": 49, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22" }] }]
 }];
 
 },{}],184:[function(require,module,exports){
@@ -26116,6 +26106,9 @@ function findPlan(uuid) {
   });
   var _days = [];
   var _microcycles = [];
+  if (plan === null || plan === undefined) {
+    throw new Error("plan not found " + uuid);
+  }
   plan.microcycles.forEach(function (_microcycle, i) {
     _days = [];
     _microcycle.days.forEach(function (_day, j) {
@@ -26129,18 +26122,19 @@ function findPlan(uuid) {
 }
 
 function findDay(dayNr) {
-  var days = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
+  var microcycles = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
   var trainings = arguments.length <= 2 || arguments[2] === undefined ? [] : arguments[2];
 
-  var _days = (0, _miscUtil.clone)(days);
+  var _microcycles = (0, _miscUtil.clone)(microcycles);
   var _trainings = (0, _miscUtil.clone)(trainings);
   var found = null;
-  // TODO use higher order function like find/map whatever
-  for (var i = 0, len = _days.length; i < len; i++) {
-    if (_days[0] !== null && _days[i]["nr"] == dayNr) {
-      found = augmentDay(_days[i], _trainings);
-    }
-  }
+  _microcycles.map(function (_microcycle) {
+    _microcycle.days.forEach(function (_day, j) {
+      if (_day["nr"] == dayNr) {
+        found = augmentDay(_day, _trainings);
+      }
+    });
+  });
   return found;
 }
 
@@ -26150,7 +26144,6 @@ function findDay(dayNr) {
 function augmentDay(day) {
   var trainings = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
 
-  JSON.stringify("augmentDay: " + JSON.stringify(day));
   var _day = (0, _miscUtil.clone)(day);
   var _trainings = (0, _miscUtil.clone)(trainings);
   var uuid = typeof _day.trainingId === "string" ? _day.trainingId : null;
@@ -26175,6 +26168,8 @@ exports.isDirtySegment = isDirtySegment;
 exports.canAugment = canAugment;
 exports.isValidSegment = isValidSegment;
 exports.parseDuration = parseDuration;
+exports.removeSegment = removeSegment;
+exports.addSegment = addSegment;
 
 var _moment = require("moment");
 
@@ -26187,13 +26182,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function findTraining(uuid, trainings) {
 	var needle = null;
 	for (var i = 0, len = trainings.length; i < len; i++) {
-		//// console.log("findTraining looking at training: " + trainings[i].uuid + "/" + trainings[i].name);
 		if (trainings[i].uuid === uuid) {
-			// console.log("findTraining found training: " + trainings[i].name);
 			needle = trainings[i];
 			break;
-		} else {
-			//// console.log("findTraining NOT equal " + trainings[i].uuid + " and " + JSON.stringify(uuid));
 		}
 	}
 	return needle;
@@ -26212,30 +26203,25 @@ function makeTrainingTotal(segments) {
 	if (segments.length === 0) {
 		return totalObj;
 	} else {
-		// console.log("makeTrainingTotal 2: size " + segments.length);
 		segments.forEach(function (segment) {
 			segment = augmentSegmentData(segment);
 			totalObj.distance += parseFloat(segment.distance);
 			var totalDurationObj = _moment2.default.duration(totalObj.duration).add(segment.duration);
-			// console.log("makeTrainingTotal segment: " + JSON.stringify(segment));
 			totalObj.duration = formatDuration(totalDurationObj);
-			//// console.log("LOOP: dist " + totalObj.distance + ", dur " + totalObj.duration);
 		});
 		if ((0, _miscUtil.hasNoRealValue)(totalObj, "pace", totalObj.pace)) {
 			totalObj.pace = makePace(totalObj);
-			// console.log("makeTrainingTotal 2.5: making pace based on duration, pace: " + totalObj.pace + ", dur: " + totalObj.duration);
-		} else if ((0, _miscUtil.hasNoRealValue)(totalObj, "duration", totalObj.duration)) {
-				totalObj.duration = makeDuration(totalObj);
-				// console.log("makeTrainingTotal 3: making duration based on pace: " + totalObj.pace + ", dur: " + totalObj.duration);
-			}
+		} else if ((0, _miscUtil.hasNoRealValue)(totalObj, "duration")) {
+			totalObj.duration = makeDuration(totalObj);
+		}
 	}
+	console.log("trainingUtil.makeTrainingTotal: " + JSON.stringify(totalObj));
 	return totalObj;
 }
 
 function augmentSegmentData(segment) {
 	segment = (0, _miscUtil.clone)(segment);
 	segment.pace = translateNamedPace(segment.pace);
-	// console.log("augmentSegmentData augment from " + JSON.stringify(segment));
 	if (canAugment(segment)) {
 		if ((0, _miscUtil.hasNoRealValue)(segment, "duration")) {
 			segment.duration = makeDuration(segment);
@@ -26246,14 +26232,12 @@ function augmentSegmentData(segment) {
 		if ((0, _miscUtil.hasNoRealValue)(segment, "distance")) {
 			segment.distance = makeDistance(segment);
 		}
-		// console.log("augmentSegmentData augment pace to " + segment.pace);
 	}
 	if (isValidSegment(segment)) {
 		segment.isValid = true;
 	} else {
 		segment.isValid = false;
 	}
-	// console.log("augmentSegmentData augment TO " + JSON.stringify(segment));
 	return segment;
 }
 
@@ -26262,9 +26246,7 @@ function isDirtySegment(segment, segments) {
 	segments = (0, _miscUtil.clone)(segments);
 	var storedSegment = null;
 	for (var i = 0, len = segments.length; i < len; i++) {
-		// console.log("trainingUtils.isDirtySegment looking at segment: " + segments[i].uuid);
 		if (segments[i].uuid === segment.uuid) {
-			// console.log("trainingUtils.isDirtySegment found segment: " + segments[i].uuid);
 			storedSegment = segments[i];
 			break;
 		}
@@ -26273,14 +26255,12 @@ function isDirtySegment(segment, segments) {
 		return false;
 	}
 	var isDirtySegment = storedSegment.distance !== segment.distance || storedSegment.duration !== segment.duration || storedSegment.pace !== segment.pace;
-	// console.log("trainingUtils.isDirtySegment: " + JSON.stringify(segment) + " versus " + JSON.stringify(storedSegment) + ", dirty? " + isDirtySegment);
 	return isDirtySegment;
 }
 
 function canAugment(segment) {
 	segment = (0, _miscUtil.clone)(segment);
 	var can = segment && (!segment.hasOwnProperty("distance") || segment.distance === "" || !segment.hasOwnProperty("duration") || segment.duration === "" || !segment.hasOwnProperty("pace") || segment.pace === "");
-	// console.log("canAugment: uuid: " + segment.uuid + ", can? " + can);
 	return can;
 }
 
@@ -26291,11 +26271,9 @@ function isValidSegment(segment) {
 	// 	return false;
 	// }	
 	if (makeDuration(segmentClone) !== segmentClone.duration) {
-		// console.log("isValidSegment: false: " + segmentClone.duration);
 		return false;
 	}
 	if (makePace(segmentClone) !== segmentClone.pace) {
-		// console.log("isValidSegment: false: " + segmentClone.pace);
 		return false;
 	}
 	return true;
@@ -26307,10 +26285,35 @@ function isValidSegment(segment) {
 function parseDuration(duration) {
 	if (duration !== null && duration !== "" && !isNaN(duration)) {
 		var parsed = (0, _moment2.default)("2016-01-01").minutes(duration).format("HH:mm:ss");
-		// console.log("parseDuration: " + duration + ", to " + parsed);
 		return parsed;
 	}
 	return duration;
+}
+
+function removeSegment(segment, segments) {
+	var _segments = (0, _miscUtil.clone)(segments);
+	var isSeg = function isSeg(_segment) {
+		return _segment.uuid == segment.uuid;
+	};
+	var index = _segments.findIndex(isSeg);
+	_segments.splice(index > -1 ? index : _segments.length, 1);
+	return _segments;
+}
+
+function addSegment(segment, segments, overwriteUuid) {
+	console.log("addSegment init (" + segments.length + ") " + JSON.stringify(segments));
+	var _segment = (0, _miscUtil.clone)(segment);
+	var _segments = (0, _miscUtil.clone)(segments);
+	console.log("addSegment created copy of segment " + JSON.stringify(_segment));
+	if (!_segment.hasOwnProperty("uuid") || !_segment.uuid || overwriteUuid !== undefined && overwriteUuid === true) {
+		console.log("addSegment overwriting uuid");
+		_segment.uuid = (0, _miscUtil.createUuid)();
+	}
+	console.log("addSegment " + _segment.uuid);
+	var augmentedSegment = augmentSegmentData(_segment);
+	_segments.push(augmentedSegment);
+	console.log("addSegment final (" + _segments.length + ") " + JSON.stringify(_segments));
+	return _segments;
 }
 
 /* ----------------------------------------------------------------------------------- */
@@ -26344,7 +26347,6 @@ function makeDuration(segment) {
 	    totalSeconds = Math.round(seconds * segment.distance),
 	    durationObj = _moment2.default.duration(totalSeconds, "seconds");
 	var formattedDuration = formatDuration(durationObj);
-	// console.log("formattedDuration: " + formattedDuration + ", " + paceObj.asSeconds());
 	return formattedDuration;
 };
 
@@ -26357,19 +26359,14 @@ function makeDistance(segment) {
 	    durationObj = _moment2.default.duration(segment.duration),
 	    durationSeconds = durationObj.asSeconds(),
 	    paceSeconds = paceObj.asSeconds() / 60;
-	// console.log("makeDistance: seconds? " + durationSeconds + ", paceSeconds? " + paceSeconds);
-	// TODO debug rounding with decimals
 	if (paceSeconds === 0 || durationSeconds === 0) {
 		return 0;
 	}
 	var rawDistance = durationSeconds / paceSeconds;
-	var distance = Math.round(rawDistance * 1000) / 1000;
-	var isNumeric = typeof distance == 'number';
-	var isString = typeof distance == 'string';
-	// console.log("makeDistance: " + distance + ", nr? " + isNumeric + ", string? " + isString);
-	return distance;
+	return Math.round(rawDistance * 1000) / 1000;
 };
 
+// TODO extract to config
 function translateNamedPace(pace) {
 	if (pace === undefined || pace === null || !pace.startsWith("@")) {
 		return pace;
@@ -26386,6 +26383,8 @@ function translateNamedPace(pace) {
 		case "@21KP":
 			return "03:55";break;
 		case "@16KP":
+			return "03:50";break;
+		case "@LT":
 			return "03:50";break;
 		case "@10KP":
 			return "03:40";break;
@@ -26526,9 +26525,15 @@ var trainings = exports.trainings = [{
     "name": "Short ladders @5KP",
     "type": "workout",
     "segments": [{ "uuid": "801", "distance": 2.000, "pace": "@RECOV" }, { "uuid": "812", "distance": 0.400, "pace": "@5KP" }, { "uuid": "823", "distance": 0.400, "pace": "@RECOV" }, { "uuid": "834", "distance": 0.800, "pace": "@5KP" }, { "uuid": "845", "distance": 0.400, "pace": "@RECOV" }, { "uuid": "856", "distance": 1.200, "pace": "@5KP" }, { "uuid": "867", "distance": 0.400, "pace": "@RECOV" }, { "uuid": "878", "distance": 0.400, "pace": "@5KP" }, { "uuid": "889", "distance": 0.400, "pace": "@RECOV" }, { "uuid": "890", "distance": 0.800, "pace": "@5KP" }, { "uuid": "901", "distance": 0.400, "pace": "@RECOV" }, { "uuid": "912", "distance": 1.200, "pace": "@5KP" }, { "uuid": "903", "distance": 0.400, "pace": "@RECOV" }, { "uuid": "874", "distance": 0.400, "pace": "@5KP" }, { "uuid": "905", "distance": 0.400, "pace": "@RECOV" }, { "uuid": "876", "distance": 0.400, "pace": "@5KP" }, { "uuid": "907", "distance": 0.400, "pace": "@RECOV" }, { "uuid": "878", "distance": 0.400, "pace": "@5KP" }, { "uuid": "929", "distance": 2.000, "pace": "@RECOV" }]
-}, { "uuid": "5374128e-1d89-11e7-b014-a7739b3e7391", "name": "6 x 860 hills @5KP/10KP", "segments": [{ "uuid": "80", "distance": 2, "pace": "05:30", "duration": "00:11:00", "isValid": true }, { "uuid": "81", "distance": "0.860", "duration": "00:03:11", "pace": "03:42", "isValid": true }, { "uuid": "82", "distance": "0.3", "duration": "00:02:00", "pace": "06:40", "isValid": true }, { "uuid": "83", "distance": "0.860", "duration": "00:03:19", "pace": "03:51", "isValid": true }, { "uuid": "84", "distance": "0.3", "duration": "00:02:00", "pace": "06:40", "isValid": true }, { "uuid": "85", "distance": "0.860", "duration": "00:03:11", "pace": "03:42", "isValid": true }, { "uuid": "86", "distance": "0.3", "duration": "00:01:30", "pace": "05:00", "isValid": true }, { "uuid": "87", "distance": "0.860", "duration": "00:03:05", "pace": "03:35", "isValid": true }, { "uuid": "88", "distance": "0.3", "duration": "00:01:30", "pace": "05:00", "isValid": true }, { "uuid": "89", "distance": "0.860", "duration": "00:03:01", "pace": "03:30", "isValid": true }, { "uuid": "90", "distance": "0.3", "duration": "00:01:30", "pace": "05:00", "isValid": true }, { "uuid": "91", "distance": "0.860", "duration": "00:03:01", "pace": "03:30", "isValid": true }, { "uuid": "92", "distance": "1.5", "duration": "00:08:15", "pace": "05:30", "isValid": true }] }, {
+}, {
+    "uuid": "5374128e-1d89-11e7-b014-a7739b3e7391",
+    "name": "6 x 860 hills @5KP/10KP",
+    "type": "workout",
+    "segments": [{ "uuid": "80", "distance": 2, "pace": "05:30", "duration": "00:11:00" }, { "uuid": "81", "distance": "0.860", "duration": "00:03:11", "pace": "03:42" }, { "uuid": "82", "distance": "0.3", "duration": "00:02:00", "pace": "06:40" }, { "uuid": "83", "distance": "0.860", "duration": "00:03:19", "pace": "03:51" }, { "uuid": "84", "distance": "0.3", "duration": "00:02:00", "pace": "06:40" }, { "uuid": "85", "distance": "0.860", "duration": "00:03:11", "pace": "03:42" }, { "uuid": "86", "distance": "0.3", "duration": "00:01:30", "pace": "05:00" }, { "uuid": "87", "distance": "0.860", "duration": "00:03:05", "pace": "03:35" }, { "uuid": "88", "distance": "0.3", "duration": "00:01:30", "pace": "05:00" }, { "uuid": "89", "distance": "0.860", "duration": "00:03:01", "pace": "03:30" }, { "uuid": "90", "distance": "0.3", "duration": "00:01:30", "pace": "05:00" }, { "uuid": "91", "distance": "0.860", "duration": "00:03:01", "pace": "03:30" }, { "uuid": "92", "distance": "1.5", "duration": "00:08:15", "pace": "05:30" }]
+}, {
     "uuid": "acc3d1b9-33ae-4d70-dda3-d0e885f516f4",
     "name": "5 x 1.5km @10KP",
+    "type": "workout",
     "segments": [{
         "uuid": "1",
         "distance": "3",
@@ -26593,6 +26598,11 @@ var trainings = exports.trainings = [{
         "pace": "05:32",
         "isValid": true
     }]
+}, {
+    "uuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+    "name": "4 x 2km Cruise intervals",
+    "type": "workout",
+    "segments": [{ "uuid": "8011", "distance": 2.000, "pace": "@RECOV" }, { "uuid": "8121", "distance": 2.000, "pace": "@LT" }, { "uuid": "8231", "duration": "00:01:00", "pace": "@RECOV" }, { "uuid": "8121", "distance": 2.000, "pace": "@LT" }, { "uuid": "8231", "duration": "00:01:00", "pace": "@RECOV" }, { "uuid": "8121", "distance": 2.000, "pace": "@LT" }, { "uuid": "8231", "duration": "00:01:00", "pace": "@RECOV" }, { "uuid": "8121", "distance": 2.000, "pace": "@LT" }, { "uuid": "8231", "duration": "00:01:00", "pace": "@RECOV" }, { "uuid": "9291", "distance": 2.000, "pace": "@RECOV" }]
 }];
 
 },{}]},{},[171])
