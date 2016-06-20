@@ -57,7 +57,7 @@ export default class TrainingStore {
   addSegmentToStore(segment, segments, overwriteUuid) {
     console.log(`addSegmentToStore (${segments.length}) ${segment.uuid} overwrite? ${overwriteUuid}`);
     this.segments = addSegment(segment, segments, overwriteUuid);
-    this.total = makeTrainingTotal(segments);    
+    this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_ADD_EVT", { segments: this.segments, total: this.total });
   }
 
@@ -77,7 +77,7 @@ export default class TrainingStore {
 
   removeSegmentFromStore(segment, segments) {
     this.segments = removeSegment(segment, segments);
-    this.total = makeTrainingTotal(segments);
+    this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_REMOVE_EVT", { segments: this.segments, total: this.total });
     console.log(`TrainingStore.removeSegment SEGMENT_REMOVE_EVT: ${segment.uuid}`);
   }

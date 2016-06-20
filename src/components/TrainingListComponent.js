@@ -26,7 +26,7 @@ export default class TrainingListComponent extends React.Component {
       if (trainings === undefined || trainings === null) {
         throw new Error("TRAINING_LIST_EVT was caught without a list of trainings");
       }
-      console.log(`TrainingListComponent.componentDidMount on TRAINING_LIST_EVT ${JSON.stringify(trainings)}`);
+      console.log(`TrainingListComponent.componentDidMount on TRAINING_LIST_EVT ${trainings.length}`);
       this.setState({trainings: trainings});
     }));
     this.props.eventbus.emit("TRAINING_LIST_CMD");

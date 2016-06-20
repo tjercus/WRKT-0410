@@ -29,7 +29,7 @@ Based on 'React eventemitter'.
 - Flux architecture?
 
 ### Training
-- bug where re-calculate total results in an outdated total, clone/remove buttons
+- introduce clone training feature
 - introduce tags
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
@@ -47,8 +47,8 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- better display of a day, ex: training type icons and colors
 - toggle list/calendar modus
+- better display of a day, ex: training type icons and colors
 - feature to add a training to a day, iaw: implement 'edit' button
 - introduce plan selection component
 - show total km for a cycle
