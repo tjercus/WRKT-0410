@@ -1,6 +1,6 @@
 
 import test from "tape";
-//import sinon from "sinon";
+import sinon from "sinon";
 import TrainingStore from "../src/stores/TrainingStore";
 import EventEmitter from "eventemitter2";
 
@@ -25,28 +25,36 @@ let training = {
   "segments": segments
 };
 
-// TODO test events instead of data operations
-/*
-test("removeSegment should find and destroy a segment", (assert) => {  
+test("removeSegment should emit a properly loaded event", (assert) => {
   let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true}); 
-  //sinon.spy();
+  let emitSpy = sinon.spy(eventbus, "emit");
   const trainings = [];
   trainings.push(training);
-  const store = TrainingStore(eventbus, trainings);
-
-  eventbus.on("TRAINING_LOAD_EVT", (obj) => {
-    assert.equal(store.segments.length, 10, "should load 10 segments after TRAINING_LOAD_EVT");
-  });
-
-  eventbus.on("SEGMENT_REMOVE_EVT", (obj) => {
-    assert.equal(store.segments.length, 9, "should hold 9 segments after SEGMENT_REMOVE_EVT");
-  });  
-  
-  // ask store to load training
+  const store = new TrainingStore(eventbus, trainings);
+  // ask store to load training via eventbus
   eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
-  store.removeSegment({"uuid": "107"});
-  assert.end();
   
-  // TODO assert spy was called 
+  store.removeSegmentFromStore({"uuid": "107"}, segments);
+
+  // assert.equal(emitSpy.getCall(0).args[1], "TRAINING_LIST_CMD");
+  // assert.equal(emitSpy.getCall(1).args[1], "TRAINING_LOAD_CMD");
+  // assert.equal(emitSpy.getCall(2).args[1], "TRAINING_CLEAR_CMD");
+  // assert.equal(emitSpy.getCall(3).args[1], "SEGMENT_UPDATE_CMD");
+  // assert.equal(emitSpy.getCall(4).args[1], "SEGMENT_ADD_CMD");
+  // assert.equal(emitSpy.getCall(5).args[1], "SEGMENT_REMOVE_CMD");
+  // assert.equal(emitSpy.getCall(6).args[1], "SEGMENT_CLONE_CMD");
+  // assert.equal(emitSpy.getCall(7).args[1], "SEGMENT_REMOVE_EVT");
+  
+  assert.ok(emitSpy.calledWith("SEGMENT_REMOVE_EVT"));
+
+  // remove segment 107 from testdata
+  segments.splice(8, 1);
+
+  for (let i = 0, len = emitSpy.args.length; i < len; i++) {    
+    if (emitSpy.args[i][0] === "SEGMENT_REMOVE_EVT") {      
+      assert.equal(emitSpy.args[i][1].segments.length, segments.length, 
+        "after deleting, there should be 9 segments");
+    }
+  }  
+  assert.end();  
 });
-*/

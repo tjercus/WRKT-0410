@@ -69,6 +69,13 @@ test("clone should clone with real numerics", (assert) => {
   assert.end();
 });
 
+test("clone should work with a string", (assert) => {
+  const obj = "mystring";
+  assert.equal((typeof clone(obj)), "string", "should be string for [" + obj + "]");
+  assert.equal(clone(obj), "mystring");
+  assert.end();
+});
+
 test("lpad should work with a string", (assert) => {
   const num = "4";
   const padded = lpad(num);
@@ -76,7 +83,6 @@ test("lpad should work with a string", (assert) => {
   assert.equal(padded, "04", "should be padded with one zero for [" + num + "]");
   assert.end();
 });
-
 
 test("lpad should work with real numerics", (assert) => {
   const num = 4;

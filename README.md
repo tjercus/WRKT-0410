@@ -16,7 +16,7 @@ Based on 'React eventemitter'.
 
 ### App
 - casper js or smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
-- Better tests for stores, test eventemitter with spies (and/or do actual work in util that returns a promise)
+- Introduce Flow for type checking
 - TrainingListComponent should supports categories as accordion or tagcloud
 - use const instead of let when possible
 - use arrow functions when possible
