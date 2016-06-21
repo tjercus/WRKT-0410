@@ -11,6 +11,15 @@ import { events } from "../src/components/constants";
 // specific dependencies for CUT
 import EventEmitter from "eventemitter2";
 
+const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
+const segments = [{
+  uuid: "uuid-segment1",
+  distance: 5.1,
+  duration: "01:23:45",
+  pace: "03:59"
+}];
+const training = { uuid: "uuid-training1", name: "my training", segments: segments, total: { distance: 5.1, duration: "01:23:45", pace: "03:59" } };  
+
 test("TrainingComponent should initially render with an info message", (assert) => {
   let eventbus = sinon.spy();
   const component = shallow(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
@@ -27,18 +36,9 @@ test("TrainingComponent should catch a MENU_CLICK_EVT", (assert) => {
   assert.end();
 });
 
-test("TrainingComponent should render a training", (assert) => {  
-  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
-  const segments = [{
-    uuid: "uuid-segment1",
-    distance: 5.1,
-    duration: "01:23:45",
-    pace: "03:59"
-  }];
-  const training = { uuid: "uuid-training1", name: "my training", segments: segments, total: { distance: 5.1, duration: "01:23:45", pace: "03:59" } };  
-  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
-  
-  eventbus.emit("TRAINING_LOAD_EVT", training);  
+test("TrainingComponent should render a training", (assert) => {
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
+  eventbus.emit("TRAINING_LOAD_EVT", training);
 
   assert.equal(component.find("header.panel-header").text(), "my training");
   assert.equal(component.find("SegmentComponent").length, 1);
@@ -50,6 +50,18 @@ test("TrainingComponent should render a training", (assert) => {
   assert.equal(buttons.at(2).text(), "open save dialog");
   assert.equal(buttons.at(3).text(), "clear training");  
   assert.ok(buttons.at(3).hasClass("button-warning"));
+  assert.equal(buttons.at(4).text(), "clone training");
 
+  assert.end();
+});
+
+test("TrainingComponent should emit a TRAINING_CLONE_CMD", (assert) => {
+  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
+  const emitSpy = sinon.spy(eventbus, "emit");
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
+  eventbus.emit("TRAINING_LOAD_EVT", training);
+  // TODO click button
+  component.find("menu button").at(4).simulate("click");
+  assert.ok(emitSpy.calledWith("TRAINING_CLONE_CMD"), "component should emit TRAINING_CLONE_CMD");
   assert.end();
 });

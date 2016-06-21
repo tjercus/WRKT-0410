@@ -27,15 +27,24 @@ export default class TrainingStore {
     eventbus.on("TRAINING_LIST_CMD", () => {
       eventbus.emit("TRAINING_LIST_EVT", this.trainings);
     });
-
     eventbus.on("TRAINING_LOAD_CMD", (uuid) => {
       this.clearTraining();
       this.loadTraining(uuid, this.trainings);
     });
-
     eventbus.on("TRAINING_CLEAR_CMD", (uuid) => {
       this.clearTraining();
-      this.eventbus.emit("TRAINING_CLEAR_EVT", uuid);
+      eventbus.emit("TRAINING_CLEAR_EVT", uuid);
+    });
+    eventbus.on("TRAINING_CLONE_CMD", () => {
+      console.log(`TRAINING_CLONE_CMD`);
+      const training = {};
+      training.uuid = createUuid();
+      training.name = `${this.state.name} (clone)`;
+      training.segments = clone(this.state.segments);
+      training.total = this.state.total;
+      trainings.push(training);
+      this.setState({trainings: trainings, uuid: training.uuid, name: training.name});
+      eventbus.emit("TRAINING_LOAD_EVT", training);
     });
 
     eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {
@@ -51,7 +60,7 @@ export default class TrainingStore {
     eventbus.on("SEGMENT_CLONE_CMD", (segment) => {
       console.log(`SEGMENT_CLONE_CMD ${segment.uuid}`);
       this.addSegmentToStore(segment, this.segments, true);
-    });
+    });    
   }
 
   addSegmentToStore(segment, segments, overwriteUuid) {

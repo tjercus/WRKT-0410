@@ -22,6 +22,7 @@ export default class TrainingComponent extends React.Component {
     this.clearTrainingFromLocalState = this.clearTrainingFromLocalState.bind(this);
     this.addEmptySegment = this.addEmptySegment.bind(this);
     this.loadTraining = this.loadTraining.bind(this);
+    this.cloneTraining = this.cloneTraining.bind(this);
   }
   
   componentDidMount() {
@@ -97,6 +98,13 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.emit("TRAINING_CLEAR_CMD", this.state.uuid);
   }
 
+  cloneTraining() {
+    // TODO custom alert    
+    console.log("Training cloned and selected");
+    this.props.eventbus.emit("TRAINING_CLONE_CMD");
+    alert("Training cloned and selected");
+  }
+
   clearTrainingFromLocalState() {    
     this.setState({
         isVisible: true,
@@ -152,6 +160,7 @@ export default class TrainingComponent extends React.Component {
               <button onClick={this.exportTraining} className="button-flat">export training</button>
               <button onClick={this.openSaveDialog} className="button-flat">open save dialog</button>
               <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>
+              <button onClick={this.cloneTraining} className="button-flat">clone training</button>
             </menu>            
           </div>        
         </section>
