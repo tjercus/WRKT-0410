@@ -37,8 +37,19 @@ test("TrainingComponent should render a training", (assert) => {
   }];
   const training = { uuid: "uuid-training1", name: "my training", segments: segments, total: { distance: 5.1, duration: "01:23:45", pace: "03:59" } };  
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
-  eventbus.emit("TRAINING_LOAD_EVT", training);
-  console.log(component.first().html());
+  
+  eventbus.emit("TRAINING_LOAD_EVT", training);  
+
+  assert.equal(component.find("header.panel-header").text(), "my training");
   assert.equal(component.find("SegmentComponent").length, 1);
+  assert.equal(component.find("output[name='totals']").length, 1);
+  assert.equal(component.find("menu").length, 1);
+  const buttons = component.find("menu button");
+  assert.equal(buttons.first().text(), "add empty segment");  
+  assert.equal(buttons.at(1).text(), "export training");
+  assert.equal(buttons.at(2).text(), "open save dialog");
+  assert.equal(buttons.at(3).text(), "clear training");  
+  assert.ok(buttons.at(3).hasClass("button-warning"));
+
   assert.end();
 });

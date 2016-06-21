@@ -15,7 +15,8 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- casper js or smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
+- smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
+- eslint
 - Introduce Flow for type checking
 - TrainingListComponent should supports categories as accordion or tagcloud
 - use const instead of let when possible
