@@ -39,11 +39,12 @@ export default class TrainingStore {
       console.log(`TRAINING_CLONE_CMD`);
       const training = {};
       training.uuid = createUuid();
-      training.name = `${this.state.name} (clone)`;
-      training.segments = clone(this.state.segments);
-      training.total = this.state.total;
-      trainings.push(training);
-      this.setState({trainings: trainings, uuid: training.uuid, name: training.name});
+      training.name = `${this.name} (clone)`;
+      training.segments = clone(this.segments);
+      training.total = this.total;
+      this.trainings.push(training);
+      this.uuid = training.uuid,
+      this.name = training.name;
       eventbus.emit("TRAINING_LOAD_EVT", training);
     });
 
