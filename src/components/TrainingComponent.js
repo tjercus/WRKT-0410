@@ -1,5 +1,6 @@
 import React from "react";
 import SegmentComponent from "./SegmentComponent";
+import {clone} from "../stores/miscUtil";
 
 export default class TrainingComponent extends React.Component {
 
@@ -108,7 +109,7 @@ export default class TrainingComponent extends React.Component {
           pace: "00:00"
         }
       });
-  }
+  }  
   
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";

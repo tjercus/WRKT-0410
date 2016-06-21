@@ -8,12 +8,17 @@ export default class SegmentComponent extends React.Component {
 
   constructor(props) {
     super(props);
+
+    let isValid = true;
+    if (props.segment.hasOwnProperty("isValid")) {
+      isValid = props.segment.isValid;
+    }
     this.state = {
       uuid: clone(props.segment.uuid),
       distance: clone(props.segment.distance),
       duration: clone(props.segment.duration),
       pace: clone(props.segment.pace),
-      isValid: clone(props.segment.isValid)
+      isValid: clone(isValid)
     }
     this.onChange = this.onChange.bind(this);
     this.onCalcButtonClick = this.onCalcButtonClick.bind(this);
