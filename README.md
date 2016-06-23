@@ -30,7 +30,6 @@ Based on 'React eventemitter'.
 - Flux architecture?
 
 ### Training
-- introduce clone training feature
 - introduce tags
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests

@@ -11,6 +11,7 @@ export default class TrainingComponent extends React.Component {
       uuid: null,
       name: "",
       segments: [],
+      isNameEditable: false,
       total: {
         distance: 0,
         duration: "00:00:00",
@@ -23,6 +24,9 @@ export default class TrainingComponent extends React.Component {
     this.addEmptySegment = this.addEmptySegment.bind(this);
     this.loadTraining = this.loadTraining.bind(this);
     this.cloneTraining = this.cloneTraining.bind(this);
+    this.onEditNameButtonClick = this.onEditNameButtonClick.bind(this);
+    this.onNameChange = this.onNameChange.bind(this);
+    this.onNameBlur = this.onNameBlur.bind(this);
   }
   
   componentDidMount() {
@@ -36,10 +40,13 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.on("TRAINING_LOAD_EVT", (training) => {
       this.loadTraining(training);
     });
+    // this.props.eventbus.on("TRAINING_UPDATE_EVT", (training) => {
+    //   this.loadTraining(training);
+    // });
+
     this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
       this.setState({segments: training.segments, total: training.total});      
-    });   
-    
+    });    
     this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
       this.setState({segments: [], total: {}}, function() {
         console.log("TrainingComponent emptied segments");
@@ -64,6 +71,7 @@ export default class TrainingComponent extends React.Component {
         uuid: null,
         name: "",
         segments: [],
+        isNameEditable: false,
         total: {
           distance: 0,
           duration: "00:00:00",
@@ -98,6 +106,19 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.emit("TRAINING_CLEAR_CMD", this.state.uuid);
   }
 
+  onEditNameButtonClick(evt) {
+    //const inverseState = 
+    this.setState({isNameEditable: !this.state.isNameEditable});
+  }
+
+  onNameChange(evt) {
+    this.setState({name: evt.target.value});
+  }
+
+  onNameBlur(evt) {
+    this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.state);
+  }
+
   cloneTraining() {
     // TODO custom alert    
     console.log("Training cloned and selected");
@@ -111,6 +132,7 @@ export default class TrainingComponent extends React.Component {
         uuid: null,
         name: "",
         segments: [],
+        isNameEditable: false,
         total: {
           distance: 0,
           duration: "00:00:00",
@@ -121,8 +143,15 @@ export default class TrainingComponent extends React.Component {
   
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
-    let segmentComponents = [];
 
+    let nameComponent = "";
+    if (this.state.isNameEditable) {
+      nameComponent = <input type="text" id="edit-name-textfield" name="edit-name-textfield" value={this.state.name} onChange={this.onNameChange} onBlur={this.onNameBlur} />
+    } else {
+      nameComponent = <span id="name-label">{this.state.name}</span>;
+    }
+
+    let segmentComponents = [];
     this.state.segments.forEach((segment, i) => {
       segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />);
     });
@@ -135,17 +164,18 @@ export default class TrainingComponent extends React.Component {
     if (this.state.uuid) {
       return (
         <section className={panelClassName}>
-          <header className="panel-header">
-            {this.state.name}            
+          <header className="panel-header">            
+            {nameComponent}
+            <button id="edit-name-button" onClick={this.onEditNameButtonClick} className="button-small">{"edit"}</button>
           </header>
           <div className="panel-body">
             <table summary="training segments">
-            <thead>
-              <tr><th>Distance</th><th>Duration</th><th>Pace</th><th>Actions</th></tr>
-            </thead>
-            <tbody>
-              {segmentComponents}
-            </tbody>
+              <thead>
+                <tr><th>Distance</th><th>Duration</th><th>Pace</th><th>Actions</th></tr>
+              </thead>
+              <tbody>
+                {segmentComponents}
+              </tbody>
             </table>
             <output name="totals">
               <p>

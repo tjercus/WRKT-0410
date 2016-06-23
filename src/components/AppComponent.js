@@ -11,6 +11,7 @@ import TimelineStore from "../stores/TimelineStore";
 import DayEditComponent from "./DayEditComponent";
 
 import { trainings } from "../stores/trainings";
+import { clone } from "../stores/miscUtil";
 
 export default class AppComponent extends React.Component {
 
@@ -18,8 +19,8 @@ export default class AppComponent extends React.Component {
     super(props);
     this.eventbus = new EventEmitter({wildcard: true, maxListeners: 99});
     // singleton SegmentStore
-    new TrainingStore(this.eventbus, trainings);
-    new TimelineStore(this.eventbus, trainings);
+    new TrainingStore(this.eventbus, clone(trainings));
+    new TimelineStore(this.eventbus, clone(trainings));
   }
   
   componentDidMount() {

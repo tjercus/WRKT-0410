@@ -2,6 +2,7 @@ import test from "tape";
 import {
   findTraining,
   makeTrainingTotal,
+  updateTraining,
   augmentSegmentData,
   isDirtySegment,
   canAugment,
@@ -407,3 +408,17 @@ test("addSegment should add a segment twice", (assert) => {
   assert.equal(newSegments.length, 12, "after adding there should be 11 segments");  
   assert.end();
 });
+
+test("updateTraining should find and update training by uuid", (assert) => {  
+  let training = {
+    uuid: "blah-11",
+    name: "name11-mod"
+  };
+  const newTrainings = updateTraining(training, trainings);
+  assert.equal(newTrainings[1].uuid, "blah-11");
+  assert.equal(newTrainings[1].name, "name11-mod");
+  assert.equal(newTrainings.length, 3, "should have three trainings");
+
+  assert.end();
+});
+

@@ -40,7 +40,7 @@ test("TrainingComponent should render a training", (assert) => {
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
   eventbus.emit("TRAINING_LOAD_EVT", training);
 
-  assert.equal(component.find("header.panel-header").text(), "my training");
+  assert.equal(component.find("header.panel-header span").text(), "my training");
   assert.equal(component.find("SegmentComponent").length, 1);
   assert.equal(component.find("output[name='totals']").length, 1);
   assert.equal(component.find("menu").length, 1);
@@ -59,9 +59,39 @@ test("TrainingComponent should emit a TRAINING_CLONE_CMD", (assert) => {
   const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
   const emitSpy = sinon.spy(eventbus, "emit");
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
-  eventbus.emit("TRAINING_LOAD_EVT", training);
-  // TODO click button
+  eventbus.emit("TRAINING_LOAD_EVT", training);  
   component.find("menu button").at(4).simulate("click");
   assert.ok(emitSpy.calledWith("TRAINING_CLONE_CMD"), "component should emit TRAINING_CLONE_CMD");
+  assert.end();
+});
+
+test("TrainingComponent should allow a toggle of trainingname as editable component", (assert) => {  
+  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
+  const emitSpy = sinon.spy(eventbus, "emit");
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
+  const BUTTON_SELECTOR = "button[id='edit-name-button']";
+  const TEXTFIELD_SELECTOR = "input[id='edit-name-textfield']";
+  eventbus.emit("TRAINING_LOAD_EVT", training);  
+  assert.equal(component.find(BUTTON_SELECTOR).length, 1, "initially: edit button visible");
+  assert.equal(component.find(TEXTFIELD_SELECTOR).length, 0, "initially: inputfield not visible");
+  component.find(BUTTON_SELECTOR).simulate("click");
+  assert.equal(component.find(BUTTON_SELECTOR).length, 1, "after click 1: button still visible");
+  assert.equal(component.find(TEXTFIELD_SELECTOR).length, 1, "after click 1: textfield visible");
+  component.find(BUTTON_SELECTOR).simulate("click");
+  assert.equal(component.find(BUTTON_SELECTOR).length, 1, "after click 2: button still visible");
+  assert.equal(component.find(TEXTFIELD_SELECTOR).length, 0, "after click 2: textfield not visible");
+  assert.end();
+});
+
+test("TrainingComponent should emit a TRAINING_UPDATE_CMD", (assert) => {
+  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
+  const emitSpy = sinon.spy(eventbus, "emit");
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
+  const BUTTON_SELECTOR = "button[id='edit-name-button']";
+  const TEXTFIELD_SELECTOR = "input[id='edit-name-textfield']";
+  eventbus.emit("TRAINING_LOAD_EVT", training);  
+  component.find(BUTTON_SELECTOR).simulate("click");
+  component.find(TEXTFIELD_SELECTOR).simulate("blur");
+  assert.ok(emitSpy.calledWith("TRAINING_UPDATE_CMD"), "component should emit TRAINING_UPDATE_CMD");
   assert.end();
 });

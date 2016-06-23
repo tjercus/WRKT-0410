@@ -12,6 +12,19 @@ export function findTraining(uuid, trainings) {
 	return needle;
 }
 
+export function updateTraining(training, trainings) {
+	const _trainings = clone(trainings);	
+  let i = 0;
+  _trainings.some((_training) => {
+	  if (_training.uuid === training.uuid) {
+	    _trainings[i] = training;	    
+	    return true;
+	  }
+	  i++;
+  });
+  return _trainings;
+}
+
 /**
  * @param array
  * @return Object

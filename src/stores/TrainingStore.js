@@ -1,6 +1,7 @@
 import EventEmitter from "eventemitter2";
 import {
   findTraining,
+  updateTraining,
   makeTrainingTotal,
   isDirtySegment,
   augmentSegmentData,
@@ -36,16 +37,23 @@ export default class TrainingStore {
       eventbus.emit("TRAINING_CLEAR_EVT", uuid);
     });
     eventbus.on("TRAINING_CLONE_CMD", () => {
-      console.log(`TRAINING_CLONE_CMD`);
+      console.log(`TrainingStore caught TRAINING_CLONE_CMD`);
       const training = {};
       training.uuid = createUuid();
       training.name = `${this.name} (clone)`;
       training.segments = clone(this.segments);
       training.total = this.total;
+      // TODO throw TRAINING_ADD_EVT ??
       this.trainings.push(training);
+      eventbus.emit("TRAINING_ADD_EVT", this.trainings);
       this.uuid = training.uuid,
       this.name = training.name;
       eventbus.emit("TRAINING_LOAD_EVT", training);
+    });
+    eventbus.on("TRAINING_UPDATE_CMD", (training) => {
+      // currently only 'name' can be updated (besides 'segments')
+      this.name = training.name;
+      this.updateTrainingInStore(training, this.trainings);
     });
 
     eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {
@@ -63,6 +71,11 @@ export default class TrainingStore {
       this.addSegmentToStore(segment, this.segments, true);
     });    
   }
+  
+  updateTrainingInStore(training, trainings) {
+    this.trainings = updateTraining(training, trainings);
+    this.eventbus.emit("TRAINING_UPDATE_EVT", {training: training, trainings: trainings});
+  }
 
   addSegmentToStore(segment, segments, overwriteUuid) {
     console.log(`addSegmentToStore (${segments.length}) ${segment.uuid} overwrite? ${overwriteUuid}`);
@@ -71,6 +84,7 @@ export default class TrainingStore {
     this.eventbus.emit("SEGMENT_ADD_EVT", { segments: this.segments, total: this.total });
   }
 
+  // TODO move to trainingUtil
   updateSegment(segment, segments) {
     segment = augmentSegmentData(segment);
     let i = 0;
