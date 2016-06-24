@@ -116,6 +116,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   onNameBlur(evt) {
+    console.log(`onNameBlur ${this.state.name}`);
     this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.state);
   }
 
@@ -166,7 +167,7 @@ export default class TrainingComponent extends React.Component {
         <section className={panelClassName}>
           <header className="panel-header">            
             {nameComponent}
-            <button id="edit-name-button" onClick={this.onEditNameButtonClick} className="button-small">{"edit"}</button>
+            <button id="edit-name-button" onClick={this.onEditNameButtonClick} className="button-small button-flat">{"edit"}</button>
           </header>
           <div className="panel-body">
             <table summary="training segments">

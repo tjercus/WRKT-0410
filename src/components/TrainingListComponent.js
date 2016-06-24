@@ -1,7 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
 import {clone} from "../stores/miscUtil";
-//.import {findTraining} from "../stores/trainingUtil";
 
 export default class TrainingListComponent extends React.Component {
 
@@ -16,36 +15,30 @@ export default class TrainingListComponent extends React.Component {
   }
   
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", ((menuItemName) => {
+    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
       if (menuItemName === this.props.from) {
         this.setState({isVisible: true});
       } else {
         this.setState({isVisible: false});
       }
-    }));
+    });
 
-    this.props.eventbus.on("TRAINING_LIST_EVT", ((trainings) => {
+    this.props.eventbus.on("TRAINING_LIST_EVT", (trainings) => {
       if (trainings === undefined || trainings === null) {
         throw new Error("TRAINING_LIST_EVT was caught without a list of trainings");
-      }
-      console.log(`TrainingListComponent.componentDidMount on TRAINING_LIST_EVT ${trainings.length}`);
+      }      
       this.setState({trainings: trainings});
-    }));
+    });
 
-    this.props.eventbus.on("TRAINING_LOAD_EVT", ((training) => {
+    this.props.eventbus.on("TRAINING_LOAD_EVT", (training) => {
       this.setState({selectedUid: training.uuid});
-    }));
+    });
 
-    this.props.eventbus.on("TRAINING_UPDATE_EVT", ((obj) => {
-      //_trainings = updateTraining(training, this.trainings);
-      console.log(`TrainingListComponent caught TRAINING_UPDATE_EVT ${obj.trainings.length}`);
-      this.setState({trainings: []}, function() {
-        this.setState({trainings: obj.trainings});
-      });      
-    }));
+    this.props.eventbus.on("TRAINING_UPDATE_EVT", (obj) => {
+      this.setState({trainings: obj.trainings});      
+    });
 
     // handle TRAINING_ADD_EVT thrown by TrainingStore ??
-
     this.props.eventbus.emit("TRAINING_LIST_CMD");
   }  
 

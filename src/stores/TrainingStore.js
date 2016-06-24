@@ -43,7 +43,7 @@ export default class TrainingStore {
       training.name = `${this.name} (clone)`;
       training.segments = clone(this.segments);
       training.total = this.total;
-      // TODO throw TRAINING_ADD_EVT ??
+      // TODO extract method
       this.trainings.push(training);
       eventbus.emit("TRAINING_ADD_EVT", this.trainings);
       this.uuid = training.uuid,
@@ -72,13 +72,12 @@ export default class TrainingStore {
     });    
   }
   
-  updateTrainingInStore(training, trainings) {
+  updateTrainingInStore(training, trainings) {    
     this.trainings = updateTraining(training, trainings);
-    this.eventbus.emit("TRAINING_UPDATE_EVT", {training: training, trainings: trainings});
+    this.eventbus.emit("TRAINING_UPDATE_EVT", {training: training, trainings: this.trainings});
   }
 
   addSegmentToStore(segment, segments, overwriteUuid) {
-    console.log(`addSegmentToStore (${segments.length}) ${segment.uuid} overwrite? ${overwriteUuid}`);
     this.segments = addSegment(segment, segments, overwriteUuid);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_ADD_EVT", { segments: this.segments, total: this.total });

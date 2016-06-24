@@ -30,6 +30,7 @@ Based on 'React eventemitter'.
 - Flux architecture?
 
 ### Training
+- write to FS from stores
 - introduce tags
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
