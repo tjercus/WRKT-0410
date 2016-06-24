@@ -20,6 +20,7 @@ export default class TrainingComponent extends React.Component {
     };
     this.exportTraining = this.exportTraining.bind(this);
     this.emitClearTraining = this.emitClearTraining.bind(this);
+    this.emitPersistChanges = this.emitPersistChanges.bind(this);
     this.clearTrainingFromLocalState = this.clearTrainingFromLocalState.bind(this);
     this.addEmptySegment = this.addEmptySegment.bind(this);
     this.loadTraining = this.loadTraining.bind(this);
@@ -96,7 +97,9 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.emit("SEGMENT_ADD_CMD", {});
   }
 
-  openSaveDialog() {}
+  emitPersistChanges() {
+    this.props.eventbus.emit("TRAININGS_PERSIST_CMD");
+  }
 
   exportTraining() {
     console.log(JSON.stringify({uuid: this.state.uuid, name: this.state.name, segments: this.state.segments}));    
@@ -189,7 +192,7 @@ export default class TrainingComponent extends React.Component {
             <menu>
               <button onClick={this.addEmptySegment} className="button-flat">add empty segment</button>
               <button onClick={this.exportTraining} className="button-flat">export training</button>
-              <button onClick={this.openSaveDialog} className="button-flat">open save dialog</button>
+              <button onClick={this.emitPersistChanges} className="button-flat" id="persist-button">persist changes</button>
               <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>
               <button onClick={this.cloneTraining} className="button-flat">clone training</button>
             </menu>            

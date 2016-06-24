@@ -25,6 +25,9 @@ export default class TrainingStore {
       pace: "00:00"
     };
 
+    eventbus.on("TRAININGS_PERSIST_CMD", () => {
+      this.persistTrainings(this.trainings);
+    });
     eventbus.on("TRAINING_LIST_CMD", () => {
       eventbus.emit("TRAINING_LIST_EVT", this.trainings);
     });
@@ -69,6 +72,20 @@ export default class TrainingStore {
     eventbus.on("SEGMENT_CLONE_CMD", (segment) => {
       console.log(`SEGMENT_CLONE_CMD ${segment.uuid}`);
       this.addSegmentToStore(segment, this.segments, true);
+    });
+  }
+
+  // TODO move to trainingUtil
+  persistTrainings(trainings) {
+    const trainingsStr = JSON.stringify(trainings, null, "\t");
+    // persist
+    //console.log(trainingsStr);
+    fs.writeFile("./trainings.js", trainingsStr, (err) => {
+      if (err) { 
+        this.eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", err);        
+      } else {        
+        this.eventbus.emit("TRAININGS_PERSIST_EVT");
+      }
     });    
   }
   

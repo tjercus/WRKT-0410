@@ -47,7 +47,7 @@ test("TrainingComponent should render a training", (assert) => {
   const buttons = component.find("menu button");
   assert.equal(buttons.first().text(), "add empty segment");  
   assert.equal(buttons.at(1).text(), "export training");
-  assert.equal(buttons.at(2).text(), "open save dialog");
+  assert.equal(buttons.at(2).text(), "persist changes");
   assert.equal(buttons.at(3).text(), "clear training");  
   assert.ok(buttons.at(3).hasClass("button-warning"));
   assert.equal(buttons.at(4).text(), "clone training");
@@ -95,3 +95,14 @@ test("TrainingComponent should emit a TRAINING_UPDATE_CMD", (assert) => {
   assert.ok(emitSpy.calledWith("TRAINING_UPDATE_CMD"), "component should emit TRAINING_UPDATE_CMD");
   assert.end();
 });
+
+test("TrainingComponent should emit a TRAININGS_PERSIST_CMD", (assert) => {
+  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
+  const emitSpy = sinon.spy(eventbus, "emit");
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
+  eventbus.emit("TRAINING_LOAD_EVT", training);
+  component.find("button[id='persist-button']").simulate("click");  
+  assert.ok(emitSpy.calledWith("TRAININGS_PERSIST_CMD"), "component should emit TRAININGS_PERSIST_CMD");
+  assert.end();
+});
+

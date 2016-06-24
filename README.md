@@ -27,10 +27,9 @@ Based on 'React eventemitter'.
 - button to switch metric/imperial
 - Tape coverage with coverify
 - events as constants
-- Flux architecture?
+- Formal flux architecture?
 
 ### Training
-- write to FS from stores
 - introduce tags
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests

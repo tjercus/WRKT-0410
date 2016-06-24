@@ -17,7 +17,7 @@ export function updateTraining(training, trainings) {
   let i = 0;
   _trainings.some((_training) => {
 	  if (_training.uuid === training.uuid) {
-	    _trainings[i] = training;	    
+	    _trainings[i] = training;
 	    return true;
 	  }
 	  i++;

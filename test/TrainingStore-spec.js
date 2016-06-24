@@ -71,7 +71,7 @@ test("should listen to TRAINING_UPDATE_CMD and refresh list", (assert) => {
   trainings.push(training);
   const store = new TrainingStore(eventbus, trainings);
   // ask store to load training via eventbus
-  eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");  
+  eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
   training.name = "wobble";
   eventbus.emit("TRAINING_UPDATE_CMD", training);
   //assert.ok(emitSpy.calledWith("TRAINING_UPDATE_EVT"));
@@ -83,8 +83,17 @@ test("should listen to TRAINING_UPDATE_CMD and refresh list", (assert) => {
       assert.equal(emitSpy.args[i][1].trainings[0].name, "wobble",
         "after updating a training, an updated list of trainings should be emitted on the bus");
     }
-  }
-  
+  }  
   assert.end();
 });
 
+test("should listen to TRAININGS_PERSIST_CMD and write to disk", (assert) => {
+  let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true}); 
+  let emitSpy = sinon.spy(eventbus, "emit");
+  const trainings = [];
+  trainings.push(training);
+  const store = new TrainingStore(eventbus, trainings);
+  eventbus.emit("TRAININGS_PERSIST_CMD");  
+  assert.ok(emitSpy.calledWith("TRAININGS_PERSIST_EVT"));
+  assert.end();
+});
