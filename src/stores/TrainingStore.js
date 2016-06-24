@@ -10,6 +10,7 @@ import {
   removeSegment
 } from "./trainingUtil";
 import { createUuid, clone } from "./miscUtil";
+import fs from "fs";
 
 export default class TrainingStore {
 
@@ -78,15 +79,18 @@ export default class TrainingStore {
   // TODO move to trainingUtil
   persistTrainings(trainings) {
     const trainingsStr = JSON.stringify(trainings, null, "\t");
-    // persist
-    //console.log(trainingsStr);
-    fs.writeFile("./trainings.js", trainingsStr, (err) => {
-      if (err) { 
-        this.eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", err);        
-      } else {        
-        this.eventbus.emit("TRAININGS_PERSIST_EVT");
-      }
-    });    
+    // TODO send to rest-api via ajax put (use fetch?)
+    alert("server side saving is being implemented");
+    const that = this;
+    fetch("http://localhost:3333/", {
+      method: "PUT",
+      body: trainingsStr
+    }).then(function(response) {
+      //alert("response: " + response);
+      that.eventbus.emit("TRAININGS_PERSIST_EVT");
+    }).catch(function(error) {
+      that.eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", err);
+    });
   }
   
   updateTrainingInStore(training, trainings) {    

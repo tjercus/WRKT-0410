@@ -127,6 +127,14 @@ gulp.task('deploy', function() {
     .pipe(ghPages());
 });
 
+gulp.task('server', function (cb) {
+  exec('node rest-api.js', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });  
+});
+
 gulp.task('watch', cb => {
   runSequence('clean', ['browserSync', 'watchTask', 'watchify', 'styles', 'lint', 'images'], cb);
 });

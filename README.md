@@ -15,8 +15,8 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- start the rest-api via gulp
 - smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
-- eslint
 - Introduce Flow for type checking
 - TrainingListComponent should supports categories as accordion or tagcloud
 - use const instead of let when possible
@@ -30,6 +30,7 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
+- handle feedback from Ajax/Fetch in TrainingComponent
 - introduce tags
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
