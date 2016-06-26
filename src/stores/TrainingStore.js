@@ -64,14 +64,12 @@ export default class TrainingStore {
       this.updateSegment(segment, this.segments);
     });
     eventbus.on("SEGMENT_ADD_CMD", (segment) => {
-      console.log(`SEGMENT_ADD_CMD ${segment.uuid}`);
       this.addSegmentToStore(segment, this.segments);
     });
     eventbus.on("SEGMENT_REMOVE_CMD", (segment) => {
       this.removeSegmentFromStore(segment, this.segments);
     });
     eventbus.on("SEGMENT_CLONE_CMD", (segment) => {
-      console.log(`SEGMENT_CLONE_CMD ${segment.uuid}`);
       this.addSegmentToStore(segment, this.segments, true);
     });
   }
@@ -79,14 +77,11 @@ export default class TrainingStore {
   // TODO move to trainingUtil
   persistTrainings(trainings) {
     const trainingsStr = JSON.stringify(trainings, null, "\t");
-    // TODO send to rest-api via ajax put (use fetch?)
-    alert("server side saving is being implemented");
     const that = this;
     fetch("http://localhost:3333/", {
       method: "PUT",
       body: trainingsStr
     }).then(function(response) {
-      //alert("response: " + response);
       that.eventbus.emit("TRAININGS_PERSIST_EVT");
     }).catch(function(error) {
       that.eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", err);

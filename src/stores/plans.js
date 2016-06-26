@@ -62,10 +62,19 @@ export const plans = [
 			  	{"nr": 43, "trainingId": "b8487e03-d9e8-4c32-978e-da6db0ce653a"},
 			  	{"nr": 44, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
 			  	{"nr": 45, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
-			  	{"nr": 46, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441"},
-			  	{"nr": 47, "trainingId": "9cf64a2b-0e60-4d10-9512-a6fd7510c421"},
+			  	{"nr": 46, "trainingId": "14ea98a8-ba9b-4c4d-9775-a86795be6f47"},
+			  	{"nr": 47, "trainingId": "1f43de2e-fd9a-480f-882e-e23ec02a0afe"},
 			  	{"nr": 48, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
-			  	{"nr": 49, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"}
+			  	{"nr": 49, "trainingId": "14ea98a8-ba9b-4c4d-9775-a86795be6f47"}
+			  ]},
+    		{"days": [
+			  	{"nr": 50, "trainingId": "14ea98a8-ba9b-4c4d-9775-a86795be6f47"},
+			  	{"nr": 51, "trainingId": "53999aa8-1d8e-11e6-b7a8-3715f4688b6a"},
+			  	{"nr": 52, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
+			  	{"nr": 53, "trainingId": "e1c626f0-6713-459c-a46f-671543715cf6"},
+			  	{"nr": 54, "trainingId": "9cf64a2b-0e60-4d10-9512-a6fd7510c421"},
+			  	{"nr": 55, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
+			  	{"nr": 56, "trainingId": "14ea98a8-ba9b-4c4d-9775-a86795be6f47"}
 			  ]}
 		  ]
 		}

@@ -1360,6 +1360,7 @@ export const trainings = [
 		"isVisible": true,
 		"uuid": "1f43de2e-fd9a-480f-882e-e23ec02a0afe",
 		"name": "20k @MP",
+		"type": "workout",
 		"segments": [
 			{
 				"uuid": "47",
@@ -1375,5 +1376,38 @@ export const trainings = [
 			"duration": "01:06:40",
 			"pace": "04:10"
 		}
+	},
+	{
+		"isVisible": true,
+		"uuid": "14ea98a8-ba9b-4c4d-9775-a86795be6f47",
+		"name": "No Run",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": 0,
+				"duration": "00:00:00",
+				"pace": "00:00",
+				"isValid": true
+			}
+		],
+		"isNameEditable": true,
+		"total": {
+			"distance": 0,
+			"duration": "00:00:00",
+			"pace": "00:00"
+		}
+	},
+	{
+		"isVisible": true,
+		"uuid": "e1c626f0-6713-459c-a46f-671543715cf6",
+		"name": "5K @10KP",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": 5,
+				"pace": "@10KP",
+				"isValid": true
+			}
+		]
 	}
 ]
