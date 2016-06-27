@@ -30,8 +30,6 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
-- Fix 'no re-calculate total on calc' bug
-- Fix 'add training then save' bug, which has empy data 
 - Add checkbox to indicate training is a workout or not
 - Do not save metadata like 'total', 'isVisible' etc from state to disk
 - handle feedback from Ajax/Fetch in TrainingComponent

@@ -77,13 +77,11 @@ test("should listen to TRAINING_UPDATE_CMD and refresh list", (assert) => {
   //assert.ok(emitSpy.calledWith("TRAINING_UPDATE_EVT"));
 
   for (let i = 0, len = emitSpy.args.length; i < len; i++) {    
-    if (emitSpy.args[i][0] === "TRAINING_UPDATE_EVT") {      
+    if (emitSpy.args[i][0] === "TRAINING_UPDATE_EVT") {
       assert.equal(emitSpy.args[i][1].training.name, "wobble",
         "after updating a training, the new version should be emitted on the bus");
       assert.equal(emitSpy.args[i][1].trainings[0].name, "wobble",
         "after updating a training, an updated list of trainings should be emitted on the bus");
-      assert.equal(emitSpy.args[i][1].training.total, "wah",
-        "after updating a training, a re-calculated total should be published on the bus");
     }
   }  
   assert.end();

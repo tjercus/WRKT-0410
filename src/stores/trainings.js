@@ -1409,5 +1409,25 @@ export const trainings = [
 				"isValid": true
 			}
 		]
+	},
+	{
+		"isVisible": true,
+		"uuid": "b2e42647-a86c-4222-a7e8-cb13fd75b26d",
+		"name": "10K @10KP",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "10",
+				"duration": "00:36:40",
+				"pace": "03:40",
+				"isValid": true
+			}
+		],
+		"isNameEditable": true,
+		"total": {
+			"distance": 5,
+			"duration": "00:18:20",
+			"pace": "03:40"
+		}
 	}
 ]

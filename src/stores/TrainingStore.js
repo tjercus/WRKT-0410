@@ -50,17 +50,8 @@ export default class TrainingStore {
     });
     eventbus.on("TRAINING_CLONE_CMD", () => {
       console.log(`TrainingStore caught TRAINING_CLONE_CMD`);
-      const training = {};
-      training.uuid = createUuid();
-      training.name = `${this.name} (clone)`;
-      training.segments = clone(this.segments);
-      training.total = this.total;
-      // TODO extract method
-      this.trainings.push(training);
-      eventbus.emit("TRAINING_ADD_EVT", this.trainings);
-      this.uuid = training.uuid,
-      this.name = training.name;
-      eventbus.emit("TRAINING_LOAD_EVT", training);
+      const clonedTraining = this.cloneTrainingInStore(this.trainings);            
+      eventbus.emit("TRAINING_LOAD_CMD", clonedTraining.uuid);
     });
     eventbus.on("TRAINING_UPDATE_CMD", (training) => {
       // currently only 'name' can be updated (besides 'segments')
@@ -84,10 +75,10 @@ export default class TrainingStore {
 
   // TODO move to trainingUtil
   persistTrainings(trainings) {
+    console.log("TrainingStore.persistTrainings");
     const trainingsStr = JSON.stringify(trainings, null, "\t");
-    const that = this;
-    let fetch;
-    if (typeof(fetch) !== 'undefined') {
+    const that = this;    
+    if (typeof fetch == 'function') {
       fetch("http://localhost:3333/", {
         method: "PUT",
         body: trainingsStr
@@ -97,6 +88,19 @@ export default class TrainingStore {
         that.eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", err);
       });
     }
+  }
+
+  cloneTrainingInStore(trainings) {
+    const _trainings = clone(trainings);
+    const _training = {};
+    _training.uuid = createUuid();
+    _training.name = `${this.name} (clone)`;
+    _training.segments = clone(this.segments);
+    _training.total = makeTrainingTotal(_training.segments);
+    _trainings.push(_training);    
+    this.trainings = _trainings;
+    this.eventbus.emit("TRAINING_ADD_EVT", _trainings);
+    return _training;
   }
   
   updateTrainingInStore(training, trainings) {    
@@ -108,7 +112,7 @@ export default class TrainingStore {
     this.segments = addSegment(segment, segments, overwriteUuid);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_ADD_EVT", { segments: this.segments, total: this.total });
-  }
+  }  
 
   // TODO move to trainingUtil
   updateSegment(segment, segments) {
