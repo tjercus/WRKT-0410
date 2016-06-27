@@ -297,3 +297,12 @@ div.days-list section.day button {
 .menu-item-selected {
   background-color: #eeeeee;
 }
+
+.notification-panel {  
+  position: fixed;
+  right: 0;
+  width: auto;
+  height: auto;
+  color: white;
+  background-color: #333333;
+}
