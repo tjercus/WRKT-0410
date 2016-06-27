@@ -10,7 +10,15 @@ import {
   removeSegment
 } from "./trainingUtil";
 import { createUuid, clone } from "./miscUtil";
-import fs from "fs";
+
+/*
+let fetch;
+if (typeof(fetch) === 'undefined') {
+  fetch = function(url, options){ 
+    function then() {}
+  };
+}
+*/
 
 export default class TrainingStore {
 
@@ -78,14 +86,17 @@ export default class TrainingStore {
   persistTrainings(trainings) {
     const trainingsStr = JSON.stringify(trainings, null, "\t");
     const that = this;
-    fetch("http://localhost:3333/", {
-      method: "PUT",
-      body: trainingsStr
-    }).then(function(response) {
-      that.eventbus.emit("TRAININGS_PERSIST_EVT");
-    }).catch(function(error) {
-      that.eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", err);
-    });
+    let fetch;
+    if (typeof(fetch) !== 'undefined') {
+      fetch("http://localhost:3333/", {
+        method: "PUT",
+        body: trainingsStr
+      }).then(function(response) {
+        that.eventbus.emit("TRAININGS_PERSIST_EVT");
+      }).catch(function(error) {
+        that.eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", err);
+      });
+    }
   }
   
   updateTrainingInStore(training, trainings) {    
@@ -101,17 +112,18 @@ export default class TrainingStore {
 
   // TODO move to trainingUtil
   updateSegment(segment, segments) {
-    segment = augmentSegmentData(segment);
+    const segmentClone = augmentSegmentData(segment);
     let i = 0;
     segments.some((_segment) => {
-      if (_segment.uuid === segment.uuid) {
-        this.segments[i] = segment;
-        this.total = makeTrainingTotal(segments);
+      if (_segment.uuid === segmentClone.uuid) {
+        this.segments[i] = segmentClone;
+        this.total = makeTrainingTotal(this.segments);
         return true;
       }
       i++;
     });
-    this.eventbus.emit("SEGMENT_UPDATE_EVT", { segment: this.segments[i], total: this.total });
+    console.log(`TrainingStore sent SEGMENT_UPDATE_EVT with total ${JSON.stringify(this.total)}`);
+    this.eventbus.emit("SEGMENT_UPDATE_EVT", { debug: true, segment: this.segments[i], total: this.total });
   }
 
   removeSegmentFromStore(segment, segments) {

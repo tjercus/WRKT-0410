@@ -7,16 +7,15 @@ import sinon from "sinon";
 // Component Under Test
 import TrainingComponent from "../src/components/TrainingComponent";
 import SegmentComponent from "../src/components/SegmentComponent";
-import { events } from "../src/components/constants";
 // specific dependencies for CUT
 import EventEmitter from "eventemitter2";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 const segments = [{
   uuid: "uuid-segment1",
-  distance: 5.1,
-  duration: "01:23:45",
-  pace: "03:59"
+  distance: 5.0,
+  duration: "00:20:00",
+  pace: "04:00"
 }];
 const training = { uuid: "uuid-training1", name: "my training", segments: segments, total: { distance: 5.1, duration: "01:23:45", pace: "03:59" } };  
 
@@ -106,3 +105,19 @@ test("TrainingComponent should emit a TRAININGS_PERSIST_CMD", (assert) => {
   assert.end();
 });
 
+test("TrainingComponent should catch a SEGMENT_UPDATE_EVT", (assert) => {
+  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
+  const emitSpy = sinon.spy(eventbus, "emit");
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
+  eventbus.emit("TRAINING_LOAD_EVT", training);
+  // increase distance and empty duration
+  const segmentComponent = component.find(SegmentComponent).get(0);
+  segmentComponent.setState({distance: 10, duration: ""});
+  component.find(".segment button.button-primary").simulate("click");  // click 'calc'
+  assert.ok(emitSpy.calledWith("SEGMENT_UPDATE_EVT"), "component should catch SEGMENT_UPDATE_EVT");
+  // check total in GUI/state
+  assert.equal(component.state("total").distance, 10);
+  assert.equal(component.state("total").duration, "00:40:00");
+  assert.equal(component.state("total").pace, "04:00");
+  assert.end();
+});

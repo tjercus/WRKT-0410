@@ -1,6 +1,6 @@
 import React from "react";
 import SegmentComponent from "./SegmentComponent";
-import {clone} from "../stores/miscUtil";
+import { clone } from "../stores/miscUtil";
 
 export default class TrainingComponent extends React.Component {
 
@@ -29,15 +29,16 @@ export default class TrainingComponent extends React.Component {
     this.onNameChange = this.onNameChange.bind(this);
     this.onNameBlur = this.onNameBlur.bind(this);
   }
-  
+
   componentDidMount() {
     this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
       if (menuItemName === this.props.from) {
-        this.setState({isVisible: true});
+        this.setState({ isVisible: true });
       } else {
-        this.setState({isVisible: false});
+        this.setState({ isVisible: false });
       }
     });
+
     this.props.eventbus.on("TRAINING_LOAD_EVT", (training) => {
       this.loadTraining(training);
     });
@@ -46,24 +47,33 @@ export default class TrainingComponent extends React.Component {
     // });
 
     this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
-      this.setState({segments: training.segments, total: training.total});      
-    });    
+      this.setState({ segments: training.segments, total: training.total });
+    });
+    this.props.eventbus.onAny((event, data) => {
+      ///console.log(`All events trigger this. ${event}`);
+      if (event === "SEGMENT_UPDATE_EVT") {
+        this.setState({ total: data.total });
+      }
+    });
+    //this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {
+      // TODO this event is never caught, fix it!
+      //console.log(`TrainingComponent caught SEGMENT_UPDATE_EVT ${JSON.stringify(data)}`);
+      // this.setState({ total: data.total }, function() {
+      //   this.forceUpdate();
+      //   console.log("TrainingComponent finished updating state with total");
+      // });
+    //});
     this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
-      this.setState({segments: [], total: {}}, function() {
+      this.setState({ segments: [], total: {} }, function() {
         console.log("TrainingComponent emptied segments");
-        this.setState({segments: training.segments, total: training.total}, function() {
+        this.setState({ segments: training.segments, total: training.total }, function() {
           console.log("TrainingComponent finished updating state with new segments");
         });
-      });      
+      });
     });
     this.props.eventbus.on("TRAINING_CLEAR_EVT", (uuid) => {
       this.clearTrainingFromLocalState();
-    });
-    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (segment) => {
-      this.setState({total: segment.total}, function() {
-        console.log("TrainingComponent finished updating state with total");
-      });
-    });
+    });    
   }
 
   loadTraining(training) {
@@ -78,7 +88,7 @@ export default class TrainingComponent extends React.Component {
           duration: "00:00:00",
           pace: "00:00"
         }
-      }, 
+      },
       function() {
         this.setState({
           uuid: training.uuid,
@@ -102,20 +112,20 @@ export default class TrainingComponent extends React.Component {
   }
 
   exportTraining() {
-    console.log(JSON.stringify({uuid: this.state.uuid, name: this.state.name, segments: this.state.segments}));    
+    console.log(JSON.stringify({ uuid: this.state.uuid, name: this.state.name, segments: this.state.segments }));
   }
-  
+
   emitClearTraining() {
     this.props.eventbus.emit("TRAINING_CLEAR_CMD", this.state.uuid);
   }
 
   onEditNameButtonClick(evt) {
     //const inverseState = 
-    this.setState({isNameEditable: !this.state.isNameEditable});
+    this.setState({ isNameEditable: !this.state.isNameEditable });
   }
 
   onNameChange(evt) {
-    this.setState({name: evt.target.value});
+    this.setState({ name: evt.target.value });
   }
 
   onNameBlur(evt) {
@@ -130,21 +140,21 @@ export default class TrainingComponent extends React.Component {
     alert("Training cloned and selected");
   }
 
-  clearTrainingFromLocalState() {    
+  clearTrainingFromLocalState() {
     this.setState({
-        isVisible: true,
-        uuid: null,
-        name: "",
-        segments: [],
-        isNameEditable: false,
-        total: {
-          distance: 0,
-          duration: "00:00:00",
-          pace: "00:00"
-        }
-      });
-  }  
-  
+      isVisible: true,
+      uuid: null,
+      name: "",
+      segments: [],
+      isNameEditable: false,
+      total: {
+        distance: 0,
+        duration: "00:00:00",
+        pace: "00:00"
+      }
+    });
+  }
+
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
 
@@ -161,7 +171,7 @@ export default class TrainingComponent extends React.Component {
     });
 
     let totalDistance = 0;
-    if (this.state.total && this.state.total.distance) { 
+    if (this.state.total && this.state.total.distance) {
       totalDistance = (this.state.total.distance).toFixed(3);
     };
 

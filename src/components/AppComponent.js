@@ -17,7 +17,7 @@ export default class AppComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.eventbus = new EventEmitter({wildcard: true, maxListeners: 99});
+    this.eventbus = new EventEmitter({wildcard: true, maxListeners: 999999});
     // singleton SegmentStore
     new TrainingStore(this.eventbus, clone(trainings));
     new TimelineStore(this.eventbus, clone(trainings));

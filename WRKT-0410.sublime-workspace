@@ -4,6 +4,242 @@
 		"selected_items":
 		[
 			[
+				"se",
+				"segment"
+			],
+			[
+				"emit",
+				"emitPersistChanges"
+			],
+			[
+				"e",
+				"err"
+			],
+			[
+				"tr",
+				"trainingsStr"
+			],
+			[
+				"TRA",
+				"TRAININGS_PERSIST_CMD"
+			],
+			[
+				"button-",
+				"button-flat"
+			],
+			[
+				"tra",
+				"trainings"
+			],
+			[
+				"update",
+				"updateTraining"
+			],
+			[
+				"Trai",
+				"TrainingListComponent"
+			],
+			[
+				"_",
+				"_trainings"
+			],
+			[
+				"traing",
+				"trainings"
+			],
+			[
+				"t",
+				"training"
+			],
+			[
+				"trai",
+				"trainings"
+			],
+			[
+				"onNa",
+				"onNameBlur"
+			],
+			[
+				"def",
+				"defaultState"
+			],
+			[
+				"on",
+				"onNameChange"
+			],
+			[
+				"is",
+				"isNameEditable"
+			],
+			[
+				"nam",
+				"nameEditField"
+			],
+			[
+				"edit-name",
+				"edit-name-textfield"
+			],
+			[
+				"trainin",
+				"training"
+			],
+			[
+				"clone",
+				"cloneTraining"
+			],
+			[
+				"ev",
+				"eventbus"
+			],
+			[
+				"ma",
+				"makeTrainingTotal"
+			],
+			[
+				"lo",
+				"loggableString"
+			],
+			[
+				"seg",
+				"segments"
+			],
+			[
+				"over",
+				"overwriteUuid"
+			],
+			[
+				"onCl",
+				"onCloneButtonClick"
+			],
+			[
+				"add",
+				"addSegmentToStore"
+			],
+			[
+				"_segm",
+				"_segment"
+			],
+			[
+				"not",
+				"notOk"
+			],
+			[
+				"new",
+				"newSegments"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"remove",
+				"removeSegment"
+			],
+			[
+				"background-",
+				"background-color"
+			],
+			[
+				"_mic",
+				"_microcycles"
+			],
+			[
+				"compo",
+				"component"
+			],
+			[
+				"create",
+				"createComponent"
+			],
+			[
+				"ori",
+				"originalLen"
+			],
+			[
+				"mic",
+				"microcycles"
+			],
+			[
+				"micr",
+				"microcycleElements"
+			],
+			[
+				"_micro",
+				"_microcycles"
+			],
+			[
+				"_micr",
+				"_microcycles"
+			],
+			[
+				"micro",
+				"microcyles"
+			],
+			[
+				"sec",
+				"sectionClassName"
+			],
+			[
+				"find",
+				"filterNonEasyDays"
+			],
+			[
+				"set",
+				"setTrainingInState"
+			],
+			[
+				"clear",
+				"clearTrainingFromLocalState"
+			],
+			[
+				"traiin",
+				"trainings"
+			],
+			[
+				"de",
+				"deletedSegments"
+			],
+			[
+				"_se",
+				"_segments"
+			],
+			[
+				"total",
+				"totalDistance"
+			],
+			[
+				"tot",
+				"totalDistance"
+			],
+			[
+				"chid",
+				"childComponents"
+			],
+			[
+				"cl",
+				"clearTraining"
+			],
+			[
+				"hasN",
+				"hasNoRealValue"
+			],
+			[
+				"d",
+				"days"
+			],
+			[
+				"parse",
+				"parseDuration"
+			],
+			[
+				"a",
+				"augmentedDays"
+			],
+			[
+				"day",
+				"dayNr"
+			],
+			[
 				"string",
 				"stringify"
 			],
@@ -20,10 +256,6 @@
 				"findDayByNr"
 			],
 			[
-				"on",
-				"onEditClick"
-			],
-			[
 				"eve",
 				"events"
 			],
@@ -34,10 +266,6 @@
 			[
 				"red",
 				"renderedComponent"
-			],
-			[
-				"se",
-				"selectedUid"
 			],
 			[
 				"state",
@@ -76,10 +304,6 @@
 				"value"
 			],
 			[
-				"add",
-				"addErrorMessage"
-			],
-			[
 				"validate",
 				"validateUser"
 			],
@@ -100,10 +324,6 @@
 				"errorMessages"
 			],
 			[
-				"new",
-				"newIndex"
-			],
-			[
 				"rendere",
 				"renderedElement"
 			],
@@ -114,10 +334,6 @@
 			[
 				"Re",
 				"RegistationComponent"
-			],
-			[
-				"e",
-				"event"
 			],
 			[
 				"get",
@@ -132,16 +348,8 @@
 				"removeButton"
 			],
 			[
-				"remove",
-				"removebutton"
-			],
-			[
 				"Offer",
 				"OfferRowComponent"
-			],
-			[
-				"re",
-				"removeOfferFromCart"
 			],
 			[
 				"padding-",
@@ -215,66 +423,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 1357,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/TrainingComponent.js",
-			"settings":
-			{
-				"buffer_size": 3742,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/SegmentComponent.js",
-			"settings":
-			{
-				"buffer_size": 3748,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/TrainingListComponent.js",
-			"settings":
-			{
-				"buffer_size": 1605,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "\nimport React from \"react\";\nimport EventEmitter from \"eventemitter2\";\nimport moment from \"moment\";\n\nconst DAY_HEADER_DATE_FORMAT = \"ddd, DD-MM-YYYY\";\n\nexport default class TimelineComponent extends React.Component {\n	\n	constructor(props) {\n    super(props);\n    this.state = { \n    	isVisible: false,\n    	days: [],\n    	cycleLength: 7\n    };    \n    this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);\n    this.onEditClick = this.onEditClick.bind(this);\n  }\n\n  componentDidMount() {\n    this.props.eventbus.on(\"MENU_CLICK_EVT\", ((menuItemName) => {\n      if (menuItemName === this.props.from) {\n        this.setState({isVisible: true});\n      } else {\n        this.setState({isVisible: false});\n      }\n    }));\n    this.props.eventbus.on(\"PLAN_LOAD_EVT\", ((days) => {\n    	this.setState({days: days});\n    }));\n    this.props.eventbus.emit(\"PLAN_LOAD_CMD\");\n  }\n\n  // TODO extract method\n  // TODO days from config\n  isNonWorkday(aDay) {\n  	return (aDay.day() === 0 || aDay.day() === 3 || aDay.day() === 6);\n  }\n\n  onCycleLengthButtonClick(evt) {  	\n  	this.setState({cycleLength: evt.target.value});\n  }\n\n  onEditClick(evt) {\n    let dayNr = evt.target.value;    \n    this.props.eventbus.emit(\"MENU_CLICK_EVT\", \"menu-item-dayedit\", dayNr);\n  }\n\n  render() {\n    let panelClassName = this.state.isVisible ? \"panel visible\" : \"panel hidden\";\n    // TODO, from datepicker or other UI component\n    let aDay = moment(\"2016-05-07\");\n\n    let lies = [];\n    this.state.days.forEach((day, i) => {    	\n			aDay.add(1, \"days\");\n    	let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);\n    	let sectionClassName = this.isNonWorkday(aDay) ? \"day day-nowork\" : \"day day-work\";\n    	if (i % this.state.cycleLength === 0) {    		\n    		lies.push(<div key={\"div\" + i}>&nbsp;</div>);\n    	}\n    	// if (i % (this.state.cycleLength + 1) === 0) {\n     //  	lies.push(<section key={\"cycle\" + i} className=\"day cycle-summary\">Section summary</section>);\n     //  }\n     // TODO support multiple workouts per day\n      lies.push(\n       	<section key={i} className={sectionClassName}>\n      		<h3>{day.nr}. {dateStr}</h3>\n        	<p className=\"workout-name\">{day.workout.name}, {(day.workout.total.distance).toFixed(2)} km</p>\n          <button className=\"button-small button-flat\" onClick={this.onEditClick} value={day.nr}>edit</button>          \n        </section>\n      );\n      \n    });\n\n    return (\n      <section className={panelClassName}>\n        <header className=\"panel-header\">\n          <button className=\"button-small\" onClick={this.onCycleLengthButtonClick} value=\"7\">7 day cycle</button>\n          <button className=\"button-small\" onClick={this.onCycleLengthButtonClick} value=\"9\">9 day cycle</button>\n        </header>\n        <div className=\"panel-body\">\n           <div className=\"days-list\">\n            {lies}\n           </div>\n        </div>\n      </section>\n    );\n  }\n\n}",
-			"file": "src/components/TimelineComponent.js",
-			"file_size": 2931,
-			"file_write_time": 131087261083289222,
-			"settings":
-			{
-				"buffer_size": 2898,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stores/plans.js",
-			"settings":
-			{
-				"buffer_size": 2510,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stores/trainings.js",
-			"settings":
-			{
-				"buffer_size": 11773,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/TimelineStore-spec.js",
-			"settings":
-			{
-				"buffer_size": 675,
+				"buffer_size": 1980,
 				"line_ending": "Unix"
 			}
 		},
@@ -282,31 +431,7 @@
 			"file": "src/stores/TrainingStore.js",
 			"settings":
 			{
-				"buffer_size": 4115,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stores/TimelineStore.js",
-			"settings":
-			{
-				"buffer_size": 794,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stores/timelineUtil.js",
-			"settings":
-			{
-				"buffer_size": 1763,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/trainingUtil-spec.js",
-			"settings":
-			{
-				"buffer_size": 8327,
+				"buffer_size": 5040,
 				"line_ending": "Unix"
 			}
 		},
@@ -314,17 +439,101 @@
 			"file": "src/stores/trainingUtil.js",
 			"settings":
 			{
-				"buffer_size": 7604,
+				"buffer_size": 6805,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/timelineUtil-spec.js",
+			"file": "src/stores/trainings.js",
 			"settings":
 			{
-				"buffer_size": 1581,
+				"buffer_size": 21830,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "rest-api.js",
+			"settings":
+			{
+				"buffer_size": 1357,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/SegmentComponent.js",
+			"settings":
+			{
+				"buffer_size": 3671,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/TrainingListComponent.js",
+			"settings":
+			{
+				"buffer_size": 2057,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/TimelineComponent.js",
+			"settings":
+			{
+				"buffer_size": 3808,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/TrainingComponent.js",
+			"settings":
+			{
+				"buffer_size": 7195,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 19 files for \"SEGMENT_UPDATE_CMD\" (case sensitive)\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/SegmentComponent.js:\n   74      // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)\n   75      if (canAugment(this.state)) {\n   76:       this.props.eventbus.emit(\"SEGMENT_UPDATE_CMD\", this.state);\n   77      } else {      \n   78        this.setState({isValid: isValidSegment(this.state)});\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/constants.js:\n    4    \"MENU_CLICK_CMD\": \"MENU_CLICK_CMD\",\n    5    \"MENU_CLICK_EVT\": \"MENU_CLICK_EVT\",  \n    6:   \"SEGMENT_UPDATE_CMD\": \"SEGMENT_UPDATE_CMD\",\n    7    'SEGMENT_UPDATE_EVT': \"SEGMENT_UPDATE_EVT\",  \n    8    'SEGMENT_CLONE_CMD': \"SEGMENT_CLONE_CMD\",\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js:\n   69      });\n   70  \n   71:     eventbus.on(\"SEGMENT_UPDATE_CMD\", (segment) => {\n   72        this.updateSegment(segment, this.segments);\n   73      });\n\n4 matches across 3 files\n\n\nSearching 19 files for \"SEGMENT_UPDATE_CMD\" (case sensitive)\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/SegmentComponent.js:\n   74      // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)\n   75      if (canAugment(this.state)) {\n   76:       this.props.eventbus.emit(\"SEGMENT_UPDATE_CMD\", this.state);\n   77      } else {      \n   78        this.setState({isValid: isValidSegment(this.state)});\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/constants.js:\n    4    \"MENU_CLICK_CMD\": \"MENU_CLICK_CMD\",\n    5    \"MENU_CLICK_EVT\": \"MENU_CLICK_EVT\",  \n    6:   \"SEGMENT_UPDATE_CMD\": \"SEGMENT_UPDATE_CMD\",\n    7    'SEGMENT_UPDATE_EVT': \"SEGMENT_UPDATE_EVT\",  \n    8    'SEGMENT_CLONE_CMD': \"SEGMENT_CLONE_CMD\",\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js:\n   69      });\n   70  \n   71:     eventbus.on(\"SEGMENT_UPDATE_CMD\", (segment) => {\n   72        this.updateSegment(segment, this.segments);\n   73      });\n\n4 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 2088,
 				"line_ending": "Unix",
-				"name": "import test from \"tape\";"
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "test/trainingUtil-spec.js",
+			"settings":
+			{
+				"buffer_size": 12438,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/TrainingStore-spec.js",
+			"settings":
+			{
+				"buffer_size": 4075,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import makeDom from \"./dom\";\nimport test from \"tape\";\nimport React from \"react\";\nimport { shallow, mount } from \"enzyme\";\nimport sinon from \"sinon\";\n\n// Component Under Test\nimport TrainingComponent from \"../src/components/TrainingComponent\";\nimport SegmentComponent from \"../src/components/SegmentComponent\";\n// specific dependencies for CUT\nimport EventEmitter from \"eventemitter2\";\n\nconst eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\nconst segments = [{\n  uuid: \"uuid-segment1\",\n  distance: 5.1,\n  duration: \"01:23:45\",\n  pace: \"03:59\"\n}];\nconst training = { uuid: \"uuid-training1\", name: \"my training\", segments: segments, total: { distance: 5.1, duration: \"01:23:45\", pace: \"03:59\" } };  \n\ntest(\"TrainingComponent should initially render with an info message\", (assert) => {\n  let eventbus = sinon.spy();\n  const component = shallow(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  assert.equal(component.find(\"div\").text(), \"Please choose a training from the left-hand list\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should catch a MENU_CLICK_EVT\", (assert) => {\n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const onSpy = sinon.spy(eventbus, \"on\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  eventbus.emit(\"MENU_CLICK_EVT\", \"Training\");  \n  assert.ok(onSpy.calledWith(\"MENU_CLICK_EVT\"), \"component should catch MENU_CLICK_EVT\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should render a training\", (assert) => {\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);  \n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);\n\n  assert.equal(component.find(\"header.panel-header span\").text(), \"my training\");\n  assert.equal(component.find(\"SegmentComponent\").length, 1);\n  assert.equal(component.find(\"output[name='totals']\").length, 1);\n  assert.equal(component.find(\"menu\").length, 1);\n  const buttons = component.find(\"menu button\");\n  assert.equal(buttons.first().text(), \"add empty segment\");  \n  assert.equal(buttons.at(1).text(), \"export training\");\n  assert.equal(buttons.at(2).text(), \"persist changes\");\n  assert.equal(buttons.at(3).text(), \"clear training\");  \n  assert.ok(buttons.at(3).hasClass(\"button-warning\"));\n  assert.equal(buttons.at(4).text(), \"clone training\");\n\n  assert.end();\n});\n\ntest(\"TrainingComponent should emit a TRAINING_CLONE_CMD\", (assert) => {\n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const emitSpy = sinon.spy(eventbus, \"emit\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);  \n  component.find(\"menu button\").at(4).simulate(\"click\");\n  assert.ok(emitSpy.calledWith(\"TRAINING_CLONE_CMD\"), \"component should emit TRAINING_CLONE_CMD\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should allow a toggle of trainingname as editable component\", (assert) => {  \n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const emitSpy = sinon.spy(eventbus, \"emit\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  const BUTTON_SELECTOR = \"button[id='edit-name-button']\";\n  const TEXTFIELD_SELECTOR = \"input[id='edit-name-textfield']\";\n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);  \n  assert.equal(component.find(BUTTON_SELECTOR).length, 1, \"initially: edit button visible\");\n  assert.equal(component.find(TEXTFIELD_SELECTOR).length, 0, \"initially: inputfield not visible\");\n  component.find(BUTTON_SELECTOR).simulate(\"click\");\n  assert.equal(component.find(BUTTON_SELECTOR).length, 1, \"after click 1: button still visible\");\n  assert.equal(component.find(TEXTFIELD_SELECTOR).length, 1, \"after click 1: textfield visible\");\n  component.find(BUTTON_SELECTOR).simulate(\"click\");\n  assert.equal(component.find(BUTTON_SELECTOR).length, 1, \"after click 2: button still visible\");\n  assert.equal(component.find(TEXTFIELD_SELECTOR).length, 0, \"after click 2: textfield not visible\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should emit a TRAINING_UPDATE_CMD\", (assert) => {\n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const emitSpy = sinon.spy(eventbus, \"emit\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  const BUTTON_SELECTOR = \"button[id='edit-name-button']\";\n  const TEXTFIELD_SELECTOR = \"input[id='edit-name-textfield']\";\n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);  \n  component.find(BUTTON_SELECTOR).simulate(\"click\");\n  component.find(TEXTFIELD_SELECTOR).simulate(\"blur\");\n  assert.ok(emitSpy.calledWith(\"TRAINING_UPDATE_CMD\"), \"component should emit TRAINING_UPDATE_CMD\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should emit a TRAININGS_PERSIST_CMD\", (assert) => {\n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const emitSpy = sinon.spy(eventbus, \"emit\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);  \n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);\n  component.find(\"button[id='persist-button']\").simulate(\"click\");  \n  assert.ok(emitSpy.calledWith(\"TRAININGS_PERSIST_CMD\"), \"component should emit TRAININGS_PERSIST_CMD\");\n  assert.end();\n});\n\n",
+			"file": "test/TrainingComponent-spec.js",
+			"file_size": 5509,
+			"file_write_time": 131112308405669459,
+			"settings":
+			{
+				"buffer_size": 5455,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/SegmentComponent-spec.js",
+			"settings":
+			{
+				"buffer_size": 2196,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -335,7 +544,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 159.0,
+		"height": 372.0,
 		"last_filter": "install",
 		"selected_items":
 		[
@@ -375,35 +584,52 @@
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/images",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test"
 	],
 	"file_history":
 	[
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/DayEditComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/App-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/e2e/App-spec.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/AppComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/eventemitter2/lib/eventemitter2.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainingUtil.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TimelineStore.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/WRKT-0410.sublime-project",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles/main.scss",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/PanelComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/MenuComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingListComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TimelineComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/package.json",
+		"/home/tvalentijn/projects/lab/WRKT-0410/gulpfile.babel.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/browser-sync/lib/http-protocol.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/browser-sync/lib/browser-sync.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/browser-sync/node_modules/chokidar/README.md",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/plans.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/SegmentComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles/main.scss",
+		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/react-addons-test-utils/index.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/react/lib/ReactTestUtils.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/App-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/dom.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingListComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/miscUtil.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/miscUtil-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainings.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/timelineUtil.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/PanelComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/DayEditComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TimelineComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/timelineUtil-spec.js",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/e2e/casper.js",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/trainingUtil-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/TimelineStore-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/WRKT-0410.sublime-project",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/MenuComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/ DayEditComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingComponent-spec.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/constants.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/plans.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/package.json",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainings.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/gulpfile.babel.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/index.html",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/Index.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/images/favicon.ico",
 		"/ App-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingComponent.js",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
 		"/home/tvalentijn/projects/lab/hotelbooking-react/node_modules/es6-enum/lib/enum.js",
@@ -429,12 +655,10 @@
 		"/home/tvalentijn/projects/lab/hotelbooking-react/src/components/CartComponent.js",
 		"/home/tvalentijn/projects/lab/hotelbooking-react/src/models/OffersStore.js",
 		"/home/tvalentijn/projects/lab/hotelbooking-react/gulpfile.babel.js",
-		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/tvalentijn/projects/lab/hotelbooking-react/src/styles/purecss/base-min.scss",
 		"/home/tvalentijn/projects/lab/hotelbooking-react/src/Index.js",
 		"/home/tvalentijn/projects/lab/hotelbooking-react/index.html",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/tvalentijn/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
 		"/home/tvalentijn/projects/lab/hotelbooking-angular2/app/services/HotelbookingServiceImpl.ts",
 		"/home/tvalentijn/projects/lab/hotelbooking-react/dist/index.html",
 		"/home/tvalentijn/projects/lab/react-eventemitter/src/Index.js",
@@ -487,6 +711,12 @@
 		"where_history":
 		[
 			"/home/tvalentijn/projects/lab/WRKT-0410/src",
+			"/home/tvalentijn/projects/lab/WRKT-0410/test",
+			"/home/tvalentijn/projects/lab/WRKT-0410/src",
+			"/home/tvalentijn/projects/lab/WRKT-0410/test",
+			"/home/tvalentijn/projects/lab/WRKT-0410/src",
+			"/home/tvalentijn/projects/lab/WRKT-0410/test",
+			"/home/tvalentijn/projects/lab/WRKT-0410/src",
 			"/home/tvalentijn/projects/lab/hotelbooking-react/src",
 			"/home/tvalentijn/projects/lab/hotelbooking-react",
 			"/home/tvalentijn/projects/lab/react-eventemitter"
@@ -494,9 +724,62 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"SEGMENT_UPDATE_CMD",
+			"SEGMENT_UPDATE_EVT",
+			"TRAINING_UPDATE_CMD",
+			"TRAINING_UPDATE_EVT",
+			"\"TrainingComponent",
+			"TRAINING_LOAD_EVT",
+			"runSequence",
+			"req.",
+			"'",
+			"persistTrainings",
+			"openSaveDialog",
+			"CLONE_",
+			"yellow",
+			"TRAINING_LOAD_EVT",
+			"TRAINING_UPDATE_CMD",
+			"def",
+			"clone",
+			"TRAINING_LIST_EVT",
+			"Timel",
+			"new TimelineStore",
+			"new TrainingStore",
+			"this.",
+			"indent",
+			"'",
+			"\" + ",
+			",\"isValid\":true",
+			"hasNoRealValue",
+			"microcyle",
+			"jsx",
+			"lies",
+			"filterNon",
+			"filterNonEasyDays",
+			"workout",
+			"training",
+			"day.workout",
+			"workout",
+			"console.log",
+			"SEGMENT_REMOVE_CMD",
+			"new Event",
+			"new EventManager",
+			"TRAINING_LOAD_EVT",
+			"makeTrainingTotal(",
+			"00:00:00",
+			"21k",
+			"hasNoRealValue",
+			"createUuid()",
+			"uuid",
+			"onBlur",
+			"this.clone",
+			"cloneValue",
+			"TRAINING_LOAD_EVT",
+			"DAY_LOAD_CMD",
+			"@MIP",
 			"@10",
 			"@16KP",
 			"findDay",
@@ -559,6 +842,22 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\"SegmentComponent",
+			"request.",
+			"\"",
+			"emitPersistChanges",
+			"",
+			"\"",
+			"",
+			"microcycle",
+			"dayElements",
+			"training",
+			"trainingId",
+			"day.training",
+			"training",
+			"// console.log",
+			"onCalcButtonClick",
+			"clone",
 			"[object Object]",
 			"\"",
 			"_events.",
@@ -597,12 +896,129 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1980,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1402,
+								1402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 229.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/stores/TrainingStore.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5040,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3753,
+								3753
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 407.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/stores/trainingUtil.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6805,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								678,
+								678
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/stores/trainings.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21830,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								152,
+								152
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "rest-api.js",
 					"semi_transient": false,
 					"settings":
 					{
@@ -613,36 +1029,66 @@
 						"selection":
 						[
 							[
-								984,
-								984
+								474,
+								474
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "src/components/TrainingComponent.js",
+					"buffer": 5,
+					"file": "src/components/SegmentComponent.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3742,
+						"buffer_size": 3671,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								811,
-								811
+								2308,
+								2308
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 640.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/components/TrainingListComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2057,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1079,
+								1079
 							]
 						],
 						"settings":
@@ -655,181 +1101,34 @@
 						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/components/SegmentComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3748,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2383,
-								2383
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/components/TrainingListComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1605,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								701,
-								701
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/components/TimelineComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2898,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1183,
-								1183
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/stores/plans.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2510,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1610,
-								1610
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/stores/trainings.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11773,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11521,
-								11521
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3219.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "test/TimelineStore-spec.js",
+					"file": "src/components/TimelineComponent.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 675,
+						"buffer_size": 3808,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								648,
-								648
+								623,
+								623
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 13,
@@ -837,19 +1136,19 @@
 				},
 				{
 					"buffer": 8,
-					"file": "src/stores/TrainingStore.js",
+					"file": "src/components/TrainingComponent.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4115,
+						"buffer_size": 7195,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								704,
-								704
+								1361,
+								1361
 							]
 						],
 						"settings":
@@ -858,130 +1157,86 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 7.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 9,
-					"file": "src/stores/TimelineStore.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 794,
+						"buffer_size": 2088,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										344,
+										362
+									],
+									[
+										643,
+										661
+									],
+									[
+										665,
+										683
+									],
+									[
+										909,
+										927
+									],
+									[
+										1389,
+										1407
+									],
+									[
+										1688,
+										1706
+									],
+									[
+										1710,
+										1728
+									],
+									[
+										1954,
+										1972
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								547,
-								547
+								1965,
+								1965
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/stores/timelineUtil.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1763,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								656,
-								656
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "test/trainingUtil-spec.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8327,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5266,
-								5266
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2244.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "src/stores/trainingUtil.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7604,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5018,
-								5018
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 1710.0,
+						"translation.x": 0.0,
+						"translation.y": 390.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -991,32 +1246,122 @@
 			"sheets":
 			[
 				{
-					"buffer": 13,
-					"file": "test/timelineUtil-spec.js",
+					"buffer": 10,
+					"file": "test/trainingUtil-spec.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1581,
+						"buffer_size": 12438,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1073,
-								1073
+								9970,
+								9970
 							]
 						],
 						"settings":
 						{
-							"auto_name": "import test from \"tape\";",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4911.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "test/TrainingStore-spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3409,
+								3409
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 515.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "test/TrainingComponent-spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5455,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5433,
+								5433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 165.0,
+						"translation.y": 670.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "test/SegmentComponent-spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2196,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								433,
+								433
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1050,7 +1395,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.48951048951,
 			1.0
 		],
 		"rows":
@@ -1110,7 +1455,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 204.0,
+	"side_bar_width": 239.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

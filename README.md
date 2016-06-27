@@ -30,10 +30,12 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
+- Fix 'no re-calculate total on calc' bug
 - Fix 'add training then save' bug, which has empy data 
 - Add checkbox to indicate training is a workout or not
 - Do not save metadata like 'total', 'isVisible' etc from state to disk
 - handle feedback from Ajax/Fetch in TrainingComponent
+- disable persist button when webservice is offline
 - introduce tags
 - introduce concept of training versus instance
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
@@ -42,8 +44,6 @@ Based on 'React eventemitter'.
 - info as 400 pace (800, 1200, 1600)
 - display list of paces relative to mp/10kp/etc.
 - support comments for a training
-- save
-- save dialog
 - import
 - export
 - confirm on remove

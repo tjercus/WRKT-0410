@@ -28,13 +28,14 @@ export default class SegmentComponent extends React.Component {
   }
   
   componentDidMount() {
-    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (training) => {
-      if (this.state.uuid == training.segment.uuid) {
+    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {
+      console.log(`SegmentComponent caught SEGMENT_UPDATE_EVT ${JSON.stringify(data)}`);
+      if (this.state.uuid == data.segment.uuid) {
         this.setState({
-          distance: training.segment.distance,
-          duration: training.segment.duration,
-          pace: training.segment.pace,
-          isValid: training.segment.isValid
+          distance: data.segment.distance,
+          duration: data.segment.duration,
+          pace: data.segment.pace,
+          isValid: data.segment.isValid
         });
       }
     });
@@ -93,7 +94,7 @@ export default class SegmentComponent extends React.Component {
   }  
   
   render() {
-    let rowClassName = (this.state.isValid) ? "valid" : "invalid";
+    let rowClassName = (this.state.isValid) ? "segment valid" : "segment invalid";
 
     return (
       <tr className={rowClassName}>
