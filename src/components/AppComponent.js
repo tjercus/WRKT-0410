@@ -18,16 +18,22 @@ export default class AppComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.eventbus = new EventEmitter({wildcard: true, maxListeners: 999999});
+    if (this.props.hasOwnProperty("eventbus")) {
+      this.eventbus = this.props.eventbus;
+    } else {
+      this.eventbus = new EventEmitter({wildcard: true, maxListeners: 999999});
+    }
+
     new TrainingStore(this.eventbus, clone(trainings));
     new TimelineStore(this.eventbus, clone(trainings));
   }
   
   componentDidMount() {
+    this.eventbus.emit("SET_NOTIFICATION_TIMEOUT", 20000);
     this.eventbus.emit("MENU_CLICK_EVT", "menu-item-training");
     setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"), 500);
   }
-  
+
   render() {
     const version = packageJSON.version;
 

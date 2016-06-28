@@ -11,6 +11,8 @@ import SegmentComponent from "../src/components/SegmentComponent";
 import EventEmitter from "eventemitter2";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
+const emitSpy = sinon.spy(eventbus, "emit");
+const onSpy = sinon.spy(eventbus, "on");
 const segments = [{
   uuid: "uuid-segment1",
   distance: 5.0,
@@ -26,19 +28,17 @@ test("TrainingComponent should initially render with an info message", (assert) 
   assert.end();
 });
 
-test("TrainingComponent should catch a MENU_CLICK_EVT", (assert) => {
-  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
-  const onSpy = sinon.spy(eventbus, "on");
+test("TrainingComponent should catch a MENU_CLICK_EVT", (assert) => {  
+  onSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("MENU_CLICK_EVT", "Training");  
   assert.ok(onSpy.calledWith("MENU_CLICK_EVT"), "component should catch MENU_CLICK_EVT");
   assert.end();
 });
 
-test("TrainingComponent should render a training", (assert) => {
+test("TrainingComponent should render a training", (assert) => {  
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
   eventbus.emit("TRAINING_LOAD_EVT", training);
-
   assert.equal(component.find("header.panel-header span").text(), "my training");
   assert.equal(component.find("SegmentComponent").length, 1);
   assert.equal(component.find("output[name='totals']").length, 1);
@@ -50,13 +50,11 @@ test("TrainingComponent should render a training", (assert) => {
   assert.equal(buttons.at(3).text(), "clear training");  
   assert.ok(buttons.at(3).hasClass("button-warning"));
   assert.equal(buttons.at(4).text(), "clone training");
-
   assert.end();
 });
 
 test("TrainingComponent should emit a TRAINING_CLONE_CMD", (assert) => {
-  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
-  const emitSpy = sinon.spy(eventbus, "emit");
+  emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);  
   component.find("menu button").at(4).simulate("click");
@@ -65,8 +63,6 @@ test("TrainingComponent should emit a TRAINING_CLONE_CMD", (assert) => {
 });
 
 test("TrainingComponent should allow a toggle of trainingname as editable component", (assert) => {  
-  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
-  const emitSpy = sinon.spy(eventbus, "emit");
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   const BUTTON_SELECTOR = "button[id='edit-name-button']";
   const TEXTFIELD_SELECTOR = "input[id='edit-name-textfield']";
@@ -83,8 +79,7 @@ test("TrainingComponent should allow a toggle of trainingname as editable compon
 });
 
 test("TrainingComponent should emit a TRAINING_UPDATE_CMD", (assert) => {
-  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
-  const emitSpy = sinon.spy(eventbus, "emit");
+  emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   const BUTTON_SELECTOR = "button[id='edit-name-button']";
   const TEXTFIELD_SELECTOR = "input[id='edit-name-textfield']";
@@ -96,8 +91,7 @@ test("TrainingComponent should emit a TRAINING_UPDATE_CMD", (assert) => {
 });
 
 test("TrainingComponent should emit a TRAININGS_PERSIST_CMD", (assert) => {
-  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
-  const emitSpy = sinon.spy(eventbus, "emit");
+  emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
   eventbus.emit("TRAINING_LOAD_EVT", training);
   component.find("button[id='persist-button']").simulate("click");  
@@ -116,9 +110,7 @@ test("TrainingComponent should update total after a SEGMENT_UPDATE_EVT", (assert
     distance: 10,
     duration: "00:40:00",
     pace: "04:00"
-  };
-  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
-  const emitSpy = sinon.spy(eventbus, "emit");
+  };  
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
   // increase distance and empty duration

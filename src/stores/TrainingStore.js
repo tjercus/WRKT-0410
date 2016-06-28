@@ -127,7 +127,7 @@ export default class TrainingStore {
       i++;
     });
     console.log(`TrainingStore sent SEGMENT_UPDATE_EVT with total ${JSON.stringify(this.total)}`);
-    this.eventbus.emit("SEGMENT_UPDATE_EVT", { debug: true, segment: this.segments[i], total: this.total });
+    this.eventbus.emit("SEGMENT_UPDATE_EVT", { segment: this.segments[i], total: this.total });
   }
 
   removeSegmentFromStore(segment, segments) {

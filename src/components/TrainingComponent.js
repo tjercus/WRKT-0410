@@ -49,20 +49,13 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
       this.setState({ segments: training.segments, total: training.total });
     });
-    this.props.eventbus.onAny((event, data) => {
-      ///console.log(`All events trigger this. ${event}`);
+    // TODO find out why this is never caught:    
+    // this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {});
+    this.props.eventbus.onAny((event, data) => {      
       if (event === "SEGMENT_UPDATE_EVT") {
         this.setState({ total: data.total });
       }
-    });
-    //this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {
-      // TODO this event is never caught, fix it!
-      //console.log(`TrainingComponent caught SEGMENT_UPDATE_EVT ${JSON.stringify(data)}`);
-      // this.setState({ total: data.total }, function() {
-      //   this.forceUpdate();
-      //   console.log("TrainingComponent finished updating state with total");
-      // });
-    //});
+    });    
     this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
       this.setState({ segments: [], total: {} }, function() {
         console.log("TrainingComponent emptied segments");

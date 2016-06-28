@@ -11,6 +11,7 @@ import SegmentComponent from "../src/components/SegmentComponent";
 import EventEmitter from "eventemitter2";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
+const emitSpy = sinon.spy(eventbus, "emit");
 const segment = {
   uuid: "uuid-segment1",
   distance: 5.1,
@@ -27,23 +28,21 @@ test("SegmentComponent should set values after SEGMENT_UPDATE_EVT", (assert) => 
 });
 
 test("SegmentComponent should emit SEGMENT_UPDATE_CMD when it can augment on calc button click", (assert) => {
-  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
-  const emitSpy = sinon.spy(eventbus, "emit");
   const augmentableSegment = {
     uuid: "uuid-segment2",
     distance: 5,
     duration: "",
     pace: "05:00"
-  };
+  };  
+  emitSpy.reset();
   const component = mount(<SegmentComponent eventbus={eventbus} segment={augmentableSegment} />);
   component.find(".segment button.button-primary").simulate("click");  
   assert.ok(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should emit SEGMENT_UPDATE_CMD");
   assert.end();
 });
 
-test("SegmentComponent should NOT emit SEGMENT_UPDATE_CMD when it can NOT augment on calc button click", (assert) => {
-  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
-  const emitSpy = sinon.spy(eventbus, "emit");  
+test("SegmentComponent should NOT emit SEGMENT_UPDATE_CMD when it can NOT augment on calc button click", (assert) => {  
+  emitSpy.reset();
   const component = mount(<SegmentComponent eventbus={eventbus} segment={segment} />);
   component.find(".segment button.button-primary").simulate("click");  
   assert.notOk(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should NOT emit SEGMENT_UPDATE_CMD");

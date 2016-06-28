@@ -300,9 +300,16 @@ div.days-list section.day button {
 
 .notification-panel {  
   position: fixed;
+  bottom: 0;
   right: 0;
-  width: auto;
   height: auto;
+}
+
+.notification-panel li {
   color: white;
-  background-color: #333333;
+  background-color: #282828;
+  margin: 0.5em;
+  padding: 1em;
+  font-size: 0.8em;
+  height: 48dp;
 }

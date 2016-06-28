@@ -32,7 +32,7 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.on("PLAN_LOAD_EVT", (microcycles) => {
     	this.setState({microcycles: microcycles});
     });
-    this.props.eventbus.emit("PLAN_LOAD_CMD");
+    setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD"), 1000);
   }
 
   // TODO extract method

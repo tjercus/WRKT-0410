@@ -1,22 +1,30 @@
-
+import makeDom from "./dom";
+import test from "tape";
 import React from "react";
-import { createRenderer } from "react-addons-test-utils";
-import createComponent from "react-unit";
-import tape from "tape";
-import addAssertions from "extend-tape";
-import jsxEquals from "tape-jsx-equals";
-const test = addAssertions(tape, {jsxEquals});
+import { shallow, mount } from "enzyme";
+import sinon from "sinon";
+
+import EventEmitter from "eventemitter2";
 
 // Component under test
 import AppComponent from "../src/components/AppComponent";
 
-// TODO es6 multiline string
-const renderedComponent = `<div>\n  <header id="app-header">\n    <h1>\n      WRKT-0410 1.0.0\n    </h1>\n    <MenuComponent eventbus={[object Object]} />\n  </header>\n  <article id="container">\n    <aside id="container-aside">\n      <TrainingListComponent\n        eventbus={[object Object]}\n        from="menu-item-training"\n        name="Traininglist"\n      />\n    </aside>\n    <main>\n      <TrainingComponent\n        eventbus={[object Object]}\n        from="menu-item-training"\n        name="Training"\n      />\n      <TimelineComponent\n        eventbus={[object Object]}\n        from="menu-item-timeline"\n        name="Timeline"\n      />\n      <PanelComponent\n        eventbus={[object Object]}\n        from="menu-item-settings"\n        name="Settings"\n      />\n      <DayEditComponent\n        eventbus={[object Object]}\n        from="menu-item-dayedit"\n        name="DayEdit"\n      />\n    </main>\n  </article>\n</div>`;
+// TODO more DOM structure tests
 
 test("AppComponent should render the right DOM structure", (assert) => {  
-  const renderer = createRenderer();
-  renderer.render(<AppComponent />);
-  const result = renderer.getRenderOutput();
-  assert.jsxEquals(result, renderedComponent);
+  const eventbus = new EventEmitter({wildcard: true, maxListeners: 99});
+
+  // block eventbus.emit since it cause a long setTimeout via NotificationComponent
+  sinon.stub(eventbus, "emit", function() {});
+  
+  const component = mount(<AppComponent eventbus={eventbus} />);
+  //assert.equal(component.html(), "html");
+  assert.equal(component.find("header[id='app-header']").length, 1);
+  assert.equal(component.find("ul.menu").length, 1);
+  const buttons = component.find("ul.menu button");
+  assert.equal(buttons.at(0).text(), "Training");
+  assert.equal(buttons.at(1).text(), "Timeline");
+  assert.equal(buttons.at(2).text(), "Settings");
+  assert.equal();
   assert.end();
 });

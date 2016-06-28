@@ -21,7 +21,6 @@ Based on 'React eventemitter'.
 - TrainingListComponent should supports categories as accordion or tagcloud
 - use const instead of let when possible
 - use arrow functions when possible
-- notification feature
 - yellow hint of change
 - button click 'animation'
 - button to switch metric/imperial
