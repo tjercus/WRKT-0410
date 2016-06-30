@@ -10,8 +10,9 @@ export default class TrainingComponent extends React.Component {
       isVisible: false,
       uuid: null,
       name: "",
+      type: "workout",
       segments: [],
-      isNameEditable: false,
+      isNameEditable: false,      
       total: {
         distance: 0,
         duration: "00:00:00",
@@ -28,6 +29,7 @@ export default class TrainingComponent extends React.Component {
     this.onEditNameButtonClick = this.onEditNameButtonClick.bind(this);
     this.onNameChange = this.onNameChange.bind(this);
     this.onNameBlur = this.onNameBlur.bind(this);
+    this.onTypeClick = this.onTypeClick.bind(this);
   }
 
   componentDidMount() {
@@ -74,6 +76,7 @@ export default class TrainingComponent extends React.Component {
         isVisible: true,
         uuid: null,
         name: "",
+        type: "workout",
         segments: [],
         isNameEditable: false,
         total: {
@@ -86,6 +89,7 @@ export default class TrainingComponent extends React.Component {
         this.setState({
           uuid: training.uuid,
           name: training.name,
+          type: training.type,
           segments: training.segments,
           total: training.total
         });
@@ -138,6 +142,7 @@ export default class TrainingComponent extends React.Component {
       isVisible: true,
       uuid: null,
       name: "",
+      type: "workout",
       segments: [],
       isNameEditable: false,
       total: {
@@ -146,6 +151,10 @@ export default class TrainingComponent extends React.Component {
         pace: "00:00"
       }
     });
+  }
+
+  onTypeClick(evt) {    
+    this.setState({type: evt.target.value });
   }
 
   render() {
@@ -168,14 +177,23 @@ export default class TrainingComponent extends React.Component {
       totalDistance = (this.state.total.distance).toFixed(3);
     };
 
+    // TODO refactor to ButtonChoiceComponent    
+    const type1ButtonClassName = (this.state.type === "workout") ? "button-choice button-choice-selected" : "button-choice";
+    const type2ButtonClassName = (this.state.type === "easy") ? "button-choice button-choice-selected" : "button-choice";
+
     if (this.state.uuid) {
       return (
         <section className={panelClassName}>
-          <header className="panel-header">            
+          <header className="panel-header">
             {nameComponent}
             <button id="edit-name-button" onClick={this.onEditNameButtonClick} className="button-small button-flat">{"edit"}</button>
           </header>
           <div className="panel-body">
+            <fieldset name="type">
+              Type of training &nbsp;
+              <button onClick={this.onTypeClick} value="workout" className={type1ButtonClassName}>{"workout"}</button>
+              <button onClick={this.onTypeClick} value="easy" className={type2ButtonClassName}>{"easy run"}</button>
+            </fieldset>
             <table summary="training segments">
               <thead>
                 <tr><th>Distance</th><th>Duration</th><th>Pace</th><th>Actions</th></tr>

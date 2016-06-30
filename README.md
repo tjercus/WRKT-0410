@@ -29,7 +29,6 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
-- Add checkbox to indicate training is a workout or not
 - Do not save metadata like 'total', 'isVisible' etc from state to disk
 - handle feedback from Ajax/Fetch in TrainingComponent
 - disable persist button when webservice is offline

@@ -313,3 +313,22 @@ div.days-list section.day button {
   font-size: 0.8em;
   height: 48dp;
 }
+
+fieldset {
+  border: 0;
+  padding-left: 0;
+}
+
+fieldset .button-choice {
+  background-color: white;
+  color: black;
+  margin-left: 0;
+  padding: 0.2em 1em 0.2em 1em;
+  font-size: 0.8em;
+}
+fieldset .button-choice:active {
+  background-color: silver;
+}
+fieldset .button-choice-selected {
+  background-color: silver;
+}

@@ -27,6 +27,7 @@ export default class TrainingStore {
     this.trainings = trainings;
     this.uuid = null;
     this.name = "undefined";
+    this.type = null;
     this.segments = [];
     this.total = {
       distance: 0,
@@ -95,6 +96,7 @@ export default class TrainingStore {
     const _training = {};
     _training.uuid = createUuid();
     _training.name = `${this.name} (clone)`;
+    _training.type = clone(this.type);
     _training.segments = clone(this.segments);
     _training.total = makeTrainingTotal(_training.segments);
     _trainings.push(_training);    
@@ -108,6 +110,11 @@ export default class TrainingStore {
     this.eventbus.emit("TRAINING_UPDATE_EVT", {training: training, trainings: this.trainings});
   }
 
+  /**
+   * @param {[type]}
+   * @param {[type]}
+   * @param {[type]}
+   */
   addSegmentToStore(segment, segments, overwriteUuid) {
     this.segments = addSegment(segment, segments, overwriteUuid);
     this.total = makeTrainingTotal(this.segments);
@@ -139,7 +146,8 @@ export default class TrainingStore {
 
   clearTraining() {
     this.uuid = null;
-    this.name = "undefined";
+    this.name = null;
+    this.type = null;
     this.segments = [];
     this.total = {
       distance: 0,
@@ -153,6 +161,7 @@ export default class TrainingStore {
     if (training !== null) {
       this.uuid = training.uuid;
       this.name = training.name;
+      this.type = training.type;
       let _segments = training.segments.map((segment) => {
         return augmentSegmentData(segment);
       });
@@ -161,6 +170,7 @@ export default class TrainingStore {
       this.eventbus.emit("TRAINING_LOAD_EVT", {
         uuid: this.uuid,
         name: this.name,
+        type: this.type,
         segments: _segments,
         total: this.total
       });

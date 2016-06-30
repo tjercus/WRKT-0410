@@ -22,10 +22,33 @@ let segments = [
 let training = {
   "uuid": "training-uuid",
   "name": "training-name",
+  "type": "workout",
   "segments": segments
 };
 
-test("removeSegment should emit a properly loaded event", (assert) => {
+test("TrainingStore should load and emit training after receiving TRAINING_LOAD_CMD", (assert) => {
+  let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true}); 
+  let emitSpy = sinon.spy(eventbus, "emit");
+  const trainings = [];
+  trainings.push(training);
+  const store = new TrainingStore(eventbus, trainings);
+  // ask store to load training via eventbus
+  eventbus.emit("TRAINING_LOAD_CMD", "training-uuid"); 
+  
+  // TODO turn this into a util
+  for (let i = 0, len = emitSpy.args.length; i < len; i++) {    
+    if (emitSpy.args[i][0] === "TRAINING_LOAD_EVT") {
+      const emittedTraining = emitSpy.args[i][1];
+      assert.equal(emittedTraining.segments.length, 10, "after loading, there should be 10 segments");
+      assert.equal(emittedTraining.uuid, training.uuid, "uuid should match");
+      assert.equal(emittedTraining.name, training.name, "name should match");
+      assert.equal(emittedTraining.type, training.type, "type should match");
+    }
+  }
+  assert.end();  
+});
+
+test("TrainingStore removeSegment should emit a properly payloaded event", (assert) => {
   let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true}); 
   let emitSpy = sinon.spy(eventbus, "emit");
   const trainings = [];
@@ -44,13 +67,13 @@ test("removeSegment should emit a properly loaded event", (assert) => {
   for (let i = 0, len = emitSpy.args.length; i < len; i++) {    
     if (emitSpy.args[i][0] === "SEGMENT_REMOVE_EVT") {      
       assert.equal(emitSpy.args[i][1].segments.length, segments.length, 
-        "after deleting, there should be 9 segments");
+        "after deleting, there should be 9 segments");      
     }
   }
   assert.end();  
 });
 
-test("should listen to TRAINING_CLONE_CMD and clone", (assert) => {
+test("TrainingStore should listen to TRAINING_CLEAR_CMD and empty store", (assert) => {
   let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true}); 
   let emitSpy = sinon.spy(eventbus, "emit");
   const trainings = [];
@@ -58,13 +81,35 @@ test("should listen to TRAINING_CLONE_CMD and clone", (assert) => {
   const store = new TrainingStore(eventbus, trainings);
   // ask store to load training via eventbus
   eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
+  assert.equal(store.uuid, training.uuid, "loaded training should have proper uuid");
+  eventbus.emit("TRAINING_CLEAR_CMD");
+  assert.equal(store.uuid, null, "cleared training should have null uuid");   
+  assert.equal(store.name, null, "cleared training should have null name");
+  assert.equal(store.type, null, "cleared training should have null type");
+  assert.equal(store.segments.length, 0, "cleared training should have no segments");
+  assert.equal(store.total.distance, 0, "cleared training should have 0 distance");
+  assert.equal(store.total.duration, "00:00:00", "cleared training should have empty duration");
+  assert.equal(store.total.pace, "00:00", "cleared training should have empty pace");
   
-  //store.removeSegmentFromStore({"uuid": "107"}, segments);
-  // TODO fire clone event and assert stuff
   assert.end();
 });
 
-test("should listen to TRAINING_UPDATE_CMD and refresh list", (assert) => {
+test("TrainingStore should listen to TRAINING_CLONE_CMD and clone", (assert) => {
+  let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true}); 
+  let emitSpy = sinon.spy(eventbus, "emit");
+  const trainings = [];
+  trainings.push(training);
+  const store = new TrainingStore(eventbus, trainings);
+  // ask store to load training via eventbus
+  eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
+  eventbus.emit("TRAINING_CLONE_CMD");
+  
+  assert.notEqual(store.uuid, training.uuid, "cloned training should have different uuid loaded in store");
+  
+  assert.end();
+});
+
+test("TrainingStore should listen to TRAINING_UPDATE_CMD and refresh list", (assert) => {
   let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true}); 
   let emitSpy = sinon.spy(eventbus, "emit");
   const trainings = [];
@@ -73,8 +118,7 @@ test("should listen to TRAINING_UPDATE_CMD and refresh list", (assert) => {
   // ask store to load training via eventbus
   eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
   training.name = "wobble";
-  eventbus.emit("TRAINING_UPDATE_CMD", training);
-  //assert.ok(emitSpy.calledWith("TRAINING_UPDATE_EVT"));
+  eventbus.emit("TRAINING_UPDATE_CMD", training); 
 
   for (let i = 0, len = emitSpy.args.length; i < len; i++) {    
     if (emitSpy.args[i][0] === "TRAINING_UPDATE_EVT") {
