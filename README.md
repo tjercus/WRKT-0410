@@ -33,7 +33,7 @@ Based on 'React eventemitter'.
 - handle feedback from Ajax/Fetch in TrainingComponent
 - disable persist button when webservice is offline
 - introduce tags
-- introduce concept of training versus instance
+- introduce concept of training (like a Class, only one copy) versus instances (Object, many copies which can deviate or be the same)
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
 - move segment up or down
