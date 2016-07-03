@@ -9,6 +9,8 @@ var corsHeaders = {
   "content-length": 0
 };
 
+var DATA_PREFIX = "export const trainings = ";
+
 var server = http.createServer(function(request, response) {
   if (request.method == "OPTIONS") {
     console.log("sending OPTIONS response");
@@ -19,15 +21,20 @@ var server = http.createServer(function(request, response) {
     console.log("sending PUT response");
     request.on("data", function(chunk) {
       console.log("Received body data:");
-      var trainingsStr = "export const trainings = " + chunk.toString();
-      // TODO simple JSON check as validation
-      fs.writeFile("src/stores/trainings.js", trainingsStr, (err) => {
-        if (err) { 
-          console.log(err);
-        } else {        
-          console.log("saved ./src/stores/trainings.js");
-        }
-      }); 
+      var trainingsStr = DATA_PREFIX + chunk.toString();
+      // simple JSON check as validation
+      var obj = JSON.parse(chunk.toString());
+      if (obj[0].uuid === "new-training") {
+        fs.writeFile("src/stores/trainings.js", trainingsStr, (err) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log("saved ./src/stores/trainings.js");
+          }
+        });
+      } else {
+        console.log("trainings JSON was corrupt");
+      }
       console.log(trainingsStr);
     });
 

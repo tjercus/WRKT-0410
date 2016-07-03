@@ -55,8 +55,10 @@ export default class TrainingStore {
       eventbus.emit("TRAINING_LOAD_CMD", clonedTraining.uuid);
     });
     eventbus.on("TRAINING_UPDATE_CMD", (training) => {
-      // currently only 'name' can be updated (besides 'segments')
+      // currently only 'name' and 'type' can be updated (besides 'segments')
       this.name = training.name;
+      this.type = training.type;
+      console.log("TrainingStore.UPDATE: " + JSON.stringify(training) + ", and this.type: " + this.type);
       this.updateTrainingInStore(training, this.trainings);
     });
 

@@ -84,7 +84,7 @@ test("TrainingStore should listen to TRAINING_CLEAR_CMD and empty store", (asser
   assert.equal(store.uuid, training.uuid, "loaded training should have proper uuid");
   eventbus.emit("TRAINING_CLEAR_CMD");
   assert.equal(store.uuid, null, "cleared training should have null uuid");   
-  assert.equal(store.name, null, "cleared training should have null name");
+  assert.equal(store.name, null, "cleared training should have null name"); // TODO or string 'undefined'?
   assert.equal(store.type, null, "cleared training should have null type");
   assert.equal(store.segments.length, 0, "cleared training should have no segments");
   assert.equal(store.total.distance, 0, "cleared training should have 0 distance");
@@ -118,14 +118,20 @@ test("TrainingStore should listen to TRAINING_UPDATE_CMD and refresh list", (ass
   // ask store to load training via eventbus
   eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
   training.name = "wobble";
+  training.type = "easy";
   eventbus.emit("TRAINING_UPDATE_CMD", training); 
+
+  assert.equal(store.name, "wobble", "new name should be copied in store");
+  assert.equal(store.type, "easy", "new type should be copied in store");
 
   for (let i = 0, len = emitSpy.args.length; i < len; i++) {    
     if (emitSpy.args[i][0] === "TRAINING_UPDATE_EVT") {
       assert.equal(emitSpy.args[i][1].training.name, "wobble",
         "after updating a training, the new version should be emitted on the bus");
       assert.equal(emitSpy.args[i][1].trainings[0].name, "wobble",
-        "after updating a training, an updated list of trainings should be emitted on the bus");
+        "with an update event the new name should be emitted on the bus");
+      assert.equal(emitSpy.args[i][1].trainings[0].type, "easy",
+        "with an update event the new type should be emitted on the bus");
     }
   }  
   assert.end();

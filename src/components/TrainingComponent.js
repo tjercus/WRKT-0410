@@ -9,8 +9,8 @@ export default class TrainingComponent extends React.Component {
     this.state = {
       isVisible: false,
       uuid: null,
-      name: "",
-      type: "workout",
+      name: "undefined",
+      type: null,
       segments: [],
       isNameEditable: false,      
       total: {
@@ -75,8 +75,8 @@ export default class TrainingComponent extends React.Component {
     this.setState({
         isVisible: true,
         uuid: null,
-        name: "",
-        type: "workout",
+        name: "undefined",
+        type: null,
         segments: [],
         isNameEditable: false,
         total: {
@@ -141,8 +141,8 @@ export default class TrainingComponent extends React.Component {
     this.setState({
       isVisible: true,
       uuid: null,
-      name: "",
-      type: "workout",
+      name: "undefined",
+      type: null,
       segments: [],
       isNameEditable: false,
       total: {
@@ -153,8 +153,20 @@ export default class TrainingComponent extends React.Component {
     });
   }
 
-  onTypeClick(evt) {    
-    this.setState({type: evt.target.value });
+  onTypeClick(evt) {
+    console.log(`onTypeClick: ${evt.target.value}`); 
+    console.log(`state: ${this.state.name}`);
+    this.setState({type: evt.target.value }, () => {
+      // create training object from state
+      const training = {
+        uuid: this.uuid,
+        name: this.name,
+        type: this.type,
+        segments: this.segments
+      }
+      this.props.eventbus.emit("TRAINING_UPDATE_CMD", training); // TODO test: 'should emit event when button clicked'
+    });
+    
   }
 
   render() {

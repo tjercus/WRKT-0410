@@ -13,7 +13,8 @@ export function findTraining(uuid, trainings) {
 }
 
 export function updateTraining(training, trainings) {
-	const _trainings = clone(trainings);	
+	console.log("trainingUtil.updateTraining: type: " + training.type);
+	const _trainings = clone(trainings);
   let i = 0;
   _trainings.some((_training) => {
 	  if (_training.uuid === training.uuid) {
