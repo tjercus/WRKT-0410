@@ -1418,7 +1418,7 @@ export const trainings = [
 	},
 	{
 		"uuid": "6efebaa5-2f5c-4b31-9086-08bf580ef2bd",
-		"name": "7 x 1km @10KP (clone)",
+		"name": "8 x 1km @10KP",
 		"type": "workout",
 		"segments": [
 			{
@@ -1535,15 +1535,15 @@ export const trainings = [
 	},
 	{
 		"uuid": "fa8ae951-891f-4ae7-aed8-920665829a9e",
-		"name": "5K @10KP (clone)",
+		"name": "10k @10KP",
 		"type": "workout",
 		"segments": [
 			{
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
-				"distance": 5,
-				"pace": "03:40",
-				"isValid": true,
-				"duration": "00:18:20"
+				"distance": "10",
+				"duration": "00:36:50",
+				"pace": "03:41",
+				"isValid": true
 			}
 		],
 		"total": {

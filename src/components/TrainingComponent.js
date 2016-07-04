@@ -111,7 +111,7 @@ export default class TrainingComponent extends React.Component {
 
   onNameBlur(evt) {
     console.log(`onNameBlur ${this.state.name}`);
-    this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.state);
+    this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.makeTraining(this.state));
   }
 
   cloneTraining() {
@@ -128,9 +128,8 @@ export default class TrainingComponent extends React.Component {
     //console.log(`onTypeClick: ${evt.target.value}, before state: ${JSON.stringify(this.state)}`);
     this.setState({ type: evt.target.value }, () => {
       //console.log(`onTypeClick: setState: ${JSON.stringify(this.state)}`);    
-      const _training = this.makeTraining(this.state);
       //console.log(`onTypeClick: going to emit training: ${JSON.stringify(_training)}`);
-      this.props.eventbus.emit("TRAINING_UPDATE_CMD", _training); // TODO test: 'should emit event when button clicked'
+      this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.makeTraining(this.state)); // TODO test: 'should emit event when button clicked'
     });
   }
 

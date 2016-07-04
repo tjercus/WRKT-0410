@@ -57,7 +57,7 @@ export default class TrainingStore {
     eventbus.on("TRAINING_UPDATE_CMD", (training) => {
       // currently only 'name' and 'type' can be updated (besides 'segments')
       this.name = training.name;
-      this.type = training.type;
+      this.type = training.type;      
       console.log("TrainingStore.UPDATE: " + JSON.stringify(training) + ", and this.type: " + this.type);
       this.updateTrainingInStore(training, this.trainings);
     });
@@ -78,22 +78,24 @@ export default class TrainingStore {
 
   // TODO move to trainingUtil
   persistTrainings(trainings) {
-    console.log("TrainingStore.persistTrainings");
+    console.log(`TrainingStore.persistTrainings: this.name: ${this.name} this.segments[0]: ${this.segments[0].distance}`);
     const trainingsStr = JSON.stringify(trainings, null, "\t");
-    const that = this;    
+    console.log(`last training in trainings before persist: ${JSON.stringify(trainings[trainings.length - 1])}`);    
+    
     if (typeof fetch == 'function') {
       fetch("http://localhost:3333/", {
         method: "PUT",
         body: trainingsStr
-      }).then(function(response) {
-        that.eventbus.emit("TRAININGS_PERSIST_EVT");
-      }).catch(function(error) {
-        that.eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", err);
+      }).then((response) => {
+        this.eventbus.emit("TRAININGS_PERSIST_EVT");
+      }).catch((error) => {
+        this.eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", error);
       });
-    }
+    }    
   }
 
   cloneTrainingInStore(trainings) {
+    console.log(`TrainingStore.cloneTrainingInStore`);
     const _trainings = clone(trainings);
     const _training = {};
     _training.uuid = createUuid();
@@ -107,7 +109,8 @@ export default class TrainingStore {
     return _training;
   }
   
-  updateTrainingInStore(training, trainings) {    
+  updateTrainingInStore(training, trainings) {
+    console.log(`TrainingStore.updateTrainingInStore: ${JSON.stringify(training)}`);
     this.trainings = updateTraining(training, trainings);
     this.eventbus.emit("TRAINING_UPDATE_EVT", {training: training, trainings: this.trainings});
   }

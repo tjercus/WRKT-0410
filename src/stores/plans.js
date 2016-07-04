@@ -86,7 +86,7 @@ export const plans = [
 			  	{"nr": 63, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441"}
 			  ]},
 			  {"days": [
-			  	{"nr": 64, "trainingId": "6a0653f5-45dd-46fa-bccf-d8dfe289b441"},
+			  	{"nr": 64, "trainingId": "fa8ae951-891f-4ae7-aed8-920665829a9e"},
 			  	{"nr": 65, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
 			  	{"nr": 66, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
 			  	{"nr": 67, "trainingId": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"},
