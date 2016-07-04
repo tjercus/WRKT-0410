@@ -30,8 +30,8 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
+- Fix bug in persisting cloned training
 - introduce concept of training (like a Class, only one copy) versus instances (Object, many copies which can deviate or be the same)
-- Do not save metadata like 'total', 'isVisible' etc from state to disk
 - disable persist button when webservice is offline
 - introduce tags
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests

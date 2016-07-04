@@ -1415,5 +1415,141 @@ export const trainings = [
 			"duration": "00:18:20",
 			"pace": "03:40"
 		}
+	},
+	{
+		"uuid": "6efebaa5-2f5c-4b31-9086-08bf580ef2bd",
+		"name": "7 x 1km @10KP (clone)",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "1",
+				"distance": 3,
+				"pace": "05:30",
+				"duration": "00:16:30",
+				"isValid": true
+			},
+			{
+				"uuid": "2",
+				"distance": 1,
+				"pace": "03:40",
+				"duration": "00:03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "3",
+				"distance": 0.5,
+				"pace": "05:30",
+				"duration": "00:02:45",
+				"isValid": true
+			},
+			{
+				"uuid": "4",
+				"distance": 1,
+				"pace": "03:40",
+				"duration": "00:03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "5",
+				"distance": 0.5,
+				"pace": "05:30",
+				"duration": "00:02:45",
+				"isValid": true
+			},
+			{
+				"uuid": "6",
+				"distance": 1,
+				"pace": "03:40",
+				"duration": "00:03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "7",
+				"distance": 0.5,
+				"pace": "05:30",
+				"duration": "00:02:45",
+				"isValid": true
+			},
+			{
+				"uuid": "8",
+				"distance": 1,
+				"pace": "03:40",
+				"duration": "00:03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "9",
+				"distance": 0.5,
+				"pace": "05:30",
+				"duration": "00:02:45",
+				"isValid": true
+			},
+			{
+				"uuid": "10",
+				"distance": 1,
+				"pace": "03:40",
+				"duration": "00:03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "11",
+				"distance": 0.5,
+				"pace": "05:30",
+				"duration": "00:02:45",
+				"isValid": true
+			},
+			{
+				"uuid": "12",
+				"distance": 1,
+				"pace": "03:40",
+				"duration": "00:03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "13",
+				"distance": 0.5,
+				"pace": "05:30",
+				"duration": "00:02:45",
+				"isValid": true
+			},
+			{
+				"uuid": "14",
+				"distance": 1,
+				"pace": "03:40",
+				"duration": "00:03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "15",
+				"distance": 0.5,
+				"pace": "05:30",
+				"duration": "00:02:45",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.5,
+			"duration": "01:01:25",
+			"pace": "04:33"
+		}
+	},
+	{
+		"uuid": "fa8ae951-891f-4ae7-aed8-920665829a9e",
+		"name": "5K @10KP (clone)",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": 5,
+				"pace": "03:40",
+				"isValid": true,
+				"duration": "00:18:20"
+			}
+		],
+		"total": {
+			"distance": 5,
+			"duration": "00:18:20",
+			"pace": "03:40"
+		}
 	}
 ]
