@@ -51,7 +51,7 @@ export function makeTrainingTotal(segments) {
 			totalObj.duration = makeDuration(totalObj);			
 		}
 	}
-	console.log("trainingUtil.makeTrainingTotal: " + JSON.stringify(totalObj));
+	//console.log("trainingUtil.makeTrainingTotal: " + JSON.stringify(totalObj));
 	return totalObj;
 }
 

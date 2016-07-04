@@ -1398,9 +1398,9 @@ export const trainings = [
 		}
 	},
 	{
-		"isVisible": true,
 		"uuid": "e1c626f0-6713-459c-a46f-671543715cf6",
 		"name": "5K @10KP",
+		"type": "workout",
 		"segments": [
 			{
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
@@ -1410,7 +1410,6 @@ export const trainings = [
 				"duration": "00:18:20"
 			}
 		],
-		"isNameEditable": false,
 		"total": {
 			"distance": 5,
 			"duration": "00:18:20",

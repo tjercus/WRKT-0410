@@ -33,7 +33,11 @@ test("TrainingStore should load and emit training after receiving TRAINING_LOAD_
   trainings.push(training);
   const store = new TrainingStore(eventbus, trainings);
   // ask store to load training via eventbus
-  eventbus.emit("TRAINING_LOAD_CMD", "training-uuid"); 
+  eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
+
+  assert.equal(store.uuid, "training-uuid", "store should have uuid");   
+  assert.equal(store.name, "training-name", "store should have name");
+  assert.equal(store.type, "workout", "store should have type");
   
   // TODO turn this into a util
   for (let i = 0, len = emitSpy.args.length; i < len; i++) {    

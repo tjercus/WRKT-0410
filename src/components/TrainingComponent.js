@@ -2,23 +2,25 @@ import React from "react";
 import SegmentComponent from "./SegmentComponent";
 import { clone } from "../stores/miscUtil";
 
+const DEFAULT_STATE = {
+  isVisible: true,
+  uuid: null,
+  name: "undefined",
+  type: null,
+  segments: [],
+  isNameEditable: false,
+  total: {
+    distance: 0,
+    duration: "00:00:00",
+    pace: "00:00"
+  }
+}
+
 export default class TrainingComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      isVisible: false,
-      uuid: null,
-      name: "undefined",
-      type: null,
-      segments: [],
-      isNameEditable: false,      
-      total: {
-        distance: 0,
-        duration: "00:00:00",
-        pace: "00:00"
-      }
-    };
+    this.state = DEFAULT_STATE;
     this.exportTraining = this.exportTraining.bind(this);
     this.emitClearTraining = this.emitClearTraining.bind(this);
     this.emitPersistChanges = this.emitPersistChanges.bind(this);
@@ -29,7 +31,7 @@ export default class TrainingComponent extends React.Component {
     this.onEditNameButtonClick = this.onEditNameButtonClick.bind(this);
     this.onNameChange = this.onNameChange.bind(this);
     this.onNameBlur = this.onNameBlur.bind(this);
-    this.onTypeClick = this.onTypeClick.bind(this);
+    this.onTypeClick = this.onTypeClick.bind(this);    
   }
 
   componentDidMount() {
@@ -53,11 +55,11 @@ export default class TrainingComponent extends React.Component {
     });
     // TODO find out why this is never caught:    
     // this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {});
-    this.props.eventbus.onAny((event, data) => {      
+    this.props.eventbus.onAny((event, data) => {
       if (event === "SEGMENT_UPDATE_EVT") {
         this.setState({ total: data.total });
       }
-    });    
+    });
     this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
       this.setState({ segments: [], total: {} }, function() {
         console.log("TrainingComponent emptied segments");
@@ -68,31 +70,13 @@ export default class TrainingComponent extends React.Component {
     });
     this.props.eventbus.on("TRAINING_CLEAR_EVT", (uuid) => {
       this.clearTrainingFromLocalState();
-    });    
+    });
   }
 
   loadTraining(training) {
-    this.setState({
-        isVisible: true,
-        uuid: null,
-        name: "undefined",
-        type: null,
-        segments: [],
-        isNameEditable: false,
-        total: {
-          distance: 0,
-          duration: "00:00:00",
-          pace: "00:00"
-        }
-      },
+    this.setState(DEFAULT_STATE,
       function() {
-        this.setState({
-          uuid: training.uuid,
-          name: training.name,
-          type: training.type,
-          segments: training.segments,
-          total: training.total
-        });
+        this.setState(this.makeTraining(training));
       });
     // TODO get this working
     // this.clearTrainingFromLocalState(function(training) {      
@@ -134,39 +118,35 @@ export default class TrainingComponent extends React.Component {
     // TODO custom alert    
     console.log("Training cloned and selected");
     this.props.eventbus.emit("TRAINING_CLONE_CMD");
-    alert("Training cloned and selected");
   }
 
   clearTrainingFromLocalState() {
-    this.setState({
-      isVisible: true,
-      uuid: null,
-      name: "undefined",
-      type: null,
-      segments: [],
-      isNameEditable: false,
-      total: {
-        distance: 0,
-        duration: "00:00:00",
-        pace: "00:00"
-      }
-    });
+    this.setState(DEFAULT_STATE);
   }
 
   onTypeClick(evt) {
-    console.log(`onTypeClick: ${evt.target.value}`); 
-    console.log(`state: ${this.state.name}`);
-    this.setState({type: evt.target.value }, () => {
-      // create training object from state
-      const training = {
-        uuid: this.uuid,
-        name: this.name,
-        type: this.type,
-        segments: this.segments
-      }
-      this.props.eventbus.emit("TRAINING_UPDATE_CMD", training); // TODO test: 'should emit event when button clicked'
+    //console.log(`onTypeClick: ${evt.target.value}, before state: ${JSON.stringify(this.state)}`);
+    this.setState({ type: evt.target.value }, () => {
+      //console.log(`onTypeClick: setState: ${JSON.stringify(this.state)}`);    
+      const _training = this.makeTraining(this.state);
+      //console.log(`onTypeClick: going to emit training: ${JSON.stringify(_training)}`);
+      this.props.eventbus.emit("TRAINING_UPDATE_CMD", _training); // TODO test: 'should emit event when button clicked'
     });
-    
+  }
+
+  /**
+   * Create training object by selectively copying properties from another obj
+   * @param  {obj}
+   * @return {Training}
+   */
+  makeTraining(obj) {
+    return {
+      uuid: obj.uuid,
+      name: obj.name,
+      type: obj.type,
+      segments: obj.segments,
+      total: obj.total
+    }
   }
 
   render() {

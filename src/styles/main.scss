@@ -298,7 +298,7 @@ div.days-list section.day button {
   background-color: #eeeeee;
 }
 
-.notification-panel {  
+.notification-panel {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -330,5 +330,7 @@ fieldset .button-choice:active {
   background-color: silver;
 }
 fieldset .button-choice-selected {
-  background-color: silver;
+  background-color: #eeeeee;
+  color: black;
+  font-weight: bold;
 }

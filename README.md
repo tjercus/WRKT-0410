@@ -15,7 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- start the rest-api via gulp
+- React components should use callback when doing stuff after setState
 - smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
 - Introduce Flow for type checking
 - TrainingListComponent should supports categories as accordion or tagcloud
@@ -24,16 +24,16 @@ Based on 'React eventemitter'.
 - yellow hint of change
 - button click 'animation'
 - button to switch metric/imperial
+- start the rest-api via gulp
 - Tape coverage with coverify
 - events as constants
 - Formal flux architecture?
 
 ### Training
+- introduce concept of training (like a Class, only one copy) versus instances (Object, many copies which can deviate or be the same)
 - Do not save metadata like 'total', 'isVisible' etc from state to disk
-- handle feedback from Ajax/Fetch in TrainingComponent
 - disable persist button when webservice is offline
 - introduce tags
-- introduce concept of training (like a Class, only one copy) versus instances (Object, many copies which can deviate or be the same)
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
 - move segment up or down
