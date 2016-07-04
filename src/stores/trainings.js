@@ -1551,5 +1551,80 @@ export const trainings = [
 			"duration": "00:18:20",
 			"pace": "03:40"
 		}
+	},
+	{
+		"uuid": "a6ff2075-a16d-42d2-ad31-8cf5494d1e3e",
+		"name": "1m @LT, 1m @10KP, 2 x 400 @5KP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "99",
+				"distance": 2,
+				"duration": "00:11:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "100",
+				"distance": 1.6,
+				"duration": "00:06:16",
+				"pace": "03:55",
+				"isValid": true
+			},
+			{
+				"uuid": "101",
+				"distance": "0.4",
+				"duration": "00:02:12",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "102",
+				"distance": 1.6,
+				"duration": "00:05:54",
+				"pace": "03:41",
+				"isValid": true
+			},
+			{
+				"uuid": "103",
+				"distance": "0.4",
+				"duration": "00:02:12",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "104",
+				"distance": "0.4",
+				"duration": "00:01:25",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "105",
+				"distance": "0.4",
+				"duration": "00:02:12",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "106",
+				"distance": "0.4",
+				"duration": "00:01:25",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "a0fd3e01-c9cf-4910-b946-a06e5ace86cf",
+				"distance": 2,
+				"duration": "00:11:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 9.200000000000001,
+			"duration": "00:43:36",
+			"pace": "04:44"
+		}
 	}
 ]
