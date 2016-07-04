@@ -30,7 +30,7 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
-- Fix bug in persisting cloned training
+- Fix bug in updateTraining
 - introduce concept of training (like a Class, only one copy) versus instances (Object, many copies which can deviate or be the same)
 - disable persist button when webservice is offline
 - introduce tags
