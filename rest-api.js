@@ -1,5 +1,6 @@
 var http = require("http");
 var fs = require("fs");
+var url = require("url");
 
 var corsHeaders = {
   "access-control-allow-origin": "*",
@@ -9,8 +10,6 @@ var corsHeaders = {
   "content-length": 0
 };
 
-var DATA_PREFIX = "export const trainings = ";
-
 var server = http.createServer(function(request, response) {
   if (request.method == "OPTIONS") {
     console.log("sending OPTIONS response");
@@ -18,22 +17,37 @@ var server = http.createServer(function(request, response) {
     return response.end();
   }
   if (request.method == "PUT") {
-    console.log("sending PUT response");
+    var filename = "";
+    var prefix = "";
+    var subject = url.parse(request.url).pathname;
+    if (subject === "/plans") {
+      filename = "src/stores/plans.js";
+      prefix = "export const plans = ";
+    }
+    if (subject === "/trainings") {
+      filename = "src/stores/trainings.js";
+      prefix = "export const trainings = ";
+    }
+    if (subject === "/traininginstances") {
+      filename = "src/stores/traininginstances.js";
+      prefix = "export const traininginstances = ";
+    }    
+
     request.on("data", function(chunk) {
       console.log("Received body data:");
-      var trainingsStr = DATA_PREFIX + chunk.toString();
+      var trainingsStr = prefix + chunk.toString();
       // simple JSON check as validation
       //var obj = JSON.parse(chunk.toString());
       //if (obj[0].uuid === "new-training") {
-        fs.writeFile("src/stores/trainings.js", trainingsStr, (err) => {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("saved ./src/stores/trainings.js");
-          }
-        });
+      fs.writeFile(filename, trainingsStr, (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("saved " + filename);
+        }
+      });
       //} else {
-        //console.log("trainings JSON was corrupt");
+      //console.log("trainings JSON was corrupt");
       //}
       console.log(trainingsStr);
     });
@@ -44,6 +58,7 @@ var server = http.createServer(function(request, response) {
     });
   } else {
     console.log("sending GET response");
+    console.log("URL was: " + request.url);
     response.writeHead(200, "try using PUT with a JSON in the body");
     return response.end();
   }

@@ -83,7 +83,7 @@ export default class TrainingStore {
     console.log(`last training in trainings before persist: ${JSON.stringify(trainings[trainings.length - 1])}`);    
     
     if (typeof fetch == 'function') {
-      fetch("http://localhost:3333/", {
+      fetch("http://localhost:3333/trainings", {
         method: "PUT",
         body: trainingsStr
       }).then((response) => {

@@ -8,11 +8,15 @@ import TrainingListComponent from "./TrainingListComponent";
 import TrainingStore from "../stores/TrainingStore";
 import TimelineComponent from "./TimelineComponent";
 import TimelineStore from "../stores/TimelineStore";
+import DayStore from "../stores/DayStore";
 import DayEditComponent from "./DayEditComponent";
 import NotificationComponent from "./NotificationComponent";
 
-import { trainings } from "../stores/trainings";
 import { clone } from "../stores/miscUtil";
+
+import { plans } from "../stores/plans";
+import { trainings } from "../stores/trainings";
+import { traininginstances } from "../stores/traininginstances";
 
 export default class AppComponent extends React.Component {
 
@@ -24,8 +28,9 @@ export default class AppComponent extends React.Component {
       this.eventbus = new EventEmitter({wildcard: true, maxListeners: 999999});
     }
 
+    new DayStore(this.eventbus, clone(plans), clone(trainings), clone(traininginstances));
     new TrainingStore(this.eventbus, clone(trainings));
-    new TimelineStore(this.eventbus, clone(trainings));
+    new TimelineStore(this.eventbus, clone(plans), clone(trainings), clone(traininginstances));
   }
   
   componentDidMount() {

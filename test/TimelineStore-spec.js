@@ -9,8 +9,8 @@ let plan = {
   "uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4",
   "name": "10k plan #1",
   "days": [
-    {"nr": "1", "trainingId": "2a63ef62-fb2c-4b92-8971-59db6e58394c"},
-    {"nr": "2", "trainingId": "2a63ef62-fb2c-4b92-8971-59db6e58394c"}
+    {"nr": "1", "instanceId": "2a63ef62-fb2c-4b92-8971-59db6e58394c"},
+    {"nr": "2", "instanceId": "2a63ef62-fb2c-4b92-8971-59db6e58394c"}
   ]
 }
 

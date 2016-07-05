@@ -6,6 +6,7 @@ import moment from "moment";
 import {clone} from "../stores/miscUtil";
 
 const DAY_HEADER_DATE_FORMAT = "dddd, DD-MM-YYYY";
+const DEFAULT_PLAN_ID = "acc3d1b8-33ae-4d70-dda3-d0e885f516f4";
 
 export default class TimelineComponent extends React.Component {
 	
@@ -32,7 +33,7 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.on("PLAN_LOAD_EVT", (microcycles) => {
     	this.setState({microcycles: microcycles});
     });
-    setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD"), 1000);
+    setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD", DEFAULT_PLAN_ID), 1000);
   }
 
   // TODO extract method
@@ -49,9 +50,8 @@ export default class TimelineComponent extends React.Component {
     this.setState({showEasyDays: false});
   }
 
-  onEditClick(evt) {
-    let dayNr = evt.target.value;    
-    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", dayNr);    
+  onEditClick(evt) {    
+    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
   }
 
   render() {
@@ -90,8 +90,8 @@ export default class TimelineComponent extends React.Component {
          	<section key={i + "-" + j} className={sectionClassNames.join(" ")}>
         		<h3>{day.nr}. {dateStr}</h3>
           	<p className="training-name">{day.training.name}</p>
-            <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>
-            <button className="button-small button-flat" onClick={this.onEditClick} value={day.nr}>edit</button>          
+            <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>            
+            <button className="button-small button-flat" onClick={this.onEditClick} value={day.nr}>edit</button>
           </section>
         );
       });

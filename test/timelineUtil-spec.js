@@ -9,17 +9,17 @@ let plans = [{
   "name": "10k plan #1",
   "microcycles": [
     {"days": [
-      {"nr": 1, "trainingId": "blah-10"},
-      {"nr": 2, "trainingId": "blah-11"},
-      {"nr": 3, "trainingId": "blah-12"},
-      {"nr": 4, "trainingId": "blah-13"},
-      {"nr": 5, "trainingId": "blah-14"},
-      {"nr": 6, "trainingId": "blah-15"},
-      {"nr": 7, "trainingId": "blah-16"}
+      {"nr": 1, "instanceId": "blah-10"},
+      {"nr": 2, "instanceId": "blah-11"},
+      {"nr": 3, "instanceId": "blah-12"},
+      {"nr": 4, "instanceId": "blah-13"},
+      {"nr": 5, "instanceId": "blah-14"},
+      {"nr": 6, "instanceId": "blah-15"},
+      {"nr": 7, "instanceId": "blah-16"}
     ]}, 
     {"days": [
-      {"nr": 8, "trainingId": "blah-17"},
-      {"nr": 9, "trainingId": "blah-18"}
+      {"nr": 8, "instanceId": "blah-17"},
+      {"nr": 9, "instanceId": "blah-18"}
     ]}
   ]
 }];

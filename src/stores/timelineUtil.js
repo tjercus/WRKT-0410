@@ -54,7 +54,7 @@ export function findDay(dayNr, microcycles = [], trainings = []) {
 function augmentDay(day, trainings = []) {
   const _day = clone(day);
   const _trainings = clone(trainings);
-  let uuid = (typeof _day.trainingId === "string") ? _day.trainingId : null;
+  let uuid = (typeof _day.instanceId === "string") ? _day.instanceId : null;
   _day.training = findTraining(uuid, _trainings);  
   if (_day.training === null) {
     throw new Error(`training not found ${uuid}`);
