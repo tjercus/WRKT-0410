@@ -33,7 +33,7 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.on("PLAN_LOAD_EVT", (microcycles) => {
     	this.setState({microcycles: microcycles});
     });
-    setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD", DEFAULT_PLAN_ID), 1000);
+    setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD", DEFAULT_PLAN_ID), 1500);
   }
 
   // TODO extract method
@@ -52,7 +52,7 @@ export default class TimelineComponent extends React.Component {
 
   onEditClick(evt) {    
     this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
-  }
+  }  
 
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
@@ -106,7 +106,7 @@ export default class TimelineComponent extends React.Component {
     return (
       <section className={panelClassName}>
         <header className="panel-header">          
-          <button className="button-small" onClick={this.onHideEasyRunsButtonClick}>{"de-emphasize easy days"}</button>
+          <button className="button-small" onClick={this.onHideEasyRunsButtonClick}>{"de-emphasize easy days"}</button>          
         </header>
         <div className="panel-body">
            <div className="days-list">

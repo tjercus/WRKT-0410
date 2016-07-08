@@ -15,7 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- React components should use callback when doing stuff after setState
+- React components should always use a callback when doing stuff after setState
 - smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
 - Introduce Flow for type checking
 - TrainingListComponent should supports categories as accordion or tagcloud
@@ -30,9 +30,10 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
+- add button to add this training as an instance in currently loaded plan
 - Fix bug in updateTraining
-- introduce concept of training (like a Class, only one copy) versus instances (Object, many copies which can deviate or be the same)
 - disable persist button when webservice is offline
+- validate should be more tolerant for invalid segments caluculated by rounding on seconds
 - introduce tags
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
@@ -47,10 +48,10 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- Support loading multiple plans thus: introduce plan selection component
 - toggle list/calendar modus
 - better display of a day, ex: training type icons and colors
 - feature to add a training to a day, iaw: implement 'edit' button
-- introduce plan selection component
 - show total km for a cycle
 - use standard paces (MP, LT, 21KP, 10KP etc.)
 - feature to allow adding a date to a start or end of a timeline (rest is calculated)

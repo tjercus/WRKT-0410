@@ -28,6 +28,8 @@ export default class AppComponent extends React.Component {
       this.eventbus = new EventEmitter({wildcard: true, maxListeners: 999999});
     }
 
+    //console.log("AppComponent: " + JSON.stringify(this.plans));
+
     new DayStore(this.eventbus, clone(plans), clone(trainings), clone(traininginstances));
     new TrainingStore(this.eventbus, clone(trainings));
     new TimelineStore(this.eventbus, clone(plans), clone(trainings), clone(traininginstances));

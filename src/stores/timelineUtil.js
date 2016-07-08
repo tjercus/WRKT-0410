@@ -11,11 +11,16 @@ import {
  * For now fix a microcycle to 7 days
  */
 export function findPlan(uuid, plans = [], trainings = []) {
+  console.log(`timelineUtil.findPlan: ${JSON.stringify(trainings[0])}`);
+  if (uuid === null || uuid.length !== 36) {
+    throw new Error(`findPlan uuid not specified ${uuid}`);
+  }
   const _plans = clone(plans);
   const _trainings = clone(trainings);
-
-  let plan = _plans.find((_plan) => {
-    if (_plan.uuid === uuid) return _plan;
+  console.log("len: " + _plans.length + ", plans[0].uuid: " + _plans[0].uuid);
+  let plan = _plans.find((_plan) => {    
+    console.log("plan: " + _plan.uuid);
+    if (_plan.uuid == uuid) return _plan;
   });
   let _days = [];
   let _microcycles = [];
@@ -51,13 +56,13 @@ export function findDay(dayNr, microcycles = [], trainings = []) {
 /**
  * lookup training for a day by uuid and add it to itself
  */
-function augmentDay(day, trainings = []) {
+export function augmentDay(day, trainings = []) {
   const _day = clone(day);
   const _trainings = clone(trainings);
   let uuid = (typeof _day.instanceId === "string") ? _day.instanceId : null;
-  _day.training = findTraining(uuid, _trainings);  
+  _day.training = findTraining(uuid, _trainings);
   if (_day.training === null) {
-    throw new Error(`training not found ${uuid}`);
+    throw new Error(`training not found ${uuid} for day ${day.nr}`);
   }
   _day.training.total = makeTrainingTotal(_day.training.segments);
   return _day;

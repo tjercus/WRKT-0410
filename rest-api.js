@@ -19,23 +19,24 @@ var server = http.createServer(function(request, response) {
   if (request.method == "PUT") {
     var filename = "";
     var prefix = "";
-    var subject = url.parse(request.url).pathname;
+    var version = " /* " + new Date() + " */ ";
+    var subject = url.parse(request.url).pathname;    
     if (subject === "/plans") {
       filename = "src/stores/plans.js";
-      prefix = "export const plans = ";
+      prefix = " export const plans = ";
     }
     if (subject === "/trainings") {
       filename = "src/stores/trainings.js";
-      prefix = "export const trainings = ";
+      prefix = " export const trainings = ";
     }
     if (subject === "/traininginstances") {
       filename = "src/stores/traininginstances.js";
-      prefix = "export const traininginstances = ";
+      prefix = " export const traininginstances = ";
     }    
 
     request.on("data", function(chunk) {
       console.log("Received body data:");
-      var trainingsStr = prefix + chunk.toString();
+      var trainingsStr = version + prefix + chunk.toString();
       // simple JSON check as validation
       //var obj = JSON.parse(chunk.toString());
       //if (obj[0].uuid === "new-training") {

@@ -3,8 +3,9 @@ import {createUuid, clone, lpad, hasNoRealValue} from "./miscUtil";
 
 export function findTraining(uuid, trainings) {	
 	let needle = null;
-	for (let i = 0, len = trainings.length; i < len; i++) {		
-		if (trainings[i].uuid === uuid) {			
+	for (let i = 0, len = trainings.length; i < len; i++) {
+		//console.log(`training: [${trainings[i].uuid}] versus needle [${uuid}]`);
+		if (trainings[i].uuid == uuid) {
 			needle = trainings[i];
 			break;
 		}
@@ -13,7 +14,7 @@ export function findTraining(uuid, trainings) {
 }
 
 export function updateTraining(training, trainings) {
-	console.log("trainingUtil.updateTraining: type: " + training.type);
+	//console.log("trainingUtil.updateTraining: type: " + training.type);
 	const _trainings = clone(trainings);
   let i = 0;
   _trainings.some((_training) => {
