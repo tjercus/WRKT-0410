@@ -30,7 +30,6 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
-- add button to add this training as an instance in currently loaded plan
 - Fix bug in updateTraining
 - disable persist button when webservice is offline
 - validate should be more tolerant for invalid segments caluculated by rounding on seconds
@@ -48,6 +47,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- Support saving a plan and traininginstances via Ajax
 - Support loading multiple plans thus: introduce plan selection component
 - toggle list/calendar modus
 - better display of a day, ex: training type icons and colors

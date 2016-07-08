@@ -33,6 +33,11 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.on("PLAN_LOAD_EVT", (microcycles) => {
     	this.setState({microcycles: microcycles});
     });
+    this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
+      console.log("TimelineComponent.TRAINING_TO_PLAN_EVT: ");
+      console.log(JSON.stringify(plan.microcycles));
+      this.setState({microcycles: plan.microcycles});
+    });
     setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD", DEFAULT_PLAN_ID), 1500);
   }
 

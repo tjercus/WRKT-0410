@@ -62,6 +62,14 @@ export default class TrainingStore {
       this.updateTrainingInStore(training, this.trainings);
     });
 
+    eventbus.on("TRAINING_TO_PLAN_CMD", () => {
+      this.eventbus.emit("TRAINING_CLONE_AS_INSTANCE_CMD", {      
+        name: this.name,
+        type: this.type,
+        segments: this.segments
+      });
+    });
+
     eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {
       this.updateSegment(segment, this.segments);
     });

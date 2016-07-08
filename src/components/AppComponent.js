@@ -30,9 +30,9 @@ export default class AppComponent extends React.Component {
 
     //console.log("AppComponent: " + JSON.stringify(this.plans));
 
-    new DayStore(this.eventbus, clone(plans), clone(trainings), clone(traininginstances));
+    new DayStore(this.eventbus, clone(plans), clone(trainings));
     new TrainingStore(this.eventbus, clone(trainings));
-    new TimelineStore(this.eventbus, clone(plans), clone(trainings), clone(traininginstances));
+    new TimelineStore(this.eventbus, clone(plans), clone(traininginstances));
   }
   
   componentDidMount() {

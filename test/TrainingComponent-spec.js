@@ -51,6 +51,7 @@ test("TrainingComponent should render a training", (assert) => {
   assert.equal(buttons.at(3).text(), "clear training");  
   assert.ok(buttons.at(3).hasClass("button-warning"));
   assert.equal(buttons.at(4).text(), "clone training");  
+  assert.equal(buttons.at(5).text(), "add to loaded plan");
   assert.end();
 });
 
@@ -143,5 +144,14 @@ test("TrainingComponent should mark a 'group choice button' for the right type o
   component.find("button[value='workout']").simulate("click");
   assert.ok(component.find("button[value='workout']").hasClass("button-choice-selected"));
   assert.notOk(component.find("button[value='easy']").hasClass("button-choice-selected"));
+  assert.end();
+});
+
+test("TrainingComponent should emit a TRAINING_TO_PLAN_CMD", (assert) => {
+  emitSpy.reset();
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
+  eventbus.emit("TRAINING_LOAD_EVT", training);
+  component.find("button[value='add-to-plan']").simulate("click");
+  assert.ok(emitSpy.calledWith("TRAINING_TO_PLAN_CMD"), "component should emit TRAINING_TO_PLAN_CMD");
   assert.end();
 });

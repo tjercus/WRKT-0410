@@ -31,7 +31,8 @@ export default class TrainingComponent extends React.Component {
     this.onEditNameButtonClick = this.onEditNameButtonClick.bind(this);
     this.onNameChange = this.onNameChange.bind(this);
     this.onNameBlur = this.onNameBlur.bind(this);
-    this.onTypeClick = this.onTypeClick.bind(this);    
+    this.onTypeClick = this.onTypeClick.bind(this);
+    this.emitAddToPlan = this.emitAddToPlan.bind(this);
   }
 
   componentDidMount() {
@@ -118,6 +119,10 @@ export default class TrainingComponent extends React.Component {
     // TODO custom alert    
     console.log("Training cloned and selected");
     this.props.eventbus.emit("TRAINING_CLONE_CMD");
+  }
+
+  emitAddToPlan() {    
+    this.props.eventbus.emit("TRAINING_TO_PLAN_CMD");
   }
 
   clearTrainingFromLocalState() {
@@ -207,6 +212,7 @@ export default class TrainingComponent extends React.Component {
               <button onClick={this.emitPersistChanges} className="button-flat" id="persist-button">persist changes</button>
               <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>
               <button onClick={this.cloneTraining} className="button-flat">clone training</button>
+              <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to loaded plan</button>
             </menu>            
           </div>        
         </section>

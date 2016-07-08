@@ -10,18 +10,15 @@ import { clone, createUuid } from "./miscUtil";
  */
 export default class TimelineStore {
 
-  /**
-   * TODO when traininginstances works, the 'trainings' parameter is probably not needed
+  /**   
    * 
-   * @param  {EventEmitter}
-   * @param  {Array}
-   * @param  {Array}
-   * @param  {Array}   
+   * @param  {EventEmitter}   
+   * @param  {Array<Plan>}
+   * @param  {Array<TrainingInstance>}
    */
-  constructor(eventbus, plans, trainings, traininginstances) {
+  constructor(eventbus, plans, traininginstances) {
     // TODO allow input from a GUI-list (ex: 'PlansListComponent')  
-    this.plans = plans;
-    this.trainings = trainings;
+    this.plans = plans;    
     this.traininginstances = traininginstances;
     this.eventbus = eventbus;
 
@@ -42,7 +39,28 @@ export default class TimelineStore {
       this.plans = [{ uuid: this.uuid, name: this.name, microcycles: this.microcycles }];
       this.persistPlans(this.plans);
       eventbus.emit("PLAN_PERSIST_EVT");
-    }));    
+    }));
+
+    eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
+      // TODO move logic to function or util
+      const newInstance = clone(training);
+      newInstance.uuid = createUuid();
+
+      // Add a day the last microcycles and add the new instance to the new day
+      // TODO if there are are allready 7 days in the microcycle, add a new cycle first
+      let currentMicrocycle = this.microcycles.splice(-1)[0];
+      let lastDay = currentMicrocycle.days.splice(-1)[0];      
+      let newDay = {nr: parseInt(lastDay.nr, 10), instanceId: newInstance.uuid};
+      currentMicrocycle.days.push(newDay);
+      this.microcycles[this.microcycles.length - 1] = currentMicrocycle;
+
+      this.traininginstances.push(newInstance);
+      // add plan to this.plans, for now override since there is only one plan
+      const modifiedPlan = {uuid: this.uuid, name: this.name, microcycles: this.microcycles};
+      this.plans[0] = modifiedPlan;
+      eventbus.emit("TRAINING_TO_PLAN_EVT", modifiedPlan);
+    }));
+    
   }
 
   // TODO move to timelineUtil

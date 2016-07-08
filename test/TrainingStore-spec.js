@@ -140,6 +140,27 @@ test("TrainingStore should listen to TRAINING_UPDATE_CMD and refresh list", (ass
   assert.end();
 });
 
+test("TrainingStore should listen to TRAINING_TO_PLAN_CMD and emit TRAINING_CLONE_AS_INSTANCE_CMD", (assert) => {
+    let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
+  let emitSpy = sinon.spy(eventbus, "emit");
+  const trainings = [];
+  trainings.push(training);
+  const store = new TrainingStore(eventbus, trainings);
+  // ask store to load training via eventbus
+  eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
+  eventbus.emit("TRAINING_TO_PLAN_CMD");
+
+  assert.ok(emitSpy.calledWith("TRAINING_CLONE_AS_INSTANCE_CMD"));
+  for (let i = 0, len = emitSpy.args.length; i < len; i++) {
+    if (emitSpy.args[i][0] === "TRAINING_CLONE_AS_INSTANCE_CMD") {
+      assert.equal(emitSpy.args[i][1].name, "wobble", "the current training should be emitted on the bus");
+      assert.equal(emitSpy.args[i][1].type, "easy", "the current training should be emitted on the bus");
+      assert.equal(emitSpy.args[i][1].segments.length, 9, "the current training should be emitted on the bus");
+    }
+  }
+  assert.end();
+});
+
 /* // TODO enable after introducing fetch for Node.js or overwrite import for fetch
 test("should listen to TRAININGS_PERSIST_CMD and write to disk", (assert) => {
   let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true}); 
