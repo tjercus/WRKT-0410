@@ -57,3 +57,7 @@ test("TimelineStore should listen to TRAINING_CLONE_AS_INSTANCE_CMD and add inst
   assert.equal(currentMicrocycle.days.length, 2, "instance should be added to plan");  
   assert.end();
 });
+
+test("TimelineStore should add a day and a new week when a microcycle is full", (assert) => {
+  assert.end();
+});

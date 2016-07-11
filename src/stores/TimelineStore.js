@@ -18,7 +18,7 @@ export default class TimelineStore {
    */
   constructor(eventbus, plans, traininginstances) {
     // TODO allow input from a GUI-list (ex: 'PlansListComponent')  
-    this.plans = plans;    
+    this.plans = plans;
     this.traininginstances = traininginstances;
     this.eventbus = eventbus;
 
@@ -27,7 +27,7 @@ export default class TimelineStore {
     this.microcycles = [];
 
     eventbus.on("PLAN_LOAD_CMD", ((planId) => {
-      console.log(`TimelineStore: received PLAN_LOAD_CMD for default plan ${planId}`);      
+      console.log(`TimelineStore: received PLAN_LOAD_CMD for default plan ${planId}`);
       let plan = findPlan(planId, this.plans, this.traininginstances);
       this.uuid = planId;
       this.name = plan.name;
@@ -41,26 +41,16 @@ export default class TimelineStore {
       eventbus.emit("PLAN_PERSIST_EVT");
     }));
 
-    eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
-      // TODO move logic to function or util
-      const newInstance = clone(training);
-      newInstance.uuid = createUuid();
-
-      // Add a day the last microcycles and add the new instance to the new day
-      // TODO if there are are allready 7 days in the microcycle, add a new cycle first
-      let currentMicrocycle = this.microcycles.splice(-1)[0];
-      let lastDay = currentMicrocycle.days.splice(-1)[0];      
-      let newDay = {nr: parseInt(lastDay.nr, 10), instanceId: newInstance.uuid};
-      currentMicrocycle.days.push(newDay);
-      this.microcycles[this.microcycles.length - 1] = currentMicrocycle;
-
-      this.traininginstances.push(newInstance);
+    eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {      
+      const newInstanceUuid = createUuid();
+      training.uuid = newInstanceUuid;
+      this.traininginstances.push(training);
+      this.microcycles = this.addTrainingToMicrocycles(newInstanceUuid, this.microcycles, this.traininginstances);
       // add plan to this.plans, for now override since there is only one plan
-      const modifiedPlan = {uuid: this.uuid, name: this.name, microcycles: this.microcycles};
+      const modifiedPlan = { uuid: this.uuid, name: this.name, microcycles: this.microcycles };
       this.plans[0] = modifiedPlan;
       eventbus.emit("TRAINING_TO_PLAN_EVT", modifiedPlan);
     }));
-    
   }
 
   // TODO move to timelineUtil
@@ -80,7 +70,7 @@ export default class TimelineStore {
   }
 
   // TODO move to timelineUtil
-  persistInstances(instances) {    
+  persistInstances(instances) {
     const instancesStr = JSON.stringify(instances, null, "\t");
     if (typeof fetch == 'function') {
       fetch("http://localhost:3333/traininginstances", {
@@ -92,6 +82,26 @@ export default class TimelineStore {
         this.eventbus.emit("INSTANCES_PERSIST_ERROR_EVT", error);
       });
     }
+  }  
+
+  // Add a day the last microcycles and add the new instance to the new day
+  // if there are are allready 7 days in the microcycle, add a new cycle first
+  addTrainingToMicrocycles(newInstanceUuid, microcycles, traininginstances) {
+    const _microcycles = clone(microcycles);
+    let currentMicrocycle = _microcycles.slice(-1)[0];
+    let lastDay = currentMicrocycle.days.slice(-1)[0];
+    let nextNr = parseInt(lastDay.nr, 10) + 1;
+    let newDay = { nr: nextNr, instanceId: newInstanceUuid };
+    let augmentedNewDay = augmentDay(newDay, traininginstances);
+    console.log(`currentMicrocycle.days.length ${currentMicrocycle.days.length}`);
+    if (currentMicrocycle.days.length === 7) {
+      currentMicrocycle = { "days": [augmentedNewDay] };
+      _microcycles.push(currentMicrocycle);
+    } else {
+      currentMicrocycle.days.push(augmentedNewDay);
+      _microcycles[_microcycles.length - 1] = currentMicrocycle;
+    }
+    return _microcycles;
   }
 
 };

@@ -55,6 +55,8 @@ export function findDay(dayNr, microcycles = [], trainings = []) {
 
 /**
  * lookup training for a day by uuid and add it to itself
+ * @param { object } [day] [flattened day object with ref to inflated day]
+ * @param { array<TrainingInstance> } [trainings] [list of augmented TrainingInstance ojects]
  */
 export function augmentDay(day, trainings = []) {
   const _day = clone(day);

@@ -1,11 +1,17 @@
 import moment from "moment";
 import {createUuid, clone, lpad, hasNoRealValue} from "./miscUtil";
 
+/**
+ * Finds a training or an instance
+ * @param  {string}
+ * @param  {array<Training|TrainingInstance>}
+ * @return {Training or TrainingInstance}
+ */
 export function findTraining(uuid, trainings) {	
 	let needle = null;
 	for (let i = 0, len = trainings.length; i < len; i++) {
 		//console.log(`training: [${trainings[i].uuid}] versus needle [${uuid}]`);
-		if (trainings[i].uuid == uuid) {
+		if (trainings[i].uuid == uuid || trainings[i].instanceId == uuid ) {
 			needle = trainings[i];
 			break;
 		}
