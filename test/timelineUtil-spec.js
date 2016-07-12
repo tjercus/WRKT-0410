@@ -117,5 +117,6 @@ test("flattenMicrocycles should flatten an augmented array of microcycles", (ass
   const flattened = flattenMicrocycles(plan.microcycles);
   assert.equal(flattened[1].days[0].nr, 8);
   assert.equal(flattened[1].days[0].instanceId, "blah-17");
+  assert.equal(flattened.length, plan.microcycles.length, "resulting array should be of the same size");
   assert.end();
 });

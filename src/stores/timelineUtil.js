@@ -76,8 +76,9 @@ export function augmentDay(day, trainings = []) {
  * @param  {array<Microcyle>} augmented
  * @return {array<Microcyle>} flattened
  */
-export function flattenMicrocycles(microcycles) {
+export function flattenMicrocycles(microcycles) {  
   const _microcycles = clone(microcycles);
+  const flattenedMicrocycles = [];
   let _days = [];
   _microcycles.forEach((_microcycle, i) => {
     _days = [];
@@ -85,7 +86,7 @@ export function flattenMicrocycles(microcycles) {
       _days.push({ nr: _day.nr, instanceId: _day.training.uuid });
     });
     _microcycle.days = _days;
-    _microcycles.push(_microcycle);
-  });
-  return _microcycles;
+    flattenedMicrocycles.push(_microcycle);
+  });  
+  return flattenedMicrocycles;
 }

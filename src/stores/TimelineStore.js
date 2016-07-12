@@ -43,14 +43,17 @@ export default class TimelineStore {
     }));
 
     eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
+      console.log(`TimelineStore: 1. ${this.plans[0].microcycles.length}`);
       const newInstanceUuid = createUuid();
       training.uuid = newInstanceUuid;
       this.traininginstances.push(training);
-      this.microcycles = this.addTrainingToMicrocycles(newInstanceUuid, this.microcycles, this.traininginstances);
-      // add plan to this.plans, for now override since there is only one plan
+      this.microcycles = this.addTrainingToMicrocycles(newInstanceUuid, this.microcycles, this.traininginstances);      
       const modifiedPlan = { uuid: this.uuid, name: this.name, microcycles: this.microcycles };
-      this.plans[0] = modifiedPlan;
+      this.plans = [];
+      // add plan to this.plans, for now override since there is only one plan
+      this.plans.push(modifiedPlan);
       eventbus.emit("TRAINING_TO_PLAN_EVT", modifiedPlan);
+      console.log(`TimelineStore: 2. ${this.plans[0].microcycles.length}`);
     }));
   }
 
@@ -88,6 +91,7 @@ export default class TimelineStore {
   // Add a day the last microcycles and add the new instance to the new day
   // if there are are allready 7 days in the microcycle, add a new cycle first
   addTrainingToMicrocycles(newInstanceUuid, microcycles, traininginstances) {
+    console.log(`TimelineStore: 3. ${microcycles.length}`);
     const _microcycles = clone(microcycles);
     let currentMicrocycle = _microcycles.slice(-1)[0];
     let lastDay = currentMicrocycle.days.slice(-1)[0];
@@ -102,6 +106,7 @@ export default class TimelineStore {
       currentMicrocycle.days.push(augmentedNewDay);
       _microcycles[_microcycles.length - 1] = currentMicrocycle;
     }
+    console.log(`TimelineStore: 4. ${_microcycles.length}`);
     return _microcycles;
   }
 };

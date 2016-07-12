@@ -47,7 +47,6 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- Fix bug on duplicate plan being saved by server
 - Support 'move instance to another day'
 - Support loading multiple plans thus: introduce plan selection component
 - toggle list/calendar modus

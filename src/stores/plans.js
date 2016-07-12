@@ -1,4 +1,4 @@
- /* Tue Jul 12 2016 09:35:52 GMT+0200 (CEST) */  export const plans = [
+ /* Tue Jul 12 2016 13:58:51 GMT+0200 (CEST) */  export const plans = [
 	{
 		"uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4",
 		"name": "10k plan #1",
@@ -328,6 +328,14 @@
 					{
 						"nr": 71,
 						"instanceId": "80cc47a1-90bc-43c0-93ec-1f4e6f0205df"
+					},
+					{
+						"nr": 72,
+						"instanceId": "773bfc84-54eb-4c23-81a8-19c932768218"
+					},
+					{
+						"nr": 73,
+						"instanceId": "5003d385-ebb8-4cc2-9712-43901af1c78f"
 					}
 				]
 			}
