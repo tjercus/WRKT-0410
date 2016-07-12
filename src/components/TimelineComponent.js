@@ -21,6 +21,7 @@ export default class TimelineComponent extends React.Component {
     this.onEditClick = this.onEditClick.bind(this);
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.onDeleteClick = this.onDeleteClick.bind(this);
   }
 
   componentDidMount() {
@@ -34,9 +35,10 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.on("PLAN_LOAD_EVT", (microcycles) => {
     	this.setState({microcycles: microcycles});
     });
-    this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
-      console.log("TimelineComponent.TRAINING_TO_PLAN_EVT: ");
-      console.log(JSON.stringify(plan.microcycles));
+    this.props.eventbus.on("DAY_DELETE_EVT", (plan) => {
+      this.setState({microcycles: plan.microcycles});
+    });
+    this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {      
       this.setState({microcycles: plan.microcycles});
     });
     setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD", DEFAULT_PLAN_ID), 1500);
@@ -56,12 +58,16 @@ export default class TimelineComponent extends React.Component {
     this.setState({showEasyDays: false});
   }
 
-  onEditClick(evt) {    
+  onEditClick(evt) {
     this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
   }
 
   onSaveButtonClick(evt) {
     this.props.eventbus.emit("PLAN_PERSIST_CMD");
+  }
+
+  onDeleteClick(evt) {
+    this.props.eventbus.emit("DAY_DELETE_CMD", evt.target.value);
   }
 
   render() {
@@ -101,6 +107,7 @@ export default class TimelineComponent extends React.Component {
         		<h3>{day.nr}. {dateStr}</h3>
           	<p className="training-name">{day.training.name}</p>
             <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>            
+            <button className="button-small button-flat button-warning" onClick={this.onDeleteClick} value={day.nr}>del</button>
             <button className="button-small button-flat" onClick={this.onEditClick} value={day.nr}>edit</button>
           </section>
         );

@@ -47,6 +47,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- Finish DAY_DELETE_CMD
 - Support 'move instance to another day'
 - Support loading multiple plans thus: introduce plan selection component
 - toggle list/calendar modus
