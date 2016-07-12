@@ -20,6 +20,7 @@ export default class TimelineComponent extends React.Component {
     //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
   componentDidMount() {
@@ -57,7 +58,11 @@ export default class TimelineComponent extends React.Component {
 
   onEditClick(evt) {    
     this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
-  }  
+  }
+
+  onSaveButtonClick(evt) {
+    this.props.eventbus.emit("PLAN_PERSIST_CMD");
+  }
 
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
@@ -111,7 +116,8 @@ export default class TimelineComponent extends React.Component {
     return (
       <section className={panelClassName}>
         <header className="panel-header">          
-          <button className="button-small" onClick={this.onHideEasyRunsButtonClick}>{"de-emphasize easy days"}</button>          
+          <button className="button-small" onClick={this.onHideEasyRunsButtonClick}>{"de-emphasize easy days"}</button>
+          <button className="button-flat" onClick={this.onSaveButtonClick}>{"persist changes"}</button>
         </header>
         <div className="panel-body">
            <div className="days-list">

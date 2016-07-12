@@ -18,7 +18,7 @@ export function findPlan(uuid, plans = [], trainings = []) {
   const _plans = clone(plans);
   const _trainings = clone(trainings);
   console.log("len: " + _plans.length + ", plans[0].uuid: " + _plans[0].uuid);
-  let plan = _plans.find((_plan) => {    
+  let plan = _plans.find((_plan) => {
     console.log("plan: " + _plan.uuid);
     if (_plan.uuid == uuid) return _plan;
   });
@@ -68,4 +68,24 @@ export function augmentDay(day, trainings = []) {
   }
   _day.training.total = makeTrainingTotal(_day.training.segments);
   return _day;
+}
+
+/**
+ * Takes an array of augmented microcycles and flattens it so there are only
+ *  references to instances instead of full traininginstance.
+ * @param  {array<Microcyle>} augmented
+ * @return {array<Microcyle>} flattened
+ */
+export function flattenMicrocycles(microcycles) {
+  const _microcycles = clone(microcycles);
+  let _days = [];
+  _microcycles.forEach((_microcycle, i) => {
+    _days = [];
+    _microcycle.days.forEach((_day, j) => {
+      _days.push({ nr: _day.nr, instanceId: _day.training.uuid });
+    });
+    _microcycle.days = _days;
+    _microcycles.push(_microcycle);
+  });
+  return _microcycles;
 }

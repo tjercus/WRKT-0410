@@ -47,7 +47,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- Support saving a plan and traininginstances via Ajax
+- Support 'move instance to another day'
 - Support loading multiple plans thus: introduce plan selection component
 - toggle list/calendar modus
 - better display of a day, ex: training type icons and colors

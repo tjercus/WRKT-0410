@@ -1,5 +1,5 @@
 import EventEmitter from "eventemitter2";
-import { findPlan, augmentDay } from "./timelineUtil";
+import { findPlan, augmentDay, flattenMicrocycles } from "./timelineUtil";
 import { clone, createUuid } from "./miscUtil";
 
 /**
@@ -36,12 +36,13 @@ export default class TimelineStore {
     }));
 
     eventbus.on("PLAN_PERSIST_CMD", (() => {
-      this.plans = [{ uuid: this.uuid, name: this.name, microcycles: this.microcycles }];
+      this.plans = [{ uuid: this.uuid, name: this.name, microcycles: flattenMicrocycles(this.microcycles) }];
+      this.persistInstances(this.traininginstances);
       this.persistPlans(this.plans);
       eventbus.emit("PLAN_PERSIST_EVT");
     }));
 
-    eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {      
+    eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
       const newInstanceUuid = createUuid();
       training.uuid = newInstanceUuid;
       this.traininginstances.push(training);
@@ -82,7 +83,7 @@ export default class TimelineStore {
         this.eventbus.emit("INSTANCES_PERSIST_ERROR_EVT", error);
       });
     }
-  }  
+  }
 
   // Add a day the last microcycles and add the new instance to the new day
   // if there are are allready 7 days in the microcycle, add a new cycle first
@@ -103,5 +104,4 @@ export default class TimelineStore {
     }
     return _microcycles;
   }
-
 };

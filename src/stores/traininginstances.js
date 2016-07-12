@@ -1,4 +1,4 @@
- /* Tue Jul 05 2016 15:27:18 GMT+0200 (CEST) */  export const traininginstances = [
+ /* Tue Jul 12 2016 09:35:52 GMT+0200 (CEST) */  export const traininginstances = [
 	{
 		"uuid": "a1ee31cc-a2a8-4c6d-bd29-d2ca8d8ae916",
 		"name": "Easy run",
@@ -2014,5 +2014,19 @@
 			"duration": "01:10:00",
 			"pace": "05:11"
 		}
+	},
+	{
+		"name": "14k easy run",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "14",
+				"duration": "01:17:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"uuid": "80cc47a1-90bc-43c0-93ec-1f4e6f0205df"
 	}
 ]

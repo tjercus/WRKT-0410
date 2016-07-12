@@ -1,5 +1,5 @@
 import test from "tape";
-import {findPlan, findDay} from "../src/stores/timelineUtil";
+import {findPlan, findDay, flattenMicrocycles} from "../src/stores/timelineUtil";
 
 /**
  * Tests for {@link TimelineStore.js}
@@ -112,3 +112,10 @@ test("findDay should find a day by nr", (assert) => {
 
 // TODO exception flows
 
+test("flattenMicrocycles should flatten an augmented array of microcycles", (assert) => {
+  let plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainings);
+  const flattened = flattenMicrocycles(plan.microcycles);
+  assert.equal(flattened[1].days[0].nr, 8);
+  assert.equal(flattened[1].days[0].instanceId, "blah-17");
+  assert.end();
+});
