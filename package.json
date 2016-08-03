@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/tjercus/WRKT-0410",
   "dependencies": {
+    "bufferstreams": "^1.1.1",
     "eventemitter2": "^2.0.0",
     "history": "^3.0.0",
     "immutable": "^3.8.1",
