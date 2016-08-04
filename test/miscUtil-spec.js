@@ -76,6 +76,13 @@ test("clone should work with a string", (assert) => {
   assert.end();
 });
 
+test("clone should work with null", (assert) => {
+  const obj = null;
+  assert.equal((typeof clone(obj)), "object", "should be null for [" + obj + "]");
+  assert.equal(clone(obj), null);
+  assert.end();
+});
+
 test("lpad should work with a string", (assert) => {
   const num = "4";
   const padded = lpad(num);

@@ -9,10 +9,10 @@ export function createUuid() {
 }
 
 export function clone(obj) { 
-  if (typeof obj !== "object") {
-    return obj;
-  } else {
+  if (typeof obj === "object") {
     return JSON.parse(JSON.stringify(obj));
+  } else {
+    return obj;
   }
 }
 
