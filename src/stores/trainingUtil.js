@@ -103,7 +103,6 @@ export function isDirtySegment(segment, segments) {
 
 export function canAugment(segment) {
 	segment = clone(segment);
-	//return (segment && (hasNoRealValue(segment, "distance") || hasNoRealValue(segment, "duration") || hasNoRealValue(segment, "pace")));	
 	let augmentCount = 0;
 	 if (hasNoRealValue(segment, "distance")) augmentCount++;
 	 if (hasNoRealValue(segment, "duration")) augmentCount++;		
@@ -127,12 +126,15 @@ export function isValidSegment(segment) {
 }
 
 /**
-* parse a duration from int minutes to a duration as string 00:00:00
+* parse a duration from a. int minutes to a duration as string 00:00:00 or b. from 00:00 to 00:00:00
 */
 export function parseDuration(duration) {
 	if (duration !== null && duration !== "" && !isNaN(duration)) {
 		let parsed = moment("2016-01-01").minutes(duration).format("HH:mm:ss");
 		return parsed;
+	}
+	if (duration !== null && duration !== "" && duration.length === 5) {
+		return `00:${duration}`;
 	}
 	return duration;	
 }

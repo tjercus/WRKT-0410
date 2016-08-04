@@ -425,6 +425,11 @@ test("parseDuration should parse duration as int minutes to duration as string",
   assert.end();
 });
 
+test("parseDuration should pad duration when hours are omitted", (assert) => {
+  assert.equal(parseDuration("15:01"), "00:15:01", "should parse with omitted hours");
+  assert.end();
+});
+
 test("removeSegment should find and remove a segment", (assert) => {
   const segment = {
     uuid: "101"
