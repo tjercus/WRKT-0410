@@ -4,36 +4,248 @@
 		"selected_items":
 		[
 			[
-				"se",
-				"segment"
-			],
-			[
-				"emit",
-				"emitPersistChanges"
-			],
-			[
-				"e",
-				"err"
-			],
-			[
-				"tr",
-				"trainingsStr"
-			],
-			[
-				"TRA",
-				"TRAININGS_PERSIST_CMD"
-			],
-			[
-				"button-",
-				"button-flat"
-			],
-			[
-				"tra",
-				"trainings"
+				"find",
+				"findByNr"
 			],
 			[
 				"update",
-				"updateTraining"
+				"updatePlans"
+			],
+			[
+				"on",
+				"onDeleteClick"
+			],
+			[
+				"button-",
+				"button-warning	(TrainingComponent-spec.js)"
+			],
+			[
+				"fla",
+				"flattenedMicrocycles"
+			],
+			[
+				"Timeline",
+				"TimelineStore"
+			],
+			[
+				"consol",
+				"console.log(\"AppComponent	(AppComponent.js)"
+			],
+			[
+				"ass",
+				"assert.end	(TrainingStore-spec.js)"
+			],
+			[
+				"flatte",
+				"flattenMicrocycle"
+			],
+			[
+				"flatt",
+				"flattened	(timelineUtil.js)"
+			],
+			[
+				"aug",
+				"augmented	(timelineUtil.js)"
+			],
+			[
+				"flatten",
+				"flattenMicrocycle	(timelineUtil.js)"
+			],
+			[
+				"tr",
+				"traininginstances"
+			],
+			[
+				"per",
+				"persistInstances"
+			],
+			[
+				"instance",
+				"instanceId"
+			],
+			[
+				"onS",
+				"onSaveButtonClick"
+			],
+			[
+				"crea",
+				"createUuid"
+			],
+			[
+				"newInsta",
+				"newInstanceUuid"
+			],
+			[
+				"_mic",
+				"_microcycles	(timelineUtil.js)"
+			],
+			[
+				"conso",
+				"console.log(`training	(trainingUtil.js)"
+			],
+			[
+				"new",
+				"newInstance"
+			],
+			[
+				"add",
+				"addTrainingAsInstance"
+			],
+			[
+				"micro",
+				"microcycle	(TimelineStore.js)"
+			],
+			[
+				"augment",
+				"augmentDay"
+			],
+			[
+				"Timelin",
+				"TimelineComponent"
+			],
+			[
+				"mod",
+				"modifiedPlan"
+			],
+			[
+				"crr",
+				"currentMicrocycle"
+			],
+			[
+				"onA",
+				"onAddToPlanButtonClick"
+			],
+			[
+				"asser",
+				"assert.end"
+			],
+			[
+				"asse",
+				"assert.end	(TrainingStore-spec.js)"
+			],
+			[
+				"len",
+				"length	(TrainingStore.js)"
+			],
+			[
+				"curr",
+				"currentMicrocycle"
+			],
+			[
+				"Timel",
+				"TimelineStore"
+			],
+			[
+				"train",
+				"traininginstances"
+			],
+			[
+				"t",
+				"traininginstances"
+			],
+			[
+				"training",
+				"trainings"
+			],
+			[
+				"timeline",
+				"timelineUtil"
+			],
+			[
+				"console",
+				"console.log(\"trainings	(rest-api.js)"
+			],
+			[
+				"pers",
+				"persistPlans"
+			],
+			[
+				"e",
+				"emit"
+			],
+			[
+				"ins",
+				"instancesStr"
+			],
+			[
+				"inst",
+				"instanceId	(plans.js)"
+			],
+			[
+				"augmen",
+				"augmentDay"
+			],
+			[
+				"tra",
+				"traininginstances"
+			],
+			[
+				"se",
+				"segments"
+			],
+			[
+				"trai",
+				"training-uuid"
+			],
+			[
+				"str",
+				"stringify	(TrainingStore.js)"
+			],
+			[
+				"TRA",
+				"TRAINING_LOAD_EVT"
+			],
+			[
+				"event",
+				"eventbus"
+			],
+			[
+				"butto",
+				"button-choice"
+			],
+			[
+				"button-choic",
+				"button-choice-selected	(main.scss)"
+			],
+			[
+				"button",
+				"button-small"
+			],
+			[
+				"wor",
+				"workout"
+			],
+			[
+				"ck",
+				"checked"
+			],
+			[
+				"n",
+				"notificationTimeout"
+			],
+			[
+				"emit",
+				"emitSpy"
+			],
+			[
+				"re",
+				"removeLastMessage"
+			],
+			[
+				"_tr",
+				"_trainings"
+			],
+			[
+				"Eve",
+				"EventEmitter2"
+			],
+			[
+				"seg",
+				"segment"
+			],
+			[
+				"ed",
+				"end"
 			],
 			[
 				"Trai",
@@ -48,24 +260,12 @@
 				"trainings"
 			],
 			[
-				"t",
-				"training"
-			],
-			[
-				"trai",
-				"trainings"
-			],
-			[
 				"onNa",
 				"onNameBlur"
 			],
 			[
 				"def",
 				"defaultState"
-			],
-			[
-				"on",
-				"onNameChange"
 			],
 			[
 				"is",
@@ -100,20 +300,12 @@
 				"loggableString"
 			],
 			[
-				"seg",
-				"segments"
-			],
-			[
 				"over",
 				"overwriteUuid"
 			],
 			[
 				"onCl",
 				"onCloneButtonClick"
-			],
-			[
-				"add",
-				"addSegmentToStore"
 			],
 			[
 				"_segm",
@@ -124,24 +316,12 @@
 				"notOk"
 			],
 			[
-				"new",
-				"newSegments"
-			],
-			[
-				"re",
-				"return"
-			],
-			[
 				"remove",
 				"removeSegment"
 			],
 			[
 				"background-",
 				"background-color"
-			],
-			[
-				"_mic",
-				"_microcycles"
 			],
 			[
 				"compo",
@@ -172,16 +352,8 @@
 				"_microcycles"
 			],
 			[
-				"micro",
-				"microcyles"
-			],
-			[
 				"sec",
 				"sectionClassName"
-			],
-			[
-				"find",
-				"filterNonEasyDays"
 			],
 			[
 				"set",
@@ -296,10 +468,6 @@
 				"RegistrationPerson"
 			],
 			[
-				"conso",
-				"console"
-			],
-			[
 				"v",
 				"value"
 			],
@@ -346,74 +514,6 @@
 			[
 				"remo",
 				"removeButton"
-			],
-			[
-				"Offer",
-				"OfferRowComponent"
-			],
-			[
-				"padding-",
-				"padding-bottom"
-			],
-			[
-				"O",
-				"OfferRowComponent"
-			],
-			[
-				"panel",
-				"panelClassName"
-			],
-			[
-				"off",
-				"offersStore"
-			],
-			[
-				"offers",
-				"OffersStore"
-			],
-			[
-				"offer",
-				"offersClone"
-			],
-			[
-				"messag",
-				"messages"
-			],
-			[
-				"E",
-				"EventEmitter"
-			],
-			[
-				"back",
-				"background-color"
-			],
-			[
-				"te",
-				"text-transform"
-			],
-			[
-				"font-",
-				"font-family"
-			],
-			[
-				"margin-",
-				"margin-bottom"
-			],
-			[
-				"inline",
-				"inline-block"
-			],
-			[
-				"class",
-				"className"
-			],
-			[
-				"en",
-				"entrypointSelectedCb"
-			],
-			[
-				"entry",
-				"entrypointSelectComponent"
 			]
 		]
 	},
@@ -423,15 +523,15 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 1980,
+				"buffer_size": 2122,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/stores/TrainingStore.js",
+			"file": "src/stores/TimelineStore.js",
 			"settings":
 			{
-				"buffer_size": 5040,
+				"buffer_size": 4918,
 				"line_ending": "Unix"
 			}
 		},
@@ -439,39 +539,31 @@
 			"file": "src/stores/trainingUtil.js",
 			"settings":
 			{
-				"buffer_size": 6805,
+				"buffer_size": 7135,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/stores/trainings.js",
+			"file": "src/components/NotificationComponent.js",
 			"settings":
 			{
-				"buffer_size": 21830,
+				"buffer_size": 2497,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "rest-api.js",
+			"file": "src/components/AppComponent.js",
 			"settings":
 			{
-				"buffer_size": 1357,
+				"buffer_size": 2614,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/components/SegmentComponent.js",
+			"file": "src/stores/timelineUtil.js",
 			"settings":
 			{
-				"buffer_size": 3671,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/TrainingListComponent.js",
-			"settings":
-			{
-				"buffer_size": 2057,
+				"buffer_size": 2854,
 				"line_ending": "Unix"
 			}
 		},
@@ -479,26 +571,8 @@
 			"file": "src/components/TimelineComponent.js",
 			"settings":
 			{
-				"buffer_size": 3808,
+				"buffer_size": 4663,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/TrainingComponent.js",
-			"settings":
-			{
-				"buffer_size": 7195,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 19 files for \"SEGMENT_UPDATE_CMD\" (case sensitive)\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/SegmentComponent.js:\n   74      // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)\n   75      if (canAugment(this.state)) {\n   76:       this.props.eventbus.emit(\"SEGMENT_UPDATE_CMD\", this.state);\n   77      } else {      \n   78        this.setState({isValid: isValidSegment(this.state)});\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/constants.js:\n    4    \"MENU_CLICK_CMD\": \"MENU_CLICK_CMD\",\n    5    \"MENU_CLICK_EVT\": \"MENU_CLICK_EVT\",  \n    6:   \"SEGMENT_UPDATE_CMD\": \"SEGMENT_UPDATE_CMD\",\n    7    'SEGMENT_UPDATE_EVT': \"SEGMENT_UPDATE_EVT\",  \n    8    'SEGMENT_CLONE_CMD': \"SEGMENT_CLONE_CMD\",\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js:\n   69      });\n   70  \n   71:     eventbus.on(\"SEGMENT_UPDATE_CMD\", (segment) => {\n   72        this.updateSegment(segment, this.segments);\n   73      });\n\n4 matches across 3 files\n\n\nSearching 19 files for \"SEGMENT_UPDATE_CMD\" (case sensitive)\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/SegmentComponent.js:\n   74      // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)\n   75      if (canAugment(this.state)) {\n   76:       this.props.eventbus.emit(\"SEGMENT_UPDATE_CMD\", this.state);\n   77      } else {      \n   78        this.setState({isValid: isValidSegment(this.state)});\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/constants.js:\n    4    \"MENU_CLICK_CMD\": \"MENU_CLICK_CMD\",\n    5    \"MENU_CLICK_EVT\": \"MENU_CLICK_EVT\",  \n    6:   \"SEGMENT_UPDATE_CMD\": \"SEGMENT_UPDATE_CMD\",\n    7    'SEGMENT_UPDATE_EVT': \"SEGMENT_UPDATE_EVT\",  \n    8    'SEGMENT_CLONE_CMD': \"SEGMENT_CLONE_CMD\",\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js:\n   69      });\n   70  \n   71:     eventbus.on(\"SEGMENT_UPDATE_CMD\", (segment) => {\n   72        this.updateSegment(segment, this.segments);\n   73      });\n\n4 matches across 3 files\n",
-			"settings":
-			{
-				"buffer_size": 2088,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
 			}
 		},
 		{
@@ -513,18 +587,15 @@
 			"file": "test/TrainingStore-spec.js",
 			"settings":
 			{
-				"buffer_size": 4075,
+				"buffer_size": 7691,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "import makeDom from \"./dom\";\nimport test from \"tape\";\nimport React from \"react\";\nimport { shallow, mount } from \"enzyme\";\nimport sinon from \"sinon\";\n\n// Component Under Test\nimport TrainingComponent from \"../src/components/TrainingComponent\";\nimport SegmentComponent from \"../src/components/SegmentComponent\";\n// specific dependencies for CUT\nimport EventEmitter from \"eventemitter2\";\n\nconst eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\nconst segments = [{\n  uuid: \"uuid-segment1\",\n  distance: 5.1,\n  duration: \"01:23:45\",\n  pace: \"03:59\"\n}];\nconst training = { uuid: \"uuid-training1\", name: \"my training\", segments: segments, total: { distance: 5.1, duration: \"01:23:45\", pace: \"03:59\" } };  \n\ntest(\"TrainingComponent should initially render with an info message\", (assert) => {\n  let eventbus = sinon.spy();\n  const component = shallow(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  assert.equal(component.find(\"div\").text(), \"Please choose a training from the left-hand list\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should catch a MENU_CLICK_EVT\", (assert) => {\n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const onSpy = sinon.spy(eventbus, \"on\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  eventbus.emit(\"MENU_CLICK_EVT\", \"Training\");  \n  assert.ok(onSpy.calledWith(\"MENU_CLICK_EVT\"), \"component should catch MENU_CLICK_EVT\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should render a training\", (assert) => {\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);  \n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);\n\n  assert.equal(component.find(\"header.panel-header span\").text(), \"my training\");\n  assert.equal(component.find(\"SegmentComponent\").length, 1);\n  assert.equal(component.find(\"output[name='totals']\").length, 1);\n  assert.equal(component.find(\"menu\").length, 1);\n  const buttons = component.find(\"menu button\");\n  assert.equal(buttons.first().text(), \"add empty segment\");  \n  assert.equal(buttons.at(1).text(), \"export training\");\n  assert.equal(buttons.at(2).text(), \"persist changes\");\n  assert.equal(buttons.at(3).text(), \"clear training\");  \n  assert.ok(buttons.at(3).hasClass(\"button-warning\"));\n  assert.equal(buttons.at(4).text(), \"clone training\");\n\n  assert.end();\n});\n\ntest(\"TrainingComponent should emit a TRAINING_CLONE_CMD\", (assert) => {\n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const emitSpy = sinon.spy(eventbus, \"emit\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);  \n  component.find(\"menu button\").at(4).simulate(\"click\");\n  assert.ok(emitSpy.calledWith(\"TRAINING_CLONE_CMD\"), \"component should emit TRAINING_CLONE_CMD\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should allow a toggle of trainingname as editable component\", (assert) => {  \n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const emitSpy = sinon.spy(eventbus, \"emit\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  const BUTTON_SELECTOR = \"button[id='edit-name-button']\";\n  const TEXTFIELD_SELECTOR = \"input[id='edit-name-textfield']\";\n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);  \n  assert.equal(component.find(BUTTON_SELECTOR).length, 1, \"initially: edit button visible\");\n  assert.equal(component.find(TEXTFIELD_SELECTOR).length, 0, \"initially: inputfield not visible\");\n  component.find(BUTTON_SELECTOR).simulate(\"click\");\n  assert.equal(component.find(BUTTON_SELECTOR).length, 1, \"after click 1: button still visible\");\n  assert.equal(component.find(TEXTFIELD_SELECTOR).length, 1, \"after click 1: textfield visible\");\n  component.find(BUTTON_SELECTOR).simulate(\"click\");\n  assert.equal(component.find(BUTTON_SELECTOR).length, 1, \"after click 2: button still visible\");\n  assert.equal(component.find(TEXTFIELD_SELECTOR).length, 0, \"after click 2: textfield not visible\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should emit a TRAINING_UPDATE_CMD\", (assert) => {\n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const emitSpy = sinon.spy(eventbus, \"emit\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);\n  const BUTTON_SELECTOR = \"button[id='edit-name-button']\";\n  const TEXTFIELD_SELECTOR = \"input[id='edit-name-textfield']\";\n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);  \n  component.find(BUTTON_SELECTOR).simulate(\"click\");\n  component.find(TEXTFIELD_SELECTOR).simulate(\"blur\");\n  assert.ok(emitSpy.calledWith(\"TRAINING_UPDATE_CMD\"), \"component should emit TRAINING_UPDATE_CMD\");\n  assert.end();\n});\n\ntest(\"TrainingComponent should emit a TRAININGS_PERSIST_CMD\", (assert) => {\n  const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });\n  const emitSpy = sinon.spy(eventbus, \"emit\");\n  const component = mount(<TrainingComponent eventbus={eventbus} name=\"Training\" from=\"menu-item-training\" />);  \n  eventbus.emit(\"TRAINING_LOAD_EVT\", training);\n  component.find(\"button[id='persist-button']\").simulate(\"click\");  \n  assert.ok(emitSpy.calledWith(\"TRAININGS_PERSIST_CMD\"), \"component should emit TRAININGS_PERSIST_CMD\");\n  assert.end();\n});\n\n",
 			"file": "test/TrainingComponent-spec.js",
-			"file_size": 5509,
-			"file_write_time": 131112308405669459,
 			"settings":
 			{
-				"buffer_size": 5455,
+				"buffer_size": 7860,
 				"line_ending": "Unix"
 			}
 		},
@@ -532,7 +603,39 @@
 			"file": "test/SegmentComponent-spec.js",
 			"settings":
 			{
-				"buffer_size": 2196,
+				"buffer_size": 2037,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/TimelineStore-spec.js",
+			"settings":
+			{
+				"buffer_size": 1612,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/stores/plans.js",
+			"settings":
+			{
+				"buffer_size": 7067,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/stores/traininginstances.js",
+			"settings":
+			{
+				"buffer_size": 33596,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/timelineUtil-spec.js",
+			"settings":
+			{
+				"buffer_size": 3895,
 				"line_ending": "Unix"
 			}
 		}
@@ -544,12 +647,24 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 372.0,
-		"last_filter": "install",
+		"height": 92.0,
+		"last_filter": "Package Control: install",
 		"selected_items":
 		[
 			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
 				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: git",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"Package Control: ",
 				"Package Control: Install Package"
 			],
 			[
@@ -584,50 +699,59 @@
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/images",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test"
 	],
 	"file_history":
 	[
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/e2e/App-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/AppComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/eventemitter2/lib/eventemitter2.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/DayStore.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainingUtil.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TimelineStore.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/package.json",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/plans.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/miscUtil.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/timelineUtil.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/AppComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainings.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/traininginstances.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/rest-api.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/NotificationComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/App-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/NotificationComponent-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/SegmentComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/gulpfile.babel.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/package.json",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles/main.scss",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/Index.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/timelineUtil-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/TimelineStore-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TimelineComponent.js",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Side Bar.sublime-settings",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/Babel/Babel.sublime-settings",
+		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/eventemitter2/lib/eventemitter2.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingComponent-spec.js.old",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/PanelComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingListComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/e2e/App-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TimelineStore.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/browser-sync/lib/http-protocol.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/browser-sync/lib/browser-sync.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/browser-sync/node_modules/chokidar/README.md",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/plans.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/SegmentComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles/main.scss",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/react-addons-test-utils/index.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/react/lib/ReactTestUtils.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/App-spec.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/dom.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingListComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/miscUtil.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/miscUtil-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainings.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/timelineUtil.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/PanelComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/DayEditComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TimelineComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/timelineUtil-spec.js",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/e2e/casper.js",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/trainingUtil-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/TimelineStore-spec.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/WRKT-0410.sublime-project",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/MenuComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/ DayEditComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingComponent-spec.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/constants.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/index.html",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/Index.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/images/favicon.ico",
 		"/ App-spec.js",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
@@ -696,7 +820,6 @@
 		"/home/tvalentijn/projects/sep/duo/client/js/components/__tests__/EntrypointSelectComponent-test.js",
 		"/home/tvalentijn/projects/sep/duo/client/stylesheets/index.js",
 		"/home/tvalentijn/projects/sep/duo/client/index.html",
-		"/home/tvalentijn/.config/sublime-text-3/Packages/Babel/Babel.sublime-settings",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Plain text.sublime-settings",
 		"/home/tvalentijn/projects/lab/innolab/microservices/angular2-client/app/app.ts",
 		"/home/tvalentijn/.squirrel-sql/SQLAliases23.xml"
@@ -710,6 +833,10 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/home/tvalentijn/projects/lab/WRKT-0410/src",
+			"<project>",
+			"/home/tvalentijn/projects/lab/WRKT-0410/src",
+			"<project>",
 			"/home/tvalentijn/projects/lab/WRKT-0410/src",
 			"/home/tvalentijn/projects/lab/WRKT-0410/test",
 			"/home/tvalentijn/projects/lab/WRKT-0410/src",
@@ -727,6 +854,35 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"71",
+			"addTrainingAsInstance",
+			"slice",
+			"onAddToPlanButtonClick",
+			"trainings",
+			"findPlan",
+			"augmentDay",
+			"findTraining",
+			"a1ee31cc-a2a8-4c6d-bd29-d2ca8d8ae916",
+			"2267ea08-afa8-46bb-bc51-12a7c61f4a1c",
+			"PLAN_LOAD_CMD",
+			"DATA_PREFIX",
+			"trainingId",
+			".;\n",
+			"clear",
+			"workout",
+			"onWorkoutChange",
+			"workout",
+			"\"type\": \"easy\",",
+			"\"type\": \"workout\",",
+			"this.props.eventbus",
+			"this.eventbus",
+			"emitSpy",
+			"emitSpy(",
+			"_EVT",
+			"SEGMENT_UPDATE_EVT",
+			"function on(",
+			"console",
+			"SEGMENT_UPDATE_EVT",
 			"SEGMENT_UPDATE_CMD",
 			"SEGMENT_UPDATE_EVT",
 			"TRAINING_UPDATE_CMD",
@@ -825,16 +981,7 @@
 			"'",
 			"OFFERSSTORE_CHANGED_EVT",
 			"'",
-			"class=",
-			"[router-link]",
-			"Eventfrom",
-			"'",
-			"noroute",
-			"starterify",
-			"btn-prim",
-			"this.toggle",
-			"widest",
-			"togglePageWidth"
+			"class="
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -842,6 +989,15 @@
 		"regex": false,
 		"replace_history":
 		[
+			"addTrainingToInstances",
+			"emitAddToPlan",
+			"TRAININGS_DATA_PREFIX",
+			"instanceId",
+			"onTypeClick",
+			"\"workout\": false,",
+			"\"workout\": true,",
+			"this.eventbus",
+			"this.props.eventbus",
 			"\"SegmentComponent",
 			"request.",
 			"\"",
@@ -896,7 +1052,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -905,15 +1061,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1980,
+						"buffer_size": 2122,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1402,
-								1402
+								1452,
+								1452
 							]
 						],
 						"settings":
@@ -921,121 +1077,153 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 229.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/stores/TrainingStore.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5040,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3753,
-								3753
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 407.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "src/stores/trainingUtil.js",
+					"buffer": 1,
+					"file": "src/stores/TimelineStore.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6805,
+						"buffer_size": 4918,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								678,
-								678
+								710,
+								710
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 295.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/stores/trainingUtil.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 7135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								869,
+								869
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/components/NotificationComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								980,
+								980
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/components/AppComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2614,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1267,
+								1267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "src/stores/trainings.js",
+					"buffer": 5,
+					"file": "src/stores/timelineUtil.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 21830,
+						"buffer_size": 2854,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								152,
-								152
+								711,
+								711
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "rest-api.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1357,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								474,
-								474
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1045,208 +1233,43 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/components/SegmentComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3671,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2308,
-								2308
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 640.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
 					"buffer": 6,
-					"file": "src/components/TrainingListComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2057,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1079,
-								1079
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
 					"file": "src/components/TimelineComponent.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3808,
+						"buffer_size": 4663,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								623,
-								623
+								1289,
+								1289
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 450.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/components/TrainingComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7195,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1361,
-								1361
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 7.0,
-						"translation.y": 450.0,
+						"translation.y": 280.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2088,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										344,
-										362
-									],
-									[
-										643,
-										661
-									],
-									[
-										665,
-										683
-									],
-									[
-										909,
-										927
-									],
-									[
-										1389,
-										1407
-									],
-									[
-										1688,
-										1706
-									],
-									[
-										1710,
-										1728
-									],
-									[
-										1954,
-										1972
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								1965,
-								1965
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 2,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 390.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 7,
 			"sheets":
 			[
 				{
-					"buffer": 10,
+					"buffer": 7,
 					"file": "test/trainingUtil-spec.js",
 					"semi_transient": false,
 					"settings":
@@ -1258,8 +1281,8 @@
 						"selection":
 						[
 							[
-								9970,
-								9970
+								12155,
+								12155
 							]
 						],
 						"settings":
@@ -1269,27 +1292,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4911.0,
+						"translation.y": 6233.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 8,
 					"file": "test/TrainingStore-spec.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4075,
+						"buffer_size": 7691,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3409,
-								3409
+								7077,
+								7077
 							]
 						],
 						"settings":
@@ -1299,7 +1322,96 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 515.0,
+						"translation.y": 1977.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "test/TrainingComponent-spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7860,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2589,
+								2589
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1665.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "test/SegmentComponent-spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2037,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1818,
+								1818
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "test/TimelineStore-spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1612,
+								1612
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 207.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 10,
@@ -1307,61 +1419,90 @@
 				},
 				{
 					"buffer": 12,
-					"file": "test/TrainingComponent-spec.js",
+					"file": "src/stores/plans.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5455,
+						"buffer_size": 7067,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5433,
-								5433
+								6895,
+								6895
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 165.0,
-						"translation.y": 670.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "test/SegmentComponent-spec.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2196,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								433,
-								433
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/stores/traininginstances.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 33596,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8091,
+								8091
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 7302.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "test/timelineUtil-spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3773,
+								3773
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -1395,7 +1536,7 @@
 		"cols":
 		[
 			0.0,
-			0.48951048951,
+			0.500813285465,
 			1.0
 		],
 		"rows":

@@ -29,9 +29,8 @@ Based on 'React eventemitter'.
 - events as constants
 - Formal flux architecture?
 
-### Training
-- on calc button press, when duration is 00:00:00 then first empty, then calculate based on distance and pace
-- on calc button press or blur of duration, padd with hours, ex: 15:01 to 00:15:01 
+### Training- 
+- on calc button press or blur of duration, padd with hours, ex: 15:01 to 00:15:01
 - Fix bug in updateTraining
 - disable persist button when webservice is offline
 - validate should be more tolerant for invalid segments caluculated by rounding on seconds

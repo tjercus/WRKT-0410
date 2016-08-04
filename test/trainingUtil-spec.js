@@ -142,9 +142,9 @@ test("makeTrainingTotal with two segments with mixed missing data should return 
   assert.end();
 });
 
-test("makeTrainingTotal with an empty segment should return an object with complete data", (assert) => {
+test("makeTrainingTotal with a zero'd segment should return an object with complete data", (assert) => {
   let segments = [{
-    distance: "",
+    distance: 0,
     duration: "00:00:00",
     pace: "00:00"
   }, {
@@ -232,6 +232,19 @@ test("augmentSegmentData should work with named paces", (assert) => {
   assert.end();
 });
 
+test("augmentSegmentData should augment with a duration in only zeros", (assert) => {
+  let segment = {
+    distance: 5,
+    duration: "00:00:00",
+    pace: "04:30"
+  };
+  var augmentedSegment = augmentSegmentData(segment);
+  assert.equal(augmentedSegment.distance, 5);
+  assert.equal(augmentedSegment.duration, "00:22:30");
+  assert.equal(augmentedSegment.pace, "04:30");
+  assert.end();
+});
+
 test("isDirtySegment should detect a dirty segment", (assert) => {
   let segments = [{
     uuid: "segment1",
@@ -292,6 +305,79 @@ test("canAugment should return false when 3 out of 3 items are present", (assert
 
   let itCan = canAugment(segment);  
   assert.notOk(itCan);
+  assert.end();
+});
+
+test("canAugment should return false when 2 out of 3 items are zero'd but has pace", (assert) => {
+  let segment = {
+    distance: 0,
+    duration: "00:00:00",
+    pace: "05:10"
+  }; 
+
+  let itCan = canAugment(segment);  
+  assert.notOk(itCan);
+  assert.end();
+});
+
+test("canAugment should return false when 2 out of 3 items are zero'd but has distance", (assert) => {
+  let segment = {
+    distance: 12,
+    duration: "00:00:00",
+    pace: "00:00"
+  }; 
+
+  let itCan = canAugment(segment);  
+  assert.notOk(itCan);
+  assert.end();
+});
+
+test("canAugment should return false when 2 out of 3 items are zero'd but has duration", (assert) => {
+  let segment = {
+    distance: 0,
+    duration: "00:24:53",
+    pace: "00:00"
+  }; 
+
+  let itCan = canAugment(segment);  
+  assert.notOk(itCan);
+  assert.end();
+});
+
+
+test("canAugment should return true when duration is zero'd", (assert) => {
+  let segment = {
+    distance: 12,
+    duration: "00:00:00",
+    pace: "05:10"
+  }; 
+
+  let itCan = canAugment(segment);  
+  assert.ok(itCan);  
+  assert.end();
+});
+
+test("canAugment should return true when distance is zero'd", (assert) => {
+  let segment = {
+    distance: 0,
+    duration: "00:12:11",
+    pace: "05:10"
+  }; 
+
+  let itCan = canAugment(segment);  
+  assert.ok(itCan);  
+  assert.end();
+});
+
+test("canAugment should return true when pace is zero'd", (assert) => {
+  let segment = {
+    distance: 12,
+    duration: "00:12:11",
+    pace: "00:00"
+  }; 
+
+  let itCan = canAugment(segment);  
+  assert.ok(itCan);  
   assert.end();
 });
 

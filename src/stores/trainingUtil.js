@@ -65,8 +65,8 @@ export function makeTrainingTotal(segments) {
 export function augmentSegmentData(segment) {
 	segment = clone(segment);
 	segment.pace = translateNamedPace(segment.pace);	
-	if (canAugment(segment)) {
-		if (hasNoRealValue(segment, "duration")) {
+	if (canAugment(segment)) {		
+		if (hasNoRealValue(segment, "duration")) {			
 			segment.duration = makeDuration(segment);
 		}
 		if (hasNoRealValue(segment, "pace")) {
@@ -74,7 +74,7 @@ export function augmentSegmentData(segment) {
 		}
 		if (hasNoRealValue(segment, "distance")) {
 			segment.distance = makeDistance(segment);
-		}		
+		}
 	}
 	if (isValidSegment(segment)) {
 		segment.isValid = true;
@@ -101,10 +101,14 @@ export function isDirtySegment(segment, segments) {
 	return isDirtySegment;
 }
 
-export function canAugment(segment) {	
+export function canAugment(segment) {
 	segment = clone(segment);
-	const can = (segment && (!segment.hasOwnProperty("distance") || segment.distance === "" || !segment.hasOwnProperty("duration") || segment.duration === "" || !segment.hasOwnProperty("pace") || segment.pace === ""));	
-	return can;
+	//return (segment && (hasNoRealValue(segment, "distance") || hasNoRealValue(segment, "duration") || hasNoRealValue(segment, "pace")));	
+	let augmentCount = 0;
+	 if (hasNoRealValue(segment, "distance")) augmentCount++;
+	 if (hasNoRealValue(segment, "duration")) augmentCount++;		
+	 if (hasNoRealValue(segment, "pace")) augmentCount++;
+	return augmentCount === 1;
 }
 
 export function isValidSegment(segment) {
@@ -181,8 +185,9 @@ function makePace(segment) {
 	return `${lpad(paceObj.minutes())}:${lpad(paceObj.seconds())}`;
 };
 
-/**    
- * @return hh:mm:ss String as: pace * distance. ex: 5:10 * 12.93 km = 1:6:48
+/**
+ * Make duration based on distance and pace
+ * @return hh:mm:ss String as: ex: 5:10 * 12.93 km = 1:6:48
  */
 function makeDuration(segment) {
 	segment = clone(segment);
@@ -190,7 +195,8 @@ function makeDuration(segment) {
 		seconds = paceObj.asSeconds() / 60,
 		totalSeconds = Math.round(seconds * segment.distance),
 		durationObj = moment.duration(totalSeconds, "seconds");
-	let formattedDuration = formatDuration(durationObj);	
+	let formattedDuration = formatDuration(durationObj);
+	console.log(`makeDuration: ${formattedDuration}`);
 	return formattedDuration;
 };
 

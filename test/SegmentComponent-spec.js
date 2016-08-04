@@ -60,3 +60,18 @@ test("SegmentComponent should emit SEGMENT_REMOVE_CMD when button clicked", (ass
 test("SegmentComponent should set css class 'invalid' when appropriate", (assert) => {
   assert.end();
 });
+
+// test("SegmentComponent should empty duration when zero'd after calc button click", (assert) => {
+//   const segment = {
+//     uuid: "uuid-segment3",
+//     distance: 6,
+//     duration: "00:00:00",
+//     pace: "05:10"
+//   };
+//   emitSpy.reset();
+//   const component = shallow(<SegmentComponent eventbus={eventbus} segment={segment} />);
+//   assert.equals(component.find("input[name='duration']").text(), "00:00:00", "duration input should be zero'd");
+//   component.find(".segment button.button-primary").simulate("click");  
+//   assert.equals(component.find("input[name='duration']").text(), "", "duration input should be empty");
+//   assert.end();
+// });
