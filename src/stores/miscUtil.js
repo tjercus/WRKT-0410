@@ -8,7 +8,13 @@ export function createUuid() {
   return uuid;
 }
 
-export const clone = (obj) => JSON.parse(JSON.stringify(obj));
+export function clone(obj) { 
+  if (typeof obj !== "object") {
+    return obj;
+  } else {
+    return JSON.parse(JSON.stringify(obj));
+  }
+}
 
 export function lpad(num) {
   num = ("" + num).trim();
