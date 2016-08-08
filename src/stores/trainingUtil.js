@@ -225,6 +225,7 @@ function translateNamedPace(pace) {
 	}
 	switch (pace) {
 		case "@RECOV": return "05:30"; break;
+		case "@EASY": return "05:10"; break;
 		case "@LRP": return "04:45"; break;
 		case "@MP": return "04:10"; break;
 		case "@MP+5%": return "04:22"; break;

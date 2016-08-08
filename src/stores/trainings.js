@@ -1,4 +1,4 @@
- /* Mon Aug 08 2016 09:53:57 GMT+0200 (CEST) */  export const trainings = [
+ /* Mon Aug 08 2016 15:49:04 GMT+0200 (CEST) */  export const trainings = [
 	{
 		"uuid": "new-training",
 		"name": "New training",
@@ -485,13 +485,15 @@
 	},
 	{
 		"uuid": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22",
-		"name": "13.5k easy run",
+		"name": "Easy run 10km",
 		"type": "easy",
 		"segments": [
 			{
 				"uuid": "46",
-				"distance": 13.5,
-				"duration": "01:10:00"
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
 			}
 		]
 	},
@@ -681,13 +683,15 @@
 	},
 	{
 		"uuid": "2a63ef62-fb2c-4b92-8971-59db6e58394c",
-		"name": "Easy run",
+		"name": "Easy run 16km",
 		"type": "easy",
 		"segments": [
 			{
 				"uuid": "48",
-				"distance": 6,
-				"pace": "05:00"
+				"distance": "16",
+				"duration": "01:22:40",
+				"pace": "05:10",
+				"isValid": true
 			}
 		]
 	},
@@ -1644,6 +1648,20 @@
 				"distance": "6",
 				"duration": "00:23:00",
 				"pace": "03:50",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "b12d1f2b-7134-46a8-a29b-aba52c9953e8",
+		"name": "Long run 27km",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "27",
+				"duration": "02:08:15",
+				"pace": "04:45",
 				"isValid": true
 			}
 		]
