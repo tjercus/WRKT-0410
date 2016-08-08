@@ -1,4 +1,4 @@
-export const trainings = [
+ /* Mon Aug 08 2016 09:53:57 GMT+0200 (CEST) */  export const trainings = [
 	{
 		"uuid": "new-training",
 		"name": "New training",
@@ -1626,5 +1626,26 @@ export const trainings = [
 			"duration": "00:43:36",
 			"pace": "04:44"
 		}
+	},
+	{
+		"uuid": "7954f91d-e13f-4977-beff-0bb4dc72dc70",
+		"name": "PFZ, 14km  w 6 @LT",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "8",
+				"duration": "00:40:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
+				"distance": "6",
+				"duration": "00:23:00",
+				"pace": "03:50",
+				"isValid": true
+			}
+		]
 	}
 ]

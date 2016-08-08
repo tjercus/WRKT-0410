@@ -74,10 +74,9 @@ export default class SegmentComponent extends React.Component {
   onCalcButtonClick(evt) {
     // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)
     if (canAugment(this.state)) {
-      this.props.eventbus.emit("SEGMENT_UPDATE_CMD", this.state);
-    } else {      
       this.setState({isValid: isValidSegment(this.state)});
-    }
+      this.props.eventbus.emit("SEGMENT_UPDATE_CMD", this.state);
+    }    
   }
 
   onCloneButtonClick() {

@@ -21,6 +21,7 @@ export function findTraining(uuid, trainings) {
 
 export function updateTraining(training, trainings) {
 	//console.log("trainingUtil.updateTraining: type: " + training.type);
+	delete training.total;
 	const _trainings = clone(trainings);
   let i = 0;
   _trainings.some((_training) => {
@@ -150,7 +151,7 @@ export function removeSegment(segment, segments) {
 }
 
 export function addSegment(segment, segments, overwriteUuid) {
-	console.log(`addSegment init (${segments.length}) ${JSON.stringify(segments)}`);
+	console.log(`trainingUtil.addSegment init (${segments.length}) ${JSON.stringify(segments)}`);
 	const _segment = clone(segment);
 	const _segments = clone(segments);
 	console.log("addSegment created copy of segment " + JSON.stringify(_segment));

@@ -10,7 +10,6 @@ export default class DayStore {
    * @param  {Array}
    */
   constructor(eventbus, plans, traininginstances) {
-
     this.eventbus = eventbus;
     this.plans = plans;
 

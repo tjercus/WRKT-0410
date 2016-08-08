@@ -36,6 +36,8 @@ export default class TrainingStore {
     };
 
     eventbus.on("TRAININGS_PERSIST_CMD", () => {
+      // TODO check if currently loaded training should be updated to this.trainings first
+      this.updateTrainingInStore(this.getCurrentlyLoadedTraining(), this.trainings);
       this.persistTrainings(this.trainings);
     });
     eventbus.on("TRAINING_LIST_CMD", () => {
@@ -63,23 +65,23 @@ export default class TrainingStore {
     });
 
     eventbus.on("TRAINING_TO_PLAN_CMD", () => {
-      this.eventbus.emit("TRAINING_CLONE_AS_INSTANCE_CMD", {      
-        name: this.name,
-        type: this.type,
-        segments: this.segments
-      });
+      this.eventbus.emit("TRAINING_CLONE_AS_INSTANCE_CMD", getCurrentlyLoadedTraining());
     });
 
     eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {
+      console.log(`TrainingStore caught SEGMENT_UPDATE_CMD`);
       this.updateSegment(segment, this.segments);
     });
     eventbus.on("SEGMENT_ADD_CMD", (segment) => {
+      console.log(`TrainingStore caught SEGMENT_ADD_CMD`);
       this.addSegmentToStore(segment, this.segments);
     });
     eventbus.on("SEGMENT_REMOVE_CMD", (segment) => {
+      console.log(`TrainingStore caught SEGMENT_REMOVE_CMD`);
       this.removeSegmentFromStore(segment, this.segments);
     });
     eventbus.on("SEGMENT_CLONE_CMD", (segment) => {
+      console.log(`TrainingStore caught SEGMENT_CLONE_CMD`);
       this.addSegmentToStore(segment, this.segments, true);
     });
   }
@@ -180,13 +182,17 @@ export default class TrainingStore {
       });
       this.segments = _segments;
       this.total = makeTrainingTotal(_segments);
-      this.eventbus.emit("TRAINING_LOAD_EVT", {
+      this.eventbus.emit("TRAINING_LOAD_EVT", this.getCurrentlyLoadedTraining());
+    }
+  }
+
+  getCurrentlyLoadedTraining() {
+      return {
         uuid: this.uuid,
         name: this.name,
         type: this.type,
-        segments: _segments,
+        segments: this.segments,
         total: this.total
-      });
-    }
+      }
   }
 }
