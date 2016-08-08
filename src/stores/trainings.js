@@ -70,7 +70,7 @@
 		]
 	},
 	{
-		"uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4",
+		"uuid": "acc3d1b8-33ae-4d71-dda3-d0e885f516f4",
 		"name": "10k #1, 6 x 1m @10KP",
 		"type": "workout",
 		"segments": [

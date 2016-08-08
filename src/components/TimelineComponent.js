@@ -5,7 +5,7 @@ import moment from "moment";
 import { clone } from "../stores/miscUtil";
 
 const DAY_HEADER_DATE_FORMAT = "dddd, DD-MM-YYYY";
-const DEFAULT_PLAN_ID = "acc3d1b8-33ae-4d70-dda3-d0e885f516f4";
+const DEFAULT_PLAN_ID = "a83a78aa-5d69-11e6-b3a3-1f76e6105d92";
 
 export default class TimelineComponent extends React.Component {
 
@@ -73,7 +73,7 @@ export default class TimelineComponent extends React.Component {
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
-    let aDay = moment("2016-05-07");
+    let aDay = moment("2016-12-03");
 
     let microcycleElements = [];
     this.state.microcycles.forEach((microcycle, i) => {

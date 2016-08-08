@@ -65,7 +65,7 @@ export default class TrainingStore {
     });
 
     eventbus.on("TRAINING_TO_PLAN_CMD", () => {
-      this.eventbus.emit("TRAINING_CLONE_AS_INSTANCE_CMD", getCurrentlyLoadedTraining());
+      this.eventbus.emit("TRAINING_CLONE_AS_INSTANCE_CMD", this.getCurrentlyLoadedTraining());
     });
 
     eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {

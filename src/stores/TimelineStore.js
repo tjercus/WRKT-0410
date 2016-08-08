@@ -112,7 +112,7 @@ export default class TimelineStore {
   addTrainingToMicrocycles(newInstanceUuid, microcycles, traininginstances) {    
     const _microcycles = clone(microcycles);
     let currentMicrocycle = _microcycles.slice(-1)[0];
-    let lastDay = currentMicrocycle.days.slice(-1)[0];
+    let lastDay = currentMicrocycle.days.slice(-1)[0] || {nr: 0};
     let nextNr = parseInt(lastDay.nr, 10) + 1;
     let newDay = { nr: nextNr, instanceId: newInstanceUuid };
     let augmentedNewDay = augmentDay(newDay, traininginstances);
