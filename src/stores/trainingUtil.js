@@ -198,7 +198,6 @@ function makeDuration(segment) {
 		totalSeconds = Math.round(seconds * segment.distance),
 		durationObj = moment.duration(totalSeconds, "seconds");
 	let formattedDuration = formatDuration(durationObj);
-	console.log(`makeDuration: ${formattedDuration}`);
 	return formattedDuration;
 };
 

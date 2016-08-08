@@ -4,17 +4,19 @@ import { findDay } from "./timelineUtil";
 export default class DayStore {
 
   /**
-   * * TODO when traininginstances works, the 'trainings' parameter is probably not needed
    * 
-   * @param  {EventEmitter}
+   * @param  {EventEmitter2}
    * @param  {Array}
    * @param  {Array}
-   * @param  {Array}   
    */
   constructor(eventbus, plans, traininginstances) {
 
     this.eventbus = eventbus;
     this.plans = plans;
+
+    // TODO hardcoded for now, but when multiple plans are supported, needs to be adjusted
+    this.microcycles = this.plans[0].microcycles;
+    
     this.traininginstances = traininginstances;
     this.day = {};
 
@@ -22,9 +24,11 @@ export default class DayStore {
       // caching
       let day = this.day;
       if (!this.day || this.day.nr != dayNr) {
-        this.day = findDay(dayNr, this.microcycles, this.trainings);
+        this.day = findDay(dayNr, this.microcycles, this.traininginstances);
       }
-      eventbus.emit("DAY_LOAD_EVT", this.day);
+      if (this.day) {
+        eventbus.emit("DAY_LOAD_EVT", this.day);
+      }
     }));
   }
 }

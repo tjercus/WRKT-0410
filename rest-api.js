@@ -44,7 +44,7 @@ var server = http.createServer(function(request, response) {
         if (err) {
           console.log(err);
         } else {
-          console.log("saved " + filename);
+          console.log("saved " + filename + " @ " + new Date());
         }
       });
       //} else {
@@ -65,3 +65,4 @@ var server = http.createServer(function(request, response) {
   }
 });
 server.listen(3333);
+console.log("rest-api running at http://127.0.0.1:3333/");

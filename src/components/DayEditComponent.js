@@ -20,15 +20,7 @@ export default class DayEditComponent extends React.Component {
       this.setState({
         dayNr: dayNr
       });
-      if (menuItemName === this.props.from) {
-        this.setState({
-          isVisible: true
-        });
-      } else {
-        this.setState({
-          isVisible: false
-        });
-      }
+      menuItemName === this.props.from ? this.setState({isVisible: true}) : this.setState({isVisible: false});
       if (dayNr !== null) {
         console.log(`DayEditComponent: sending DAY_LOAD_CMD ${dayNr}`);
         this.props.eventbus.emit("DAY_LOAD_CMD", dayNr);

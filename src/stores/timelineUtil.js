@@ -17,9 +17,8 @@ export function findPlan(uuid, plans = [], trainings = []) {
   }
   const _plans = clone(plans);
   const _trainings = clone(trainings);
-  console.log("len: " + _plans.length + ", plans[0].uuid: " + _plans[0].uuid);
+  console.log(`len: ${plans.length} plans[0].uuid: ${_plans[0].uuid}`);
   let plan = _plans.find((_plan) => {
-    console.log("plan: " + _plan.uuid);
     if (_plan.uuid == uuid) return _plan;
   });
   let _days = [];
@@ -39,17 +38,26 @@ export function findPlan(uuid, plans = [], trainings = []) {
   return plan;
 }
 
-export function findDay(dayNr, microcycles = [], trainings = []) {
+export function findDay(dayNr, microcycles, trainings) {
+  if (microcycles.length === 0) {
+    throw new Error(`microcyles should be provided!`);
+  }
+  if (trainings.length === 0) {
+    throw new Error(`traininginstances should be provided!`);
+  }
   const _microcycles = clone(microcycles);
   const _trainings = clone(trainings);
   let found = null;
   _microcycles.map(_microcycle => {
+    console.log(`findDay ms: ${JSON.stringify(_microcycle)}`);
     _microcycle.days.forEach((_day, j) => {
+      console.log(`findDay ${JSON.stringify(_day)}`);
       if (_day["nr"] == dayNr) {
         found = augmentDay(_day, _trainings);
       }
     });
   });
+  console.log(`findDay ${JSON.stringify(found)}`);
   return found;
 }
 
@@ -58,7 +66,10 @@ export function findDay(dayNr, microcycles = [], trainings = []) {
  * @param { object } [day] [flattened day object with ref to inflated day]
  * @param { array<TrainingInstance> } [trainings] [list of augmented TrainingInstance ojects]
  */
-export function augmentDay(day, trainings = []) {
+export function augmentDay(day, trainings) {
+  if (trainings.length === 0) {
+    throw new Error(`traininginstances should be provided!`);
+  }
   const _day = clone(day);
   const _trainings = clone(trainings);
   let uuid = (typeof _day.instanceId === "string") ? _day.instanceId : null;
