@@ -1,4 +1,4 @@
- /* Tue Aug 09 2016 12:59:27 GMT+0200 (CEST) */  export const traininginstances = [
+ /* Tue Aug 09 2016 13:10:56 GMT+0200 (CEST) */  export const traininginstances = [
 	{
 		"uuid": "ce331885-d96c-40cb-9a6d-7c3f942400d7",
 		"name": "PFZ, 14km  w 6 @LT",
@@ -306,6 +306,44 @@
 	{
 		"uuid": "8a4d41d1-86ab-4720-a29b-510fa17c65bc",
 		"name": "Easy run 10km (clone) (clone)",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "033a0217-2707-408a-a333-fe13721f99bc",
+		"name": "Easy run 10km (clone)",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "74e98b2d-f13a-4d39-a09f-60535ba9ca01",
+		"name": "Easy run 10km",
 		"type": "easy",
 		"segments": [
 			{

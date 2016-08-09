@@ -1,4 +1,4 @@
- /* Tue Aug 09 2016 12:45:39 GMT+0200 (CEST) */  export const trainings = [
+ /* Tue Aug 09 2016 13:09:52 GMT+0200 (CEST) */  export const trainings = [
 	{
 		"uuid": "new-training",
 		"name": "New training",
