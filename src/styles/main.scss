@@ -249,7 +249,7 @@ div.days-list section.day {
   border: 0;
   margin: 0.2em;
   padding: 0.2em;
-  width: 17em;
+  width: auto;
   height: 8em;
 }
 div.days-list section.day p {
@@ -282,8 +282,13 @@ div.days-list section.today {
 div.days-list section p {
   padding: 0.2em;
 }
-div.days-list section p.training-name {
-  
+div.days-list section.segment-total {
+  border: 1px solid black;
+  display: inline;  
+  margin: 0.2em;
+  padding: 0.2em;
+  width: auto;
+  height: 8em;  
 }
 
 div.days-list section.day button {

@@ -76,10 +76,12 @@ export default class TimelineComponent extends React.Component {
     let aDay = moment("2016-12-03");
 
     let microcycleElements = [];
-    this.state.microcycles.forEach((microcycle, i) => {
+    let segmentTotalDistance = 0;
+
+    this.state.microcycles.forEach((microcycle, i) => {      
 
       microcycle.days.forEach((day, j) => {
-        aDay.add(1, "days");
+        aDay.add(1, "days");        
 
         let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
         let sectionClassNames = [];
@@ -97,10 +99,6 @@ export default class TimelineComponent extends React.Component {
           sectionClassNames.push("today");
         }
 
-        if (j % 7 === 0) {
-          microcycleElements.push(<div key={"div" + i + "-" + j}>&nbsp;</div>);
-        }
-
         // TODO support multiple trainings per day
         microcycleElements.push(
           <section key={i + "-" + j} className={sectionClassNames.join(" ")}>
@@ -111,8 +109,16 @@ export default class TimelineComponent extends React.Component {
             <button className="button-small button-flat" onClick={this.onEditClick} value={day.nr}>edit</button>
           </section>
         );
-      });
-      //microcycleElements.push(</div>);
+
+        segmentTotalDistance += day.training.total.distance;
+
+        // TODO, change to html table
+        if (j % 7 === 6) {
+          microcycleElements.push(<section key={"section" + j + "-" + i} className="segment-total">{"total: "}{segmentTotalDistance}{"km"}</section>);
+          microcycleElements.push(<br key={new Date()} />);
+          segmentTotalDistance = 0;          
+        }
+      });      
     });
 
     /*

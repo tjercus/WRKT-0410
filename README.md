@@ -47,15 +47,17 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- Finish DAY_DELETE_CMD
-- Support 'move instance to another day'
-- Support loading multiple plans thus: introduce plan selection component
-- toggle list/calendar modus
-- better display of a day, ex: training type icons and colors
+- remove obsolete property 'nr' from 'day'
+- Support 'switch days'
+- Support 'multiple trainings per day'
 - feature to add a training to a day, iaw: implement 'edit' button
-- show total km for a cycle
+- toggle list/calendar modus
+- Finish DAY_DELETE_CMD
+- better display of a day, ex: training type icons and colors
+- Support loading multiple plans thus: introduce plan selection component
 - use standard paces (MP, LT, 21KP, 10KP etc.)
 - feature to allow adding a date to a start or end of a timeline (rest is calculated)
+- Support 'move instance to another day' (depends on multiple trainings per day)
 - import
 - export
 - import runkeeper csv
