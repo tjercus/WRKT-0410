@@ -68,6 +68,7 @@ export default class TimelineStore {
       console.log(`TimelineStore: 1. ${this.plans[0].microcycles.length}`);
       const newInstanceUuid = createUuid();
       training.uuid = newInstanceUuid;
+      console.log(`training added to instances ${JSON.stringify(training)}`);
       this.traininginstances.push(training);
       this.microcycles = this.addTrainingToMicrocycles(newInstanceUuid, this.microcycles, this.traininginstances);      
       const modifiedPlan = this.updatePlans();

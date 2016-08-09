@@ -104,7 +104,7 @@ export default class TimelineComponent extends React.Component {
           <section key={i + "-" + j} className={sectionClassNames.join(" ")}>
             <h3>{day.nr}. {dateStr}</h3>
             <p className="training-name">{day.training.name}</p>
-            <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>            
+            <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>
             <button className="button-small button-flat button-warning" onClick={this.onDeleteClick} value={day.nr}>del</button>
             <button className="button-small button-flat" onClick={this.onEditClick} value={day.nr}>edit</button>
           </section>

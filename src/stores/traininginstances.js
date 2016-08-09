@@ -1,4 +1,4 @@
- /* Tue Aug 09 2016 13:10:56 GMT+0200 (CEST) */  export const traininginstances = [
+ /* Tue Aug 09 2016 14:39:34 GMT+0200 (CEST) */  export const traininginstances = [
 	{
 		"uuid": "ce331885-d96c-40cb-9a6d-7c3f942400d7",
 		"name": "PFZ, 14km  w 6 @LT",
@@ -286,7 +286,7 @@
 	},
 	{
 		"uuid": "c229ca33-97a8-4dae-957a-918680073581",
-		"name": "Easy run 10km (clone)",
+		"name": "Easy run 10km",
 		"type": "easy",
 		"segments": [
 			{
@@ -305,7 +305,7 @@
 	},
 	{
 		"uuid": "8a4d41d1-86ab-4720-a29b-510fa17c65bc",
-		"name": "Easy run 10km (clone) (clone)",
+		"name": "Easy run 10km",
 		"type": "easy",
 		"segments": [
 			{
@@ -323,8 +323,27 @@
 		}
 	},
 	{
-		"uuid": "033a0217-2707-408a-a333-fe13721f99bc",
-		"name": "Easy run 10km (clone)",
+		"uuid": "57260410-1935-4c2a-b42d-b7c1b748691f",
+		"name": "Easy run 21km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "21",
+				"duration": "01:48:30",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 21,
+			"duration": "01:48:30",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "8cefa6f4-c67d-440a-9171-ccd6bbc16331",
+		"name": "Easy run 10km",
 		"type": "easy",
 		"segments": [
 			{
@@ -342,7 +361,71 @@
 		}
 	},
 	{
-		"uuid": "74e98b2d-f13a-4d39-a09f-60535ba9ca01",
+		"uuid": "4f2e6d34-4f2f-4491-b927-f852cd73ce44",
+		"name": "Easy run 18km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "18",
+				"duration": "01:33:00",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 18,
+			"duration": "01:33:00",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "242bb671-9b15-4a59-b6ef-2acf787524c6",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "2c5696c5-3c95-4271-8668-be48cd360054",
+		"name": "27km w 13km @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "14",
+				"duration": "01:12:20",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "54627fa9-b1ba-450f-9af9-1f645986b1be",
+				"distance": "13",
+				"duration": "00:54:10",
+				"pace": "04:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 27,
+			"duration": "02:06:30",
+			"pace": "04:41"
+		}
+	},
+	{
+		"uuid": "b6bcaf6d-088e-4768-aa68-0ef52e0194db",
 		"name": "Easy run 10km",
 		"type": "easy",
 		"segments": [
