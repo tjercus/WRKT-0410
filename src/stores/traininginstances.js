@@ -1,4 +1,4 @@
- /* Thu Aug 11 2016 09:11:17 GMT+0200 (CEST) */  export const traininginstances = [
+ /* Thu Aug 11 2016 09:35:45 GMT+0200 (CEST) */  export const traininginstances = [
 	{
 		"uuid": "ce331885-d96c-40cb-9a6d-7c3f942400d7",
 		"name": "PFZ, 14km  w 6 @LT",
@@ -808,6 +808,153 @@
 		"total": {
 			"distance": 16,
 			"duration": "01:28:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "4e3afab9-55cf-4c64-b6ae-a4446eca94e2",
+		"name": "PFZ, 16km  w 6 @LT",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "10",
+				"duration": "00:50:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
+				"distance": "6",
+				"duration": "00:23:00",
+				"pace": "03:50",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 16,
+			"duration": "01:13:00",
+			"pace": "04:34"
+		}
+	},
+	{
+		"uuid": "c7cc7a81-e258-407f-a5a7-0bda89bca613",
+		"name": "Easy run 24km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "24",
+				"duration": "02:04:00",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 24,
+			"duration": "02:04:00",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "64db36a5-f38d-44b5-bb1a-423707ba413a",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "596547d2-cb0e-4484-b215-551e34003009",
+		"name": "Easy run 21km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "21",
+				"duration": "01:48:30",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 21,
+			"duration": "01:48:30",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "51886a38-0af6-47e5-92af-26a7940811aa",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "1342a330-9cbd-451e-9009-8f8c46dcadc9",
+		"name": "PFZ, 29km  w 16 @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "13",
+				"duration": "01:07:10",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
+				"distance": "16",
+				"duration": "01:06:40",
+				"pace": "04:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 29,
+			"duration": "02:13:50",
+			"pace": "04:37"
+		}
+	},
+	{
+		"uuid": "1d2d452e-d96c-43b6-a241-9d9c3df97fd3",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
 			"pace": "05:30"
 		}
 	}
