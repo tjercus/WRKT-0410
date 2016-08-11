@@ -2,7 +2,7 @@ import React from "react";
 import EventEmitter from "eventemitter2";
 import moment from "moment";
 
-import { clone } from "../stores/miscUtil";
+import { clone, createUuid } from "../stores/miscUtil";
 
 const DAY_HEADER_DATE_FORMAT = "dddd, DD-MM-YYYY";
 const DEFAULT_PLAN_ID = "a83a78aa-5d69-11e6-b3a3-1f76e6105d92";
@@ -81,7 +81,7 @@ export default class TimelineComponent extends React.Component {
     this.state.microcycles.forEach((microcycle, i) => {      
 
       microcycle.days.forEach((day, j) => {
-        aDay.add(1, "days");        
+        aDay.add(1, "days");
 
         let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
         let sectionClassNames = [];
@@ -100,6 +100,7 @@ export default class TimelineComponent extends React.Component {
         }
 
         // TODO support multiple trainings per day
+        // TODO extract into MicrocycleRowComponent
         microcycleElements.push(
           <section key={i + "-" + j} className={sectionClassNames.join(" ")}>
             <h3>{day.nr}. {dateStr}</h3>
@@ -115,7 +116,7 @@ export default class TimelineComponent extends React.Component {
         // TODO, change to html table
         if (j % 7 === 6) {
           microcycleElements.push(<section key={"section" + j + "-" + i} className="segment-total">{"total: "}{segmentTotalDistance}{"km"}</section>);
-          microcycleElements.push(<br key={new Date()} />);
+          microcycleElements.push(<br key={createUuid()} />);
           segmentTotalDistance = 0;          
         }
       });      

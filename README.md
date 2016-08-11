@@ -15,6 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Rebuild rest-api to real rest-api (then do not load data from js files on init but from server api)
 - React components should always use a callback when doing stuff after setState
 - smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
 - Introduce Flow for type checking
@@ -48,6 +49,8 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- extract MicrocycleRowComponent
+- testcoverage for segment total calculation et al.
 - remove obsolete property 'nr' from 'day'
 - Support 'switch days'
 - Support 'multiple trainings per day'
