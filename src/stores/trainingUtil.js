@@ -34,6 +34,16 @@ export function updateTraining(training, trainings) {
   return _trainings;
 }
 
+export function removeTrainingInstance(uuid, instances) {
+  let _instances = clone(instances);
+  const isInstance = (_instance) => {
+  	return _instance.uuid == uuid;
+  }
+  const index = _instances.findIndex(isInstance);
+  _instances.splice((index > -1) ? index : _instances.length, 1);
+  return _instances;  
+}
+
 /**
  * @param array
  * @return Object

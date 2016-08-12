@@ -1,5 +1,6 @@
 import EventEmitter from "eventemitter2";
-import { findPlan, augmentDay, flattenMicrocycles } from "./timelineUtil";
+import { findPlan, augmentDay, flattenDays, removeTrainingFromDay } from "./timelineUtil";
+import { removeTrainingInstance } from "./trainingUtil";
 import { clone, createUuid } from "./miscUtil";
 
 /**
@@ -24,56 +25,42 @@ export default class TimelineStore {
 
     this.name = "";
     this.uuid = null;
-    this.microcycles = [];
+    this.days = [];
 
     eventbus.on("PLAN_LOAD_CMD", ((planId) => {
       console.log(`TimelineStore: received PLAN_LOAD_CMD for default plan ${planId}`);
       let plan = findPlan(planId, this.plans, this.traininginstances);
       this.uuid = planId;
       this.name = plan.name;
-      this.microcycles = plan.microcycles;
-      eventbus.emit("PLAN_LOAD_EVT", plan.microcycles);
+      this.days = plan.days;
+      eventbus.emit("PLAN_LOAD_EVT", plan);
     }));
 
     eventbus.on("PLAN_PERSIST_CMD", (() => {
-      this.plans = [{ uuid: this.uuid, name: this.name, microcycles: flattenMicrocycles(this.microcycles) }];
+      this.plans = [{ uuid: this.uuid, name: this.name, days: flattenDays(this.days) }];
       this.persistInstances(this.traininginstances);
       this.persistPlans(this.plans);
       eventbus.emit("PLAN_PERSIST_EVT");
     }));
 
-    eventbus.on("DAY_DELETE_CMD", ((dayNr) => {
-      // delete traininginstance
-      const _instances = clone(this.traininginstances);
-      const findByNr = (day) => {
-        return day.nr == dayNr;
-      }
-      const index = _instances.findIndex(findByNr);
-      _instances.splice(index, 1);
-      this.traininginstances = _instances;
-
-      // delete day from microcycles
-      const _microcycles = clone(this.microcycles);
-      _microcycles.forEach((_microcycle, i) => {
-        // TODO re-number days  
-      });
-      
-      this.microcycles = _microcycles;
-
+    eventbus.on("DAY_EMPTY_CMD", ((dayUuid) => {
+      console.log(`TimelineStore received DAY_EMPTY_CMD with a dayUuid ${dayUuid}`);      
+      this.days = removeTrainingFromDay(dayUuid, clone(this.days));
+      this.traininginstances = removeTrainingInstance(dayUuid, clone(this.traininginstances));
       const modifiedPlan = this.updatePlans();
-      eventbus.emit("DAY_DELETE_EVT", modifiedPlan);
+      eventbus.emit("DAY_EMPTY_EVT", modifiedPlan);
     }));
 
     eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
-      console.log(`TimelineStore: 1. ${this.plans[0].microcycles.length}`);
+      console.log(`TimelineStore: 1. days: ${this.plans[0].days.length}`);
       const newInstanceUuid = createUuid();
       training.uuid = newInstanceUuid;
       console.log(`training added to instances ${JSON.stringify(training)}`);
       this.traininginstances.push(training);
-      this.microcycles = this.addTrainingToMicrocycles(newInstanceUuid, this.microcycles, this.traininginstances);      
+      this.days.push({ uuid: createUuid(), instanceId: newInstanceUuid });
       const modifiedPlan = this.updatePlans();
       eventbus.emit("TRAINING_TO_PLAN_EVT", modifiedPlan);
-      console.log(`TimelineStore: 2. ${this.plans[0].microcycles.length}`);
+      console.log(`TimelineStore: 2. days: ${this.plans[0].days.length}`);
     }));
   }
 
@@ -108,28 +95,8 @@ export default class TimelineStore {
     }
   }
 
-  // Add a day the last microcycles and add the new instance to the new day
-  // if there are are allready 7 days in the microcycle, add a new cycle first
-  addTrainingToMicrocycles(newInstanceUuid, microcycles, traininginstances) {    
-    const _microcycles = clone(microcycles);
-    let currentMicrocycle = _microcycles.slice(-1)[0];
-    let lastDay = currentMicrocycle.days.slice(-1)[0] || {nr: 0};
-    let nextNr = parseInt(lastDay.nr, 10) + 1;
-    let newDay = { nr: nextNr, instanceId: newInstanceUuid };
-    let augmentedNewDay = augmentDay(newDay, traininginstances);
-    console.log(`currentMicrocycle.days.length ${currentMicrocycle.days.length}`);
-    if (currentMicrocycle.days.length === 7) {
-      currentMicrocycle = { "days": [augmentedNewDay] };
-      _microcycles.push(currentMicrocycle);
-    } else {
-      currentMicrocycle.days.push(augmentedNewDay);
-      _microcycles[_microcycles.length - 1] = currentMicrocycle;
-    }    
-    return _microcycles;
-  }
-
   updatePlans() {
-    const modifiedPlan = { uuid: this.uuid, name: this.name, microcycles: this.microcycles };
+    const modifiedPlan = { uuid: this.uuid, name: this.name, days: this.days };
     this.plans = [];
     // add plan to this.plans, for now override since there is only one plan
     this.plans.push(modifiedPlan);

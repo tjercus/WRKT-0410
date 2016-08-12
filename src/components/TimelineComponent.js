@@ -14,13 +14,13 @@ export default class TimelineComponent extends React.Component {
     this.state = {
       isVisible: false,
       showEasyDays: true,
-      microcycles: []
+      days: []
     };
     //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-    this.onDeleteClick = this.onDeleteClick.bind(this);
+    this.onEmptyClick = this.onEmptyClick.bind(this);
   }
 
   componentDidMount() {
@@ -31,14 +31,15 @@ export default class TimelineComponent extends React.Component {
         this.setState({ isVisible: false });
       }
     });
-    this.props.eventbus.on("PLAN_LOAD_EVT", (microcycles) => {
-      this.setState({ microcycles: microcycles });
+    this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
+      this.setState({ days: plan.days });
     });
-    this.props.eventbus.on("DAY_DELETE_EVT", (plan) => {
-      this.setState({ microcycles: plan.microcycles });
+    this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
+      console.log("TimelineComponent received DAY_EMPTY_EVT with a new plan as payload");
+      this.setState({ days: plan.days });
     });
     this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
-      this.setState({ microcycles: plan.microcycles });
+      this.setState({ days: plan.days });
     });
     setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD", DEFAULT_PLAN_ID), 1500);
   }
@@ -66,8 +67,9 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.emit("PLAN_PERSIST_CMD");
   }
 
-  onDeleteClick(evt) {
-    this.props.eventbus.emit("DAY_DELETE_CMD", evt.target.value);
+  onEmptyClick(evt) {
+    console.log(`TimelineComponent onEmptyClick with ${evt.target.value}`);
+    this.props.eventbus.emit("DAY_EMPTY_CMD", evt.target.value);
   }
 
   render() {
@@ -78,48 +80,45 @@ export default class TimelineComponent extends React.Component {
     let microcycleElements = [];
     let segmentTotalDistance = 0;
 
-    this.state.microcycles.forEach((microcycle, i) => {      
+    this.state.days.forEach((day, i) => {
+      aDay.add(1, "days");
 
-      microcycle.days.forEach((day, j) => {
-        aDay.add(1, "days");
+      let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
+      let sectionClassNames = [];
+      this.isNonWorkday(aDay) ?
+        sectionClassNames.push("day day-nowork") :
+        sectionClassNames.push("day day-work");
 
-        let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
-        let sectionClassNames = [];
-        this.isNonWorkday(aDay) ?
-          sectionClassNames.push("day day-nowork") :
-          sectionClassNames.push("day day-work");
+      if (this.state.showEasyDays === false && day.training.type === "easy") {
+        sectionClassNames.push("day-easy");
+      }
+      if (day.training.type === "workout") {
+        sectionClassNames.push("day-workout");
+      }
+      if (aDay.isSame(moment(new Date()), "day")) {
+        sectionClassNames.push("today");
+      }
 
-        if (this.state.showEasyDays === false && day.training.type === "easy") {
-          sectionClassNames.push("day-easy");
-        }
-        if (day.training.type === "workout") {
-          sectionClassNames.push("day-workout");
-        }
-        if (aDay.isSame(moment(new Date()), "day")) {
-          sectionClassNames.push("today");
-        }
-
-        // TODO support multiple trainings per day
-        // TODO extract into MicrocycleRowComponent
-        microcycleElements.push(
-          <section key={i + "-" + j} className={sectionClassNames.join(" ")}>
-            <h3>{day.nr}. {dateStr}</h3>
+      // TODO support multiple trainings per day
+      // TODO extract into MicrocycleRowComponent
+      microcycleElements.push(
+        <section key={i + "-" + createUuid()} className={sectionClassNames.join(" ")}>
+            <h3>{i+1}. {dateStr}</h3>
             <p className="training-name">{day.training.name}</p>
             <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>
-            <button className="button-small button-flat button-warning" onClick={this.onDeleteClick} value={day.nr}>del</button>
-            <button className="button-small button-flat" onClick={this.onEditClick} value={day.nr}>edit</button>
+            <button className="button-small button-flat button-warning" onClick={this.onEmptyClick} value={day.uuid}>empty</button>
+            <button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
           </section>
-        );
+      );
 
-        segmentTotalDistance += day.training.total.distance;
+      segmentTotalDistance += day.training.total.distance;
 
-        // TODO, change to html table
-        if (j % 7 === 6) {
-          microcycleElements.push(<section key={"section" + j + "-" + i} className="segment-total">{"total: "}{segmentTotalDistance}{"km"}</section>);
-          microcycleElements.push(<br key={createUuid()} />);
-          segmentTotalDistance = 0;          
-        }
-      });      
+      // TODO, change to html table
+      if (i % 7 === 6) {
+        microcycleElements.push(<section key={"section" + "-" + i + "-" + createUuid()} className="segment-total">{"total: "}{segmentTotalDistance}{"km"}</section>);
+        microcycleElements.push(<br key={createUuid()} />);
+        segmentTotalDistance = 0;
+      }
     });
 
     /*

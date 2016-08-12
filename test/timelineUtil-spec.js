@@ -1,5 +1,5 @@
 import test from "tape";
-import {findPlan, findDay, flattenMicrocycles} from "../src/stores/timelineUtil";
+import {findPlan, findDay, flattenDays} from "../src/stores/timelineUtil";
 
 /**
  * Tests for {@link TimelineStore.js}
@@ -7,24 +7,20 @@ import {findPlan, findDay, flattenMicrocycles} from "../src/stores/timelineUtil"
 let plans = [{
   "uuid": "91556686-232b-11e6-8b5a-5bcc30180900",
   "name": "10k plan #1",
-  "microcycles": [
-    {"days": [
-      {"nr": 1, "instanceId": "blah-10"},
-      {"nr": 2, "instanceId": "blah-11"},
-      {"nr": 3, "instanceId": "blah-12"},
-      {"nr": 4, "instanceId": "blah-13"},
-      {"nr": 5, "instanceId": "blah-14"},
-      {"nr": 6, "instanceId": "blah-15"},
-      {"nr": 7, "instanceId": "blah-16"}
-    ]}, 
-    {"days": [
-      {"nr": 8, "instanceId": "blah-17"},
-      {"nr": 9, "instanceId": "blah-18"}
-    ]}
+  "days": [    
+    {"uuid": 1, "instanceId": "blah-10"},
+    {"uuid": 2, "instanceId": "blah-11"},
+    {"uuid": 3, "instanceId": "blah-12"},
+    {"uuid": 4, "instanceId": "blah-13"},
+    {"uuid": 5, "instanceId": "blah-14"},
+    {"uuid": 6, "instanceId": "blah-15"},
+    {"uuid": 7, "instanceId": "blah-16"},        
+    {"uuid": 8, "instanceId": "blah-17"},
+    {"uuid": 9, "instanceId": "blah-18"}    
   ]
 }];
 
-let trainings = [{
+let trainingInstances = [{
     "uuid": "blah-10",
     "name": "name10",
     "type": "workout",
@@ -83,28 +79,26 @@ let trainings = [{
 }];
 
 test("findPlan should find and augment the default plan", (assert) => {
-  let plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainings);
+  let plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
   assert.ok(typeof plan === "object");  
   assert.notOk(plan === null);
   assert.equal(plan.name, "10k plan #1");
-  assert.equal(plan.microcycles[0].days.length, 7, "not enough days (" + plan.microcycles[0].days.length + ") where found in cycle 0");
-  assert.equal(plan.microcycles[1].days.length, 2, "not enough days where found in cycle 1");
-  assert.equal(plan.microcycles[0].days[0].training.name, "name10", "training for a day has incorrect name");
-  assert.equal(plan.microcycles[0].days[0].training.uuid, "blah-10", "training for a day has incorrect uuid");  
-  assert.equal(plan.microcycles[0].days[0].training.segments.length, 2, "training for a day has no segments");
-  assert.equal(plan.microcycles[0].days[0].training.segments[0].uuid, "99", "training segment has no uuid");  
+  assert.equal(plan.days.length, 9, "not enough days (" + plan.days.length + ") where found");
+  assert.equal(plan.days[0].training.name, "name10", "training for a day has incorrect name");
+  assert.equal(plan.days[0].training.uuid, "blah-10", "training for a day has incorrect uuid");  
+  assert.equal(plan.days[0].training.segments.length, 2, "training for a day has no segments");
+  assert.equal(plan.days[0].training.segments[0].uuid, "99", "training segment has no uuid");  
   assert.end();
 });
 
 // TODO exception flows
 
 test("findDay should find a day by nr", (assert) => {
-  console.log("@ " + JSON.stringify(plans[0]));
-  let microcycles = plans[0]["microcycles"];  
-  let day = findDay(2, microcycles, trainings);
+  //console.log("@ " + JSON.stringify(plans[0]));  
+  let day = findDay(2, plans[0], trainingInstances);
   assert.notOk(day === null);
   assert.ok(typeof day === "object");    
-  assert.equal(day.nr, 2);
+  assert.equal(day.uuid, 2);
   assert.equal(day.training.uuid, "blah-11");
   assert.equal(day.training.name, "name11");
   assert.end();
@@ -112,11 +106,13 @@ test("findDay should find a day by nr", (assert) => {
 
 // TODO exception flows
 
-test("flattenMicrocycles should flatten an augmented array of microcycles", (assert) => {
-  let plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainings);
-  const flattened = flattenMicrocycles(plan.microcycles);
-  assert.equal(flattened[1].days[0].nr, 8);
-  assert.equal(flattened[1].days[0].instanceId, "blah-17");
-  assert.equal(flattened.length, plan.microcycles.length, "resulting array should be of the same size");
+test("flattenDays should flatten an augmented array of days", (assert) => {
+  let plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const flattened = flattenDays(plan.days);
+  assert.equal(flattened[4].uuid, 5);
+  assert.equal(flattened[4].instanceId, "blah-14");
+  assert.equal(flattened.length, plan.days.length, "resulting array should be of the same size");
   assert.end();
 });
+
+// TODO cover removeTrainingFromDay

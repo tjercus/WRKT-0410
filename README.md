@@ -15,6 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Refactor removeX(uuid, array) functions into one generic in miscUtils
 - Rebuild rest-api to real rest-api (then do not load data from js files on init but from server api)
 - React components should always use a callback when doing stuff after setState
 - smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
@@ -31,7 +32,6 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
-- Fix bug in addTrainingToPlan feature
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline
 - validate should be more tolerant for invalid segments caluculated by rounding on seconds
@@ -51,12 +51,10 @@ Based on 'React eventemitter'.
 ### Timeline
 - extract MicrocycleRowComponent
 - testcoverage for segment total calculation et al.
-- remove obsolete property 'nr' from 'day'
 - Support 'switch days'
 - Support 'multiple trainings per day'
 - feature to add a training to a day, iaw: implement 'edit' button
 - toggle list/calendar modus
-- Finish DAY_DELETE_CMD
 - better display of a day, ex: training type icons and colors
 - Support loading multiple plans thus: introduce plan selection component
 - use standard paces (MP, LT, 21KP, 10KP etc.)

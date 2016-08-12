@@ -7,7 +7,7 @@ export default class DayEditComponent extends React.Component {
     super(props);
     this.state = {
       isVisible: false,
-      dayNr: null,
+      dayUuid: null,
       day: {
         training: {}
       }
@@ -16,14 +16,14 @@ export default class DayEditComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", ((menuItemName, dayNr) => {
+    this.props.eventbus.on("MENU_CLICK_EVT", ((menuItemName, dayUuid) => {
       this.setState({
-        dayNr: dayNr
+        dayUuid: dayUuid
       });
       (menuItemName === this.props.from) ? this.setState({ isVisible: true }): this.setState({ isVisible: false });
-      if (dayNr !== null) {
-        console.log(`DayEditComponent: sending DAY_LOAD_CMD ${dayNr}`);
-        this.props.eventbus.emit("DAY_LOAD_CMD", dayNr);
+      if (dayUuid !== null) {
+        console.log(`DayEditComponent: sending DAY_LOAD_CMD ${dayUuid}`);
+        this.props.eventbus.emit("DAY_LOAD_CMD", dayUuid);
       }
     }));
 

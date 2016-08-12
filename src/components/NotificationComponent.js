@@ -59,6 +59,9 @@ export default class NotificationComponent extends React.Component {
       case "TRAINING_TO_PLAN_EVT":
         msg = `TrainingInstance was added to plan`;
         break;
+      case "DAY_EMPTY_EVT":
+        msg = `TrainingInstances where removed from a day`;
+        break;
         
       default:
         break;

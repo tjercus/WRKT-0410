@@ -483,8 +483,8 @@
 			},
 			{
 				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
-				"distance": "6",
-				"duration": "00:23:00",
+				"distance": "8",
+				"duration": "00:30:40",
 				"pace": "03:50",
 				"isValid": true
 			}

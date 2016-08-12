@@ -11,19 +11,16 @@ export default class DayStore {
    */
   constructor(eventbus, plans, traininginstances) {
     this.eventbus = eventbus;
-    this.plans = plans;
-
-    // TODO hardcoded for now, but when multiple plans are supported, needs to be adjusted
-    this.microcycles = this.plans[0].microcycles;
-    
+    this.plans = plans;    
     this.traininginstances = traininginstances;
     this.day = {};
 
-    eventbus.on("DAY_LOAD_CMD", ((dayNr) => {
+    eventbus.on("DAY_LOAD_CMD", ((dayUuid) => {
       // caching
       let day = this.day;
-      if (!this.day || this.day.nr != dayNr) {
-        this.day = findDay(dayNr, this.microcycles, this.traininginstances);
+      if (!this.day || this.day.uuid != dayUuid) {
+        // TODO plan is hardcoded for now, but when multiple plans are supported, needs to be adjusted
+        this.day = findDay(dayUuid, this.plans[0], this.traininginstances);
       }
       if (this.day) {
         eventbus.emit("DAY_LOAD_EVT", this.day);
