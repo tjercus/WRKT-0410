@@ -72,6 +72,10 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.emit("DAY_EMPTY_CMD", evt.target.value);
   }
 
+  onCloneClick(evt) {
+    // TODO clone to the right
+  }
+
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
@@ -107,6 +111,7 @@ export default class TimelineComponent extends React.Component {
             <p className="training-name">{day.training.name}</p>
             <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>
             <button className="button-small button-flat button-warning" onClick={this.onEmptyClick} value={day.uuid}>empty</button>
+            <button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>clone</button>
             <button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
           </section>
       );
