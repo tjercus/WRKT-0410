@@ -3,7 +3,8 @@ import {
   makeTrainingTotal
 } from "./trainingUtil";
 import {
-  clone
+  clone,
+  createUuid
 } from "./miscUtil";
 
 /**
@@ -25,7 +26,7 @@ export function findPlan(uuid, plans = [], trainingInstances = []) {
     throw new Error(`plan not found ${uuid}`);
   }
   console.log(`plan ${JSON.stringify(plan)}`);
-  plan.days.forEach((_day, i) => {    
+  plan.days.forEach((_day, i) => {
     _days.push(augmentDay(_day, _trainings));
   });
   plan.days = _days;
@@ -92,7 +93,15 @@ export function removeTrainingFromDay(dayUuid, days) {
   }
   const index = _days.findIndex(isDay);
   if (index > -1) {
-    _days[index].training = { name: "No Run", distance: 0, duration: "00:00:00", pace: "00:00", type: "", total: {distance: 0, duration: "00:00:00", pace: "00:00"}};
+    _days[index].training = {
+      uuid: createUuid(),
+      name: "No Run",
+      distance: 0,
+      duration: "00:00:00",
+      pace: "00:00",
+      type: "",
+      total: { distance: 0, duration: "00:00:00", pace: "00:00" }
+    };
   }
-  return _days;  
+  return _days;
 }

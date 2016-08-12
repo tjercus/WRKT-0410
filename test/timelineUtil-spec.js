@@ -1,5 +1,5 @@
 import test from "tape";
-import {findPlan, findDay, flattenDays} from "../src/stores/timelineUtil";
+import {findPlan, findDay, flattenDays, removeTrainingFromDay} from "../src/stores/timelineUtil";
 
 /**
  * Tests for {@link TimelineStore.js}
@@ -79,7 +79,7 @@ let trainingInstances = [{
 }];
 
 test("findPlan should find and augment the default plan", (assert) => {
-  let plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
   assert.ok(typeof plan === "object");  
   assert.notOk(plan === null);
   assert.equal(plan.name, "10k plan #1");
@@ -95,7 +95,7 @@ test("findPlan should find and augment the default plan", (assert) => {
 
 test("findDay should find a day by nr", (assert) => {
   //console.log("@ " + JSON.stringify(plans[0]));  
-  let day = findDay(2, plans[0], trainingInstances);
+  const day = findDay(2, plans[0], trainingInstances);
   assert.notOk(day === null);
   assert.ok(typeof day === "object");    
   assert.equal(day.uuid, 2);
@@ -107,7 +107,7 @@ test("findDay should find a day by nr", (assert) => {
 // TODO exception flows
 
 test("flattenDays should flatten an augmented array of days", (assert) => {
-  let plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
   const flattened = flattenDays(plan.days);
   assert.equal(flattened[4].uuid, 5);
   assert.equal(flattened[4].instanceId, "blah-14");
@@ -116,3 +116,19 @@ test("flattenDays should flatten an augmented array of days", (assert) => {
 });
 
 // TODO cover removeTrainingFromDay
+test("removeTrainingFromDay should remove an instance from a day in a list of days", (assert) => {
+  const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const newDays = removeTrainingFromDay(6, plan.days);
+
+  let trainingWasRemoved = false;
+  newDays.forEach((_day) => {
+    if (_day.uuid == 6) {
+      if (_day.training.name === "No Run") {
+        trainingWasRemoved = true;
+      }
+    }
+  });
+  assert.ok(trainingWasRemoved, "training was not removed from day");
+  assert.equal(newDays.length, 9, "same amount of days should remain");
+  assert.end();
+});
