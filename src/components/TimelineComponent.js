@@ -21,6 +21,7 @@ export default class TimelineComponent extends React.Component {
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.onEmptyClick = this.onEmptyClick.bind(this);
+    this.onCloneClick = this.onCloneClick.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +37,10 @@ export default class TimelineComponent extends React.Component {
     });
     this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
       console.log("TimelineComponent received DAY_EMPTY_EVT with a new plan as payload");
+      this.setState({ days: plan.days });
+    });
+    this.props.eventbus.on("DAY_CLONE_EVT", (plan) => {
+      console.log("TimelineComponent received DAY_CLONE_EVT with a new plan as payload");
       this.setState({ days: plan.days });
     });
     this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
@@ -59,7 +64,7 @@ export default class TimelineComponent extends React.Component {
   }
 
   onEditClick(evt) {
-    console.log(`TimelineComponent ${evt.target.value}`);
+    console.log(`TimelineComponent edit ${evt.target.value}`);
     this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
   }
 
@@ -73,7 +78,8 @@ export default class TimelineComponent extends React.Component {
   }
 
   onCloneClick(evt) {
-    // TODO clone to the right
+    console.log(`TimelineComponent clone cmd ${evt.target.value}`);
+    this.props.eventbus.emit("DAY_CLONE_CMD", evt.target.value);
   }
 
   render() {
@@ -86,6 +92,8 @@ export default class TimelineComponent extends React.Component {
 
     this.state.days.forEach((day, i) => {
       aDay.add(1, "days");
+
+      console.log(`TimelineComponent iterating over days ${JSON.stringify(day)}`);
 
       let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
       let sectionClassNames = [];

@@ -37,6 +37,9 @@ export function findDay(dayUuid, plan, trainings) {
   if (trainings.length === 0) {
     throw new Error(`trainings should be provided!`);
   }
+  if (!plan.days || plan.days.length === 0) {
+    throw new Error(`plan should have a list of days!`);
+  }
   const _days = clone(plan.days);
   const _trainings = clone(trainings);
   let found = null;
