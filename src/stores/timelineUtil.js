@@ -6,6 +6,7 @@ import {
   clone,
   createUuid
 } from "./miscUtil";
+import pureSwap from "pure-swap";
 
 /**
  * Return a plan
@@ -106,4 +107,15 @@ export function removeTrainingFromDay(dayUuid, days) {
     };
   }
   return _days;
+}
+
+export function moveDay(dayUuid, positions) {
+  let _days = clone(days);
+  const isDay = (_day) => {
+    return _day.uuid == dayUuid;
+  }
+  const index = _days.findIndex(isDay);
+  if (index > -1) {
+    return pureSwap(_days, index, index + positions);
+  }
 }

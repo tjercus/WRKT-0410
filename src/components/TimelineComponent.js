@@ -45,6 +45,10 @@ export default class TimelineComponent extends React.Component {
       console.log("TimelineComponent received DAY_CLONE_EVT with a new plan as payload");
       this.setState({ days: plan.days });
     });
+    this.props.eventbus.on("DAY_MOVE_EVT", (plan) => {
+      console.log("TimelineComponent received DAY_MOVE_EVT with a new plan as payload");
+      this.setState({ days: plan.days });
+    });
     this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
       this.setState({ days: plan.days });
     });
@@ -85,11 +89,11 @@ export default class TimelineComponent extends React.Component {
   }
 
   onMoveLeftClick(evt) {
-    
+    this.props.eventbus.emit("DAY_MOVE_CMD", evt.target.value, -1); 
   }
 
   onMoveRightClick(evt) {
-
+    this.props.eventbus.emit("DAY_MOVE_CMD", evt.target.value, 1);
   }
 
   render() {
