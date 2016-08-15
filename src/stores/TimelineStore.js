@@ -44,26 +44,23 @@ export default class TimelineStore {
     }));
 
     eventbus.on("DAY_EMPTY_CMD", ((dayUuid) => {
-      console.log(`TimelineStore received DAY_EMPTY_CMD with a dayUuid ${dayUuid}`);      
+      console.log(`TimelineStore received DAY_EMPTY_CMD with a dayUuid ${dayUuid}`);
       this.days = removeTrainingFromDay(dayUuid, clone(this.days));
       this.traininginstances = removeTrainingInstance(dayUuid, clone(this.traininginstances));
       const modifiedPlan = this.updatePlans();
       eventbus.emit("DAY_EMPTY_EVT", modifiedPlan);
     }));
 
-    eventbus.on("DAY_CLONE_CMD", ((dayUuid) => {
-      console.log(`TimelineStore received DAY_CLONE_CMD with a dayUuid ${dayUuid}`);      
-      //TODO locate day by uuid, clone it, push training to instances
+    eventbus.on("DAY_CLONE_CMD", ((dayUuid) => {      
       const oldDay = findDay(dayUuid, this.plans[0], this.traininginstances);
       console.log(`Day found: ${JSON.stringify(oldDay)}`);
       const newInstanceUuid = createUuid();
-      const newTraining = oldDay.training;
+      const newTraining = clone(oldDay.training);
       newTraining.uuid = newInstanceUuid;
-      const newDay = {uuid: createUuid(), instanceId: newInstanceUuid};
-       console.log(`TimelineStore creating new day: ${JSON.stringify(newDay)}`); 
-      this.traininginstances.push(augmentDay(newTraining, this.traininginstances));
-      this.days.push(newDay);
-      console.log(`TimelineStore creating new training: ${JSON.stringify(newTraining)}`); 
+      const newDay = clone(oldDay);
+      newDay.uuid = createUuid();            
+      this.traininginstances.push(newTraining);
+      this.days.push(newDay);      
       const modifiedPlan = this.updatePlans();
       eventbus.emit("DAY_CLONE_EVT", modifiedPlan);
     }));

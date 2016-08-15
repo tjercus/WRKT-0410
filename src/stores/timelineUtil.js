@@ -44,12 +44,11 @@ export function findDay(dayUuid, plan, trainings) {
   const _trainings = clone(trainings);
   let found = null;
   _days.forEach((_day, j) => {
-    console.log(`findDay ${JSON.stringify(_day)}`);
     if (_day["uuid"] == dayUuid) {
-      found = augmentDay(_day, _trainings);
-    }
-  });
-  console.log(`findDay ${JSON.stringify(found)}`);
+      console.log(`findDay ${JSON.stringify(_day)}`);
+      found = augmentDay(_day, _trainings);      
+    }    
+  });  
   return found;
 }
 

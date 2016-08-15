@@ -92,9 +92,6 @@ export default class TimelineComponent extends React.Component {
 
     this.state.days.forEach((day, i) => {
       aDay.add(1, "days");
-
-      console.log(`TimelineComponent iterating over days ${JSON.stringify(day)}`);
-
       let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
       let sectionClassNames = [];
       this.isNonWorkday(aDay) ?
