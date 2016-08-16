@@ -109,7 +109,15 @@ export function removeTrainingFromDay(dayUuid, days) {
   return _days;
 }
 
-export function moveDay(dayUuid, positions) {
+/**
+ * Move a day in a list of days by x positions
+ * @param  {String} dayUuid, unique id for a day
+ * @param  {Array<Day>} days
+ * @param  {int} positions, where a positive means 
+ *  move later in time and a negative means move to an earlier spot
+ * @return {Array<Day>} days, list of resorted days
+ */
+export function moveDay(dayUuid, days, positions) {
   let _days = clone(days);
   const isDay = (_day) => {
     return _day.uuid == dayUuid;
