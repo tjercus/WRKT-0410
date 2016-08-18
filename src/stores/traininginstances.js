@@ -1,4 +1,4 @@
- /* Thu Aug 18 2016 13:15:35 GMT+0200 (CEST) */  export const traininginstances = [
+ /* Thu Aug 18 2016 13:17:37 GMT+0200 (CEST) */  export const traininginstances = [
 	{
 		"uuid": "ce331885-d96c-40cb-9a6d-7c3f942400d7",
 		"name": "PFZ, 14km  w 6 @LT",
@@ -2242,6 +2242,51 @@
 			"distance": 16,
 			"duration": "01:28:00",
 			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "c3d2ea7a-b7c7-47e2-8fb5-4625db842e63",
+		"name": "PFZ, 19km  w 11 @LT",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "8",
+				"duration": "00:40:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
+				"distance": "11",
+				"duration": "00:42:10",
+				"pace": "03:50",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 19,
+			"duration": "01:22:10",
+			"pace": "04:19"
+		}
+	},
+	{
+		"uuid": "b75dc110-11f9-4e18-b69f-55ada1035f14",
+		"name": "Easy run 13.5km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "13.5",
+				"duration": "01:09:45",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.5,
+			"duration": "01:09:45",
+			"pace": "05:10"
 		}
 	}
 ]
