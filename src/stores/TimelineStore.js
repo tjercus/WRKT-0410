@@ -65,7 +65,8 @@ export default class TimelineStore {
     }));
 
     eventbus.on("DAY_DELETE_CMD", ((dayUuid) => {
-      this.days = deleteDay(dayUuid, this.days); // TODO also delete traininginstance from instances
+      this.days = deleteDay(dayUuid, this.days);
+      this.traininginstances = removeTrainingInstance(dayUuid, clone(this.traininginstances));
       const modifiedPlan = this.updatePlans();
       eventbus.emit("DAY_DELETE_EVT", modifiedPlan);
     }));

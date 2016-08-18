@@ -20,7 +20,7 @@ export default class TimelineComponent extends React.Component {
     this.onEditClick = this.onEditClick.bind(this);
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-    this.onEmptyClick = this.onEmptyClick.bind(this);
+    //this.onEmptyClick = this.onEmptyClick.bind(this);
     this.onCloneClick = this.onCloneClick.bind(this);
     this.onMoveLeftClick = this.onMoveLeftClick.bind(this);
     this.onMoveRightClick = this.onMoveRightClick.bind(this);
@@ -39,10 +39,10 @@ export default class TimelineComponent extends React.Component {
       console.log("TimelineComponent received DAY_LOAD_EVT with a new plan as payload");
       this.setState({ days: plan.days });
     });
-    this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
-      console.log("TimelineComponent received DAY_EMPTY_EVT with a new plan as payload");
-      this.setState({ days: plan.days });
-    });
+    // this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
+    //   console.log("TimelineComponent received DAY_EMPTY_EVT with a new plan as payload");
+    //   this.setState({ days: plan.days });
+    // });
     this.props.eventbus.on("DAY_CLONE_EVT", (plan) => {
       console.log("TimelineComponent received DAY_CLONE_EVT with a new plan as payload");
       this.setState({ days: plan.days });
@@ -83,10 +83,10 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.emit("PLAN_PERSIST_CMD");
   }
 
-  onEmptyClick(evt) {
-    console.log(`TimelineComponent onEmptyClick with ${evt.target.value}`);
-    this.props.eventbus.emit("DAY_EMPTY_CMD", evt.target.value);
-  }
+  // onEmptyClick(evt) {
+  //   console.log(`TimelineComponent onEmptyClick with ${evt.target.value}`);
+  //   this.props.eventbus.emit("DAY_EMPTY_CMD", evt.target.value);
+  // }
 
   onCloneClick(evt) {
     console.log(`TimelineComponent clone cmd ${evt.target.value}`);
