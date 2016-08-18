@@ -1,4 +1,4 @@
- /* Thu Aug 18 2016 13:04:02 GMT+0200 (CEST) */  export const plans = [
+ /* Thu Aug 18 2016 13:05:39 GMT+0200 (CEST) */  export const plans = [
 	{
 		"uuid": "a83a78aa-5d69-11e6-b3a3-1f76e6105d92",
 		"name": "Pfitzinger 85/18",
@@ -226,6 +226,26 @@
 			{
 				"uuid": "c5cc336e-1100-44f4-ab9a-2c8a7b89deec",
 				"instanceId": "9bcb89cf-1be3-4cec-85b4-c52cac3473bc"
+			},
+			{
+				"uuid": "c53df095-1e2a-4e51-8d1e-4373be0fcc99",
+				"instanceId": "b75dc110-11f9-4e18-b69f-55ada1035f14"
+			},
+			{
+				"uuid": "a41006c9-4096-46b8-8689-f979513e686b",
+				"instanceId": "c7cc7a81-e258-407f-a5a7-0bda89bca613"
+			},
+			{
+				"uuid": "546bcb28-3caf-45c1-97ee-29766d938c80",
+				"instanceId": "b75dc110-11f9-4e18-b69f-55ada1035f14"
+			},
+			{
+				"uuid": "3c96b85b-77a7-42d0-9c8d-0087bd91efc0",
+				"instanceId": "57260410-1935-4c2a-b42d-b7c1b748691f"
+			},
+			{
+				"uuid": "5e5880a4-8c7c-4700-8657-ffd04c1c2182",
+				"instanceId": "df10395f-87c9-46a4-9723-0c017120fb12"
 			}
 		]
 	}
