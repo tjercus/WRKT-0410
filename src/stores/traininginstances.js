@@ -1,4 +1,4 @@
- /* Thu Aug 18 2016 13:00:17 GMT+0200 (CEST) */  export const traininginstances = [
+ /* Thu Aug 18 2016 13:04:02 GMT+0200 (CEST) */  export const traininginstances = [
 	{
 		"uuid": "ce331885-d96c-40cb-9a6d-7c3f942400d7",
 		"name": "PFZ, 14km  w 6 @LT",
@@ -1423,6 +1423,89 @@
 		"total": {
 			"distance": 10,
 			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "600c0146-26ec-4996-be43-1525a7d5a7cb",
+		"name": "PFZ, 19km  w 10 @LT",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "9",
+				"duration": "00:45:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
+				"distance": "10",
+				"duration": "00:38:20",
+				"pace": "03:50",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 19,
+			"duration": "01:23:20",
+			"pace": "04:23"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "9926169a-2da0-4b78-8363-89da02ca6b8f",
+		"name": "Long run 35km",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "35",
+				"duration": "02:46:15",
+				"pace": "04:45",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 35,
+			"duration": "02:46:15",
+			"pace": "04:45"
+		}
+	},
+	{
+		"uuid": "9bcb89cf-1be3-4cec-85b4-c52cac3473bc",
+		"name": "Easy run 16km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "16",
+				"duration": "01:28:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 16,
+			"duration": "01:28:00",
 			"pace": "05:30"
 		}
 	}
