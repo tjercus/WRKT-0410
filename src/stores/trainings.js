@@ -1,4 +1,4 @@
- /* Thu Aug 18 2016 13:03:25 GMT+0200 (CEST) */  export const trainings = [
+ /* Thu Aug 18 2016 13:06:59 GMT+0200 (CEST) */  export const trainings = [
 	{
 		"uuid": "new-training",
 		"name": "New training",
@@ -1947,6 +1947,27 @@
 				"distance": "35",
 				"duration": "02:46:15",
 				"pace": "04:45",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "2bc7eff0-a600-4039-99e3-39efc2e7a66d",
+		"name": "PFZ, 29km  w 19 @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "10",
+				"duration": "00:51:40",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
+				"distance": "19",
+				"duration": "01:19:10",
+				"pace": "04:10",
 				"isValid": true
 			}
 		]
