@@ -1,4 +1,4 @@
- /* Thu Aug 18 2016 12:57:33 GMT+0200 (CEST) */  export const traininginstances = [
+ /* Thu Aug 18 2016 13:00:17 GMT+0200 (CEST) */  export const traininginstances = [
 	{
 		"uuid": "ce331885-d96c-40cb-9a6d-7c3f942400d7",
 		"name": "PFZ, 14km  w 6 @LT",
@@ -1366,6 +1366,63 @@
 		"total": {
 			"distance": 16,
 			"duration": "01:28:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "b75dc110-11f9-4e18-b69f-55ada1035f14",
+		"name": "Easy run 13.5km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "13.5",
+				"duration": "01:09:45",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.5,
+			"duration": "01:09:45",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "c7cc7a81-e258-407f-a5a7-0bda89bca613",
+		"name": "Easy run 24km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "24",
+				"duration": "02:04:00",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 24,
+			"duration": "02:04:00",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
 			"pace": "05:30"
 		}
 	}
