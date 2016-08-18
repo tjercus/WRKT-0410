@@ -59,6 +59,7 @@ export function findDay(dayUuid, plan, trainings) {
  * @param { array<TrainingInstance> } [trainings] [list of augmented TrainingInstance ojects]
  * @return { array<Day> } [description]
  */
+// TODO modify augmentDay to accept a training or trainings
 export function augmentDay(day, trainings) {
   if (trainings.length === 0) {
     throw new Error(`traininginstances should be provided!`);

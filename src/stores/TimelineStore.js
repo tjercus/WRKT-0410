@@ -73,15 +73,16 @@ export default class TimelineStore {
     }));
 
     eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
-      console.log(`TimelineStore: 1. days: ${this.plans[0].days.length}`);
+      console.log(`TimelineStore: TRAINING_CLONE_AS_INSTANCE_CMD 1. days: ${this.plans[0].days.length}`);
       const newInstanceUuid = createUuid();
       training.uuid = newInstanceUuid;
       console.log(`training added to instances ${JSON.stringify(training)}`);
       this.traininginstances.push(training);
-      this.days.push({ uuid: createUuid(), instanceId: newInstanceUuid });
+      // TODO modify augmentDay o accept a training instead of trainings
+      this.days.push(augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid }, this.traininginstances));
       const modifiedPlan = this.updatePlans();
       eventbus.emit("TRAINING_TO_PLAN_EVT", modifiedPlan);
-      console.log(`TimelineStore: 2. days: ${this.plans[0].days.length}`);
+      console.log(`TimelineStore: TRAINING_CLONE_AS_INSTANCE_CMD 2. days: ${this.plans[0].days.length}`);
     }));
   }
 

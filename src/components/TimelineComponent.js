@@ -35,6 +35,7 @@ export default class TimelineComponent extends React.Component {
       }
     });
     this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
+      console.log("TimelineComponent received DAY_LOAD_EVT with a new plan as payload");
       this.setState({ days: plan.days });
     });
     this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
@@ -105,6 +106,9 @@ export default class TimelineComponent extends React.Component {
     let segmentTotalDistance = 0;
 
     this.state.days.forEach((day, i) => {
+      if (!day.training) {
+        throw new Error(`Day [${day.uuid}] should have a property 'training'`);
+      }
       aDay.add(1, "days");
       let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
       let sectionClassNames = [];
