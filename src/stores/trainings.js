@@ -1,4 +1,4 @@
- /* Thu Aug 18 2016 13:20:02 GMT+0200 (CEST) */  export const trainings = [
+ /* Thu Aug 18 2016 13:27:32 GMT+0200 (CEST) */  export const trainings = [
 	{
 		"uuid": "new-training",
 		"name": "New training",
@@ -2003,6 +2003,97 @@
 				"distance": "39",
 				"duration": "03:05:15",
 				"pace": "04:45",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "335af87f-9e78-4802-8ac4-a4a7a71c366e",
+		"name": "PFZ, 5 x 600 @5KP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "80",
+				"distance": "5",
+				"duration": "00:27:30",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "81",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "82",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "92",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "d510be22-0237-4f1f-9513-7c383daa53b2",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "87278f21-8f9d-425b-89f7-92d02138eaac",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "f5fa69ad-d03c-45e6-b00a-a5b8925ef3c1",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "b6aad1e5-41b0-4ccd-a59c-5ae5e8e4e843",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "6bcf93a4-8c68-4d44-ab26-667ad4f1b0cb",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "fc7f748c-3d9f-4551-8226-725499f0ab43",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "592c3a83-0319-4454-82c3-6d1274c5dd2f",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "ec19b145-ed7d-4acc-83a8-f7f021a24aa1",
+				"distance": "5",
+				"duration": "00:27:30",
+				"pace": "05:30",
 				"isValid": true
 			}
 		]
