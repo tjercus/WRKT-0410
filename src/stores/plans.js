@@ -1,4 +1,4 @@
- /* Thu Aug 18 2016 13:35:37 GMT+0200 (CEST) */  export const plans = [
+ /* Thu Aug 18 2016 15:35:00 GMT+0200 (CEST) */  export const plans = [
 	{
 		"uuid": "a83a78aa-5d69-11e6-b3a3-1f76e6105d92",
 		"name": "Pfitzinger 85/18",
@@ -248,6 +248,10 @@
 				"instanceId": "df10395f-87c9-46a4-9723-0c017120fb12"
 			},
 			{
+				"uuid": "37449fe3-e355-4a57-88a3-e505c9607ed7",
+				"instanceId": "fd061ba6-2df3-4efb-87c0-282287b0d054"
+			},
+			{
 				"uuid": "3e73a3b9-7ac3-48fb-8a3d-6ae42b10b3cf",
 				"instanceId": "9bcb89cf-1be3-4cec-85b4-c52cac3473bc"
 			},
@@ -256,24 +260,24 @@
 				"instanceId": "b75dc110-11f9-4e18-b69f-55ada1035f14"
 			},
 			{
-				"uuid": "530b9aef-7aa7-4624-8a27-31905c137fdc",
-				"instanceId": "c7cc7a81-e258-407f-a5a7-0bda89bca613"
+				"uuid": "c3c933d3-4b89-4dbf-82df-d245ac594c9e",
+				"instanceId": "fa44ebb4-8675-4b1b-8913-160d765ea895"
 			},
 			{
 				"uuid": "e9b5c257-4dd2-4a1c-8ccf-7c005e809347",
 				"instanceId": "b75dc110-11f9-4e18-b69f-55ada1035f14"
 			},
 			{
-				"uuid": "05687de9-5050-45a6-bc96-ede2cc83bf64",
-				"instanceId": "57260410-1935-4c2a-b42d-b7c1b748691f"
+				"uuid": "530b9aef-7aa7-4624-8a27-31905c137fdc",
+				"instanceId": "c7cc7a81-e258-407f-a5a7-0bda89bca613"
 			},
 			{
 				"uuid": "8d27418a-ef52-4acd-828b-5ce6bbd1a0d9",
 				"instanceId": "df10395f-87c9-46a4-9723-0c017120fb12"
 			},
 			{
-				"uuid": "37449fe3-e355-4a57-88a3-e505c9607ed7",
-				"instanceId": "fd061ba6-2df3-4efb-87c0-282287b0d054"
+				"uuid": "a61795ac-11c4-4ea9-866f-456627d1efe9",
+				"instanceId": "5a8fce00-30f9-452b-9e6e-67136b0b9863"
 			},
 			{
 				"uuid": "afb4c7f0-0db9-4b3d-8a87-30fd5e2ec233",
@@ -284,16 +288,16 @@
 				"instanceId": "b75dc110-11f9-4e18-b69f-55ada1035f14"
 			},
 			{
-				"uuid": "c3c933d3-4b89-4dbf-82df-d245ac594c9e",
-				"instanceId": "fa44ebb4-8675-4b1b-8913-160d765ea895"
+				"uuid": "8e940e70-2a57-4f01-a007-5e7664cee927",
+				"instanceId": "c7cc7a81-e258-407f-a5a7-0bda89bca613"
+			},
+			{
+				"uuid": "7c721ffe-d0d4-471e-bdd4-d92301ce8f60",
+				"instanceId": "9bcb89cf-1be3-4cec-85b4-c52cac3473bc"
 			},
 			{
 				"uuid": "bc5799eb-1f44-4c30-968a-fdff90166641",
 				"instanceId": "b75dc110-11f9-4e18-b69f-55ada1035f14"
-			},
-			{
-				"uuid": "8e940e70-2a57-4f01-a007-5e7664cee927",
-				"instanceId": "c7cc7a81-e258-407f-a5a7-0bda89bca613"
 			},
 			{
 				"uuid": "ba7a692a-c948-4baf-9c5d-ecf35af679b1",
@@ -302,10 +306,6 @@
 			{
 				"uuid": "620082b4-bcab-42c6-b3bb-fec80268414c",
 				"instanceId": "5a8fce00-30f9-452b-9e6e-67136b0b9863"
-			},
-			{
-				"uuid": "7c721ffe-d0d4-471e-bdd4-d92301ce8f60",
-				"instanceId": "9bcb89cf-1be3-4cec-85b4-c52cac3473bc"
 			},
 			{
 				"uuid": "3bc7ff09-70e2-4ddc-90c3-a2590cb9421c",
