@@ -1,5 +1,5 @@
 import test from "tape";
-import {findPlan, findDay, flattenDays, removeTrainingFromDay} from "../src/stores/timelineUtil";
+import {findPlan, findDay, flattenDays, removeTrainingFromDay, moveDay} from "../src/stores/timelineUtil";
 
 /**
  * Tests for {@link TimelineStore.js}
@@ -115,7 +115,6 @@ test("flattenDays should flatten an augmented array of days", (assert) => {
   assert.end();
 });
 
-// TODO cover removeTrainingFromDay
 test("removeTrainingFromDay should remove an instance from a day in a list of days", (assert) => {
   const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
   const newDays = removeTrainingFromDay(6, plan.days);
@@ -130,5 +129,21 @@ test("removeTrainingFromDay should remove an instance from a day in a list of da
   });
   assert.ok(trainingWasRemoved, "training was not removed from day");
   assert.equal(newDays.length, 9, "same amount of days should remain");
+  assert.end();
+});
+
+test("moveDay should move a day earlier when a negative position integer is provided", (assert) => {
+  const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const days = moveDay(2, plan.days, -1);
+  assert.equal(days[0].uuid, 2, "originally first day should be at position two");
+  assert.equal(days[1].uuid, 1, "originally second day should be at position one");
+  assert.end();
+});
+
+test("moveDay should move a day later when a position integer is provided", (assert) => {
+  const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const days = moveDay(1, plan.days, 1);
+  assert.equal(days[0].uuid, 2, "originally first day should be at position two");
+  assert.equal(days[1].uuid, 1, "originally second day should be at position one");
   assert.end();
 });

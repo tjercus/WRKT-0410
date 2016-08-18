@@ -112,12 +112,15 @@ export default class TimelineComponent extends React.Component {
         sectionClassNames.push("day day-nowork") :
         sectionClassNames.push("day day-work");
 
-      if (this.state.showEasyDays === false && day.training.type === "easy") {
-        sectionClassNames.push("day-easy");
+      if (day.training.type) {
+        if (this.state.showEasyDays === false && day.training.type === "easy") {
+          sectionClassNames.push("day-easy");
+        }
+        if (day.training.type === "workout") {
+          sectionClassNames.push("day-workout");
+        }
       }
-      if (day.training.type === "workout") {
-        sectionClassNames.push("day-workout");
-      }
+
       if (aDay.isSame(moment(new Date()), "day")) {
         sectionClassNames.push("today");
       }
