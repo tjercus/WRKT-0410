@@ -1867,5 +1867,8 @@
 				"isValid": true
 			}
 		]
+	},
+	{"uuid":"2d0d0d65-b8ca-4acc-b0ba-1520e2fe657d","name":"Long run 26km",
+	"segments":[{"uuid":"5663acb8-21b4-11e6-bacc-57515eb97ad5","distance":"26","duration":"02:03:30","pace":"04:45","isValid":true}]
 	}
 ]

@@ -15,6 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Replace 'for loops' by higher order function calls
 - Refactor removeX(uuid, array) functions into one generic in miscUtils
 - Rebuild rest-api to real rest-api (then do not load data from js files on init but from server api)
 - React components should always use a callback when doing stuff after setState
@@ -51,7 +52,6 @@ Based on 'React eventemitter'.
 ### Timeline
 - extract MicrocycleRowComponent
 - testcoverage for segment total calculation et al.
-- Support 'switch days'
 - Support 'multiple trainings per day'
 - feature to add a training to a day, iaw: implement 'edit' button
 - toggle list/calendar modus
