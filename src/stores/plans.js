@@ -1,4 +1,4 @@
- /* Thu Aug 18 2016 15:50:09 GMT+0200 (CEST) */  export const plans = [
+ /* Thu Aug 18 2016 15:51:46 GMT+0200 (CEST) */  export const plans = [
 	{
 		"uuid": "a83a78aa-5d69-11e6-b3a3-1f76e6105d92",
 		"name": "Pfitzinger 85/18",
@@ -312,20 +312,24 @@
 				"instanceId": "9bcb89cf-1be3-4cec-85b4-c52cac3473bc"
 			},
 			{
-				"uuid": "ba7a692a-c948-4baf-9c5d-ecf35af679b1",
-				"instanceId": "df10395f-87c9-46a4-9723-0c017120fb12"
+				"uuid": "f2362267-c7f1-4f18-ab75-54dd0aba775f",
+				"instanceId": "2ae64190-8642-4840-a5ab-1e00e0a0d610"
 			},
 			{
-				"uuid": "620082b4-bcab-42c6-b3bb-fec80268414c",
-				"instanceId": "5a8fce00-30f9-452b-9e6e-67136b0b9863"
+				"uuid": "6bbfc8f9-cb21-4bb4-9913-9a6295d2b4f8",
+				"instanceId": "c7cc7a81-e258-407f-a5a7-0bda89bca613"
+			},
+			{
+				"uuid": "ba7a692a-c948-4baf-9c5d-ecf35af679b1",
+				"instanceId": "df10395f-87c9-46a4-9723-0c017120fb12"
 			},
 			{
 				"uuid": "3bc7ff09-70e2-4ddc-90c3-a2590cb9421c",
 				"instanceId": "b75dc110-11f9-4e18-b69f-55ada1035f14"
 			},
 			{
-				"uuid": "6bbfc8f9-cb21-4bb4-9913-9a6295d2b4f8",
-				"instanceId": "c7cc7a81-e258-407f-a5a7-0bda89bca613"
+				"uuid": "620082b4-bcab-42c6-b3bb-fec80268414c",
+				"instanceId": "5a8fce00-30f9-452b-9e6e-67136b0b9863"
 			},
 			{
 				"uuid": "fa609691-bf73-45e4-aa17-0c0ecb46b23c",
