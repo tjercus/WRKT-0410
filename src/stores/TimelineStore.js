@@ -1,5 +1,5 @@
 import EventEmitter from "eventemitter2";
-import { findPlan, findDay, augmentDay, flattenDays, removeTrainingFromDay, moveDay, cloneDay } from "./timelineUtil";
+import { findPlan, findDay, augmentDay, flattenDays, removeTrainingFromDay, moveDay, cloneDay, deleteDay } from "./timelineUtil";
 import { removeTrainingInstance } from "./trainingUtil";
 import { clone, createUuid } from "./miscUtil";
 
@@ -62,6 +62,12 @@ export default class TimelineStore {
       this.days.push(newDay);
       const modifiedPlan = this.updatePlans();
       eventbus.emit("DAY_CLONE_EVT", modifiedPlan);
+    }));
+
+    eventbus.on("DAY_DELETE_CMD", ((dayUuid) => {
+      this.days = deleteDay(dayUuid, this.days); // TODO also delete traininginstance from instances
+      const modifiedPlan = this.updatePlans();
+      eventbus.emit("DAY_DELETE_EVT", modifiedPlan);
     }));
 
     eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {

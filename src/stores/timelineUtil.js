@@ -137,3 +137,15 @@ export function cloneDay(oldDay) {
   newDay.uuid = createUuid();
   return newDay
 }
+
+export function deleteDay(dayUuid, days) {
+  let _days = clone(days);
+  const isDay = (_day) => {
+    return _day.uuid == dayUuid;
+  }
+  const index = _days.findIndex(isDay);
+  if (index > -1) {
+    _days.splice(index, 1);
+  }
+  return _days;
+}

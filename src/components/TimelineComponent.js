@@ -24,6 +24,7 @@ export default class TimelineComponent extends React.Component {
     this.onCloneClick = this.onCloneClick.bind(this);
     this.onMoveLeftClick = this.onMoveLeftClick.bind(this);
     this.onMoveRightClick = this.onMoveRightClick.bind(this);
+    this.onDeleteClick = this.onDeleteClick.bind(this);
   }
 
   componentDidMount() {
@@ -48,6 +49,9 @@ export default class TimelineComponent extends React.Component {
     });
     this.props.eventbus.on("DAY_MOVE_EVT", (plan) => {
       console.log("TimelineComponent received DAY_MOVE_EVT with a new plan as payload");
+      this.setState({ days: plan.days });
+    });
+    this.props.eventbus.on("DAY_DELETE_EVT", (plan) => {
       this.setState({ days: plan.days });
     });
     this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
@@ -97,6 +101,11 @@ export default class TimelineComponent extends React.Component {
     this.props.eventbus.emit("DAY_MOVE_CMD", evt.target.value, 1);
   }
 
+  onDeleteClick(evt) {
+    console.log(`TimelineComponent delete cmd ${evt.target.value}`);
+    this.props.eventbus.emit("DAY_DELETE_CMD", evt.target.value);
+  }
+
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
@@ -137,7 +146,7 @@ export default class TimelineComponent extends React.Component {
             <p className="training-name">{day.training.name}</p>
             <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>
             <button className="button-small button-flat" onClick={this.onMoveRightClick} value={day.uuid}>&rarr;</button>
-            <button className="button-small button-flat" onClick={this.onEmptyClick} value={day.uuid}>empty</button>
+            <button className="button-small button-flat" onClick={this.onDeleteClick} value={day.uuid}>del</button>            
             <button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>clone</button>
             <button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
             <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
