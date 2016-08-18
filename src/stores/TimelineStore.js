@@ -1,5 +1,5 @@
 import EventEmitter from "eventemitter2";
-import { findPlan, findDay, augmentDay, flattenDays, removeTrainingFromDay, moveDay } from "./timelineUtil";
+import { findPlan, findDay, augmentDay, flattenDays, removeTrainingFromDay, moveDay, cloneDay } from "./timelineUtil";
 import { removeTrainingInstance } from "./trainingUtil";
 import { clone, createUuid } from "./miscUtil";
 
@@ -28,7 +28,6 @@ export default class TimelineStore {
     this.days = [];
 
     eventbus.on("PLAN_LOAD_CMD", ((planId) => {
-      console.log(`TimelineStore: received PLAN_LOAD_CMD for default plan ${planId}`);
       let plan = findPlan(planId, this.plans, this.traininginstances);
       this.uuid = planId;
       this.name = plan.name;
@@ -44,7 +43,6 @@ export default class TimelineStore {
     }));
 
     eventbus.on("DAY_EMPTY_CMD", ((dayUuid) => {
-      console.log(`TimelineStore received DAY_EMPTY_CMD with a dayUuid ${dayUuid}`);
       this.days = removeTrainingFromDay(dayUuid, clone(this.days));
       this.traininginstances = removeTrainingInstance(dayUuid, clone(this.traininginstances));
       const modifiedPlan = this.updatePlans();
@@ -52,37 +50,28 @@ export default class TimelineStore {
     }));
 
     eventbus.on("DAY_MOVE_CMD", ((dayUuid, positions) => {
-      console.log(`TimelineStore received DAY_MOVE_CMD with a dayUuid ${dayUuid} and positions ${positions}`);
       this.days = moveDay(dayUuid, this.days, positions);
       const modifiedPlan = this.updatePlans();
       eventbus.emit("DAY_MOVE_EVT", modifiedPlan);
     }));
 
-    eventbus.on("DAY_CLONE_CMD", ((dayUuid) => {      
+    eventbus.on("DAY_CLONE_CMD", ((dayUuid) => {
       const oldDay = findDay(dayUuid, this.plans[0], this.traininginstances);
-      console.log(`Day found: ${JSON.stringify(oldDay)}`);
-      const newInstanceUuid = createUuid();
-      const newTraining = clone(oldDay.training);
-      newTraining.uuid = newInstanceUuid;
-      const newDay = clone(oldDay);
-      newDay.uuid = createUuid();            
-      this.traininginstances.push(newTraining);
-      this.days.push(newDay);      
+      const newDay = cloneDay(oldDay);
+      this.traininginstances.push(newDay.training);
+      this.days.push(newDay);
       const modifiedPlan = this.updatePlans();
       eventbus.emit("DAY_CLONE_EVT", modifiedPlan);
     }));
 
     eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
-      console.log(`TimelineStore: TRAINING_CLONE_AS_INSTANCE_CMD 1. days: ${this.plans[0].days.length}`);
       const newInstanceUuid = createUuid();
       training.uuid = newInstanceUuid;
-      console.log(`training added to instances ${JSON.stringify(training)}`);
       this.traininginstances.push(training);
-      // TODO modify augmentDay o accept a training instead of trainings
+      // TODO modify augmentDay to accept a training instead of trainings
       this.days.push(augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid }, this.traininginstances));
       const modifiedPlan = this.updatePlans();
       eventbus.emit("TRAINING_TO_PLAN_EVT", modifiedPlan);
-      console.log(`TimelineStore: TRAINING_CLONE_AS_INSTANCE_CMD 2. days: ${this.plans[0].days.length}`);
     }));
   }
 

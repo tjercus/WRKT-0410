@@ -30,7 +30,7 @@ let plans = [];
 let plan = {
   "uuid": "acc3d1b8-test-4d70-dda3-d0e885f516f4",
   "name": "10k plan #1",
-  "days": [    
+  "days": [
     {"uuid": "1", "instanceId": "2a63ef62-test-4b92-8971-59db6e58394c"}
   ]
 }

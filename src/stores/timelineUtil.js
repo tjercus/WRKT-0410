@@ -47,9 +47,9 @@ export function findDay(dayUuid, plan, trainings) {
   _days.forEach((_day, j) => {
     if (_day["uuid"] == dayUuid) {
       console.log(`findDay ${JSON.stringify(_day)}`);
-      found = augmentDay(_day, _trainings);      
-    }    
-  });  
+      found = augmentDay(_day, _trainings);
+    }
+  });
   return found;
 }
 
@@ -127,4 +127,13 @@ export function moveDay(dayUuid, days, positions) {
   if (index > -1) {
     return pureSwap(_days, index, index + positions);
   }
+}
+
+export function cloneDay(oldDay) {
+  const newInstanceUuid = createUuid();
+  const newTraining = clone(oldDay.training);
+  newTraining.uuid = newInstanceUuid;
+  const newDay = clone(oldDay);
+  newDay.uuid = createUuid();
+  return newDay
 }
