@@ -1,4 +1,4 @@
- /* Thu Aug 18 2016 13:27:32 GMT+0200 (CEST) */  export const trainings = [
+ /* Fri Aug 19 2016 08:01:22 GMT+0200 (CEST) */  export const trainings = [
 	{
 		"uuid": "new-training",
 		"name": "New training",
@@ -2094,6 +2094,20 @@
 				"distance": "5",
 				"duration": "00:27:30",
 				"pace": "05:30",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "0cc4ec62-7eee-4b5f-89d9-edd6921c4ab3",
+		"name": "Long run 29km",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "29",
+				"duration": "02:17:45",
+				"pace": "04:45",
 				"isValid": true
 			}
 		]
