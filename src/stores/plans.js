@@ -1,4 +1,4 @@
- /* Fri Aug 19 2016 08:53:34 GMT+0200 (CEST) */  export const plans = [
+ /* Fri Aug 19 2016 08:57:07 GMT+0200 (CEST) */  export const plans = [
 	{
 		"uuid": "a83a78aa-5d69-11e6-b3a3-1f76e6105d92",
 		"name": "Pfitzinger 85/18",
@@ -410,6 +410,10 @@
 			{
 				"uuid": "6575ef63-164a-4c42-9920-97feb4982898",
 				"instanceId": "df10395f-87c9-46a4-9723-0c017120fb12"
+			},
+			{
+				"uuid": "5adc0be2-f272-4794-980e-0e4688fd0515",
+				"instanceId": "94cc53e2-e63a-499f-bb31-cef9758bf10f"
 			}
 		]
 	}

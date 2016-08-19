@@ -1,6 +1,19 @@
  /* Fri Aug 19 2016 08:33:45 GMT+0200 (CEST) */  export const trainings = [
-	{
+ {
 		"uuid": "new-training",
+		"name": "New training",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": 0,
+				"duration": "00:00:00",
+				"pace": "00:00"
+			}
+		]
+	},
+	{
+		"uuid": "be599892-65f1-11e6-a47f-c3835d08dddf",
 		"name": "PFZ, 19 km w 6 x 1k @5KP",
 		"type": "workout",
 		"segments": [
