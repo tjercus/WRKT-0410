@@ -1,4 +1,4 @@
- /* Fri Aug 19 2016 08:07:40 GMT+0200 (CEST) */  export const trainings = [
+ /* Fri Aug 19 2016 08:19:05 GMT+0200 (CEST) */  export const trainings = [
 	{
 		"uuid": "new-training",
 		"name": "PFZ, 19 km w 5 x 1k @5KP",
@@ -2193,6 +2193,41 @@
 				"distance": "29",
 				"duration": "02:17:45",
 				"pace": "04:45",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "d6389748-d9cf-46e3-af6e-b63bd61d540c",
+		"name": "PFZ, 32 km w 23 km @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "9",
+				"duration": "00:46:30",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "e82941b7-4ed5-46c3-b7a4-9120f710df80",
+				"distance": "23",
+				"duration": "01:35:50",
+				"pace": "04:10",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "57423a17-274c-40c5-be39-e3f29261d966",
+		"name": "Easy run 22km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "22",
+				"duration": "01:53:40",
+				"pace": "05:10",
 				"isValid": true
 			}
 		]
