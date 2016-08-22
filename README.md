@@ -17,7 +17,6 @@ Based on 'React eventemitter'.
 ### App
 - Replace 'for loops' by higher order function calls
 - Refactor removeX(uuid, array) functions into one generic in miscUtils
-- Rebuild rest-api to real rest-api (then do not load data from js files on init but from server api)
 - React components should always use a callback when doing stuff after setState
 - smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
 - Introduce Flow for type checking
@@ -33,6 +32,7 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
+- Multi column traininglist instead of one long list
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline
 - validate should be more tolerant for invalid segments caluculated by rounding on seconds
@@ -50,6 +50,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- add barchart view for a plan
 - extract MicrocycleRowComponent
 - testcoverage for segment total calculation et al.
 - Support 'multiple trainings per day'

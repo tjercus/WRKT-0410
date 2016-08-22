@@ -35,6 +35,10 @@ export default class TrainingStore {
       pace: "00:00"
     };
 
+    eventbus.on("TRAININGS_FETCHED_EVT", (trainings) => {
+      this.trainings = trainings;
+    });
+
     eventbus.on("TRAININGS_PERSIST_CMD", () => {
       // TODO check if currently loaded training should be updated to this.trainings first
       this.updateTrainingInStore(this.getCurrentlyLoadedTraining(), this.trainings);

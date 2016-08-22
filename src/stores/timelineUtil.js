@@ -11,10 +11,16 @@ import pureSwap from "pure-swap";
 /**
  * Return a plan
  */
-export function findPlan(uuid, plans = [], trainingInstances = []) {
+export function findPlan(uuid, plans, trainingInstances) {
   //console.log(`timelineUtil.findPlan: ${JSON.stringify(trainingInstances[0])}`);
   if (uuid === null || uuid.length !== 36) {
     throw new Error(`findPlan says uuid is not ok: ${uuid}`);
+  }
+  if (plans === null || plans.length === 0) {
+    throw new Error(`findPlan requires a plan`);
+  }
+  if (trainingInstances === null || trainingInstances.length === 0) {
+    throw new Error(`findPlan trainingInstances required`);
   }
   const _plans = clone(plans);
   const _trainings = clone(trainingInstances);

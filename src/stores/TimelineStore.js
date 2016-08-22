@@ -27,6 +27,13 @@ export default class TimelineStore {
     this.uuid = null;
     this.days = [];
 
+    eventbus.on("PLANS_FETCHED_EVT", (plans) => {
+      this.plans = plans;
+    });
+    eventbus.on("TRAININGINSTANCES_FETCHED_EVT", (traininginstances) => {
+      this.traininginstances = traininginstances;
+    });
+
     eventbus.on("PLAN_LOAD_CMD", ((planId) => {
       let plan = findPlan(planId, this.plans, this.traininginstances);
       this.uuid = planId;

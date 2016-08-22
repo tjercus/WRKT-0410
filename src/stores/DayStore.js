@@ -15,6 +15,13 @@ export default class DayStore {
     this.traininginstances = traininginstances;
     this.day = {};
 
+    eventbus.on("PLANS_FETCHED_EVT", (plans) => {
+      this.plans = plans;
+    });
+    eventbus.on("TRAININGINSTANCES_FETCHED_EVT", (traininginstances) => {
+      this.traininginstances = traininginstances;
+    });
+
     eventbus.on("DAY_LOAD_CMD", ((dayUuid) => {
       // caching
       let day = this.day;

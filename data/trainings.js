@@ -1,4 +1,4 @@
- /* Fri Aug 19 2016 08:33:45 GMT+0200 (CEST) */  export const trainings = [
+[
  {
 		"uuid": "new-training",
 		"name": "New training",

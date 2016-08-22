@@ -14,9 +14,15 @@ import NotificationComponent from "./NotificationComponent";
 
 import { clone } from "../stores/miscUtil";
 
-import { plans } from "../stores/plans";
-import { trainings } from "../stores/trainings";
-import { traininginstances } from "../stores/traininginstances";
+import loadRemoteData from "../stores/RemoteDataService";
+
+//import { plans } from "../stores/plans";
+//import { trainings } from "../stores/trainings";
+//import { traininginstances } from "../stores/traininginstances";
+//
+const plans = [];
+const trainings = [];
+const traininginstances = [];
 
 export default class AppComponent extends React.Component {
 
@@ -26,13 +32,13 @@ export default class AppComponent extends React.Component {
       this.eventbus = this.props.eventbus;
     } else {
       this.eventbus = new EventEmitter({wildcard: true, maxListeners: 999999});
-    }
-
-    //console.log("AppComponent: " + JSON.stringify(this.plans));
+    }   
 
     new DayStore(this.eventbus, clone(plans), clone(traininginstances));
     new TrainingStore(this.eventbus, clone(trainings));
     new TimelineStore(this.eventbus, clone(plans), clone(traininginstances));
+
+    loadRemoteData(this.eventbus);
   }
   
   componentDidMount() {

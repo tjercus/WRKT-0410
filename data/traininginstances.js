@@ -1,4 +1,4 @@
- /* Fri Aug 19 2016 08:53:34 GMT+0200 (CEST) */  export const traininginstances = [
+[
 	{
 		"uuid": "ce331885-d96c-40cb-9a6d-7c3f942400d7",
 		"name": "PFZ, 14km  w 6 @LT",

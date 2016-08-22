@@ -23,6 +23,10 @@ export default class TrainingListComponent extends React.Component {
       }
     });
 
+    this.props.eventbus.on("TRAININGS_FETCHED_EVT", (trainings) => {
+      this.setState({trainings: trainings});
+    });
+
     this.props.eventbus.on("TRAINING_LIST_EVT", (trainings) => {
       if (trainings === undefined || trainings === null) {
         throw new Error("TRAINING_LIST_EVT was caught without a list of trainings");
