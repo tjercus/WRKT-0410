@@ -15,6 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Re-implement writes on res-api
 - Replace 'for loops' by higher order function calls
 - Refactor removeX(uuid, array) functions into one generic in miscUtils
 - React components should always use a callback when doing stuff after setState
@@ -50,7 +51,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- add barchart view for a plan
+- add barchart view for a plan (using Draught of Raphael)
 - extract MicrocycleRowComponent
 - testcoverage for segment total calculation et al.
 - Support 'multiple trainings per day'

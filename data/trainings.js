@@ -1,5 +1,5 @@
 [
- {
+	{
 		"uuid": "new-training",
 		"name": "New training",
 		"type": "easy",
@@ -2353,6 +2353,20 @@
 				"distance": "30",
 				"duration": "02:35:00",
 				"pace": "05:10",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "ccc082f4-4a70-42b1-a117-5181943bf121",
+		"name": "26k @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "47",
+				"distance": "26",
+				"duration": "01:48:20",
+				"pace": "04:10",
 				"isValid": true
 			}
 		]
