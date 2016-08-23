@@ -769,13 +769,15 @@
 	},
 	{
 		"uuid": "9cf64a2b-0e60-4d10-9512-a6fd7510c421",
-		"name": "16k @MP",
+		"name": "42.2k @MP",
 		"type": "workout",
 		"segments": [
 			{
 				"uuid": "47",
-				"distance": 16,
-				"pace": "@MP"
+				"distance": "42.2",
+				"duration": "02:55:50",
+				"pace": "04:10",
+				"isValid": true
 			}
 		]
 	},
@@ -2366,6 +2368,96 @@
 				"uuid": "47",
 				"distance": "26",
 				"duration": "01:48:20",
+				"pace": "04:10",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "9361601e-80a2-4500-9bf7-4e6de8e74274",
+		"name": "Long run 27km",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "27",
+				"duration": "02:08:15",
+				"pace": "04:45",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "c6b2ff67-574a-4ad3-85a3-2cfebbaa7242",
+		"name": "PFZ, 13.5 km w 3 x 1600 @5KP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "4",
+				"duration": "00:22:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "a84c4f84-3991-4ce7-9090-4a51963d6e4a",
+				"distance": "1.6",
+				"duration": "00:05:41",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "a3c65a5a-5190-440b-8c3e-bfd8ef578321",
+				"duration": "00:02:30",
+				"pace": "05:30",
+				"isValid": true,
+				"distance": 0.455
+			},
+			{
+				"uuid": "d191312e-7793-4445-8177-b9b8a4069b3c",
+				"distance": "1.6",
+				"duration": "00:05:41",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "98dd8e6d-2b19-4bc1-821d-9de00edd5dbc",
+				"distance": 0.455,
+				"duration": "00:02:30",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "8a820505-7350-41e9-8f2c-80e5248e01fd",
+				"distance": "1.6",
+				"duration": "00:05:41",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "b5b25566-c5be-413c-b28b-f21b1ef18f63",
+				"distance": "3.8",
+				"duration": "00:20:54",
+				"pace": "05:30",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "886f5407-2749-4dc6-b537-5f3953a2ef9c",
+		"name": "PFZ, 13.5km  w 3 @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "10.5",
+				"duration": "00:54:15",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
+				"distance": "3",
+				"duration": "00:12:30",
 				"pace": "04:10",
 				"isValid": true
 			}

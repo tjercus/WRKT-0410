@@ -26,8 +26,21 @@ server.get("/plans", restify.serveStatic({
 }));
 
 server.put('/trainings', function(req, res, next) {
-  console.log("PUT trainings");
-  var filename = "./data/trainings.js";
+  writeFileFromRequestbody("./data/trainings.js", req, res);
+  return next();
+});
+
+server.put('/plans', function(req, res, next) {  
+  writeFileFromRequestbody("./data/plans.js", req, res);
+  return next();
+});
+
+server.put('/traininginstances', function(req, res, next) {
+  writeFileFromRequestbody("./data/traininginstances.js", req, res);
+  return next();
+});
+
+function writeFileFromRequestbody(filename, req, res) {
   fs.writeFile(filename, req.body, (err) => {
     if (err) {      
       res.writeHead(500);
@@ -37,11 +50,10 @@ server.put('/trainings', function(req, res, next) {
         'Content-Type': 'application/json; charset=utf-8'
       });
       res.end();
-      console.log("saved " + filename + " @ " + new Date());
+      console.log(`saved ${filename} @ ${new Date()}`);
     }
-  });  
-  return next();
-});
+  });
+};
 
 function corsHandler(req, res, next) {  
   res.setHeader('Access-Control-Allow-Origin', '*');

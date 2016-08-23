@@ -3402,5 +3402,888 @@
 			"duration": "01:07:45",
 			"pace": "05:01"
 		}
+	},
+	{
+		"uuid": "f3ff312c-4aca-4729-8365-462457403cd1",
+		"name": "Long run 35km",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "35",
+				"duration": "02:46:15",
+				"pace": "04:45",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 35,
+			"duration": "02:46:15",
+			"pace": "04:45"
+		}
+	},
+	{
+		"uuid": "cebb35b1-a44b-4998-ae70-aff9bbf37119",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "d564005f-78ea-4332-b5f0-038556a5785d",
+		"name": "PFZ, 5 x 600 @5KP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "80",
+				"distance": "5",
+				"duration": "00:27:30",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "81",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "82",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "92",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "d510be22-0237-4f1f-9513-7c383daa53b2",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "87278f21-8f9d-425b-89f7-92d02138eaac",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "f5fa69ad-d03c-45e6-b00a-a5b8925ef3c1",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "b6aad1e5-41b0-4ccd-a59c-5ae5e8e4e843",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "6bcf93a4-8c68-4d44-ab26-667ad4f1b0cb",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "fc7f748c-3d9f-4551-8226-725499f0ab43",
+				"distance": "0.6",
+				"duration": "00:02:08",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "592c3a83-0319-4454-82c3-6d1274c5dd2f",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "ec19b145-ed7d-4acc-83a8-f7f021a24aa1",
+				"distance": "5",
+				"duration": "00:27:30",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.91,
+			"duration": "01:10:40",
+			"pace": "05:05"
+		}
+	},
+	{
+		"uuid": "f356f7ae-2dfe-4445-8793-5faec4f15042",
+		"name": "Easy run 23km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "23",
+				"duration": "01:58:50",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 23,
+			"duration": "01:58:50",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "df10395f-87c9-46a4-9723-0c017120fb12",
+		"name": "Easy run with strides",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "12.5",
+				"duration": "01:04:35",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "db81f196-3f52-46d1-8e91-846633575d3f",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b4efc063-1040-4427-9b8e-11ec1cedbeed",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "f0313c56-18b2-41aa-9c88-f5e71a363990",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "10f73895-35cc-4765-81b6-aa5675d123f8",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "3e92f72f-111a-4e4f-9b98-001b2a380889",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "fa192a93-a58f-4b9b-b7cd-8427e29426b8",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "5d4b0eb5-9e29-4f93-b200-152c1c014640",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b445327d-7f83-455f-84ad-4502591d81aa",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "d5f35b51-b78b-472d-bc64-ea1e9d438739",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b8e4ffff-e4ed-46d5-9608-1c637870447b",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.499999999999996,
+			"duration": "01:07:45",
+			"pace": "05:01"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "48519518-9f2d-46d0-931c-485696d30590",
+		"name": "10k @10KP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "10",
+				"duration": "00:36:50",
+				"pace": "03:41",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:36:50",
+			"pace": "03:41"
+		}
+	},
+	{
+		"uuid": "395b0716-3075-4786-8bf7-ea9f8f781f05",
+		"name": "Long run 27km",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "27",
+				"duration": "02:08:15",
+				"pace": "04:45",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 27,
+			"duration": "02:08:15",
+			"pace": "04:45"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "df10395f-87c9-46a4-9723-0c017120fb12",
+		"name": "Easy run with strides",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "12.5",
+				"duration": "01:04:35",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "db81f196-3f52-46d1-8e91-846633575d3f",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b4efc063-1040-4427-9b8e-11ec1cedbeed",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "f0313c56-18b2-41aa-9c88-f5e71a363990",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "10f73895-35cc-4765-81b6-aa5675d123f8",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "3e92f72f-111a-4e4f-9b98-001b2a380889",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "fa192a93-a58f-4b9b-b7cd-8427e29426b8",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "5d4b0eb5-9e29-4f93-b200-152c1c014640",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b445327d-7f83-455f-84ad-4502591d81aa",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "d5f35b51-b78b-472d-bc64-ea1e9d438739",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b8e4ffff-e4ed-46d5-9608-1c637870447b",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.499999999999996,
+			"duration": "01:07:45",
+			"pace": "05:01"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "7317b349-9961-4bbc-82db-bbf7920332bf",
+		"name": "PFZ, 13.5 km w 3 x 1600 @5KP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "4",
+				"duration": "00:22:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "a84c4f84-3991-4ce7-9090-4a51963d6e4a",
+				"distance": "1.6",
+				"duration": "00:05:41",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "a3c65a5a-5190-440b-8c3e-bfd8ef578321",
+				"duration": "00:02:30",
+				"pace": "05:30",
+				"isValid": true,
+				"distance": 0.455
+			},
+			{
+				"uuid": "d191312e-7793-4445-8177-b9b8a4069b3c",
+				"distance": "1.6",
+				"duration": "00:05:41",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "98dd8e6d-2b19-4bc1-821d-9de00edd5dbc",
+				"distance": 0.455,
+				"duration": "00:02:30",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "8a820505-7350-41e9-8f2c-80e5248e01fd",
+				"distance": "1.6",
+				"duration": "00:05:41",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"uuid": "b5b25566-c5be-413c-b28b-f21b1ef18f63",
+				"distance": "3.8",
+				"duration": "00:20:54",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.509999999999998,
+			"duration": "01:04:57",
+			"pace": "04:48"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "df10395f-87c9-46a4-9723-0c017120fb12",
+		"name": "Easy run with strides",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "12.5",
+				"duration": "01:04:35",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "db81f196-3f52-46d1-8e91-846633575d3f",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b4efc063-1040-4427-9b8e-11ec1cedbeed",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "f0313c56-18b2-41aa-9c88-f5e71a363990",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "10f73895-35cc-4765-81b6-aa5675d123f8",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "3e92f72f-111a-4e4f-9b98-001b2a380889",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "fa192a93-a58f-4b9b-b7cd-8427e29426b8",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "5d4b0eb5-9e29-4f93-b200-152c1c014640",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b445327d-7f83-455f-84ad-4502591d81aa",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "d5f35b51-b78b-472d-bc64-ea1e9d438739",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b8e4ffff-e4ed-46d5-9608-1c637870447b",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.499999999999996,
+			"duration": "01:07:45",
+			"pace": "05:01"
+		}
+	},
+	{
+		"uuid": "57260410-1935-4c2a-b42d-b7c1b748691f",
+		"name": "Easy run 21km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "21",
+				"duration": "01:48:30",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 21,
+			"duration": "01:48:30",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "9bcb89cf-1be3-4cec-85b4-c52cac3473bc",
+		"name": "Easy run 16km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "16",
+				"duration": "01:28:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 16,
+			"duration": "01:28:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "c3d2ea7a-b7c7-47e2-8fb5-4625db842e63",
+		"name": "PFZ, 19km  w 11 @LT",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "8",
+				"duration": "00:40:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
+				"distance": "11",
+				"duration": "00:42:10",
+				"pace": "03:50",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 19,
+			"duration": "01:22:10",
+			"pace": "04:19"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "aa4b6b8e-0d38-4ecc-9071-22073c2303d0",
+		"name": "PFZ, 13.5km  w 3 @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "10.5",
+				"duration": "00:54:15",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "d425ce26-5274-467b-963a-19880687fb48",
+				"distance": "3",
+				"duration": "00:12:30",
+				"pace": "04:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.5,
+			"duration": "01:06:45",
+			"pace": "04:57"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "df10395f-87c9-46a4-9723-0c017120fb12",
+		"name": "Easy run with strides",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "12.5",
+				"duration": "01:04:35",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "db81f196-3f52-46d1-8e91-846633575d3f",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b4efc063-1040-4427-9b8e-11ec1cedbeed",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "f0313c56-18b2-41aa-9c88-f5e71a363990",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "10f73895-35cc-4765-81b6-aa5675d123f8",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "3e92f72f-111a-4e4f-9b98-001b2a380889",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "fa192a93-a58f-4b9b-b7cd-8427e29426b8",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "5d4b0eb5-9e29-4f93-b200-152c1c014640",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b445327d-7f83-455f-84ad-4502591d81aa",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "d5f35b51-b78b-472d-bc64-ea1e9d438739",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			},
+			{
+				"uuid": "b8e4ffff-e4ed-46d5-9608-1c637870447b",
+				"distance": "0.1",
+				"duration": "00:00:19",
+				"pace": "03:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.499999999999996,
+			"duration": "01:07:45",
+			"pace": "05:01"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "94cc53e2-e63a-499f-bb31-cef9758bf10f",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "e32afbcf-5a9d-47bf-be48-66b5e83a259d",
+		"name": "42.2k @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "47",
+				"distance": "42.2",
+				"duration": "02:55:50",
+				"pace": "04:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 42.2,
+			"duration": "02:55:50",
+			"pace": "04:10"
+		}
 	}
 ]
