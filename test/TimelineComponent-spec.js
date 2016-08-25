@@ -21,10 +21,16 @@ let traininginstances = [
       {
         "uuid": "48",
         "distance": 6,
-        "pace": "05:00"
+        "pace": "05:00",
+        "duration": "00:30:00"
       }
-    ]
-  },
+    ],
+    "total": {        
+      "distance": 6,
+      "pace": "05:00",
+      "duration": "00:30:00"
+    }    
+  }
 ];
 let plans = [];
 let plan = {
@@ -34,11 +40,14 @@ let plan = {
     {"uuid": "1", "instanceId": "2a63ef62-test-4b92-8971-59db6e58394c"}
   ]
 }
+plan.days[0].training = traininginstances[0];
 plans.push(plan);
 
 test("TimelineComponent should respond to PLAN_LOAD_EVT and render it", (assert) => {
   onSpy.reset();
   const component = mount(<TimelineComponent eventbus={eventbus} name="Timeline" from="menu-item-timeline" />);
+  //eventbus.emit("TRAININGS_FETCHED_EVT", traininginstances);
+  console.log(plan);
   eventbus.emit("PLAN_LOAD_EVT", plan);
   assert.ok(onSpy.calledWith("PLAN_LOAD_EVT"), "component should catch PLAN_LOAD_EVT");
   //assert.equal(component.first().html(), "blah", "html is broken");
