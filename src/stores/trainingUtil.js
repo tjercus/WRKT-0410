@@ -169,8 +169,7 @@ export function addSegment(segment, segments, overwriteUuid) {
 	  (overwriteUuid !== undefined && overwriteUuid === true)) {
 		console.log("addSegment overwriting uuid");
     _segment.uuid = createUuid();
-  }
-  console.log(`addSegment ${_segment.uuid}`);
+  }  
   const augmentedSegment = augmentSegmentData(_segment);
   _segments.push(augmentedSegment);
   console.log(`addSegment final (${_segments.length}) ${JSON.stringify(_segments)}`);

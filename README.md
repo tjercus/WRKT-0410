@@ -15,11 +15,11 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- Re-implement writes on res-api
+- Autotest
 - Replace 'for loops' by higher order function calls
 - Refactor removeX(uuid, array) functions into one generic in miscUtils
 - React components should always use a callback when doing stuff after setState
-- smokestack or Galen (http://blog.wercker.com/2014/12/23/Testing-in-Node.html)
+- functional testing with nightowl or cypress
 - Introduce Flow for type checking
 - TrainingListComponent should supports categories as accordion or tagcloud
 - use const instead of let when possible

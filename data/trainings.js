@@ -2462,5 +2462,96 @@
 				"isValid": true
 			}
 		]
+	},
+	{
+		"uuid": "2425ad09-bce0-449c-a225-5d09688fc80a",
+		"name": "Jared Ward: 5 x 3 km @ MP-10s",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "2",
+				"duration": "00:10:20",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "ce613392-49de-47ce-ba5a-14d5553fb460",
+				"distance": "3",
+				"duration": "00:12:00",
+				"pace": "04:00",
+				"isValid": true
+			},
+			{
+				"uuid": "880eb548-dcaf-49f9-b2ab-a86bb03cdb0d",
+				"distance": 0.545,
+				"duration": "00:03:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "883f917a-4ffe-4d70-bdc7-d50be906a455",
+				"distance": "3",
+				"duration": "00:12:00",
+				"pace": "04:00",
+				"isValid": true
+			},
+			{
+				"uuid": "00dd5d5e-ec93-4c9b-98cf-b5f22620c6db",
+				"distance": 0.545,
+				"duration": "00:03:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "56aa68c2-84b6-4015-8270-66c3008dd8c6",
+				"distance": "3",
+				"duration": "00:12:00",
+				"pace": "04:00",
+				"isValid": true
+			},
+			{
+				"uuid": "a2c73c06-6dd1-4273-93d3-c1b1b2baaf25",
+				"distance": 0.545,
+				"duration": "00:03:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "f5951786-ea72-4aed-9148-ec035aed53f3",
+				"distance": "3",
+				"duration": "00:12:00",
+				"pace": "04:00",
+				"isValid": true
+			},
+			{
+				"uuid": "2245901c-4634-40ca-bd98-740c9e33057d",
+				"distance": 0.545,
+				"duration": "00:03:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "f660d6c4-95a6-4491-8baa-6f299c2ffffb",
+				"distance": "3",
+				"duration": "00:12:00",
+				"pace": "04:00",
+				"isValid": true
+			},
+			{
+				"uuid": "85956ecf-9780-4f1e-bf73-ce94724809bf",
+				"distance": 0.545,
+				"duration": "00:03:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "1bd1ecb6-8a49-47f3-a8ef-8473e60a7e8b",
+				"distance": "2",
+				"duration": "00:10:20",
+				"pace": "05:10",
+				"isValid": true
+			}
+		]
 	}
 ]
