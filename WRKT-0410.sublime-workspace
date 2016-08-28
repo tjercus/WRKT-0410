@@ -523,39 +523,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 2122,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stores/TimelineStore.js",
-			"settings":
-			{
-				"buffer_size": 4918,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stores/trainingUtil.js",
-			"settings":
-			{
-				"buffer_size": 7135,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/NotificationComponent.js",
-			"settings":
-			{
-				"buffer_size": 2497,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/AppComponent.js",
-			"settings":
-			{
-				"buffer_size": 2614,
+				"buffer_size": 2257,
 				"line_ending": "Unix"
 			}
 		},
@@ -563,15 +531,15 @@
 			"file": "src/stores/timelineUtil.js",
 			"settings":
 			{
-				"buffer_size": 2854,
+				"buffer_size": 4849,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/components/TimelineComponent.js",
+			"file": "src/stores/trainingUtil.js",
 			"settings":
 			{
-				"buffer_size": 4663,
+				"buffer_size": 7632,
 				"line_ending": "Unix"
 			}
 		},
@@ -579,7 +547,15 @@
 			"file": "test/trainingUtil-spec.js",
 			"settings":
 			{
-				"buffer_size": 12438,
+				"buffer_size": 14550,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/miscUtil-spec.js",
+			"settings":
+			{
+				"buffer_size": 3192,
 				"line_ending": "Unix"
 			}
 		},
@@ -603,7 +579,7 @@
 			"file": "test/SegmentComponent-spec.js",
 			"settings":
 			{
-				"buffer_size": 2037,
+				"buffer_size": 2039,
 				"line_ending": "Unix"
 			}
 		},
@@ -611,23 +587,7 @@
 			"file": "test/TimelineStore-spec.js",
 			"settings":
 			{
-				"buffer_size": 1612,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stores/plans.js",
-			"settings":
-			{
-				"buffer_size": 7067,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stores/traininginstances.js",
-			"settings":
-			{
-				"buffer_size": 33596,
+				"buffer_size": 1512,
 				"line_ending": "Unix"
 			}
 		},
@@ -635,7 +595,7 @@
 			"file": "test/timelineUtil-spec.js",
 			"settings":
 			{
-				"buffer_size": 3895,
+				"buffer_size": 5662,
 				"line_ending": "Unix"
 			}
 		}
@@ -695,15 +655,21 @@
 	},
 	"expanded_folders":
 	[
-		"/home/tvalentijn/projects/lab/WRKT-0410/src",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/images",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test"
+		"/home/tjerk/projects/WRKT-0410/src",
+		"/home/tjerk/projects/WRKT-0410/src/stores",
+		"/home/tjerk/projects/WRKT-0410/test",
+		"/home/tjerk/projects/WRKT-0410/test/e2e",
+		"/home/tjerk/projects/WRKT-0410/data"
 	],
 	"file_history":
 	[
+		"/home/tjerk/projects/WRKT-0410/src/components/TimelineComponent.js",
+		"/home/tjerk/projects/WRKT-0410/src/stores/TimelineStore.js",
+		"/home/tjerk/projects/WRKT-0410/src/components/NotificationComponent.js",
+		"/home/tjerk/projects/WRKT-0410/src/components/AppComponent.js",
+		"/home/tjerk/projects/WRKT-0410/data/plans.js",
+		"/home/tjerk/projects/WRKT-0410/src/stores/plans.js",
+		"/home/tjerk/projects/WRKT-0410/src/stores/traininginstances.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/DayStore.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainingUtil.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/plans.js",
@@ -1052,7 +1018,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -1061,82 +1027,85 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2122,
+						"buffer_size": 2257,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1452,
-								1452
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/stores/TimelineStore.js",
+					"file": "src/stores/timelineUtil.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4918,
+						"buffer_size": 4849,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								710,
-								710
+								2002,
+								2002
 							]
 						],
 						"settings":
 						{
+							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 295.0,
+						"translation.y": 739.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
 					"file": "src/stores/trainingUtil.js",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7135,
+						"buffer_size": 7632,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								869,
-								869
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"side_bar_folders_auto_load_folder": 1,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 90.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1144,162 +1113,68 @@
 				},
 				{
 					"buffer": 3,
-					"file": "src/components/NotificationComponent.js",
+					"file": "test/trainingUtil-spec.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2497,
+						"buffer_size": 14550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								980,
-								980
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"side_bar_folders_auto_load_folder": 1,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "test/miscUtil-spec.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3192,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"side_bar_folders_auto_load_folder": 1,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/components/AppComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2614,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1267,
-								1267
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
 					"buffer": 5,
-					"file": "src/stores/timelineUtil.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2854,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								711,
-								711
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/components/TimelineComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4663,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1289,
-								1289
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 280.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 7,
-			"sheets":
-			[
-				{
-					"buffer": 7,
-					"file": "test/trainingUtil-spec.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12438,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								12155,
-								12155
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6233.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
 					"file": "test/TrainingStore-spec.js",
 					"semi_transient": false,
 					"settings":
@@ -1317,19 +1192,20 @@
 						],
 						"settings":
 						{
+							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1977.0,
+						"translation.y": 432.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 6,
 					"file": "test/TrainingComponent-spec.js",
 					"semi_transient": false,
 					"settings":
@@ -1347,32 +1223,33 @@
 						],
 						"settings":
 						{
+							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1665.0,
+						"translation.y": 1356.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 7,
 					"file": "test/SegmentComponent-spec.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2037,
+						"buffer_size": 2039,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1818,
-								1818
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1386,120 +1263,66 @@
 						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "test/TimelineStore-spec.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1612,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1612,
-								1612
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 207.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "src/stores/plans.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7067,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6895,
-								6895
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "src/stores/traininginstances.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 33596,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8091,
-								8091
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 7302.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "test/timelineUtil-spec.js",
+					"buffer": 8,
+					"file": "test/TimelineStore-spec.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3895,
+						"buffer_size": 1512,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3773,
-								3773
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "test/timelineUtil-spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5662,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3355,
+								3355
+							]
+						],
+						"settings":
+						{
+							"side_bar_folders_auto_load_folder": 1,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 975.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
@@ -1525,18 +1348,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.500813285465,
 			1.0
 		],
 		"rows":

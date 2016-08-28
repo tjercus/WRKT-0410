@@ -1,5 +1,7 @@
 import test from "tape";
-import {findPlan, findDay, flattenDays, removeTrainingFromDay, augmentDay, moveDay} from "../src/stores/timelineUtil";
+import {findPlan, findDay, flattenDays, removeTrainingFromDay, augmentDay, 
+  cloneDay, deleteDay, moveDay} 
+from "../src/stores/timelineUtil";
 
 /**
  * Tests for {@link TimelineStore.js}
@@ -8,18 +10,18 @@ let plans = [{
   "uuid": "91556686-232b-11e6-8b5a-5bcc30180900",
   "name": "10k plan #1",
   "days": [    
-    {"uuid": 1, "instanceId": "blah-10"},
-    {"uuid": 2, "instanceId": "blah-11"},
-    {"uuid": 3, "instanceId": "blah-12"},
-    {"uuid": 4, "instanceId": "blah-13"},
-    {"uuid": 5, "instanceId": "blah-14"},
-    {"uuid": 6, "instanceId": "blah-15"},
-    {"uuid": 7, "trainings": [
+    {"uuid": "1", "instanceId": "blah-10"},
+    {"uuid": "2", "instanceId": "blah-11"},
+    {"uuid": "3", "instanceId": "blah-12"},
+    {"uuid": "4", "instanceId": "blah-13"},
+    {"uuid": "5", "instanceId": "blah-14"},
+    {"uuid": "6", "instanceId": "blah-15"},
+    {"uuid": "7", "trainings": [
       {"instanceId": "blah-16"},
       {"instanceId": "blah-19"}]
     },
-    {"uuid": 8, "instanceId": "blah-17"},
-    {"uuid": 9, "instanceId": "blah-18"}
+    {"uuid": "8", "instanceId": "blah-17"},
+    {"uuid": "9", "instanceId": "blah-18"}
   ]
 }];
 
@@ -105,8 +107,8 @@ test("augmentDay should augment a day with two traininginstances", (assert) => {
   const day = augmentDay(plans[0].days[6], trainingInstances);
   assert.ok(typeof day === "object");  
   assert.notOk(day === null);
-  assert.equal(day.trainings[0].name, "blah-16");
-  assert.equal(day.trainings[1].name, "blah-19");
+  assert.equal(day.trainings[0].name, "name-16");
+  assert.equal(day.trainings[1].name, "name-19");
   assert.equal(day.trainings.length, 2, "not enough trainings (" + day.trainings.length + ") where found");
   assert.end();
 });
@@ -116,7 +118,7 @@ test("findDay should find a day by nr", (assert) => {
   const day = findDay(2, plans[0], trainingInstances);
   assert.notOk(day === null);
   assert.ok(typeof day === "object");    
-  assert.equal(day.uuid, 2);
+  assert.equal(day.uuid, "2");
   assert.equal(day.training.uuid, "blah-11");
   assert.equal(day.training.name, "name11");
   assert.end();
@@ -127,7 +129,7 @@ test("findDay should find a day by nr", (assert) => {
 test("flattenDays should flatten an augmented array of days", (assert) => {
   const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
   const flattened = flattenDays(plan.days);
-  assert.equal(flattened[4].uuid, 5);
+  assert.equal(flattened[4].uuid, "5");
   assert.equal(flattened[4].instanceId, "blah-14");
   assert.equal(flattened.length, plan.days.length, "resulting array should be of the same size");
   assert.end();
@@ -150,18 +152,54 @@ test("removeTrainingFromDay should remove an instance from a day in a list of da
   assert.end();
 });
 
+test("cloneDay should clone a day if it is augmented", (assert) => {
+  const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const day = plan.days[0];
+  const cloner = cloneDay(day);
+  assert.notEqual(cloner.uuid, day.uuid, "clone should have it's own uuid");
+  assert.notEqual(cloner.training.uuid, day.training.uuid, "clones training should have its own uuid");
+  assert.equal(cloner.training.name, day.training.name, "clones training should have same name");
+  assert.end();
+});
+
+test("cloneDay should clone a day if it has multiple trainings", (assert) => {
+  const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const day = plan.days[6];
+  const cloner = cloneDay(day);
+  assert.notEqual(cloner.uuid, day.uuid, "clone should have it's own uuid");
+  assert.notEqual(cloner.trainings[0].uuid, day.trainings[0].uuid, "clones first training should have its own uuid");
+  assert.equal(cloner.trainings[0].name, day.trainings[0].name, "clones first training should have same name");
+  assert.end();
+});
+
+
+test("deleteDay should delete a day when it exists", (assert) => {
+  const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const days = deleteDay("4", plan.days);
+  assert.equal(days.length, plans[0].days.length - 1, "should be one day less");
+  assert.end();
+});
+
+test("deleteDay should not delete a day when it does not exists", (assert) => {
+  const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
+  const days = deleteDay("1297-not-exists-3878", plan.days);
+  assert.equal(days.length, plans[0].days.length, "should be same nr of days as before");
+  assert.end();
+});
+
 test("moveDay should move a day earlier when a negative position integer is provided", (assert) => {
   const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
   const days = moveDay(2, plan.days, -1);
-  assert.equal(days[0].uuid, 2, "originally first day should be at position two");
-  assert.equal(days[1].uuid, 1, "originally second day should be at position one");
+  assert.equal(days[0].uuid, "2", "originally first day should be at position two");
+  assert.equal(days[1].uuid, "1", "originally second day should be at position one");
   assert.end();
 });
 
 test("moveDay should move a day later when a position integer is provided", (assert) => {
   const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
   const days = moveDay(1, plan.days, 1);
-  assert.equal(days[0].uuid, 2, "originally first day should be at position two");
-  assert.equal(days[1].uuid, 1, "originally second day should be at position one");
+  assert.equal(days[0].uuid, "2", "originally first day should be at position two");
+  assert.equal(days[1].uuid, "1", "originally second day should be at position one");
   assert.end();
 });
+

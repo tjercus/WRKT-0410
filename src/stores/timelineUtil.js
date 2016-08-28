@@ -65,7 +65,6 @@ export function findDay(dayUuid, plan, trainings) {
  * @param { array<TrainingInstance> } [trainings] [list of augmented TrainingInstance ojects]
  * @return { array<Day> } [description]
  */
-// TODO modify augmentDay to accept a training or trainings
 export function augmentDay(day, trainings) {
   if (trainings.length === 0) {
     throw new Error(`traininginstances should be provided!`);
@@ -73,11 +72,19 @@ export function augmentDay(day, trainings) {
   const _day = clone(day);
   const _trainings = clone(trainings);
   let uuid = (typeof _day.instanceId === "string") ? _day.instanceId : null;
-  _day.training = findTraining(uuid, _trainings);
-  if (_day.training === null) {
-    throw new Error(`training not found ${uuid} for day ${day.uuid}`);
+  if (_day.hasOwnProperty("trainings")) {
+    // calculate total per training when multiple trainings
+    for (let i = 0, len = _day.trainings.length; i < len; i++) {
+      _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
+      _day.trainings[i].total = makeTrainingTotal(_day.trainings[i].segments);
+    }
+  } else {
+    _day.training = findTraining(uuid, _trainings);
+    if (_day.training === null) {
+      throw new Error(`training not found ${uuid} for day ${day.uuid}`);
+    }
+    _day.training.total = makeTrainingTotal(_day.training.segments);
   }
-  _day.training.total = makeTrainingTotal(_day.training.segments);
   return _day;
 }
 
@@ -91,7 +98,16 @@ export function flattenDays(days) {
   const _days = clone(days);
   const flattenedDays = [];
   _days.forEach((_day, j) => {
-    flattenedDays.push({ uuid: _day.uuid, instanceId: _day.training.uuid });
+    // support multiple
+    if (_day.hasOwnProperty("trainings")) {
+      let flattenedTrainings = [];
+      for (let i = 0, len = _day.trainings.length; i < len; i++) {
+        flattenedTrainings.push({ instanceId: _day.trainings[i].instanceId });
+      }
+      flattenedDays.push({ uuid: _day.uuid, trainings: flattenedTrainings });
+    } else {
+      flattenedDays.push({ uuid: _day.uuid, instanceId: _day.training.uuid });
+    }
   });
   return flattenedDays;
 }
@@ -136,10 +152,24 @@ export function moveDay(dayUuid, days, positions) {
 }
 
 export function cloneDay(oldDay) {
-  const newInstanceUuid = createUuid();
-  const newTraining = clone(oldDay.training);
-  newTraining.uuid = newInstanceUuid;
   const newDay = clone(oldDay);
+  // TODO support multiple
+  if (oldDay.hasOwnProperty("trainings")) {
+    let clonedTrainings = [];
+    for (let i = 0, len = oldDay.trainings.length; i < len; i++) {
+      const newInstanceUuid = createUuid();
+      const newTraining = clone(oldDay.trainings[i]);
+      newTraining.uuid = newInstanceUuid;
+      clonedTrainings.push(newTraining);
+    }
+    newDay.trainings = clonedTrainings;   
+  } else {
+    const newInstanceUuid = createUuid();
+    const newTraining = clone(oldDay.training);
+    newTraining.uuid = newInstanceUuid;
+    newDay.training = newTraining;
+  }
+  
   newDay.uuid = createUuid();
   return newDay
 }
