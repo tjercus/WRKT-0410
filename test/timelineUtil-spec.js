@@ -1,5 +1,5 @@
 import test from "tape";
-import {findPlan, findDay, flattenDays, removeTrainingFromDay, moveDay} from "../src/stores/timelineUtil";
+import {findPlan, findDay, flattenDays, removeTrainingFromDay, augmentDay, moveDay} from "../src/stores/timelineUtil";
 
 /**
  * Tests for {@link TimelineStore.js}
@@ -14,9 +14,12 @@ let plans = [{
     {"uuid": 4, "instanceId": "blah-13"},
     {"uuid": 5, "instanceId": "blah-14"},
     {"uuid": 6, "instanceId": "blah-15"},
-    {"uuid": 7, "instanceId": "blah-16"},        
+    {"uuid": 7, "trainings": [
+      {"instanceId": "blah-16"},
+      {"instanceId": "blah-19"}]
+    },
     {"uuid": 8, "instanceId": "blah-17"},
-    {"uuid": 9, "instanceId": "blah-18"}    
+    {"uuid": 9, "instanceId": "blah-18"}
   ]
 }];
 
@@ -76,6 +79,11 @@ let trainingInstances = [{
     "name": "name-18",
     "type": "workout",
     "segments": []
+},{
+    "uuid": "blah-19",
+    "name": "name-19",
+    "type": "workout",
+    "segments": []
 }];
 
 test("findPlan should find and augment the default plan", (assert) => {
@@ -92,6 +100,16 @@ test("findPlan should find and augment the default plan", (assert) => {
 });
 
 // TODO exception flows
+
+test("augmentDay should augment a day with two traininginstances", (assert) => {
+  const day = augmentDay(plans[0].days[6], trainingInstances);
+  assert.ok(typeof day === "object");  
+  assert.notOk(day === null);
+  assert.equal(day.trainings[0].name, "blah-16");
+  assert.equal(day.trainings[1].name, "blah-19");
+  assert.equal(day.trainings.length, 2, "not enough trainings (" + day.trainings.length + ") where found");
+  assert.end();
+});
 
 test("findDay should find a day by nr", (assert) => {
   //console.log("@ " + JSON.stringify(plans[0]));  
