@@ -112,21 +112,21 @@ export function flattenDays(days) {
   return flattenedDays;
 }
 
-export function removeTrainingFromDay(dayUuid, days) {
+export function removeTrainingsFromDay(dayUuid, days) {
   let _days = clone(days);
   const isDay = (_day) => {
     return _day.uuid == dayUuid;
   }
   const index = _days.findIndex(isDay);
   if (index > -1) {
-    _days[index].training = {
-      uuid: createUuid(),
-      name: "No Run",
-      distance: 0,
-      duration: "00:00:00",
-      pace: "00:00",
-      type: "",
-      total: { distance: 0, duration: "00:00:00", pace: "00:00" }
+    if (_days[index].hasOwnProperty("trainings")) {
+      const newTrainings = [];
+      // TODO for now hardcoded to 2 trainings per day
+      newTrainings.push(createNullTraining());
+      newTrainings.push(createNullTraining());
+      _days[index].trainings = newTrainings;
+    } else {
+      _days[index].training = createNullTraining();
     };
   }
   return _days;
@@ -162,14 +162,14 @@ export function cloneDay(oldDay) {
       newTraining.uuid = newInstanceUuid;
       clonedTrainings.push(newTraining);
     }
-    newDay.trainings = clonedTrainings;   
+    newDay.trainings = clonedTrainings;
   } else {
     const newInstanceUuid = createUuid();
     const newTraining = clone(oldDay.training);
     newTraining.uuid = newInstanceUuid;
     newDay.training = newTraining;
   }
-  
+
   newDay.uuid = createUuid();
   return newDay
 }
@@ -184,4 +184,16 @@ export function deleteDay(dayUuid, days) {
     _days.splice(index, 1);
   }
   return _days;
+}
+
+const createNullTraining = () => {
+  return {
+    uuid: createUuid(),
+    name: "No Run",
+    distance: 0,
+    duration: "00:00:00",
+    pace: "00:00",
+    type: "",
+    total: { distance: 0, duration: "00:00:00", pace: "00:00" }
+  }
 }

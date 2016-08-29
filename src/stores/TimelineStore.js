@@ -1,5 +1,5 @@
 import EventEmitter from "eventemitter2";
-import { findPlan, findDay, augmentDay, flattenDays, removeTrainingFromDay, moveDay, cloneDay, deleteDay } from "./timelineUtil";
+import { findPlan, findDay, augmentDay, flattenDays, removeTrainingsFromDay, moveDay, cloneDay, deleteDay } from "./timelineUtil";
 import { removeTrainingInstance } from "./trainingUtil";
 import { clone, createUuid } from "./miscUtil";
 
@@ -50,7 +50,7 @@ export default class TimelineStore {
     }));
 
     eventbus.on("DAY_EMPTY_CMD", ((dayUuid) => {
-      this.days = removeTrainingFromDay(dayUuid, clone(this.days));
+      this.days = removeTrainingsFromDay(dayUuid, clone(this.days));
       this.traininginstances = removeTrainingInstance(dayUuid, clone(this.traininginstances));
       const modifiedPlan = this.updatePlans();
       eventbus.emit("DAY_EMPTY_EVT", modifiedPlan);
@@ -72,8 +72,15 @@ export default class TimelineStore {
     }));
 
     eventbus.on("DAY_DELETE_CMD", ((dayUuid) => {
-      this.days = deleteDay(dayUuid, this.days);
-      this.traininginstances = removeTrainingInstance(dayUuid, clone(this.traininginstances));
+      // TODO move to util
+      const oldDay = findDay(dayUuid, this.plans[0], this.traininginstances);
+      if (oldDay.hasOwnProperty("trainings")) {
+        this.traininginstances = removeTrainingInstance(oldDay.trainings[0].instanceId, clone(this.traininginstances));
+        this.traininginstances = removeTrainingInstance(oldDay.trainings[1].instanceId, clone(this.traininginstances));
+      } else {
+        this.traininginstances = removeTrainingInstance(oldDay.training.instanceId, clone(this.traininginstances));
+      }
+      this.days = deleteDay(dayUuid, this.days);      
       const modifiedPlan = this.updatePlans();
       eventbus.emit("DAY_DELETE_EVT", modifiedPlan);
     }));
