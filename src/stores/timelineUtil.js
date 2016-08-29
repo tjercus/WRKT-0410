@@ -153,9 +153,10 @@ export function moveDay(dayUuid, days, positions) {
 
 export function cloneDay(oldDay) {
   const newDay = clone(oldDay);
-  // TODO support multiple
+  newDay.uuid = createUuid();
   if (oldDay.hasOwnProperty("trainings")) {
     let clonedTrainings = [];
+    // TODO replace forloop
     for (let i = 0, len = oldDay.trainings.length; i < len; i++) {
       const newInstanceUuid = createUuid();
       const newTraining = clone(oldDay.trainings[i]);
@@ -168,9 +169,7 @@ export function cloneDay(oldDay) {
     const newTraining = clone(oldDay.training);
     newTraining.uuid = newInstanceUuid;
     newDay.training = newTraining;
-  }
-
-  newDay.uuid = createUuid();
+  }  
   return newDay
 }
 

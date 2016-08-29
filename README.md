@@ -15,7 +15,6 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- Autotest
 - Replace 'for loops' by higher order function calls
 - Refactor removeX(uuid, array) functions into one generic in miscUtils
 - React components should always use a callback when doing stuff after setState
@@ -33,6 +32,7 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
+- trainingUtil.js: move segment stuff to segmentUtil.js
 - Multi column traininglist instead of one long list
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline

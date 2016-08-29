@@ -1,15 +1,17 @@
 import test from "tape";
 import {
-  findTraining,
-  makeTrainingTotal,
+  findTraining,  
   updateTraining,
+  removeTrainingInstance,
+  removeTrainingInstancesForDay,
+  makeTrainingTotal,
   augmentSegmentData,
   isDirtySegment,
   canAugment,
   isValidSegment,  
   parseDuration,
   removeSegment,
-  addSegment
+  addSegment  
 } from "../src/stores/trainingUtil";
 
 /**
@@ -24,6 +26,14 @@ const trainings = [{
 },{
     uuid: "blah-12",
     name: "name12"
+}];
+
+const days = [{
+  uuid: "day-uuid-123",
+  trainings: [
+    { instanceId: "blah-10" },
+    { instanceId: "blah-12" }
+  ]
 }];
 
 const segments = [
@@ -513,3 +523,16 @@ test("updateTraining should find and update training by uuid", (assert) => {
   assert.end();
 });
 
+test("removeTrainingInstancesForDay should delete all instances linked in a day", (assert) => {
+  assert.equal(trainings.length, 3, "initial size of list");
+  const trainingInstances = removeTrainingInstancesForDay(days[0], trainings);
+  assert.equal(trainingInstances.length, 1, "two out of three should be removed");
+  assert.end();
+});
+
+test("removeTrainingInstance should not delete when day is not found", (assert) => {
+  assert.equal(trainings.length, 3, "initial size of list");
+  const trainingInstances = removeTrainingInstance("123-not-exists-456", trainings);
+  assert.equal(trainingInstances.length, 3, "nothing should be removed");
+  assert.end();
+});

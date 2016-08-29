@@ -45,6 +45,27 @@ export function removeTrainingInstance(uuid, instances) {
 }
 
 /**
+ * Remove all traininginstances from the list that are associated to a give day
+ * @param  {[type]} day               [description]
+ * @param  {[type]} traininginstances [description]
+ * @return {Array<TrainingInstance>}	list with traininginstances
+ */
+export function removeTrainingInstancesForDay(day, traininginstances) {
+	if (day === null || !day.hasOwnProperty("uuid") 
+		|| (!day.hasOwnProperty("training") && !day.hasOwnProperty("trainings"))) {
+		throw new Error("a valid day should be provided");
+	}
+  let _traininginstances = [];
+  if (day.hasOwnProperty("trainings")) {
+    _traininginstances = removeTrainingInstance(day.trainings[0].instanceId, clone(traininginstances));
+    _traininginstances = removeTrainingInstance(day.trainings[1].instanceId, clone(_traininginstances));
+  } else {
+    _traininginstances = removeTrainingInstance(day.training.instanceId, clone(traininginstances));
+  }
+  return _traininginstances;
+}
+
+/**
  * @param array
  * @return Object
  */
