@@ -51,10 +51,13 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- adapt TimelineComponent to plural trainings (react stucture, styling)
+- add daytotal to daycomponent
+- edit feature should open in a modal popup
 - add barchart view for a plan (using Draught of Raphael)
 - extract MicrocycleRowComponent
 - testcoverage for segment total calculation et al.
-- Support 'multiple trainings per day'
+- training detailView ('showcard' with icons etc.) feature from button, to quickly glance a training
 - feature to add a training to a day, iaw: implement 'edit' button
 - toggle list/calendar modus
 - better display of a day, ex: training type icons and colors

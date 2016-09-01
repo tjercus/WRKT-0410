@@ -250,7 +250,7 @@ div.days-list section.day {
   margin: 0.2em;
   padding: 0.2em;
   width: auto;
-  height: 8em;
+  min-height: 8em;
 }
 div.days-list section.day p {
   margin-bottom: 0.1em;

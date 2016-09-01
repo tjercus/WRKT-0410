@@ -115,8 +115,8 @@ export default class TimelineComponent extends React.Component {
     let segmentTotalDistance = 0;
 
     this.state.days.forEach((day, i) => {
-      if (!day.training) {
-        throw new Error(`Day [${day.uuid}] should have a property 'training'`);
+      if (!day.trainings) {
+        throw new Error(`Day [${day.uuid}] should have a plural property 'trainings'`);
       }
       aDay.add(1, "days");
       let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
@@ -125,35 +125,47 @@ export default class TimelineComponent extends React.Component {
         sectionClassNames.push("day day-nowork") :
         sectionClassNames.push("day day-work");
 
-      if (day.training.type) {
-        if (this.state.showEasyDays === false && day.training.type === "easy") {
-          sectionClassNames.push("day-easy");
-        }
-        if (day.training.type === "workout") {
-          sectionClassNames.push("day-workout");
-        }
-      }
-
       if (aDay.isSame(moment(new Date()), "day")) {
         sectionClassNames.push("today");
       }
 
-      // TODO support multiple trainings per day
+      let dayElements = [];
+
+      day.trainings.forEach((training, j) => {
+
+        let trainingClassNames = [];
+
+        if (training.type) {
+          if (this.state.showEasyDays === false && training.type === "easy") {
+            trainingClassNames.push("day-easy");
+          }
+          if (training.type === "workout") {
+            trainingClassNames.push("day-workout");
+          }
+        }
+
+        dayElements.push(
+          <section key={j + "-" + createUuid()} className={trainingClassNames.join(" ")}>
+            <p className="training-name">{training.name}</p>
+            <p>{"("}{(training.total.distance).toFixed(2)} {" km)"}</p>
+          </section>
+        );
+
+        segmentTotalDistance += training.total.distance;
+      });
+      
       // TODO extract into MicrocycleRowComponent
       microcycleElements.push(
         <section key={i + "-" + createUuid()} className={sectionClassNames.join(" ")}>
             <h3>{i+1}. {dateStr}</h3>
-            <p className="training-name">{day.training.name}</p>
-            <p>{"("}{(day.training.total.distance).toFixed(2)} {" km)"}</p>
+            {dayElements}
             <button className="button-small button-flat" onClick={this.onMoveRightClick} value={day.uuid}>&rarr;</button>
             <button className="button-small button-flat" onClick={this.onDeleteClick} value={day.uuid}>del</button>            
             <button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>clone</button>
             <button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
             <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
           </section>
-      );
-
-      segmentTotalDistance += day.training.total.distance;
+      );      
 
       // TODO, change to html table
       if (i % 7 === 6) {

@@ -794,22 +794,27 @@
 	},
 	{
 		"uuid": "9bcb89cf-1be3-4cec-85b4-c52cac3473bc",
-		"name": "Easy run 16km",
+		"name": "Easy run 10km",
 		"type": "easy",
 		"segments": [
 			{
 				"uuid": "46",
-				"distance": "16",
-				"duration": "01:28:00",
-				"pace": "05:30",
-				"isValid": true
+				"distance": "10",				
+				"pace": "05:30"				
 			}
-		],
-		"total": {
-			"distance": 16,
-			"duration": "01:28:00",
-			"pace": "05:30"
-		}
+		]
+	},
+	{
+		"uuid": "e7b0e5ca-6e79-11e6-be8a-237383950577",
+		"name": "Easy run 6km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "e86997b4-6e79-11e6-90b4-a7b2dd40cd65",
+				"distance": "6",
+				"pace": "05:30"				
+			}
+		]
 	},
 	{
 		"uuid": "4e3afab9-55cf-4c64-b6ae-a4446eca94e2",

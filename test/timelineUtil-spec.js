@@ -103,15 +103,23 @@ test("findPlan should find and augment the default plan", (assert) => {
   assert.ok(typeof plan === "object");
   assert.notOk(plan === null);
   assert.equal(plan.name, "10k plan #1");
-  assert.equal(plan.days.length, 9, "not enough days (" + plan.days.length + ") where found");
-  assert.equal(plan.days[0].training.name, "name10", "training for a day has incorrect name");
-  assert.equal(plan.days[0].training.uuid, "blah-10", "training for a day has incorrect uuid");
-  assert.equal(plan.days[0].training.segments.length, 2, "training for a day has no segments");
-  assert.equal(plan.days[0].training.segments[0].uuid, "99", "training segment has no uuid");
+  assert.equal(plan.days.length, 9, "not enough days (" + plan.days.length + ") where found"); 
   assert.end();
 });
 
 // TODO exception flows
+
+test("augmentDay should augment a day with one traininginstance into a list of one trainings", (assert) => {
+  const day = augmentDay(plans[0].days[2], trainingInstances);
+  assert.ok(typeof day === "object");
+  assert.notOk(day === null);
+  assert.notOk(day.hasOwnProperty("training"));
+  assert.ok(day.hasOwnProperty("trainings"));
+  assert.equal(day.trainings[0].name, "name12");
+  assert.ok(day.trainings[0].hasOwnProperty("total"));
+  assert.equal(day.trainings.length, 1, "not enough trainings (" + day.trainings.length + ") where found");
+  assert.end();
+});
 
 test("augmentDay should augment a day with two traininginstances", (assert) => {
   const day = augmentDay(plans[0].days[6], trainingInstances);
@@ -124,13 +132,10 @@ test("augmentDay should augment a day with two traininginstances", (assert) => {
 });
 
 test("findDay should find a day by nr", (assert) => {
-  //console.log("@ " + JSON.stringify(plans[0]));  
   const day = findDay(2, plans[0], trainingInstances);
   assert.notOk(day === null);
   assert.ok(typeof day === "object");
-  assert.equal(day.uuid, "2");
-  assert.equal(day.training.uuid, "blah-11");
-  assert.equal(day.training.name, "name11");
+  assert.equal(day.uuid, "2");  
   assert.end();
 });
 
@@ -140,19 +145,21 @@ test("flattenDays should flatten an augmented array of days", (assert) => {
   const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
   const flattened = flattenDays(plan.days);
   assert.equal(flattened[4].uuid, "5");
-  assert.equal(flattened[4].instanceId, "blah-14");
+  assert.notOk(flattened[4].trainings[0].hasOwnProperty("uuid"));
+  assert.ok(flattened[4].trainings[0].hasOwnProperty("instanceId"));
+  assert.equal(flattened[4].trainings[0].instanceId, "blah-14");
   assert.equal(flattened.length, plan.days.length, "resulting array should be of the same size");
   assert.end();
 });
 
-test("removesTrainingsFromDay should remove an instance from a day in a list of days", (assert) => {
+test("removeTrainingsFromDay should remove an instance from a day in a list of days", (assert) => {
   const plan = findPlan("91556686-232b-11e6-8b5a-5bcc30180900", plans, trainingInstances);
   const newDays = removeTrainingsFromDay("6", plan.days);
 
   let trainingWasRemoved = false;
   newDays.forEach((_day) => {
     if (_day.uuid == 6) {
-      if (_day.training.name === "No Run") {
+      if (_day.trainings[0].name === "No Run") {
         trainingWasRemoved = true;
       }
     }
@@ -174,8 +181,8 @@ test("cloneDay should clone a day if it is augmented", (assert) => {
   const day = plan.days[0];
   const cloner = cloneDay(day);
   assert.notEqual(cloner.uuid, day.uuid, "clone should have it's own uuid");
-  assert.notEqual(cloner.training.uuid, day.training.uuid, "clones training should have its own uuid");
-  assert.equal(cloner.training.name, day.training.name, "clones training should have same name");
+  assert.notEqual(cloner.trainings[0].uuid, day.trainings[0].uuid, "clones training should have its own uuid");
+  assert.equal(cloner.trainings[0].name, day.trainings[0].name, "clones training should have same name");
   assert.end();
 });
 
