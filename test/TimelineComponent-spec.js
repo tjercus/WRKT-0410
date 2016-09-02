@@ -76,3 +76,5 @@ test("TimelineComponent should render plan with multiple trainings per day in it
   assert.end();
 });
 
+// TODO test that a day has a unique date and nr in the header
+

@@ -269,10 +269,14 @@ div.days-list section.day-work {
 div.days-list section.day-nowork {
   background-color: #ffe6e6;
 }
-div.days-list section.day-easy {
+div.days-list section.training {
+  padding-bottom: 0.3em;
+  border-bottom: 3px solid white;
+}
+div.days-list section.training-easy {
   background-color: white;  
 }
-div.days-list section.day-workout p.training-name {
+div.days-list section.training-workout p.training-name {
   font-weight: bold;
   color: red;
 }

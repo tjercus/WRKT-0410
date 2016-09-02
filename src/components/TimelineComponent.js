@@ -2,9 +2,10 @@ import React from "react";
 import EventEmitter from "eventemitter2";
 import moment from "moment";
 
+import DayComponent from "./DayComponent";
+
 import { clone, createUuid } from "../stores/miscUtil";
 
-const DAY_HEADER_DATE_FORMAT = "dddd, DD-MM-YYYY";
 const DEFAULT_PLAN_ID = "a83a78aa-5d69-11e6-b3a3-1f76e6105d92";
 
 export default class TimelineComponent extends React.Component {
@@ -16,15 +17,10 @@ export default class TimelineComponent extends React.Component {
       showEasyDays: true,
       days: []
     };
-    //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
-    this.onEditClick = this.onEditClick.bind(this);
+    //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);    
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-    //this.onEmptyClick = this.onEmptyClick.bind(this);
-    this.onCloneClick = this.onCloneClick.bind(this);
-    this.onMoveLeftClick = this.onMoveLeftClick.bind(this);
-    this.onMoveRightClick = this.onMoveRightClick.bind(this);
-    this.onDeleteClick = this.onDeleteClick.bind(this);
+    //this.onEmptyClick = this.onEmptyClick.bind(this);    
   }
 
   componentDidMount() {
@@ -58,13 +54,7 @@ export default class TimelineComponent extends React.Component {
       this.setState({ days: plan.days });
     });
     setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD", DEFAULT_PLAN_ID), 1500);
-  }
-
-  // TODO extract method
-  // TODO days from config
-  isNonWorkday(aDay) {
-    return (aDay.day() === 0 || aDay.day() === 3 || aDay.day() === 6);
-  }
+  }  
 
   // onCycleLengthButtonClick(evt) {    
   //  this.setState({cycleLength: evt.target.value});
@@ -72,12 +62,7 @@ export default class TimelineComponent extends React.Component {
 
   onHideEasyRunsButtonClick(evt) {
     this.setState({ showEasyDays: false });
-  }
-
-  onEditClick(evt) {
-    console.log(`TimelineComponent edit ${evt.target.value}`);
-    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
-  }
+  }  
 
   onSaveButtonClick(evt) {
     this.props.eventbus.emit("PLAN_PERSIST_CMD");
@@ -86,90 +71,42 @@ export default class TimelineComponent extends React.Component {
   // onEmptyClick(evt) {
   //   console.log(`TimelineComponent onEmptyClick with ${evt.target.value}`);
   //   this.props.eventbus.emit("DAY_EMPTY_CMD", evt.target.value);
-  // }
-
-  onCloneClick(evt) {
-    console.log(`TimelineComponent clone cmd ${evt.target.value}`);
-    this.props.eventbus.emit("DAY_CLONE_CMD", evt.target.value);
-  }
-
-  onMoveLeftClick(evt) {
-    this.props.eventbus.emit("DAY_MOVE_CMD", evt.target.value, -1); 
-  }
-
-  onMoveRightClick(evt) {
-    this.props.eventbus.emit("DAY_MOVE_CMD", evt.target.value, 1);
-  }
-
-  onDeleteClick(evt) {
-    console.log(`TimelineComponent delete cmd ${evt.target.value}`);
-    this.props.eventbus.emit("DAY_DELETE_CMD", evt.target.value);
+  // }  
+  // 
+  
+  calcDayTotal(day)  {
+    if (day.trainings.length === 1) {
+      return day.trainings[0].total.distance;      
+    } else {
+      return (day.trainings[0].total.distance + day.trainings[1].total.distance);
+    }     
   }
 
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
-    let aDay = moment("2016-12-03");
-
-    let microcycleElements = [];
+    const planStartDate = moment("2016-12-03");
+    const dateForDay = planStartDate;
+    const microcycleElements = [];
     let segmentTotalDistance = 0;
 
-    this.state.days.forEach((day, i) => {
-      if (!day.trainings) {
-        throw new Error(`Day [${day.uuid}] should have a plural property 'trainings'`);
-      }
-      aDay.add(1, "days");
-      let dateStr = aDay.format(DAY_HEADER_DATE_FORMAT);
-      let sectionClassNames = [];
-      this.isNonWorkday(aDay) ?
-        sectionClassNames.push("day day-nowork") :
-        sectionClassNames.push("day day-work");
+    this.state.days.forEach((day, dayNr) => {
+      dateForDay.add(1, "days");      
+      segmentTotalDistance += this.calcDayTotal(day);
 
-      if (aDay.isSame(moment(new Date()), "day")) {
-        sectionClassNames.push("today");
-      }
-
-      let dayElements = [];
-
-      day.trainings.forEach((training, j) => {
-
-        let trainingClassNames = [];
-
-        if (training.type) {
-          if (this.state.showEasyDays === false && training.type === "easy") {
-            trainingClassNames.push("day-easy");
-          }
-          if (training.type === "workout") {
-            trainingClassNames.push("day-workout");
-          }
-        }
-
-        dayElements.push(
-          <section key={j + "-" + createUuid()} className={trainingClassNames.join(" ")}>
-            <p className="training-name">{training.name}</p>
-            <p>{"("}{(training.total.distance).toFixed(2)} {" km)"}</p>
-          </section>
-        );
-
-        segmentTotalDistance += training.total.distance;
-      });
-      
-      // TODO extract into MicrocycleRowComponent
       microcycleElements.push(
-        <section key={i + "-" + createUuid()} className={sectionClassNames.join(" ")}>
-            <h3>{i+1}. {dateStr}</h3>
-            {dayElements}
-            <button className="button-small button-flat" onClick={this.onMoveRightClick} value={day.uuid}>&rarr;</button>
-            <button className="button-small button-flat" onClick={this.onDeleteClick} value={day.uuid}>del</button>            
-            <button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>clone</button>
-            <button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
-            <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
-          </section>
-      );      
+        <DayComponent
+          key={"day" + "-" + dayNr + "-" + createUuid()} 
+          eventbus={this.props.eventbus} 
+          day={day} 
+          dayNr={dayNr}
+          dateForDay={dateForDay}
+         />
+      );
 
       // TODO, change to html table
-      if (i % 7 === 6) {
-        microcycleElements.push(<section key={"section" + "-" + i + "-" + createUuid()} className="segment-total">{"total: "}{segmentTotalDistance}{"km"}</section>);
+      if (dayNr % 7 === 6) {
+        microcycleElements.push(<section key={"section" + "-" + dayNr + "-" + createUuid()} className="segment-total">{"total: "}{segmentTotalDistance.toFixed(2)}{"km"}</section>);
         microcycleElements.push(<br key={createUuid()} />);
         segmentTotalDistance = 0;
       }
@@ -194,5 +131,4 @@ export default class TimelineComponent extends React.Component {
       </section>
     );
   }
-
 }
