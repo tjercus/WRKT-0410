@@ -139,6 +139,12 @@ test("findDay should find a day by nr", (assert) => {
   assert.end();
 });
 
+test("findDay should return null when a day could not be found by nr", (assert) => {
+  const day = findDay(999999, plans[0], trainingInstances);
+  assert.ok(day === null);
+  assert.end();
+});
+
 // TODO exception flows
 
 test("flattenDays should flatten an augmented array of days", (assert) => {

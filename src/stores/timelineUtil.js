@@ -48,15 +48,12 @@ export function findDay(dayUuid, plan, trainings) {
     throw new Error(`plan should have a list of days!`);
   }
   const _days = clone(plan.days);
-  const _trainings = clone(trainings);
-  let found = null;
-  _days.forEach((_day, j) => {
-    if (_day["uuid"] == dayUuid) {
-      console.log(`findDay ${JSON.stringify(_day)}`);
-      found = augmentDay(_day, _trainings);
-    }
-  });
-  return found;
+  const isDay = (_day) => _day.uuid == dayUuid;
+  const index = _days.findIndex(isDay);
+  if (index > -1) {
+    return augmentDay(_days[index], clone(trainings));
+  } 
+  return null;
 }
 
 /**
@@ -77,6 +74,14 @@ export function augmentDay(day, trainings) {
     _day.trainings = [];
     _day.trainings.push({ instanceId: uuid });
   }
+
+  // ex:
+  // const newTrainings = _day.trainings.map((_training) => {
+  //   let trainings = [];
+  //   trainings.push(findTraining(_training.instanceId, _trainings));
+  //   trainings.total = makeTrainingTotal(_training.segments);
+  //   return trainings;
+  // });
   // calculate total per training when multiple trainings
   for (let i = 0, len = _day.trainings.length; i < len; i++) {
     _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
