@@ -45,6 +45,7 @@ export default class TrainingComponent extends React.Component {
     });
 
     this.props.eventbus.on("TRAINING_LOAD_EVT", (training) => {
+      console.log(`TrainingComponent received TRAINING_LOAD_EVT with ${training.uuid}`);
       this.loadTraining(training);
     });
     // this.props.eventbus.on("TRAINING_UPDATE_EVT", (training) => {

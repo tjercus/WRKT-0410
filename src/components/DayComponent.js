@@ -61,13 +61,13 @@ export default class MicrocycleRowComponent extends React.Component {
     }    
     
     let dateStr = this.props.dateForDay.format(DAY_HEADER_DATE_FORMAT);
-    let sectionClassNames = [];
+    let dayClassNames = [];
     this.isNonWorkday(this.props.dateForDay) ?
-      sectionClassNames.push("day day-nowork") :
-      sectionClassNames.push("day day-work");
+      dayClassNames.push("day day-nowork") :
+      dayClassNames.push("day day-work");
 
     if (this.props.dateForDay.isSame(moment(new Date()), "day")) {
-      sectionClassNames.push("today");
+      dayClassNames.push("today");
     }
 
     let dayElements = [];
@@ -97,7 +97,7 @@ export default class MicrocycleRowComponent extends React.Component {
     });
 
     return (
-      <section key={createUuid()} className={sectionClassNames.join(" ")}>
+      <section key={createUuid()} className={dayClassNames.join(" ")}>
 		    <h3>{this.props.dayNr + 1}. {dateStr}</h3>
 		    {dayElements}
 		    <div className="day-total">{dayTotal.toFixed(2)} km today</div>

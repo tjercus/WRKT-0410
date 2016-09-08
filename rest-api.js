@@ -15,33 +15,35 @@ server.get("/trainings", restify.serveStatic({
   file: "trainings.js"
 }));
 
-server.get("/traininginstances/:uuid", function(req, res, next) {
-  res.setHeader("Content-Type", "application/text");
+server.get("/traininginstances/:uuid", (req, res, next) => {
+  res.setHeader("Content-Type", "text/json");
   fs.readFile("./data/traininginstances_" + req.params.uuid + ".js", "utf8", (err, contents) => {
     res.send(200, contents);
   });
+  console.log(`GET traininginstances ${req.params.uuid}`);
   return next();
 });
 
-server.get("/plans/:uuid", function(req, res, next) {
-  res.setHeader("Content-Type", "application/text");
+server.get("/plans/:uuid", (req, res, next) => {
+  res.setHeader("Content-Type", "text/json");
   fs.readFile("./data/plan_" + req.params.uuid + ".js", "utf8", (err, contents) => {
     res.send(200, contents);
   });
+  console.log(`GET plans ${req.params.uuid}`);
   return next();
 });
 
-server.put("/trainings", function(req, res, next) {
+server.put("/trainings", (req, res, next) => {
   writeFileFromRequestbody("./data/trainings.js", req, res);
   return next();
 });
 
-server.put("/plans", function(req, res, next) {  
+server.put("/plans", (req, res, next) => {
   writeFileFromRequestbody("./data/plans.js", req, res);
   return next();
 });
 
-server.put("/traininginstances", function(req, res, next) {
+server.put("/traininginstances", (req, res, next) => {
   writeFileFromRequestbody("./data/traininginstances.js", req, res);
   return next();
 });

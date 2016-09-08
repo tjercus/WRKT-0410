@@ -22,13 +22,13 @@ export default class DayEditComponent extends React.Component {
       });
       (menuItemName === this.props.from) ? this.setState({ isVisible: true }): this.setState({ isVisible: false });
       if (dayUuid !== null) {
-        console.log(`DayEditComponent: sending DAY_LOAD_CMD ${dayUuid}`);
+        //console.log(`DayEditComponent: sending DAY_LOAD_CMD ${dayUuid}`);
         this.props.eventbus.emit("DAY_LOAD_CMD", dayUuid);
       }
     }));
 
     this.props.eventbus.on("DAY_LOAD_EVT", ((day) => {
-      console.log(`DayEditComponent: received DAY_LOAD_EVT ${JSON.stringify(day)}`);
+      //console.log(`DayEditComponent: received DAY_LOAD_EVT ${JSON.stringify(day)}`);
       this.setState({
         day: day
       });

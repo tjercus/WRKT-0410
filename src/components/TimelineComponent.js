@@ -32,7 +32,7 @@ export default class TimelineComponent extends React.Component {
       }
     });
     this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
-      console.log("TimelineComponent received DAY_LOAD_EVT with a new plan as payload");
+      console.log("TimelineComponent received PLAN_LOAD_EVT with a new plan as payload");
       this.setState({ days: plan.days });
     });
     // this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
@@ -91,7 +91,7 @@ export default class TimelineComponent extends React.Component {
     let segmentTotalDistance = 0;
 
     this.state.days.forEach((day, dayNr) => {
-      dateForDay.add(1, "days");      
+      dateForDay.add(1, "days");
       segmentTotalDistance += this.calcDayTotal(day);
 
       microcycleElements.push(

@@ -27,7 +27,7 @@ Based on 'React eventemitter'.
 - button click 'animation'
 - button to switch metric/imperial
 - start the rest-api via gulp
-- Tape coverage with coverify
+- Tape coverage with coverify/tape-istanbul
 - events as constants
 - Formal flux architecture?
 
@@ -51,6 +51,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- add PlanListComponent
 - fix dateForDay feature
 - adapt TimelineComponent to plural trainings (react stucture, styling)
 - button for 'compact view'

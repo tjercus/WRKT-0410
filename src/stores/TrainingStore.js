@@ -48,6 +48,7 @@ export default class TrainingStore {
       eventbus.emit("TRAINING_LIST_EVT", this.trainings);
     });
     eventbus.on("TRAINING_LOAD_CMD", (uuid) => {
+      console.log(`TrainingStore received TRAINING_LOAD_CMD ${uuid}`);
       this.clearTraining();
       this.loadTraining(uuid, this.trainings);
     });
@@ -176,6 +177,10 @@ export default class TrainingStore {
   }
 
   loadTraining(uuid, trainings) {
+    console.log(`TrainingStore.loadTraining for ${uuid} poolsize is ${trainings.length}`);    
+    if (trainings.length === 0) {
+      throw new Error("TrainingStore.loadTraining needs a list of trainings");
+    }
     const training = findTraining(uuid, trainings);
     if (training !== null) {
       this.uuid = training.uuid;
@@ -187,6 +192,8 @@ export default class TrainingStore {
       this.segments = _segments;
       this.total = makeTrainingTotal(_segments);
       this.eventbus.emit("TRAINING_LOAD_EVT", this.getCurrentlyLoadedTraining());
+    } else {
+      console.log(`TrainingStore.loadTraining ERROR for ${uuid} poolsize is ${trainings.length}`);
     }
   }
 

@@ -14,12 +14,8 @@ import NotificationComponent from "./NotificationComponent";
 
 import { clone } from "../stores/miscUtil";
 
-import loadRemoteData from "../stores/RemoteDataService";
+import RemoteDataService from "../stores/RemoteDataService";
 
-//import { plans } from "../stores/plans";
-//import { trainings } from "../stores/trainings";
-//import { traininginstances } from "../stores/traininginstances";
-//
 const plans = [];
 const trainings = [];
 const traininginstances = [];
@@ -34,17 +30,23 @@ export default class AppComponent extends React.Component {
       this.eventbus = new EventEmitter({wildcard: true, maxListeners: 999999});
     }   
 
+    // initially will receive data as empty
     new DayStore(this.eventbus, clone(plans), clone(traininginstances));
     new TrainingStore(this.eventbus, clone(trainings));
     new TimelineStore(this.eventbus, clone(plans), clone(traininginstances));
 
-    loadRemoteData(this.eventbus);
+    new RemoteDataService(this.eventbus);
+
+    // TODO remove this, it is used in test
+    this.eventbus.emit("PLAN_FETCH_CMD", "a83a78aa-5d69-11e6-b3a3-1f76e6105d92");
+
+    this.eventbus.emit("TRAININGS_FETCH_CMD");
   }
   
   componentDidMount() {
     this.eventbus.emit("SET_NOTIFICATION_TIMEOUT", 20000);
     this.eventbus.emit("MENU_CLICK_EVT", "menu-item-training");
-    setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"), 500);
+    setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"), 1500);
   }
 
   render() {
