@@ -11,6 +11,7 @@ import TimelineStore from "../stores/TimelineStore";
 import DayStore from "../stores/DayStore";
 import DayEditComponent from "./DayEditComponent";
 import NotificationComponent from "./NotificationComponent";
+import PlanListComponent from "./PlanListComponent";
 
 import { clone } from "../stores/miscUtil";
 
@@ -35,18 +36,17 @@ export default class AppComponent extends React.Component {
     new TrainingStore(this.eventbus, clone(trainings));
     new TimelineStore(this.eventbus, clone(plans), clone(traininginstances));
 
-    new RemoteDataService(this.eventbus);
-
-    // TODO remove this, it is used in test
-    this.eventbus.emit("PLAN_FETCH_CMD", "a83a78aa-5d69-11e6-b3a3-1f76e6105d92");
-
-    this.eventbus.emit("TRAININGS_FETCH_CMD");
+    new RemoteDataService(this.eventbus);    
   }
   
   componentDidMount() {
     this.eventbus.emit("SET_NOTIFICATION_TIMEOUT", 20000);
     this.eventbus.emit("MENU_CLICK_EVT", "menu-item-training");
+    this.eventbus.emit("PLANLIST_FETCH_CMD");
+    this.eventbus.emit("TRAININGS_FETCH_CMD");
     setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"), 1500);
+    // TODO remove this, it is used in test
+    //this.eventbus.emit("PLAN_FETCH_CMD", "a83a78aa-5d69-11e6-b3a3-1f76e6105d92");    
   }
 
   render() {
@@ -68,6 +68,7 @@ export default class AppComponent extends React.Component {
             <TimelineComponent eventbus={this.eventbus} name="Timeline" from="menu-item-timeline" />
             <PanelComponent eventbus={this.eventbus} name="Settings" from="menu-item-settings" />
             <DayEditComponent eventbus={this.eventbus} name="DayEdit" from="menu-item-dayedit" />
+            <PlanListComponent eventbus={this.eventbus} name="PlanList" from="menu-item-planlist" />
           </main>
         </article>
       </div>

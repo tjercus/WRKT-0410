@@ -15,6 +15,15 @@ server.get("/trainings", restify.serveStatic({
   file: "trainings.js"
 }));
 
+server.get("/plans/", (req, res, next) => {
+  // TODO replace static data with IO action for real UUIDs and names
+  const plans = [
+    {"uuid": "a83a78aa-5d69-11e6-b3a3-1f76e6105d92", "name": "Pfitzinger 85/18"},
+    {"uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4", "name": "10k plan #1"}
+  ];
+  res.send(200, plans);
+});
+
 server.get("/traininginstances/:uuid", (req, res, next) => {
   res.setHeader("Content-Type", "text/json");
   fs.readFile("./data/traininginstances_" + req.params.uuid + ".js", "utf8", (err, contents) => {

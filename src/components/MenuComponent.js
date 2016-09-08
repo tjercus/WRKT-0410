@@ -30,6 +30,11 @@ export default class MenuComponent extends React.Component {
             {"Timeline"}
           </button>
         </li>
+         <li className="submenu">
+          <button onClick={this.onButtonClick} className={this.state.activeName === 'menu-item-planlist' ? 'button-active button-flat' : 'button-flat'} value="menu-item-planlist">
+            {"Plans"}
+          </button>
+        </li>
         <li className="submenu">
           <button onClick={this.onButtonClick} className={this.state.activeName === 'menu-item-settings' ? 'button-active button-flat' : 'button-flat'} value="menu-item-settings">
             {"Settings"}

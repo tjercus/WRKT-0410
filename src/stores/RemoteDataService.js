@@ -9,6 +9,10 @@ export default class RemoteDataService {
    * @param  {EventEmitter} eventbus   
    */
   constructor(eventbus) {
+    eventbus.on("PLANLIST_FETCH_CMD", () => {
+      this.fetchJson("plans", "PLANLIST_FETCHED_EVT", "PLANLIST_FETCH_ERROR_EVT", eventbus);
+    });
+
     eventbus.on("TRAININGS_FETCH_CMD", () => {
       this.fetchJson("trainings", "TRAININGS_FETCHED_EVT", "TRAININGS_FETCH_ERROR_EVT", eventbus);
     });
