@@ -50,7 +50,6 @@ let traininginstances = [
     }
   }
 ];
-let plans = [];
 let plan = {
   "uuid": "acc3d1b8-test-4d70-dda3-d0e885f516f4",
   "name": "10k plan #1",
@@ -65,7 +64,6 @@ let plan = {
 }
 plan.days[0].trainings[0] = traininginstances[0];
 plan.days[0].trainings[1] = traininginstances[1];
-plans.push(plan);
 
 test("TimelineComponent should render plan with multiple trainings per day in it", (assert) => {
   onSpy.reset();

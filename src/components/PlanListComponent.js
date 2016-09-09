@@ -30,7 +30,7 @@ export default class PlanListComponent extends React.Component {
 
   onClick(evt) {
     const uuid = evt.target.attributes[1].nodeValue;
-    console.log(`PlanListComponent PLAN_FETCH_CMD uuid ${uuid}`);    
+    console.log(`PlanListComponent PLAN_FETCH_CMD uuid ${uuid}`);
     this.setState({selectedUid: uuid});
     this.props.eventbus.emit("PLAN_FETCH_CMD", uuid);
   }
