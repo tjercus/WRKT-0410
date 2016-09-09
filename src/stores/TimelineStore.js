@@ -26,7 +26,8 @@ export default class TimelineStore {
 
     // NOTE that is up to the emitter to fetch and combine both sets
     eventbus.on("PLAN_FETCHED_EVT", (planAndTraininginstances) => {      
-      const plan = planAndTraininginstances[0][0];
+      const plan = planAndTraininginstances[0];
+      console.dir(planAndTraininginstances);
       console.log(`TimelineStore PLAN_FETCHED_EVT ${plan.uuid}`);
       const traininginstances = planAndTraininginstances[1];
       plan.days = plan.days.map((_day) => {

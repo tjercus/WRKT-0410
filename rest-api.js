@@ -48,13 +48,13 @@ server.put("/trainings", (req, res, next) => {
   return next();
 });
 
-server.put("/plans", (req, res, next) => {
-  writeFileFromRequestbody("./data/plans.js", req, res);
+server.put("/plans/:uuid", (req, res, next) => {
+  writeFileFromRequestbody("./data/plan_" + req.params.uuid + ".js", req, res);
   return next();
 });
 
-server.put("/traininginstances", (req, res, next) => {
-  writeFileFromRequestbody("./data/traininginstances.js", req, res);
+server.put("/traininginstances/:uuid", (req, res, next) => {
+  writeFileFromRequestbody("./data/traininginstances_" + req.params.uuid + ".js", req, res);
   return next();
 });
 
@@ -63,6 +63,7 @@ function writeFileFromRequestbody(filename, req, res) {
     if (err) {      
       res.writeHead(500);
       res.send(err);
+      console.log(`NOT saved ${filename} @ ${new Date()}: ${err}`);
     } else {
       res.writeHead(200, {
         "Content-Type": "application/json; charset=utf-8"

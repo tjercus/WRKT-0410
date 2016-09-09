@@ -24,8 +24,8 @@ export default class RemoteDataService {
     });
 
     eventbus.on("PLAN_AND_INSTANCES_PERSIST_CMD", (plan, instances) => {
-      this.persistPlan(plan);
-      this.persistInstances(instances);
+      this.persistPlan(plan, eventbus);
+      this.persistInstances(plan.uuid, instances, eventbus);
     });
   }
 
@@ -47,7 +47,7 @@ export default class RemoteDataService {
       console.log(`RemoteDataService fetchMultiple OK emitting ${succesEvtName}`);
       eventbus.emit(succesEvtName, arr);
     }).catch(err => {
-      console.log(`RemoteDataService fetchMultiple ERROR emitting ${errEvtName}`);
+      console.log(`RemoteDataService fetchMultiple ERROR emitting ${errEvtName}: ${err}`);
       eventbus.emit(errEvtName, err);
     });
   }
@@ -70,7 +70,7 @@ export default class RemoteDataService {
     }
   }
 
-  persistPlan(plan) {
+  persistPlan(plan, eventbus) {
     const planStr = JSON.stringify(plan, null, "\t");
     if (typeof fetch == "function") {
       fetch(`http://localhost:3333/plans/${plan.uuid}`, {
@@ -84,7 +84,7 @@ export default class RemoteDataService {
     }
   }
 
-  persistInstances(instances) {
+  persistInstances(uuid, instances, eventbus) {
     const instancesStr = JSON.stringify(instances, null, "\t");
     if (typeof fetch == 'function') {
       fetch(`http://localhost:3333/traininginstances/${uuid}`, {

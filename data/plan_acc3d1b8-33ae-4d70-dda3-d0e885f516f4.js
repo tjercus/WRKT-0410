@@ -1,4 +1,4 @@
-[{
+{
   "uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4",
   "name": "10k plan #1",
   "days": [{
@@ -226,4 +226,4 @@
       "instanceId": "5003d385-ebb8-4cc2-9712-43901af1c78f"
     }
   ]
-}]
+}

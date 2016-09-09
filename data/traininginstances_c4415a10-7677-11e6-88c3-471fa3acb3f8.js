@@ -10,5 +10,24 @@
 				"pace": "05:00"
 			}
 		]
+	},
+	{
+		"uuid": "cff05723-b650-45e9-ba30-ebe79cc40e97",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
 	}
 ]
