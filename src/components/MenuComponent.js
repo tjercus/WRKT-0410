@@ -17,26 +17,35 @@ export default class MenuComponent extends React.Component {
     this.props.eventbus.emit("MENU_CLICK_EVT", name);
   };
   
+  // TODO refactor li into component
   render() {
     return (
       <ul className="menu">
         <li className="submenu">
-          <button onClick={this.onButtonClick} className={this.state.activeName === 'menu-item-training' ? 'button-active button-flat' : 'button-flat'} value="menu-item-training">
+          <button onClick={this.onButtonClick}
+          className={this.state.activeName === 'menu-item-training' ? 'button-active button-flat' : 'button-flat'} 
+          value="menu-item-training">
             {"Training"}
           </button>
         </li>
         <li className="submenu">
-          <button onClick={this.onButtonClick} className={this.state.activeName === 'menu-item-timeline' ? 'button-active button-flat' : 'button-flat'} value="menu-item-timeline">
-            {"Timeline"}
-          </button>
-        </li>
-         <li className="submenu">
-          <button onClick={this.onButtonClick} className={this.state.activeName === 'menu-item-planlist' ? 'button-active button-flat' : 'button-flat'} value="menu-item-planlist">
+          <button onClick={this.onButtonClick} 
+          className={this.state.activeName === 'menu-item-planlist' ? 'button-active button-flat' : 'button-flat'} 
+          value="menu-item-planlist">
             {"Plans"}
           </button>
         </li>
         <li className="submenu">
-          <button onClick={this.onButtonClick} className={this.state.activeName === 'menu-item-settings' ? 'button-active button-flat' : 'button-flat'} value="menu-item-settings">
+          <button onClick={this.onButtonClick}
+          className={this.state.activeName === 'menu-item-timeline' ? 'button-active button-flat' : 'button-flat'} 
+          value="menu-item-timeline">
+            {"Timeline"}
+          </button>
+        </li>
+        <li className="submenu">
+          <button onClick={this.onButtonClick} 
+          className={this.state.activeName === 'menu-item-settings' ? 'button-active button-flat' : 'button-flat'} 
+          value="menu-item-settings">
             {"Settings"}
           </button>
         </li>

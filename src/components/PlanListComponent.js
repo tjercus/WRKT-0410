@@ -29,8 +29,10 @@ export default class PlanListComponent extends React.Component {
   }
 
   onClick(evt) {
-    console.log("uuid " + evt.target.attributes[1].nodeValue);
-    this.props.eventbus.emit("PLAN_FETCH_CMD", evt.target.attributes[1].nodeValue);
+    const uuid = evt.target.attributes[1].nodeValue;
+    console.log(`PlanListComponent PLAN_FETCH_CMD uuid ${uuid}`);    
+    this.setState({selectedUid: uuid});
+    this.props.eventbus.emit("PLAN_FETCH_CMD", uuid);
   }
 
   render() {
@@ -38,7 +40,7 @@ export default class PlanListComponent extends React.Component {
     return (
       <section className={panelClassName}>       
         <div className="panel-body">
-           <ul>
+           <ul className="selection-list">
             {this.state.planlist.map(function(plan, i) {
               let itemClassName = (this.state.selectedUid === plan.uuid) ? "menu-item-selected" : "";
               return <li key={i} className={itemClassName}>

@@ -25,8 +25,9 @@ export default class TimelineStore {
     this.traininginstances = [];    
 
     // NOTE that is up to the emitter to fetch and combine both sets
-    eventbus.on("PLAN_FETCHED_EVT", (planAndTraininginstances) => {
+    eventbus.on("PLAN_FETCHED_EVT", (planAndTraininginstances) => {      
       const plan = planAndTraininginstances[0][0];
+      console.log(`TimelineStore PLAN_FETCHED_EVT ${plan.uuid}`);
       const traininginstances = planAndTraininginstances[1];
       plan.days = plan.days.map((_day) => {
         return augmentDay(_day, traininginstances);
@@ -73,6 +74,12 @@ export default class TimelineStore {
     }));
 
     eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
+      if (!this.hasOwnProperty("plan")) {
+        throw new Error("Cloning a day before a plan was loaded in TimelineStore");
+      }
+      if (!this.plan.hasOwnProperty("days")) {
+        throw new Error("Cloning a day before days are loaded in TimelineStore");
+      }
       const newInstanceUuid = createUuid();
       training.uuid = newInstanceUuid;
       this.traininginstances.push(training);

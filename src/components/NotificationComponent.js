@@ -39,7 +39,7 @@ export default class NotificationComponent extends React.Component {
     let msg = null;
     switch (type) {
       case "PLAN_LOAD_EVT":
-        msg = `Default plan is loaded in store`;
+        msg = `Plan '${data.uuid}'' is loaded in store`;
         break;
       case "TRAINING_LOAD_EVT":
         msg = `Training '${data.uuid}' is loaded in store`;
@@ -62,7 +62,9 @@ export default class NotificationComponent extends React.Component {
       case "DAY_EMPTY_EVT":
         msg = `TrainingInstances where removed from a day`;
         break;
-        
+      case "PLAN_FETCH_ERROR_EVT":
+        msg = `Error getting a plan with: ${data}`;
+        break;
       default:
         break;
     }

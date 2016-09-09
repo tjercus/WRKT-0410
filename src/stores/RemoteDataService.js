@@ -18,6 +18,7 @@ export default class RemoteDataService {
     });
 
     eventbus.on("PLAN_FETCH_CMD", (uuid) => {
+      console.log(`RemoteDataService PLAN_FETCH_CMD ${uuid}`);
       this.fetchMultiple([`plans/${uuid}`, `traininginstances/${uuid}`],
         "PLAN_FETCHED_EVT", "PLAN_FETCH_ERROR_EVT", eventbus);
     });  
@@ -36,15 +37,17 @@ export default class RemoteDataService {
 
   /**
    * fetch Multiple urls in sequence and order
-   * @param  {[type]} nouns         [description]
-   * @param  {[type]} succesEvtName [description]
-   * @param  {[type]} errEvtName    [description]
-   * @param  {[type]} eventbus      [description]   
+   * @param  {[type]} nouns         rest-api noun or url
+   * @param  {[type]} succesEvtName what eventname to put on the bus when SUCCES happens?
+   * @param  {[type]} errEvtName    what eventname to put on the bus when ERROR happens?
+   * @param  {[type]} eventbus      shared eventbus
    */
   fetchMultiple(nouns, succesEvtName, errEvtName, eventbus) {
     Promise.all([this.fetchOne(nouns[0]), this.fetchOne(nouns[1])]).then(arr => {
+      console.log(`RemoteDataService fetchMultiple OK emitting ${succesEvtName}`);
       eventbus.emit(succesEvtName, arr);
     }).catch(err => {
+      console.log(`RemoteDataService fetchMultiple ERROR emitting ${errEvtName}`);
       eventbus.emit(errEvtName, err);
     });
   }

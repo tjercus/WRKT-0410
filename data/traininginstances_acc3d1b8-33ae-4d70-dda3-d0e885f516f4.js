@@ -1,5 +1,5 @@
- /* Tue Jul 12 2016 13:58:51 GMT+0200 (CEST) */  export const traininginstances = [
-	{
+[
+ 	{
 		"uuid": "a1ee31cc-a2a8-4c6d-bd29-d2ca8d8ae916",
 		"name": "Easy run",
 		"type": "easy",

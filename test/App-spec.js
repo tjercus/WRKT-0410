@@ -23,8 +23,9 @@ test("AppComponent should render the right DOM structure", (assert) => {
   assert.equal(component.find("ul.menu").length, 1);
   const buttons = component.find("ul.menu button");
   assert.equal(buttons.at(0).text(), "Training");
-  assert.equal(buttons.at(1).text(), "Timeline");
-  assert.equal(buttons.at(2).text(), "Settings");
+  assert.equal(buttons.at(1).text(), "Plans");
+  assert.equal(buttons.at(2).text(), "Timeline");
+  assert.equal(buttons.at(3).text(), "Settings");
   assert.equal();
   assert.end();
 });

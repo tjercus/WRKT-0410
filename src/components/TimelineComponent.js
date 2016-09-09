@@ -6,8 +6,6 @@ import DayComponent from "./DayComponent";
 
 import { clone, createUuid } from "../stores/miscUtil";
 
-const DEFAULT_PLAN_ID = "a83a78aa-5d69-11e6-b3a3-1f76e6105d92";
-
 export default class TimelineComponent extends React.Component {
 
   constructor(props) {
@@ -32,7 +30,7 @@ export default class TimelineComponent extends React.Component {
       }
     });
     this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
-      console.log("TimelineComponent received PLAN_LOAD_EVT with a new plan as payload");
+      console.log(`TimelineComponent received PLAN_LOAD_EVT with a new plan [${plan.uuid}] as payload`);
       this.setState({ days: plan.days });
     });
     // this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
@@ -52,8 +50,7 @@ export default class TimelineComponent extends React.Component {
     });
     this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
       this.setState({ days: plan.days });
-    });
-    setTimeout(() => this.props.eventbus.emit("PLAN_LOAD_CMD", DEFAULT_PLAN_ID), 1500);
+    });    
   }  
 
   // onCycleLengthButtonClick(evt) {    

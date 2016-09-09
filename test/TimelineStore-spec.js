@@ -21,7 +21,7 @@ let traininginstances = [
     ]
   },
 ];
-let plans = [];
+
 let plan = {
   "uuid": "acc3d1b8-test-4d70-dda3-d0e885f516f4",
   "name": "10k plan #1",
@@ -29,14 +29,13 @@ let plan = {
     {"uuid": "1", "instanceId": "2a63ef62-test-4b92-8971-59db6e58394c"}
   ]
 }
-plans.push(plan);
 
 test("TimelineStore should listen to TRAINING_CLONE_AS_INSTANCE_CMD and add instance to plan", (assert) => {
   let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
   let emitSpy = sinon.spy(eventbus, "emit");  
-  const store = new TimelineStore(eventbus, plans, traininginstances);  
+  const store = new TimelineStore(eventbus);  
 
-  eventbus.emit("PLAN_LOAD_CMD", "acc3d1b8-test-4d70-dda3-d0e885f516f4");
+  eventbus.emit("PLAN_FETCHED_EVT", [[plan], traininginstances]);
 
   let training = {
     name: "another training",
@@ -51,7 +50,7 @@ test("TimelineStore should listen to TRAINING_CLONE_AS_INSTANCE_CMD and add inst
   }
   eventbus.emit("TRAINING_CLONE_AS_INSTANCE_CMD", training);
 
-  assert.equal(store.days.length, 2, "instance should be added to plan");  
+  assert.equal(store.plan.days.length, 2, "instance should be added to plan");
   assert.end();
 });
 

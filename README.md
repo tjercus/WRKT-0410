@@ -15,6 +15,8 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- yellow hint of change
+- Use a round iconset (see 'movescount')
 - Replace 'for loops' by higher order function calls
 - Refactor removeX(uuid, array) functions into one generic in miscUtils
 - React components should always use a callback when doing stuff after setState
@@ -23,7 +25,6 @@ Based on 'React eventemitter'.
 - TrainingListComponent should supports categories as accordion or tagcloud
 - use const instead of let when possible
 - use arrow functions when possible
-- yellow hint of change
 - button click 'animation'
 - button to switch metric/imperial
 - start the rest-api via gulp
@@ -51,9 +52,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- add PlanListComponent
 - fix dateForDay feature
-- adapt TimelineComponent to plural trainings (react stucture, styling)
 - button for 'compact view'
 - button for 'ultra compact view'
 - edit feature should open in a modal popup

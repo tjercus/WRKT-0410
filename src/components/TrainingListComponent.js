@@ -47,11 +47,12 @@ export default class TrainingListComponent extends React.Component {
   }  
 
   onClick(evt) {
-    evt.preventDefault();    
+    evt.preventDefault();
+    const uuid = evt.target.attributes[1].nodeValue;
     // TODO find out why evt.target.value does not work anymore?
-    this.setState({selectedUid: evt.target.attributes[1].nodeValue});
-    console.log(`Selecting item [${evt.target.attributes[1].nodeValue}] in list`);
-    this.props.eventbus.emit("TRAINING_LOAD_CMD", evt.target.attributes[1].nodeValue);
+    this.setState({selectedUid: uuid});
+    console.log(`Selecting item [${uuid}] in list`);
+    this.props.eventbus.emit("TRAINING_LOAD_CMD", uuid);
   }
 
   render() {
@@ -59,7 +60,7 @@ export default class TrainingListComponent extends React.Component {
     return (
       <section className={panelClassName}>       
         <div className="panel-body">
-           <ul>
+           <ul className="selection-list">
             {this.state.trainings.map(function(training, i) {
               let itemClassName = (this.state.selectedUid === training.uuid) ? "menu-item-selected" : "";
               return <li key={i} className={itemClassName}>
