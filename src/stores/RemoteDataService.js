@@ -21,19 +21,19 @@ export default class RemoteDataService {
       console.log(`RemoteDataService PLAN_FETCH_CMD ${uuid}`);
       this.fetchMultiple([`plans/${uuid}`, `traininginstances/${uuid}`],
         "PLAN_FETCHED_EVT", "PLAN_FETCH_ERROR_EVT", eventbus);
-    });  
-    
-    eventbus.on("PLAN_AND_INSTANCES_PERSIST_CMD", (plan, instances) => {      
+    });
+
+    eventbus.on("PLAN_AND_INSTANCES_PERSIST_CMD", (plan, instances) => {
       this.persistPlan(plan);
-      this.persistInstances(instances);      
+      this.persistInstances(instances);
     });
   }
 
   fetchOne(noun) {
     return new Promise((resolve, reject) => {
-      fetch(HOST + noun, {method: "GET"}).then(response => resolve(response.json()));
+      fetch(HOST + noun, { method: "GET" }).then(response => resolve(response.json()));
     });
-  }  
+  }
 
   /**
    * fetch Multiple urls in sequence and order
@@ -69,8 +69,8 @@ export default class RemoteDataService {
       });
     }
   }
-  
-  persistPlan(plan) {    
+
+  persistPlan(plan) {
     const planStr = JSON.stringify(plan, null, "\t");
     if (typeof fetch == "function") {
       fetch(`http://localhost:3333/plans/${plan.uuid}`, {

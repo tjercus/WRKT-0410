@@ -19,7 +19,8 @@ server.get("/plans/", (req, res, next) => {
   // TODO replace static data with IO action for real UUIDs and names
   const plans = [
     {"uuid": "a83a78aa-5d69-11e6-b3a3-1f76e6105d92", "name": "Pfitzinger 85/18"},
-    {"uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4", "name": "10k plan #1"}
+    {"uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4", "name": "10k plan #1"},
+    {"uuid": "c4415a10-7677-11e6-88c3-471fa3acb3f8", "name": "Hansons Advanced Plan"}
   ];
   res.send(200, plans);
 });
