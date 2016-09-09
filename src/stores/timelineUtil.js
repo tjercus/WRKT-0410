@@ -85,6 +85,7 @@ export function augmentDay(day, trainings) {
   // calculate total per training when multiple trainings
   for (let i = 0, len = _day.trainings.length; i < len; i++) {
     _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
+    console.log(`augmentDay making total for one training ${_day.trainings[i]}`);
     _day.trainings[i].total = makeTrainingTotal(_day.trainings[i].segments);
   }
   return _day;

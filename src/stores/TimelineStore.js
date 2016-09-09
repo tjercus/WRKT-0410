@@ -26,13 +26,19 @@ export default class TimelineStore {
 
     // NOTE that is up to the emitter to fetch and combine both sets
     eventbus.on("PLAN_FETCHED_EVT", (planAndTraininginstances) => {      
+      if (!Array.isArray(planAndTraininginstances)) {
+        throw new Error("PLAN_FETCHED_EVT did not receive an array with a plan and instances in it");
+      }
       const plan = planAndTraininginstances[0];
-      console.dir(planAndTraininginstances);
+      if (!plan.hasOwnProperty("uuid")) {
+        throw new Error("PLAN_FETCHED_EVT did not receive a proper day");
+      }      
       console.log(`TimelineStore PLAN_FETCHED_EVT ${plan.uuid}`);
-      const traininginstances = planAndTraininginstances[1];
+      const traininginstances = planAndTraininginstances[1];      
       plan.days = plan.days.map((_day) => {
         return augmentDay(_day, traininginstances);
       });
+      console.dir(plan);
       this.traininginstances = traininginstances;
       this.plan = plan;
       eventbus.emit("PLAN_LOAD_EVT", plan);
@@ -60,7 +66,7 @@ export default class TimelineStore {
     }));
 
     eventbus.on("DAY_CLONE_CMD", ((dayUuid) => {
-      const oldDay = findDay(dayUuid, this.plans[0], this.traininginstances);
+      const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       const newDay = cloneDay(oldDay);
       this.traininginstances.push(newDay.training);
       this.plan.days.push(newDay);
@@ -68,7 +74,7 @@ export default class TimelineStore {
     }));
 
     eventbus.on("DAY_DELETE_CMD", ((dayUuid) => {      
-      const oldDay = findDay(dayUuid, this.plans[0], this.traininginstances);
+      const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       this.traininginstances = removeTrainingInstancesForDay(oldDay, clone(this.traininginstances));
       this.plan.days = deleteDay(dayUuid, this.plan.days);
       eventbus.emit("DAY_DELETE_EVT", this.plan);

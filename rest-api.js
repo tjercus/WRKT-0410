@@ -26,6 +26,7 @@ server.get("/plans/", (req, res, next) => {
 });
 
 server.get("/traininginstances/:uuid", (req, res, next) => {
+  console.log(`GET traininginstances STARTED with: ${req.params.uuid}`);
   res.setHeader("Content-Type", "text/json");
   fs.readFile("./data/traininginstances_" + req.params.uuid + ".js", "utf8", (err, contents) => {
     res.send(200, contents);
@@ -35,8 +36,9 @@ server.get("/traininginstances/:uuid", (req, res, next) => {
 });
 
 server.get("/plans/:uuid", (req, res, next) => {
+  console.log(`GET plans STARTED with: ${req.params.uuid}`);
   res.setHeader("Content-Type", "text/json");
-  fs.readFile("./data/plan_" + req.params.uuid + ".js", "utf8", (err, contents) => {
+  fs.readFile(`./data/plan_${req.params.uuid}.js`, "utf8", (err, contents) => {
     res.send(200, contents);
   });
   console.log(`GET plans ${req.params.uuid}`);
@@ -59,6 +61,7 @@ server.put("/traininginstances/:uuid", (req, res, next) => {
 });
 
 function writeFileFromRequestbody(filename, req, res) {
+  console.log("writeFileFromRequestbody");
   fs.writeFile(filename, req.body, (err) => {
     if (err) {      
       res.writeHead(500);

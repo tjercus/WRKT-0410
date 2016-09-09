@@ -31,7 +31,12 @@ export default class RemoteDataService {
 
   fetchOne(noun) {
     return new Promise((resolve, reject) => {
-      fetch(HOST + noun, { method: "GET" }).then(response => resolve(response.json()));
+      fetch(HOST + noun, { method: "GET" })
+      .then(response => resolve(response.json()))
+      .catch(error => {
+        console.log(`error when fetching ${noun} with ${error}`);
+        eventbus.emit(errEvtName, error);
+      });
     });
   }
 
@@ -77,9 +82,9 @@ export default class RemoteDataService {
         method: "PUT",
         body: planStr
       }).then((response) => {
-        this.eventbus.emit("PLAN_PERSIST_EVT");
+        eventbus.emit("PLAN_PERSIST_EVT");
       }).catch((error) => {
-        this.eventbus.emit("PLAN_PERSIST_ERROR_EVT", error);
+        eventbus.emit("PLAN_PERSIST_ERROR_EVT", error);
       });
     }
   }
@@ -91,9 +96,9 @@ export default class RemoteDataService {
         method: "PUT",
         body: instancesStr
       }).then((response) => {
-        this.eventbus.emit("INSTANCES_PERSIST_EVT");
+        eventbus.emit("INSTANCES_PERSIST_EVT");
       }).catch((error) => {
-        this.eventbus.emit("INSTANCES_PERSIST_ERROR_EVT", error);
+        eventbus.emit("INSTANCES_PERSIST_ERROR_EVT", error);
       });
     }
   }

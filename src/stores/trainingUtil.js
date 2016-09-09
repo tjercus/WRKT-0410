@@ -16,6 +16,7 @@ export function findTraining(uuid, trainings) {
 			break;
 		}
 	}
+	console.log(`findTraining could not find training ${uuid}`);
 	return needle;
 }
 

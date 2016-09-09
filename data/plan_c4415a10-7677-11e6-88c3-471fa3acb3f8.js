@@ -3,6 +3,7 @@
 	"name": "Hansons Advanced Plan",
 	"days": [
 		{
+			"uuid": "i588be83-49d1-47fd-9f6f-0d07f8ade0bi",
 			"trainings": [
 				{
 					"instanceId": "0609edb4-767c-11e6-a788-e39f43b2a758"
