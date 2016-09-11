@@ -7,17 +7,21 @@ import {createUuid, clone, lpad, hasNoRealValue} from "./miscUtil";
  * @param  {array<Training|TrainingInstance>}
  * @return {Training or TrainingInstance}
  */
-export function findTraining(uuid, trainings) {	
-	let needle = null;
-	for (let i = 0, len = trainings.length; i < len; i++) {
-		//console.log(`training: [${trainings[i].uuid}] versus needle [${uuid}]`);
-		if (trainings[i].uuid == uuid || trainings[i].instanceId == uuid ) {
-			needle = trainings[i];
-			break;
-		}
+export function findTraining(uuid, trainings) {
+	if (uuid === null || uuid == undefined) {
+		throw new Error("findTraining: a valid uuid should be provided");
 	}
-	console.log(`findTraining could not find training ${uuid}`);
-	return needle;
+	let _instances = clone(trainings);
+  const isInstance = (_instance) => {
+  	return _instance.uuid == uuid || _instance.instanceId == uuid;
+  }
+  const index = _instances.findIndex(isInstance);
+	if (index < 0) {
+		console.log(`findTraining could NOT find training ${uuid} in ${trainings.map((_t) => _t.uuid + " ")}`);
+	} else {
+		console.log(`findTraining could find a training ${uuid} FROM ${trainings.map((_t) => _t.uuid + " ")}`);
+	}
+	return _instances[index];
 }
 
 export function updateTraining(training, trainings) {

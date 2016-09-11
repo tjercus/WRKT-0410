@@ -38,6 +38,15 @@ export default class TimelineStore {
       plan.days = plan.days.map((_day) => {
         return augmentDay(_day, traininginstances);
       });
+
+      /*
+      plan.days.forEach((_day, i) => {
+        _days.push(augmentDay(_day, _trainings));
+      });
+      plan.days = _days;
+      */
+
+      console.log("plan: ---------------");
       console.dir(plan);
       this.traininginstances = traininginstances;
       this.plan = plan;
@@ -49,7 +58,8 @@ export default class TimelineStore {
         uuid: this.plan.uuid, 
         name: this.plan.name, 
         days: flattenDays(this.plan.days)
-      };      
+      };
+      console.log(`TimelineStore PLAN_AND_INSTANCES_PERSIST_CMD with ${this.traininginstances.length} instances`);
       eventbus.emit("PLAN_AND_INSTANCES_PERSIST_CMD", persistablePlan, this.traininginstances);
     });
 
