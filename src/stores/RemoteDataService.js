@@ -91,6 +91,7 @@ export default class RemoteDataService {
 
   persistInstances(uuid, instances, eventbus) {
     const instancesStr = JSON.stringify(instances, null, "\t");
+    console.log(`RemoteDataService persistInstances: ${instancesStr}`);
     if (typeof fetch == 'function') {
       fetch(`http://localhost:3333/traininginstances/${uuid}`, {
         method: "PUT",

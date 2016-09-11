@@ -12,7 +12,7 @@ import { clone, createUuid } from "../stores/miscUtil";
 
 const DAY_HEADER_DATE_FORMAT = "dddd, DD-MM-YYYY";
 
-export default class MicrocycleRowComponent extends React.Component {
+export default class DayComponent extends React.Component {
 
   constructor(props) {
     super(props);
@@ -27,13 +27,14 @@ export default class MicrocycleRowComponent extends React.Component {
   }
 
   onEditClick(evt) {
-    console.log(`TimelineComponent edit ${evt.target.value}`);
+    console.log(`DayComponent edit ${evt.target.value}`);
     this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
   }
 
   onCloneClick(evt) {
-    console.log(`TimelineComponent clone cmd ${evt.target.value}`);
-    this.props.eventbus.emit("DAY_CLONE_CMD", evt.target.value);
+    const uuid = evt.target.attributes[1].nodeValue;
+    console.log(`DayComponent clone cmd ${uuid}`);
+    this.props.eventbus.emit("DAY_CLONE_CMD", uuid);
   }
 
   onMoveLeftClick(evt) {
@@ -45,7 +46,7 @@ export default class MicrocycleRowComponent extends React.Component {
   }
 
   onDeleteClick(evt) {
-    console.log(`TimelineComponent delete cmd ${evt.target.value}`);
+    console.log(`DayComponent delete cmd ${evt.target.value}`);
     this.props.eventbus.emit("DAY_DELETE_CMD", evt.target.value);
   }
 

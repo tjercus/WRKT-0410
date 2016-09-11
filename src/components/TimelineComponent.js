@@ -103,7 +103,8 @@ export default class TimelineComponent extends React.Component {
 
       // TODO, change to html table
       if (dayNr % 7 === 6) {
-        microcycleElements.push(<section key={"section" + "-" + dayNr + "-" + createUuid()} className="segment-total">{"total: "}{segmentTotalDistance.toFixed(2)}{"km"}</section>);
+        microcycleElements.push(<section key={"section" + "-" + dayNr + "-" + createUuid()} 
+          className="segment-total">{"total: "}{segmentTotalDistance.toFixed(2)}{"km"}</section>);
         microcycleElements.push(<br key={createUuid()} />);
         segmentTotalDistance = 0;
       }

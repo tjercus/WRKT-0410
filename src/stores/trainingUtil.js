@@ -9,7 +9,7 @@ import {createUuid, clone, lpad, hasNoRealValue} from "./miscUtil";
  */
 export function findTraining(uuid, trainings) {
 	if (uuid === null || uuid == undefined) {
-		throw new Error("findTraining: a valid uuid should be provided");
+		throw new Error(`findTraining: a valid uuid [${uuid}] should be provided`);
 	}
 	let _instances = clone(trainings);
   const isInstance = (_instance) => {

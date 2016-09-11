@@ -46,7 +46,7 @@ export default class TimelineStore {
       plan.days = _days;
       */
 
-      console.log("plan: ---------------");
+      console.log("plan: --------------------------------------------------------------------------------------");
       console.dir(plan);
       this.traininginstances = traininginstances;
       this.plan = plan;
@@ -75,13 +75,16 @@ export default class TimelineStore {
       eventbus.emit("DAY_MOVE_EVT", this.plan);
     }));
 
-    eventbus.on("DAY_CLONE_CMD", ((dayUuid) => {
+    // TODO unit test this logic!
+    eventbus.on("DAY_CLONE_CMD", (dayUuid) => {
+      console.log(`TimelineStore received DAY_CLONE_CMD ${dayUuid}`);
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       const newDay = cloneDay(oldDay);
-      this.traininginstances.push(newDay.training);
+      // TODO still support singular training property?
+      Array.prototype.push.apply(this.traininginstances, newDay.trainings);
       this.plan.days.push(newDay);
       eventbus.emit("DAY_CLONE_EVT", this.plan);
-    }));
+    });
 
     eventbus.on("DAY_DELETE_CMD", ((dayUuid) => {      
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
