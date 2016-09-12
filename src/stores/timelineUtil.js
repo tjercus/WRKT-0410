@@ -8,45 +8,13 @@ import {
 } from "./miscUtil";
 import pureSwap from "pure-swap";
 
-/**
- * Return a plan
- */
-export function findPlan(uuid, plans, trainingInstances) {
-  //console.log(`timelineUtil.findPlan: ${JSON.stringify(trainingInstances[0])}`);
-  if (uuid === null || uuid.length !== 36) {
-    throw new Error(`findPlan says uuid is not ok: ${uuid}`);
-  }
-  if (plans === null || plans.length === 0) {
-    throw new Error(`findPlan requires a plan`);
-  }
-  if (trainingInstances === null || trainingInstances.length === 0) {
-    throw new Error(`findPlan trainingInstances required`);
-  }
-  const _plans = clone(plans);
-  const _trainings = clone(trainingInstances);
-  console.log(`len: ${plans.length} plans[0].uuid: ${_plans[0].uuid}`);
-  let plan = _plans.find((_plan) => {
-    if (_plan.uuid == uuid) return _plan;
-  });
-  let _days = [];
-  if (plan === null || plan === undefined) {
-    throw new Error(`plan not found ${uuid}`);
-  }
-  console.log(`plan ${JSON.stringify(plan)}`);
-  plan.days.forEach((_day, i) => {
-    _days.push(augmentDay(_day, _trainings));
-  });
-  plan.days = _days;
-  return plan;
-}
-
 export function findDay(dayUuid, plan, trainings) {
   console.log(`findDay: ${dayUuid}`);
   if (trainings.length === 0) {
-    throw new Error(`trainings should be provided!`);
+    throw new Error(`findDay trainings should be provided!`);
   }
   if (!plan.days || plan.days.length === 0) {
-    throw new Error(`plan should have a list of days!`);
+    throw new Error(`findDay plan should have a list of days!`);
   }
   const _days = clone(plan.days);
   const isDay = (_day) => _day.uuid == dayUuid;

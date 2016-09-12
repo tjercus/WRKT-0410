@@ -61,9 +61,10 @@ export function removeTrainingInstancesForDay(day, traininginstances) {
 		throw new Error("a valid day should be provided");
 	}
   let _traininginstances = [];
-  if (day.hasOwnProperty("trainings")) {
-    _traininginstances = removeTrainingInstance(day.trainings[0].instanceId, clone(traininginstances));
-    _traininginstances = removeTrainingInstance(day.trainings[1].instanceId, clone(_traininginstances));
+  if (day.hasOwnProperty("trainings")) {  	
+  	day.trainings.forEach((_training) => {
+  		_traininginstances = removeTrainingInstance(_training.instanceId, _traininginstances);
+  	});  	
   } else {
     _traininginstances = removeTrainingInstance(day.training.instanceId, clone(traininginstances));
   }

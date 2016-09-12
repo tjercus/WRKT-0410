@@ -77,12 +77,13 @@ export default class TimelineStore {
 
     // TODO unit test this logic!
     eventbus.on("DAY_CLONE_CMD", (dayUuid) => {
-      console.log(`TimelineStore received DAY_CLONE_CMD ${dayUuid}`);
+      console.log(`TimelineStore received DAY_CLONE_CMD ${dayUuid} poolsize ${this.traininginstances.length}`);
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       const newDay = cloneDay(oldDay);
       // TODO still support singular training property?
       Array.prototype.push.apply(this.traininginstances, newDay.trainings);
       this.plan.days.push(newDay);
+      console.log(`TimelineStore AFTER CLONING poolsize ${this.traininginstances.length}`);
       eventbus.emit("DAY_CLONE_EVT", this.plan);
     });
 

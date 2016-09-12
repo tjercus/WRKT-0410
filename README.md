@@ -52,7 +52,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- Persisting a plan should go atomically
+- test 'delete after clone' bug
 - fix dateForDay feature
 - button for 'compact view'
 - button for 'ultra compact view'
