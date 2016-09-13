@@ -1,5 +1,5 @@
 import EventEmitter from "eventemitter2";
-import { findPlan, findDay, augmentDay, flattenDays, removeTrainingsFromDay, moveDay, cloneDay, deleteDay } from "./timelineUtil";
+import { findDay, augmentDay, flattenDays, removeTrainingsFromDay, moveDay, cloneDay, deleteDay } from "./timelineUtil";
 import { removeTrainingInstancesForDay } from "./trainingUtil";
 import { clone, createUuid } from "./miscUtil";
 
@@ -38,13 +38,6 @@ export default class TimelineStore {
       plan.days = plan.days.map((_day) => {
         return augmentDay(_day, traininginstances);
       });
-
-      /*
-      plan.days.forEach((_day, i) => {
-        _days.push(augmentDay(_day, _trainings));
-      });
-      plan.days = _days;
-      */
 
       console.log("plan: --------------------------------------------------------------------------------------");
       console.dir(plan);
@@ -87,12 +80,12 @@ export default class TimelineStore {
       eventbus.emit("DAY_CLONE_EVT", this.plan);
     });
 
-    eventbus.on("DAY_DELETE_CMD", ((dayUuid) => {      
+    eventbus.on("DAY_DELETE_CMD", (dayUuid) => {      
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       this.traininginstances = removeTrainingInstancesForDay(oldDay, clone(this.traininginstances));
       this.plan.days = deleteDay(dayUuid, this.plan.days);
       eventbus.emit("DAY_DELETE_EVT", this.plan);
-    }));
+    });
 
     eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
       if (!this.hasOwnProperty("plan")) {

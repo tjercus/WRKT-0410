@@ -59,7 +59,7 @@ test("findTraining should find a training by uuid", (assert) => {
 
 test("findTraining should return null when not found", (assert) => {  
   let training = findTraining("125-456", trainings);  
-  assert.equal(null, training);
+  assert.equal(training, null);
   assert.end();
 });
 

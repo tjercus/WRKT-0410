@@ -52,7 +52,6 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- test 'delete after clone' bug
 - fix dateForDay feature
 - button for 'compact view'
 - button for 'ultra compact view'
