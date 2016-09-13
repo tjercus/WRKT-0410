@@ -30,7 +30,7 @@ export default class TimelineStore {
         throw new Error("PLAN_FETCHED_EVT did not receive an array with a plan and instances in it");
       }
       const plan = planAndTraininginstances[0];
-      if (!plan.hasOwnProperty("uuid")) {
+      if (!Object.prototype.hasOwnProperty.call(plan, "uuid")) {
         throw new Error("PLAN_FETCHED_EVT did not receive a proper day");
       }      
       console.log(`TimelineStore PLAN_FETCHED_EVT ${plan.uuid}`);
@@ -88,10 +88,10 @@ export default class TimelineStore {
     });
 
     eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
-      if (!this.hasOwnProperty("plan")) {
+      if (!Object.prototype.hasOwnProperty.call(this, "plan")) {
         throw new Error("Cloning a day before a plan was loaded in TimelineStore");
       }
-      if (!this.plan.hasOwnProperty("days")) {
+       if (!Object.prototype.hasOwnProperty.call(this.plan, "days")) {
         throw new Error("Cloning a day before days are loaded in TimelineStore");
       }
       const newInstanceUuid = createUuid();

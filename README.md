@@ -52,6 +52,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- 'add Plan' button and rest-api post endpoint
 - fix dateForDay feature
 - button for 'compact view'
 - button for 'ultra compact view'

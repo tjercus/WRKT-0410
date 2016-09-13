@@ -4,7 +4,8 @@ import {
 } from "./trainingUtil";
 import {
   clone,
-  createUuid
+  createUuid,
+  hasProperty
 } from "./miscUtil";
 import pureSwap from "pure-swap";
 
@@ -40,18 +41,10 @@ export function augmentDay(day, trainings) {
   const _trainings = clone(trainings);
   let uuid = (typeof _day.instanceId === "string") ? _day.instanceId : null;
 
-  if (!_day.hasOwnProperty("trainings")) {
+  if (!hasProperty(_day, "trainings")) {
     _day.trainings = [];
     _day.trainings.push({ instanceId: uuid });
   }
-
-  // ex:
-  // const newTrainings = _day.trainings.map((_training) => {
-  //   let trainings = [];
-  //   trainings.push(findTraining(_training.instanceId, _trainings));
-  //   trainings.total = makeTrainingTotal(_training.segments);
-  //   return trainings;
-  // });
   // calculate total per training when multiple trainings
   for (let i = 0, len = _day.trainings.length; i < len; i++) {
     console.log(`augmentDay trying to find a training by instanceId: 
@@ -92,7 +85,7 @@ export function removeTrainingsFromDay(dayUuid, days) {
   }
   const index = _days.findIndex(isDay);
   if (index > -1) {
-    if (_days[index].hasOwnProperty("trainings")) {
+    if (hasProperty(_days[index], "trainings")) {
       const newTrainings = [];
       // TODO for now hardcoded to 2 trainings per day
       newTrainings.push(createNullTraining());
@@ -126,8 +119,8 @@ export function moveDay(dayUuid, days, positions) {
 
 export function cloneDay(oldDay) {
   const newDay = clone(oldDay);
-  newDay.uuid = createUuid();
-  if (oldDay.hasOwnProperty("trainings")) {
+  newDay.uuid = createUuid();  
+  if (hasProperty(oldDay, "trainings")) {
     let clonedTrainings = [];
     // TODO replace forloop
     for (let i = 0, len = oldDay.trainings.length; i < len; i++) {
@@ -171,6 +164,7 @@ const createNullTraining = () => {
 }
 
 // TODO move to trainingUtil
-const isAugmented = (training) => {
-  return (training.hasOwnProperty("uuid") && training.hasOwnProperty("name"));
+const isAugmented = (training) => {  
+  return (hasProperty(training, "uuid") && hasProperty(training, "name")
+  );
 }

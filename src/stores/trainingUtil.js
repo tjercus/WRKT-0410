@@ -1,5 +1,5 @@
 import moment from "moment";
-import { createUuid, clone, lpad, hasNoRealValue } from "./miscUtil";
+import { createUuid, clone, lpad, hasNoRealValue, hasProperty } from "./miscUtil";
 
 /**
  * Finds a training or an instance
@@ -8,13 +8,12 @@ import { createUuid, clone, lpad, hasNoRealValue } from "./miscUtil";
  * @return {Training or TrainingInstance}
  */
 export function findTraining(uuid, trainings) {
-  if (uuid === null || uuid == undefined) {
+  if (uuid === null || uuid === undefined) {
     throw new Error(`findTraining: a valid uuid [${uuid}] should be provided`);
   }
-  let _instances = clone(trainings);
-  const isInstance = (_instance) => {
-    return _instance.uuid == uuid || _instance.instanceId == uuid;
-  }
+  const _instances = clone(trainings);
+  const isInstance = _instance => String(_instance.uuid) === String(uuid) ||
+    String(_instance.instanceId) === String(uuid);
   const index = _instances.findIndex(isInstance);
   if (index < 0) {
     return null;
@@ -29,17 +28,16 @@ export function findTraining(uuid, trainings) {
  * @return {[type]}           [description]
  */
 export function updateTraining(training, trainings) {
-  //console.log("trainingUtil.updateTraining: type: " + training.type);
-  delete training.total;
+  const trainingClone = clone(training);
   const _trainings = clone(trainings);
-  let i = 0;
-  _trainings.some((_training) => {
-    if (_training.uuid === training.uuid) {
-      _trainings[i] = training;
-      return true;
-    }
-    i++;
-  });
+  delete trainingClone.total;
+  const isInstance = _training => String(_training.uuid) === String(
+    trainingClone.uuid);
+  const index = _trainings.findIndex(isInstance);
+  if (index < 0) {
+    throw new Error("updateTraining could not find training");
+  }
+  _trainings[index] = trainingClone;
   return _trainings;
 }
 
@@ -50,11 +48,9 @@ export function updateTraining(training, trainings) {
  * @return {[type]}           [description]
  */
 export function removeTrainingInstance(uuid, instances) {
-  let _instances = clone(instances);
+  const _instances = clone(instances);
   // TODO extract as constant 'byUuid'
-  const isInstance = (_instance) => {
-    return _instance.uuid == uuid;
-  }
+  const isInstance = _instance => String(_instance.uuid) === String(uuid);
   const index = _instances.findIndex(isInstance);
   _instances.splice((index > -1) ? index : _instances.length, 1);
   return _instances;
@@ -67,12 +63,12 @@ export function removeTrainingInstance(uuid, instances) {
  * @return {Array<TrainingInstance>}	list with traininginstances
  */
 export function removeTrainingInstancesForDay(day, traininginstances) {
-  if (day === null || !day.hasOwnProperty("uuid") || (!day.hasOwnProperty(
-      "training") && !day.hasOwnProperty("trainings"))) {
+  if (day === null || !hasProperty(day, "uuid") || (!hasProperty(day,
+      "training") && !hasProperty(day, "trainings"))) {
     throw new Error("a valid day should be provided");
   }
   let _traininginstances = clone(traininginstances);
-  if (day.hasOwnProperty("trainings")) {
+  if (hasProperty(day, "trainings")) {
     day.trainings.forEach((_training) => {
       _traininginstances = removeTrainingInstance(_training.instanceId,
         _traininginstances);
@@ -90,28 +86,25 @@ export function removeTrainingInstancesForDay(day, traininginstances) {
  * @return Object<Total>
  */
 export function makeTrainingTotal(segments) {
-  let totalObj = {
+  const totalObj = {
     distance: 0,
     duration: "00:00:00",
-    pace: "00:00"
+    pace: "00:00",
   };
   if (segments.length === 0) {
     return totalObj;
-  } else {
-    segments.forEach((segment) => {
-      segment = augmentSegmentData(segment);
-      totalObj.distance += parseFloat(segment.distance);
-      let totalDurationObj = moment.duration(totalObj.duration).add(segment
-        .duration);
-      totalObj.duration = formatDuration(totalDurationObj);
-    });
-    if (hasNoRealValue(totalObj, "pace", totalObj.pace)) {
-      totalObj.pace = makePace(totalObj);
-    } else if (hasNoRealValue(totalObj, "duration")) {
-      totalObj.duration = makeDuration(totalObj);
-    }
   }
-  //console.log("trainingUtil.makeTrainingTotal: " + JSON.stringify(totalObj));
+  segments.forEach((segment) => {
+    const _segment = augmentSegmentData(segment);
+    totalObj.distance += parseFloat(_segment.distance);
+    const totalDurationObj = moment.duration(totalObj.duration).add(_segment.duration);
+    totalObj.duration = formatDuration(totalDurationObj);
+  });
+  if (hasNoRealValue(totalObj, "pace", totalObj.pace)) {
+    totalObj.pace = makePace(totalObj);
+  } else if (hasNoRealValue(totalObj, "duration")) {
+    totalObj.duration = makeDuration(totalObj);
+  }
   return totalObj;
 }
 
@@ -121,25 +114,25 @@ export function makeTrainingTotal(segments) {
  * @return {[type]}         [description]
  */
 export function augmentSegmentData(segment) {
-  segment = clone(segment);
-  segment.pace = translateNamedPace(segment.pace);
-  if (canAugment(segment)) {
-    if (hasNoRealValue(segment, "duration")) {
-      segment.duration = makeDuration(segment);
+  const _segment = clone(segment);
+  _segment.pace = translateNamedPace(_segment.pace);
+  if (canAugment(_segment)) {
+    if (hasNoRealValue(_segment, "duration")) {
+      _segment.duration = makeDuration(segment);
     }
-    if (hasNoRealValue(segment, "pace")) {
-      segment.pace = makePace(segment);
+    if (hasNoRealValue(_segment, "pace")) {
+      _segment.pace = makePace(_segment);
     }
-    if (hasNoRealValue(segment, "distance")) {
-      segment.distance = makeDistance(segment);
+    if (hasNoRealValue(_segment, "distance")) {
+      _segment.distance = makeDistance(_segment);
     }
   }
-  if (isValidSegment(segment)) {
-    segment.isValid = true;
+  if (isValidSegment(_segment)) {
+    _segment.isValid = true;
   } else {
-    segment.isValid = false;
+    _segment.isValid = false;
   }
-  return segment;
+  return _segment;
 }
 
 /**
@@ -149,22 +142,22 @@ export function augmentSegmentData(segment) {
  * @return {Boolean}          [description]
  */
 export function isDirtySegment(segment, segments) {
-  segment = clone(segment);
-  segments = clone(segments);
+  const _segment = clone(segment);
+  const _segments = clone(segments);
   let storedSegment = null;
-  for (let i = 0, len = segments.length; i < len; i++) {
-    if (segments[i].uuid === segment.uuid) {
-      storedSegment = segments[i];
+  for (let i = 0, len = _segments.length; i < len; i++) {
+    if (_segments[i].uuid === _segment.uuid) {
+      storedSegment = _segments[i];
       break;
     }
   }
   if (storedSegment === null) {
     return false;
   }
-  let isDirtySegment = (storedSegment.distance !== segment.distance ||
-    storedSegment.duration !== segment.duration || storedSegment.pace !==
-    segment.pace);
-  return isDirtySegment;
+  const dirt = (storedSegment.distance !== _segment.distance
+    || storedSegment.duration !== _segment.duration
+    || storedSegment.pace !== _segment.pace);
+  return dirt;
 }
 
 /**
@@ -173,11 +166,11 @@ export function isDirtySegment(segment, segments) {
  * @return {[type]}         [description]
  */
 export function canAugment(segment) {
-  segment = clone(segment);
+  const _segment = clone(segment);
   let augmentCount = 0;
-  if (hasNoRealValue(segment, "distance")) augmentCount++;
-  if (hasNoRealValue(segment, "duration")) augmentCount++;
-  if (hasNoRealValue(segment, "pace")) augmentCount++;
+  if (hasNoRealValue(_segment, "distance")) augmentCount++;
+  if (hasNoRealValue(_segment, "duration")) augmentCount++;
+  if (hasNoRealValue(_segment, "pace")) augmentCount++;
   return augmentCount === 1;
 }
 
@@ -187,11 +180,11 @@ export function canAugment(segment) {
  * @return {Boolean}         [description]
  */
 export function isValidSegment(segment) {
-  let segmentClone = clone(segment);
-  // if (makeDistance(segmentClone).toString() !== Number(segmentClone.distance).toFixed(3).toString()) {
-  // 	// console.log("isValidSegment: false: " + Number(segmentClone.distance).toFixed(3) + "/" + makeDistance(segmentClone));
+  const segmentClone = clone(segment);
+  // if (makeDistance(segmentClone).toString()
+  //    !== Number(segmentClone.distance).toFixed(3).toString()) {
   // 	return false;
-  // }	
+  // }
   if (makeDuration(segmentClone) !== segmentClone.duration) {
     return false;
   }
@@ -202,12 +195,13 @@ export function isValidSegment(segment) {
 }
 
 /**
- * parse a duration from a. int minutes to a duration as string 00:00:00 or b. from 00:00 to 00:00:00
+ * parse a duration from:
+ * a. int minutes to a duration as string 00:00:00
+ * b. from 00:00 to 00:00:00
  */
 export function parseDuration(duration) {
   if (duration !== null && duration !== "" && !isNaN(duration)) {
-    let parsed = moment("2016-01-01").minutes(duration).format("HH:mm:ss");
-    return parsed;
+    return moment("2016-01-01").minutes(duration).format("HH:mm:ss");
   }
   if (duration !== null && duration !== "" && duration.length === 5) {
     return `00:${duration}`;
@@ -222,10 +216,8 @@ export function parseDuration(duration) {
  * @return {[type]}          [description]
  */
 export function removeSegment(segment, segments) {
-  let _segments = clone(segments);
-  const isSeg = (_segment) => {
-    return _segment.uuid == segment.uuid;
-  }
+  const _segments = clone(segments);
+  const isSeg = _segment => String(_segment.uuid) === String(segment.uuid);
   const index = _segments.findIndex(isSeg);
   _segments.splice((index > -1) ? index : _segments.length, 1);
   return _segments;
@@ -238,42 +230,33 @@ export function removeSegment(segment, segments) {
  * @param {[type]} overwriteUuid [description]
  */
 export function addSegment(segment, segments, overwriteUuid) {
-  console.log(
-    `trainingUtil.addSegment init (${segments.length}) ${JSON.stringify(segments)}`
-  );
   const _segment = clone(segment);
   const _segments = clone(segments);
-  console.log("addSegment created copy of segment " + JSON.stringify(_segment));
-  if (!_segment.hasOwnProperty("uuid") || !_segment.uuid ||
+  if (!hasProperty(_segment, "uuid") || !_segment.uuid ||
     (overwriteUuid !== undefined && overwriteUuid === true)) {
-    console.log("addSegment overwriting uuid");
     _segment.uuid = createUuid();
   }
   const augmentedSegment = augmentSegmentData(_segment);
   _segments.push(augmentedSegment);
-  console.log(
-    `addSegment final (${_segments.length}) ${JSON.stringify(_segments)}`);
   return _segments;
 }
 
-/* ----------------------------------------------------------------------------------- */
-
-/**    
+/**
  * @param moment.duration obj
  * @return hh:mm:ss String
  */
-function formatDuration(duration) {
-  return `${lpad(duration.hours())}:${lpad(duration.minutes())}:${lpad(duration.seconds())}`;
-}
+const formatDuration = duration =>
+  `${lpad(duration.hours())}:${lpad(duration.minutes())}:${lpad(duration.seconds())}`;
 
 /**
  * @return mm:ss String
  */
-function makePace(segment) {
-  segment = clone(segment);
-  let durationObj = moment.duration(segment.duration),
-    seconds = durationObj.asSeconds(),
-    paceObj = moment.duration(Math.round(seconds / segment.distance), "seconds");
+const makePace = (segment) => {
+  const _segment = clone(segment);
+  const durationObj = moment.duration(_segment.duration);
+  const seconds = durationObj.asSeconds();
+  const paceObj = moment.duration(Math.round(seconds / _segment.distance),
+    "seconds");
   return `${lpad(paceObj.minutes())}:${lpad(paceObj.seconds())}`;
 };
 
@@ -281,77 +264,64 @@ function makePace(segment) {
  * Make duration based on distance and pace
  * @return hh:mm:ss String as: ex: 5:10 * 12.93 km = 1:6:48
  */
-function makeDuration(segment) {
-  segment = clone(segment);
-  let paceObj = moment.duration(segment.pace),
-    seconds = paceObj.asSeconds() / 60,
-    totalSeconds = Math.round(seconds * segment.distance),
-    durationObj = moment.duration(totalSeconds, "seconds");
-  let formattedDuration = formatDuration(durationObj);
+const makeDuration = (segment) => {
+  const _segment = clone(segment);
+  const paceObj = moment.duration(_segment.pace);
+  const seconds = paceObj.asSeconds() / 60;
+  const totalSeconds = Math.round(seconds * _segment.distance);
+  const durationObj = moment.duration(totalSeconds, "seconds");
+  const formattedDuration = formatDuration(durationObj);
   return formattedDuration;
 };
 
 /**
  * @return a real float. Calculated distance based on duration / pace
  */
-function makeDistance(segment) {
-  segment = clone(segment);
-  let paceObj = moment.duration(segment.pace),
-    durationObj = moment.duration(segment.duration),
-    durationSeconds = durationObj.asSeconds(),
-    paceSeconds = paceObj.asSeconds() / 60;
+const makeDistance = (segment) => {
+  const _segment = clone(segment);
+  const paceObj = moment.duration(_segment.pace);
+  const durationObj = moment.duration(_segment.duration);
+  const durationSeconds = durationObj.asSeconds();
+  const paceSeconds = paceObj.asSeconds() / 60;
   if (paceSeconds === 0 || durationSeconds === 0) {
     return 0;
   }
-  let rawDistance = durationSeconds / paceSeconds;
+  const rawDistance = durationSeconds / paceSeconds;
   return Math.round(rawDistance * 1000) / 1000;
 };
 
 // TODO extract to config
-function translateNamedPace(pace) {
+const translateNamedPace = (pace) => {
   if (pace === undefined || pace === null || !pace.startsWith("@")) {
     return pace;
   }
   switch (pace) {
     case "@RECOV":
       return "05:30";
-      break;
     case "@EASY":
       return "05:10";
-      break;
     case "@LRP":
       return "04:45";
-      break;
     case "@MP":
       return "04:10";
-      break;
     case "@MP+5%":
       return "04:22";
-      break;
     case "@21KP":
       return "03:55";
-      break;
     case "@16KP":
       return "03:50";
-      break;
     case "@LT":
       return "03:50";
-      break;
     case "@10KP":
       return "03:40";
-      break;
     case "@5KP":
       return "03:33";
-      break;
     case "@3KP":
       return "03:24";
-      break;
     case "@MIP":
       return "03:10";
-      break;
     default:
       return pace;
-      break;
-  };
-}
+  }
+};
 

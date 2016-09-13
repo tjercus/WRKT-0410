@@ -10,7 +10,7 @@ export default class SegmentComponent extends React.Component {
     super(props);
 
     let isValid = true;
-    if (props.segment.hasOwnProperty("isValid")) {
+    if (Object.prototype.hasOwnProperty.call(props.segment, "isValid")) {
       isValid = props.segment.isValid;
     }
     this.state = {

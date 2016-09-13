@@ -32,11 +32,15 @@ export function hasNoRealValue(obj, name) {
       hasNo = hasNothing(obj);
     }
     if (typeof obj === "object") {
-      const value = obj[name];
-      hasNo = (!obj.hasOwnProperty(name) || value === undefined || hasNothing(value));
+      const value = obj[name];       
+      hasNo = (!hasProperty(obj, name) || value === undefined || hasNothing(value));
     }
   }  
   return hasNo;
+}
+
+export function hasProperty(obj, propname) {
+  return Object.prototype.hasOwnProperty.call(obj, propname);
 }
 
 const hasNothing = (value) => (value === null || value === "" || value === "00:00" || value === "00:00:00" || value <= 0);
