@@ -13,7 +13,8 @@ export default class TimelineComponent extends React.Component {
     this.state = {
       isVisible: false,
       showEasyDays: true,
-      days: []
+      days: [],
+      name: ""
     };
     //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);    
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
@@ -31,7 +32,8 @@ export default class TimelineComponent extends React.Component {
     });
     this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
       console.log(`TimelineComponent received PLAN_LOAD_EVT with a new plan [${plan.uuid}] as payload`);
-      this.setState({ days: plan.days });
+      this.setState({ days: plan.days, name: plan.name });
+      this.setState({ isVisible: true });
     });
     // this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
     //   console.log("TimelineComponent received DAY_EMPTY_EVT with a new plan as payload");
@@ -39,17 +41,17 @@ export default class TimelineComponent extends React.Component {
     // });
     this.props.eventbus.on("DAY_CLONE_EVT", (plan) => {
       console.log("TimelineComponent received DAY_CLONE_EVT with a new plan as payload");
-      this.setState({ days: plan.days });
+     this.setState({ days: plan.days, name: plan.name });
     });
     this.props.eventbus.on("DAY_MOVE_EVT", (plan) => {
       console.log("TimelineComponent received DAY_MOVE_EVT with a new plan as payload");
-      this.setState({ days: plan.days });
+      this.setState({ days: plan.days, name: plan.name });
     });
     this.props.eventbus.on("DAY_DELETE_EVT", (plan) => {
-      this.setState({ days: plan.days });
+      this.setState({ days: plan.days, name: plan.name });
     });
     this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
-      this.setState({ days: plan.days });
+      this.setState({ days: plan.days, name: plan.name });
     });    
   }  
 
@@ -117,7 +119,8 @@ export default class TimelineComponent extends React.Component {
 
     return (
       <section className={panelClassName}>
-        <header className="panel-header">          
+        <header className="panel-header">
+          <em>{this.state.name}</em>&nbsp;
           <button className="button-small" onClick={this.onHideEasyRunsButtonClick}>{"de-emphasize easy days"}</button>
           <button className="button-flat" onClick={this.onSaveButtonClick}>{"persist changes"}</button>
         </header>

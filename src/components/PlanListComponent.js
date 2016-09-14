@@ -26,6 +26,10 @@ export default class PlanListComponent extends React.Component {
     this.props.eventbus.on("PLANLIST_FETCHED_EVT", (planlist) => {
       this.setState({planlist: planlist});
     });
+
+    this.props.eventbus.on("PLAN_LOAD_EVT", (uuid) => {
+      this.setState({ isVisible: false });
+    });
   }
 
   onClick(evt) {
