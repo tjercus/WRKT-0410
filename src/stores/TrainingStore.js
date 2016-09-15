@@ -5,6 +5,7 @@ import {
   augmentSegmentData,
   addSegment,
   removeSegment,
+  removeTrainingInstance,
 } from "./trainingUtil";
 import { createUuid, clone, } from "./miscUtil";
 
@@ -35,8 +36,8 @@ export default class TrainingStore {
         eventbus.emit("TRAININGS_PERSIST_CMD", this.trainings);
       }
     });
-    eventbus.on("TRAINING_LIST_CMD", () => {
-      eventbus.emit("TRAINING_LIST_EVT", this.trainings);
+    eventbus.on("TRAININGS_UPDATE_CMD", () => {
+      eventbus.emit("TRAININGS_UPDATE_EVT", this.trainings);
     });
     eventbus.on("TRAINING_LOAD_CMD", (uuid) => {
       this.clearTraining();
@@ -50,6 +51,14 @@ export default class TrainingStore {
       const clonedTraining = this.cloneTrainingInStore(this.trainings);
       eventbus.emit("TRAINING_LOAD_CMD", clonedTraining.uuid);
     });
+
+    eventbus.on("TRAINING_REMOVE_CMD", () => {
+      // TODO rename like removeTrainingOrInstance
+      this.trainings = removeTrainingInstance(this.uuid, this.trainings);
+      eventbus.emit("TRAINING_LOAD_CMD", "new-training");
+      eventbus.emit("TRAINING_REMOVE_EVT", this.trainings);
+    });    
+
     eventbus.on("TRAINING_UPDATE_CMD", (training) => {
       // currently only 'name' and 'type' can be updated (besides 'segments')
       this.name = training.name;

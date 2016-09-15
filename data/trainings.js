@@ -8,7 +8,8 @@
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": 0,
 				"duration": "00:00:00",
-				"pace": "00:00"
+				"pace": "00:00",
+				"isValid": true
 			}
 		]
 	},
@@ -2550,55 +2551,6 @@
 				"distance": "2",
 				"duration": "00:10:20",
 				"pace": "05:10",
-				"isValid": true
-			}
-		]
-	},
-	{
-		"uuid": "ee3c3b72-3c6d-413d-b5d3-7e528935ad33",
-		"name": "Test",
-		"type": "workout",
-		"segments": [
-			{
-				"uuid": "41",
-				"distance": 5,
-				"pace": "05:10",
-				"duration": "00:25:50",
-				"isValid": true
-			},
-			{
-				"uuid": "43",
-				"distance": 5,
-				"pace": "04:30",
-				"duration": "00:22:30",
-				"isValid": true
-			},
-			{
-				"uuid": "44",
-				"distance": 5,
-				"pace": "04:20",
-				"duration": "00:21:40",
-				"isValid": true
-			}
-		]
-	},
-	{
-		"uuid": "f0f0db94-2834-4988-ad07-9cff053ee077",
-		"name": "Test2",
-		"type": "workout",
-		"segments": [
-			{
-				"uuid": "1",
-				"distance": 3,
-				"pace": "05:30",
-				"duration": "00:16:30",
-				"isValid": true
-			},
-			{
-				"uuid": "2",
-				"distance": 1,
-				"pace": "03:40",
-				"duration": "00:03:40",
 				"isValid": true
 			}
 		]

@@ -28,6 +28,7 @@ export default class TrainingComponent extends React.Component {
     this.addEmptySegment = this.addEmptySegment.bind(this);
     this.loadTraining = this.loadTraining.bind(this);
     this.cloneTraining = this.cloneTraining.bind(this);
+    this.removeTraining = this.removeTraining.bind(this);
     this.onEditNameButtonClick = this.onEditNameButtonClick.bind(this);
     this.onNameChange = this.onNameChange.bind(this);
     this.onNameBlur = this.onNameBlur.bind(this);
@@ -37,6 +38,7 @@ export default class TrainingComponent extends React.Component {
 
   componentDidMount() {
     this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
+      // TODO rewrite as compact statement
       if (menuItemName === this.props.from) {
         this.setState({ isVisible: true });
       } else {
@@ -113,6 +115,10 @@ export default class TrainingComponent extends React.Component {
     // TODO custom alert    
     console.log("Training cloned and selected");
     this.props.eventbus.emit("TRAINING_CLONE_CMD");
+  }
+
+  removeTraining() {
+    this.props.eventbus.emit("TRAINING_REMOVE_CMD");
   }
 
   emitAddToPlan() {    
@@ -203,6 +209,7 @@ export default class TrainingComponent extends React.Component {
               <button onClick={this.emitPersistChanges} className="button-flat" id="persist-button">persist changes</button>
               <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>
               <button onClick={this.cloneTraining} className="button-flat">clone training</button>
+              <button onClick={this.removeTraining} className="button-flat">remove training</button>
               <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to loaded plan</button>
             </menu>            
           </div>        

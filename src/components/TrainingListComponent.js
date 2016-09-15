@@ -23,9 +23,9 @@ export default class TrainingListComponent extends React.Component {
       this.setState({ trainings: trainings });
     });
 
-    this.props.eventbus.on("TRAINING_LIST_EVT", (trainings) => {
+    this.props.eventbus.on("TRAININGS_UPDATE_EVT", (trainings) => {
       if (trainings === undefined || trainings === null) {
-        throw new Error("TRAINING_LIST_EVT was caught without a list of trainings");
+        throw new Error("TRAININGS_UPDATE_EVT was caught without a list of trainings");
       }
       this.setState({ trainings: trainings });
     });
@@ -38,8 +38,9 @@ export default class TrainingListComponent extends React.Component {
       this.setState({ trainings: obj.trainings });
     });
 
-    // handle TRAINING_ADD_EVT thrown by TrainingStore ??
-    this.props.eventbus.emit("TRAINING_LIST_CMD");
+    this.props.eventbus.on("TRAINING_REMOVE_EVT", (trainings) => {      
+      this.setState({ trainings: trainings });
+    });
   }
 
   onClick(evt) {
