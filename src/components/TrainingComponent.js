@@ -76,14 +76,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   loadTraining(training) {
-    this.setState(DEFAULT_STATE,
-      function() {
-        this.setState(this.makeTraining(training));
-      });
-    // TODO get this working
-    // this.clearTrainingFromLocalState(function(training) {      
-    //   this.setState({uuid: training.uuid, name: training.name, segments: training.segments, total: training.total});
-    // }.bind(this));
+    this.setState(DEFAULT_STATE, () => this.setState(this.makeTraining(training)));    
   }
 
   addEmptySegment() {
@@ -91,7 +84,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   emitPersistChanges() {
-    this.props.eventbus.emit("TRAININGS_PERSIST_CMD");
+    this.props.eventbus.emit("TRAININGS_PERSIST_CMD", null);
   }
 
   exportTraining() {
@@ -131,10 +124,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   onTypeClick(evt) {
-    //console.log(`onTypeClick: ${evt.target.value}, before state: ${JSON.stringify(this.state)}`);
     this.setState({ type: evt.target.value }, () => {
-      //console.log(`onTypeClick: setState: ${JSON.stringify(this.state)}`);    
-      //console.log(`onTypeClick: going to emit training: ${JSON.stringify(_training)}`);
       this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.makeTraining(this.state)); // TODO test: 'should emit event when button clicked'
     });
   }

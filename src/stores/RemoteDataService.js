@@ -17,8 +17,13 @@ export default class RemoteDataService {
       this.fetchJson("trainings", "TRAININGS_FETCHED_EVT", "TRAININGS_FETCH_ERROR_EVT", eventbus);
     });
 
-    eventbus.on("PLAN_FETCH_CMD", (uuid) => {
-      console.log(`RemoteDataService PLAN_FETCH_CMD ${uuid}`);
+    eventbus.on("TRAININGS_PERSIST_CMD", (trainings) => {
+      if (trainings !== null) {
+        this.persistTrainings(trainings, eventbus);
+      }
+    });
+
+    eventbus.on("PLAN_FETCH_CMD", (uuid) => {      
       this.fetchMultiple([`plans/${uuid}`, `traininginstances/${uuid}`],
         "PLAN_FETCHED_EVT", "PLAN_FETCH_ERROR_EVT", eventbus);
     });
@@ -74,13 +79,27 @@ export default class RemoteDataService {
       });
     }
   }
+  
+  persistTrainings(trainings, eventbus) {
+    const trainingsStr = JSON.stringify(trainings, null, "\t");
+    if (typeof fetch === "function") {
+      fetch("http://localhost:3333/trainings", {
+        method: "PUT",
+        body: trainingsStr,
+      }).then((response) => {
+        eventbus.emit("TRAININGS_PERSIST_EVT");
+      }).catch((error) => {
+        eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", error);
+      });
+    }
+  }
 
   persistPlan(plan, eventbus) {
     const planStr = JSON.stringify(plan, null, "\t");
-    if (typeof fetch == "function") {
+    if (typeof fetch === "function") {
       fetch(`http://localhost:3333/plans/${plan.uuid}`, {
         method: "PUT",
-        body: planStr
+        body: planStr,
       }).then((response) => {
         eventbus.emit("PLAN_PERSIST_EVT");
       }).catch((error) => {
@@ -92,10 +111,10 @@ export default class RemoteDataService {
   persistInstances(uuid, instances, eventbus) {
     const instancesStr = JSON.stringify(instances, null, "\t");
     console.log(`RemoteDataService persistInstances: ${instancesStr}`);
-    if (typeof fetch == 'function') {
+    if (typeof fetch === "function") {
       fetch(`http://localhost:3333/traininginstances/${uuid}`, {
         method: "PUT",
-        body: instancesStr
+        body: instancesStr,
       }).then((response) => {
         eventbus.emit("INSTANCES_PERSIST_EVT");
       }).catch((error) => {
