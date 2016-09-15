@@ -50,8 +50,9 @@ test("TrainingComponent should render a training", (assert) => {
   assert.equal(buttons.at(2).text(), "persist changes");
   assert.equal(buttons.at(3).text(), "clear training");  
   assert.ok(buttons.at(3).hasClass("button-warning"));
-  assert.equal(buttons.at(4).text(), "clone training");  
-  assert.equal(buttons.at(5).text(), "add to loaded plan");
+  assert.equal(buttons.at(4).text(), "clone training");
+  assert.equal(buttons.at(5).text(), "remove training");  
+  assert.equal(buttons.at(6).text(), "add to loaded plan");
   assert.end();
 });
 
