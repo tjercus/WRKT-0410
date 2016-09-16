@@ -71,7 +71,7 @@
 	{
 		"uuid": "af7c3279-ad42-4388-aea4-92df969a76b6",
 		"name": "HNS speed #1, 12 x 400",
-		"type": "easy",
+		"type": "workout",
 		"segments": [
 			{
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
@@ -283,6 +283,63 @@
 			"distance": 13.5,
 			"duration": "01:09:45",
 			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "f18f8a1d-d811-4115-8763-82e06619dfa0",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "15b0a432-4add-425e-88b0-481a26416dc9",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
+		}
+	},
+	{
+		"uuid": "d51b22e5-a945-4422-89b2-57ecb9855f91",
+		"name": "Easy run 10km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "10",
+				"duration": "00:55:00",
+				"pace": "05:30",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 10,
+			"duration": "00:55:00",
+			"pace": "05:30"
 		}
 	}
 ]

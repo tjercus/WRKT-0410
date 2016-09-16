@@ -137,10 +137,11 @@ export default class TrainingStore {
   }
 
   updateSegmentInStore(segment, segments) {
-    this.segments = updateSegment(segment, this.segments);
+    const _segment = augmentSegmentData(segment);
+    this.segments = updateSegment(_segment, this.segments);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_UPDATE_EVT", {
-      segment: segment,
+      segment: _segment,
       total: this.total,
     });
   }

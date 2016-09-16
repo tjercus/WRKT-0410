@@ -225,6 +225,18 @@ test("augmentSegmentData should work with named paces", (assert) => {
   assert.end();
 });
 
+test("augmentSegmentData should work with named paces 2", (assert) => {
+  let segment = {
+    distance: 10,
+    pace: "@5KP",
+  };
+  var augmentedSegment = augmentSegmentData(segment);
+  assert.equal(augmentedSegment.distance, 10.000);
+  assert.equal(augmentedSegment.duration, "00:35:30");
+  assert.equal(augmentedSegment.pace, "03:33");
+  assert.end();
+});
+
 test("augmentSegmentData should augment with a duration in only zeros", (assert) => {
   let segment = {
     distance: 5,
