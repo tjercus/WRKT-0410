@@ -38,12 +38,7 @@ export default class TrainingComponent extends React.Component {
 
   componentDidMount() {
     this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
-      // TODO rewrite as compact statement
-      if (menuItemName === this.props.from) {
-        this.setState({ isVisible: true });
-      } else {
-        this.setState({ isVisible: false });
-      }
+      this.setState({ isVisible: (menuItemName === this.props.from) });
     });
 
     this.props.eventbus.on("TRAINING_LOAD_EVT", (training) => {

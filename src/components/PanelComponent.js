@@ -10,11 +10,7 @@ export default class PanelComponent extends React.Component {
   
   componentDidMount() {
     this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
-      if (menuItemName === this.props.from) {
-        this.setState({isVisible: true});
-      } else {
-        this.setState({isVisible: false});
-      }
+      this.setState({ isVisible: (menuItemName === this.props.from) });
     });
   }
   

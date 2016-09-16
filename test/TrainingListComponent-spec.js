@@ -16,13 +16,24 @@ const trainings = [
   {"uuid": "0a705d04-6e7d-11e6-ba0f-7fcdd2cc0149", "name" : "training two"}
 ];
 
-test("Component should render", (assert) => {  
+test("Component should render", (assert) => {
   //const onSpy = sinon.spy(eventbus, "on");
   const component = mount(<TrainingListComponent eventbus={eventbus} />);
 
   eventbus.emit("TRAININGS_FETCHED_EVT", trainings);
 
   assert.equal(component.find('ul').children().length, 2);
+  assert.end();
+});
+
+test("Component should re-render if store updates list", (assert) => {
+  //const onSpy = sinon.spy(eventbus, "on");
+  const component = mount(<TrainingListComponent eventbus={eventbus} />);
+  trainings.push({uuid: "34957", name: "third"});
+
+  eventbus.emit("TRAININGS_UPDATE_EVT", trainings);
+
+  assert.equal(component.find('ul').children().length, 3);
   assert.end();
 });
 

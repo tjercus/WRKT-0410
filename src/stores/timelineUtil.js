@@ -1,7 +1,9 @@
 import {
   findTraining,
-  makeTrainingTotal
 } from "./trainingUtil";
+import {  
+  makeTrainingTotal
+} from "./segmentUtil";
 import {
   clone,
   createUuid,

@@ -1,8 +1,7 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import {isDirtySegment, canAugment, isValidSegment, parseDuration} from "../stores/trainingUtil";
-import {createUuid, clone} from "../stores/miscUtil";
-
+import {isDirtySegment, canAugment, isValidSegment, parseDuration} from "../stores/segmentUtil";
+import {createUuid, clone, hasProperty} from "../stores/miscUtil";
 
 export default class SegmentComponent extends React.Component {
 
@@ -10,7 +9,7 @@ export default class SegmentComponent extends React.Component {
     super(props);
 
     let isValid = true;
-    if (Object.prototype.hasOwnProperty.call(props.segment, "isValid")) {
+    if (hasProperty(props.segment, "isValid")) {
       isValid = props.segment.isValid;
     }
     this.state = {

@@ -1,14 +1,187 @@
 [
-	{
+	{		
 		"uuid": "new-training",
-		"name": "New training",
+		"name": "New Training",
+		"segments": [
+			{
+				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
+				"distance": 0,
+				"duration": "00:00:00",
+				"pace": "00:00"				
+			}
+		]
+	},
+	{
+		"uuid": "750776ee-7bf6-11e6-8e3a-7754c08933b3",
+		"name": "HNS speed #1, 12 x 400",
 		"type": "easy",
 		"segments": [
 			{
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
-				"distance": 0,
-				"duration": "00:00:00",
-				"pace": "00:00",
+				"distance": "2",
+				"duration": "00:11:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "20fd07fe-e98a-411e-a8fe-a5fb8d1dd19a",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "5bb4936f-028d-4eab-b528-3d9a73678a4f",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "d9e5d295-6c89-4e9d-88b1-e5e77d3bc7df",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "ad915a0e-c0b1-4fe5-94c8-054338b04edb",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "e2b66985-5f71-4663-ab5a-41278e9c4b39",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "2fed8fbe-5b2d-4b20-a9bd-995759e62ed9",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "01a14177-aec6-465b-a191-efcde5d97338",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "901cf294-b0eb-4dfa-9c9d-b028663f3d1b",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "23ff8290-7dbb-43ec-83d4-a57e85f05ad4",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "0dcd102a-52cb-4771-88bf-c4fcdd90b1d9",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "7d9bc92e-7e30-4b8b-904a-778ca5631088",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "54a6d044-51b6-457c-8248-12cb6ed4edc0",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "7d3670fb-26d5-4d20-b4b4-c58dab6eba19",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "005338d0-de7b-4df0-97ee-d941b9959e43",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "5e60abea-0352-43e5-bc13-b6b9ea628d70",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "d89cdef3-5d19-4e5a-b1fe-830ce2cc6061",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "7a1d81fe-13ee-420f-8736-7b90600d561f",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "10a9c49b-71eb-4525-ada1-d24cae3a430a",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "3ebde1e8-b6e1-47a7-8b14-e5bdb883a9ac",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "e2ab5fc1-6415-4923-bbf6-49302a846f70",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "6da94111-79ac-4de4-86f5-18501eb9cdc2",
+				"distance": "0.4",
+				"duration": "00:01:28",
+				"pace": "03:40",
+				"isValid": true
+			},
+			{
+				"uuid": "de23d69a-ac95-4a5e-9a79-72086ec6ec8d",
+				"distance": 0.182,
+				"duration": "00:01:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "819aa65a-7708-47ea-8c1c-a102a467613c",
+				"distance": "2",
+				"duration": "00:11:00",
+				"pace": "05:30",
 				"isValid": true
 			}
 		]
@@ -430,73 +603,99 @@
 	},
 	{
 		"uuid": "acc3d0b8-33ae-4d40-bda3-d0e885f516f1",
-		"name": "Hansons strength #1, 6 x 1m",
+		"name": "HNS strength #1, 6 x 1m",
 		"type": "workout",
 		"segments": [
 			{
 				"uuid": "1",
 				"distance": 2,
-				"duration": "00:13:00"
+				"duration": "00:13:00",
+				"pace": "06:30",
+				"isValid": true
 			},
 			{
 				"uuid": "2",
 				"distance": 1.6,
-				"duration": "00:06:30"
+				"duration": "00:06:30",
+				"pace": "04:04",
+				"isValid": true
 			},
 			{
 				"uuid": "3",
 				"distance": 0.4,
-				"duration": "00:02:20"
+				"duration": "00:02:20",
+				"pace": "05:50",
+				"isValid": true
 			},
 			{
 				"uuid": "4",
 				"distance": 1.6,
-				"duration": "00:06:30"
+				"duration": "00:06:30",
+				"pace": "04:04",
+				"isValid": true
 			},
 			{
 				"uuid": "5",
 				"distance": 0.4,
-				"duration": "00:02:20"
+				"duration": "00:02:20",
+				"pace": "05:50",
+				"isValid": true
 			},
 			{
 				"uuid": "6",
 				"distance": 1.6,
-				"duration": "00:06:30"
+				"duration": "00:06:30",
+				"pace": "04:04",
+				"isValid": true
 			},
 			{
 				"uuid": "7",
 				"distance": 0.4,
-				"duration": "00:02:20"
+				"duration": "00:02:20",
+				"pace": "05:50",
+				"isValid": true
 			},
 			{
 				"uuid": "8",
 				"distance": 1.6,
-				"duration": "00:06:30"
+				"duration": "00:06:30",
+				"pace": "04:04",
+				"isValid": true
 			},
 			{
 				"uuid": "9",
 				"distance": 0.4,
-				"duration": "00:02:20"
+				"duration": "00:02:20",
+				"pace": "05:50",
+				"isValid": true
 			},
 			{
 				"uuid": "10",
 				"distance": 1.6,
-				"duration": "00:06:30"
+				"duration": "00:06:30",
+				"pace": "04:04",
+				"isValid": true
 			},
 			{
 				"uuid": "11",
 				"distance": 0.4,
-				"duration": "00:02:20"
+				"duration": "00:02:20",
+				"pace": "05:50",
+				"isValid": true
 			},
 			{
 				"uuid": "12",
 				"distance": 1.6,
-				"duration": "00:06:30"
+				"duration": "00:06:30",
+				"pace": "04:04",
+				"isValid": true
 			},
 			{
 				"uuid": "13",
 				"distance": 2,
-				"duration": "00:14:00"
+				"duration": "00:14:00",
+				"pace": "07:00",
+				"isValid": true
 			}
 		]
 	},

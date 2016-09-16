@@ -32,7 +32,7 @@ export default class TimelineStore {
       const plan = planAndTraininginstances[0];
       if (!Object.prototype.hasOwnProperty.call(plan, "uuid")) {
         throw new Error("PLAN_FETCHED_EVT did not receive a proper day");
-      }      
+      }
       console.log(`TimelineStore PLAN_FETCHED_EVT ${plan.uuid}`);
       const traininginstances = planAndTraininginstances[1];      
       plan.days = plan.days.map((_day) => {
@@ -58,7 +58,7 @@ export default class TimelineStore {
 
     eventbus.on("DAY_EMPTY_CMD", ((dayUuid) => {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
-      this.plan.days = removeTrainingsFromDay(oldDay, clone(this.plan.days));      
+      this.plan.days = removeTrainingsFromDay(oldDay, clone(this.plan.days));
       this.traininginstances = removeTrainingInstancesForDay(oldDay, clone(this.traininginstances));      
       eventbus.emit("DAY_EMPTY_EVT", this.plan);
     }));
@@ -80,7 +80,7 @@ export default class TimelineStore {
       eventbus.emit("DAY_CLONE_EVT", this.plan);
     });
 
-    eventbus.on("DAY_DELETE_CMD", (dayUuid) => {      
+    eventbus.on("DAY_DELETE_CMD", (dayUuid) => {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       this.traininginstances = removeTrainingInstancesForDay(oldDay, clone(this.traininginstances));
       this.plan.days = deleteDay(dayUuid, this.plan.days);

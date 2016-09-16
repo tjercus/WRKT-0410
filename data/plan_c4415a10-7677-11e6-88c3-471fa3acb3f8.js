@@ -3,10 +3,26 @@
 	"name": "Hansons Advanced Plan",
 	"days": [
 		{
-			"uuid": "i588be83-49d1-47fd-9f6f-0d07f8ade0bi",
+			"uuid": "b47ff50f-7f31-4ddf-88e7-100c5dc77533",
 			"trainings": [
 				{
-					"instanceId": "0609edb4-767c-11e6-a788-e39f43b2a758"
+					"instanceId": "3c28af09-6b20-4d9f-9819-b5d99c8af09f"
+				}
+			]
+		},
+		{
+			"uuid": "684b87df-8676-4dc7-850e-498286d67e63",
+			"trainings": [
+				{
+					"instanceId": "af7c3279-ad42-4388-aea4-92df969a76b6"
+				}
+			]
+		},
+		{
+			"uuid": "8b26bb4e-5cee-4217-acc5-9502f88776cb",
+			"trainings": [
+				{
+					"instanceId": "76ffb857-5457-4f7f-9d34-06d5b48f90b7"
 				}
 			]
 		},
@@ -23,6 +39,14 @@
 			"trainings": [
 				{
 					"instanceId": "972f9ca9-8726-4b74-9e32-dccde61b5938"
+				}
+			]
+		},
+		{
+			"uuid": "3ebb0338-ab49-491f-8daf-e5b04225ca83",
+			"trainings": [
+				{
+					"instanceId": "7045f684-0681-4953-9147-e6551cc879ab"
 				}
 			]
 		}

@@ -1,13 +1,19 @@
 import {
   findTraining,
-  updateTraining,
-  makeTrainingTotal,
-  augmentSegmentData,
-  addSegment,
-  removeSegment,
+  updateTraining,  
   removeTrainingInstance,
 } from "./trainingUtil";
-import { createUuid, clone, } from "./miscUtil";
+import {
+  addSegment,
+  removeSegment,
+  augmentSegmentData,
+  updateSegment,
+  makeTrainingTotal,
+} from "./segmentUtil";
+import {
+  createUuid,
+  clone,
+} from "./miscUtil";
 
 export default class TrainingStore {
 
@@ -24,14 +30,15 @@ export default class TrainingStore {
       pace: "00:00",
     };
 
-    eventbus.on("TRAININGS_FETCHED_EVT", (trainings) => {
-      this.trainings = trainings;
+    eventbus.on("TRAININGS_FETCHED_EVT", (trainingsFromServer) => {
+      this.trainings = trainingsFromServer;
     });
 
-    eventbus.on("TRAININGS_PERSIST_CMD", (trainings) => {
-      if (trainings === null) {
+    eventbus.on("TRAININGS_PERSIST_CMD", (_trainings) => {
+      if (_trainings === null) {
         // TODO check if currently loaded training should be updated to this.trainings first
-        this.updateTrainingInStore(this.getCurrentlyLoadedTraining(), this.trainings);      
+        this.updateTrainingInStore(this.getCurrentlyLoadedTraining(),
+          this.trainings);
         // note re-emit event but now with payload
         eventbus.emit("TRAININGS_PERSIST_CMD", this.trainings);
       }
@@ -57,7 +64,7 @@ export default class TrainingStore {
       this.trainings = removeTrainingInstance(this.uuid, this.trainings);
       eventbus.emit("TRAINING_LOAD_CMD", "new-training");
       eventbus.emit("TRAINING_REMOVE_EVT", this.trainings);
-    });    
+    });
 
     eventbus.on("TRAINING_UPDATE_CMD", (training) => {
       // currently only 'name' and 'type' can be updated (besides 'segments')
@@ -71,7 +78,7 @@ export default class TrainingStore {
     });
 
     eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {
-      this.updateSegment(segment, this.segments);
+      this.updateSegmentInStore(segment, this.segments);
     });
     eventbus.on("SEGMENT_ADD_CMD", (segment) => {
       this.addSegmentToStore(segment, this.segments);
@@ -82,7 +89,7 @@ export default class TrainingStore {
     eventbus.on("SEGMENT_CLONE_CMD", (segment) => {
       this.addSegmentToStore(segment, this.segments, true);
     });
-  }  
+  }
 
   cloneTrainingInStore(trainings) {
     const _trainings = clone(trainings);
@@ -101,7 +108,8 @@ export default class TrainingStore {
   updateTrainingInStore(training, trainings) {
     this.trainings = updateTraining(training, trainings);
     this.eventbus.emit("TRAINING_UPDATE_EVT", {
-      training, trainings: this.trainings,
+      training,
+      trainings: this.trainings,
     });
   }
 
@@ -115,32 +123,26 @@ export default class TrainingStore {
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_ADD_EVT", {
       segments: this.segments,
-      total: this
-        .total,
+      total: this.total,
     });
-  }
-
-  // TODO move to trainingUtil
-  updateSegment(segment, segments) {
-    const segmentClone = augmentSegmentData(segment);
-    let i = 0;
-    segments.some((_segment) => {
-      if (_segment.uuid === segmentClone.uuid) {
-        this.segments[i] = segmentClone;
-        this.total = makeTrainingTotal(this.segments);
-        return true;
-      }
-      i++;
-    });
-    this.eventbus.emit("SEGMENT_UPDATE_EVT", { segment: this.segments[i],
-      total: this.total });
-  }
+  } 
 
   removeSegmentFromStore(segment, segments) {
     this.segments = removeSegment(segment, segments);
     this.total = makeTrainingTotal(this.segments);
-    this.eventbus.emit("SEGMENT_REMOVE_EVT", { segments: this.segments, total: this
-        .total });
+    this.eventbus.emit("SEGMENT_REMOVE_EVT", {
+      segments: this.segments,
+      total: this.total,
+    });
+  }
+
+  updateSegmentInStore(segment, segments) {
+    this.segments = updateSegment(segment, this.segments);
+    this.total = makeTrainingTotal(this.segments);
+    this.eventbus.emit("SEGMENT_UPDATE_EVT", {
+      segment: segment,
+      total: this.total,
+    });
   }
 
   clearTraining() {
