@@ -35,7 +35,7 @@ export function hasNoRealValue(obj, name) {
       const value = obj[name];       
       hasNo = (!hasProperty(obj, name) || value === undefined || hasNothing(value));
     }
-  }  
+  }
   return hasNo;
 }
 

@@ -9,9 +9,9 @@ import {
 
 /**
  * Remove a segment from a list
- * @param  {[type]} segment  [description]
- * @param  {[type]} segments [description]
- * @return {[type]}          [description]
+ * @param  {Segment}  segment object
+ * @param  {Array<Segment>} segments
+ * @param  {Array<Segment>} segments
  */
 export function removeSegment(segment, segments) {
   const _segments = clone(segments);
@@ -23,9 +23,9 @@ export function removeSegment(segment, segments) {
 
 /**
  * Add a segment to a list
- * @param {[type]} segment       [description]
- * @param {[type]} segments      [description]
- * @param {[type]} overwriteUuid [description]
+ * @param  {Segment}  segment object
+ * @param  {Array<Segment>} segments
+ * @param {boolean} overwriteUuid?
  */
 export function addSegment(segment, segments, overwriteUuid) {
   const _segment = clone(segment);
@@ -41,7 +41,7 @@ export function addSegment(segment, segments, overwriteUuid) {
 
 /**
  * update segment in a list
- * @param  {[type]} segment  [description]
+ * @param  {Segment}  segment object
  * @param  {[type]} segments [description]
  * @return {[type]}          [description]
  */
@@ -68,8 +68,8 @@ export function updateSegment(segment, segments) {
 
 /**
  * Make totals for the collective segments in a training
- * @param Array<Segment>
- * @return Object<Total>
+ * @param {Array<Segment>} segments
+ * @return {Object<Total>} total
  */
 export function makeTrainingTotal(segments) {
   const totalObj = {
@@ -96,15 +96,15 @@ export function makeTrainingTotal(segments) {
 
 /**
  * Calculate transient segment data based on present data
- * @param  {[type]} segment [description]
- * @return {[type]}         [description]
+ * @param  {Segment} segment
+ * @return {Segment} segment
  */
 export function augmentSegmentData(segment) {
   const _segment = clone(segment);
   _segment.pace = translateNamedPace(_segment.pace);
   if (canAugment(_segment)) {
     if (hasNoRealValue(_segment, "duration")) {
-      _segment.duration = makeDuration(segment);
+      _segment.duration = makeDuration(_segment);
     }
     if (hasNoRealValue(_segment, "pace")) {
       _segment.pace = makePace(_segment);
@@ -123,9 +123,9 @@ export function augmentSegmentData(segment) {
 
 /**
  * Was a segment changed?
- * @param  {[type]}  segment  [description]
- * @param  {[type]}  segments [description]
- * @return {Boolean}          [description]
+ * @param  {Segment}  segment object
+ * @param  {Array<Segment>} segments
+ * @return {Boolean} is the segment dirty compared to what collection holds?
  */
 export function isDirtySegment(segment, segments) {
   const _segment = clone(segment);
@@ -148,8 +148,8 @@ export function isDirtySegment(segment, segments) {
 
 /**
  * Can a segment be augmented or is it complete or too incomplete?
- * @param  {[type]} segment [description]
- * @return {[type]}         [description]
+ * @param  {Segment} segment is part of a training
+ * @return {boolean} if augmentable
  */
 export function canAugment(segment) {
   const _segment = clone(segment);
@@ -162,8 +162,8 @@ export function canAugment(segment) {
 
 /**
  * Given a Segment with enough data, is the data valid?
- * @param  {[type]}  segment [description]
- * @return {Boolean}         [description]
+ * @param  {Segment}  segment [description]
+ * @return {boolean}         [description]
  */
 export function isValidSegment(segment) {
   const segmentClone = clone(segment);
@@ -184,6 +184,8 @@ export function isValidSegment(segment) {
  * parse a duration from:
  * a. int minutes to a duration as string 00:00:00
  * b. from 00:00 to 00:00:00
+ * @param {string} duration as string HH:mm:ss
+ * @return {Duration} as a moment.js obj
  */
 export function parseDuration(duration) {
   if (duration !== null && duration !== "" && !isNaN(duration)) {
@@ -197,13 +199,14 @@ export function parseDuration(duration) {
 
 /**
  * @param moment.duration obj
- * @return hh:mm:ss String
+ * @return HH:mm:ss String
  */
 const formatDuration = duration =>
   `${lpad(duration.hours())}:${lpad(duration.minutes())}:${lpad(duration.seconds())}`;
 
 /**
- * @return mm:ss String
+ * @param {Segment} object
+ * @return {string} pace as mm:ss
  */
 const makePace = (segment) => {
   const _segment = clone(segment);
@@ -215,21 +218,25 @@ const makePace = (segment) => {
 };
 
 /**
+ * @param {Segment} object
  * Make duration based on distance and pace
- * @return hh:mm:ss String as: ex: 5:10 * 12.93 km = 1:6:48
+ * @return {string} HH:mm:ss as: ex: 5:10 * 12.93 km = 1:6:48
  */
 const makeDuration = (segment) => {
+  console.log(`makeDuration before: ${JSON.stringify(segment)}`);
   const _segment = clone(segment);
   const paceObj = moment.duration(_segment.pace);
   const seconds = paceObj.asSeconds() / 60;
   const totalSeconds = Math.round(seconds * _segment.distance);
   const durationObj = moment.duration(totalSeconds, "seconds");
   const formattedDuration = formatDuration(durationObj);
+  console.log(`makeDuration as: ${formattedDuration}`);
   return formattedDuration;
 };
 
 /**
- * @return a real float. Calculated distance based on duration / pace
+ * @param {Segment} object
+ * @return {float} distance. Calculated distance based on duration / pace
  */
 const makeDistance = (segment) => {
   const _segment = clone(segment);
