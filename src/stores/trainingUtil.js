@@ -1,10 +1,10 @@
-import { createUuid, clone, lpad, hasNoRealValue, hasProperty } from "./miscUtil";
+import { clone, hasProperty } from "./miscUtil";
 
 /**
  * Finds a training or an instance
- * @param  {string}
- * @param  {array<Training|TrainingInstance>}
- * @return {Training or TrainingInstance}
+ * @param  {string} uuid
+ * @param  {Array<Training|TrainingInstance>} trainings - the collection to search
+ * @return {Training|TrainingInstance} foundable
  */
 export function findTraining(uuid, trainings) {
   if (uuid === null || uuid === undefined) {

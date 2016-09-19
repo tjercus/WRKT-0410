@@ -223,14 +223,12 @@ const makePace = (segment) => {
  * @return {string} HH:mm:ss as: ex: 5:10 * 12.93 km = 1:6:48
  */
 const makeDuration = (segment) => {
-  console.log(`makeDuration before: ${JSON.stringify(segment)}`);
   const _segment = clone(segment);
   const paceObj = moment.duration(_segment.pace);
   const seconds = paceObj.asSeconds() / 60;
   const totalSeconds = Math.round(seconds * _segment.distance);
   const durationObj = moment.duration(totalSeconds, "seconds");
   const formattedDuration = formatDuration(durationObj);
-  console.log(`makeDuration as: ${formattedDuration}`);
   return formattedDuration;
 };
 
