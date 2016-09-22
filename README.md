@@ -15,7 +15,9 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Use TypeError instead of Error for checking parameters
 - yellow hint of change
+- Use webworkers, if possible, for paralel computing like augmentsegmentdata and calculate totals
 - Use a round iconset (see 'movescount')
 - Replace 'for loops' by higher order function calls
 - Refactor removeX(uuid, array) functions into one generic in miscUtils
@@ -52,6 +54,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
+- Convert to HTML table
 - 'add Plan' button and rest-api post endpoint
 - fix dateForDay feature
 - button for 'compact view'

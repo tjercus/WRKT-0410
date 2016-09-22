@@ -38,7 +38,7 @@ export default class TrainingListComponent extends React.Component {
       this.setState({ trainings: obj.trainings });
     });
 
-    this.props.eventbus.on("TRAINING_REMOVE_EVT", (trainings) => {      
+    this.props.eventbus.on("TRAINING_REMOVE_EVT", (trainings) => {
       this.setState({ trainings: trainings });
     });
   }
@@ -55,7 +55,7 @@ export default class TrainingListComponent extends React.Component {
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     return (
-      <section className={panelClassName}>       
+      <section className={panelClassName}>
         <div className="panel-body">
            <ul className="selection-list">
             {this.state.trainings.map(function(training, i) {

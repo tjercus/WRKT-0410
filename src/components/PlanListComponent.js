@@ -4,16 +4,16 @@ import {clone} from "../stores/miscUtil";
 
 export default class PlanListComponent extends React.Component {
 
-  constructor(props) {    
+  constructor(props) {
     super(props);
-    this.state = {      
+    this.state = {
       isVisible: false,
       selectedUid: null,
       planlist: []
     };
     this.onClick = this.onClick.bind(this);
   }
-  
+
   componentDidMount() {
     this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
       this.setState({ isVisible: (menuItemName === this.props.from) });
@@ -36,9 +36,9 @@ export default class PlanListComponent extends React.Component {
   }
 
   render() {
-    let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";    
+    let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     return (
-      <section className={panelClassName}>       
+      <section className={panelClassName}>
         <div className="panel-body">
            <ul className="selection-list">
             {this.state.planlist.map(function(plan, i) {

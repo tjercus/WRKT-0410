@@ -25,7 +25,7 @@ export default class SegmentComponent extends React.Component {
     this.onRemoveButtonClick = this.onRemoveButtonClick.bind(this);
     this.onDurationBlur = this.onDurationBlur.bind(this);
   }
-  
+
   componentDidMount() {
     this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {
       console.log(`SegmentComponent caught SEGMENT_UPDATE_EVT ${JSON.stringify(data)}`);
@@ -52,17 +52,17 @@ export default class SegmentComponent extends React.Component {
         case "distance":
           this.setState({distance: val});
         break;
-        case "duration":          
+        case "duration":
           this.setState({duration: val});
         break;
         case "pace":
           this.setState({pace: val});
         break;
       }
-      if (this.state.uuid == null) { 
+      if (this.state.uuid == null) {
         this.setState({uuid: createUuid()});
       }
-    }    
+    }
   }
 
   onDurationBlur(evt) {
@@ -75,7 +75,7 @@ export default class SegmentComponent extends React.Component {
     if (canAugment(this.state)) {
       this.setState({isValid: isValidSegment(this.state)});
       this.props.eventbus.emit("SEGMENT_UPDATE_CMD", this.state);
-    }    
+    }
   }
 
   onCloneButtonClick() {
@@ -83,14 +83,14 @@ export default class SegmentComponent extends React.Component {
     this.props.eventbus.emit("SEGMENT_CLONE_CMD", this.state);
   }
 
-  onRemoveButtonClick() {    
+  onRemoveButtonClick() {
     this.props.eventbus.emit("SEGMENT_REMOVE_CMD", this.state);
   }
 
-  isDirtyValue(name, value) {    
+  isDirtyValue(name, value) {
     return (this.state[name] !== value);
-  }  
-  
+  }
+
   render() {
     let rowClassName = (this.state.isValid) ? "segment valid" : "segment invalid";
 

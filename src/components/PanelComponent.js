@@ -7,13 +7,13 @@ export default class PanelComponent extends React.Component {
     super(props);
     this.state = {isVisible: false};
   }
-  
+
   componentDidMount() {
     this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
   }
-  
+
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     return (

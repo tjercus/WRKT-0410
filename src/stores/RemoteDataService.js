@@ -4,9 +4,9 @@ const HOST = "http://localhost:3333/";
 
 export default class RemoteDataService {
 
-  /**   
-   * 
-   * @param  {EventEmitter} eventbus   
+  /**
+   *
+   * @param  {EventEmitter} eventbus
    */
   constructor(eventbus) {
     eventbus.on("PLANLIST_FETCH_CMD", () => {
@@ -23,7 +23,7 @@ export default class RemoteDataService {
       }
     });
 
-    eventbus.on("PLAN_FETCH_CMD", (uuid) => {      
+    eventbus.on("PLAN_FETCH_CMD", (uuid) => {
       this.fetchMultiple([`plans/${uuid}`, `traininginstances/${uuid}`],
         "PLAN_FETCHED_EVT", "PLAN_FETCH_ERROR_EVT", eventbus);
     });
@@ -79,7 +79,7 @@ export default class RemoteDataService {
       });
     }
   }
-  
+
   persistTrainings(trainings, eventbus) {
     const trainingsStr = JSON.stringify(trainings, null, "\t");
     if (typeof fetch === "function") {

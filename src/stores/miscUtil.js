@@ -8,7 +8,7 @@ export function createUuid() {
   return uuid;
 }
 
-export function clone(obj) { 
+export function clone(obj) {
   if (typeof obj === "object") {
     return JSON.parse(JSON.stringify(obj));
   } else {
@@ -27,12 +27,12 @@ export function lpad(num) {
 export function hasNoRealValue(obj, name) {
   obj = clone(obj);
   let hasNo = false;
-  if (obj !== null) {    
+  if (obj !== null) {
     if (typeof obj === "string") {
       hasNo = hasNothing(obj);
     }
     if (typeof obj === "object") {
-      const value = obj[name];       
+      const value = obj[name];
       hasNo = (!hasProperty(obj, name) || value === undefined || hasNothing(value));
     }
   }

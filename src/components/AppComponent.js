@@ -48,7 +48,7 @@ export default class AppComponent extends React.Component {
         1000);
     }
     // TODO remove this, it is used in test
-    //this.eventbus.emit("PLAN_FETCH_CMD", "a83a78aa-5d69-11e6-b3a3-1f76e6105d92");    
+    //this.eventbus.emit("PLAN_FETCH_CMD", "a83a78aa-5d69-11e6-b3a3-1f76e6105d92");
   }
 
   render() {
@@ -57,7 +57,7 @@ export default class AppComponent extends React.Component {
     return (
       <div>
         <header id="app-header">
-          <h1>WRKT-0410 {version}</h1>  
+          <h1>WRKT-0410 {version}</h1>
           <MenuComponent eventbus={this.eventbus} />
         </header>
         <article id="container">
@@ -78,7 +78,7 @@ export default class AppComponent extends React.Component {
   }
 };
 
-AppComponent.propTypes = { 
+AppComponent.propTypes = {
   eventbus: React.PropTypes.object,
   startWithDefaultTraining: React.PropTypes.bool
 };

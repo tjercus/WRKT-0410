@@ -2,7 +2,7 @@ import { clone, hasProperty } from "./miscUtil";
 
 /**
  * Finds a training or an instance
- * @param  {string} uuid
+ * @param  {string} uuid - id
  * @param  {Array<Training|TrainingInstance>} trainings - the collection to search
  * @return {Training|TrainingInstance} foundable
  */
@@ -22,9 +22,9 @@ export function findTraining(uuid, trainings) {
 
 /**
  * Overwrite a Training in a list of Training elements
- * @param  {[type]} training  [description]
- * @param  {[type]} trainings [description]
- * @return {[type]}           [description]
+ * @param  {Training} training - to overwrite entry in list
+ * @param  {Array<Training>} trainings - the collection to search
+ * @return  {Array<Training>} trainings - the updated collection
  */
 export function updateTraining(training, trainings) {
   const trainingClone = clone(training);
@@ -42,9 +42,9 @@ export function updateTraining(training, trainings) {
 
 /**
  * Remove a training from a list of TrainingInstances
- * @param  {[type]} uuid      [description]
- * @param  {[type]} instances [description]
- * @return {[type]}           [description]
+ * @param  {string} uuid - id
+ * @param  {Array<TrainingInstances>} instances - the collection to search
+ * @return  {Array<TrainingInstances>} instances - the updated collection
  */
 export function removeTrainingInstance(uuid, instances) {
   const _instances = clone(instances);
@@ -57,9 +57,9 @@ export function removeTrainingInstance(uuid, instances) {
 
 /**
  * Remove all traininginstances from the list that are associated to a give day
- * @param  {[type]} day               [description]
- * @param  {[type]} traininginstances [description]
- * @return {Array<TrainingInstance>}	list with traininginstances
+ * @param  {Day} day - Day
+ * @param  {Array<TrainingInstance>} traininginstances - list to search
+ * @return {Array<TrainingInstance>} list with traininginstances
  */
 export function removeTrainingInstancesForDay(day, traininginstances) {
   if (day === null || !hasProperty(day, "uuid") || (!hasProperty(day,

@@ -20,7 +20,7 @@ test("Component should render", (assert) => {
 
 test("Component should emit MENU_CLICK_EVT on button click", (assert) => {  
   const emitSpy = sinon.spy(eventbus, "emit");
-  const component = mount(<MenuComponent eventbus={eventbus} />);  
+  const component = mount(<MenuComponent eventbus={eventbus} />);
   const button = component.find("button[value='menu-item-timeline']");
 
   button.simulate("click");

@@ -62,7 +62,7 @@ export function updateSegment(segment, segments) {
 
   const isSeg = _segment => String(_segment.uuid) === String(segmentClone.uuid);
   const index = _segments.findIndex(isSeg);
-  _segments[index] = segmentClone;  
+  _segments[index] = segmentClone;
   return _segments;
 }
 

@@ -52,7 +52,7 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
       this.setState({ segments: training.segments, total: training.total });
     });
-    // TODO find out why this is never caught:    
+    // TODO find out why this is never caught:
     // this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {});
     this.props.eventbus.onAny((event, data) => {
       if (event === "SEGMENT_UPDATE_EVT") {
@@ -73,7 +73,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   loadTraining(training) {
-    this.setState(DEFAULT_STATE, () => this.setState(this.makeTraining(training)));    
+    this.setState(DEFAULT_STATE, () => this.setState(this.makeTraining(training)));
   }
 
   addEmptySegment() {
@@ -93,7 +93,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   onEditNameButtonClick(evt) {
-    //const inverseState = 
+    //const inverseState =
     this.setState({ isNameEditable: !this.state.isNameEditable });
   }
 
@@ -107,7 +107,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   cloneTraining() {
-    // TODO custom alert    
+    // TODO custom alert
     console.log("Training cloned and selected");
     this.props.eventbus.emit("TRAINING_CLONE_CMD");
   }
@@ -116,7 +116,7 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.emit("TRAINING_REMOVE_CMD");
   }
 
-  emitAddToPlan() {    
+  emitAddToPlan() {
     this.props.eventbus.emit("TRAINING_TO_PLAN_CMD");
   }
 
@@ -165,7 +165,7 @@ export default class TrainingComponent extends React.Component {
       totalDistance = (this.state.total.distance).toFixed(3);
     };
 
-    // TODO refactor to ButtonChoiceComponent    
+    // TODO refactor to ButtonChoiceComponent
     const type1ButtonClassName = (this.state.type === "workout") ? "button-choice button-choice-selected" : "button-choice";
     const type2ButtonClassName = (this.state.type === "easy") ? "button-choice button-choice-selected" : "button-choice";
 
@@ -206,8 +206,8 @@ export default class TrainingComponent extends React.Component {
               <button onClick={this.cloneTraining} className="button-flat">clone training</button>
               <button onClick={this.removeTraining} className="button-flat">remove training</button>
               <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to loaded plan</button>
-            </menu>            
-          </div>        
+            </menu>
+          </div>
         </section>
       );
     } else {

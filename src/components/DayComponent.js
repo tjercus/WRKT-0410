@@ -4,12 +4,7 @@ import { clone, createUuid } from "../stores/miscUtil";
 
 /**
  * TODO use eventbus to implement buttonclicks
- * TODO extract day component
- * 
- * @param  {[type]} props [description]
- * @return {[type]}       [description]
  */
-
 const DAY_HEADER_DATE_FORMAT = "dddd, DD-MM-YYYY";
 
 export default class DayComponent extends React.Component {
@@ -57,10 +52,11 @@ export default class DayComponent extends React.Component {
 
   render() {
   	const day = this.props.day;
+    console.log(`DayComponent timestamp ${this.props.dateForDay}`);
     if (!day.trainings) {
       throw new Error(`Day [${day.uuid}] should have a plural property 'trainings'`);
-    }    
-    
+    }
+
     let dateStr = this.props.dateForDay.format(DAY_HEADER_DATE_FORMAT);
     let dayClassNames = [];
     this.isNonWorkday(this.props.dateForDay) ?
@@ -94,7 +90,7 @@ export default class DayComponent extends React.Component {
         </section>
       );
 
-      dayTotal += training.total.distance;      
+      dayTotal += training.total.distance;
     });
 
     return (
@@ -103,7 +99,7 @@ export default class DayComponent extends React.Component {
 		    {dayElements}
 		    <div className="day-total">{dayTotal.toFixed(2)} km today</div>
 		    <button className="button-small button-flat" onClick={this.onMoveRightClick} value={day.uuid}>&rarr;</button>
-		    <button className="button-small button-flat" onClick={this.onDeleteClick} value={day.uuid}>del</button>            
+		    <button className="button-small button-flat" onClick={this.onDeleteClick} value={day.uuid}>del</button>
 		    <button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>clone</button>
 		    <button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
 		    <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
@@ -111,4 +107,8 @@ export default class DayComponent extends React.Component {
     );
   }
 
+}
+
+DayComponent.propTypes = {
+  dateForDay: React.PropTypes.number
 }

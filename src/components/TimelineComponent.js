@@ -16,10 +16,10 @@ export default class TimelineComponent extends React.Component {
       days: [],
       name: ""
     };
-    //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);    
+    //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-    //this.onEmptyClick = this.onEmptyClick.bind(this);    
+    //this.onEmptyClick = this.onEmptyClick.bind(this);
   }
 
   componentDidMount() {
@@ -48,16 +48,16 @@ export default class TimelineComponent extends React.Component {
     });
     this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
       this.setState({ days: plan.days, name: plan.name });
-    });    
-  }  
+    });
+  }
 
-  // onCycleLengthButtonClick(evt) {    
+  // onCycleLengthButtonClick(evt) {
   //  this.setState({cycleLength: evt.target.value});
   // }
 
   onHideEasyRunsButtonClick(evt) {
     this.setState({ showEasyDays: false });
-  }  
+  }
 
   onSaveButtonClick(evt) {
     this.props.eventbus.emit("PLAN_PERSIST_CMD");
@@ -66,42 +66,43 @@ export default class TimelineComponent extends React.Component {
   // onEmptyClick(evt) {
   //   console.log(`TimelineComponent onEmptyClick with ${evt.target.value}`);
   //   this.props.eventbus.emit("DAY_EMPTY_CMD", evt.target.value);
-  // }  
-  // 
-  
+  // }
+  //
+
   calcDayTotal(day)  {
     if (day.trainings.length === 1) {
-      return day.trainings[0].total.distance;      
+      return day.trainings[0].total.distance;
     } else {
       return (day.trainings[0].total.distance + day.trainings[1].total.distance);
-    }     
+    }
   }
 
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
     const planStartDate = moment("2016-12-03");
-    const dateForDay = planStartDate;
+    let dateForDay = planStartDate;
     const microcycleElements = [];
     let segmentTotalDistance = 0;
 
     this.state.days.forEach((day, dayNr) => {
-      dateForDay.add(1, "days");
+      let dfd = dateForDay.add(1, "days");
+      console.log(`days iterator: ${dateForDay}`);
       segmentTotalDistance += this.calcDayTotal(day);
 
       microcycleElements.push(
         <DayComponent
-          key={"day" + "-" + dayNr + "-" + createUuid()} 
-          eventbus={this.props.eventbus} 
-          day={day} 
+          key={"day" + "-" + dayNr + "-" + createUuid()}
+          eventbus={this.props.eventbus}
+          day={day}
           dayNr={dayNr}
-          dateForDay={dateForDay}
+          dateForDay={dfd}
          />
       );
 
       // TODO, change to html table
       if (dayNr % 7 === 6) {
-        microcycleElements.push(<section key={"section" + "-" + dayNr + "-" + createUuid()} 
+        microcycleElements.push(<section key={"section" + "-" + dayNr + "-" + createUuid()}
           className="segment-total">{"total: "}{segmentTotalDistance.toFixed(2)}{"km"}</section>);
         microcycleElements.push(<br key={createUuid()} />);
         segmentTotalDistance = 0;

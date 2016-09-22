@@ -4,14 +4,14 @@ import { findDay } from "./timelineUtil";
 export default class DayStore {
 
   /**
-   * 
+   *
    * @param  {EventEmitter2}
    * @param  {Array}
    * @param  {Array}
    */
   constructor(eventbus, plans, traininginstances) {
     this.eventbus = eventbus;
-    this.plans = plans;    
+    this.plans = plans;
     this.traininginstances = traininginstances;
     this.day = {};
 

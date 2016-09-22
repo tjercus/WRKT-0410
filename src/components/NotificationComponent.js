@@ -44,6 +44,9 @@ export default class NotificationComponent extends React.Component {
       case "TRAINING_LOAD_EVT":
         msg = `Training '${data.uuid}' is loaded in store`;
         break;
+      case "TRAININGS_LOAD_ERROR_EVT":
+        msg = `Error when trying to load training`;
+        break;
       case "TRAININGS_PERSIST_EVT":
         msg = `All trainings persisted to disk`;
         break;

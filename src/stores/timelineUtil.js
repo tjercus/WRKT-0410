@@ -1,27 +1,34 @@
+
+import pureSwap from "pure-swap";
 import {
   findTraining,
 } from "./trainingUtil";
-import {  
-  makeTrainingTotal
+import {
+  makeTrainingTotal,
 } from "./segmentUtil";
 import {
   clone,
   createUuid,
-  hasProperty
+  hasProperty,
 } from "./miscUtil";
-import pureSwap from "pure-swap";
 
+/**
+ * Find a day in a list of days for a plan, augment the trainings in the day
+ * @param  {uuid} dayUuid - identifier
+ * @param  {Plan} plan - contains days
+ * @param  {Array<Training>} trainings - used for augmenting trainings
+ * @return {Day} day - augmented day
+ */
 export function findDay(dayUuid, plan, trainings) {
-  console.log(`findDay: ${dayUuid}`);
   if (trainings.length === 0) {
-    throw new Error(`findDay trainings should be provided!`);
+    throw new Error("findDay trainings should be provided!");
   }
   if (!plan.days || plan.days.length === 0) {
-    throw new Error(`findDay plan should have a list of days!`);
+    throw new Error("findDay plan should have a list of days!");
   }
   const _days = clone(plan.days);
-  const isDay = (_day) => _day.uuid == dayUuid;
-  const index = _days.findIndex(isDay);
+  const byUuid = (_day) => String(_day.uuid) === String(dayUuid);
+  const index = _days.findIndex(byUuid);
   if (index < 0) {
     throw new Error(`findDay could not find day with ${dayUuid}`);
   }
@@ -30,18 +37,17 @@ export function findDay(dayUuid, plan, trainings) {
 
 /**
  * lookup training for a day by uuid and add it to itself
- * @param { object } [day] [flattened day object with ref to inflated day]
- * @param { array<TrainingInstance> } [trainings] [list of augmented TrainingInstance ojects]
- * @return { array<Day> } [description]
+ * @param { Object } day - flattened day object with ref to inflated day
+ * @param { Array<TrainingInstance> } trainings - list of augmented TrainingInstance ojects
+ * @return { Day } - augmented day
  */
 export function augmentDay(day, trainings) {
-  console.log(`augmentDay: ${JSON.stringify(day)}`);
   if (trainings.length === 0) {
-    throw new Error(`traininginstances should be provided!`);
+    throw new Error("traininginstances should be provided!");
   }
   const _day = clone(day);
   const _trainings = clone(trainings);
-  let uuid = (typeof _day.instanceId === "string") ? _day.instanceId : null;
+  const uuid = (typeof _day.instanceId === "string") ? _day.instanceId : null;
 
   if (!hasProperty(_day, "trainings")) {
     _day.trainings = [];
@@ -49,12 +55,9 @@ export function augmentDay(day, trainings) {
   }
   // calculate total per training when multiple trainings
   for (let i = 0, len = _day.trainings.length; i < len; i++) {
-    console.log(`augmentDay trying to find a training by instanceId: 
-      [${_day.trainings[i].instanceId}] it also has uuid [${_day.trainings[i].uuid}]`);
-    if (!isAugmented(_day.trainings[i])) { 
+    if (!isAugmented(_day.trainings[i])) {
       _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
     }
-    console.log(`augmentDay making total for a training ${JSON.stringify(_day.trainings[i])}`);
     _day.trainings[i].total = makeTrainingTotal(_day.trainings[i].segments);
   }
   return _day;
@@ -63,15 +66,14 @@ export function augmentDay(day, trainings) {
 /**
  * Takes an array of augmented days and flattens it so there are only
  *  references to instances instead of full traininginstance.
- * @param  {array<Day>} augmented
- * @return {array<Day>} flattened
+ * @param  {array<Day>} days - augmented as used in application
+ * @return {array<Day>} days - flattened for storage
  */
 export function flattenDays(days) {
-  console.log(`flattenDays: ${JSON.stringify(days)}`);
   const _days = clone(days);
   const flattenedDays = [];
-  _days.forEach((_day, j) => {
-    let flattenedTrainings = [];
+  _days.forEach((_day) => {
+    const flattenedTrainings = [];
     for (let i = 0, len = _day.trainings.length; i < len; i++) {
       flattenedTrainings.push({ instanceId: _day.trainings[i].uuid });
     }
@@ -80,50 +82,58 @@ export function flattenDays(days) {
   return flattenedDays;
 }
 
+/**
+ * Give a uuid for a day, remove it"s trainings
+ * @param  {string} dayUuid - unique identifier for a day
+ * @param  {array<Day>} days - original list of days
+ * @return {array<Day>} days - without trainings for dayUuid
+ */
 export function removeTrainingsFromDay(dayUuid, days) {
-  let _days = clone(days);
-  const isDay = (_day) => {
-    return _day.uuid == dayUuid;
-  }
-  const index = _days.findIndex(isDay);
+  const _days = clone(days);
+  const byUuid = (_day) => String(_day.uuid) === String(dayUuid);
+  const index = _days.findIndex(byUuid);
   if (index > -1) {
     if (hasProperty(_days[index], "trainings")) {
       const newTrainings = [];
       // TODO for now hardcoded to 2 trainings per day
-      newTrainings.push(createNullTraining());
-      newTrainings.push(createNullTraining());
+      newTrainings.push(nullTraining);
+      newTrainings.push(nullTraining);
       _days[index].trainings = newTrainings;
     } else {
-      _days[index].training = createNullTraining();
-    };
+      _days[index].training = nullTraining;
+    }
   }
   return _days;
 }
 
 /**
  * Move a day in a list of days by x positions
- * @param  {String} dayUuid, unique id for a day
- * @param  {Array<Day>} days
- * @param  {int} positions, where a positive means 
+ * @param  {String} dayUuid - unique id for a day
+ * @param  {Array<Day>} days - list to modify
+ * @param  {int} positions, where a positive means
  *  move later in time and a negative means move to an earlier spot
  * @return {Array<Day>} days, list of resorted days
  */
 export function moveDay(dayUuid, days, positions) {
-  let _days = clone(days);
-  const isDay = (_day) => {
-    return _day.uuid == dayUuid;
-  }
-  const index = _days.findIndex(isDay);
+  const _days = clone(days);
+  const byUuid = (_day) => String(_day.uuid) === String(dayUuid);
+  const index = _days.findIndex(byUuid);
   if (index > -1) {
     return pureSwap(_days, index, index + positions);
   }
+  throw new Error("Could not move day");
 }
 
+/**
+ * Make a clone for a day
+ * @param  {Day} oldDay - cloneable
+ * @return {Day} newDay - clone
+ */
 export function cloneDay(oldDay) {
   const newDay = clone(oldDay);
-  newDay.uuid = createUuid();  
+  newDay.uuid = createUuid();
   if (hasProperty(oldDay, "trainings")) {
-    let clonedTrainings = [];
+    const clonedTrainings = [];
     // TODO replace forloop
     for (let i = 0, len = oldDay.trainings.length; i < len; i++) {
       const newInstanceUuid = createUuid();
@@ -138,35 +148,38 @@ export function cloneDay(oldDay) {
     newTraining.uuid = newInstanceUuid;
     newDay.training = newTraining;
   }
-  return newDay
+  return newDay;
 }
 
+/**
+ * Delete a day in a list of days by uuid
+ * @param  {String} dayUuid - unique id for a day
+ * @param  {Array<Day>} days - list to modify
+ * @return  {Array<Day>} days - modified list
+ */
 export function deleteDay(dayUuid, days) {
-  let _days = clone(days);
-  const isDay = (_day) => {
-    return _day.uuid == dayUuid;
-  }
-  const index = _days.findIndex(isDay);
+  const _days = clone(days);
+  const byUuid = (_day) => String(_day.uuid) === String(dayUuid);
+  const index = _days.findIndex(byUuid);
   if (index > -1) {
     _days.splice(index, 1);
   }
   return _days;
 }
 
-const createNullTraining = () => {
-  return {
-    uuid: createUuid(),
-    name: "No Run",
-    distance: 0,
-    duration: "00:00:00",
-    pace: "00:00",
-    type: "",
-    total: { distance: 0, duration: "00:00:00", pace: "00:00" }
-  }
-}
+/**
+ * Factory object for an empty Training
+ * @return {Training} with default/empty values
+ */
+const nullTraining = {
+  uuid: createUuid(),
+  name: "No Run",
+  distance: 0,
+  duration: "00:00:00",
+  pace: "00:00",
+  type: "",
+  total: { distance: 0, duration: "00:00:00", pace: "00:00" },
+};
 
 // TODO move to trainingUtil
-const isAugmented = (training) => {  
-  return (hasProperty(training, "uuid") && hasProperty(training, "name")
-  );
-}
+const isAugmented = (training) => (hasProperty(training, "uuid") && hasProperty(training, "name"));
