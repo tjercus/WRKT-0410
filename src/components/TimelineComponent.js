@@ -77,37 +77,58 @@ export default class TimelineComponent extends React.Component {
     }
   }
 
+  renderWeek(week, weekStartDate) {
+    console.log("week: " + JSON.stringify(week[0]));
+    return (<tr key={createUuid()}>
+      {week.map((day, dayNr) => {
+          let dfd = weekStartDate.add(1, "days");
+          return (<DayComponent
+            key={"day" + "-" + dayNr + "-" + createUuid()}
+            eventbus={this.props.eventbus}
+            day={day}
+            dayNr={dayNr}
+            dateForDay={dfd} />);
+        })
+      }
+    </tr>);
+    //return(<tr>wobble</tr>);
+  }
+
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
     const planStartDate = moment("2016-12-03");
     let dateForDay = planStartDate;
-    const microcycleElements = [];
+
+    var weeks = [];
+    for (var i = 0; i < this.state.days.length; i++) {
+      weeks.push(this.state.days.slice(i, i += 7));
+    }
+    //     segmentTotalDistance += this.calcDayTotal(day);
+
     let segmentTotalDistance = 0;
 
-    this.state.days.forEach((day, dayNr) => {
-      let dfd = dateForDay.add(1, "days");
-      console.log(`days iterator: ${dateForDay}`);
-      segmentTotalDistance += this.calcDayTotal(day);
+    // weeks.forEach((week, weekNr) => {
+    //   tableRows.push(`<tr>`);
+    //   week.forEach((day, dayNr) => {
+    //     let dfd = dateForDay.add(1, "days");
+    //     console.log(`days iterator: ${dateForDay}`);    
 
-      microcycleElements.push(
-        <DayComponent
-          key={"day" + "-" + dayNr + "-" + createUuid()}
-          eventbus={this.props.eventbus}
-          day={day}
-          dayNr={dayNr}
-          dateForDay={dfd}
-         />
-      );
-
-      // TODO, change to html table
-      if (dayNr % 7 === 6) {
-        microcycleElements.push(<section key={"section" + "-" + dayNr + "-" + createUuid()}
-          className="segment-total">{"total: "}{segmentTotalDistance.toFixed(2)}{"km"}</section>);
-        microcycleElements.push(<br key={createUuid()} />);
-        segmentTotalDistance = 0;
-      }
-    });
+    //     tableRows.push(<DayComponent
+    //         key={"day" + "-" + dayNr + "-" + createUuid()}
+    //         eventbus={this.props.eventbus}
+    //         day={day}
+    //         dayNr={dayNr}
+    //         dateForDay={dfd} />);
+    //   });
+    //   tableRows.push(
+    //     <td key={"section" + "-" + weekNr + "-" + createUuid()} className="segment-total">
+    //       {"total: "}{segmentTotalDistance.toFixed(2)}{"km"}
+    //     </td>
+    //   );
+    //   tableRows.push(<\/tr>)
+    //   segmentTotalDistance = 0;
+    // });
 
     /*
     <button className="button-small" onClick={this.onCycleLengthButtonClick} value="7">{"7 day cycle"}</button>
@@ -122,11 +143,14 @@ export default class TimelineComponent extends React.Component {
           <button className="button-flat" onClick={this.onSaveButtonClick}>{"persist changes"}</button>
         </header>
         <div className="panel-body">
-           <div className="days-list">
-            {microcycleElements}
-           </div>
+           <table className="days-table">
+            <tbody>
+              {weeks.map((week) => {return this.renderWeek(week, dateForDay)})}
+            </tbody>
+           </table>
         </div>
       </section>
     );
   }
 }
+

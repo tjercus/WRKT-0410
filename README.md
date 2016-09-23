@@ -54,7 +54,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline
-- Convert to HTML table
+- Fix bug on passing dateForDay via props
 - 'add Plan' button and rest-api post endpoint
 - fix dateForDay feature
 - button for 'compact view'

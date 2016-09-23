@@ -94,7 +94,7 @@ export default class DayComponent extends React.Component {
     });
 
     return (
-      <section key={createUuid()} className={dayClassNames.join(" ")}>
+      <td key={createUuid()} className={dayClassNames.join(" ")}>
 		    <h3>{this.props.dayNr + 1}. {dateStr}</h3>
 		    {dayElements}
 		    <div className="day-total">{dayTotal.toFixed(2)} km today</div>
@@ -103,12 +103,14 @@ export default class DayComponent extends React.Component {
 		    <button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>clone</button>
 		    <button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
 		    <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
-	    </section>
+	    </td>
     );
   }
 
 }
 
+/*
 DayComponent.propTypes = {
   dateForDay: React.PropTypes.number
 }
+*/
