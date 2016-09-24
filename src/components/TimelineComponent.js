@@ -77,11 +77,15 @@ export default class TimelineComponent extends React.Component {
     }
   }
 
+  // TODO into WeekComponent
   renderWeek(week, weekStartDate) {
-    console.log("week: " + JSON.stringify(week[0]));
+    //console.log("week: " + JSON.stringify(week[0]));
+    let weekTotalDistance = 0;
     return (<tr key={createUuid()}>
       {week.map((day, dayNr) => {
           let dfd = weekStartDate.add(1, "days");
+          weekTotalDistance += this.calcDayTotal(day);
+
           return (<DayComponent
             key={"day" + "-" + dayNr + "-" + createUuid()}
             eventbus={this.props.eventbus}
@@ -90,6 +94,7 @@ export default class TimelineComponent extends React.Component {
             dateForDay={dfd} />);
         })
       }
+      <td>{"Weektotal: "}{weekTotalDistance} km</td>
     </tr>);
     //return(<tr>wobble</tr>);
   }
@@ -104,31 +109,8 @@ export default class TimelineComponent extends React.Component {
     for (var i = 0; i < this.state.days.length; i++) {
       weeks.push(this.state.days.slice(i, i += 7));
     }
-    //     segmentTotalDistance += this.calcDayTotal(day);
-
-    let segmentTotalDistance = 0;
-
-    // weeks.forEach((week, weekNr) => {
-    //   tableRows.push(`<tr>`);
-    //   week.forEach((day, dayNr) => {
-    //     let dfd = dateForDay.add(1, "days");
-    //     console.log(`days iterator: ${dateForDay}`);    
-
-    //     tableRows.push(<DayComponent
-    //         key={"day" + "-" + dayNr + "-" + createUuid()}
-    //         eventbus={this.props.eventbus}
-    //         day={day}
-    //         dayNr={dayNr}
-    //         dateForDay={dfd} />);
-    //   });
-    //   tableRows.push(
-    //     <td key={"section" + "-" + weekNr + "-" + createUuid()} className="segment-total">
-    //       {"total: "}{segmentTotalDistance.toFixed(2)}{"km"}
-    //     </td>
-    //   );
-    //   tableRows.push(<\/tr>)
-    //   segmentTotalDistance = 0;
-    // });
+    //   
+    
 
     /*
     <button className="button-small" onClick={this.onCycleLengthButtonClick} value="7">{"7 day cycle"}</button>
