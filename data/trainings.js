@@ -2879,5 +2879,159 @@
 				"isValid": true
 			}
 		]
+	},
+	{
+		"uuid": "df18af23-520e-4ecc-a260-7502962f72c5",
+		"name": "MLL 20 mile MP alternates",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
+				"distance": "5",
+				"duration": "00:25:50",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "399b58e5-7595-4a2c-adcd-64f90308be17",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "55ade85a-4adc-4d54-a249-55ac38b1ad2b",
+				"distance": "1.6",
+				"duration": "00:07:40",
+				"pace": "04:48",
+				"isValid": false
+			},
+			{
+				"uuid": "d914e272-ff09-44b8-a765-eeefa77f8aff",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "f9d2c593-51db-4931-817a-b22b338d17ae",
+				"distance": "1.6",
+				"duration": "00:07:40",
+				"pace": "04:48",
+				"isValid": false
+			},
+			{
+				"uuid": "0277d2f9-dc17-4baf-a574-8a9bc2e3be61",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "f1079418-355a-4b77-8992-7388aaae1d31",
+				"distance": "1.6",
+				"duration": "00:07:40",
+				"pace": "04:48",
+				"isValid": false
+			},
+			{
+				"uuid": "8edf4aeb-fc77-4035-9ac5-c430bdc48863",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "9cbd85c4-b389-4ab9-9b3b-ef4099761c25",
+				"distance": "1.6",
+				"duration": "00:07:40",
+				"pace": "04:48",
+				"isValid": false
+			},
+			{
+				"uuid": "309e19a5-ecb8-44bc-a5a7-c27c5d9d7c8f",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "09ce7816-17d6-4527-ac8e-f0f0879471aa",
+				"distance": "1.6",
+				"duration": "00:07:40",
+				"pace": "04:48",
+				"isValid": false
+			},
+			{
+				"uuid": "e0b089ed-96f8-4979-9576-c51a5de65203",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "11bfa097-f3dd-4794-a401-42c7b2014c1f",
+				"distance": "1.6",
+				"duration": "00:07:40",
+				"pace": "04:48",
+				"isValid": false
+			},
+			{
+				"uuid": "bd4e1963-a66b-4628-92bc-6ad5cd7ab41a",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "e5838116-eb00-4243-ba03-185615c3b72e",
+				"distance": "1.6",
+				"duration": "00:07:40",
+				"pace": "04:48",
+				"isValid": false
+			},
+			{
+				"uuid": "4c01b574-7cf8-4262-aee3-181d61e0f8db",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "7a72f632-dedc-4f41-b348-1ae10db48871",
+				"distance": "1.6",
+				"duration": "00:07:40",
+				"pace": "04:48",
+				"isValid": false
+			},
+			{
+				"uuid": "73de00a7-f43d-4191-b785-fd47099f09f6",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "4ab480df-d1ff-42f1-a199-4b0b8e77c64e",
+				"distance": "1.6",
+				"duration": "00:07:40",
+				"pace": "04:48",
+				"isValid": false
+			},
+			{
+				"uuid": "2ec4a79f-910d-436b-bcc6-79842c8a45e9",
+				"distance": "1.6",
+				"duration": "00:06:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"uuid": "29882c6c-3af3-487a-b610-bf70ff20eab5",
+				"distance": "5",
+				"duration": "00:25:50",
+				"pace": "05:10",
+				"isValid": true
+			}
+		]
 	}
 ]
