@@ -2887,16 +2887,16 @@
 		"segments": [
 			{
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
-				"distance": "5",
-				"duration": "00:25:50",
+				"distance": "4",
+				"duration": "00:20:40",
 				"pace": "05:10",
 				"isValid": true
 			},
 			{
 				"uuid": "0aceaaf9-41d5-48cb-b4b2-8e536fefd7db",
 				"distance": "1.6",
-				"duration": "00:06:16",
-				"pace": "03:55",
+				"duration": "00:06:40",
+				"pace": "04:10",
 				"isValid": true
 			},
 			{
@@ -2909,8 +2909,8 @@
 			{
 				"uuid": "f5468306-794d-43eb-a020-02d08566af18",
 				"distance": "1.6",
-				"duration": "00:06:16",
-				"pace": "03:55",
+				"duration": "00:06:40",
+				"pace": "04:10",
 				"isValid": true
 			},
 			{
@@ -2923,8 +2923,8 @@
 			{
 				"uuid": "8a4577f6-ede2-4a8b-8788-2cfebd3ca6dc",
 				"distance": "1.6",
-				"duration": "00:06:16",
-				"pace": "03:55",
+				"duration": "00:06:40",
+				"pace": "04:10",
 				"isValid": true
 			},
 			{
@@ -2937,8 +2937,8 @@
 			{
 				"uuid": "63e0bad7-e013-4de4-921b-49afe2bef42a",
 				"distance": "1.6",
-				"duration": "00:06:16",
-				"pace": "03:55",
+				"duration": "00:06:40",
+				"pace": "04:10",
 				"isValid": true
 			},
 			{
@@ -2951,8 +2951,8 @@
 			{
 				"uuid": "197488e8-aa23-46da-b763-1008060579e3",
 				"distance": "1.6",
-				"duration": "00:06:16",
-				"pace": "03:55",
+				"duration": "00:06:40",
+				"pace": "04:10",
 				"isValid": true
 			},
 			{
@@ -2965,8 +2965,8 @@
 			{
 				"uuid": "5156fff0-2fcf-4b28-bf3e-06d9b9ad2e2a",
 				"distance": "1.6",
-				"duration": "00:06:16",
-				"pace": "03:55",
+				"duration": "00:06:40",
+				"pace": "04:10",
 				"isValid": true
 			},
 			{

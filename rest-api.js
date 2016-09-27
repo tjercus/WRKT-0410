@@ -45,6 +45,12 @@ server.get("/plans/:uuid", (req, res, next) => {
   return next();
 });
 
+server.post("/plans", (req, res, next) => {
+  //writeFileFromRequestbody("./data/plan_" + uuid + ".js", req, res);
+  // TODO also "./data/traininginstances_" + uuid + ".js"
+  return next();
+});
+
 server.put("/trainings", (req, res, next) => {
   writeFileFromRequestbody("./data/trainings.js", req, res);
   return next();
@@ -63,7 +69,7 @@ server.put("/traininginstances/:uuid", (req, res, next) => {
 function writeFileFromRequestbody(filename, req, res) {
   console.log("writeFileFromRequestbody");
   fs.writeFile(filename, req.body, (err) => {
-    if (err) {      
+    if (err) {
       res.writeHead(500);
       res.send(err);
       console.log(`NOT saved ${filename} @ ${new Date()}: ${err}`);
@@ -77,7 +83,7 @@ function writeFileFromRequestbody(filename, req, res) {
   });
 };
 
-function corsHandler(req, res, next) {  
+function corsHandler(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization");
   res.setHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
