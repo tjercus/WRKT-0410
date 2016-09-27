@@ -51,19 +51,20 @@ export default class DayComponent extends React.Component {
   }
 
   render() {
-  	const day = this.props.day;
-    console.log(`DayComponent timestamp ${this.props.dateForDay}`);
+  	let day = this.props.day;
+    //console.log(`DayComponent timestamp ${day.dfd}`);
+    console.log(`DayComponent day ${JSON.stringify(day)}`);
     if (!day.trainings) {
       throw new Error(`Day [${day.uuid}] should have a plural property 'trainings'`);
     }
 
-    let dateStr = this.props.dateForDay.format(DAY_HEADER_DATE_FORMAT);
+    let dateStr = moment(day.dfd).format(DAY_HEADER_DATE_FORMAT);
     let dayClassNames = [];
-    this.isNonWorkday(this.props.dateForDay) ?
+    this.isNonWorkday(day.dfd) ?
       dayClassNames.push("day day-nowork") :
       dayClassNames.push("day day-work");
 
-    if (this.props.dateForDay.isSame(moment(new Date()), "day")) {
+    if (moment(day.dfd).isSame(moment(new Date()), "day")) {
       dayClassNames.push("today");
     }
 

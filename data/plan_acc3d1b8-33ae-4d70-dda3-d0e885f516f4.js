@@ -1,6 +1,7 @@
 {
   "uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4",
   "name": "10k plan #1",
+  "startDate": "2016-06-01",
   "days": [
   {
       "uuid": 1,

@@ -2879,5 +2879,103 @@
 				"isValid": true
 			}
 		]
+	},
+	{
+		"uuid": "64889f6f-60ee-4fa3-ba15-03d3b91fa9df",
+		"name": "NJ, Base phase mile repeats",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
+				"distance": "5",
+				"duration": "00:25:50",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "0aceaaf9-41d5-48cb-b4b2-8e536fefd7db",
+				"distance": "1.6",
+				"duration": "00:06:16",
+				"pace": "03:55",
+				"isValid": true
+			},
+			{
+				"uuid": "f355d75b-6b29-4bd8-97de-0d606b0d0937",
+				"distance": "0.8",
+				"duration": "00:04:08",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "f5468306-794d-43eb-a020-02d08566af18",
+				"distance": "1.6",
+				"duration": "00:06:16",
+				"pace": "03:55",
+				"isValid": true
+			},
+			{
+				"uuid": "3f0bd76d-404e-40dd-af71-8cc52dbe7b8c",
+				"distance": "0.8",
+				"duration": "00:04:08",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "8a4577f6-ede2-4a8b-8788-2cfebd3ca6dc",
+				"distance": "1.6",
+				"duration": "00:06:16",
+				"pace": "03:55",
+				"isValid": true
+			},
+			{
+				"uuid": "fbadbd39-1ed9-45b4-ab6e-b515286878ca",
+				"distance": "0.8",
+				"duration": "00:04:08",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "63e0bad7-e013-4de4-921b-49afe2bef42a",
+				"distance": "1.6",
+				"duration": "00:06:16",
+				"pace": "03:55",
+				"isValid": true
+			},
+			{
+				"uuid": "97b8cb14-a155-491c-89d2-ff7149564a69",
+				"distance": "0.8",
+				"duration": "00:04:08",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "197488e8-aa23-46da-b763-1008060579e3",
+				"distance": "1.6",
+				"duration": "00:06:16",
+				"pace": "03:55",
+				"isValid": true
+			},
+			{
+				"uuid": "b5e1bacb-af4d-4652-9b68-d1020b708de6",
+				"distance": "0.8",
+				"duration": "00:04:08",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"uuid": "5156fff0-2fcf-4b28-bf3e-06d9b9ad2e2a",
+				"distance": "1.6",
+				"duration": "00:06:16",
+				"pace": "03:55",
+				"isValid": true
+			},
+			{
+				"uuid": "e8eb73f0-1c29-470a-af91-90c0b38cd6da",
+				"distance": "2",
+				"duration": "00:10:20",
+				"pace": "05:10",
+				"isValid": true
+			}
+		]
 	}
 ]

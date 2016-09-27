@@ -1,6 +1,7 @@
 	{
 		"uuid": "a83a78aa-5d69-11e6-b3a3-1f76e6105d92",
 		"name": "Pfitzinger 85/18",
+		"startDate": "2016-09-01",
 		"days": [
 			{
 				"uuid": 1,

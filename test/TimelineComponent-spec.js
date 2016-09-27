@@ -25,11 +25,11 @@ let traininginstances = [
         "duration": "00:30:00"
       }
     ],
-    "total": {        
+    "total": {
       "distance": 6,
       "pace": "05:00",
       "duration": "00:30:00"
-    }    
+    }
   },
   {
     "uuid": "0a705d04-6e7d-11e6-ba0f-7fcdd2cc0149",
@@ -42,8 +42,8 @@ let traininginstances = [
         "pace": "04:00",
         "duration": "00:48:00"
       }
-    ],    
-    "total": {        
+    ],
+    "total": {
       "distance": 12,
       "pace": "04:00",
       "duration": "00:48:00"
@@ -53,6 +53,7 @@ let traininginstances = [
 let plan = {
   "uuid": "acc3d1b8-test-4d70-dda3-d0e885f516f4",
   "name": "10k plan #1",
+  "startDate": "2014-08-12",
   "days": [
     {"uuid": "897435-sdfkjsd",
     	"trainings": [
@@ -67,10 +68,10 @@ plan.days[0].trainings[1] = traininginstances[1];
 
 test("TimelineComponent should render plan with multiple trainings per day in it", (assert) => {
   onSpy.reset();
-  const component = mount(<TimelineComponent eventbus={eventbus} name="Timeline" from="menu-item-timeline" />);  
+  const component = mount(<TimelineComponent eventbus={eventbus} name="Timeline" from="menu-item-timeline" />);
   eventbus.emit("PLAN_LOAD_EVT", plan);
-  assert.ok(onSpy.calledWith("PLAN_LOAD_EVT"), "component should catch PLAN_LOAD_EVT");  
-  assert.equal(component.find("section.day").length, 1, "one section for one day");
+  assert.ok(onSpy.calledWith("PLAN_LOAD_EVT"), "component should catch PLAN_LOAD_EVT");
+  assert.equal(component.find("td.day").length, 1, "one td for one day");
   assert.end();
 });
 

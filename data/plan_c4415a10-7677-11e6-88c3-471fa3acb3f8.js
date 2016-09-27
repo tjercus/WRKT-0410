@@ -1,6 +1,7 @@
 {
 	"uuid": "c4415a10-7677-11e6-88c3-471fa3acb3f8",
 	"name": "Hansons Advanced Plan",
+	"startDate": "2017-01-01",
 	"days": [
 		{
 			"uuid": "b47ff50f-7f31-4ddf-88e7-100c5dc77533",

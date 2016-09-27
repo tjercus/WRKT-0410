@@ -2,9 +2,9 @@ import React from "react";
 import EventEmitter from "eventemitter2";
 import moment from "moment";
 
-import DayComponent from "./DayComponent";
-
 import { clone, createUuid } from "../stores/miscUtil";
+
+import WeekComponent from "./WeekComponent";
 
 export default class TimelineComponent extends React.Component {
 
@@ -14,7 +14,8 @@ export default class TimelineComponent extends React.Component {
       isVisible: false,
       showEasyDays: true,
       days: [],
-      name: ""
+      name: "",
+      startDate: "2016-01-01",
     };
     //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
@@ -27,8 +28,8 @@ export default class TimelineComponent extends React.Component {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
     this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
-      console.log(`TimelineComponent received PLAN_LOAD_EVT with a new plan [${plan.uuid}] as payload`);
-      this.setState({ days: plan.days, name: plan.name });
+      console.log(`TimelineComponent received PLAN_LOAD_EVT with a new plan [${plan.uuid}] from [${plan.startDate}]`);
+      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
       this.setState({ isVisible: true });
     });
     // this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
@@ -37,17 +38,17 @@ export default class TimelineComponent extends React.Component {
     // });
     this.props.eventbus.on("DAY_CLONE_EVT", (plan) => {
       console.log("TimelineComponent received DAY_CLONE_EVT with a new plan as payload");
-     this.setState({ days: plan.days, name: plan.name });
+     this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
     this.props.eventbus.on("DAY_MOVE_EVT", (plan) => {
       console.log("TimelineComponent received DAY_MOVE_EVT with a new plan as payload");
-      this.setState({ days: plan.days, name: plan.name });
+      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
     this.props.eventbus.on("DAY_DELETE_EVT", (plan) => {
-      this.setState({ days: plan.days, name: plan.name });
+      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
     this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
-      this.setState({ days: plan.days, name: plan.name });
+      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
   }
 
@@ -69,66 +70,17 @@ export default class TimelineComponent extends React.Component {
   // }
   //
 
-  calcDayTotal(day)  {
-    if (day.trainings.length === 1) {
-      return day.trainings[0].total.distance;
-    } else {
-      return (day.trainings[0].total.distance + day.trainings[1].total.distance);
-    }
-  }
-
-  renderWeek(week, weekStartDate) {
-    console.log("week: " + JSON.stringify(week[0]));
-    return (<tr key={createUuid()}>
-      {week.map((day, dayNr) => {
-          let dfd = weekStartDate.add(1, "days");
-          return (<DayComponent
-            key={"day" + "-" + dayNr + "-" + createUuid()}
-            eventbus={this.props.eventbus}
-            day={day}
-            dayNr={dayNr}
-            dateForDay={dfd} />);
-        })
-      }
-    </tr>);
-    //return(<tr>wobble</tr>);
-  }
 
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
-    const planStartDate = moment("2016-12-03");
-    let dateForDay = planStartDate;
-
+    let weekStartDate = moment(this.state.startDate);
+    console.log(`Starting plan ${weekStartDate.format()} from ${this.state.startDate}`);
     var weeks = [];
     for (var i = 0; i < this.state.days.length; i++) {
-      weeks.push(this.state.days.slice(i, i += 7));
+      weeks.push({"days": this.state.days.slice(i, i += 7), "weekStartDate": weekStartDate});
+      weekStartDate = weekStartDate.clone().add(1, "week");
     }
-    //     segmentTotalDistance += this.calcDayTotal(day);
-
-    let segmentTotalDistance = 0;
-
-    // weeks.forEach((week, weekNr) => {
-    //   tableRows.push(`<tr>`);
-    //   week.forEach((day, dayNr) => {
-    //     let dfd = dateForDay.add(1, "days");
-    //     console.log(`days iterator: ${dateForDay}`);    
-
-    //     tableRows.push(<DayComponent
-    //         key={"day" + "-" + dayNr + "-" + createUuid()}
-    //         eventbus={this.props.eventbus}
-    //         day={day}
-    //         dayNr={dayNr}
-    //         dateForDay={dfd} />);
-    //   });
-    //   tableRows.push(
-    //     <td key={"section" + "-" + weekNr + "-" + createUuid()} className="segment-total">
-    //       {"total: "}{segmentTotalDistance.toFixed(2)}{"km"}
-    //     </td>
-    //   );
-    //   tableRows.push(<\/tr>)
-    //   segmentTotalDistance = 0;
-    // });
 
     /*
     <button className="button-small" onClick={this.onCycleLengthButtonClick} value="7">{"7 day cycle"}</button>
@@ -145,7 +97,7 @@ export default class TimelineComponent extends React.Component {
         <div className="panel-body">
            <table className="days-table">
             <tbody>
-              {weeks.map((week) => {return this.renderWeek(week, dateForDay)})}
+              {weeks.map(week => <WeekComponent eventbus={this.props.eventbus} week={week} key={createUuid()} />)}
             </tbody>
            </table>
         </div>

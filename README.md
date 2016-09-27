@@ -35,7 +35,6 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
-- trainingUtil.js: move segment stuff to segmentUtil.js
 - Multi column traininglist instead of one long list
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline
@@ -53,10 +52,8 @@ Based on 'React eventemitter'.
 - hide/show segment
 - repeat segment in data
 
-### Timeline
-- Fix bug on passing dateForDay via props
+### Timeline/Plan
 - 'add Plan' button and rest-api post endpoint
-- fix dateForDay feature
 - button for 'compact view'
 - button for 'ultra compact view'
 - edit feature should open in a modal popup
