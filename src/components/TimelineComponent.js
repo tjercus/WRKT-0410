@@ -70,7 +70,6 @@ export default class TimelineComponent extends React.Component {
   // }
   //
 
-
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component

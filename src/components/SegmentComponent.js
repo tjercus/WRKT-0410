@@ -93,7 +93,7 @@ export default class SegmentComponent extends React.Component {
 
   render() {
     let rowClassName = (this.state.isValid) ? "segment valid" : "segment invalid";
-
+    // <span>@400: {makePaceAt400(this.state.pace)}</span>
     return (
       <tr className={rowClassName}>
         <td><input type="text" name="distance" value={this.state.distance} onChange={this.onChange} className="type-double" /></td>
@@ -102,7 +102,7 @@ export default class SegmentComponent extends React.Component {
         <td>
           <button className="button-small button-primary" onClick={this.onCalcButtonClick}>Calc</button>
           <button className="button-small" onClick={this.onCloneButtonClick}>Clone</button>
-          <button className="button-small button-warning" onClick={this.onRemoveButtonClick}>Remove</button>
+          <button className="button-small button-warning" onClick={this.onRemoveButtonClick}>Remove</button>          
         </td>
       </tr>
     );

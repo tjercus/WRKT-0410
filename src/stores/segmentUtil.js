@@ -198,6 +198,20 @@ export function parseDuration(duration) {
 }
 
 /**
+ * TODO unit test and fix
+ * @param {Segment} original pace as mm:ss
+ * @return {string} pace as mm:ss
+ */
+/*
+export function makePaceAt400(pace) {
+  const durationObj = moment.duration(pace);
+  const seconds = durationObj.asSeconds();
+  const paceObj = moment.duration(Math.round((seconds / 10) * 4), "seconds");
+  return `${lpad(paceObj.minutes())}:${lpad(paceObj.seconds())}`;
+};
+*/
+
+/**
  * @param moment.duration obj
  * @return HH:mm:ss String
  */
@@ -212,8 +226,7 @@ const makePace = (segment) => {
   const _segment = clone(segment);
   const durationObj = moment.duration(_segment.duration);
   const seconds = durationObj.asSeconds();
-  const paceObj = moment.duration(Math.round(seconds / _segment.distance),
-    "seconds");
+  const paceObj = moment.duration(Math.round(seconds / _segment.distance), "seconds");
   return `${lpad(paceObj.minutes())}:${lpad(paceObj.seconds())}`;
 };
 
