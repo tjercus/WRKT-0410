@@ -50,6 +50,12 @@ export default class DayComponent extends React.Component {
     return (aDay.day() === 0 || aDay.day() === 3 || aDay.day() === 6);
   }
 
+  // TODO less naive implementation
+  // TODO move to util
+  isNonRunDay(aDay) {
+    return aDay.trainings[0].total.distance === 0;
+  }
+
   render() {
   	let day = this.props.day;
     //console.log(`DayComponent timestamp ${day.dfd}`);
@@ -63,6 +69,8 @@ export default class DayComponent extends React.Component {
     this.isNonWorkday(day.dfd) ?
       dayClassNames.push("day day-nowork") :
       dayClassNames.push("day day-work");
+
+    this.isNonRunDay(day) ? dayClassNames.push("day day-norun") : "";
 
     if (moment(day.dfd).isSame(moment(new Date()), "day")) {
       dayClassNames.push("today");

@@ -264,6 +264,9 @@ a {
 .days-table td.day-nowork {
   background-color: #ffe6e6;
 }
+.days-table td.day-norun {
+  background-color: transparent;
+}
 .days-table section.training {
   padding-bottom: 0.3em;
   border-bottom: 3px solid white;

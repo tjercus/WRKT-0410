@@ -32,6 +32,8 @@ export default class RemoteDataService {
       this.persistPlan(plan, eventbus);
       this.persistInstances(plan.uuid, instances, eventbus);
     });
+
+    eventbus.on("PLAN_ADD_CMD", plan => this.persistNewPlan(plan, eventbus));
   }
 
   fetchOne(noun) {
@@ -90,6 +92,20 @@ export default class RemoteDataService {
         eventbus.emit("TRAININGS_PERSIST_EVT");
       }).catch((error) => {
         eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", error);
+      });
+    }
+  }
+
+  persistNewPlan(plan, eventbus) {
+    const planStr = JSON.stringify(plan, null, "\t");
+    if (typeof fetch === "function") {
+      fetch(`http://localhost:3333/plans/`, {
+        method: "POST",
+        body: planStr,
+      }).then((response) => {
+        eventbus.emit("PLAN_ADD_EVT");
+      }).catch((error) => {
+        eventbus.emit("PLAN_ADD_ERROR_EVT", error);
       });
     }
   }

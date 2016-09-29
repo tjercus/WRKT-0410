@@ -46,8 +46,9 @@ server.get("/plans/:uuid", (req, res, next) => {
 });
 
 server.post("/plans", (req, res, next) => {
-  //writeFileFromRequestbody("./data/plan_" + uuid + ".js", req, res);
-  // TODO also "./data/traininginstances_" + uuid + ".js"
+  const uuid = req.body.uuid;
+  writeFileFromRequestbody("./data/plan_" + uuid + ".js", req, res);
+  fs.writeFile("./data/traininginstances_" + uuid + ".js", "[]");
   return next();
 });
 
