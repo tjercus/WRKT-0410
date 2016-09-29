@@ -9,6 +9,10 @@ export default class MenuComponent extends React.Component {
       activeName: ""
     }
     this.onButtonClick = this.onButtonClick.bind(this); // TODO phat arrow
+    
+    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
+      this.setState({activeName: menuItemName});
+    });
   }
 
   onButtonClick(evt) {

@@ -84,13 +84,13 @@ export default class TimelineComponent extends React.Component {
     /*
     <button className="button-small" onClick={this.onCycleLengthButtonClick} value="7">{"7 day cycle"}</button>
     <button className="button-small" onClick={this.onCycleLengthButtonClick} value="9">{"9 day cycle"}</button>
+    <button className="button-small" onClick={this.onHideEasyRunsButtonClick}>{"de-emphasize easy days"}</button>
     */
 
     return (
       <section className={panelClassName}>
         <header className="panel-header">
-          <em>{this.state.name}</em>&nbsp;
-          <button className="button-small" onClick={this.onHideEasyRunsButtonClick}>{"de-emphasize easy days"}</button>
+          <em>{this.state.name}</em>&nbsp;          
           <button className="button-flat" onClick={this.onSaveButtonClick}>{"persist changes"}</button>
         </header>
         <div className="panel-body">
