@@ -83,11 +83,16 @@ export default class DayComponent extends React.Component {
         }
       }
 
+      let trainingTotal = "";
+      if (day.trainings.length > 1) {
+        <p>{"("}{(training.total.distance).toFixed(2)} {" km)"}</p>;
+      }
+
       // TODO extract DayTrainingComponent
       dayElements.push(
         <section key={j + "-" + createUuid()} className={trainingClassNames.join(" ")}>
           <p className="training-name">{training.name}</p>
-        	<p>{"("}{(training.total.distance).toFixed(2)} {" km)"}</p>
+        	{trainingTotal}          
         </section>
       );
 
