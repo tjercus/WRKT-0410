@@ -5,11 +5,12 @@ const HOST = "http://localhost:3333/";
 export default class RemoteDataService {
 
   /**
-   *
+   * NOTE remember to NOT put slashes after a URL since a '405 method not allowed' will be returned by server
    * @param  {EventEmitter} eventbus
    */
   constructor(eventbus) {
     eventbus.on("PLANLIST_FETCH_CMD", () => {
+      console.log("RemoteDataService caught PLANLIST_FETCH_CMD");
       this.fetchJson("plans", "PLANLIST_FETCHED_EVT", "PLANLIST_FETCH_ERROR_EVT", eventbus);
     });
 
@@ -99,7 +100,7 @@ export default class RemoteDataService {
   persistNewPlan(plan, eventbus) {
     const planStr = JSON.stringify(plan, null, "\t");
     if (typeof fetch === "function") {
-      fetch(`http://localhost:3333/plans/`, {
+      fetch(`http://localhost:3333/plans`, {
         method: "POST",
         body: planStr,
       }).then((response) => {

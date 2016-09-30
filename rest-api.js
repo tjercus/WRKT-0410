@@ -15,16 +15,6 @@ server.get("/trainings", restify.serveStatic({
   file: "trainings.js"
 }));
 
-server.get("/plans/", (req, res, next) => {
-  // TODO replace static data with IO action for real UUIDs and names
-  const plans = [
-    {"uuid": "a83a78aa-5d69-11e6-b3a3-1f76e6105d92", "name": "Pfitzinger 85/18"},
-    {"uuid": "acc3d1b8-33ae-4d70-dda3-d0e885f516f4", "name": "10k plan #1"},
-    {"uuid": "c4415a10-7677-11e6-88c3-471fa3acb3f8", "name": "Hansons Advanced Plan"}
-  ];
-  res.send(200, plans);
-});
-
 server.get("/traininginstances/:uuid", (req, res, next) => {
   console.log(`GET traininginstances STARTED with: ${req.params.uuid}`);
   res.setHeader("Content-Type", "text/json");
@@ -36,7 +26,7 @@ server.get("/traininginstances/:uuid", (req, res, next) => {
 });
 
 server.get("/plans/:uuid", (req, res, next) => {
-  console.log(`GET plans STARTED with: ${req.params.uuid}`);
+  console.log(`GET /plans/:uuid STARTED with: ${req.params.uuid}`);
   res.setHeader("Content-Type", "text/json");
   fs.readFile(`./data/plan_${req.params.uuid}.js`, "utf8", (err, contents) => {
     res.send(200, contents);
@@ -45,10 +35,28 @@ server.get("/plans/:uuid", (req, res, next) => {
   return next();
 });
 
+server.get("/plans", (req, res, next) => {
+  console.log("GET /plans");
+  var files = fs.readdirSync("./data");
+  var plans = [];
+
+  files.map(file => {
+    if (file.indexOf("plan_") !== -1) {
+      var data = fs.readFileSync("./data/" + file);
+      var obj = JSON.parse(data);
+      plans.push({uuid: obj.uuid, name: obj.name});
+    }
+  });
+  
+  console.log("success");
+  res.send(200, plans);
+  next();
+});
+
 server.post("/plans", (req, res, next) => {
-  const uuid = req.body.uuid;
-  writeFileFromRequestbody("./data/plan_" + uuid + ".js", req, res);
+  const uuid = JSON.parse(req.body).uuid;
   fs.writeFile("./data/traininginstances_" + uuid + ".js", "[]");
+  writeFileFromRequestbody("./data/plan_" + uuid + ".js", req, res);
   return next();
 });
 
@@ -87,7 +95,7 @@ function writeFileFromRequestbody(filename, req, res) {
 function corsHandler(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization");
-  res.setHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+  res.setHeader("Access-Control-Allow-Methods", "OPTIONS, GET, PUT, POST, DELETE");
   res.setHeader("Access-Control-Expose-Headers", "X-Api-Version, X-Request-Id, X-Response-Time");
   res.setHeader("Access-Control-Max-Age", "1000");
   return next();

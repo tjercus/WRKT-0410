@@ -11,7 +11,7 @@ export default class PlanEditComponent extends React.Component {
     super(props);
     this.state = {      
       newPlanName: "new plan",
-      startDate: ""
+      startDate: "2016-01-01"
     };
 
     this.onChange = this.onChange.bind(this);
@@ -23,13 +23,13 @@ export default class PlanEditComponent extends React.Component {
   }
 
   onAddPlanButtonClick(evt) {
-    this.props.eventbus.emit("ADD_PLAN_CMD", {uuid: createUuid(), name: this.state.newPlanName, days: [], startDate: this.state.startDate});
+    this.props.eventbus.emit("PLAN_ADD_CMD", {uuid: createUuid(), name: this.state.newPlanName, days: [], startDate: this.state.startDate});
   }
 
   render() {
     return (
       <div>
-        <h2>{"a new plan"}</h2>
+        <h2>{"A new plan"}</h2>
         <input type="text" name="plan-name" value={this.state.newPlanName} onChange={this.onChange} className="type-text" />
         <button className="button-small" onClick={this.onAddPlanButtonClick}>{"add plan"}</button>
       </div>

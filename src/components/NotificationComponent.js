@@ -53,6 +53,12 @@ export default class NotificationComponent extends React.Component {
       case "TRAININGS_PERSIST_ERROR_EVT":
         msg = `Error when trying to persist to disk: ${data}. Is http://localhost:3333 running?`;
         break;
+      case "PLAN_ADD_EVT":
+        msg = `A new plan was created on disk`;
+        break;
+      case "PLAN_ADD_ERROR_EVT":
+        msg = `Error when trying to create a new plan on disk`;
+        break;
       case "PLAN_PERSIST_EVT":
         msg = `All plans persisted to disk`;
         break;
