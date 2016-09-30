@@ -53,7 +53,8 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
-- 'add Plan' button and rest-api post endpoint
+- Fix handling of ADD_PLAN_EVT
+- Load new plan afeter ADD_PLAN_EVT?
 - button for 'compact view'
 - button for 'ultra compact view'
 - edit feature should open in a modal popup
@@ -70,3 +71,4 @@ Based on 'React eventemitter'.
 - import
 - export
 - import runkeeper csv
+- delete or archive plans
