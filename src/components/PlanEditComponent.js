@@ -23,6 +23,7 @@ export default class PlanEditComponent extends React.Component {
   }
 
   onAddPlanButtonClick(evt) {
+    this.setState({newPlanName: ""});
     this.props.eventbus.emit("PLAN_ADD_CMD", {uuid: createUuid(), name: this.state.newPlanName, days: [], startDate: this.state.startDate});
   }
 

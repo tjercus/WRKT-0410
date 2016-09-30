@@ -19,8 +19,9 @@ const plans = [
 test("Component should render", (assert) => {  
   const component = mount(<PlanEditComponent eventbus={eventbus} />);  
 
-  assert.equal(component.find('input').hasClass("type-text"));
-  assert.equal(component.find('button').hasClass("button-small"));
+  assert.equal(component.state("newPlanName"), "new plan", "the name field should have a default value");
+  assert.ok(component.find('input').hasClass("type-text"));
+  assert.ok(component.find('button').hasClass("button-small"));
   assert.end();
 });
 
@@ -30,7 +31,8 @@ test("Component should emit event on button press", (assert) => {
   const component = mount(<PlanEditComponent eventbus={eventbus} />);
 
   component.find('button').simulate('click');
-  
+
+  assert.equal(component.state("newPlanName"), "", "after adding the name field should be cleared");
   assert.ok(emitSpy.calledWith("PLAN_ADD_CMD"));
   assert.end();
 });

@@ -30,7 +30,7 @@ const day = {
 test("Component should render", (assert) => {  
   const component = mount(<DayComponent eventbus={eventbus} day={day} />);  
 
-  assert.equal(component.find('td').hasClass("day"));  
+  assert.ok(component.find('td').hasClass("day"));  
   assert.end();
 });
 
