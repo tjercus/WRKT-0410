@@ -43,16 +43,17 @@ test("TrainingComponent should render a training", (assert) => {
   assert.equal(component.find("fieldset[name='type'] button").length, 2, "should be two buttons to set 'type' of training");
   assert.equal(component.find("SegmentComponent").length, 1);
   assert.equal(component.find("output[name='totals']").length, 1);
-  assert.equal(component.find("menu").length, 1);
+  assert.equal(component.find("menu").length, 3);
   const buttons = component.find("menu button");
-  assert.equal(buttons.first().text(), "add empty segment");  
-  assert.equal(buttons.at(1).text(), "export training");
-  assert.equal(buttons.at(2).text(), "persist changes");
+  assert.equal(buttons.first().text(), "add empty segment");
+  assert.equal(buttons.at(1).text(), "add to loaded plan");
+  assert.equal(buttons.at(2).text(), "export training");
   assert.equal(buttons.at(3).text(), "clear training");  
-  assert.ok(buttons.at(3).hasClass("button-warning"));
   assert.equal(buttons.at(4).text(), "clone training");
   assert.equal(buttons.at(5).text(), "remove training");  
-  assert.equal(buttons.at(6).text(), "add to loaded plan");
+  assert.equal(buttons.at(6).text(), "persist changes");
+  //assert.ok(buttons.at(5).hasClass("button-warning"));
+  
   assert.end();
 });
 

@@ -53,6 +53,8 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
+- Add 'clone left' feature
+- Add 'add to begin of currently loaded plan' feature
 - Fix handling of ADD_PLAN_EVT
 - Load new plan afeter ADD_PLAN_EVT?
 - button for 'compact view'
