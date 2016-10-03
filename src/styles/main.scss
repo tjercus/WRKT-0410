@@ -291,9 +291,12 @@ a {
   width: auto;
   height: 8em;
 }
-
 .days-table td.day button {
   float: right;
+}
+.days-table div.day-total {
+  padding: 0.1em;
+  text-align: center;
 }
 
 .invalid input {

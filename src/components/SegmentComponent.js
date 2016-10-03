@@ -28,7 +28,6 @@ export default class SegmentComponent extends React.Component {
 
   componentDidMount() {
     this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {
-      console.log(`SegmentComponent caught SEGMENT_UPDATE_EVT ${JSON.stringify(data)}`);
       if (this.state.uuid == data.segment.uuid) {
         this.setState({
           distance: data.segment.distance,
@@ -79,7 +78,6 @@ export default class SegmentComponent extends React.Component {
   }
 
   onCloneButtonClick() {
-    console.log(`onCloneButtonClick ${this.state.uuid}`);
     this.props.eventbus.emit("SEGMENT_CLONE_CMD", this.state);
   }
 

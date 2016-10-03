@@ -200,12 +200,16 @@ export default class TrainingComponent extends React.Component {
             </output>
             <menu>
               <button onClick={this.addEmptySegment} className="button-flat">add empty segment</button>
-              <button onClick={this.exportTraining} className="button-flat">export training</button>
-              <button onClick={this.emitPersistChanges} className="button-flat" id="persist-button">persist changes</button>
+              <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to loaded plan</button>
+            </menu>
+            <menu>
+              <button onClick={this.exportTraining} className="button-flat">export training</button>              
               <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>
               <button onClick={this.cloneTraining} className="button-flat">clone training</button>
               <button onClick={this.removeTraining} className="button-flat">remove training</button>
-              <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to loaded plan</button>
+            </menu>
+            <menu>
+              <button onClick={this.emitPersistChanges} className="button-flat" id="persist-button">persist changes</button>
             </menu>
           </div>
         </section>

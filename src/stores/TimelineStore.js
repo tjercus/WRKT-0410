@@ -29,6 +29,7 @@ export default class TimelineStore {
 
     // NOTE that is up to the emitter to fetch and combine both sets
     eventbus.on("PLAN_FETCHED_EVT", (planAndTraininginstances) => {
+      console.time("PLAN_FETCHED_EVT");
       if (!Array.isArray(planAndTraininginstances)) {
         throw new Error("PLAN_FETCHED_EVT has no array with a plan and instances in it");
       }
@@ -42,6 +43,7 @@ export default class TimelineStore {
       this.traininginstances = traininginstances;
       this.plan = plan;
       eventbus.emit("PLAN_LOAD_EVT", plan);
+      console.timeEnd("PLAN_FETCHED_EVT");
     });
 
     eventbus.on("PLAN_PERSIST_CMD", () => {

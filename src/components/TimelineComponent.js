@@ -28,7 +28,6 @@ export default class TimelineComponent extends React.Component {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
     this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
-      console.log(`TimelineComponent received PLAN_LOAD_EVT with a new plan [${plan.uuid}] from [${plan.startDate}]`);
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
       this.setState({ isVisible: true });
     });
@@ -37,11 +36,9 @@ export default class TimelineComponent extends React.Component {
     //   this.setState({ days: plan.days });
     // });
     this.props.eventbus.on("DAY_CLONE_EVT", (plan) => {
-      console.log("TimelineComponent received DAY_CLONE_EVT with a new plan as payload");
      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
     this.props.eventbus.on("DAY_MOVE_EVT", (plan) => {
-      console.log("TimelineComponent received DAY_MOVE_EVT with a new plan as payload");
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
     this.props.eventbus.on("DAY_DELETE_EVT", (plan) => {
@@ -74,7 +71,6 @@ export default class TimelineComponent extends React.Component {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
     let weekStartDate = moment(this.state.startDate);
-    console.log(`Starting plan ${weekStartDate.format()} from ${this.state.startDate}`);
     var weeks = [];
     for (var i = 0; i < this.state.days.length; i++) {
       weeks.push({"days": this.state.days.slice(i, i += 7), "weekStartDate": weekStartDate});

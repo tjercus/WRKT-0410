@@ -22,13 +22,11 @@ export default class DayComponent extends React.Component {
   }
 
   onEditClick(evt) {
-    console.log(`DayComponent edit ${evt.target.value}`);
     this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
   }
 
   onCloneClick(evt) {
     const uuid = evt.target.attributes[1].nodeValue;
-    console.log(`DayComponent clone cmd ${uuid}`);
     this.props.eventbus.emit("DAY_CLONE_CMD", uuid);
   }
 
@@ -41,7 +39,6 @@ export default class DayComponent extends React.Component {
   }
 
   onDeleteClick(evt) {
-    console.log(`DayComponent delete cmd ${evt.target.value}`);
     this.props.eventbus.emit("DAY_DELETE_CMD", evt.target.value);
   }
 
@@ -59,7 +56,6 @@ export default class DayComponent extends React.Component {
   render() {
   	let day = this.props.day;
     //console.log(`DayComponent timestamp ${day.dfd}`);
-    console.log(`DayComponent day ${JSON.stringify(day)}`);
     if (!day.trainings) {
       throw new Error(`Day [${day.uuid}] should have a plural property 'trainings'`);
     }

@@ -30,11 +30,14 @@ export default class PlanListComponent extends React.Component {
       this.setState({ isVisible: false });
       this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-timeline");
     });
+
+    this.props.eventbus.on("PLAN_ADD_EVT", () => {
+      this.props.eventbus.emit("PLANLIST_FETCH_CMD");
+    });
   }
 
   onClick(evt) {
     const uuid = evt.target.attributes[1].nodeValue;
-    console.log(`PlanListComponent PLAN_FETCH_CMD uuid ${uuid}`);
     this.setState({selectedUid: uuid});
     this.props.eventbus.emit("PLAN_FETCH_CMD", uuid);
   } 
