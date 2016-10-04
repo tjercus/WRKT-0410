@@ -38,6 +38,7 @@ export default class TimelineStore {
         throw new Error("PLAN_FETCHED_EVT did not receive a proper day");
       }
       const traininginstances = planAndTraininginstances[1];
+      // TODO let a worker handle each augment
       plan.days = plan.days.map(_day => augmentDay(_day, traininginstances));
 
       this.traininginstances = traininginstances;
@@ -68,12 +69,18 @@ export default class TimelineStore {
     }));
 
     // TODO unit test this logic!
-    eventbus.on("DAY_CLONE_CMD", (dayUuid) => {
+    eventbus.on("DAY_CLONE_CMD", (dayUuid, position) => {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       const newDay = cloneDay(oldDay);
       // TODO still support singular training property?
-      Array.prototype.push.apply(this.traininginstances, newDay.trainings);
-      this.plan.days.push(newDay);
+      Array.prototype.push.apply(this.traininginstances, newDay.trainings);      
+      if (position === undefined) {
+        console.log(`DAY_CLONE_CMD 1. ${position}`);
+        this.plan.days.push(newDay);        
+      } else if (position === 0) {
+        console.log(`DAY_CLONE_CMD 2. ${position}`);
+        this.plan.days.unshift(newDay);
+      }
       eventbus.emit("DAY_CLONE_EVT", this.plan);
     });
 
@@ -84,7 +91,7 @@ export default class TimelineStore {
       eventbus.emit("DAY_DELETE_EVT", this.plan);
     });
 
-    eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", ((training) => {
+    eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", (training, position) => {
       if (!Object.prototype.hasOwnProperty.call(this, "plan")) {
         throw new Error("Cloning a day before a plan was loaded in TimelineStore");
       }
@@ -93,12 +100,18 @@ export default class TimelineStore {
       }
       const _training = clone(training);
       const newInstanceUuid = createUuid();
-      _training.uuid = newInstanceUuid;
+      _training.uuid = newInstanceUuid;      
       this.traininginstances.push(_training);
       // TODO modify augmentDay to accept a training instead of trainings
-      this.plan.days.push(augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid }
-        , this.traininginstances));
+      const augmentedDay = augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid }, this.traininginstances);
+      if (position === undefined) {
+        console.log(`TimelineStore caught TRAINING_CLONE_AS_INSTANCE_CMD 1. ${position}`);
+        this.plan.days.push(augmentedDay);
+      } else if (position === 0) {
+        console.log(`TimelineStore caught TRAINING_CLONE_AS_INSTANCE_CMD 2. ${position}`);
+        this.plan.days.unshift(augmentedDay);
+      }
       eventbus.emit("TRAINING_TO_PLAN_EVT", this.plan);
-    }));
+    });
   }
 }

@@ -33,6 +33,7 @@ export default class TrainingComponent extends React.Component {
     this.onNameChange = this.onNameChange.bind(this);
     this.onNameBlur = this.onNameBlur.bind(this);
     this.onTypeClick = this.onTypeClick.bind(this);
+    this.emitAddToBeginOfPlan = this.emitAddToBeginOfPlan.bind(this);
     this.emitAddToPlan = this.emitAddToPlan.bind(this);
   }
 
@@ -116,7 +117,13 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.emit("TRAINING_REMOVE_CMD");
   }
 
+  emitAddToBeginOfPlan() {
+    console.log("TrainingComponent.emitAddToBeginOfPlan TRAINING_TO_PLAN_CMD with zero");
+    this.props.eventbus.emit("TRAINING_TO_PLAN_CMD", 0);
+  }
+
   emitAddToPlan() {
+    console.log("TrainingComponent.emitAddToPlan TRAINING_TO_PLAN_CMD without zero");
     this.props.eventbus.emit("TRAINING_TO_PLAN_CMD");
   }
 
@@ -200,11 +207,12 @@ export default class TrainingComponent extends React.Component {
             </output>
             <menu>
               <button onClick={this.addEmptySegment} className="button-flat">add empty segment</button>
-              <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to loaded plan</button>
+              <button onClick={this.emitAddToBeginOfPlan} value="add-to-plan" className="button-flat">add to begin of plan</button>
+              <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to end of plan</button>
             </menu>
             <menu>
               <button onClick={this.exportTraining} className="button-flat">export training</button>              
-              <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>
+              <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>              
               <button onClick={this.cloneTraining} className="button-flat">clone training</button>
               <button onClick={this.removeTraining} className="button-flat">remove training</button>
             </menu>

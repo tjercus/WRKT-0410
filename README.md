@@ -15,10 +15,11 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Try out immutable JS (in a branch!)
 - Use TypeError instead of Error for checking parameters
 - yellow hint of change
 - Use webworkers, if possible, for paralel computing like augmentsegmentdata and calculate totals
-- Use a round iconset (see 'movescount')
+- Use a round iconset (see 'movescount') or perhaps a flat one (see google icons)
 - Replace 'for loops' by higher order function calls
 - Refactor removeX(uuid, array) functions into one generic in miscUtils
 - React components should always use a callback when doing stuff after setState
@@ -53,8 +54,6 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
-- Add 'clone left' feature
-- Add 'add to begin of currently loaded plan' feature
 - Fix handling of ADD_PLAN_EVT
 - Load new plan afeter ADD_PLAN_EVT?
 - button for 'compact view'

@@ -15,6 +15,7 @@ export default class DayComponent extends React.Component {
     //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
     //this.onEmptyClick = this.onEmptyClick.bind(this);
+    this.onCloneLeftClick = this.onCloneLeftClick.bind(this);
     this.onCloneClick = this.onCloneClick.bind(this);
     this.onMoveLeftClick = this.onMoveLeftClick.bind(this);
     this.onMoveRightClick = this.onMoveRightClick.bind(this);
@@ -23,6 +24,11 @@ export default class DayComponent extends React.Component {
 
   onEditClick(evt) {
     this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
+  }
+
+  onCloneLeftClick(evt) {
+    const uuid = evt.target.attributes[1].nodeValue;
+    this.props.eventbus.emit("DAY_CLONE_CMD", uuid, 0);
   }
 
   onCloneClick(evt) {
@@ -110,12 +116,14 @@ export default class DayComponent extends React.Component {
 		    <div className="day-total">{dayTotal.toFixed(2)} km today</div>
 		    <button className="button-small button-flat" onClick={this.onMoveRightClick} value={day.uuid}>&rarr;</button>
 		    <button className="button-small button-flat" onClick={this.onDeleteClick} value={day.uuid}>del</button>
-		    <button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>clone</button>
-		    <button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
+        <button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>&rarr; c</button>
+        <button className="button-small button-flat" onClick={this.onCloneLeftClick} value={day.uuid}>c &larr;</button>		    
 		    <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
 	    </td>
     );
   }
+
+  //<button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
 
 }
 

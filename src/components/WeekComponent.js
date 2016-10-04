@@ -40,7 +40,7 @@ export default class WeekComponent extends React.Component {
     return (
       <tr key={createUuid()}>
         {dayComponents}
-        <td>{"Total: "} {weekTotalDistance} {"km"}</td>
+        <td>{"Total: "} {weekTotalDistance.toFixed(2)} {"km"}</td>
       </tr>);
   }
 
