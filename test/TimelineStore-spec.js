@@ -30,6 +30,8 @@ let plan = {
   ]
 }
 
+let planCopy = clone(plan);
+
 test("TimelineStore should listen to PLAN_FETCHED_EVT and load plan and instances", (assert) => {
   let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
   let emitSpy = sinon.spy(eventbus, "emit");  
@@ -92,7 +94,7 @@ test("TimelineStore should listen to TRAINING_CLONE_AS_INSTANCE_CMD and add inst
   let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
   let emitSpy = sinon.spy(eventbus, "emit");  
   const store = new TimelineStore(eventbus);
-  eventbus.emit("PLAN_FETCHED_EVT", [plan, traininginstances]);
+  eventbus.emit("PLAN_FETCHED_EVT", [planCopy, traininginstances]);
 
   let training = {
     name: "another training",

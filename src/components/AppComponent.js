@@ -45,7 +45,7 @@ export default class AppComponent extends React.Component {
     this.eventbus.emit("TRAININGS_FETCH_CMD");
     if (this.props.startWithDefaultTraining) {
       setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"),
-        1000);
+        200);
     }
     // TODO remove this, it is used in test
     //this.eventbus.emit("PLAN_FETCH_CMD", "a83a78aa-5d69-11e6-b3a3-1f76e6105d92");

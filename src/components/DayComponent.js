@@ -11,7 +11,9 @@ export default class DayComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      secondaryMenuHidden: true,
+    };
     //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
     //this.onEmptyClick = this.onEmptyClick.bind(this);
@@ -20,6 +22,7 @@ export default class DayComponent extends React.Component {
     this.onMoveLeftClick = this.onMoveLeftClick.bind(this);
     this.onMoveRightClick = this.onMoveRightClick.bind(this);
     this.onDeleteClick = this.onDeleteClick.bind(this);
+    this.onSecondaryMenuClick = this.onSecondaryMenuClick.bind(this);
   }
 
   onEditClick(evt) {
@@ -46,6 +49,10 @@ export default class DayComponent extends React.Component {
 
   onDeleteClick(evt) {
     this.props.eventbus.emit("DAY_DELETE_CMD", evt.target.value);
+  }
+
+  onSecondaryMenuClick(evt) {
+    this.setState({secondaryMenuHidden: !this.state.secondaryMenuHidden});
   }
 
   // TODO days from config
@@ -114,17 +121,22 @@ export default class DayComponent extends React.Component {
 		    <h3>{this.props.dayNr + 1}. {dateStr}</h3>
 		    {dayElements}
 		    <div className="day-total">{dayTotal.toFixed(2)} km today</div>
-		    <button className="button-small button-flat" onClick={this.onMoveRightClick} value={day.uuid}>&rarr;</button>
-		    <button className="button-small button-flat" onClick={this.onDeleteClick} value={day.uuid}>del</button>
-        <button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>&rarr; c</button>
-        <button className="button-small button-flat" onClick={this.onCloneLeftClick} value={day.uuid}>c &larr;</button>		    
-		    <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
+        <menu className="day-actions-menu" role="menubar">
+          <button className="button-small button-flat" onClick={this.onSecondaryMenuClick} value={day.uuid}>{"menu"}</button>
+          <button className="button-small button-flat" onClick={this.onMoveRightClick} value={day.uuid}>&rarr;</button>
+  		    <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
+          <menu className="day-secondary-actions-menu" role="menu" aria-hidden={this.state.secondaryMenuHidden}>
+            <ul>
+              <li><button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>&rarr; c</button></li>
+              <li><button className="button-small button-flat" onClick={this.onCloneLeftClick} value={day.uuid}>c &larr;</button></li>
+              <li><button className="button-small button-flat" onClick={this.onDeleteClick} value={day.uuid}>delete</button></li>
+              <li><button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button></li>
+            </ul>
+          </menu>
+        </menu>
 	    </td>
     );
   }
-
-  //<button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button>
-
 }
 
 /*

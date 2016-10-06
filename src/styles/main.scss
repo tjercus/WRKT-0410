@@ -343,3 +343,17 @@ fieldset .button-choice-selected {
   color: black;
   font-weight: bold;
 }
+
+[aria-hidden="true"] {
+  display: none;
+}
+[aria-hidden="false"] {
+  display: block;
+}
+menu.day-secondary-actions-menu ul {  
+  list-style: none;
+  padding-left: 0;  
+}
+menu.day-secondary-actions-menu ul li {  
+  display: block !important;
+}
