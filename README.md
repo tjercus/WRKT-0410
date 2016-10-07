@@ -54,7 +54,6 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
-- add context-menu to day widget
 - add training as 2nd training 2 a day
 - fix handling of ADD_PLAN_EVT
 - load new plan afeter ADD_PLAN_EVT?

@@ -77,6 +77,8 @@ export default class TimelineComponent extends React.Component {
       weekStartDate = weekStartDate.clone().add(1, "week");
     }
 
+    const ifNoWeeksMessage = (this.state.days.length === 0) ? "There are no days in this timeline ..." : null;
+
     /*
     <button className="button-small" onClick={this.onCycleLengthButtonClick} value="7">{"7 day cycle"}</button>
     <button className="button-small" onClick={this.onCycleLengthButtonClick} value="9">{"9 day cycle"}</button>
@@ -93,6 +95,7 @@ export default class TimelineComponent extends React.Component {
            <table className="days-table">
             <tbody>
               {weeks.map(week => <WeekComponent eventbus={this.props.eventbus} week={week} key={createUuid()} />)}
+              {ifNoWeeksMessage}
             </tbody>
            </table>
         </div>

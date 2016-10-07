@@ -26,7 +26,8 @@ export default class DayComponent extends React.Component {
   }
 
   onEditClick(evt) {
-    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", evt.target.value);
+    const uuid = evt.target.attributes[1].nodeValue;
+    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit", uuid);
   }
 
   onCloneLeftClick(evt) {
@@ -122,7 +123,7 @@ export default class DayComponent extends React.Component {
 		    {dayElements}
 		    <div className="day-total">{dayTotal.toFixed(2)} km today</div>
         <menu className="day-actions-menu" role="menubar">
-          <button className="button-small button-flat" onClick={this.onSecondaryMenuClick} value={day.uuid}>{"menu"}</button>
+          <button className="button-small button-flat" onClick={this.onSecondaryMenuClick} value={day.uuid}>{"..."}</button>
           <button className="button-small button-flat" onClick={this.onMoveRightClick} value={day.uuid}>&rarr;</button>
   		    <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
           <menu className="day-secondary-actions-menu" role="menu" aria-hidden={this.state.secondaryMenuHidden}>

@@ -80,8 +80,9 @@ export default class TrainingStore {
     });
 
     eventbus.on("TRAINING_TO_PLAN_CMD", (position) => {
-      console.log(`TrainingStore caught TRAINING_TO_PLAN_CMD ${position}`);
-      this.eventbus.emit("TRAINING_CLONE_AS_INSTANCE_CMD", this.getCurrentlyLoadedTraining(), position);
+      // console.log(`TrainingStore caught TRAINING_TO_PLAN_CMD ${position}`);
+      this.eventbus.emit("TRAINING_CLONE_AS_INSTANCE_CMD",
+       this.getCurrentlyLoadedTraining(), position);
     });
 
     eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {
