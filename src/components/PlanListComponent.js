@@ -26,7 +26,7 @@ export default class PlanListComponent extends React.Component {
       this.setState({planlist: planlist});
     });
 
-    this.props.eventbus.on("PLAN_LOAD_EVT", (uuid) => {
+    this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
       this.setState({ isVisible: false });
       this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-timeline");
     });

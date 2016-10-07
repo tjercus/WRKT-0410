@@ -31,9 +31,9 @@ export default class AppComponent extends React.Component {
     }
 
     // initially will receive data as empty TODO remove props so all data comes from eventbus
-    new DayStore(this.eventbus, clone(plans), clone(traininginstances));
+    new DayStore(this.eventbus);
     new TrainingStore(this.eventbus, clone(trainings));
-    new TimelineStore(this.eventbus, clone(plans), clone(traininginstances));
+    new TimelineStore(this.eventbus);
 
     new RemoteDataService(this.eventbus);
   }

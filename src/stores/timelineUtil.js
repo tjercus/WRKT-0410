@@ -16,13 +16,10 @@ import {
  * Find a day in a list of days for a plan, augment the trainings in the day
  * @param  {uuid} dayUuid - identifier
  * @param  {Plan} plan - contains days
- * @param  {Array<Training>} trainings - used for augmenting trainings
+ * @param  {Array<Training>} trainings | [] - used for augmenting trainings if needed
  * @return {Day} day - augmented day
  */
-export function findDay(dayUuid, plan, trainings) {
-  if (trainings.length === 0) {
-    throw new Error("findDay trainings should be provided!");
-  }
+export function findDay(dayUuid, plan, trainings = []) {
   if (!plan.days || plan.days.length === 0) {
     throw new Error("findDay plan should have a list of days!");
   }
@@ -31,6 +28,9 @@ export function findDay(dayUuid, plan, trainings) {
   const index = _days.findIndex(byUuid);
   if (index < 0) {
     throw new Error(`findDay could not find day with ${dayUuid}`);
+  }
+  if (isAugmentedDay(_days[index])) {
+    return _days[index];
   }
   return augmentDay(_days[index], clone(trainings));
 }
@@ -55,7 +55,7 @@ export function augmentDay(day, trainings) {
   }
   // calculate total per training when multiple trainings
   for (let i = 0, len = _day.trainings.length; i < len; i++) {
-    if (!isAugmented(_day.trainings[i])) {
+    if (!isAugmentedTraining(_day.trainings[i])) {
       _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
     }
     _day.trainings[i].total = makeTrainingTotal(_day.trainings[i].segments);
@@ -181,5 +181,7 @@ const nullTraining = {
   total: { distance: 0, duration: "00:00:00", pace: "00:00" },
 };
 
+const isAugmentedDay = (day) => (hasProperty(day, "trainings") && hasProperty(day.trainings[0], "name"));
 // TODO move to trainingUtil
-const isAugmented = (training) => (hasProperty(training, "uuid") && hasProperty(training, "name"));
+const isAugmentedTraining = (training) => (hasProperty(training, "uuid") && hasProperty(training, "name"));
+

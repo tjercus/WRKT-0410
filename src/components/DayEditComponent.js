@@ -8,9 +8,7 @@ export default class DayEditComponent extends React.Component {
     this.state = {
       isVisible: false,
       dayUuid: null,
-      day: {
-        training: {}
-      }
+      day: null
     };
     //this.onButtonClick = this.onButtonClick.bind(this); // TODO phat arrow
   }
@@ -27,12 +25,12 @@ export default class DayEditComponent extends React.Component {
       }
     }));
 
-    this.props.eventbus.on("DAY_LOAD_EVT", ((day) => {
-      //console.log(`DayEditComponent: received DAY_LOAD_EVT ${JSON.stringify(day)}`);
+    this.props.eventbus.on("DAY_LOAD_EVT", (day) => {
+      console.log(`DayEditComponent: received DAY_LOAD_EVT ${JSON.stringify(day)}`);
       this.setState({
         day: day
       });
-    }));
+    });
   }
 
   /*
@@ -48,8 +46,8 @@ export default class DayEditComponent extends React.Component {
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     let trainingName = "no training selected";
-    if (this.state.day !== null && this.state.day.training !== undefined) {
-      trainingName = this.state.day.training.name;
+    if (this.state.day !== null && this.state.day.trainings) {
+      trainingName = this.state.day.trainings[0].name;
     }
     return (
       <section className={panelClassName}>

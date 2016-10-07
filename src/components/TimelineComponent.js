@@ -28,8 +28,8 @@ export default class TimelineComponent extends React.Component {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
     this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
-      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
-      this.setState({ isVisible: true });
+      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate,
+       isVisible: true });      
     });
     // this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
     //   console.log("TimelineComponent received DAY_EMPTY_EVT with a new plan as payload");
@@ -94,10 +94,10 @@ export default class TimelineComponent extends React.Component {
         <div className="panel-body">
            <table className="days-table">
             <tbody>
-              {weeks.map(week => <WeekComponent eventbus={this.props.eventbus} week={week} key={createUuid()} />)}
-              {ifNoWeeksMessage}
+              {weeks.map(week => <WeekComponent eventbus={this.props.eventbus} week={week} key={createUuid()} />)}              
             </tbody>
            </table>
+           {ifNoWeeksMessage}
         </div>
       </section>
     );
