@@ -1,6 +1,8 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
 
+import TrainingComponent from "./TrainingComponent";
+
 export default class DayEditComponent extends React.Component {
 
   constructor(props) {
@@ -46,8 +48,14 @@ export default class DayEditComponent extends React.Component {
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     let trainingName = "no training selected";
+    let tOut = [];
     if (this.state.day !== null && this.state.day.trainings) {
-      trainingName = this.state.day.trainings[0].name;
+      const trainings = this.state.day.trainings;
+      tOut = trainings.map(tr => {
+        return <TrainingComponent eventbus={this.props.eventbus} />
+      });
+
+      //trainingName = trainings[0].name;
     }
     return (
       <section className={panelClassName}>
@@ -55,7 +63,7 @@ export default class DayEditComponent extends React.Component {
           <p>Day Edit Screen</p>
         </header>
         <div className="panel-body">
-           {trainingName}
+           {tOut.join(" / ")}
         </div>
       </section>
     );

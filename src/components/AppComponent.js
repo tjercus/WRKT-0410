@@ -2,7 +2,7 @@ import React from "react";
 import EventEmitter from "eventemitter2";
 import MenuComponent from "./MenuComponent";
 import PanelComponent from "./PanelComponent";
-import TrainingComponent from "./TrainingComponent";
+import TrainingPanelComponent from "./TrainingPanelComponent";
 import TrainingListComponent from "./TrainingListComponent";
 import TimelineComponent from "./TimelineComponent";
 import DayEditComponent from "./DayEditComponent";
@@ -66,7 +66,7 @@ export default class AppComponent extends React.Component {
           </aside>
           <main>
             <NotificationComponent eventbus={this.eventbus} />
-            <TrainingComponent eventbus={this.eventbus} name="Training" from="menu-item-training" />
+            <TrainingPanelComponent eventbus={this.eventbus} name="Training" from="menu-item-training" />
             <TimelineComponent eventbus={this.eventbus} name="Timeline" from="menu-item-timeline" />
             <PanelComponent eventbus={this.eventbus} name="Settings" from="menu-item-settings" />
             <DayEditComponent eventbus={this.eventbus} name="DayEdit" from="menu-item-dayedit" />

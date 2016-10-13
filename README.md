@@ -36,6 +36,8 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
+- Differentiate between a Training and a TrainingInstance object so the DayEditComponent,
+  TrainingComponent, TrainingStore and DayEditComponent and DayStore can use one or both
 - Multi column traininglist instead of one long list
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline
@@ -54,7 +56,8 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
-- add training as 2nd training 2 a day
+- feature: 'move training to another day'
+- feature: 'add training as 2nd training 2 a day'
 - fix handling of ADD_PLAN_EVT
 - load new plan afeter ADD_PLAN_EVT?
 - button for 'compact view'

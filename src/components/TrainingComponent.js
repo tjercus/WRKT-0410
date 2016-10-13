@@ -2,8 +2,7 @@ import React from "react";
 import SegmentComponent from "./SegmentComponent";
 import { clone } from "../stores/miscUtil";
 
-const DEFAULT_STATE = {
-  isVisible: true,
+const DEFAULT_STATE = {  
   uuid: null,
   name: "undefined",
   type: null,
@@ -38,10 +37,6 @@ export default class TrainingComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
-      this.setState({ isVisible: (menuItemName === this.props.from) });
-    });
-
     this.props.eventbus.on("TRAINING_LOAD_EVT", (training) => {
       console.log(`TrainingComponent received TRAINING_LOAD_EVT with ${training.uuid}`);
       this.loadTraining(training);
@@ -133,7 +128,8 @@ export default class TrainingComponent extends React.Component {
 
   onTypeClick(evt) {
     this.setState({ type: evt.target.value }, () => {
-      this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.makeTraining(this.state)); // TODO test: 'should emit event when button clicked'
+      this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.makeTraining(this.state)); 
+      // TODO test: 'should emit event when button clicked'
     });
   }
 
@@ -153,7 +149,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   render() {
-    let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
+    let panelClassName = "panel";
 
     let nameComponent = "";
     if (this.state.isNameEditable) {
