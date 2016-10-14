@@ -36,8 +36,10 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
-- Differentiate between a Training and a TrainingInstance object so the DayEditComponent,
-  TrainingComponent, TrainingStore and DayEditComponent and DayStore can use one or both
+- Flesh out DayStore to listen to, and send events to, TrainingInstanceView
+- Differentiate between a Training and a TrainingInstance object so the TrainingComponent, 
+  TrainingStore and DayEditComponent and DayStore can use one or both
+- Refactor TrainingComponent and TrainingInstanceComponent so they can use common code
 - Multi column traininglist instead of one long list
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline

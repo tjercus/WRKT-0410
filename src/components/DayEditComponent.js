@@ -1,7 +1,7 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
 
-import TrainingComponent from "./TrainingComponent";
+import TrainingInstanceComponent from "./TrainingInstanceComponent";
 
 export default class DayEditComponent extends React.Component {
 
@@ -51,10 +51,6 @@ export default class DayEditComponent extends React.Component {
     let tOut = [];
     if (this.state.day !== null && this.state.day.trainings) {
       const trainings = this.state.day.trainings;
-      tOut = trainings.map(tr => {
-        return <TrainingComponent eventbus={this.props.eventbus} />
-      });
-
       //trainingName = trainings[0].name;
     }
     return (
@@ -63,7 +59,7 @@ export default class DayEditComponent extends React.Component {
           <p>Day Edit Screen</p>
         </header>
         <div className="panel-body">
-           {tOut.join(" / ")}
+           <TrainingInstanceComponent eventbus={this.props.eventbus} />
         </div>
       </section>
     );

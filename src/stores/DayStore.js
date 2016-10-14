@@ -4,14 +4,16 @@ import { findDay } from "./timelineUtil";
 export default class DayStore {
 
   /**
-   *
-   * @param  {EventEmitter2}
-   * @param  {Array}
-   * @param  {Array}
+   * Holds data for editing a day and it's one or more trainings
+   * 
+   * @param  {EventEmitter2}   
    */
   constructor(eventbus) {
     this.eventbus = eventbus;
     this.day = {};
+
+    // TODO handle:
+    // INSTANCE_LOAD_EVT
 
     eventbus.on("PLAN_LOAD_EVT", (plan) => {
       this.plan = plan;
