@@ -11,18 +11,20 @@ export default class DayStore {
   constructor(eventbus) {
     this.eventbus = eventbus;
     this.day = {};
+    this.plan = {};
 
     // TODO handle:
-    // INSTANCE_LOAD_EVT
+    // 
 
     eventbus.on("PLAN_LOAD_EVT", (plan) => {
+      console.log(`DayStore caught PLAN_LOAD_CMD and loads plan locally`);
       this.plan = plan;
     });
 
     eventbus.on("DAY_LOAD_CMD", (dayUuid) => {
       // caching
       let day = this.day;
-      if (!this.day || this.day.uuid != dayUuid) {
+      if (!this.day || this.day.uuid != dayUuid && this.plan) {
         this.day = findDay(dayUuid, this.plan);
       }
       if (this.day) {

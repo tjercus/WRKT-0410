@@ -16,16 +16,9 @@ export default class DayEditComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", ((menuItemName, dayUuid) => {
-      this.setState({
-        dayUuid: dayUuid
-      });
+    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
       this.setState({ isVisible: (menuItemName === this.props.from) });
-
-      if (dayUuid !== null) {
-        this.props.eventbus.emit("DAY_LOAD_CMD", dayUuid);
-      }
-    }));
+    });
 
     this.props.eventbus.on("DAY_LOAD_EVT", (day) => {
       console.log(`DayEditComponent: received DAY_LOAD_EVT ${JSON.stringify(day)}`);
@@ -33,6 +26,11 @@ export default class DayEditComponent extends React.Component {
         day: day
       });
     });
+  }
+
+  loadTrainingClick(evt) {
+    const nr = evt.target.value;
+    // TODO trigger re-render with TIC loaded for this training, use props?
   }
 
   /*
@@ -48,10 +46,16 @@ export default class DayEditComponent extends React.Component {
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     let trainingName = "no training selected";
-    let tOut = [];
+    let trainings = [
+      {name: "none"}, 
+      {name: "none"}
+    ];
     if (this.state.day !== null && this.state.day.trainings) {
-      const trainings = this.state.day.trainings;
+      trainings[0] = this.state.day.trainings[0];
       //trainingName = trainings[0].name;
+      if (this.state.day.trainings.length === 2) { 
+        trainings[1] = this.state.day.trainings[1];
+      }
     }
     return (
       <section className={panelClassName}>
@@ -59,9 +63,15 @@ export default class DayEditComponent extends React.Component {
           <p>Day Edit Screen</p>
         </header>
         <div className="panel-body">
-           <TrainingInstanceComponent eventbus={this.props.eventbus} />
+          <h3>{"Trainings"}</h3>
+          <ul>
+            <li><a onClick={this.loadTrainingClick} value={0}>{trainings[0].name}</a></li>
+            <li><a >{trainings[1].name}</a></li>
+          </ul>
         </div>
       </section>
     );
   }
 };
+
+// <TrainingInstanceComponent eventbus={this.props.eventbus} />
