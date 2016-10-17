@@ -4,6 +4,158 @@
 		"selected_items":
 		[
 			[
+				"panel",
+				"panelClassName"
+			],
+			[
+				"menu",
+				"menuItemName"
+			],
+			[
+				"Tr",
+				"TrainingPanelComponent"
+			],
+			[
+				"Tra",
+				"TrainingComponent\t(AppComponent.js)"
+			],
+			[
+				"tr",
+				"trainings"
+			],
+			[
+				"_d",
+				"_days"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"paddin",
+				"padding-left"
+			],
+			[
+				"secondM",
+				"secondaryMenuVisible"
+			],
+			[
+				"set",
+				"setState\t(TimelineComponent.js)"
+			],
+			[
+				"sec",
+				"secondMenuClassNames"
+			],
+			[
+				"onC",
+				"onContextMenuClick"
+			],
+			[
+				"emitA",
+				"emitAddToBeginOfPlan"
+			],
+			[
+				"aug",
+				"augmentedDay"
+			],
+			[
+				"augmented",
+				"augmentedDay"
+			],
+			[
+				"augment",
+				"augmentedDay"
+			],
+			[
+				"DAY",
+				"DAY_CLONE_CMD"
+			],
+			[
+				"new",
+				"newDay"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"consoel",
+				"console.log\t(RemoteDataService.js)"
+			],
+			[
+				"le",
+				"length\t(TimelineComponent.js)"
+			],
+			[
+				"consol",
+				"console.log"
+			],
+			[
+				"file",
+				"fileContent"
+			],
+			[
+				"par",
+				"parse"
+			],
+			[
+				"console",
+				"console.log\t(RemoteDataService.js)"
+			],
+			[
+				"ev",
+				"eventbus\t(TimelineComponent.js)"
+			],
+			[
+				"Plan",
+				"PlanEditComponent"
+			],
+			[
+				"e",
+				"eventbus"
+			],
+			[
+				"wee",
+				"week"
+			],
+			[
+				"week",
+				"weekStartDate"
+			],
+			[
+				"start",
+				"startDate"
+			],
+			[
+				"date",
+				"dateForDay"
+			],
+			[
+				"str",
+				"stringify\t(TrainingComponent.js)"
+			],
+			[
+				"plan",
+				"planStartDate"
+			],
+			[
+				"render",
+				"renderWeek"
+			],
+			[
+				"ta",
+				"tableRows"
+			],
+			[
+				"return",
+				"returns\t@returns"
+			],
+			[
+				"this",
+				"this.trainings"
+			],
+			[
 				"find",
 				"findByNr"
 			],
@@ -17,7 +169,7 @@
 			],
 			[
 				"button-",
-				"button-warning	(TrainingComponent-spec.js)"
+				"button-warning\t(TrainingComponent-spec.js)"
 			],
 			[
 				"fla",
@@ -28,12 +180,8 @@
 				"TimelineStore"
 			],
 			[
-				"consol",
-				"console.log(\"AppComponent	(AppComponent.js)"
-			],
-			[
 				"ass",
-				"assert.end	(TrainingStore-spec.js)"
+				"assert.end\t(TrainingStore-spec.js)"
 			],
 			[
 				"flatte",
@@ -41,19 +189,11 @@
 			],
 			[
 				"flatt",
-				"flattened	(timelineUtil.js)"
-			],
-			[
-				"aug",
-				"augmented	(timelineUtil.js)"
+				"flattened\t(timelineUtil.js)"
 			],
 			[
 				"flatten",
-				"flattenMicrocycle	(timelineUtil.js)"
-			],
-			[
-				"tr",
-				"traininginstances"
+				"flattenMicrocycle\t(timelineUtil.js)"
 			],
 			[
 				"per",
@@ -77,15 +217,11 @@
 			],
 			[
 				"_mic",
-				"_microcycles	(timelineUtil.js)"
+				"_microcycles\t(timelineUtil.js)"
 			],
 			[
 				"conso",
-				"console.log(`training	(trainingUtil.js)"
-			],
-			[
-				"new",
-				"newInstance"
+				"console.log(`training\t(trainingUtil.js)"
 			],
 			[
 				"add",
@@ -93,11 +229,7 @@
 			],
 			[
 				"micro",
-				"microcycle	(TimelineStore.js)"
-			],
-			[
-				"augment",
-				"augmentDay"
+				"microcycle\t(TimelineStore.js)"
 			],
 			[
 				"Timelin",
@@ -121,11 +253,7 @@
 			],
 			[
 				"asse",
-				"assert.end	(TrainingStore-spec.js)"
-			],
-			[
-				"len",
-				"length	(TrainingStore.js)"
+				"assert.end\t(TrainingStore-spec.js)"
 			],
 			[
 				"curr",
@@ -152,16 +280,8 @@
 				"timelineUtil"
 			],
 			[
-				"console",
-				"console.log(\"trainings	(rest-api.js)"
-			],
-			[
 				"pers",
 				"persistPlans"
-			],
-			[
-				"e",
-				"emit"
 			],
 			[
 				"ins",
@@ -169,7 +289,7 @@
 			],
 			[
 				"inst",
-				"instanceId	(plans.js)"
+				"instanceId\t(plans.js)"
 			],
 			[
 				"augmen",
@@ -188,10 +308,6 @@
 				"training-uuid"
 			],
 			[
-				"str",
-				"stringify	(TrainingStore.js)"
-			],
-			[
 				"TRA",
 				"TRAINING_LOAD_EVT"
 			],
@@ -205,7 +321,7 @@
 			],
 			[
 				"button-choic",
-				"button-choice-selected	(main.scss)"
+				"button-choice-selected\t(main.scss)"
 			],
 			[
 				"button",
@@ -288,10 +404,6 @@
 				"cloneTraining"
 			],
 			[
-				"ev",
-				"eventbus"
-			],
-			[
 				"ma",
 				"makeTrainingTotal"
 			],
@@ -352,14 +464,6 @@
 				"_microcycles"
 			],
 			[
-				"sec",
-				"sectionClassName"
-			],
-			[
-				"set",
-				"setTrainingInState"
-			],
-			[
 				"clear",
 				"clearTrainingFromLocalState"
 			],
@@ -410,200 +514,102 @@
 			[
 				"day",
 				"dayNr"
-			],
-			[
-				"string",
-				"stringify"
-			],
-			[
-				"le",
-				"length"
-			],
-			[
-				"T",
-				"TimelineStore"
-			],
-			[
-				"fin",
-				"findDayByNr"
-			],
-			[
-				"eve",
-				"events"
-			],
-			[
-				"s",
-				"sinon"
-			],
-			[
-				"red",
-				"renderedComponent"
-			],
-			[
-				"state",
-				"stateOptions"
-			],
-			[
-				"o",
-				"onBlurHandler"
-			],
-			[
-				"onC",
-				"onChange"
-			],
-			[
-				"onBlur",
-				"onBlurHandler"
-			],
-			[
-				"cu",
-				"currentFormPart"
-			],
-			[
-				"Reg",
-				"RegistrationSummaryComponent"
-			],
-			[
-				"Registration",
-				"RegistrationPerson"
-			],
-			[
-				"v",
-				"value"
-			],
-			[
-				"validate",
-				"validateUser"
-			],
-			[
-				"con",
-				"console"
-			],
-			[
-				"vali",
-				"validateName"
-			],
-			[
-				"error",
-				"errorLis"
-			],
-			[
-				"err",
-				"errorMessages"
-			],
-			[
-				"rendere",
-				"renderedElement"
-			],
-			[
-				"eventbus",
-				"eventbusSpy"
-			],
-			[
-				"Re",
-				"RegistationComponent"
-			],
-			[
-				"get",
-				"getCartAmount"
-			],
-			[
-				"CART",
-				"CARTSTORE_GETALL_EVT"
-			],
-			[
-				"remo",
-				"removeButton"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"contents": "import React from \"react\";\nimport EventEmitter from \"eventemitter2\";\n\nimport TrainingInstanceComponent from \"./TrainingInstanceComponent\";\n\nexport default class DayEditComponent extends React.Component {\n\n  constructor(props) {\n    super(props);\n    this.state = {\n      isVisible: false,\n      dayUuid: null,\n      day: null,\n      selectedNr: 0,\n    };\n    this.onLoadTrainingClick = this.onLoadTrainingClick.bind(this); // TODO phat arrow\n  }\n\n  componentDidMount() {\n    this.props.eventbus.on(\"MENU_CLICK_EVT\", (menuItemName) => {\n      this.setState({ isVisible: (menuItemName === this.props.from) });\n    });\n\n    this.props.eventbus.on(\"DAY_LOAD_EVT\", (day) => {\n      console.log(`DayEditComponent: received DAY_LOAD_EVT ${JSON.stringify(day)}`);\n      this.setState({\n        day: day\n      });\n    });\n  }\n\n  loadTrainingClick(evt) {\n    const nr = evt.target.value;\n    // TODO trigger re-render with TIC loaded for this training, use props?\n    this.setState({selectedNr: nr});\n  }\n\n  /*\n  onButtonClick(evt) {\n    let name = evt.target.value;\n    this.setState({\n      activeName: name\n    });\n    this.props.eventbus.emit(\"MENU_CLICK_EVT\", name);\n  };\n  */\n\n  render() {\n    let panelClassName = this.state.isVisible ? \"panel visible\" : \"panel hidden\";\n    let trainingName = \"no training selected\";\n    let trainings = [\n      {name: \"none\"}, \n      {name: \"none\"}\n    ];\n    // TODO replace this crap!\n    if (this.state.day !== null && this.state.day.trainings) {\n      trainings[0] = this.state.day.trainings[0];      \n      if (this.state.day.trainings.length === 2) { \n        trainings[1] = this.state.day.trainings[1];\n      }\n    }\n    return (\n      <section className={panelClassName}>\n        <header className=\"panel-header\">\n          <p>Day Edit Screen</p>\n        </header>\n        <div className=\"panel-body\">\n          <h3>{\"Trainings\"}</h3>\n          <ul>\n            <li><a onClick={this.onLoadTrainingClick} value={0}>{trainings[0].name}</a></li>\n            <li><a onClick={this.onLoadTrainingClick} value={1}>{trainings[1].name}</a></li>\n          </ul>\n          \n        </div>\n      </section>\n    );\n  }\n};\n\n// <TrainingInstanceComponent eventbus={this.props.eventbus} />\n",
+			"file": "src/components/DayEditComponent.js",
+			"file_size": 2093,
+			"file_write_time": 131211561578268280,
+			"settings":
+			{
+				"buffer_size": 2214,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 2534,
+				"buffer_size": 3231,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/stores/DayStore.js",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 28 files for \"DayStore\" (case sensitive)\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/AppComponent.js:\n   11  \n   12  import TrainingStore from \"../stores/TrainingStore\";\n   13: import DayStore from \"../stores/DayStore\";\n   14  import TimelineStore from \"../stores/TimelineStore\";\n   15  import { clone, hasProperty } from \"../stores/miscUtil\";\n   ..\n   32  \n   33      // initially will receive data as empty TODO remove props so all data comes from eventbus\n   34:     new DayStore(this.eventbus);\n   35      new TrainingStore(this.eventbus, clone(trainings));\n   36      new TimelineStore(this.eventbus);\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/components/NotificationComponent.js:\n   43          break;\n   44        case \"DAY_LOAD_EVT\":\n   45:         msg = `Day '${data.uuid}' is loaded in DayStore`;\n   46          break;\n   47        case \"TRAINING_LOAD_EVT\":\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/stores/DayStore.js:\n    2  import { findDay } from \"./timelineUtil\";\n    3  \n    4: export default class DayStore {\n    5  \n    6    /**\n\n/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingInstancesStore.js:\n    1  \n    2: // TODO perhaps do not use since DayStore could hold the instances for the day\n\n6 matches across 4 files\n",
+			"settings":
+			{
+				"buffer_size": 1274,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
 			"file": "src/stores/timelineUtil.js",
 			"settings":
 			{
-				"buffer_size": 5849,
+				"buffer_size": 5907,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "package.json",
+			"file": "src/components/AppComponent.js",
 			"settings":
 			{
-				"buffer_size": 2523,
+				"buffer_size": 3159,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/timelineUtil-spec.js",
+			"file": "src/components/TrainingPanelComponent.js",
 			"settings":
 			{
-				"buffer_size": 8140,
+				"buffer_size": 913,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/stores/trainingUtil.js",
+			"file": "src/components/TrainingComponent.js",
 			"settings":
 			{
-				"buffer_size": 8573,
+				"buffer_size": 8446,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/trainingUtil-spec.js",
+			"contents": "import React from \"react\";\nimport SegmentComponent from \"./SegmentComponent\";\nimport { clone } from \"../stores/miscUtil\";\n\nconst DEFAULT_STATE = {  \n  uuid: null,\n  name: \"undefined\",\n  type: null,\n  segments: [],\n  isNameEditable: false,\n  total: {\n    distance: 0,\n    duration: \"00:00:00\",\n    pace: \"00:00\"\n  }\n}\n\nexport default class TrainingInstanceComponent extends React.Component {\n\n  constructor(props) {\n    super(props);\n    this.state = DEFAULT_STATE;\n    this.exportTraining = this.exportTraining.bind(this);\n    this.emitClearTraining = this.emitClearTraining.bind(this);\n    this.clearTrainingFromLocalState = this.clearTrainingFromLocalState.bind(this);\n    this.addEmptySegment = this.addEmptySegment.bind(this);\n    this.loadTraining = this.loadTraining.bind(this);\n    this.removeTraining = this.removeTraining.bind(this);\n    this.onEditNameButtonClick = this.onEditNameButtonClick.bind(this);\n    this.onNameChange = this.onNameChange.bind(this);\n    this.onNameBlur = this.onNameBlur.bind(this);\n    this.onTypeClick = this.onTypeClick.bind(this);    \n  }\n\n  componentDidMount() {\n    this.props.eventbus.on(\"INSTANCE_LOAD_EVT\", (training) => {\n      console.log(`TrainingInstanceComponent received INSTANCE_LOAD_EVT with ${training.uuid}`);\n      this.loadTraining(training);\n    });\n    // this.props.eventbus.on(\"INSTANCE_UPDATE_EVT\", (training) => {\n    //   this.loadTraining(training);\n    // });\n\n    this.props.eventbus.on(\"INSTANCE_SEGMENT_ADD_EVT\", (training) => {\n      this.setState({ segments: training.segments, total: training.total });\n    });\n    // TODO find out why this is never caught:\n    // this.props.eventbus.on(\"INSTANCE_SEGMENT_UPDATE_EVT\", (data) => {});\n    this.props.eventbus.onAny((event, data) => {\n      if (event === \"INSTANCE_SEGMENT_UPDATE_EVT\") {\n        this.setState({ total: data.total });\n      }\n    });\n    this.props.eventbus.on(\"INSTANCE_SEGMENT_REMOVE_EVT\", (training) => {\n      this.setState({ segments: [], total: {} }, function() {\n        console.log(\"TrainingInstanceComponent emptied segments\");\n        this.setState({ segments: training.segments, total: training.total }, function() {\n          console.log(\"TrainingInstanceComponent finished updating state with new segments\");\n        });\n      });\n    });\n    this.props.eventbus.on(\"INSTANCE_CLEAR_EVT\", (uuid) => {\n      this.clearTrainingFromLocalState();\n    });\n  }\n\n  loadTraining(training) {\n    this.setState(DEFAULT_STATE, () => this.setState(this.makeTraining(training)));\n  }\n\n  addEmptySegment() {\n    this.props.eventbus.emit(\"INSTANCE_SEGMENT_ADD_CMD\", {});\n  } \n\n  exportTraining() {\n    console.log(JSON.stringify({ uuid: this.state.uuid, name: this.state.name, segments: this.state.segments }));\n  }\n\n  emitClearTraining() {\n    this.props.eventbus.emit(\"INSTANCE_CLEAR_CMD\", this.state.uuid);\n  }\n\n  onEditNameButtonClick(evt) {\n    //const inverseState =\n    this.setState({ isNameEditable: !this.state.isNameEditable });\n  }\n\n  onNameChange(evt) {\n    this.setState({ name: evt.target.value });\n  }\n\n  onNameBlur(evt) {\n    console.log(`onNameBlur ${this.state.name}`);\n    this.props.eventbus.emit(\"INSTANCE_UPDATE_CMD\", this.makeTraining(this.state));\n  }  \n\n  removeTraining() {\n    this.props.eventbus.emit(\"INSTANCE_REMOVE_CMD\");\n  } \n\n  clearTrainingFromLocalState() {\n    this.setState(DEFAULT_STATE);\n  }\n\n  onTypeClick(evt) {\n    this.setState({ type: evt.target.value }, () => {\n      this.props.eventbus.emit(\"INSTANCE_UPDATE_CMD\", this.makeTraining(this.state)); \n      // TODO test: 'should emit event when button clicked'\n    });\n  }\n\n  /**\n   * Create training object by selectively copying properties from another obj\n   * @param  {obj}\n   * @return {Training}\n   */\n  makeTraining(obj) {\n    return {\n      uuid: obj.uuid,\n      name: obj.name,\n      type: obj.type,\n      segments: obj.segments,\n      total: obj.total\n    }\n  }\n\n  render() {\n    let panelClassName = \"panel\";\n\n    let nameComponent = \"\";\n    if (this.state.isNameEditable) {\n      nameComponent = <input type=\"text\" id=\"edit-name-textfield\" name=\"edit-name-textfield\" value={this.state.name} onChange={this.onNameChange} onBlur={this.onNameBlur} />\n    } else {\n      nameComponent = <span id=\"name-label\">{this.state.name}</span>;\n    }\n\n    let segmentComponents = [];\n    this.state.segments.forEach((segment, i) => {\n      segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />);\n    });\n\n    let totalDistance = 0;\n    if (this.state.total && this.state.total.distance) {\n      totalDistance = (this.state.total.distance).toFixed(3);\n    };\n\n    // TODO refactor to ButtonChoiceComponent\n    const type1ButtonClassName = (this.state.type === \"workout\") ? \"button-choice button-choice-selected\" : \"button-choice\";\n    const type2ButtonClassName = (this.state.type === \"easy\") ? \"button-choice button-choice-selected\" : \"button-choice\";\n\n    if (this.state.uuid) {\n      return (\n        <section className={panelClassName}>\n          <header className=\"panel-header\">\n            {nameComponent}\n            <button id=\"edit-name-button\" onClick={this.onEditNameButtonClick} className=\"button-small button-flat\">{\"edit\"}</button>\n          </header>\n          <div className=\"panel-body\">\n            <fieldset name=\"type\">\n              Type of training &nbsp;\n              <button onClick={this.onTypeClick} value=\"workout\" className={type1ButtonClassName}>{\"workout\"}</button>\n              <button onClick={this.onTypeClick} value=\"easy\" className={type2ButtonClassName}>{\"easy run\"}</button>\n            </fieldset>\n            <table summary=\"training segments\">\n              <thead>\n                <tr><th>Distance</th><th>Duration</th><th>Pace</th><th>Actions</th></tr>\n              </thead>\n              <tbody>\n                {segmentComponents}\n              </tbody>\n            </table>\n            <output name=\"totals\">\n              <p>\n                {\"Total distance:\"} <em>{totalDistance}</em> {\"km, \"}\n                {\"duration:\"} <em>{this.state.total.duration}</em> {\", \"}\n                {\"average pace:\"} <em><time>{this.state.total.pace}</time></em>\n              </p>\n              <p>UUID: {this.state.uuid}</p>\n            </output>\n            <menu>\n              <button onClick={this.addEmptySegment} className=\"button-flat\">add empty segment</button>              \n            </menu>\n            <menu>\n              <button onClick={this.exportTraining} className=\"button-flat\">export training</button>              \n              <button onClick={this.emitClearTraining} className=\"button-flat button-warning\">clear training</button>\n              <button onClick={this.removeTraining} className=\"button-flat\">remove training</button>\n            </menu>            \n          </div>\n        </section>\n      );\n    } else {\n      return (\n        <section className={panelClassName}>\n          <header className=\"panel-header\">\n            {this.state.name} {this.state.uuid}\n          </header>\n          <div className=\"panel-body\">\n            {\"Please choose a traininginstance from the left-hand list\"}\n          </div>\n        </section>\n      );\n    }\n  }\n};\n",
+			"file": "src/components/TrainingInstanceComponent.js",
+			"file_size": 7154,
+			"file_write_time": 131209258508782953,
 			"settings":
 			{
-				"buffer_size": 15403,
+				"buffer_size": 7199,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/miscUtil-spec.js",
+			"file": "src/stores/TrainingStore.js",
 			"settings":
 			{
-				"buffer_size": 3192,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/TrainingStore-spec.js",
-			"settings":
-			{
-				"buffer_size": 7691,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/TrainingComponent-spec.js",
-			"settings":
-			{
-				"buffer_size": 7860,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/SegmentComponent-spec.js",
-			"settings":
-			{
-				"buffer_size": 2039,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/TimelineStore-spec.js",
-			"settings":
-			{
-				"buffer_size": 1512,
+				"buffer_size": 6947,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -615,10 +621,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 92.0,
-		"last_filter": "Package Control: install",
+		"height": 372.0,
+		"last_filter": "Package Control: ",
 		"selected_items":
 		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
 			[
 				"Package Control: install",
 				"Package Control: Install Package"
@@ -630,10 +648,6 @@
 			[
 				"Package Control: git",
 				"Package Control: Upgrade/Overwrite All Packages"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Install Package"
 			],
 			[
 				"instal",
@@ -663,14 +677,65 @@
 	},
 	"expanded_folders":
 	[
-		"/home/tjerk/projects/WRKT-0410/src",
-		"/home/tjerk/projects/WRKT-0410/src/stores",
-		"/home/tjerk/projects/WRKT-0410/test",
-		"/home/tjerk/projects/WRKT-0410/test/e2e",
-		"/home/tjerk/projects/WRKT-0410/data"
+		"/home/tvalentijn/projects/lab/WRKT-0410/src",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/images",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data"
 	],
 	"file_history":
 	[
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/PlanListComponent-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingComponent-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/trainingUtil-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingStore-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingInstancesStore.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/TimelineStore-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TimelineStore.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/MenuComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingListComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/NotificationComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data/plan_7c3c0ec5-daaf-4075-9871-50b3143aebb5.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/SegmentComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TimelineComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/DayComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles/main.scss",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/WeekComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/RemoteDataService.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/PanelComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/.eslintrc.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/PlanListComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/timelineUtil.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/package.json",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/AppComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/README.md",
+		"/home/tvalentijn/projects/lab/WRKT-0410/gulpfile.babel.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data/plan_d57363e5-7504-40c8-aa9e-dba7f2910a0b.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data/plan_a83a78aa-5d69-11e6-b3a3-1f76e6105d92.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/PlanEditComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/DayComponent-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/rest-api.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/TimelineComponent-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/PlanEditComponent-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data/traininginstances_7c3c0ec5-daaf-4075-9871-50b3143aebb5.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data/traininginstances_a83a78aa-5d69-11e6-b3a3-1f76e6105d92.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/miscUtil.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/segmentUtil.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/timelineUtil-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainingUtil.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/SegmentComponent-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data/plan_c4415a10-7677-11e6-88c3-471fa3acb3f8.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data/trainings.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data/plan_acc3d1b8-33ae-4d70-dda3-d0e885f516f4.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/data/traininginstances_c4415a10-7677-11e6-88c3-471fa3acb3f8.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/constants.js",
+		"/home/tvalentijn/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/DayStore.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/DayEditComponent.js",
 		"/home/tjerk/projects/WRKT-0410/src/components/TimelineComponent.js",
 		"/home/tjerk/projects/WRKT-0410/src/stores/TimelineStore.js",
 		"/home/tjerk/projects/WRKT-0410/src/components/NotificationComponent.js",
@@ -678,36 +743,17 @@
 		"/home/tjerk/projects/WRKT-0410/data/plans.js",
 		"/home/tjerk/projects/WRKT-0410/src/stores/plans.js",
 		"/home/tjerk/projects/WRKT-0410/src/stores/traininginstances.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/DayStore.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainingUtil.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/plans.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/miscUtil.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/timelineUtil.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/AppComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainings.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/traininginstances.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/rest-api.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/NotificationComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/App-spec.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/NotificationComponent-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/SegmentComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/gulpfile.babel.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/package.json",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/styles/main.scss",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/Index.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/timelineUtil-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/TimelineStore-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TimelineComponent.js",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Side Bar.sublime-settings",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/Babel/Babel.sublime-settings",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/eventemitter2/lib/eventemitter2.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingComponent-spec.js.old",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/PanelComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingListComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/e2e/App-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TimelineStore.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/browser-sync/lib/http-protocol.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/browser-sync/lib/browser-sync.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/browser-sync/node_modules/chokidar/README.md",
@@ -715,16 +761,10 @@
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/react/lib/ReactTestUtils.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/dom.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/miscUtil-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/DayEditComponent.js",
-		"/home/tvalentijn/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/e2e/casper.js",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/trainingUtil-spec.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/WRKT-0410.sublime-project",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/MenuComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/ DayEditComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingComponent-spec.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/constants.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/index.html",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/images/favicon.ico",
 		"/ App-spec.js",
@@ -774,29 +814,7 @@
 		"/home/tvalentijn/projects/lab/react-eventemitter/.travis.yml",
 		"/home/tvalentijn/projects/lab/react-eventemitter/.editorconfig",
 		"/home/tvalentijn/projects/lab/react-eventemitter/src/components/About.js",
-		"/home/tvalentijn/projects/sep/duo/client/js/pages/LandingPage.js",
-		"/home/tvalentijn/projects/sep/duo/client/package.json",
-		"/home/tvalentijn/projects/sep/duo/client/js/services/AuthenticationService.js",
-		"/home/tvalentijn/projects/sep/duo/client/js/services/HuskyRestService.js",
-		"/home/tvalentijn/projects/sep/duo/client/js/pages/UitlogPage.js",
-		"/home/tvalentijn/projects/sep/duo/client/js/pages/InlogPage.js",
-		"/home/tvalentijn/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
-		"/home/tvalentijn/projects/sep/duo/client/config.dev.js",
-		"/home/tvalentijn/projects/sep/duo/client/config.prod.js",
-		"/home/tvalentijn/projects/sep/duo/client/stylesheets/rijkshuisstijl_duo.less",
-		"/home/tvalentijn/projects/sep/duo/client/.babelrc",
-		"/home/tvalentijn/projects/sep/duo/client/js/pages/FormPage.js",
-		"/home/tvalentijn/projects/sep/duo/client/js/components/NavbarMenuComponent.js",
-		"/home/tvalentijn/projects/sep/duo/client/js/pages/BasePage.js",
-		"/home/tvalentijn/projects/sep/duo/client/stylesheets/variables.less",
-		"/home/tvalentijn/projects/sep/duo/client/js/components/EntrypointSelectComponent.js",
-		"/home/tvalentijn/projects/sep/duo/client/formspecs/duo-hbo-wo.json",
-		"/home/tvalentijn/projects/sep/duo/client/js/components/__tests__/EntrypointSelectComponent-test.js",
-		"/home/tvalentijn/projects/sep/duo/client/stylesheets/index.js",
-		"/home/tvalentijn/projects/sep/duo/client/index.html",
-		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Plain text.sublime-settings",
-		"/home/tvalentijn/projects/lab/innolab/microservices/angular2-client/app/app.ts",
-		"/home/tvalentijn/.squirrel-sql/SQLAliases23.xml"
+		"/home/tvalentijn/projects/sep/duo/client/js/pages/LandingPage.js"
 	],
 	"find":
 	{
@@ -807,6 +825,10 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/home/tvalentijn/projects/lab/WRKT-0410/src",
+			"/home/tvalentijn/projects/lab/WRKT-0410/test",
+			"/home/tvalentijn/projects/lab/WRKT-0410/src",
+			"/home/tvalentijn/projects/lab/WRKT-0410/data",
 			"/home/tvalentijn/projects/lab/WRKT-0410/src",
 			"<project>",
 			"/home/tvalentijn/projects/lab/WRKT-0410/src",
@@ -828,6 +850,71 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"DayStore",
+			"SEGMENT_",
+			"TRAINING_",
+			"name",
+			"from",
+			"hidden",
+			"panel visi",
+			"visible",
+			"make",
+			"new TrainingStore",
+			"this.props",
+			"DAY_LOAD_EVT",
+			"isAugmented",
+			"canAugment",
+			"PLAN_LOAD_EVT",
+			"PLAN_FETCHED_EVT",
+			"PLANS_FETCHED_EVT",
+			"DAY_LOAD_CMD",
+			"menu-item-dayedit",
+			"hidden",
+			"menuitem",
+			"button",
+			"onContextMenuClick",
+			"TRAINING_TO_PLAN_CMD",
+			"TRAINING_CLONE_AS_INSTANCE_CMD",
+			"TRAINING_TO_PLAN_CMD",
+			"TRAINING_CLONE_AS_INSTANCE_CMD",
+			"TRAINING_TO_PLAN_CMD",
+			"button",
+			"browserify",
+			"total",
+			"persistPlan(",
+			"console.log(",
+			"PLANLIST_FETCH_CMD",
+			"PLAN_ADD_EVT",
+			"PLANLIST_FETCH_CMD",
+			"PLAN_ADD_EVT",
+			"PLANLIST_FETCH_CMD",
+			"PlanEditComponent",
+			"<<<<<<< HEAD",
+			"e32afbcf-5a9d-47bf-be48-66b5e83a259d",
+			"this.props.dateForDay",
+			"dateF",
+			"createUuid",
+			"clone",
+			"#days-table ",
+			"123",
+			"microcycleElements",
+			"tr.day ",
+			"section.day",
+			"div.days-table",
+			"days-list",
+			"nullTraining()",
+			"createNull",
+			"isDay",
+			"'",
+			"isDay",
+			"String(",
+			"TRAINING_LOAD_EVT_ERROR",
+			"updateTrainingInStore",
+			"cloneLoadedTrainingInStore",
+			"updateSegmentInStore",
+			"removeSegmentFromStore",
+			"updateTrainingInStore",
+			"cloneTrainingInStore",
 			"71",
 			"addTrainingAsInstance",
 			"slice",
@@ -890,72 +977,7 @@
 			"filterNon",
 			"filterNonEasyDays",
 			"workout",
-			"training",
-			"day.workout",
-			"workout",
-			"console.log",
-			"SEGMENT_REMOVE_CMD",
-			"new Event",
-			"new EventManager",
-			"TRAINING_LOAD_EVT",
-			"makeTrainingTotal(",
-			"00:00:00",
-			"21k",
-			"hasNoRealValue",
-			"createUuid()",
-			"uuid",
-			"onBlur",
-			"this.clone",
-			"cloneValue",
-			"TRAINING_LOAD_EVT",
-			"DAY_LOAD_CMD",
-			"@MIP",
-			"@10",
-			"@16KP",
-			"findDay",
-			"findTraining",
-			"this.eventbus",
-			"TRAINING_LOAD_CMD",
-			"_events.",
-			"\".",
-			"_events",
-			"_events.",
-			"eventnames.",
-			"events.",
-			"__events.",
-			"events.",
-			"AppComponent",
-			"'",
-			"distImg",
-			"\"04:45\"",
-			"\"05:30\"",
-			"\"\"",
-			"03:33",
-			"4:10",
-			"\"04:10\"",
-			"\"03:40\"",
-			"window",
-			"folder",
-			"console.log",
-			"onChange=",
-			"this.props.user.",
-			"errorLis",
-			"new Result()",
-			"goNext",
-			"goPrevious",
-			"for=\"",
-			"for",
-			"}</",
-			"currentFOrmPart",
-			"public",
-			"(click)=",
-			"[(ng-model)]",
-			"class=",
-			"CARTSTORE_CHANGED_EVT",
-			"'",
-			"OFFERSSTORE_CHANGED_EVT",
-			"'",
-			"class="
+			"training"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -963,6 +985,25 @@
 		"regex": false,
 		"replace_history":
 		[
+			"INSTANCE_SEGMENT_",
+			"INSTANCE_",
+			"button",
+			"menuitem",
+			"onSecondaryMenuClick",
+			"persistExistingPlan(",
+			"DayComponent",
+			"this.props.day.dfd",
+			".days-table ",
+			"tableRows",
+			"td.day ",
+			"td.day",
+			"tr.day",
+			"days-table",
+			"nullTraining",
+			"null",
+			"byUuid",
+			"\"",
+			"cloneLoadedTrainingInStore",
 			"addTrainingToInstances",
 			"emitAddToPlan",
 			"TRAININGS_DATA_PREFIX",
@@ -1026,170 +1067,137 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "README.md",
+					"file": "src/components/DayEditComponent.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2534,
+						"buffer_size": 2214,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								804,
+								804
 							]
 						],
 						"settings":
 						{
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/stores/timelineUtil.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5849,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2350,
-								2350
-							]
-						],
-						"settings":
-						{
-							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 605.0,
+						"translation.y": 200.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "package.json",
+					"buffer": 1,
+					"file": "README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2523,
+						"buffer_size": 3231,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								233,
-								233
+								1375,
+								1375
 							]
 						],
 						"settings":
 						{
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "test/timelineUtil-spec.js",
+					"buffer": 2,
+					"file": "src/stores/DayStore.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8140,
+						"buffer_size": 814,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3986,
-								3986
+								328,
+								328
 							]
 						],
 						"settings":
 						{
-							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1637.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/stores/trainingUtil.js",
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8573,
+						"buffer_size": 1274,
 						"regions":
 						{
-						},
-						"selection":
-						[
-							[
-								1175,
-								1175
-							]
-						],
-						"settings":
-						{
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "test/trainingUtil-spec.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15403,
-						"regions":
-						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										206,
+										214
+									],
+									[
+										231,
+										239
+									],
+									[
+										496,
+										504
+									],
+									[
+										821,
+										829
+									],
+									[
+										1043,
+										1051
+									],
+									[
+										1202,
+										1210
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
@@ -1200,8 +1208,44 @@
 						],
 						"settings":
 						{
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"default_dir": "/home/tvalentijn/projects/lab/WRKT-0410/src",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/stores/timelineUtil.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5907,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								517,
+								517
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1213,26 +1257,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "test/miscUtil-spec.js",
-					"semi_transient": true,
+					"buffer": 5,
+					"file": "src/components/AppComponent.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3192,
+						"buffer_size": 3159,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								212,
+								212
 							]
 						],
 						"settings":
 						{
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1244,118 +1287,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "test/TrainingStore-spec.js",
+					"buffer": 6,
+					"file": "src/components/TrainingPanelComponent.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7691,
+						"buffer_size": 913,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7077,
-								7077
+								682,
+								682
 							]
 						],
 						"settings":
 						{
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 432.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "test/TrainingComponent-spec.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7860,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2589,
-								2589
-							]
-						],
-						"settings":
-						{
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1356.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "test/SegmentComponent-spec.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2039,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "test/TimelineStore-spec.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1512,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"side_bar_folders_auto_load_folder": 1,
+							"open_with_edit": true,
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1364,7 +1314,98 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/components/TrainingComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8446,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5672,
+								5672
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2469.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/components/TrainingInstanceComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7199,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1149,
+								1149
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/stores/TrainingStore.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								601,
+								601
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1451,7 +1492,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 239.0,
+	"side_bar_width": 267.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
