@@ -159,8 +159,9 @@ export default class TrainingComponent extends React.Component {
       nameComponent = <span id="name-label">{this.state.name}</span>;
     }
 
+    let segments = this.state.segments || [];
     let segmentComponents = [];
-    this.state.segments.forEach((segment, i) => {
+    segments.forEach((segment, i) => {
       segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} trainingUuid={this.state.uuid} />);
     });
 

@@ -25,10 +25,10 @@ export default class DayEditComponent extends React.Component {
       this.setState({ day });
     });
 
-    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (segment) => {
-      // TODO update total in the right day.trainings[x]
-      // this.day.trainings etc.
-    });
+    // this.props.eventbus.on("SEGMENT_UPDATE_EVT", (segment) => {
+    //   // TODO update total in the right day.trainings[x]
+    //   // this.day.trainings etc.
+    // });
   }
 
   /**
@@ -75,6 +75,7 @@ export default class DayEditComponent extends React.Component {
           <p>{"Day Edit Screen"}</p>
         </header>
         <div className="panel-body">
+          <button className="button">close</button>
           <h3>{"Trainings"}</h3>
           <ul>
             <li><button onClick={this.onLoadTrainingClick} value={0}>{trainings[0].name}</button></li>

@@ -32,26 +32,23 @@ export default class TrainingInstanceComponent extends React.Component {
     }
 
     componentDidMount() {
-      // NOTE traininginstance is now loaded via props
-      // this.props.eventbus.on("INSTANCE_LOAD_EVT", (training) => {
-      //   console.log(`TrainingInstanceComponent received INSTANCE_LOAD_EVT with ${training.uuid}`);
-      //   this.loadTraining(training);
-      // });
-      // this.props.eventbus.on("INSTANCE_UPDATE_EVT", (training) => {
-      //   this.loadTraining(training);
-      // });
-      //
-
-      // TODO do not use state but use this.props.training
-
-      this.props.eventbus.on("INSTANCE_SEGMENT_ADD_EVT", (training) => {
-        this.props.training.segments = training.segments;
-        this.props.training.total = training.total;
-        // TODO force re-render?
+      this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
+        console.log(`TrainingInstanceComponent received SEGMENT_ADD_EVENT with ${training.uuid} versus ${this.props.training.uuid}`);
+        if (training.uuid === this.props.training.uuid) {
+          this.props.training.segments.push(training.segment);
+          this.props.training.total = training.total;
+          // TODO force re-render?
+          this.forceUpdate();
+        }
       });
 
-      this.props.eventbus.on("INSTANCE_SEGMENT_REMOVE_EVT", (training) => {
-        // TODO force re-render?
+      this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
+        if (training.uuid === this.props.training.uuid) {
+          this.props.training.segments = training.segments;
+          this.props.training.total = training.total;
+          // TODO force re-render?
+          this.forceUpdate();
+        }
       });
       this.props.eventbus.on("INSTANCE_CLEAR_EVT", (uuid) => {
         this.props.training.segments = [];
@@ -104,6 +101,8 @@ export default class TrainingInstanceComponent extends React.Component {
 
     render() {
       let panelClassName = "panel";
+
+      console.log(`TrainingInstanceComponent ${this.props.training.uuid}`);
 
       let nameComponent = "";
       if (this.state.isNameEditable) {

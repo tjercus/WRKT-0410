@@ -142,6 +142,7 @@ export default class TrainingStore {
     this.segments = addSegment(segment, this.segments, overwriteUuid);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_ADD_EVT", {
+      uuid: segment.trainingUuid,
       segments: this.segments,
       total: this.total,
     });
@@ -157,6 +158,7 @@ export default class TrainingStore {
     this.segments = removeSegment(segment, this.segments);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_REMOVE_EVT", {
+      uuid: segment.trainingUuid,
       segments: this.segments,
       total: this.total,
     });
@@ -173,6 +175,7 @@ export default class TrainingStore {
     this.segments = updateSegment(_segment, this.segments);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_UPDATE_EVT", {
+      uuid: segment.trainingUuid,
       segment: _segment,
       total: this.total,
     });

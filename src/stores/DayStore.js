@@ -62,17 +62,19 @@ export default class DayStore {
   }
 
   /**
-   * Update given training in list of trainings
+   * Update given segment in list of segments
    * @param {Segment} segment - updatable
    * @returns {void} - emit event instead
    */
   updateSegmentInStore(segment) {
+    console.log(`DayStore.updateSegmentInStore`);
     const _segment = augmentSegmentData(segment);
     this.day.trainings.forEach((training) => {
       if (training.uuid === segment.trainingUuid) {
         training.segments = updateSegment(_segment, clone(training.segments));
         training.total = makeTrainingTotal(clone(training.segments));
         this.eventbus.emit("SEGMENT_UPDATE_EVT", {
+          uuid: segment.trainingUuid,
           segment: _segment,
           total: training.total,
         });
@@ -86,19 +88,25 @@ export default class DayStore {
    * @param {boolean} overwriteUuid - new uuid or keep old?
    * @returns {void} - emit event instead
    */
-   addSegmentToStore(segment, overwriteUuid) {
+  addSegmentToStore(segment, overwriteUuid) {
+     console.log(`DayStore.addSegmentToStore`);
      const _segment = augmentSegmentData(segment);
      this.day.trainings.forEach((training) => {
        if (training.uuid === segment.trainingUuid) {
+        console.log(`DayStore.addSegmentToStore found training ${training.uuid}`);
          training.segments = addSegment(segment, training.segments, overwriteUuid);
          training.total = makeTrainingTotal(clone(training.segments));
+         console.dir(training.segments);
          this.eventbus.emit("SEGMENT_ADD_EVT", {
+           uuid: segment.trainingUuid,
            segment: _segment,
            total: training.total,
          });
-       }
-     });
-   }
+       } else {
+        console.log(`DayStore.addSegmentToStore found training ${training.uuid}`);
+      }
+    });
+  }
 
    /**
     * Remove segment from local collection of segments
@@ -112,6 +120,7 @@ export default class DayStore {
          training.segments = removeSegment(segment, training.segments);
          training.total = makeTrainingTotal(training.segments);
          this.eventbus.emit("SEGMENT_REMOVE_EVT", {
+          uuid: segment.trainingUuid,
            segments: training.segments,
            total: training.total,
          });
