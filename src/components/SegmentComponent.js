@@ -13,6 +13,7 @@ export default class SegmentComponent extends React.Component {
       isValid = props.segment.isValid;
     }
     this.state = {
+      trainingUuid: clone(props.trainingUuid),
       uuid: clone(props.segment.uuid),
       distance: clone(props.segment.distance),
       duration: clone(props.segment.duration),
@@ -95,14 +96,20 @@ export default class SegmentComponent extends React.Component {
     return (
       <tr className={rowClassName}>
         <td><input type="text" name="distance" value={this.state.distance} onChange={this.onChange} className="type-double" /></td>
-        <td><input type="text" name="duration" value={this.state.duration} onChange={this.onChange} onBlur={this.onDurationBlur} className="type-duration"  /></td>
+        <td><input type="text" name="duration" value={this.state.duration} onChange={this.onChange} onBlur={this.onDurationBlur} className="type-duration" /></td>
         <td><input type="text" name="pace" value={this.state.pace} onChange={this.onChange} className="type-time" /></td>
         <td>
           <button className="button-small button-primary" onClick={this.onCalcButtonClick}>Calc</button>
           <button className="button-small" onClick={this.onCloneButtonClick}>Clone</button>
-          <button className="button-small button-warning" onClick={this.onRemoveButtonClick}>Remove</button>          
+          <button className="button-small button-warning" onClick={this.onRemoveButtonClick}>Remove</button>
         </td>
       </tr>
     );
   }
+};
+
+SegmentComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  segment: React.PropTypes.object.isRequired,
+  trainingUuid: React.PropTypes.string.isRequired,
 };

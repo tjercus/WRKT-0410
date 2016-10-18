@@ -73,10 +73,10 @@ export default class TimelineStore {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       const newDay = cloneDay(oldDay);
       // TODO still support singular training property?
-      Array.prototype.push.apply(this.traininginstances, newDay.trainings);      
+      Array.prototype.push.apply(this.traininginstances, newDay.trainings);
       if (position === undefined) {
         console.log(`DAY_CLONE_CMD 1. ${position}`);
-        this.plan.days.push(newDay);        
+        this.plan.days.push(newDay);
       } else if (position === 0) {
         console.log(`DAY_CLONE_CMD 2. ${position}`);
         this.plan.days.unshift(newDay);
@@ -100,10 +100,11 @@ export default class TimelineStore {
       }
       const _training = clone(training);
       const newInstanceUuid = createUuid();
-      _training.uuid = newInstanceUuid;      
+      _training.uuid = newInstanceUuid;
       this.traininginstances.push(_training);
       // TODO modify augmentDay to accept a training instead of trainings
-      const augmentedDay = augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid }, this.traininginstances);
+      const augmentedDay = augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid },
+        this.traininginstances);
       if (position === undefined) {
         console.log(`TimelineStore caught TRAINING_CLONE_AS_INSTANCE_CMD 1. ${position}`);
         this.plan.days.push(augmentedDay);

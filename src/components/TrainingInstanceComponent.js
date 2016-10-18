@@ -49,15 +49,7 @@ export default class TrainingInstanceComponent extends React.Component {
         this.props.training.total = training.total;
         // TODO force re-render?
       });
-      // TODO find out why this is never caught:
-      // this.props.eventbus.on("INSTANCE_SEGMENT_UPDATE_EVT", (data) => {});
-      this.props.eventbus.onAny((event, data) => {
-        if (event === "INSTANCE_SEGMENT_UPDATE_EVT") {
-          this.props.training.segments = training.segments;
-          this.props.training.total = training.total;
-          // TODO force re-render?
-        }
-      });
+
       this.props.eventbus.on("INSTANCE_SEGMENT_REMOVE_EVT", (training) => {
         // TODO force re-render?
       });
@@ -123,7 +115,7 @@ export default class TrainingInstanceComponent extends React.Component {
 
       let segmentComponents = [];
       this.props.training.segments.forEach((segment, i) => {
-        segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />);
+        segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} trainingUuid={this.props.training.uuid} />);
       });
 
         let totalDistance = 0;

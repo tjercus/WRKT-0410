@@ -1,8 +1,9 @@
 import React from "react";
+import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
 import { clone } from "../stores/miscUtil";
 
-const DEFAULT_STATE = {  
+const DEFAULT_STATE = {
   uuid: null,
   name: "undefined",
   type: null,
@@ -51,7 +52,7 @@ export default class TrainingComponent extends React.Component {
     // TODO find out why this is never caught:
     // this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {});
     this.props.eventbus.onAny((event, data) => {
-      if (event === "SEGMENT_UPDATE_EVT") {
+      if (event === "SEGMENT_UPDATE_EVT" && this.data.trainingUuid === this.uuid) {
         this.setState({ total: data.total });
       }
     });
@@ -128,7 +129,7 @@ export default class TrainingComponent extends React.Component {
 
   onTypeClick(evt) {
     this.setState({ type: evt.target.value }, () => {
-      this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.makeTraining(this.state)); 
+      this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.makeTraining(this.state));
       // TODO test: 'should emit event when button clicked'
     });
   }
@@ -160,7 +161,7 @@ export default class TrainingComponent extends React.Component {
 
     let segmentComponents = [];
     this.state.segments.forEach((segment, i) => {
-      segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} />);
+      segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} trainingUuid={this.state.uuid} />);
     });
 
     let totalDistance = 0;
@@ -207,8 +208,8 @@ export default class TrainingComponent extends React.Component {
               <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to end of plan</button>
             </menu>
             <menu>
-              <button onClick={this.exportTraining} className="button-flat">export training</button>              
-              <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>              
+              <button onClick={this.exportTraining} className="button-flat">export training</button>
+              <button onClick={this.emitClearTraining} className="button-flat button-warning">clear training</button>
               <button onClick={this.cloneTraining} className="button-flat">clone training</button>
               <button onClick={this.removeTraining} className="button-flat">remove training</button>
             </menu>
@@ -231,4 +232,8 @@ export default class TrainingComponent extends React.Component {
       );
     }
   }
+};
+
+TrainingComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
 };

@@ -138,6 +138,7 @@ export default class TrainingStore {
   * @returns {Void} - emit event instead
   */
   addSegmentToStore(segment, overwriteUuid) {
+    if (segment.trainingUuid !== this.uuid) return;
     this.segments = addSegment(segment, this.segments, overwriteUuid);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_ADD_EVT", {
@@ -152,6 +153,7 @@ export default class TrainingStore {
    * @returns {Void} - emit event instead
    */
   removeSegmentFromStore(segment) {
+    if (segment.trainingUuid !== this.uuid) return;
     this.segments = removeSegment(segment, this.segments);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit("SEGMENT_REMOVE_EVT", {
@@ -166,6 +168,7 @@ export default class TrainingStore {
    * @returns {Void} - emit event instead
    */
   updateSegmentInStore(segment) {
+    if (segment.trainingUuid !== this.uuid) return;
     const _segment = augmentSegmentData(segment);
     this.segments = updateSegment(_segment, this.segments);
     this.total = makeTrainingTotal(this.segments);
@@ -177,7 +180,7 @@ export default class TrainingStore {
 
   /**
    * Empty class scoped variables containing data for the currently loaded training
-   * @returns {Void} - purely work on class data
+   * @returns {void} - purely work on class data
    */
   clearTraining() {
     this.uuid = null;
@@ -194,7 +197,7 @@ export default class TrainingStore {
   /**
    * Lookup by uuid from param trainings and load in store
    * @param  {string} uuid - to lookup with
-   * @returns {Void} - emit event instead
+   * @returns {void} - emit event instead
    */
   loadTraining(uuid) {
     if (this.trainings.length === 0) {
@@ -229,4 +232,3 @@ export default class TrainingStore {
     };
   }
 }
-
