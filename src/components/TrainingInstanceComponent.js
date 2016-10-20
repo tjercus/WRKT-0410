@@ -32,17 +32,9 @@ export default class TrainingInstanceComponent extends React.Component {
     }
 
     componentDidMount() {
-      this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
-        console.log(`TrainingInstanceComponent received SEGMENT_ADD_EVENT with ${training.uuid} versus ${this.props.training.uuid}`);
-        if (training.uuid === this.props.training.uuid) {
-          this.props.training.segments.push(training.segment);
-          this.props.training.total = training.total;
-          // TODO force re-render?
-          this.forceUpdate();
-        }
-      });
-
-      this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
+      // Coarse-grained segment handling
+      this.props.eventbus.on("SEGMENTS_UPDATE_EVT", (training) => {
+        console.log(`TrainingInstanceComponent received SEGMENTS_UPDATE_EVT with ${training.uuid} versus ${this.props.training.uuid}`);
         if (training.uuid === this.props.training.uuid) {
           this.props.training.segments = training.segments;
           this.props.training.total = training.total;
@@ -50,6 +42,26 @@ export default class TrainingInstanceComponent extends React.Component {
           this.forceUpdate();
         }
       });
+
+      // this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
+      //   console.log(`TrainingInstanceComponent received SEGMENTS_UPDATE_EVT with ${training.uuid} versus ${this.props.training.uuid}`);
+      //   if (training.uuid === this.props.training.uuid) {
+      //     this.props.training.segments.push(training.segment);
+      //     this.props.training.total = training.total;
+      //     // TODO force re-render?
+      //     this.forceUpdate();
+      //   }
+      // });
+
+      // this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
+      //   if (training.uuid === this.props.training.uuid) {
+      //     this.props.training.segments = training.segments;
+      //     this.props.training.total = training.total;
+      //     // TODO force re-render?
+      //     this.forceUpdate();
+      //   }
+      // });
+
       this.props.eventbus.on("INSTANCE_CLEAR_EVT", (uuid) => {
         this.props.training.segments = [];
         this.props.training.total = DEFAULT_TOTAL;

@@ -44,6 +44,13 @@ export default class DayStore {
       }
     });
 
+    // throw DAY_UPDATE_EVT with a day as payload (so TimelineStore can update itself)
+    eventbus.on("SEGMENTS_UPDATE_EVT", (training) => {
+      // TODO carefull for race condition since methods below update/add/remove throw same event
+      eventbus.emit("DAY_UPDATE_EVT", this.day);
+    });
+
+
     eventbus.on("INSTANCE_UPDATE_CMD", (instance) => {});
     eventbus.on("INSTANCE_LOAD_CMD", (instance) => {});
 
@@ -73,9 +80,9 @@ export default class DayStore {
       if (training.uuid === segment.trainingUuid) {
         training.segments = updateSegment(_segment, clone(training.segments));
         training.total = makeTrainingTotal(clone(training.segments));
-        this.eventbus.emit("SEGMENT_UPDATE_EVT", {
+        this.eventbus.emit("SEGMENTS_UPDATE_EVT", {
           uuid: segment.trainingUuid,
-          segment: _segment,
+          segments: training.segments,
           total: training.total,
         });
       }
@@ -97,14 +104,12 @@ export default class DayStore {
          training.segments = addSegment(segment, training.segments, overwriteUuid);
          training.total = makeTrainingTotal(clone(training.segments));
          console.dir(training.segments);
-         this.eventbus.emit("SEGMENT_ADD_EVT", {
+         this.eventbus.emit("SEGMENTS_UPDATE_EVT", {
            uuid: segment.trainingUuid,
-           segment: _segment,
+           segments: training.segments,
            total: training.total,
          });
-       } else {
-        console.log(`DayStore.addSegmentToStore found training ${training.uuid}`);
-      }
+       }
     });
   }
 
@@ -119,8 +124,8 @@ export default class DayStore {
        if (training.uuid === segment.trainingUuid) {
          training.segments = removeSegment(segment, training.segments);
          training.total = makeTrainingTotal(training.segments);
-         this.eventbus.emit("SEGMENT_REMOVE_EVT", {
-          uuid: segment.trainingUuid,
+         this.eventbus.emit("SEGMENTS_UPDATE_EVT", {
+            uuid: segment.trainingUuid,
            segments: training.segments,
            total: training.total,
          });

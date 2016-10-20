@@ -56,6 +56,10 @@ export default class TimelineStore {
       eventbus.emit("PLAN_AND_INSTANCES_PERSIST_CMD", persistablePlan, this.traininginstances);
     });
 
+    eventbus.on("DAY_UPDATE_EVT", (day) => {
+      console.log("TimelineStore caught DAY_UPDATE_EVT: TODO update local plan");
+    });
+
     eventbus.on("DAY_EMPTY_CMD", ((dayUuid) => {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       this.plan.days = removeTrainingsFromDay(oldDay, clone(this.plan.days));

@@ -36,7 +36,6 @@ Based on 'React eventemitter'.
 - Formal flux architecture?
 
 ### Training
-- Flesh out DayStore to listen to, and send events to, TrainingInstanceView
 - Differentiate between a Training and a TrainingInstance object so the TrainingComponent, 
   TrainingStore and DayEditComponent and DayStore can use one or both
 - Refactor TrainingComponent and TrainingInstanceComponent so they can use common code
@@ -58,6 +57,9 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
+- Finish DayEditComponent
+- Use a Map (uuid as key) for segments in TrainingInstance
+- Use a Map (uuid as key) for days in a plan
 - feature: 'move training to another day'
 - feature: 'add training as 2nd training 2 a day'
 - fix handling of ADD_PLAN_EVT

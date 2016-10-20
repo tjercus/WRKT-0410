@@ -14,6 +14,7 @@ export default class DayEditComponent extends React.Component {
       selectedNr: 0,
     };
     this.onLoadTrainingClick = this.onLoadTrainingClick.bind(this); // TODO phat arrow
+    this.onCloseButtonClick = this.onCloseButtonClick.bind(this);
   }
 
   componentDidMount() {
@@ -32,7 +33,7 @@ export default class DayEditComponent extends React.Component {
   }
 
   /**
-   * @param evt
+   * @param {SyntheticEvent} evt
    */
   onLoadTrainingClick(evt) {
     const nr = evt.target.value;
@@ -40,15 +41,9 @@ export default class DayEditComponent extends React.Component {
     this.props.eventbus.emit("INSTANCE_LOAD_CMD", this.day.trainings[nr]);
   }
 
-  /*
-  onButtonClick(evt) {
-    let name = evt.target.value;
-    this.setState({
-      activeName: name
-    });
-    this.props.eventbus.emit("MENU_CLICK_EVT", name);
-  };
-  */
+  onCloseButtonClick(evt) {
+    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-timeline"); 
+  }
 
   /**
   * React render
@@ -72,14 +67,13 @@ export default class DayEditComponent extends React.Component {
     return (
       <section className={panelClassName}>
         <header className="panel-header">
-          <p>{"Day Edit Screen"}</p>
+          <p>{"Day Edit Screen"} <button onClick={this.onCloseButtonClick} className="button-flat">close</button></p>
         </header>
         <div className="panel-body">
-          <button className="button">close</button>
           <h3>{"Trainings"}</h3>
           <ul>
-            <li><button onClick={this.onLoadTrainingClick} value={0}>{trainings[0].name}</button></li>
-            <li><button onClick={this.onLoadTrainingClick} value={1}>{trainings[1].name}</button></li>
+            <li><button onClick={this.onLoadTrainingClick} value={0} className="button-small">{trainings[0].name}</button></li>
+            <li><button onClick={this.onLoadTrainingClick} value={1} className="button-small">{trainings[1].name}</button></li>
           </ul>
           {selectedTrainingComponent}
         </div>
