@@ -57,7 +57,10 @@ export default class TimelineStore {
     });
 
     eventbus.on("DAY_UPDATE_EVT", (day) => {
-      console.log("TimelineStore caught DAY_UPDATE_EVT: TODO update local plan");
+      console.log("TimelineStore caught DAY_UPDATE_EVT: update local plan");
+      const byUuid = (_day) => String(_day.uuid) === String(day.dayUuid);
+      const index = this.plan.days.findIndex(byUuid);
+      this.plan.days[index] = day;
     });
 
     eventbus.on("DAY_EMPTY_CMD", ((dayUuid) => {

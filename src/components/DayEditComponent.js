@@ -42,7 +42,8 @@ export default class DayEditComponent extends React.Component {
   }
 
   onCloseButtonClick(evt) {
-    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-timeline"); 
+    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-timeline");
+    //this.props.eventbus.emit("DAY_UPDATE_EVT
   }
 
   /**
