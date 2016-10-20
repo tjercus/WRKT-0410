@@ -170,6 +170,7 @@ export default class TrainingStore {
    * @returns {Void} - emit event instead
    */
   updateSegmentInStore(segment) {
+    console.log(`TrainingStore.updateSegmentInStore ${JSON.stringify(segment)}`);
     if (segment.trainingUuid !== this.uuid) return;
     const _segment = augmentSegmentData(segment);
     this.segments = updateSegment(_segment, this.segments);
