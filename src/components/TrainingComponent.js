@@ -50,9 +50,10 @@ export default class TrainingComponent extends React.Component {
       this.setState({ segments: training.segments, total: training.total });
     });
     // TODO find out why this is never caught:
-    // this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {});
-    this.props.eventbus.onAny((event, data) => {
-      if (event === "SEGMENT_UPDATE_EVT" && this.data.trainingUuid === this.uuid) {
+    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {
+    //this.props.eventbus.onAny((event, data) => {
+      //if (event === "SEGMENT_UPDATE_EVT" && this.data.uuid === this.uuid) {
+      if (data.uuid === this.uuid) {
         this.setState({ total: data.total });
       }
     });
