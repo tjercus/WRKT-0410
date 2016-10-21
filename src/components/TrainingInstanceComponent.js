@@ -114,7 +114,7 @@ export default class TrainingInstanceComponent extends React.Component {
     render() {
       let panelClassName = "panel";
 
-      console.log(`TrainingInstanceComponent ${this.props.training.uuid}`);
+      console.log(`TrainingInstanceComponent rendered with ${this.props.training.uuid}`);
 
       let nameComponent = "";
       if (this.state.isNameEditable) {

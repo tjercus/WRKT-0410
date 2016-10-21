@@ -137,8 +137,8 @@ export default class TrainingComponent extends React.Component {
 
   /**
    * Create training object by selectively copying properties from another obj
-   * @param  {obj}
-   * @return {Training}
+   * @param  {Object} obj - training-like object
+   * @returns {Training} training
    */
   makeTraining(obj) {
     return {

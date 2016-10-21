@@ -29,9 +29,10 @@ export function findDay(dayUuid, plan, trainings = []) {
   if (index < 0) {
     throw new Error(`findDay could not find day with ${dayUuid}`);
   }
-  if (isAugmentedDay(_days[index])) {
+  //if (isAugmentedDay(_days[index])) {
+    console.log(`The day you requested @index ${index} was already augmented`);
     return _days[index];
-  }
+  //}
   return augmentDay(_days[index], clone(trainings));
 }
 
@@ -55,9 +56,9 @@ export function augmentDay(day, trainings) {
   }
   // calculate total per training when multiple trainings
   for (let i = 0, len = _day.trainings.length; i < len; i++) {
-    if (!isAugmentedTraining(_day.trainings[i])) {
-      _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
-    }
+    //if (!isAugmentedTraining(_day.trainings[i])) {
+    _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
+    //}
     _day.trainings[i].total = makeTrainingTotal(_day.trainings[i].segments);
   }
   return _day;
@@ -181,7 +182,10 @@ const nullTraining = {
   total: { distance: 0, duration: "00:00:00", pace: "00:00" },
 };
 
-const isAugmentedDay = (day) => (hasProperty(day, "trainings") && hasProperty(day.trainings[0], "name"));
-// TODO move to trainingUtil
-const isAugmentedTraining = (training) => (hasProperty(training, "uuid") && hasProperty(training, "name"));
-
+// TODO fix broken function
+const isAugmentedDay = (day) =>
+  (hasProperty(day, "trainings") && hasProperty(day.trainings[0], "name"));
+ // TODO move to trainingUtil
+// TODO fix broken function, should look at segments, to see if it has all three (pace, duration, time)
+const isAugmentedTraining = (training) =>
+  (hasProperty(training, "uuid") && hasProperty(training, "name"));

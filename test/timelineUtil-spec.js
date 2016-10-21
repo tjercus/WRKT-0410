@@ -12,7 +12,7 @@ import {
 from "../src/stores/timelineUtil";
 
 /**
- * Tests for {@link TimelineStore.js}
+ * @Tests for {@link TimelineStore.js}
  */
 let plan = {
   "uuid": "91556686-232b-11e6-8b5a-5bcc30180900",
@@ -103,12 +103,17 @@ const augmentedDays = plan.days.map((_day) => {
 });
 
 test("augmentDay should augment a day with one traininginstance into a list of one trainings", (assert) => {
-  const day = augmentDay(plan.days[2], trainingInstances);
+  const day = augmentDay(plan.days[2], trainingInstances); // blah-12
   assert.ok(typeof day === "object");
   assert.notOk(day === null);
   assert.notOk(day.hasOwnProperty("training"));
   assert.ok(day.hasOwnProperty("trainings"));
   assert.equal(day.trainings[0].name, "name12");
+
+  assert.equal(day.trainings[0].segments[0].distance, 2.000);
+  assert.equal(day.trainings[0].segments[0].duration, "00:11:00");
+  assert.equal(day.trainings[0].segments[0].pace, "05:30");
+
   assert.ok(day.trainings[0].hasOwnProperty("total"));
   assert.equal(day.trainings.length, 1, "not enough trainings (" + day.trainings.length + ") where found");
   assert.end();

@@ -34,6 +34,7 @@ export default class DayEditComponent extends React.Component {
 
   /**
    * @param {SyntheticEvent} evt
+   * @returns {void}
    */
   onLoadTrainingClick(evt) {
     const nr = evt.target.value;
@@ -41,6 +42,10 @@ export default class DayEditComponent extends React.Component {
     this.props.eventbus.emit("INSTANCE_LOAD_CMD", this.day.trainings[nr]);
   }
 
+  /**
+   * @param {SyntheticEvent} evt
+   * @returns {void} - emits on eventbus instead
+   */
   onCloseButtonClick(evt) {
     this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-timeline");
     //this.props.eventbus.emit("DAY_UPDATE_EVT

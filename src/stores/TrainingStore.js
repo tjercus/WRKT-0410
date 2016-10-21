@@ -2,6 +2,7 @@ import {
   findTraining,
   updateTraining,
   removeTrainingInstance,
+  augmentTraining,
 } from "./trainingUtil";
 import {
   addSegment,
@@ -212,10 +213,13 @@ export default class TrainingStore {
       this.uuid = training.uuid;
       this.name = training.name;
       this.type = training.type;
+
+      // TODO use trainingUtil.augmentTraining
       const _segments = training.segments.map(segment => augmentSegmentData(
         segment));
       this.segments = _segments;
       this.total = makeTrainingTotal(_segments);
+
       this.eventbus.emit("TRAINING_LOAD_EVT", this.getCurrentlyLoadedTraining());
     } else {
       this.eventbus.emit("TRAINING_LOAD_ERROR_EVT", "Training could not be found");

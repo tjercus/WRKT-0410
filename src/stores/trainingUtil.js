@@ -1,4 +1,5 @@
 import { clone, hasProperty } from "./miscUtil";
+import {augmentSegmentData, makeTrainingTotal} from "./segmentUtil";
 
 /**
  * Finds a training or an instance
@@ -17,7 +18,8 @@ export function findTraining(uuid, trainings) {
   if (index < 0) {
     return null;
   }
-  return _instances[index];
+
+  return augmentTraining(_instances[index]);
 }
 
 /**
@@ -77,4 +79,16 @@ export function removeTrainingInstancesForDay(day, traininginstances) {
       traininginstances));
   }
   return _traininginstances;
+}
+
+/**
+ * 
+ * @param {Training} training - with possibly un-augmented segments
+ * @returns {Training} _training - with augmented segments
+ */
+export function augmentTraining(training) {
+  const _segments = training.segments.map(segment => augmentSegmentData(segment));
+  training.segments = _segments;
+  training.total = makeTrainingTotal(_segments);
+  return training;
 }
