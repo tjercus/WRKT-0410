@@ -31,10 +31,9 @@ export default class TimelineComponent extends React.Component {
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate,
        isVisible: true });      
     });
-    // this.props.eventbus.on("DAY_EMPTY_EVT", (plan) => {
-    //   console.log("TimelineComponent received DAY_EMPTY_EVT with a new plan as payload");
-    //   this.setState({ days: plan.days });
-    // });
+    this.props.eventbus.on("DAY_UPDATE_EVT", (plan) => {
+      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
+    });
     this.props.eventbus.on("DAY_CLONE_EVT", (plan) => {
      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });

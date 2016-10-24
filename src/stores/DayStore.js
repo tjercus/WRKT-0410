@@ -45,16 +45,16 @@ export default class DayStore {
     });
 
     // throw DAY_UPDATE_EVT with a day as payload (so TimelineStore can update itself)
-    eventbus.on("SEGMENTS_UPDATE_EVT", (training) => {
-      // TODO carefull for race condition since methods below update/add/remove throw same event
-      eventbus.emit("DAY_UPDATE_EVT", this.day);
-    });
-
+    //eventbus.on("SEGMENTS_UPDATE_EVT", (training) => {
+      // TODO careful for race condition since methods below update/add/remove throw same event
+      //eventbus.emit("DAY_UPDATE_EVT", this.day);
+    //});
 
     eventbus.on("INSTANCE_UPDATE_CMD", (instance) => {});
     eventbus.on("INSTANCE_LOAD_CMD", (instance) => {});
 
     eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {
+      console.log("DayStore caught SEGMENT_UPDATE_CMD");
       this.updateSegmentInStore(segment);
     });
     eventbus.on("SEGMENT_ADD_CMD", (segment) => {
@@ -74,8 +74,8 @@ export default class DayStore {
    * @returns {void} - emit event instead
    */
   updateSegmentInStore(segment) {
-    console.log(`DayStore.updateSegmentInStore`);
     const _segment = augmentSegmentData(segment);
+    console.log(`DayStore.updateSegmentInStore after augmenting: ${JSON.stringify(_segment)}`);
     this.day.trainings.forEach((training) => {
       if (training.uuid === segment.trainingUuid) {
         training.segments = updateSegment(_segment, clone(training.segments));
@@ -132,21 +132,4 @@ export default class DayStore {
        }
      });
    }
-
-   /**
-    * Update segment in local collection of segments
-    * @param {Segment} segment - data object
-    * @returns {Void} - emit event instead
-    */
-   updateSegmentInStore(segment) {
-     if (segment.trainingUuid !== this.uuid) return;
-     const _segment = augmentSegmentData(segment);
-     this.segments = updateSegment(_segment, training.segments);
-     this.total = makeTrainingTotal(training.segments);
-     this.eventbus.emit("SEGMENT_UPDATE_EVT", {
-       segment: _segment,
-       total: training.total,
-     });
-   }
-
 }

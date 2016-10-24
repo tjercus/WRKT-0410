@@ -35,6 +35,7 @@ export default class TrainingInstanceComponent extends React.Component {
       // Coarse-grained segment handling
       this.props.eventbus.on("SEGMENTS_UPDATE_EVT", (training) => {
         console.log(`TrainingInstanceComponent received SEGMENTS_UPDATE_EVT with ${training.uuid} versus ${this.props.training.uuid}`);
+        console.log(`TrainingInstanceComponent received: ${JSON.stringify(training)}`);
         if (training.uuid === this.props.training.uuid) {
           this.props.training.segments = training.segments;
           this.props.training.total = training.total;
@@ -43,25 +44,6 @@ export default class TrainingInstanceComponent extends React.Component {
         }
       });
 
-      // this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
-      //   console.log(`TrainingInstanceComponent received SEGMENTS_UPDATE_EVT with ${training.uuid} versus ${this.props.training.uuid}`);
-      //   if (training.uuid === this.props.training.uuid) {
-      //     this.props.training.segments.push(training.segment);
-      //     this.props.training.total = training.total;
-      //     // TODO force re-render?
-      //     this.forceUpdate();
-      //   }
-      // });
-
-      // this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
-      //   if (training.uuid === this.props.training.uuid) {
-      //     this.props.training.segments = training.segments;
-      //     this.props.training.total = training.total;
-      //     // TODO force re-render?
-      //     this.forceUpdate();
-      //   }
-      // });
-
       this.props.eventbus.on("INSTANCE_CLEAR_EVT", (uuid) => {
         this.props.training.segments = [];
         this.props.training.total = DEFAULT_TOTAL;
@@ -69,10 +51,6 @@ export default class TrainingInstanceComponent extends React.Component {
 
       this.props.eventbus.emit("INSTANCE_LOAD_EVT", this.props.training);
     }
-
-    // loadTraining(training) {
-    //   this.setState(DEFAULT_STATE, () => this.setState(this.makeTraining(training)));
-    // }
 
     addEmptySegment() {
       this.props.eventbus.emit("INSTANCE_SEGMENT_ADD_CMD", {});
@@ -129,16 +107,16 @@ export default class TrainingInstanceComponent extends React.Component {
         segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} trainingUuid={this.props.training.uuid} />);
       });
 
-        let totalDistance = 0;
-        if (this.props.training.total && this.props.training.total.distance) {
-          totalDistance = (this.props.training.total.distance).toFixed(3);
-        };
+      let totalDistance = 0;
+      if (this.props.training.total && this.props.training.total.distance) {
+        totalDistance = (this.props.training.total.distance).toFixed(3);
+      };
 
-        // TODO refactor to ButtonChoiceComponent
-        const type1ButtonClassName = (this.props.training.type === "workout") ? "button-choice button-choice-selected" : "button-choice";
-        const type2ButtonClassName = (this.props.training.type === "easy") ? "button-choice button-choice-selected" : "button-choice";
+      // TODO refactor to ButtonChoiceComponent
+      const type1ButtonClassName = (this.props.training.type === "workout") ? "button-choice button-choice-selected" : "button-choice";
+      const type2ButtonClassName = (this.props.training.type === "easy") ? "button-choice button-choice-selected" : "button-choice";
 
-        return (
+      return (
         <section className={panelClassName}>
           <header className="panel-header">
             {nameComponent}

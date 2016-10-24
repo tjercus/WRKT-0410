@@ -8,10 +8,25 @@ import {
 } from "./miscUtil";
 
 /**
+ * @typedef {Object} Segment
+ * @property {string} uuid
+ * @property {number} distance
+ * @property {string} duration
+ * @property {string} pace
+ */
+
+/**
+ * @typedef {Object} Total
+ * @property {number} distance
+ * @property {string} duration
+ * @property {string} pace
+ */
+
+/**
  * Remove a segment from a list
- * @param  {Segment}  segment object
- * @param  {Array<Segment>} segments
- * @param  {Array<Segment>} segments
+ * @param  {Segment} segment - object
+ * @param  {Array<Segment>} segments - list
+ * @returns {Array<Segment>} segments - list
  */
 export function removeSegment(segment, segments) {
   const _segments = clone(segments);
@@ -42,8 +57,8 @@ export function addSegment(segment, segments, overwriteUuid) {
 /**
  * update segment in a list
  * @param  {Segment}  segment object
- * @param  {[type]} segments [description]
- * @return {[type]}          [description]
+ * @param  {Array<Segment>} segments
+ * @return {Array<Segment>} segments
  */
 export function updateSegment(segment, segments) {
   const segmentClone = augmentSegmentData(segment);
@@ -125,7 +140,7 @@ export function augmentSegmentData(segment) {
  * Was a segment changed?
  * @param  {Segment}  segment object
  * @param  {Array<Segment>} segments
- * @return {Boolean} is the segment dirty compared to what collection holds?
+ * @return {boolean} is the segment dirty compared to what collection holds?
  */
 export function isDirtySegment(segment, segments) {
   const _segment = clone(segment);
@@ -140,10 +155,9 @@ export function isDirtySegment(segment, segments) {
   if (storedSegment === null) {
     return false;
   }
-  const dirt = (storedSegment.distance !== _segment.distance
+  return (storedSegment.distance !== _segment.distance
     || storedSegment.duration !== _segment.duration
     || storedSegment.pace !== _segment.pace);
-  return dirt;
 }
 
 /**
@@ -212,14 +226,14 @@ export function makePaceAt400(pace) {
 */
 
 /**
- * @param moment.duration obj
- * @return HH:mm:ss String
+ * @param {Duration} moment.duration obj
+ * @return {String} HH:mm:ss NL
  */
 const formatDuration = duration =>
   `${lpad(duration.hours())}:${lpad(duration.minutes())}:${lpad(duration.seconds())}`;
 
 /**
- * @param {Segment} object
+ * @param {Segment} segment object
  * @return {string} pace as mm:ss
  */
 const makePace = (segment) => {
@@ -231,7 +245,7 @@ const makePace = (segment) => {
 };
 
 /**
- * @param {Segment} object
+ * @param {Segment} segment object
  * Make duration based on distance and pace
  * @return {string} HH:mm:ss as: ex: 5:10 * 12.93 km = 1:6:48
  */
@@ -246,8 +260,8 @@ const makeDuration = (segment) => {
 };
 
 /**
- * @param {Segment} object
- * @return {float} distance. Calculated distance based on duration / pace
+ * @param {Segment} segment object
+ * @return {number} distance. Calculated distance based on duration / pace
  */
 const makeDistance = (segment) => {
   const _segment = clone(segment);

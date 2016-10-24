@@ -2,7 +2,6 @@ import {
   findTraining,
   updateTraining,
   removeTrainingInstance,
-  augmentTraining,
 } from "./trainingUtil";
 import {
   addSegment,
@@ -103,7 +102,7 @@ export default class TrainingStore {
   /**
    * Clone currently loaded training in the collection which is
    *  currently loaded in store and then emit some events
-   * @returns {Void} - emit events instead
+   * @returns {void} - emit events instead
    */
   cloneLoadedTrainingInStore() {
     const _trainings = clone(this.trainings);
@@ -171,8 +170,10 @@ export default class TrainingStore {
    * @returns {Void} - emit event instead
    */
   updateSegmentInStore(segment) {
-    console.log(`TrainingStore.updateSegmentInStore ${JSON.stringify(segment)}`);
-    if (segment.trainingUuid !== this.uuid) return;
+    if (segment.trainingUuid !== this.uuid) {
+      console.log(`TrainingStore.updateSegmentInStore IGNORING ${JSON.stringify(segment)}`);
+      return false;
+    }
     const _segment = augmentSegmentData(segment);
     this.segments = updateSegment(_segment, this.segments);
     this.total = makeTrainingTotal(this.segments);

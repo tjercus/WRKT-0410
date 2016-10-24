@@ -29,7 +29,8 @@ export default class SegmentComponent extends React.Component {
 
   componentDidMount() {
     this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {
-      if (this.state.uuid == data.segment.uuid) {
+      console.log("SegmentComponent caught SEGMENT_UPDATE_EVT");
+      if (String(this.state.uuid) === String(data.segment.uuid)) {
         this.setState({
           distance: data.segment.distance,
           duration: data.segment.duration,
@@ -75,6 +76,9 @@ export default class SegmentComponent extends React.Component {
     if (canAugment(this.state)) {
       this.setState({isValid: isValidSegment(this.state)});
       this.props.eventbus.emit("SEGMENT_UPDATE_CMD", this.state);
+      console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligable for augment so SEGMENT_UPDATE_CMD`);
+    } else {
+      console.log(`SegmentComponent.onCalcButtonClick concludes the segment is not eligable for augment so no action`);
     }
   }
 
