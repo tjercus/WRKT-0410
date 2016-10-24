@@ -1,9 +1,8 @@
-
 import React from "react";
 import EventEmitter from "eventemitter2";
-import moment from "moment";
+import {EventsEnum as ee} from "./constants";
 
-import { clone, createUuid } from "../stores/miscUtil";
+import { createUuid } from "../stores/miscUtil";
 
 export default class PlanEditComponent extends React.Component {
 
@@ -24,16 +23,23 @@ export default class PlanEditComponent extends React.Component {
 
   onAddPlanButtonClick(evt) {
     this.setState({newPlanName: ""});
-    this.props.eventbus.emit("PLAN_ADD_CMD", {uuid: createUuid(), name: this.state.newPlanName, days: [], startDate: this.state.startDate});
+    this.props.eventbus.emit(ee.PLAN_ADD_CMD,
+      {uuid: createUuid(), name: this.state.newPlanName, days: [], startDate: this.state.startDate}
+    );
   }
 
   render() {
     return (
       <div>
         <h2>{"A new plan"}</h2>
-        <input type="text" name="plan-name" value={this.state.newPlanName} onChange={this.onChange} className="type-text" />
+        <input type="text" name="plan-name"
+               value={this.state.newPlanName} onChange={this.onChange} className="type-text" />
         <button className="button-small" onClick={this.onAddPlanButtonClick}>{"add plan"}</button>
       </div>
     );
   }
 }
+
+PlanEditComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+};

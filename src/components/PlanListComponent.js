@@ -1,7 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import {clone} from "../stores/miscUtil";
-
+import {EventsEnum as ee} from "./constants";
 import PlanEditComponent from "./PlanEditComponent";
 
 export default class PlanListComponent extends React.Component {
@@ -18,7 +17,7 @@ export default class PlanListComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
+    this.props.eventbus.on(ee.MENU_CLICK_EVT, (menuItemName) => {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
 
@@ -61,5 +60,8 @@ export default class PlanListComponent extends React.Component {
       </section>
     );
   }
+}
 
+PlanListComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
 }

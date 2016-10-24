@@ -1,5 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
+import {EventsEnum as ee} from "./constants";
 
 export default class MenuComponent extends React.Component {
 
@@ -10,7 +11,7 @@ export default class MenuComponent extends React.Component {
     }
     this.onButtonClick = this.onButtonClick.bind(this); // TODO phat arrow
     
-    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
+    this.props.eventbus.on(ee.MENU_CLICK_EVT, (menuItemName) => {
       this.setState({activeName: menuItemName});
     });
   }
@@ -18,7 +19,7 @@ export default class MenuComponent extends React.Component {
   onButtonClick(evt) {
     let name = evt.target.value;
     this.setState({activeName: name});
-    this.props.eventbus.emit("MENU_CLICK_EVT", name);
+    this.props.eventbus.emit(ee.MENU_CLICK_EVT, name);
   };
 
   // TODO refactor li into component
@@ -57,3 +58,7 @@ export default class MenuComponent extends React.Component {
     );
   }
 };
+
+MenuComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+}

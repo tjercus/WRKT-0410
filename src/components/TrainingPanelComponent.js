@@ -29,3 +29,9 @@ export default class TrainingPanelComponent extends React.Component {
     );
   }
 };
+
+TrainingPanelComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  name: React.PropTypes.string.isRequired,
+  from: React.PropTypes.string.isRequired,
+};

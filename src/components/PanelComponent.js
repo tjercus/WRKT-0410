@@ -1,5 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
+import {EventsEnum as ee} from "./constants";
 
 export default class PanelComponent extends React.Component {
 
@@ -9,7 +10,7 @@ export default class PanelComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
+    this.props.eventbus.on(ee.MENU_CLICK_EVT, (menuItemName) => {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
   }
@@ -27,4 +28,10 @@ export default class PanelComponent extends React.Component {
       </section>
     );
   }
+};
+
+PanelComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  name: React.PropTypes.string.isRequired,
+  from: React.PropTypes.string.isRequired,
 };

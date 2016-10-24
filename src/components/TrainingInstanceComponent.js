@@ -1,8 +1,6 @@
 import React from "react";
 import SegmentComponent from "./SegmentComponent";
-import {
-  clone
-} from "../stores/miscUtil";
+import {EventsEnum as ee} from "./constants";
 
 const DEFAULT_STATE = {
   isNameEditable: false,
@@ -33,7 +31,7 @@ export default class TrainingInstanceComponent extends React.Component {
 
     componentDidMount() {
       // Coarse-grained segment handling
-      this.props.eventbus.on("SEGMENTS_UPDATE_EVT", (training) => {
+      this.props.eventbus.on(ee.SEGMENTS_UPDATE_EVT, (training) => {
         console.log(`TrainingInstanceComponent received SEGMENTS_UPDATE_EVT with ${training.uuid} versus ${this.props.training.uuid}`);
         console.log(`TrainingInstanceComponent received: ${JSON.stringify(training)}`);
         if (training.uuid === this.props.training.uuid) {
@@ -44,16 +42,16 @@ export default class TrainingInstanceComponent extends React.Component {
         }
       });
 
-      this.props.eventbus.on("INSTANCE_CLEAR_EVT", (uuid) => {
+      this.props.eventbus.on(ee.INSTANCE_CLEAR_EVT, (uuid) => {
         this.props.training.segments = [];
         this.props.training.total = DEFAULT_TOTAL;
       });
 
-      this.props.eventbus.emit("INSTANCE_LOAD_EVT", this.props.training);
+      this.props.eventbus.emit(ee.INSTANCE_LOAD_EVT, this.props.training);
     }
 
     addEmptySegment() {
-      this.props.eventbus.emit("INSTANCE_SEGMENT_ADD_CMD", {});
+      this.props.eventbus.emit(ee.INSTANCE_SEGMENT_ADD_CMD, {});
     }
 
     exportTraining() {
@@ -61,7 +59,7 @@ export default class TrainingInstanceComponent extends React.Component {
     }
 
     emitClearTraining() {
-      this.props.eventbus.emit("INSTANCE_CLEAR_CMD", this.props.training.uuid);
+      this.props.eventbus.emit(ee.INSTANCE_CLEAR_CMD, this.props.training.uuid);
     }
 
     onEditNameButtonClick(evt) {
@@ -76,16 +74,16 @@ export default class TrainingInstanceComponent extends React.Component {
     }
 
     onNameBlur(evt) {
-      this.props.eventbus.emit("INSTANCE_UPDATE_CMD", this.props.training);
+      this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.props.training);
     }
 
     removeTraining() {
-      this.props.eventbus.emit("INSTANCE_REMOVE_CMD");
+      this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD);
     }
 
     onTrainingTypeClick(evt) {
       this.props.training.type = evt.target.value
-      this.props.eventbus.emit("INSTANCE_UPDATE_CMD", this.props.training);
+      this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.props.training);
       // TODO test: 'should emit event when button clicked'
     }
 
@@ -157,3 +155,7 @@ export default class TrainingInstanceComponent extends React.Component {
       );
     };
   }
+
+TrainingInstanceComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+};

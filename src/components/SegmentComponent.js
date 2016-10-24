@@ -1,7 +1,8 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import {isDirtySegment, canAugment, isValidSegment, parseDuration} from "../stores/segmentUtil";
+import {canAugment, isValidSegment, parseDuration} from "../stores/segmentUtil";
 import {createUuid, clone, hasProperty} from "../stores/miscUtil";
+import {EventsEnum as ee} from "./constants";
 
 export default class SegmentComponent extends React.Component {
 
@@ -19,7 +20,7 @@ export default class SegmentComponent extends React.Component {
       duration: clone(props.segment.duration),
       pace: clone(props.segment.pace),
       isValid: clone(isValid)
-    }
+    };
     this.onChange = this.onChange.bind(this);
     this.onCalcButtonClick = this.onCalcButtonClick.bind(this);
     this.onCloneButtonClick = this.onCloneButtonClick.bind(this);
@@ -28,7 +29,7 @@ export default class SegmentComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {
+    this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (data) => {
       console.log("SegmentComponent caught SEGMENT_UPDATE_EVT");
       if (String(this.state.uuid) === String(data.segment.uuid)) {
         this.setState({
@@ -42,7 +43,7 @@ export default class SegmentComponent extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.eventbus.removeAllListeners("SEGMENT_UPDATE_EVT");
+    this.props.eventbus.removeAllListeners(ee.SEGMENT_UPDATE_EVT);
   }
 
   onChange(evt) {
@@ -75,7 +76,7 @@ export default class SegmentComponent extends React.Component {
     // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)
     if (canAugment(this.state)) {
       this.setState({isValid: isValidSegment(this.state)});
-      this.props.eventbus.emit("SEGMENT_UPDATE_CMD", this.state);
+      this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, this.state);
       console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligable for augment so SEGMENT_UPDATE_CMD`);
     } else {
       console.log(`SegmentComponent.onCalcButtonClick concludes the segment is not eligable for augment so no action`);
@@ -83,11 +84,11 @@ export default class SegmentComponent extends React.Component {
   }
 
   onCloneButtonClick() {
-    this.props.eventbus.emit("SEGMENT_CLONE_CMD", this.state);
+    this.props.eventbus.emit(ee.SEGMENT_CLONE_CMD, this.state);
   }
 
   onRemoveButtonClick() {
-    this.props.eventbus.emit("SEGMENT_REMOVE_CMD", this.state);
+    this.props.eventbus.emit(ee.SEGMENT_REMOVE_CMD, this.state);
   }
 
   isDirtyValue(name, value) {

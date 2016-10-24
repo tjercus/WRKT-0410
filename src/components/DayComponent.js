@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
-import { clone, createUuid } from "../stores/miscUtil";
+import { createUuid } from "../stores/miscUtil";
+import {EventsEnum as ee} from "./constants";
 
 /**
  * TODO use eventbus to implement buttonclicks
@@ -27,30 +28,30 @@ export default class DayComponent extends React.Component {
 
   onEditClick(evt) {
     const uuid = evt.target.attributes[1].nodeValue;
-    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-dayedit");
-    this.props.eventbus.emit("DAY_LOAD_CMD", uuid);
+    this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-dayedit");
+    this.props.eventbus.emit(ee.DAY_LOAD_CMD, uuid);
   }
 
   onCloneLeftClick(evt) {
     const uuid = evt.target.attributes[1].nodeValue;
-    this.props.eventbus.emit("DAY_CLONE_CMD", uuid, 0);
+    this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid, 0);
   }
 
   onCloneClick(evt) {
     const uuid = evt.target.attributes[1].nodeValue;
-    this.props.eventbus.emit("DAY_CLONE_CMD", uuid);
+    this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid);
   }
 
   onMoveLeftClick(evt) {
-    this.props.eventbus.emit("DAY_MOVE_CMD", evt.target.value, -1);
+    this.props.eventbus.emit(ee.DAY_MOVE_CMD, evt.target.value, -1);
   }
 
   onMoveRightClick(evt) {
-    this.props.eventbus.emit("DAY_MOVE_CMD", evt.target.value, 1);
+    this.props.eventbus.emit(ee.DAY_MOVE_CMD, evt.target.value, 1);
   }
 
   onDeleteClick(evt) {
-    this.props.eventbus.emit("DAY_DELETE_CMD", evt.target.value);
+    this.props.eventbus.emit(ee.DAY_DELETE_CMD, evt.target.value);
   }
 
   onSecondaryMenuClick(evt) {

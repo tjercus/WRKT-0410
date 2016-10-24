@@ -1,5 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
+import {EventsEnum as ee} from "./constants";
 
 /**
  * TODO slide up css transition
@@ -38,43 +39,43 @@ export default class NotificationComponent extends React.Component {
   createNotification(type, data) {
     let msg = null;
     switch (type) {
-      case "PLAN_LOAD_EVT":
+      case ee.PLAN_LOAD_EVT:
         msg = `Plan '${data.uuid}' is loaded in store`;
         break;
-      case "DAY_LOAD_EVT":
+      case ee.DAY_LOAD_EVT:
         msg = `Day '${data.uuid}' is loaded in DayStore`;
         break;
-      case "TRAINING_LOAD_EVT":
+      case ee.TRAINING_LOAD_EVT:
         msg = `Training '${data.uuid}' is loaded in store`;
         break;
-      case "TRAININGS_LOAD_ERROR_EVT":
+      case ee.TRAININGS_LOAD_ERROR_EVT:
         msg = `Error when trying to load training`;
         break;
-      case "TRAININGS_PERSIST_EVT":
+      case ee.TRAININGS_PERSIST_EVT:
         msg = `All trainings persisted to disk`;
         break;
-      case "TRAININGS_PERSIST_ERROR_EVT":
+      case ee.TRAININGS_PERSIST_ERROR_EVT:
         msg = `Error when trying to persist to disk: ${data}. Is http://localhost:3333 running?`;
         break;
-      case "PLAN_ADD_EVT":
+      case ee.PLAN_ADD_EVT:
         msg = `A new plan was created on disk`;
         break;
-      case "PLAN_ADD_ERROR_EVT":
+      case ee.PLAN_ADD_ERROR_EVT:
         msg = `Error when trying to create a new plan on disk`;
         break;
-      case "PLAN_PERSIST_EVT":
+      case ee.PLAN_PERSIST_EVT:
         msg = `All plans persisted to disk`;
         break;
-      case "PLAN_PERSIST_ERROR_EVT":
+      case ee.PLAN_PERSIST_ERROR_EVT:
         msg = `Error when trying to persist to disk: ${data}. Is http://localhost:3333 running?`;
         break;
-      case "TRAINING_TO_PLAN_EVT":
+      case ee.TRAINING_TO_PLAN_EVT:
         msg = `TrainingInstance was added to plan`;
         break;
-      case "DAY_EMPTY_EVT":
+      case ee.DAY_EMPTY_EVT:
         msg = `TrainingInstances where removed from a day`;
         break;
-      case "PLAN_FETCH_ERROR_EVT":
+      case ee.PLAN_FETCH_ERROR_EVT:
         msg = `Error getting a plan with: ${data}`;
         break;
       default:
@@ -109,3 +110,7 @@ export default class NotificationComponent extends React.Component {
     );
   }
 };
+
+NotificationComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+}

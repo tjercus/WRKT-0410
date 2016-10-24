@@ -1,8 +1,8 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
 import moment from "moment";
-
-import { clone, createUuid } from "../stores/miscUtil";
+import {EventsEnum as ee} from "./constants";
+import { createUuid } from "../stores/miscUtil";
 
 import WeekComponent from "./WeekComponent";
 
@@ -24,26 +24,26 @@ export default class TimelineComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
+    this.props.eventbus.on(ee.MENU_CLICK_EVT, (menuItemName) => {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
-    this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
+    this.props.eventbus.on(ee.PLAN_LOAD_EVT, (plan) => {
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate,
        isVisible: true });      
     });
-    this.props.eventbus.on("DAY_UPDATE_EVT", (plan) => {
+    this.props.eventbus.on(ee.DAY_UPDATE_EVT, (plan) => {
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
-    this.props.eventbus.on("DAY_CLONE_EVT", (plan) => {
+    this.props.eventbus.on(ee.DAY_CLONE_EVT, (plan) => {
      this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
-    this.props.eventbus.on("DAY_MOVE_EVT", (plan) => {
+    this.props.eventbus.on(ee.DAY_MOVE_EVT, (plan) => {
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
-    this.props.eventbus.on("DAY_DELETE_EVT", (plan) => {
+    this.props.eventbus.on(ee.DAY_DELETE_EVT, (plan) => {
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
-    this.props.eventbus.on("TRAINING_TO_PLAN_EVT", (plan) => {
+    this.props.eventbus.on(ee.TRAINING_TO_PLAN_EVT, (plan) => {
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
   }
@@ -103,3 +103,8 @@ export default class TimelineComponent extends React.Component {
   }
 }
 
+TimelineComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  name: React.PropTypes.string.isRequired,
+  from: React.PropTypes.string.isRequired,
+};

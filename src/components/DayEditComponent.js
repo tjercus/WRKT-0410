@@ -1,5 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
+import {EventsEnum as ee} from "./constants";
 
 import TrainingInstanceComponent from "./TrainingInstanceComponent";
 
@@ -18,11 +19,11 @@ export default class DayEditComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
+    this.props.eventbus.on(ee.MENU_CLICK_EVT, (menuItemName) => {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
 
-    this.props.eventbus.on("DAY_LOAD_EVT", (day) => {
+    this.props.eventbus.on(ee.DAY_LOAD_EVT, (day) => {
       this.setState({ day });
     });
 
@@ -39,7 +40,7 @@ export default class DayEditComponent extends React.Component {
   onLoadTrainingClick(evt) {
     const nr = evt.target.value;
     this.setState({ selectedNr: nr });
-    this.props.eventbus.emit("INSTANCE_LOAD_CMD", this.day.trainings[nr]);
+    this.props.eventbus.emit(ee.INSTANCE_LOAD_CMD, this.day.trainings[nr]);
   }
 
   /**
@@ -47,8 +48,8 @@ export default class DayEditComponent extends React.Component {
    * @returns {void} - emits on eventbus instead
    */
   onCloseButtonClick(evt) {
-    this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-timeline");
-    this.props.eventbus.emit("DAY_UPDATE_CMD", this.state.day);
+    this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-timeline");
+    this.props.eventbus.emit(ee.DAY_UPDATE_CMD, this.state.day);
   }
 
   /**

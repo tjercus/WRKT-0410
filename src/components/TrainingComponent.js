@@ -1,7 +1,7 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
-import { clone } from "../stores/miscUtil";
+import {EventsEnum as ee} from "./constants";
 
 const DEFAULT_STATE = {
   uuid: null,
@@ -38,26 +38,26 @@ export default class TrainingComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("TRAINING_LOAD_EVT", (training) => {
+    this.props.eventbus.on(ee.TRAINING_LOAD_EVT, (training) => {
       console.log(`TrainingComponent received TRAINING_LOAD_EVT with ${training.uuid}`);
       this.loadTraining(training);
     });
-    // this.props.eventbus.on("TRAINING_UPDATE_EVT", (training) => {
+    // this.props.eventbus.on(ee.TRAINING_UPDATE_EVT, (training) => {
     //   this.loadTraining(training);
     // });
 
-    this.props.eventbus.on("SEGMENT_ADD_EVT", (training) => {
+    this.props.eventbus.on(ee.SEGMENT_ADD_EVT, (training) => {
       this.setState({ segments: training.segments, total: training.total });
     });
     // TODO find out why this is never caught:
-    this.props.eventbus.on("SEGMENT_UPDATE_EVT", (data) => {
+    this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (data) => {
     //this.props.eventbus.onAny((event, data) => {
       //if (event === "SEGMENT_UPDATE_EVT" && this.data.uuid === this.uuid) {
       if (data.uuid === this.uuid) {
         this.setState({ total: data.total });
       }
     });
-    this.props.eventbus.on("SEGMENT_REMOVE_EVT", (training) => {
+    this.props.eventbus.on(ee.SEGMENT_REMOVE_EVT, (training) => {
       this.setState({ segments: [], total: {} }, function() {
         console.log("TrainingComponent emptied segments");
         this.setState({ segments: training.segments, total: training.total }, function() {
@@ -65,7 +65,7 @@ export default class TrainingComponent extends React.Component {
         });
       });
     });
-    this.props.eventbus.on("TRAINING_CLEAR_EVT", (uuid) => {
+    this.props.eventbus.on(ee.TRAINING_CLEAR_EVT, (uuid) => {
       this.clearTrainingFromLocalState();
     });
   }
@@ -75,11 +75,11 @@ export default class TrainingComponent extends React.Component {
   }
 
   addEmptySegment() {
-    this.props.eventbus.emit("SEGMENT_ADD_CMD", {});
+    this.props.eventbus.emit(ee.SEGMENT_ADD_CMD, {});
   }
 
   emitPersistChanges() {
-    this.props.eventbus.emit("TRAININGS_PERSIST_CMD", null);
+    this.props.eventbus.emit(ee.TRAININGS_PERSIST_CMD, null);
   }
 
   exportTraining() {
@@ -87,7 +87,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   emitClearTraining() {
-    this.props.eventbus.emit("TRAINING_CLEAR_CMD", this.state.uuid);
+    this.props.eventbus.emit(ee.TRAINING_CLEAR_CMD, this.state.uuid);
   }
 
   onEditNameButtonClick(evt) {
@@ -101,27 +101,27 @@ export default class TrainingComponent extends React.Component {
 
   onNameBlur(evt) {
     console.log(`onNameBlur ${this.state.name}`);
-    this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.makeTraining(this.state));
+    this.props.eventbus.emit(ee.TRAINING_UPDATE_CMD, this.makeTraining(this.state));
   }
 
   cloneTraining() {
     // TODO custom alert
     console.log("Training cloned and selected");
-    this.props.eventbus.emit("TRAINING_CLONE_CMD");
+    this.props.eventbus.emit(ee.TRAINING_CLONE_CMD);
   }
 
   removeTraining() {
-    this.props.eventbus.emit("TRAINING_REMOVE_CMD");
+    this.props.eventbus.emit(ee.TRAINING_REMOVE_CMD);
   }
 
   emitAddToBeginOfPlan() {
     console.log("TrainingComponent.emitAddToBeginOfPlan TRAINING_TO_PLAN_CMD with zero");
-    this.props.eventbus.emit("TRAINING_TO_PLAN_CMD", 0);
+    this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD, 0);
   }
 
   emitAddToPlan() {
     console.log("TrainingComponent.emitAddToPlan TRAINING_TO_PLAN_CMD without zero");
-    this.props.eventbus.emit("TRAINING_TO_PLAN_CMD");
+    this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD);
   }
 
   clearTrainingFromLocalState() {
@@ -130,7 +130,7 @@ export default class TrainingComponent extends React.Component {
 
   onTypeClick(evt) {
     this.setState({ type: evt.target.value }, () => {
-      this.props.eventbus.emit("TRAINING_UPDATE_CMD", this.makeTraining(this.state));
+      this.props.eventbus.emit(ee.TRAINING_UPDATE_CMD, this.makeTraining(this.state));
       // TODO test: 'should emit event when button clicked'
     });
   }
