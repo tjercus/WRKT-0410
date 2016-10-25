@@ -7,6 +7,7 @@ import {
   cloneDay,
   deleteDay,
 } from "./timelineUtil";
+import {EventsEnum as ee} from "../constants";
 import { removeTrainingInstancesForDay } from "./trainingUtil";
 import { clone, createUuid } from "./miscUtil";
 
@@ -19,7 +20,7 @@ import { clone, createUuid } from "./miscUtil";
 export default class TimelineStore {
 
   /**
-   * @param  {EventEmitter2} eventbus - decoupling
+   * @param {EventEmitter} eventbus - decoupling
    */
   constructor(eventbus) {
     // TODO allow input from a GUI-list (ex: 'PlansListComponent')
@@ -28,14 +29,14 @@ export default class TimelineStore {
     this.traininginstances = [];
 
     // NOTE that is up to the emitter to fetch and combine both sets
-    eventbus.on("PLAN_FETCHED_EVT", (planAndTraininginstances) => {
-      console.time("PLAN_FETCHED_EVT");
+    eventbus.on(ee.PLAN_FETCH_EVT, (planAndTraininginstances) => {
+      console.time("PLAN_FETCH_EVT");
       if (!Array.isArray(planAndTraininginstances)) {
-        throw new Error("PLAN_FETCHED_EVT has no array with a plan and instances in it");
+        throw new Error("PLAN_FETCH_EVT has no array with a plan and instances in it");
       }
       const plan = planAndTraininginstances[0];
       if (!Object.prototype.hasOwnProperty.call(plan, "uuid")) {
-        throw new Error("PLAN_FETCHED_EVT did not receive a proper day");
+        throw new Error("PLAN_FETCH_EVT did not receive a proper day");
       }
       const traininginstances = planAndTraininginstances[1];
       // TODO let a worker handle each augment
@@ -43,41 +44,41 @@ export default class TimelineStore {
 
       this.traininginstances = traininginstances;
       this.plan = plan;
-      eventbus.emit("PLAN_LOAD_EVT", plan);
-      console.timeEnd("PLAN_FETCHED_EVT");
+      eventbus.emit(ee.PLAN_LOAD_EVT, plan);
+      console.timeEnd("PLAN_FETCH_EVT");
     });
 
-    eventbus.on("PLAN_PERSIST_CMD", () => {
+    eventbus.on(ee.PLAN_PERSIST_CMD, () => {
       const persistablePlan = {
         uuid: this.plan.uuid,
         name: this.plan.name,
         days: flattenDays(this.plan.days),
       };
-      eventbus.emit("PLAN_AND_INSTANCES_PERSIST_CMD", persistablePlan, this.traininginstances);
+      eventbus.emit(ee.PLAN_AND_INSTANCES_PERSIST_CMD, persistablePlan, this.traininginstances);
     });
 
-    eventbus.on("DAY_UPDATE_CMD", (day) => {
+    eventbus.on(ee.DAY_UPDATE_CMD, (day) => {
       console.log("TimelineStore caught DAY_UPDATE_CMD: update local plan");
       const byUuid = (_day) => String(_day.uuid) === String(day.uuid);
       const index = this.plan.days.findIndex(byUuid);
       this.plan.days[index] = day;
-      eventbus.emit("DAY_UPDATE_EVT", this.plan);
+      eventbus.emit(ee.DAY_UPDATE_EVT, this.plan);
     });
 
-    eventbus.on("DAY_EMPTY_CMD", ((dayUuid) => {
+    eventbus.on(ee.DAY_EMPTY_CMD, ((dayUuid) => {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       this.plan.days = removeTrainingsFromDay(oldDay, clone(this.plan.days));
       this.traininginstances = removeTrainingInstancesForDay(oldDay, clone(this.traininginstances));
-      eventbus.emit("DAY_EMPTY_EVT", this.plan);
+      eventbus.emit(ee.DAY_EMPTY_EVT, this.plan);
     }));
 
-    eventbus.on("DAY_MOVE_CMD", ((dayUuid, positions) => {
+    eventbus.on(ee.DAY_MOVE_CMD, ((dayUuid, positions) => {
       this.plan.days = moveDay(dayUuid, this.plan.days, positions);
-      eventbus.emit("DAY_MOVE_EVT", this.plan);
+      eventbus.emit(ee.DAY_MOVE_EVT, this.plan);
     }));
 
     // TODO unit test this logic!
-    eventbus.on("DAY_CLONE_CMD", (dayUuid, position) => {
+    eventbus.on(ee.DAY_CLONE_CMD, (dayUuid, position) => {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       const newDay = cloneDay(oldDay);
       // TODO still support singular training property?
@@ -89,17 +90,17 @@ export default class TimelineStore {
         console.log(`DAY_CLONE_CMD 2. ${position}`);
         this.plan.days.unshift(newDay);
       }
-      eventbus.emit("DAY_CLONE_EVT", this.plan);
+      eventbus.emit(ee.DAY_CLONE_EVT, this.plan);
     });
 
-    eventbus.on("DAY_DELETE_CMD", (dayUuid) => {
+    eventbus.on(ee.DAY_DELETE_CMD, (dayUuid) => {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       this.traininginstances = removeTrainingInstancesForDay(oldDay, clone(this.traininginstances));
       this.plan.days = deleteDay(dayUuid, this.plan.days);
-      eventbus.emit("DAY_DELETE_EVT", this.plan);
+      eventbus.emit(ee.DAY_DELETE_EVT, this.plan);
     });
 
-    eventbus.on("TRAINING_CLONE_AS_INSTANCE_CMD", (training, position) => {
+    eventbus.on(ee.TRAINING_CLONE_AS_INSTANCE_CMD, (training, position) => {
       if (!Object.prototype.hasOwnProperty.call(this, "plan")) {
         throw new Error("Cloning a day before a plan was loaded in TimelineStore");
       }
@@ -120,7 +121,7 @@ export default class TimelineStore {
         console.log(`TimelineStore caught TRAINING_CLONE_AS_INSTANCE_CMD 2. ${position}`);
         this.plan.days.unshift(augmentedDay);
       }
-      eventbus.emit("TRAINING_TO_PLAN_EVT", this.plan);
+      eventbus.emit(ee.TRAINING_TO_PLAN_EVT, this.plan);
     });
   }
 }

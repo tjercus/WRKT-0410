@@ -1,16 +1,17 @@
 import React from "react";
+import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
-import {EventsEnum as ee} from "./constants";
+import {EventsEnum as ee, TRAINING_SHAPE} from "../constants";
 
 const DEFAULT_STATE = {
   isNameEditable: false,
-}
+};
 
 const DEFAULT_TOTAL = {
   distance: 0,
   duration: "00:00:00",
   pace: "00:00",
-}
+};
 
 export default class TrainingInstanceComponent extends React.Component {
 
@@ -82,7 +83,7 @@ export default class TrainingInstanceComponent extends React.Component {
     }
 
     onTrainingTypeClick(evt) {
-      this.props.training.type = evt.target.value
+      this.props.training.type = evt.target.value;
       this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.props.training);
       // TODO test: 'should emit event when button clicked'
     }
@@ -158,4 +159,5 @@ export default class TrainingInstanceComponent extends React.Component {
 
 TrainingInstanceComponent.propTypes = {
   eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  training: React.PropTypes.shape(TRAINING_SHAPE).isRequired,
 };

@@ -1,10 +1,7 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import moment from "moment";
-
 import DayComponent from "./DayComponent";
-
-import { clone, createUuid } from "../stores/miscUtil";
+import { createUuid } from "../stores/miscUtil";
 
 export default class WeekComponent extends React.Component {
 
@@ -43,5 +40,10 @@ export default class WeekComponent extends React.Component {
         <td>{"Total: "} {weekTotalDistance.toFixed(2)} {"km"}</td>
       </tr>);
   }
-
 }
+
+WeekComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  week: React.PropTypes.object.isRequired,
+  key: React.PropTypes.string.isRequired,
+};

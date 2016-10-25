@@ -2,7 +2,7 @@ import React from "react";
 import EventEmitter from "eventemitter2";
 import {canAugment, isValidSegment, parseDuration} from "../stores/segmentUtil";
 import {createUuid, clone, hasProperty} from "../stores/miscUtil";
-import {EventsEnum as ee} from "./constants";
+import {EventsEnum as ee} from "../constants";
 
 export default class SegmentComponent extends React.Component {
 

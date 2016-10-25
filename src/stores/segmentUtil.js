@@ -10,6 +10,7 @@ import {
 /**
  * @typedef {Object} Segment
  * @property {string} uuid
+ * @property {string} trainingUuid - the parent object
  * @property {number} distance
  * @property {string} duration
  * @property {string} pace

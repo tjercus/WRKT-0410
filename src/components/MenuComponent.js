@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import {EventsEnum as ee} from "./constants";
+import {EventsEnum as ee} from "../constants";
 
 export default class MenuComponent extends React.Component {
 

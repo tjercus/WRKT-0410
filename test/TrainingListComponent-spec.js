@@ -20,7 +20,7 @@ test("Component should render", (assert) => {
   //const onSpy = sinon.spy(eventbus, "on");
   const component = mount(<TrainingListComponent eventbus={eventbus} />);
 
-  eventbus.emit("TRAININGS_FETCHED_EVT", trainings);
+  eventbus.emit("TRAININGS_FETCH_EVT", trainings);
 
   assert.equal(component.find('ul').children().length, 2);
   assert.end();
@@ -41,7 +41,7 @@ test("Component should re-render if store updates list", (assert) => {
 test("Component should emit TRAINING_LOAD_CMD on button click", (assert) => {  
   const emitSpy = sinon.spy(eventbus, "emit");
   const component = mount(<TrainingListComponent eventbus={eventbus} />);  
-  eventbus.emit("TRAININGS_FETCHED_EVT", trainings);
+  eventbus.emit("TRAININGS_FETCH_EVT", trainings);
   const button = component.find("a[value='0a705d04-6e7d-11e6-ba0f-7fcdd2cc0149']");
 
   assert.equals(button.html(), '<a href="#" value="0a705d04-6e7d-11e6-ba0f-7fcdd2cc0149">training two</a>');

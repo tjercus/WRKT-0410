@@ -1,7 +1,8 @@
 import React from "react";
+import EventEmitter from "eventemitter2";
+import {EventsEnum as ee} from "../constants";
 import moment from "moment";
 import { createUuid } from "../stores/miscUtil";
-import {EventsEnum as ee} from "./constants";
 
 /**
  * TODO use eventbus to implement buttonclicks
@@ -142,8 +143,10 @@ export default class DayComponent extends React.Component {
   }
 }
 
-/*
 DayComponent.propTypes = {
-  dateForDay: React.PropTypes.number
-}
-*/
+  key: React.PropTypes.string.isRequired,
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  day: React.PropTypes.object.isRequired,
+  dayNr: React.PropTypes.string.isRequired,
+  weekStartDate: React.PropTypes.object.isRequired,
+};

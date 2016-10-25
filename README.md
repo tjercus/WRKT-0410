@@ -32,7 +32,6 @@ Based on 'React eventemitter'.
 - button to switch metric/imperial
 - start the rest-api via gulp
 - Tape coverage with coverify/tape-istanbul
-- events as constants
 - Formal flux architecture?
 
 ### Training

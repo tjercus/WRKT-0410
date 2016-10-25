@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import {EventsEnum as ee} from "./constants";
+import {EventsEnum as ee} from "../constants";
 
 /**
  * TODO slide up css transition
@@ -19,7 +19,7 @@ export default class NotificationComponent extends React.Component {
 
   componentDidMount() {
     this.props.eventbus.onAny((type, data) => {
-      if (type === "SET_NOTIFICATION_TIMEOUT") {
+      if (type === ee.SET_NOTIFICATION_TIMEOUT_CMD) {
         this.notificationTimeout = data;
       }
 

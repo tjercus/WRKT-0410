@@ -1,6 +1,6 @@
 import EventEmitter from "eventemitter2";
 import { findDay } from "./timelineUtil";
-
+import {EventsEnum as ee} from "../constants";
 import {
   addSegment,
   removeSegment,
@@ -8,10 +8,7 @@ import {
   updateSegment,
   makeTrainingTotal,
 } from "./segmentUtil";
-import {
-  //createUuid,
-  clone,
-} from "./miscUtil";
+import {clone} from "./miscUtil";
 
 /**
  * Holds data for editing a day
@@ -28,42 +25,42 @@ export default class DayStore {
     this.day = {};
     this.plan = {};
 
-    eventbus.on("PLAN_LOAD_EVT", (plan) => {
+    eventbus.on(ee.PLAN_LOAD_EVT, (plan) => {
       console.log(`DayStore caught PLAN_LOAD_CMD and loads plan locally`);
       this.plan = plan;
     });
 
-    eventbus.on("DAY_LOAD_CMD", (dayUuid) => {
+    eventbus.on(ee.DAY_LOAD_CMD, (dayUuid) => {
       // caching
       const day = this.day;
       if (!day || (day.uuid !== dayUuid) && this.plan) {
         this.day = findDay(dayUuid, this.plan);
       }
       if (this.day) {
-        eventbus.emit("DAY_LOAD_EVT", this.day);
+        eventbus.emit(ee.DAY_LOAD_EVT, this.day);
       }
     });
 
     // throw DAY_UPDATE_EVT with a day as payload (so TimelineStore can update itself)
-    //eventbus.on("SEGMENTS_UPDATE_EVT", (training) => {
+    //eventbus.on(ee.SEGMENTS_UPDATE_EVT", (training) => {
       // TODO careful for race condition since methods below update/add/remove throw same event
-      //eventbus.emit("DAY_UPDATE_EVT", this.day);
+      //eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
     //});
 
-    eventbus.on("INSTANCE_UPDATE_CMD", (instance) => {});
-    eventbus.on("INSTANCE_LOAD_CMD", (instance) => {});
+    eventbus.on(ee.INSTANCE_UPDATE_CMD, (instance) => {});
+    eventbus.on(ee.INSTANCE_LOAD_CMD, (instance) => {});
 
-    eventbus.on("SEGMENT_UPDATE_CMD", (segment) => {
-      console.log("DayStore caught SEGMENT_UPDATE_CMD");
+    eventbus.on(ee.SEGMENT_UPDATE_CMD, (segment) => {
+      console.log(`DayStore caught SEGMENT_UPDATE_CMD`);
       this.updateSegmentInStore(segment);
     });
-    eventbus.on("SEGMENT_ADD_CMD", (segment) => {
+    eventbus.on(ee.SEGMENT_ADD_CMD, (segment) => {
       this.addSegmentToStore(segment);
     });
-    eventbus.on("SEGMENT_REMOVE_CMD", (segment) => {
+    eventbus.on(ee.SEGMENT_REMOVE_CMD, (segment) => {
       this.removeSegmentFromStore(segment);
     });
-    eventbus.on("SEGMENT_CLONE_CMD", (segment) => {
+    eventbus.on(ee.SEGMENT_CLONE_CMD, (segment) => {
       this.addSegmentToStore(segment, true);
     });
   }
@@ -80,7 +77,7 @@ export default class DayStore {
       if (training.uuid === segment.trainingUuid) {
         training.segments = updateSegment(_segment, clone(training.segments));
         training.total = makeTrainingTotal(clone(training.segments));
-        this.eventbus.emit("SEGMENTS_UPDATE_EVT", {
+        this.eventbus.emit(ee.SEGMENTS_UPDATE_EVT, {
           uuid: segment.trainingUuid,
           segments: training.segments,
           total: training.total,
@@ -104,7 +101,7 @@ export default class DayStore {
          training.segments = addSegment(segment, training.segments, overwriteUuid);
          training.total = makeTrainingTotal(clone(training.segments));
          console.dir(training.segments);
-         this.eventbus.emit("SEGMENTS_UPDATE_EVT", {
+         this.eventbus.emit(ee.SEGMENTS_UPDATE_EVT, {
            uuid: segment.trainingUuid,
            segments: training.segments,
            total: training.total,
@@ -124,7 +121,7 @@ export default class DayStore {
        if (training.uuid === segment.trainingUuid) {
          training.segments = removeSegment(segment, training.segments);
          training.total = makeTrainingTotal(training.segments);
-         this.eventbus.emit("SEGMENTS_UPDATE_EVT", {
+         this.eventbus.emit(ee.SEGMENTS_UPDATE_EVT, {
             uuid: segment.trainingUuid,
            segments: training.segments,
            total: training.total,

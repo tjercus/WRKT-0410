@@ -1,5 +1,5 @@
 import EventEmitter from "eventemitter2";
-
+import {EventsEnum as ee} from "../constants";
 const HOST = "http://localhost:3333/";
 
 export default class RemoteDataService {
@@ -9,31 +9,31 @@ export default class RemoteDataService {
    * @param  {EventEmitter} eventbus
    */
   constructor(eventbus) {
-    eventbus.on("PLANLIST_FETCH_CMD", () => {
-      this.fetchJson("plans", "PLANLIST_FETCHED_EVT", "PLANLIST_FETCH_ERROR_EVT", eventbus);
+    eventbus.on(ee.PLANLIST_FETCH_CMD, () => {
+      this.fetchJson("plans", ee.PLANLIST_FETCH_EVT, ee.PLANLIST_FETCH_ERROR_EVT, eventbus);
     });
 
-    eventbus.on("TRAININGS_FETCH_CMD", () => {
-      this.fetchJson("trainings", "TRAININGS_FETCHED_EVT", "TRAININGS_FETCH_ERROR_EVT", eventbus);
+    eventbus.on(ee.TRAININGS_FETCH_CMD, () => {
+      this.fetchJson("trainings", ee.TRAININGS_FETCH_EVT, ee.TRAININGS_FETCH_ERROR_EVT, eventbus);
     });
 
-    eventbus.on("TRAININGS_PERSIST_CMD", (trainings) => {
+    eventbus.on(ee.TRAININGS_PERSIST_CMD, (trainings) => {
       if (trainings !== null) {
         this.persistTrainings(trainings, eventbus);
       }
     });
 
-    eventbus.on("PLAN_FETCH_CMD", (uuid) => {
+    eventbus.on(ee.PLAN_FETCH_CMD, (uuid) => {
       this.fetchMultiple([`plans/${uuid}`, `traininginstances/${uuid}`],
-        "PLAN_FETCHED_EVT", "PLAN_FETCH_ERROR_EVT", eventbus);
+        ee.PLAN_FETCH_EVT, ee.PLAN_FETCH_ERROR_EVT, eventbus);
     });
 
-    eventbus.on("PLAN_AND_INSTANCES_PERSIST_CMD", (plan, instances) => {
+    eventbus.on(ee.PLAN_AND_INSTANCES_PERSIST_CMD, (plan, instances) => {
       this.persistExistingPlan(plan, eventbus);
       this.persistInstances(plan.uuid, instances, eventbus);
     });
 
-    eventbus.on("PLAN_ADD_CMD", plan => this.persistNewPlan(plan, eventbus));
+    eventbus.on(ee.PLAN_ADD_CMD, plan => this.persistNewPlan(plan, eventbus));
   }
 
   fetchOne(noun) {
@@ -83,9 +83,9 @@ export default class RemoteDataService {
         method: "PUT",
         body: trainingsStr,
       }).then((response) => {
-        eventbus.emit("TRAININGS_PERSIST_EVT");
+        eventbus.emit(ee.TRAININGS_PERSIST_EVT);
       }).catch((error) => {
-        eventbus.emit("TRAININGS_PERSIST_ERROR_EVT", error);
+        eventbus.emit(ee.TRAININGS_PERSIST_ERROR_EVT, error);
       });
     }
   }
@@ -97,9 +97,9 @@ export default class RemoteDataService {
         method: "POST",
         body: planStr,
       }).then((response) => {
-        eventbus.emit("PLAN_ADD_EVT");
+        eventbus.emit(ee.PLAN_ADD_EVT);
       }).catch((error) => {
-        eventbus.emit("PLAN_ADD_ERROR_EVT", error);
+        eventbus.emit(ee.PLAN_ADD_ERROR_EVT, error);
       });
     }
   }
@@ -111,9 +111,9 @@ export default class RemoteDataService {
         method: "PUT",
         body: planStr,
       }).then((response) => {
-        eventbus.emit("PLAN_PERSIST_EVT");
+        eventbus.emit(ee.PLAN_PERSIST_EVT);
       }).catch((error) => {
-        eventbus.emit("PLAN_PERSIST_ERROR_EVT", error);
+        eventbus.emit(ee.PLAN_PERSIST_ERROR_EVT, error);
       });
     }
   }
@@ -125,9 +125,9 @@ export default class RemoteDataService {
         method: "PUT",
         body: instancesStr,
       }).then((response) => {
-        eventbus.emit("INSTANCES_PERSIST_EVT");
+        eventbus.emit(ee.INSTANCES_PERSIST_EVT);
       }).catch((error) => {
-        eventbus.emit("INSTANCES_PERSIST_ERROR_EVT", error);
+        eventbus.emit(ee.INSTANCES_PERSIST_ERROR_EVT, error);
       });
     }
   }

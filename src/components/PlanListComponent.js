@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import {EventsEnum as ee} from "./constants";
+import {EventsEnum as ee} from "../constants";
 import PlanEditComponent from "./PlanEditComponent";
 
 export default class PlanListComponent extends React.Component {
@@ -21,24 +21,24 @@ export default class PlanListComponent extends React.Component {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
 
-    this.props.eventbus.on("PLANLIST_FETCHED_EVT", (planlist) => {
+    this.props.eventbus.on(ee.PLANLIST_FETCH_EVT, (planlist) => {
       this.setState({planlist: planlist});
     });
 
-    this.props.eventbus.on("PLAN_LOAD_EVT", (plan) => {
+    this.props.eventbus.on(ee.PLAN_LOAD_EVT, (plan) => {
       this.setState({ isVisible: false });
-      this.props.eventbus.emit("MENU_CLICK_EVT", "menu-item-timeline");
+      this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-timeline");
     });
 
-    this.props.eventbus.on("PLAN_ADD_EVT", () => {
-      this.props.eventbus.emit("PLANLIST_FETCH_CMD");
+    this.props.eventbus.on(ee.PLAN_ADD_EVT, () => {
+      this.props.eventbus.emit(ee.PLANLIST_FETCH_CMD);
     });
   }
 
   onClick(evt) {
     const uuid = evt.target.attributes[1].nodeValue;
     this.setState({selectedUid: uuid});
-    this.props.eventbus.emit("PLAN_FETCH_CMD", uuid);
+    this.props.eventbus.emit(ee.PLAN_FETCH_CMD, uuid);
   } 
 
   render() {

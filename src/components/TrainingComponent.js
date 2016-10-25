@@ -1,7 +1,7 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
-import {EventsEnum as ee} from "./constants";
+import {EventsEnum as ee} from "../constants";
 
 const DEFAULT_STATE = {
   uuid: null,
@@ -14,7 +14,7 @@ const DEFAULT_STATE = {
     duration: "00:00:00",
     pace: "00:00"
   }
-}
+};
 
 export default class TrainingComponent extends React.Component {
 
@@ -169,7 +169,7 @@ export default class TrainingComponent extends React.Component {
     let totalDistance = 0;
     if (this.state.total && this.state.total.distance) {
       totalDistance = (this.state.total.distance).toFixed(3);
-    };
+    }
 
     // TODO refactor to ButtonChoiceComponent
     const type1ButtonClassName = (this.state.type === "workout") ? "button-choice button-choice-selected" : "button-choice";

@@ -20,7 +20,7 @@ test("Component should render", (assert) => {
   //const onSpy = sinon.spy(eventbus, "on");
   const component = mount(<PlanListComponent eventbus={eventbus} />);
 
-  eventbus.emit("PLANLIST_FETCHED_EVT", plans);
+  eventbus.emit("PLANLIST_FETCH_EVT", plans);
 
   assert.equal(component.find('ul').children().length, 2);
   assert.end();

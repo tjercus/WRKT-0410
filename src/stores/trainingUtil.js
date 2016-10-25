@@ -2,6 +2,15 @@ import { clone, hasProperty } from "./miscUtil";
 import {augmentSegmentData, makeTrainingTotal} from "./segmentUtil";
 
 /**
+ * @typedef {Object} Training
+ * @property {string} uuid
+ * @property {string} type
+ * @segments {Array<Segment>} segments
+ * @property {Total} total
+ * @alias TrainingInstance
+ */
+
+/**
  * Finds a training or an instance
  * @param  {string} uuid - id
  * @param  {Array<Training|TrainingInstance>} trainings - the collection to search

@@ -16,7 +16,7 @@ import { clone, hasProperty } from "../stores/miscUtil";
 import packageJSON from "../../package.json";
 import RemoteDataService from "../stores/RemoteDataService";
 
-import {EventsEnum as ee} from "./constants";
+import {EventsEnum as ee} from "../constants";
 
 const trainings = [];
 
@@ -39,16 +39,14 @@ export default class AppComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.eventbus.emit("SET_NOTIFICATION_TIMEOUT", 20000);
+    this.eventbus.emit(ee.SET_NOTIFICATION_TIMEOUT_CMD, 20000);
     this.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-training");
-    this.eventbus.emit("PLANLIST_FETCH_CMD");
-    this.eventbus.emit("TRAININGS_FETCH_CMD");
+    this.eventbus.emit(ee.PLANLIST_FETCH_CMD);
+    this.eventbus.emit(ee.TRAININGS_FETCH_CMD);
     if (this.props.startWithDefaultTraining) {
-      setTimeout(() => this.eventbus.emit("TRAINING_LOAD_CMD", "new-training"),
+      setTimeout(() => this.eventbus.emit(ee.TRAINING_LOAD_CMD, "new-training"),
         200);
     }
-    // TODO remove this, it is used in test
-    //this.eventbus.emit("PLAN_FETCH_CMD", "a83a78aa-5d69-11e6-b3a3-1f76e6105d92");
   }
 
   render() {

@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import { clone } from "../stores/miscUtil";
+import {EventsEnum as ee} from "../constants";
 
 export default class TrainingListComponent extends React.Component {
 
@@ -15,30 +15,30 @@ export default class TrainingListComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
+    this.props.eventbus.on(ee.MENU_CLICK_EVT, (menuItemName) => {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
 
-    this.props.eventbus.on("TRAININGS_FETCHED_EVT", (trainings) => {
+    this.props.eventbus.on(ee.TRAININGS_FETCH_EVT, (trainings) => {
       this.setState({ trainings: trainings });
     });
 
-    this.props.eventbus.on("TRAININGS_UPDATE_EVT", (trainings) => {
+    this.props.eventbus.on(ee.TRAININGS_UPDATE_EVT, (trainings) => {
       if (trainings === undefined || trainings === null) {
         throw new Error("TRAININGS_UPDATE_EVT was caught without a list of trainings");
       }
       this.setState({ trainings: trainings });
     });
 
-    this.props.eventbus.on("TRAINING_LOAD_EVT", (training) => {
+    this.props.eventbus.on(ee.TRAINING_LOAD_EVT, (training) => {
       this.setState({ selectedUid: training.uuid });
     });
 
-    this.props.eventbus.on("TRAINING_UPDATE_EVT", (obj) => {
+    this.props.eventbus.on(ee.TRAINING_UPDATE_EVT, (obj) => {
       this.setState({ trainings: obj.trainings });
     });
 
-    this.props.eventbus.on("TRAINING_REMOVE_EVT", (trainings) => {
+    this.props.eventbus.on(ee.TRAINING_REMOVE_EVT, (trainings) => {
       this.setState({ trainings: trainings });
     });
   }
@@ -49,7 +49,7 @@ export default class TrainingListComponent extends React.Component {
     // TODO find out why evt.target.value does not work anymore?
     this.setState({ selectedUid: uuid });
     console.log(`Selecting item [${uuid}] in list`);
-    this.props.eventbus.emit("TRAINING_LOAD_CMD", uuid);
+    this.props.eventbus.emit(ee.TRAINING_LOAD_CMD, uuid);
   }
 
   render() {
@@ -69,4 +69,9 @@ export default class TrainingListComponent extends React.Component {
       </section>
     );
   }
+};
+TrainingListComponent.propTypes = {
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  name: React.PropTypes.string.isRequired,
+  from: React.PropTypes.string.isRequired,
 };

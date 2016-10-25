@@ -13,8 +13,22 @@ import {
 } from "./miscUtil";
 
 /**
+ * @typedef {Object} Plan
+ * @property {string} uuid
+ * @property {string} name
+ * @property {Array<Day>} days
+ * @property {string} startDate
+ */
+
+/**
+ * @typedef {Object} Day
+ * @property {string} uuid
+ * @property {Array<Training>} trainings
+ */
+
+/**
  * Find a day in a list of days for a plan, augment the trainings in the day
- * @param  {uuid} dayUuid - identifier
+ * @param  {string} dayUuid - identifier
  * @param  {Plan} plan - contains days
  * @param  {Array<Training>} trainings | [] - used for augmenting trainings if needed
  * @return {Day} day - augmented day
@@ -31,7 +45,7 @@ export function findDay(dayUuid, plan, trainings = []) {
   }
   //if (isAugmentedDay(_days[index])) {
     console.log(`The day you requested @index ${index} was already augmented`);
-    return _days[index];
+    //return _days[index];
   //}
   return augmentDay(_days[index], clone(trainings));
 }
@@ -67,8 +81,8 @@ export function augmentDay(day, trainings) {
 /**
  * Takes an array of augmented days and flattens it so there are only
  *  references to instances instead of full traininginstance.
- * @param  {array<Day>} days - augmented as used in application
- * @return {array<Day>} days - flattened for storage
+ * @param  {Array<Day>} days - augmented as used in application
+ * @return {Array<Day>} days - flattened for storage
  */
 export function flattenDays(days) {
   const _days = clone(days);
@@ -86,8 +100,8 @@ export function flattenDays(days) {
 /**
  * Give a uuid for a day, remove it"s trainings
  * @param  {string} dayUuid - unique identifier for a day
- * @param  {array<Day>} days - original list of days
- * @return {array<Day>} days - without trainings for dayUuid
+ * @param  {Array<Day>} days - original list of days
+ * @return {Array<Day>} days - without trainings for dayUuid
  */
 export function removeTrainingsFromDay(dayUuid, days) {
   const _days = clone(days);

@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import {EventsEnum as ee} from "./constants";
+import {EventsEnum as ee} from "../constants";
 
 import TrainingInstanceComponent from "./TrainingInstanceComponent";
 
@@ -27,7 +27,7 @@ export default class DayEditComponent extends React.Component {
       this.setState({ day });
     });
 
-    // this.props.eventbus.on("SEGMENT_UPDATE_EVT", (segment) => {
+    // this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (segment) => {
     //   // TODO update total in the right day.trainings[x]
     //   // this.day.trainings etc.
     // });

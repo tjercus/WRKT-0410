@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-
+import {EventsEnum as ee} from "../constants";
 import TrainingComponent from "./TrainingComponent";
 
 export default class TrainingPanelComponent extends React.Component {
@@ -14,7 +14,7 @@ export default class TrainingPanelComponent extends React.Component {
 
   componentDidMount() {
     console.log(`TrainingPanelComponent did mount`);
-    this.props.eventbus.on("MENU_CLICK_EVT", (menuItemName) => {
+    this.props.eventbus.on(ee.MENU_CLICK_EVT, (menuItemName) => {
       console.log(`TrainingPanelComponent caught MENU_CLICK_EVT with ${menuItemName}`);
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });

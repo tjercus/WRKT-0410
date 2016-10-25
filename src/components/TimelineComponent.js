@@ -1,7 +1,7 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
 import moment from "moment";
-import {EventsEnum as ee} from "./constants";
+import {EventsEnum as ee} from "../constants";
 import { createUuid } from "../stores/miscUtil";
 
 import WeekComponent from "./WeekComponent";
@@ -57,12 +57,12 @@ export default class TimelineComponent extends React.Component {
   }
 
   onSaveButtonClick(evt) {
-    this.props.eventbus.emit("PLAN_PERSIST_CMD");
+    this.props.eventbus.emit(ee.PLAN_PERSIST_CMD);
   }
 
   // onEmptyClick(evt) {
   //   console.log(`TimelineComponent onEmptyClick with ${evt.target.value}`);
-  //   this.props.eventbus.emit("DAY_EMPTY_CMD", evt.target.value);
+  //   this.props.eventbus.emit(ee.DAY_EMPTY_CMD, evt.target.value);
   // }
   //
 

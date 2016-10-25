@@ -1,11 +1,10 @@
 
 export function createUuid() {
-  let uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+  "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
     let r = Math.random() * 16 | 0,
       v = c === "x" ? r : (r & 0x3 | 0x8);
     return v.toString(16);
   });
-  return uuid;
 }
 
 export function clone(obj) {
@@ -43,4 +42,5 @@ export function hasProperty(obj, propname) {
   return Object.prototype.hasOwnProperty.call(obj, propname);
 }
 
-const hasNothing = (value) => (value === null || value === "" || value === "00:00" || value === "00:00:00" || value <= 0);
+const hasNothing = (value) =>
+  (value === null || value === "" || value === "00:00" || value === "00:00:00" || value <= 0);
