@@ -44,12 +44,12 @@ export function findDay(dayUuid, plan, trainings = []) {
     throw new Error(`findDay could not find day with ${dayUuid}`);
   }
   //if (isAugmentedDay(_days[index])) {
-    console.log(`The day you requested @index ${index} was already augmented`);
 
   if (trainings && trainings.length > 0) {
-    return _days[index];
-  } else {
+    console.log(`The day you requested will be augmented with ${trainings.length} traininginstances`);
     return augmentDay(_days[index], clone(trainings));
+  } else {
+    return _days[index];
   }
 }
 
