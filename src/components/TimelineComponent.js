@@ -93,7 +93,7 @@ export default class TimelineComponent extends React.Component {
         <div className="panel-body">
            <table className="days-table">
             <tbody>
-              {weeks.map(week => <WeekComponent eventbus={this.props.eventbus} week={week} key={createUuid()} />)}              
+              {weeks.map(week => <WeekComponent eventbus={this.props.eventbus} week={week} key={Math.random()} />)}
             </tbody>
            </table>
            {ifNoWeeksMessage}

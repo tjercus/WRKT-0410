@@ -45,5 +45,4 @@ export default class WeekComponent extends React.Component {
 WeekComponent.propTypes = {
   eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
   week: React.PropTypes.object.isRequired,
-  key: React.PropTypes.string.isRequired,
 };

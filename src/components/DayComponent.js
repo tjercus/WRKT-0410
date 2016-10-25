@@ -144,9 +144,7 @@ export default class DayComponent extends React.Component {
 }
 
 DayComponent.propTypes = {
-  key: React.PropTypes.string.isRequired,
   eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
   day: React.PropTypes.object.isRequired,
-  dayNr: React.PropTypes.string.isRequired,
-  weekStartDate: React.PropTypes.object.isRequired,
+  dayNr: React.PropTypes.number.isRequired,
 };

@@ -45,9 +45,12 @@ export function findDay(dayUuid, plan, trainings = []) {
   }
   //if (isAugmentedDay(_days[index])) {
     console.log(`The day you requested @index ${index} was already augmented`);
-    //return _days[index];
-  //}
-  return augmentDay(_days[index], clone(trainings));
+
+  if (trainings && trainings.length > 0) {
+    return _days[index];
+  } else {
+    return augmentDay(_days[index], clone(trainings));
+  }
 }
 
 /**
