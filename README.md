@@ -15,6 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Move propTypes to static class property above constructor
 - Try out immutable JS (in a branch!)
 - Use TypeError instead of Error for checking parameters
 - yellow hint of change
