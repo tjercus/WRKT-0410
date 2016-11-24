@@ -1,6 +1,6 @@
 import test from "tape";
 
-import {createUuid, clone, hasNoRealValue, lpad} from "../src/stores/miscUtil";
+import {createUuid, clone, hasNoRealValue, lpad, hasProperty} from "../src/stores/miscUtil";
 
 // miscUtil-spec.js 
 test("createUuid should create a unique valid uuid", (assert) => {
@@ -102,6 +102,24 @@ test("lpad should work with real numerics", (assert) => {
 test("lpad should work with previously padded string", (assert) => {
   const num = "04";
   assert.equal(lpad(num), "04", "should still be padded with one zero for [" + num + "]");
+  assert.end();
+});
+
+test("hasProperty should work with filled objectproperty", (assert) => {
+  const obj = {"uuid": "sdkjh-kdsj-495-ldsv"};
+  assert.equal(hasProperty(obj, "uuid"), true, "should conclude true");
+  assert.end();
+});
+
+test("hasProperty should work with empty object", (assert) => {
+  const obj = {};
+  assert.equal(hasProperty(obj, "uuid"), false, "should conclude false for empty object");
+  assert.end();
+});
+
+test("hasProperty should work with null object", (assert) => {
+  const obj = null;
+  assert.equal(hasProperty(obj, "uuid"), false, "should conclude false for null object");
   assert.end();
 });
 

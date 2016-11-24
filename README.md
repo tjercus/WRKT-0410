@@ -16,6 +16,7 @@ Based on 'React eventemitter'.
 
 ### App
 - Move propTypes to static class property above constructor
+- Progressive web application support
 - Try out immutable JS (in a branch!)
 - Use TypeError instead of Error for checking parameters
 - yellow hint of change

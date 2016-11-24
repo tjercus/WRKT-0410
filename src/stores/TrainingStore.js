@@ -171,6 +171,7 @@ export default class TrainingStore {
    * @returns {void} - emit event instead
    */
   updateSegmentInStore(segment) {
+    console.log(`TrainingStore.updateSegmentInStore() with ${JSON.stringify(segment)}`);
     if (segment.trainingUuid !== this.uuid) {
       console.log(`TrainingStore.updateSegmentInStore IGNORING ${JSON.stringify(segment)}`);
       return false;

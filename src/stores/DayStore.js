@@ -8,7 +8,7 @@ import {
   updateSegment,
   makeTrainingTotal,
 } from "./segmentUtil";
-import {clone} from "./miscUtil";
+import {clone, hasProperty} from "./miscUtil";
 
 /**
  * Holds data for editing a day
@@ -55,7 +55,7 @@ export default class DayStore {
       this.updateSegmentInStore(segment);
     });
     eventbus.on(ee.SEGMENT_ADD_CMD, (segment) => {
-      this.addSegmentToStore(segment);
+      this.addSegmentToStore(segment, false);
     });
     eventbus.on(ee.SEGMENT_REMOVE_CMD, (segment) => {
       this.removeSegmentFromStore(segment);
@@ -71,19 +71,21 @@ export default class DayStore {
    * @returns {void} - emit event instead
    */
   updateSegmentInStore(segment) {
-    const _segment = augmentSegmentData(segment);
-    console.log(`DayStore.updateSegmentInStore after augmenting: ${JSON.stringify(_segment)}`);
-    this.day.trainings.forEach((training) => {
-      if (training.uuid === segment.trainingUuid) {
-        training.segments = updateSegment(_segment, clone(training.segments));
-        training.total = makeTrainingTotal(clone(training.segments));
-        this.eventbus.emit(ee.SEGMENTS_UPDATE_EVT, {
-          uuid: segment.trainingUuid,
-          segments: training.segments,
-          total: training.total,
-        });
-      }
-    });
+    if (hasProperty(this.day, "uuid")) {
+      const _segment = augmentSegmentData(segment);
+      console.log(`DayStore.updateSegmentInStore after augmenting: ${JSON.stringify(_segment)}`);
+      this.day.trainings.forEach((training) => {
+        if (training.uuid === segment.trainingUuid) {
+          training.segments = updateSegment(_segment, clone(training.segments));
+          training.total = makeTrainingTotal(clone(training.segments));
+          this.eventbus.emit(ee.SEGMENTS_UPDATE_EVT, {
+            uuid: segment.trainingUuid,
+            segments: training.segments,
+            total: training.total,
+          });
+        }
+      });
+    }
   }
 
   /**
@@ -93,21 +95,23 @@ export default class DayStore {
    * @returns {void} - emit event instead
    */
   addSegmentToStore(segment, overwriteUuid) {
-     console.log(`DayStore.addSegmentToStore`);
-     const _segment = augmentSegmentData(segment);
-     this.day.trainings.forEach((training) => {
-       if (training.uuid === segment.trainingUuid) {
-        console.log(`DayStore.addSegmentToStore found training ${training.uuid}`);
-         training.segments = addSegment(segment, training.segments, overwriteUuid);
-         training.total = makeTrainingTotal(clone(training.segments));
-         console.dir(training.segments);
-         this.eventbus.emit(ee.SEGMENTS_UPDATE_EVT, {
-           uuid: segment.trainingUuid,
-           segments: training.segments,
-           total: training.total,
-         });
-       }
-    });
+    if (hasProperty(this.day, "uuid")) {
+      console.log(`DayStore.addSegmentToStore`);
+      const _segment = augmentSegmentData(segment);
+      this.day.trainings.forEach((training) => {
+        if (training.uuid === _segment.trainingUuid) {
+          console.log(`DayStore.addSegmentToStore found training ${training.uuid}`);
+          training.segments = addSegment(_segment, training.segments, overwriteUuid);
+          training.total = makeTrainingTotal(clone(training.segments));
+          console.dir(training.segments);
+          this.eventbus.emit(ee.SEGMENTS_UPDATE_EVT, {
+            uuid: _segment.trainingUuid,
+            segments: training.segments,
+            total: training.total,
+          });
+        }
+      });
+    }
   }
 
    /**
@@ -116,17 +120,19 @@ export default class DayStore {
     * @returns {Void} - emit event instead
     */
    removeSegmentFromStore(segment) {
-     const _segment = augmentSegmentData(segment);
-     this.day.trainings.forEach((training) => {
-       if (training.uuid === segment.trainingUuid) {
-         training.segments = removeSegment(segment, training.segments);
-         training.total = makeTrainingTotal(training.segments);
-         this.eventbus.emit(ee.SEGMENTS_UPDATE_EVT, {
-            uuid: segment.trainingUuid,
-           segments: training.segments,
-           total: training.total,
-         });
-       }
-     });
+     if (hasProperty(this.day, "uuid")) {
+       const _segment = augmentSegmentData(segment);
+       this.day.trainings.forEach((training) => {
+         if (training.uuid === segment.trainingUuid) {
+           training.segments = removeSegment(_segment, training.segments);
+           training.total = makeTrainingTotal(training.segments);
+           this.eventbus.emit(ee.SEGMENTS_UPDATE_EVT, {
+             uuid: segment.trainingUuid,
+             segments: training.segments,
+             total: training.total,
+           });
+         }
+       });
+     }
    }
 }
