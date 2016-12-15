@@ -96,6 +96,7 @@ export default class TrainingStore {
       this.removeSegmentFromStore(segment);
     });
     eventbus.on(ee.SEGMENT_CLONE_CMD, (segment) => {
+      console.log(`TrainingStore caught SEGMENT_CLONE_CMD with ${JSON.stringify(segment)}`);
       this.addSegmentToStore(segment, true);
     });
   }
@@ -139,7 +140,9 @@ export default class TrainingStore {
   * @returns {void} - emit event instead
   */
   addSegmentToStore(segment, overwriteUuid) {
+    console.log(`TrainingStore.addSegmentToStore(${JSON.stringify(segment)}); overwrite uuid? ${overwriteUuid}`);
     if (segment.trainingUuid !== this.uuid) return;
+    console.log(`TrainingStore.addSegmentToStore(); segment.trainingUuid was EQUAL to the loaded training ${segment.trainingUuid}`);
     this.segments = addSegment(segment, this.segments, overwriteUuid);
     this.total = makeTrainingTotal(this.segments);
     this.eventbus.emit(ee.SEGMENT_ADD_EVT, {

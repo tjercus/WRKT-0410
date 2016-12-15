@@ -44,13 +44,17 @@ export function removeSegment(segment, segments) {
  * @param {boolean} overwriteUuid?
  */
 export function addSegment(segment, segments, overwriteUuid) {
+  console.log(`segmentUtils.addSegment original ${JSON.stringify(segment)}`);
   const _segment = clone(segment);
   const _segments = clone(segments);
   if (!hasProperty(_segment, "uuid") || !_segment.uuid ||
     (overwriteUuid !== undefined && overwriteUuid === true)) {
-    _segment.uuid = createUuid();
+    console.log(`segmentUtils.addSegment overwriting the uuid`);
+    _segment["uuid"] = createUuid();
   }
+  console.log(`segmentUtils.addSegment ${JSON.stringify(_segment)}`);
   const augmentedSegment = augmentSegmentData(_segment);
+  console.log(`segmentUtils.addSegment after augmenting ${JSON.stringify(augmentedSegment)}`);
   _segments.push(augmentedSegment);
   return _segments;
 }

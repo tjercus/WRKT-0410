@@ -486,6 +486,11 @@ test("addSegment should add a segment with a new UUID if asked to do so", (asser
   });
   console.log(JSON.stringify(newSegments));
   assert.ok((index === -1), "original uuid should not be found = " + index);
+  // check if all segments have a uuid property
+  const segmentWithoutUuid = newSegments.find((_segment) => {
+    return !_segment.hasOwnProperty("uuid");
+  });
+  assert.equal(segmentWithoutUuid, undefined);
   assert.end();
 });
 
