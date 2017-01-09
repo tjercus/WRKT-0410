@@ -44,6 +44,7 @@ export default class TimelineComponent extends React.Component {
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
     this.props.eventbus.on(ee.TRAINING_TO_PLAN_EVT, (plan) => {
+      console.log(`TimelineComponent caught TRAINING_TO_PLAN_EVT`);
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
   }

@@ -42,11 +42,13 @@ export function findDay(dayUuid, plan, trainings = []) {
   const index = _days.findIndex(byUuid);
   if (index < 0) {
     throw new Error(`findDay could not find day with ${dayUuid}`);
+  } else {
+    console.log(`timelineUtil.findDay index ${index}`);
   }
   //if (isAugmentedDay(_days[index])) {
 
   if (trainings && trainings.length > 0) {
-    console.log(`The day you requested will be augmented with ${trainings.length} traininginstances`);
+    console.log(`The day you requested (${JSON.stringify(_days[index])}) will be augmented using ${trainings.length} traininginstances`);
     return augmentDay(_days[index], clone(trainings));
   } else {
     return _days[index];
@@ -56,7 +58,7 @@ export function findDay(dayUuid, plan, trainings = []) {
 /**
  * lookup training for a day by uuid and add it to itself
  * @param { Object } day - flattened day object with ref to inflated day
- * @param { Array<TrainingInstance> } trainings - list of augmented TrainingInstance ojects
+ * @param { Array<TrainingInstance> } trainings - list of augmented TrainingInstance objects
  * @return { Day } - augmented day
  */
 export function augmentDay(day, trainings) {
@@ -73,11 +75,12 @@ export function augmentDay(day, trainings) {
   }
   // calculate total per training when multiple trainings
   for (let i = 0, len = _day.trainings.length; i < len; i++) {
-    //if (!isAugmentedTraining(_day.trainings[i])) {
-    _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
-    //}
+    if (hasProperty(_day.trainings[i], "instanceId")) {
+      _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
+    }
     _day.trainings[i].total = makeTrainingTotal(_day.trainings[i].segments);
   }
+  //console.log(`timelineUtils.augmentDay ${JSON.stringify(_day)}`);
   return _day;
 }
 

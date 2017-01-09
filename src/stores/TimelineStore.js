@@ -94,6 +94,7 @@ export default class TimelineStore {
     });
 
     eventbus.on(ee.DAY_DELETE_CMD, (dayUuid) => {
+      console.log(`TimelineStore on DAY_DELETE_CMD ${dayUuid}`);
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       this.traininginstances = removeTrainingInstancesForDay(oldDay, clone(this.traininginstances));
       this.plan.days = deleteDay(dayUuid, this.plan.days);
@@ -121,6 +122,7 @@ export default class TimelineStore {
         console.log(`TimelineStore caught TRAINING_CLONE_AS_INSTANCE_CMD 2. ${position}`);
         this.plan.days.unshift(augmentedDay);
       }
+      // console.log(`TimelineStore caught TRAINING_CLONE_AS_INSTANCE_CMD 3. plan: ${JSON.stringify(this.plan)}`);
       eventbus.emit(ee.TRAINING_TO_PLAN_EVT, this.plan);
     });
   }

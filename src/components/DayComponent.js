@@ -52,7 +52,9 @@ export default class DayComponent extends React.Component {
   }
 
   onDeleteClick(evt) {
-    this.props.eventbus.emit(ee.DAY_DELETE_CMD, evt.target.value);
+    const uuid = evt.target.attributes[1].nodeValue;
+    console.log(`DayComponent.onDeleteClick ${uuid}`);
+    this.props.eventbus.emit(ee.DAY_DELETE_CMD, uuid);
   }
 
   onSecondaryMenuClick(evt) {
