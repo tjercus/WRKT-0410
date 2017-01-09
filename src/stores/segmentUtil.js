@@ -43,13 +43,13 @@ export function removeSegment(segment, segments) {
  * @param  {Array<Segment>} segments
  * @param {boolean} overwriteUuid?
  */
-export function addSegment(segment, segments, overwriteUuid) {
+export function addSegment(segment, segments, overwriteUuid = false) {
   console.log(`segmentUtils.addSegment original ${JSON.stringify(segment)}`);
   const _segment = clone(segment);
   const _segments = clone(segments);
   if (!hasProperty(_segment, "uuid") || !_segment.uuid ||
     (overwriteUuid !== undefined && overwriteUuid === true)) {
-    console.log(`segmentUtils.addSegment overwriting the uuid`);
+    console.log(`segmentUtils.addSegment overwriting the segment uuid`);
     _segment["uuid"] = createUuid();
   }
   console.log(`segmentUtils.addSegment ${JSON.stringify(_segment)}`);
@@ -111,6 +111,7 @@ export function makeTrainingTotal(segments) {
   } else if (hasNoRealValue(totalObj, "duration")) {
     totalObj.duration = makeDuration(totalObj);
   }
+  console.log(`segmentUtils.makeTrainingTotal: ${JSON.stringify(totalObj)}`);
   return totalObj;
 }
 
@@ -279,6 +280,10 @@ const makeDistance = (segment) => {
   }
   const rawDistance = durationSeconds / paceSeconds;
   return Math.round(rawDistance * 1000) / 1000;
+};
+
+const isDuration = (str) => {
+  return /^(\d){2}(:)(\d){2}(:)(\d){2}/.test(str);
 };
 
 // TODO extract to config

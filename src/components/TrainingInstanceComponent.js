@@ -52,7 +52,7 @@ export default class TrainingInstanceComponent extends React.Component {
     }
 
     addEmptySegment() {
-      this.props.eventbus.emit(ee.INSTANCE_SEGMENT_ADD_CMD, {});
+      this.props.eventbus.emit(ee.INSTANCE_SEGMENT_ADD_CMD, {trainingUuid: this.props.training.uuid});
     }
 
     exportTraining() {

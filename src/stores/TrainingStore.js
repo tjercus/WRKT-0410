@@ -13,6 +13,7 @@ import {
 import {
   createUuid,
   clone,
+  hasProperty,
 } from "./miscUtil";
 import {EventsEnum as ee} from "../constants";
 
@@ -139,17 +140,18 @@ export default class TrainingStore {
   * @param {boolean} overwriteUuid - new uuid or keep old?
   * @returns {void} - emit event instead
   */
-  addSegmentToStore(segment, overwriteUuid) {
+  addSegmentToStore(segment, overwriteUuid = false) {
     console.log(`TrainingStore.addSegmentToStore(${JSON.stringify(segment)}); overwrite uuid? ${overwriteUuid}`);
-    if (segment.trainingUuid !== this.uuid) return;
-    console.log(`TrainingStore.addSegmentToStore(); segment.trainingUuid was EQUAL to the loaded training ${segment.trainingUuid}`);
-    this.segments = addSegment(segment, this.segments, overwriteUuid);
-    this.total = makeTrainingTotal(this.segments);
-    this.eventbus.emit(ee.SEGMENT_ADD_EVT, {
-      uuid: segment.trainingUuid,
-      segments: this.segments,
-      total: this.total,
-    });
+    if (hasProperty(segment, "trainingUuid") && segment.trainingUuid === this.uuid) {
+      console.log(`TrainingStore.addSegmentToStore(); segment.trainingUuid was EQUAL to the loaded training ${segment.trainingUuid}`);
+      this.segments = addSegment(segment, this.segments, overwriteUuid);
+      this.total = makeTrainingTotal(this.segments);
+      this.eventbus.emit(ee.SEGMENT_ADD_EVT, {
+       uuid: segment.trainingUuid,
+       segments: this.segments,
+       total: this.total,
+      });
+    }
   }
 
   /**
@@ -175,18 +177,18 @@ export default class TrainingStore {
    */
   updateSegmentInStore(segment) {
     console.log(`TrainingStore.updateSegmentInStore() with ${JSON.stringify(segment)}`);
-    if (segment.trainingUuid !== this.uuid) {
+    if (hasProperty(segment, "trainingUuid") && segment.trainingUuid === this.uuid) {
+      const _segment = augmentSegmentData(segment);
+      this.segments = updateSegment(_segment, this.segments);
+      this.total = makeTrainingTotal(this.segments);
+      this.eventbus.emit(ee.SEGMENT_UPDATE_EVT, {
+        uuid: segment.trainingUuid,
+        segment: _segment,
+        total: this.total,
+      });
+    } else {
       console.log(`TrainingStore.updateSegmentInStore IGNORING ${JSON.stringify(segment)}`);
-      return false;
     }
-    const _segment = augmentSegmentData(segment);
-    this.segments = updateSegment(_segment, this.segments);
-    this.total = makeTrainingTotal(this.segments);
-    this.eventbus.emit(ee.SEGMENT_UPDATE_EVT, {
-      uuid: segment.trainingUuid,
-      segment: _segment,
-      total: this.total,
-    });
   }
 
   /**

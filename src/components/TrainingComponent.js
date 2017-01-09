@@ -3,17 +3,19 @@ import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
 import {EventsEnum as ee} from "../constants";
 
+const DEFAULT_SEGMENT_DATA = {
+  distance: 0,
+  duration: "00:00:00",
+  pace: "00:00"
+};
+
 const DEFAULT_STATE = {
   uuid: null,
   name: "undefined",
   type: null,
   segments: [],
   isNameEditable: false,
-  total: {
-    distance: 0,
-    duration: "00:00:00",
-    pace: "00:00"
-  }
+  total: DEFAULT_SEGMENT_DATA
 };
 
 export default class TrainingComponent extends React.Component {
@@ -77,7 +79,8 @@ export default class TrainingComponent extends React.Component {
   }
 
   addEmptySegment() {
-    this.props.eventbus.emit(ee.SEGMENT_ADD_CMD, {});
+    this.props.eventbus.emit(ee.SEGMENT_ADD_CMD,
+      Object.assign({trainingUuid: this.state.uuid}, DEFAULT_SEGMENT_DATA));
   }
 
   emitPersistChanges() {
@@ -157,7 +160,8 @@ export default class TrainingComponent extends React.Component {
 
     let nameComponent = "";
     if (this.state.isNameEditable) {
-      nameComponent = <input type="text" id="edit-name-textfield" name="edit-name-textfield" value={this.state.name} onChange={this.onNameChange} onBlur={this.onNameBlur} />
+      nameComponent = <input type="text" id="edit-name-textfield" name="edit-name-textfield"
+                             value={this.state.name} onChange={this.onNameChange} onBlur={this.onNameBlur} />
     } else {
       nameComponent = <span id="name-label">{this.state.name}</span>;
     }
@@ -165,7 +169,8 @@ export default class TrainingComponent extends React.Component {
     let segments = this.state.segments || [];
     let segmentComponents = [];
     segments.forEach((segment, i) => {
-      segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus} segment={segment} trainingUuid={this.state.uuid} />);
+      segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus}
+                                               segment={segment} trainingUuid={this.state.uuid} />);
     });
 
     let totalDistance = 0;
@@ -174,21 +179,26 @@ export default class TrainingComponent extends React.Component {
     }
 
     // TODO refactor to ButtonChoiceComponent
-    const type1ButtonClassName = (this.state.type === "workout") ? "button-choice button-choice-selected" : "button-choice";
-    const type2ButtonClassName = (this.state.type === "easy") ? "button-choice button-choice-selected" : "button-choice";
+    const type1ButtonClassName = (this.state.type === "workout")
+      ? "button-choice button-choice-selected" : "button-choice";
+    const type2ButtonClassName = (this.state.type === "easy")
+      ? "button-choice button-choice-selected" : "button-choice";
 
     if (this.state.uuid) {
       return (
         <section className={panelClassName}>
           <header className="panel-header">
             {nameComponent}
-            <button id="edit-name-button" onClick={this.onEditNameButtonClick} className="button-small button-flat">{"edit"}</button>
+            <button id="edit-name-button" onClick={this.onEditNameButtonClick}
+                    className="button-small button-flat">{"edit"}</button>
           </header>
           <div className="panel-body">
             <fieldset name="type">
               Type of training &nbsp;
-              <button onClick={this.onTypeClick} value="workout" className={type1ButtonClassName}>{"workout"}</button>
-              <button onClick={this.onTypeClick} value="easy" className={type2ButtonClassName}>{"easy run"}</button>
+              <button onClick={this.onTypeClick} value="workout"
+                      className={type1ButtonClassName}>{"workout"}</button>
+              <button onClick={this.onTypeClick} value="easy"
+                      className={type2ButtonClassName}>{"easy run"}</button>
             </fieldset>
             <table summary="training segments">
               <thead>

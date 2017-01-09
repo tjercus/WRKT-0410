@@ -50,6 +50,7 @@ export const EventsEnum = Object.freeze(keyMirror({
   SEGMENTS_UPDATE_CMD: null,
   SEGMENTS_UPDATE_EVT: null,
   SET_NOTIFICATION_TIMEOUT_CMD: null,
+  TRAINING_ADD_EVT: null,
   TRAINING_CLEAR_CMD: null,
   TRAINING_CLEAR_EVT: null,
   TRAINING_CLONE_CMD: null,

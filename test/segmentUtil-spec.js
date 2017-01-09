@@ -96,6 +96,23 @@ test("makeTrainingTotal with three digit decimal precision distances should retu
   assert.end();
 });
 
+/*
+test("makeTrainingTotal should return an object with complete data when one segment is empty", (assert) => {
+  let segments = [{
+    distance: 16,
+    duration: "01:10:23"
+  }, {
+    uuid: "skdjfskdj",
+    trainingUtil: "4598ndfngd",
+  }];
+  var total = makeTrainingTotal(segments);
+  assert.equal(total.distance, 16.000);
+  assert.equal(total.duration, "01:10:23");
+  assert.equal(total.pace, "04:24");
+  assert.end();
+});
+*/
+
 test("makeTrainingTotal should return an object with complete data on one segment with missing duration", (assert) => {
   let segments = [{
     distance: 12.930,
