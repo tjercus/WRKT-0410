@@ -1,13 +1,96 @@
 [
 	{
 		"uuid": "new-training",
-		"name": "New Training",
+		"name": "6 x 3k @MP",
+		"type": "workout",
 		"segments": [
 			{
+				"trainingUuid": "new-training",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
-				"distance": 0,
-				"duration": "00:00:00",
-				"pace": "00:00"
+				"distance": "3",
+				"duration": "00:12:30",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
+				"distance": "3",
+				"duration": "00:12:30",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
+				"distance": "3",
+				"duration": "00:12:30",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
+				"distance": "3",
+				"duration": "00:12:30",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
+				"distance": "3",
+				"duration": "00:12:30",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "05ec5bb1-9918-4ea4-a9f9-572941c0cf62",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "1d03d54c-75b7-412f-8204-579c9d1765cf",
+				"distance": "3",
+				"duration": "00:12:30",
+				"pace": "04:10",
+				"isValid": true
 			}
 		]
 	},
@@ -2974,6 +3057,161 @@
 				"distance": "2",
 				"duration": "00:10:20",
 				"pace": "05:10",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "fc01c1bf-5f5e-4f4c-9718-e503efe05935",
+		"name": "Long run 25km @MP+10%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "fc01c1bf-5f5e-4f4c-9718-e503efe05935",
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "25.2",
+				"duration": "01:55:00",
+				"pace": "04:34",
+				"isValid": false
+			}
+		]
+	},
+	{
+		"uuid": "97473ec5-9244-44c6-a06a-89c24dd804be",
+		"name": "Long run 28km @MP+10%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "97473ec5-9244-44c6-a06a-89c24dd804be",
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "28",
+				"duration": "02:08:20",
+				"pace": "04:35",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "8c12a07f-aa83-4e99-9869-3a89ecebf7ff",
+		"name": "Long run 32km @MP+10%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "8c12a07f-aa83-4e99-9869-3a89ecebf7ff",
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "32",
+				"duration": "02:26:40",
+				"pace": "04:35",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+		"name": "Easy run 18km",
+		"type": "easy",
+		"segments": [
+			{
+				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"uuid": "46",
+				"distance": "18",
+				"duration": "01:33:00",
+				"pace": "05:10",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+		"name": "Fartlek 32min",
+		"type": "easy",
+		"segments": [
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "50",
+				"distance": "2",
+				"duration": "00:10:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "746be6e6-147c-4f72-902f-1a1d5b0ae177",
+				"distance": 0.282,
+				"duration": "00:01:00",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "25cb5cd0-2281-490b-ba8f-1a86752cd52e",
+				"distance": 0.2,
+				"duration": "00:01:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "6c9773a6-0043-4286-8bd3-93797ba4831f",
+				"distance": 0.282,
+				"duration": "00:01:00",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "af231e66-f354-49af-9520-9f40799c8652",
+				"distance": 0.2,
+				"duration": "00:01:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "95d51136-8798-4be4-a62c-db22eadea48d",
+				"distance": 0.282,
+				"duration": "00:01:00",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "c5385d38-5852-420d-ad6d-0f8ed2812fc9",
+				"distance": 0.2,
+				"duration": "00:01:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "0a241fb1-c26f-411f-846d-ce7ae7bc0a48",
+				"distance": 0.282,
+				"duration": "00:01:00",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "c4c83a5c-3a2d-4e50-ab22-d576484c7197",
+				"distance": 0.2,
+				"duration": "00:01:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "47e9d232-d803-4c41-911d-e0792e742a13",
+				"distance": 0.282,
+				"duration": "00:01:00",
+				"pace": "03:33",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "c9effc40-c6a4-4344-9cf9-1bedaefc002d",
+				"uuid": "360a8292-e786-4e05-a04f-4c9eb4dccf49",
+				"distance": 0.2,
+				"duration": "00:01:00",
+				"pace": "05:00",
 				"isValid": true
 			}
 		]
