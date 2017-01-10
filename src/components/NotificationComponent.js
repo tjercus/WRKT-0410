@@ -19,18 +19,20 @@ export default class NotificationComponent extends React.Component {
 
   componentDidMount() {
     this.props.eventbus.onAny((type, data) => {
-      if (type === ee.SET_NOTIFICATION_TIMEOUT_CMD) {
-        this.notificationTimeout = data;
-      }
+      if (type) {
+        if (type === ee.SET_NOTIFICATION_TIMEOUT_CMD) {
+          this.notificationTimeout = data;
+        }
 
-      const typeParts = type.split("_");
-      if (typeParts.pop() === "EVT") {
-        const msg = this.createNotification(type, data);
-        if (msg !== null) {
-          this.addMessage(msg);
-          setTimeout(() => {
-            this.removeLastMessage();
-          }, this.notificationTimeout);
+        const typeParts = type.split("_");
+        if (typeParts.pop() === "EVT") {
+          const msg = this.createNotification(type, data);
+          if (msg !== null) {
+            this.addMessage(msg);
+            setTimeout(() => {
+              this.removeLastMessage();
+            }, this.notificationTimeout);
+          }
         }
       }
     });

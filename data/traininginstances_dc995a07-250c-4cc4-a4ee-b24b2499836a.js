@@ -351,5 +351,117 @@
 			"duration": "01:38:20",
 			"pace": "04:17"
 		}
+	},
+	{
+		"uuid": "be7adc38-8250-409d-8bfd-32bb7acc7268",
+		"name": "5 x 4k @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
+				"distance": "4",
+				"duration": "00:16:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
+				"distance": "4",
+				"duration": "00:16:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
+				"distance": "4",
+				"duration": "00:16:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
+				"distance": "4",
+				"duration": "00:16:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
+				"distance": "4",
+				"duration": "00:16:40",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "05ec5bb1-9918-4ea4-a9f9-572941c0cf62",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 25,
+			"duration": "01:46:40",
+			"pace": "04:16"
+		}
+	},
+	{
+		"uuid": "5394d9b3-8971-4bb3-80c0-8fb99b2c1c7f",
+		"name": "Long run 28km @MP+15%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "0623a52f-3b7c-4a03-99a4-ff507af7aef7",
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "28",
+				"duration": "02:12:04",
+				"pace": "04:43",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 28,
+			"duration": "02:12:04",
+			"pace": "04:43"
+		}
 	}
 ]

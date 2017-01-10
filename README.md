@@ -56,6 +56,8 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
+- Fix bug with 'move left' and index out of bounds
+- Show a dialog 'save current timeline?' when switching plans
 - Fix by on displaying a changed segment in DayEditComponent
 - Use a Map (uuid as key) for segments in TrainingInstance
 - Use a Map (uuid as key) for days in a plan
