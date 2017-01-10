@@ -3,7 +3,7 @@ import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
 import {EventsEnum as ee} from "../constants";
 
-const DEFAULT_SEGMENT_DATA = {
+const DEFAULT_TOTAL = {
   distance: 0,
   duration: "00:00:00",
   pace: "00:00"
@@ -15,7 +15,7 @@ const DEFAULT_STATE = {
   type: null,
   segments: [],
   isNameEditable: false,
-  total: DEFAULT_SEGMENT_DATA
+  total: DEFAULT_TOTAL
 };
 
 export default class TrainingComponent extends React.Component {
@@ -80,7 +80,7 @@ export default class TrainingComponent extends React.Component {
 
   addEmptySegment() {
     this.props.eventbus.emit(ee.SEGMENT_ADD_CMD,
-      Object.assign({trainingUuid: this.state.uuid}, DEFAULT_SEGMENT_DATA));
+      Object.assign({trainingUuid: this.state.uuid}, DEFAULT_TOTAL));
   }
 
   emitPersistChanges() {

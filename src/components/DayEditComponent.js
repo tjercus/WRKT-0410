@@ -11,7 +11,7 @@ export default class DayEditComponent extends React.Component {
     this.state = {
       isVisible: false,
       dayUuid: null,
-      day: null,
+      day: {trainings: []},
       selectedNr: 0,
     };
     this.onLoadTrainingClick = this.onLoadTrainingClick.bind(this); // TODO phat arrow
@@ -40,7 +40,7 @@ export default class DayEditComponent extends React.Component {
   onLoadTrainingClick(evt) {
     const nr = evt.target.value;
     this.setState({ selectedNr: nr });
-    this.props.eventbus.emit(ee.INSTANCE_LOAD_CMD, this.day.trainings[nr]);
+    this.props.eventbus.emit(ee.INSTANCE_LOAD_CMD, this.state.day.trainings[nr]);
   }
 
   /**
@@ -63,13 +63,20 @@ export default class DayEditComponent extends React.Component {
     ];
     let selectedTrainingComponent = "none";
     // TODO replace this crap!
-    if (this.state.day !== null && this.state.day.trainings) {
+    if (this.state.day !== null && this.state.day.trainings && this.state.day.trainings.length > 0) {
       trainings[0] = this.state.day.trainings[0];
       if (this.state.day.trainings.length === 2) {
         trainings[1] = this.state.day.trainings[1];
       }
       selectedTrainingComponent = <TrainingInstanceComponent eventbus={this.props.eventbus} training={trainings[this.state.selectedNr]} />;
     }
+
+    let trainingButtonListItems = this.state.day.trainings.map((training, i) => {
+      return <li>
+        <button onClick={this.onLoadTrainingClick} value={i}
+                className="button-small">{training.name}</button>
+      </li>;
+    });
 
     return (
       <section className={panelClassName}>
@@ -79,8 +86,7 @@ export default class DayEditComponent extends React.Component {
         <div className="panel-body">
           <h3>{"Trainings"}</h3>
           <ul>
-            <li><button onClick={this.onLoadTrainingClick} value={0} className="button-small">{trainings[0].name}</button></li>
-            <li><button onClick={this.onLoadTrainingClick} value={1} className="button-small">{trainings[1].name}</button></li>
+            {trainingButtonListItems}
           </ul>
           {selectedTrainingComponent}
         </div>
