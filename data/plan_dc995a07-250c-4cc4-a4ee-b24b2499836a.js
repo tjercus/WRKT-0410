@@ -1,7 +1,6 @@
 {
 	"uuid": "dc995a07-250c-4cc4-a4ee-b24b2499836a",
 	"name": "Canova/Jenkins 2:55",
-  "startDate": "2017-01-08",
 	"days": [
 		{
 			"uuid": "1c69ab6a-be49-4dd8-a537-f4f4f0c49eb7",
@@ -123,5 +122,6 @@
 				}
 			]
 		}
-	]
+	],
+	"startDate": "2017-01-08"
 }

@@ -8,7 +8,7 @@ import {
   deleteDay,
 } from "./timelineUtil";
 import {EventsEnum as ee} from "../constants";
-import { removeTrainingInstancesForDay } from "./trainingUtil";
+import { removeTrainingInstancesForDay, updateTraining } from "./trainingUtil";
 import { clone, createUuid } from "./miscUtil";
 
 /**
@@ -60,9 +60,14 @@ export default class TimelineStore {
 
     eventbus.on(ee.DAY_UPDATE_CMD, (day) => {
       console.log("TimelineStore caught DAY_UPDATE_CMD: update local plan");
-      const byUuid = (_day) => String(_day.uuid) === String(day.uuid);
+      const byUuid = _day => String(_day.uuid) === String(day.uuid);
       const index = this.plan.days.findIndex(byUuid);
       this.plan.days[index] = day;
+
+      day.trainings.map(training => {
+        this.traininginstances = updateTraining(training, clone(this.traininginstances));
+      });
+
       eventbus.emit(ee.DAY_UPDATE_EVT, this.plan);
     });
 

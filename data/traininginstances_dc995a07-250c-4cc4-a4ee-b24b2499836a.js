@@ -523,8 +523,8 @@
 	},
 	{
 		"uuid": "00c3c11d-ce1e-4652-b7bc-30e52492fbcf",
-		"name": "20k Steady state long run",
-		"type": "workout",
+		"name": "0",
+		"type": "easy",
 		"segments": [
 			{
 				"uuid": "999",
@@ -533,11 +533,6 @@
 				"duration": "01:35:00",
 				"isValid": true
 			}
-		],
-		"total": {
-			"distance": 20,
-			"duration": "01:35:00",
-			"pace": "04:45"
-		}
+		]
 	}
 ]
