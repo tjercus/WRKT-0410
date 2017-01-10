@@ -1,7 +1,6 @@
 {
 	"uuid": "dc995a07-250c-4cc4-a4ee-b24b2499836a",
 	"name": "Canova/Jenkins 2:55",
-  "startDate": "2017-01-08",
 	"days": [
 		{
 			"uuid": "1c69ab6a-be49-4dd8-a537-f4f4f0c49eb7",
@@ -60,18 +59,18 @@
 			]
 		},
 		{
-			"uuid": "a99ec7f6-acb8-4803-8d2a-ae4721482645",
-			"trainings": [
-				{
-					"instanceId": "67623552-74dc-44d7-a453-a27092558d28"
-				}
-			]
-		},
-		{
 			"uuid": "fbb161db-2e00-4137-92e6-ea9e04638451",
 			"trainings": [
 				{
 					"instanceId": "e9598e15-c264-4114-9ad2-b7ec6139298e"
+				}
+			]
+		},
+		{
+			"uuid": "a99ec7f6-acb8-4803-8d2a-ae4721482645",
+			"trainings": [
+				{
+					"instanceId": "67623552-74dc-44d7-a453-a27092558d28"
 				}
 			]
 		},

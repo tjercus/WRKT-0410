@@ -139,8 +139,11 @@ export function moveDay(dayUuid, days, positions) {
   const _days = clone(days);
   const byUuid = (_day) => String(_day.uuid) === String(dayUuid);
   const index = _days.findIndex(byUuid);
+  console.log(`timelineUtil moveDay ${dayUuid} index: ${index}, length: ${days.length}`);
   if (index > -1) {
-    return pureSwap(_days, index, index + positions);
+    const temp = pureSwap(_days, index, index + positions);
+    console.log(`timelineUtil moveDay result ${JSON.stringify(temp)}, length: ${days.length}`);
+    return temp;
   }
   throw new Error("Could not move day");
 }

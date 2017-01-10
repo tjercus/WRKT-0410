@@ -71,10 +71,13 @@ export default class TimelineComponent extends React.Component {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     // TODO, from datepicker or other UI component
     let weekStartDate = moment(this.state.startDate);
-    var weeks = [];
-    for (var i = 0; i < this.state.days.length; i++) {
+    let weeks = [];
+    console.log(`TimelineComponent render ${this.state.days.length}`);
+    for (let i = 0; i < this.state.days.length; i++) {
       weeks.push({"days": this.state.days.slice(i, i += 7), "weekStartDate": weekStartDate});
+      console.log(`TimelineComponent render, week: i: ${i}`);
       weekStartDate = weekStartDate.clone().add(1, "week");
+      i--; // TODO fix this ugly fix
     }
 
     const ifNoWeeksMessage = (this.state.days.length === 0) ? "There are no days in this timeline ..." : null;

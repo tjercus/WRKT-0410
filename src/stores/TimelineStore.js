@@ -73,6 +73,7 @@ export default class TimelineStore {
     }));
 
     eventbus.on(ee.DAY_MOVE_CMD, ((dayUuid, positions) => {
+      console.log(`TimelineStore on DAY_MOVE_CMD ${dayUuid}`);
       this.plan.days = moveDay(dayUuid, this.plan.days, positions);
       eventbus.emit(ee.DAY_MOVE_EVT, this.plan);
     }));
