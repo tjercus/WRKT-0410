@@ -1674,7 +1674,6 @@
 		]
 	},
 	{
-		"isVisible": true,
 		"uuid": "1f43de2e-fd9a-480f-882e-e23ec02a0afe",
 		"name": "20k @MP",
 		"type": "workout",
@@ -1686,13 +1685,7 @@
 				"duration": "01:06:40",
 				"isValid": true
 			}
-		],
-		"isNameEditable": true,
-		"total": {
-			"distance": 16,
-			"duration": "01:06:40",
-			"pace": "04:10"
-		}
+		]
 	},
 	{
 		"isVisible": true,

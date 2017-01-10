@@ -169,6 +169,14 @@
 					"instanceId": "2841b5ba-0622-44fb-b5ac-84f2abde1f5a"
 				}
 			]
+		},
+		{
+			"uuid": "bf4b6a6e-a1fd-4bc3-97f0-2bc2b5e19c72",
+			"trainings": [
+				{
+					"instanceId": "aadacce2-8a3a-4f4c-80b2-1ce3db8f69b7"
+				}
+			]
 		}
 	],
 	"startDate": "2017-01-08"

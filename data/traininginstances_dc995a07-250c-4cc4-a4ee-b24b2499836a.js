@@ -835,5 +835,24 @@
 			"duration": "00:10:00",
 			"pace": "05:00"
 		}
+	},
+	{
+		"uuid": "aadacce2-8a3a-4f4c-80b2-1ce3db8f69b7",
+		"name": "20k @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "47",
+				"distance": 16,
+				"pace": "04:10",
+				"duration": "01:06:40",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 16,
+			"duration": "01:06:40",
+			"pace": "04:10"
+		}
 	}
 ]
