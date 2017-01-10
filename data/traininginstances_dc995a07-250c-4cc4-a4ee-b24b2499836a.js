@@ -463,5 +463,81 @@
 			"duration": "02:12:04",
 			"pace": "04:43"
 		}
+	},
+	{
+		"uuid": "146ed7a9-6a68-4c7f-abed-6f512cda239f",
+		"name": "Easy run 16km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "16",
+				"duration": "01:22:40",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 16,
+			"duration": "01:22:40",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "d1a99709-5046-4751-be9d-0d0a5a9cb588",
+		"name": "Easy run 16km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "16",
+				"duration": "01:22:40",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 16,
+			"duration": "01:22:40",
+			"pace": "05:10"
+		}
+	},
+	{
+		"uuid": "bdaf76a1-0dae-4783-8fed-a12b3f95999c",
+		"name": "20k Steady state long run",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "999",
+				"distance": 20,
+				"pace": "04:45",
+				"duration": "01:35:00",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 20,
+			"duration": "01:35:00",
+			"pace": "04:45"
+		}
+	},
+	{
+		"uuid": "00c3c11d-ce1e-4652-b7bc-30e52492fbcf",
+		"name": "20k Steady state long run",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "999",
+				"distance": 20,
+				"pace": "04:45",
+				"duration": "01:35:00",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 20,
+			"duration": "01:35:00",
+			"pace": "04:45"
+		}
 	}
 ]

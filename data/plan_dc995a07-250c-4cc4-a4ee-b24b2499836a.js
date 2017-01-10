@@ -1,6 +1,7 @@
 {
 	"uuid": "dc995a07-250c-4cc4-a4ee-b24b2499836a",
 	"name": "Canova/Jenkins 2:55",
+  "startDate": "2017-01-08",
 	"days": [
 		{
 			"uuid": "1c69ab6a-be49-4dd8-a537-f4f4f0c49eb7",
@@ -27,10 +28,26 @@
 			]
 		},
 		{
+			"uuid": "29a1c08c-33e3-4490-ac9a-2b0464ed9f44",
+			"trainings": [
+				{
+					"instanceId": "00c3c11d-ce1e-4652-b7bc-30e52492fbcf"
+				}
+			]
+		},
+		{
 			"uuid": "d0e45b0c-929e-4c68-afc2-707c531b1fd0",
 			"trainings": [
 				{
 					"instanceId": "7ab1e5b4-8570-4d0e-a3ff-0595fa48e508"
+				}
+			]
+		},
+		{
+			"uuid": "152a4758-5f9f-4574-8381-6bf735c3d348",
+			"trainings": [
+				{
+					"instanceId": "d1a99709-5046-4751-be9d-0d0a5a9cb588"
 				}
 			]
 		},
@@ -67,6 +84,14 @@
 			]
 		},
 		{
+			"uuid": "933b3bef-861c-4583-95f9-5acdf23d2938",
+			"trainings": [
+				{
+					"instanceId": "bdaf76a1-0dae-4783-8fed-a12b3f95999c"
+				}
+			]
+		},
+		{
 			"uuid": "a99ec7f6-acb8-4803-8d2a-ae4721482645",
 			"trainings": [
 				{
@@ -87,6 +112,14 @@
 			"trainings": [
 				{
 					"instanceId": "5394d9b3-8971-4bb3-80c0-8fb99b2c1c7f"
+				}
+			]
+		},
+		{
+			"uuid": "fe0e2513-6c42-4b2d-9391-2c58567ba938",
+			"trainings": [
+				{
+					"instanceId": "146ed7a9-6a68-4c7f-abed-6f512cda239f"
 				}
 			]
 		}

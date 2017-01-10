@@ -53,6 +53,7 @@ export default class TimelineStore {
         uuid: this.plan.uuid,
         name: this.plan.name,
         days: flattenDays(this.plan.days),
+        startDate: this.plan.startDate,
       };
       eventbus.emit(ee.PLAN_AND_INSTANCES_PERSIST_CMD, persistablePlan, this.traininginstances);
     });
