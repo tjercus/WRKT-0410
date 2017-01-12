@@ -17,7 +17,7 @@ test("AppComponent should render the right DOM structure", (assert) => {
   // block eventbus.emit since it cause a long setTimeout via NotificationComponent
   sinon.stub(eventbus, "emit", function() {});
   
-  const component = mount(<AppComponent eventbus={eventbus} startWithDefaultTraining="false" />);
+  const component = mount(<AppComponent eventbus={eventbus} startWithDefaultTraining={false} />);
   //assert.equal(component.html(), "html");
   assert.equal(component.find("header[id='app-header']").length, 1);
   assert.equal(component.find("ul.menu").length, 1);

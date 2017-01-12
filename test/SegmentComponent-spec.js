@@ -12,6 +12,7 @@ import EventEmitter from "eventemitter2";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 const emitSpy = sinon.spy(eventbus, "emit");
+const trainingUuid = "djkhgk-94536";
 const segment = {
   uuid: "uuid-segment1",
   distance: 5.1,
@@ -35,7 +36,7 @@ test("SegmentComponent should emit SEGMENT_UPDATE_CMD when it can augment on cal
     pace: "05:00"
   };  
   emitSpy.reset();
-  const component = mount(<SegmentComponent eventbus={eventbus} segment={augmentableSegment} />);
+  const component = mount(<SegmentComponent eventbus={eventbus} segment={augmentableSegment} trainingUuid={trainingUuid}/>);
   component.find(".segment button.button-primary").simulate("click");  
   assert.ok(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should emit SEGMENT_UPDATE_CMD");
   assert.end();
@@ -43,7 +44,7 @@ test("SegmentComponent should emit SEGMENT_UPDATE_CMD when it can augment on cal
 
 test("SegmentComponent should NOT emit SEGMENT_UPDATE_CMD when it can NOT augment on calc button click", (assert) => {  
   emitSpy.reset();
-  const component = mount(<SegmentComponent eventbus={eventbus} segment={segment} />);
+  const component = mount(<SegmentComponent eventbus={eventbus} segment={segment} trainingUuid={trainingUuid}/>);
   component.find(".segment button.button-primary").simulate("click");  
   assert.notOk(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should NOT emit SEGMENT_UPDATE_CMD");
   assert.end();

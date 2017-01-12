@@ -6,7 +6,7 @@ import sinon from "sinon";
 import moment from "moment";
 
 // Component Under Test
-import DayComponent from "../src/components/DayComponent";
+import DayEditComponent from "../src/components/DayEditComponent";
 // specific dependencies for CUT
 import EventEmitter from "eventemitter2";
 
@@ -27,13 +27,17 @@ const day = {
   dfd: moment()
 }
 
-test("DayComponent should render", (assert) => {
-  const component = mount(<DayComponent eventbus={eventbus} day={day} dayNr={1} />);
+test("DayEditComponent should render", (assert) => {
+  const component = mount(<DayEditComponent eventbus={eventbus} name="DayEditPanel" from="its-menu-item" />);
 
-  assert.ok(component.find('td').hasClass("day"));  
+  assert.ok(component.find("section").hasClass("panel"));
+  // assert.equal(component.html(), "blah");
   assert.end();
 });
 
+test("DayEditComponent should load a day via eventbus", (assert) => {
+  assert.end();
+});
 /*
 test("Component should emit event on button press", (assert) => {
   //const onSpy = sinon.spy(eventbus, "on");
