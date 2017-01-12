@@ -72,7 +72,7 @@ export default class DayEditComponent extends React.Component {
     }
 
     let trainingButtonListItems = this.state.day.trainings.map((training, i) => {
-      return <li>
+      return <li key={i}>
         <button onClick={this.onLoadTrainingClick} value={i}
                 className="button-small">{training.name}</button>
       </li>;
@@ -97,6 +97,6 @@ export default class DayEditComponent extends React.Component {
 
 DayEditComponent.propTypes = {
   eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
-  name: React.PropTypes.string.isRequired,
-  from: React.PropTypes.string.isRequired,
+  name: React.PropTypes.string.isRequired, // panel name
+  from: React.PropTypes.string.isRequired, // related menu item name
 };
