@@ -57,18 +57,11 @@ export default class DayEditComponent extends React.Component {
   */
   render() {
     const panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
-    const trainings = [
-      { name: "none" },
-      { name: "none" },
-    ];
+
     let selectedTrainingComponent = "none";
-    // TODO replace this crap!
     if (this.state.day !== null && this.state.day.trainings && this.state.day.trainings.length > 0) {
-      trainings[0] = this.state.day.trainings[0];
-      if (this.state.day.trainings.length === 2) {
-        trainings[1] = this.state.day.trainings[1];
-      }
-      selectedTrainingComponent = <TrainingInstanceComponent eventbus={this.props.eventbus} training={trainings[this.state.selectedNr]} />;
+      selectedTrainingComponent = <TrainingInstanceComponent
+        eventbus={this.props.eventbus} training={this.state.day.trainings[this.state.selectedNr]} />;
     }
 
     let trainingButtonListItems = this.state.day.trainings.map((training, i) => {
