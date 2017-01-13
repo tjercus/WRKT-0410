@@ -36,6 +36,7 @@ export default class TrainingComponent extends React.Component {
     this.onNameBlur = this.onNameBlur.bind(this);
     this.onTypeClick = this.onTypeClick.bind(this);
     this.emitAddToBeginOfPlan = this.emitAddToBeginOfPlan.bind(this);
+    this.emitAddToMiddleOfPlan = this.emitAddToMiddleOfPlan.bind(this);
     this.emitAddToPlan = this.emitAddToPlan.bind(this);
   }
 
@@ -122,6 +123,11 @@ export default class TrainingComponent extends React.Component {
   emitAddToBeginOfPlan() {
     console.log("TrainingComponent.emitAddToBeginOfPlan TRAINING_TO_PLAN_CMD with zero");
     this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD, 0);
+  }
+
+  emitAddToMiddleOfPlan() {
+    console.log("TrainingComponent.emitAddToMiddleOfPlan TRAINING_TO_PLAN_CMD with middle");
+    this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD, 0.5);
   }
 
   emitAddToPlan() {
@@ -218,7 +224,10 @@ export default class TrainingComponent extends React.Component {
             </output>
             <menu>
               <button onClick={this.addEmptySegment} className="button-flat">add empty segment</button>
+            </menu>
+            <menu>
               <button onClick={this.emitAddToBeginOfPlan} value="add-to-plan" className="button-flat">add to begin of plan</button>
+              <button onClick={this.emitAddToMiddleOfPlan} value="add-to-plan" className="button-flat">add to middle of plan</button>
               <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to end of plan</button>
             </menu>
             <menu>

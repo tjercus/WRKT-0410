@@ -27,18 +27,23 @@ let plan = {
   "uuid": "acc3d1b8-test-4d70-dda3-d0e885f516f4",
   "name": "10k plan #1",
   "days": [
-    {"uuid": "1", "instanceId": "2a63ef62-test-4b92-8971-59db6e58394c"}
+    {
+      "uuid": "1",
+      "trainings": [
+        {"instanceId": "2a63ef62-test-4b92-8971-59db6e58394c"}
+      ]
+    }
   ]
-}
+};
 
-let planCopy = clone(plan);
+const makePlanClone = () => clone(plan);
 
 test("TimelineStore should listen to PLAN_FETCH_EVT and load plan and instances", (assert) => {
   let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
   let emitSpy = sinon.spy(eventbus, "emit");
   const store = new TimelineStore(eventbus);
 
-  eventbus.emit("PLAN_FETCH_EVT", [plan, traininginstances]);
+  eventbus.emit("PLAN_FETCH_EVT", [makePlanClone(), traininginstances]);
 
   assert.equal(store.plan.uuid, "acc3d1b8-test-4d70-dda3-d0e885f516f4", "plan should be loaded in store");
   assert.equal(store.plan.days.length, 1, "plan.days should be loaded in store");
@@ -52,7 +57,7 @@ test("TimelineStore should listen to PLAN_PERSIST_CMD emit plan and instances", 
   let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
   let emitSpy = sinon.spy(eventbus, "emit");
   const store = new TimelineStore(eventbus);
-  eventbus.emit("PLAN_FETCH_EVT", [plan, traininginstances]);
+  eventbus.emit("PLAN_FETCH_EVT", [makePlanClone(), traininginstances]);
 
   eventbus.emit("PLAN_PERSIST_CMD");
 
@@ -72,7 +77,7 @@ test("TimelineStore should listen to TRAINING_CLONE_AS_INSTANCE_CMD and add inst
   let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
   let emitSpy = sinon.spy(eventbus, "emit");
   const store = new TimelineStore(eventbus);
-  eventbus.emit("PLAN_FETCH_EVT", [plan, traininginstances]);
+  eventbus.emit("PLAN_FETCH_EVT", [makePlanClone(), traininginstances]);
 
   let training = {
     name: "another training",
@@ -91,14 +96,15 @@ test("TimelineStore should listen to TRAINING_CLONE_AS_INSTANCE_CMD and add inst
   assert.end();
 });
 
-test("TimelineStore should listen to TRAINING_CLONE_AS_INSTANCE_CMD and add instance to BEGIN of plan", (assert) => {
+test("TimelineStore should listen to TRAINING_CLONE_AS_INSTANCE_CMD and add instance to the BEGIN of plan", (assert) => {
   let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
   let emitSpy = sinon.spy(eventbus, "emit");
   const store = new TimelineStore(eventbus);
-  eventbus.emit("PLAN_FETCH_EVT", [planCopy, traininginstances]);
+  eventbus.emit("PLAN_FETCH_EVT", [makePlanClone(), traininginstances]);
 
   let training = {
-    name: "another training",
+    uuid: "3945-kjgfdf",
+    name: "another training 2",
     type: "workout",
     segments: [
       {
@@ -111,7 +117,7 @@ test("TimelineStore should listen to TRAINING_CLONE_AS_INSTANCE_CMD and add inst
   eventbus.emit("TRAINING_CLONE_AS_INSTANCE_CMD", training, 0);
 
   assert.equal(store.plan.days.length, 2, "instance should be added to plan");
-  assert.equal(store.plan.days[0].name, "another workout", "training should be added to first day of plan");
+  assert.equal(store.plan.days[0].trainings[0].name, "another training 2", "training should be added to a new day at the BEGIN of plan");
   assert.end();
 });
 
@@ -119,7 +125,8 @@ test("TimelineStore should listen to DAY_CLONE_CMD with position", (assert) => {
   let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
   let emitSpy = sinon.spy(eventbus, "emit");
   const store = new TimelineStore(eventbus);
-  eventbus.emit("PLAN_FETCH_EVT", [plan, traininginstances]);
+  eventbus.emit("PLAN_FETCH_EVT", [makePlanClone(), traininginstances]);
+  assert.equal(store.plan.days.length, 1, "initially there should be one day");
 
   let training = {
     name: "another training",

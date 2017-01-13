@@ -88,15 +88,8 @@ export default class TimelineStore {
     eventbus.on(ee.DAY_CLONE_CMD, (dayUuid, position) => {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       const newDay = cloneDay(oldDay);
-      // TODO still support singular training property?
       Array.prototype.push.apply(this.traininginstances, newDay.trainings);
-      if (position === undefined) {
-        console.log(`DAY_CLONE_CMD 1. ${position}`);
-        this.plan.days.push(newDay);
-      } else if (position === 0) {
-        console.log(`DAY_CLONE_CMD 2. ${position}`);
-        this.plan.days.unshift(newDay);
-      }
+      this.insertDayIntoPlan(position, newDay);
       eventbus.emit(ee.DAY_CLONE_EVT, this.plan);
     });
 
@@ -119,18 +112,29 @@ export default class TimelineStore {
       const newInstanceUuid = createUuid();
       _training.uuid = newInstanceUuid;
       this.traininginstances.push(_training);
-      // TODO modify augmentDay to accept a training instead of trainings
+      // TODO modify augmentDay to accept one training as well as multiple trainings
       const augmentedDay = augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid },
         this.traininginstances);
-      if (position === undefined) {
-        console.log(`TimelineStore caught TRAINING_CLONE_AS_INSTANCE_CMD 1. ${position}`);
-        this.plan.days.push(augmentedDay);
-      } else if (position === 0) {
-        console.log(`TimelineStore caught TRAINING_CLONE_AS_INSTANCE_CMD 2. ${position}`);
-        this.plan.days.unshift(augmentedDay);
-      }
-      // console.log(`TimelineStore caught TRAINING_CLONE_AS_INSTANCE_CMD 3. plan: ${JSON.stringify(this.plan)}`);
+      this.insertDayIntoPlan(position, augmentedDay);
       eventbus.emit(ee.TRAINING_TO_PLAN_EVT, this.plan);
     });
+  }
+
+  /**
+   * TODO move to timelineUtil
+   * @param {number} position - where to insert
+   * @param {Day} augmentedDay - what to insert
+   */
+  insertDayIntoPlan(position, augmentedDay) {
+    console.log(`TimelineStore insert day into plan @${position}`);
+    if (position === undefined) {
+      this.plan.days.push(augmentedDay);
+    } else if (position === 0) {
+      this.plan.days.unshift(augmentedDay);
+    } else if (position === 0.5) {
+      this.plan.days.splice(Math.round(this.traininginstances.length / 2), 0, augmentedDay);
+    } else {
+      this.plan.days.splice(position, 0, augmentedDay);
+    }
   }
 }

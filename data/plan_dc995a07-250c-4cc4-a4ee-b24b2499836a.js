@@ -1,6 +1,6 @@
 {
 	"uuid": "dc995a07-250c-4cc4-a4ee-b24b2499836a",
-	"name": "Canova/Jenkins 2:55",
+	"name": "Hansons Elite/Canova/Jenkins 2:53/2:50",
 	"days": [
 		{
 			"uuid": "1c69ab6a-be49-4dd8-a537-f4f4f0c49eb7",
@@ -35,10 +35,10 @@
 			]
 		},
 		{
-			"uuid": "8b9ade9f-3019-4f74-8e68-342bf9d2454e",
+			"uuid": "3a1d53c9-8f10-4d4c-a2c3-cabcf5b843da",
 			"trainings": [
 				{
-					"instanceId": "64ef4f3e-513e-4bea-89c8-9d6ce33079c5"
+					"instanceId": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 				}
 			]
 		},

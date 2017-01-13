@@ -19,7 +19,8 @@ export default class DayComponent extends React.Component {
     //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
     //this.onEmptyClick = this.onEmptyClick.bind(this);
-    this.onCloneLeftClick = this.onCloneLeftClick.bind(this);
+    this.onCloneToBeginClick = this.onCloneToBeginClick.bind(this);
+    this.onCloneToMiddleClick = this.onCloneToMiddleClick.bind(this);
     this.onCloneClick = this.onCloneClick.bind(this);
     this.onMoveLeftClick = this.onMoveLeftClick.bind(this);
     this.onMoveRightClick = this.onMoveRightClick.bind(this);
@@ -33,9 +34,14 @@ export default class DayComponent extends React.Component {
     this.props.eventbus.emit(ee.DAY_LOAD_CMD, uuid);
   }
 
-  onCloneLeftClick(evt) {
+  onCloneToBeginClick(evt) {
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid, 0);
+  }
+
+  onCloneToMiddleClick(evt) {
+    const uuid = evt.target.attributes[1].nodeValue;
+    this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid, 0.5);
   }
 
   onCloneClick(evt) {
@@ -133,8 +139,9 @@ export default class DayComponent extends React.Component {
   		    <button className="button-small button-flat" onClick={this.onMoveLeftClick} value={day.uuid}>&larr;</button>
           <menu className="day-secondary-actions-menu" role="menu" aria-hidden={this.state.secondaryMenuHidden}>
             <ul>
-              <li><button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid}>&rarr; c</button></li>
-              <li><button className="button-small button-flat" onClick={this.onCloneLeftClick} value={day.uuid}>c &larr;</button></li>
+              <li><button className="button-small button-flat" onClick={this.onCloneToBeginClick} value={day.uuid} title="clone to begin">c &larr;</button></li>
+              <li><button className="button-small button-flat" onClick={this.onCloneToMiddleClick} value={day.uuid} title="clone to middle">c</button></li>
+              <li><button className="button-small button-flat" onClick={this.onCloneClick} value={day.uuid} title="clone to end">&rarr; c</button></li>
               <li><button className="button-small button-flat" onClick={this.onDeleteClick} value={day.uuid}>delete</button></li>
               <li><button className="button-small button-flat" onClick={this.onEditClick} value={day.uuid}>edit</button></li>
             </ul>
