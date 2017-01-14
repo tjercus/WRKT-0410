@@ -4437,5 +4437,35 @@
 				"isValid": true
 			}
 		]
+	},
+	{
+		"uuid": "bc0e935d-8904-4968-b927-45709b895c32",
+		"name": "25km MP+5%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "bc0e935d-8904-4968-b927-45709b895c32",
+				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
+				"distance": "25",
+				"duration": "01:49:10",
+				"pace": "04:22",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "684db1c9-40fa-486c-b3af-c55167ce9680",
+		"name": "28km MP+5%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "684db1c9-40fa-486c-b3af-c55167ce9680",
+				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
+				"distance": "28",
+				"duration": "02:02:16",
+				"pace": "04:22",
+				"isValid": true
+			}
+		]
 	}
 ]

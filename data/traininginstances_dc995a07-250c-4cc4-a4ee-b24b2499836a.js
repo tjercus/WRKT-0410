@@ -2583,5 +2583,45 @@
 			"duration": "01:15:00",
 			"pace": "04:10"
 		}
+	},
+	{
+		"uuid": "04f73be2-1402-4f77-8fd0-7d5d1389af32",
+		"name": "25km MP+5%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "bc0e935d-8904-4968-b927-45709b895c32",
+				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
+				"distance": "25",
+				"duration": "01:49:10",
+				"pace": "04:22",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 25,
+			"duration": "01:49:10",
+			"pace": "04:22"
+		}
+	},
+	{
+		"uuid": "0736a382-4661-442e-84d5-a5eb42cdf8f2",
+		"name": "28km MP+5%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "684db1c9-40fa-486c-b3af-c55167ce9680",
+				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
+				"distance": "28",
+				"duration": "02:02:16",
+				"pace": "04:22",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 28,
+			"duration": "02:02:16",
+			"pace": "04:22"
+		}
 	}
 ]
