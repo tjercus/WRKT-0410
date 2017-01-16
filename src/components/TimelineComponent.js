@@ -16,6 +16,7 @@ export default class TimelineComponent extends React.Component {
       days: [],
       name: "",
       startDate: "2016-01-01",
+      selectedWeekNr: 0,
     };
     //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
     this.onHideEasyRunsButtonClick = this.onHideEasyRunsButtonClick.bind(this);
@@ -47,6 +48,9 @@ export default class TimelineComponent extends React.Component {
       console.log(`TimelineComponent caught TRAINING_TO_PLAN_EVT`);
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
+    this.props.eventbus.on(ee.PLAN_SELECT_WEEK_CMD, (nr) => {
+      this.setState({selectedWeekNr: nr});
+    });
   }
 
   // onCycleLengthButtonClick(evt) {
@@ -73,12 +77,18 @@ export default class TimelineComponent extends React.Component {
     let weekStartDate = moment(this.state.startDate);
     let weeks = [];
     console.log(`TimelineComponent render ${this.state.days.length}`);
-    for (let i = 0; i < this.state.days.length; i++) {
-      weeks.push({"days": this.state.days.slice(i, i += 7), "weekStartDate": weekStartDate});
-      i--; // TODO fix this ugly fix
-      console.log(`TimelineComponent render, week: i: ${i}`);
+    let weekNr = 0;
+    weeks = this.state.days.map(day => {
+      let startIndex = weekNr * 7;
+      let week = {
+        "days": this.state.days.slice(startIndex, startIndex + 7),
+        "weekStartDate": weekStartDate,
+        weekNr: weekNr,
+      };
+      weekNr++;
       weekStartDate = weekStartDate.clone().add(1, "week");
-    }
+      return week;
+    });
 
     const ifNoWeeksMessage = (this.state.days.length === 0) ? "There are no days in this timeline ..." : null;
 
@@ -97,7 +107,7 @@ export default class TimelineComponent extends React.Component {
         <div className="panel-body">
            <table className="days-table">
             <tbody>
-              {weeks.map(week => <WeekComponent eventbus={this.props.eventbus} week={week} key={Math.random()} />)}
+              {weeks.map(week => <WeekComponent eventbus={this.props.eventbus} week={week} selectedWeekNr={this.state.selectedWeekNr} key={Math.random()} />)}
             </tbody>
            </table>
            {ifNoWeeksMessage}

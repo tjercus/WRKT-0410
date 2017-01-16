@@ -72,8 +72,9 @@ test("TimelineComponent should render plan with multiple trainings per day in it
   eventbus.emit("PLAN_LOAD_EVT", plan);
   assert.ok(onSpy.calledWith("PLAN_LOAD_EVT"), "component should catch PLAN_LOAD_EVT");
   assert.equal(component.find("td.day").length, 1, "one td for one day");
+  assert.ok(component.find("tr").hasClass("week-selected"), "first week should be selected by default");
   assert.end();
 });
 
 // TODO test that a day has a unique date and nr in the header
-
+// TODO test that the weeks are grouped in tr's and in days in td and seven days per week etc.

@@ -27,6 +27,11 @@ export default class TimelineStore {
     this.eventbus = eventbus;
     this.plan = [];
     this.traininginstances = [];
+    this.selectedWeekNr = 0;
+
+    eventbus.on(ee.PLAN_SELECT_WEEK_CMD, (nr) => {
+      this.selectedWeekNr = nr;
+    });
 
     // NOTE that is up to the emitter to fetch and combine both sets
     eventbus.on(ee.PLAN_FETCH_EVT, (planAndTraininginstances) => {
@@ -89,7 +94,7 @@ export default class TimelineStore {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       const newDay = cloneDay(oldDay);
       Array.prototype.push.apply(this.traininginstances, newDay.trainings);
-      this.insertDayIntoPlan(position, newDay);
+      this.insertDayIntoPlan(position, this.selectedWeekNr, newDay);
       eventbus.emit(ee.DAY_CLONE_EVT, this.plan);
     });
 
@@ -115,7 +120,7 @@ export default class TimelineStore {
       // TODO modify augmentDay to accept one training as well as multiple trainings
       const augmentedDay = augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid },
         this.traininginstances);
-      this.insertDayIntoPlan(position, augmentedDay);
+      this.insertDayIntoPlan(position, this.selectedWeeknr, augmentedDay);
       eventbus.emit(ee.TRAINING_TO_PLAN_EVT, this.plan);
     });
   }
@@ -125,7 +130,7 @@ export default class TimelineStore {
    * @param {number} position - where to insert
    * @param {Day} augmentedDay - what to insert
    */
-  insertDayIntoPlan(position, augmentedDay) {
+  insertDayIntoPlan(position, augmentedDay, selectedWeekNr) {
     console.log(`TimelineStore insert day into plan @${position}`);
     if (position === undefined) {
       this.plan.days.push(augmentedDay);
@@ -133,6 +138,9 @@ export default class TimelineStore {
       this.plan.days.unshift(augmentedDay);
     } else if (position === 0.5) {
       this.plan.days.splice(Math.round(this.traininginstances.length / 2), 0, augmentedDay);
+    } else if (position === -1) {
+      // TODO use selectedWeekNr
+      this.plan.days.splice((selectedWeekNr * 7) + 6, 0, augmentedDay);
     } else {
       this.plan.days.splice(position, 0, augmentedDay);
     }

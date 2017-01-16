@@ -41,6 +41,8 @@ export const EventsEnum = Object.freeze(keyMirror({
   PLANLIST_FETCH_CMD: null,
   PLANLIST_FETCH_EVT: null,
   PLANLIST_FETCH_ERROR_EVT: null,
+  PLAN_SELECT_WEEK_CMD: null,
+  PLAN_SELECT_WEEK_EVT: null,
   SEGMENT_UPDATE_CMD: null,
   SEGMENT_UPDATE_EVT: null,
   SEGMENT_CLONE_CMD: null,

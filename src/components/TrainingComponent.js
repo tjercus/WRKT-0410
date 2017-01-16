@@ -37,6 +37,7 @@ export default class TrainingComponent extends React.Component {
     this.onTypeClick = this.onTypeClick.bind(this);
     this.emitAddToBeginOfPlan = this.emitAddToBeginOfPlan.bind(this);
     this.emitAddToMiddleOfPlan = this.emitAddToMiddleOfPlan.bind(this);
+    this.emitAddToSelectedWeekOfPlan = this.emitAddToSelectedWeekOfPlan.bind(this);
     this.emitAddToPlan = this.emitAddToPlan.bind(this);
   }
 
@@ -135,6 +136,10 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD);
   }
 
+  emitAddToSelectedWeekOfPlan() {
+    this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD, -1);
+  }
+
   clearTrainingFromLocalState() {
     this.setState(DEFAULT_STATE);
   }
@@ -229,6 +234,7 @@ export default class TrainingComponent extends React.Component {
               <button onClick={this.emitAddToBeginOfPlan} value="add-to-plan" className="button-flat">add to begin of plan</button>
               <button onClick={this.emitAddToMiddleOfPlan} value="add-to-plan" className="button-flat">add to middle of plan</button>
               <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to end of plan</button>
+              <button onClick={this.emitAddToSelectedWeekOfPlan} value="add-to-plan" className="button-flat">add to selected week</button>
             </menu>
             <menu>
               <button onClick={this.exportTraining} className="button-flat">export training</button>
