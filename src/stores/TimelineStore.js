@@ -9,7 +9,7 @@ import {
 } from "./timelineUtil";
 import {EventsEnum as ee} from "../constants";
 import { removeTrainingInstancesForDay, updateTraining } from "./trainingUtil";
-import { clone, createUuid } from "./miscUtil";
+import { clone, createUuid, hasProperty } from "./miscUtil";
 
 /**
  * Supports the 'Timeline' aka the 'Default plan', currently only one plan is
@@ -94,7 +94,7 @@ export default class TimelineStore {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       const newDay = cloneDay(oldDay);
       Array.prototype.push.apply(this.traininginstances, newDay.trainings);
-      this.insertDayIntoPlan(position, this.selectedWeekNr, newDay);
+      this.insertDayIntoPlan(position, newDay, this.selectedWeekNr);
       eventbus.emit(ee.DAY_CLONE_EVT, this.plan);
     });
 
@@ -107,10 +107,10 @@ export default class TimelineStore {
     });
 
     eventbus.on(ee.TRAINING_CLONE_AS_INSTANCE_CMD, (training, position) => {
-      if (!Object.prototype.hasOwnProperty.call(this, "plan")) {
+      if (!hasProperty(this, "plan")) {
         throw new Error("Cloning a day before a plan was loaded in TimelineStore");
       }
-      if (!Object.prototype.hasOwnProperty.call(this.plan, "days")) {
+      if (!hasProperty(this.plan, "days")) {
         throw new Error("Cloning a day before days are loaded in TimelineStore");
       }
       const _training = clone(training);
@@ -120,7 +120,7 @@ export default class TimelineStore {
       // TODO modify augmentDay to accept one training as well as multiple trainings
       const augmentedDay = augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid },
         this.traininginstances);
-      this.insertDayIntoPlan(position, this.selectedWeeknr, augmentedDay);
+      this.insertDayIntoPlan(position, augmentedDay, this.selectedWeekNr);
       eventbus.emit(ee.TRAINING_TO_PLAN_EVT, this.plan);
     });
   }
@@ -129,8 +129,9 @@ export default class TimelineStore {
    * TODO move to timelineUtil
    * @param {number} position - where to insert
    * @param {Day} augmentedDay - what to insert
+   * @param {number} weekNr - in which week to insert it
    */
-  insertDayIntoPlan(position, augmentedDay, selectedWeekNr) {
+  insertDayIntoPlan(position, augmentedDay, weekNr) {
     console.log(`TimelineStore insert day into plan @${position}`);
     if (position === undefined) {
       this.plan.days.push(augmentedDay);
@@ -139,8 +140,7 @@ export default class TimelineStore {
     } else if (position === 0.5) {
       this.plan.days.splice(Math.round(this.traininginstances.length / 2), 0, augmentedDay);
     } else if (position === -1) {
-      // TODO use selectedWeekNr
-      this.plan.days.splice((selectedWeekNr * 7) + 6, 0, augmentedDay);
+      this.plan.days.splice((weekNr * 7) + 6, 0, augmentedDay);
     } else {
       this.plan.days.splice(position, 0, augmentedDay);
     }
