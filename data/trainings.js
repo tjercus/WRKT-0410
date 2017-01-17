@@ -3,16 +3,7 @@
 		"uuid": "new-training",
 		"name": "New Training",
 		"type": "workout",
-		"segments": [
-			{
-				"trainingUuid": "new-training",
-				"distance": 0,
-				"duration": "00:00:00",
-				"pace": "00:00",
-				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
-				"isValid": true
-			}
-		]
+		"segments": []
 	},
 	{
 		"uuid": "750776ee-7bf6-11e6-8e3a-7754c08933b3",
@@ -1640,10 +1631,11 @@
 				"isValid": true
 			},
 			{
+				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231",
-				"duration": "00:01:00",
+				"distance": 0.273,
+				"duration": "00:01:30",
 				"pace": "05:30",
-				"distance": 0.182,
 				"isValid": true
 			},
 			{
@@ -1693,6 +1685,14 @@
 				"distance": 2,
 				"pace": "05:30",
 				"duration": "00:11:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"uuid": "7fa9d5d8-1990-47c3-87d1-882bc71cdf1d",
+				"distance": "3",
+				"duration": "00:15:30",
+				"pace": "05:10",
 				"isValid": true
 			}
 		]
@@ -3362,7 +3362,7 @@
 	},
 	{
 		"uuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
-		"name": "5 x 3km @MP",
+		"name": "5 x 3km @MP (25km)",
 		"type": "workout",
 		"segments": [
 			{
@@ -3435,6 +3435,14 @@
 				"distance": "3",
 				"duration": "00:12:30",
 				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
+				"uuid": "ebf8c132-06d6-4fdb-bf00-4d06ba6c1391",
+				"distance": "6",
+				"duration": "00:33:00",
+				"pace": "05:30",
 				"isValid": true
 			}
 		]
@@ -4467,5 +4475,336 @@
 				"isValid": true
 			}
 		]
+	},
+	{
+		"uuid": "57014016-c994-4a21-ae3c-9d729430afa7",
+		"name": "Long run 29km @MP+8%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "57014016-c994-4a21-ae3c-9d729430afa7",
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "29",
+				"duration": "02:10:30",
+				"pace": "04:30",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "33c21870-152a-4fe9-8f04-ae788c416bdc",
+		"name": "20x 1",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "new-training",
+				"distance": 0,
+				"duration": "00:00:00",
+				"pace": "00:00",
+				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "102773b4-8aef-4087-8d5b-a58419bd692c",
+		"name": "18 x 1km repeats @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "new-training",
+				"uuid": "a228602a-9f93-49d9-a657-bd7ea1122b35",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "8ca770d1-acf7-4ef2-a699-e6099578fa91",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "893119db-9d5c-47fa-9842-8552fad1b68c",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "5d4cc5a4-defc-4b43-b6f0-6c2dd77ef466",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "15b026c2-1cc4-4a8d-9b6a-5dda68fafc4f",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "3198613c-2231-46e8-add9-78db88d96a6b",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "a356a6b5-1e21-4c41-a791-557fc4f47af8",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "ad930db6-5a2d-4ac8-bc0c-34e2908cfe72",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "cbd9ca2c-e848-4f5e-96bf-d75d800614ef",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "1b428940-8bfc-4791-8327-88c5588591ee",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "da843b9c-dbd1-4643-b453-62134f1c0bce",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "e530773e-949d-4bc1-ad78-001f8bd3730f",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "5d24b4df-4470-429d-b9ed-4a326b82b50d",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "ac495e41-52f4-4ed2-9fdd-914bdaf21d59",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "d0b4b8cc-61df-4650-94ea-ea21bbd78df6",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "4ceba2f2-07b5-4593-845a-ce3ff256cbca",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "4d46efbd-ea75-401c-8ffc-30eb88a39568",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "693fa76c-ae38-434e-9523-2cd3d75185c6",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "5e4a9f8f-fddf-4a48-8849-23fc2b4bf249",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "daed828f-b34e-43f2-94b9-7f499dfd8fd1",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "37c2fcde-cb97-48fd-8c26-76343b0336fc",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "2fde9135-1b73-4f52-8a68-3c4a966a3a1e",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "07151290-ae6e-41cd-be3b-e0b1a80d7479",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "0025ad08-ea2a-4bb8-adc1-2368bf686a80",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "065d6dd9-a0b5-4f73-81a0-c48ffa4dc19e",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "0c15f391-ed4f-43f7-9b57-676c13c8f60d",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "ce9fb193-2133-4d8f-a8f6-e3e903b5fc94",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "7669a8ec-1e51-43e7-be94-cd0c2f9bf2f2",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "4d513862-b4b1-46e5-88f0-d4e1125654f2",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "5f00aecf-0965-4981-ab89-228c364e6eec",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "d6617456-6250-4f95-a892-3be47086e4b9",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "54f21b9b-6faf-4214-8313-71d97dd2d290",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "7eca0465-a0d2-42ef-bb2e-849bc2a82573",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "391cde5d-8c3a-467b-99fc-afbe8ca9a79a",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "2f1c1ca4-56fc-4954-9d15-a00de36b07cb",
+				"distance": "1",
+				"duration": "00:04:10",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "new-training",
+				"uuid": "3c656685-42cf-4744-a435-30bee16794d1",
+				"distance": 0.4,
+				"duration": "00:02:00",
+				"pace": "05:00",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "cf191369-d298-42c2-ba58-9f3aa0b126ba",
+		"name": "",
+		"type": "workout",
+		"segments": []
 	}
 ]

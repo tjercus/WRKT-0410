@@ -42,8 +42,8 @@ export default class WeekComponent extends React.Component {
       <tr key={createUuid()} className={rowClassName}>
         {dayComponents}
         <td>
-          {"Total: "} {weekTotalDistance.toFixed(2)} {"km"}
-          <button onClick={this.onSelectButtonClick} className="button, button-small">{"select"}</button>
+          {"Total: "} {weekTotalDistance.toFixed(2)} {"km"} <br />
+          <button onClick={this.onSelectButtonClick} className="button button-small">{"select"}</button>
         </td>
       </tr>);
   }

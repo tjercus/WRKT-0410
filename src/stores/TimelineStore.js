@@ -140,7 +140,7 @@ export default class TimelineStore {
     } else if (position === 0.5) {
       this.plan.days.splice(Math.round(this.traininginstances.length / 2), 0, augmentedDay);
     } else if (position === -1) {
-      this.plan.days.splice((weekNr * 7) + 6, 0, augmentedDay);
+      this.plan.days.splice((weekNr * 7) + 4, 0, augmentedDay);
     } else {
       this.plan.days.splice(position, 0, augmentedDay);
     }
