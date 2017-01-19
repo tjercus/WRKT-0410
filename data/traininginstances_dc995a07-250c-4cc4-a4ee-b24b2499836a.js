@@ -3082,5 +3082,97 @@
 			"duration": "01:25:10",
 			"pace": "04:42"
 		}
+	},
+	{
+		"uuid": "d925a1de-0949-4b64-968c-79a69cb19ea5",
+		"name": "5 x 2km Cruise intervals",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "8011-df84735",
+				"distance": "4",
+				"duration": "00:22:00",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "8121-skdj7435",
+				"distance": 2,
+				"pace": "03:50",
+				"duration": "00:07:40",
+				"isValid": true
+			},
+			{
+				"uuid": "8231",
+				"distance": 0.273,
+				"duration": "00:01:30",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "8121-skdj4875",
+				"distance": 2,
+				"pace": "03:50",
+				"duration": "00:07:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"uuid": "8231-sdkj4763",
+				"distance": 0.273,
+				"duration": "00:01:30",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "8121-kgf7",
+				"distance": 2,
+				"pace": "03:50",
+				"duration": "00:07:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"uuid": "8231-34875",
+				"distance": 0.273,
+				"duration": "00:01:30",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "8121-384756",
+				"distance": 2,
+				"pace": "03:50",
+				"duration": "00:07:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"uuid": "8231-dkgh475",
+				"distance": 0.273,
+				"duration": "00:01:30",
+				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"uuid": "9291-83475d",
+				"distance": 2,
+				"pace": "05:30",
+				"duration": "00:11:00",
+				"isValid": true
+			},
+			{
+				"uuid": "7fa9d5d8-1990-47c3-87d1-882bc71cdf1d",
+				"distance": "3",
+				"duration": "00:15:30",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 18.092,
+			"duration": "01:25:10",
+			"pace": "04:42"
+		}
 	}
 ]

@@ -1612,7 +1612,7 @@
 	},
 	{
 		"uuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
-		"name": "4 x 2km Cruise intervals",
+		"name": "5 x 2km Cruise intervals",
 		"type": "workout",
 		"segments": [
 			{

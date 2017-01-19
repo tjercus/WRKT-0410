@@ -91,10 +91,10 @@
 			]
 		},
 		{
-			"uuid": "67217f2a-0945-403f-9057-4986bd48ca4f",
+			"uuid": "6b3c87f9-0cf3-451d-93da-8af25de6a0d1",
 			"trainings": [
 				{
-					"instanceId": "eeeb39ab-4de2-420f-bc4c-ff3614bc6830"
+					"instanceId": "d925a1de-0949-4b64-968c-79a69cb19ea5"
 				}
 			]
 		},
