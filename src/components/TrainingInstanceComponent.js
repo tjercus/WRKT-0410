@@ -134,17 +134,15 @@ export default class TrainingInstanceComponent extends React.Component {
     let nameComponent = "";
     if (this.state.isNameEditable) {
       nameComponent = <input type="text" id="edit-name-textfield"
-                             name="edit-name-textfield" value={this.state.name}
-                             onChange={this.onNameChange} onBlur={this.onNameBlur}/>
+                        name="edit-name-textfield" value={this.state.name}
+                        onChange={this.onNameChange} onBlur={this.onNameBlur}/>
     } else {
       nameComponent = <span id="name-label">{this.state.name}</span>;
     }
 
-    let segmentComponents = [];
-    this.state.segments.forEach((segment, i) => {
-      segmentComponents.push(<SegmentComponent key={i} eventbus={this.props.eventbus}
-                                               segment={segment}
-                                               trainingUuid={this.state.uuid}/>);
+    let segmentComponents = this.state.segments.map((segment, i) => {
+      return (<SegmentComponent key={i} eventbus={this.props.eventbus}
+                segment={segment} trainingUuid={this.state.uuid}/>);
     });
 
     let totalDistance = 0;
