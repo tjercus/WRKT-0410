@@ -1,6 +1,6 @@
 {
 	"uuid": "dc995a07-250c-4cc4-a4ee-b24b2499836a",
-	"name": "Hansons Elite/Canova/Jenkins 2:53/2:50",
+	"name": "Rotterdam 2017 2:55/2:50",
 	"days": [
 		{
 			"uuid": "ec85c5a1-3383-4219-bce1-e3a4a49efa44",

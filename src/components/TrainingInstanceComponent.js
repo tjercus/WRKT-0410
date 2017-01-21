@@ -2,6 +2,8 @@ import React from "react";
 import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
 import {EventsEnum as ee, TRAINING_SHAPE} from "../constants";
+import {makeTrainingTotal} from "../stores/segmentUtil";
+import {clone, createUuid} from "../stores/miscUtil";
 
 const DEFAULT_TOTAL = {
   distance: 0,
@@ -18,6 +20,9 @@ const DEFAULT_STATE = {
   total: DEFAULT_TOTAL
 };
 
+/**
+* Is used in DayEditComponent to display segments and totals for an instance
+*/
 export default class TrainingInstanceComponent extends React.Component {
 
   constructor(props) {
@@ -65,7 +70,13 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   addEmptySegment() {
-    this.props.eventbus.emit(ee.INSTANCE_SEGMENT_ADD_CMD, {trainingUuid: this.props.training.uuid});
+    let _segments = clone(this.state.segments);
+    _segments.push({uuid: createUuid(), trainingUuid: this.state.uuid});
+    this.setState({
+      segments: _segments,
+      total: makeTrainingTotal(_segments),
+    });
+    // this.props.eventbus.emit(ee.INSTANCE_SEGMENT_ADD_CMD, {trainingUuid: this.props.training.uuid});
   }
 
   exportTraining() {
