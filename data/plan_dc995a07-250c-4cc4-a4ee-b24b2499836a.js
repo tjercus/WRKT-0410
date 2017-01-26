@@ -123,10 +123,10 @@
 			]
 		},
 		{
-			"uuid": "03ced5ca-e109-4e3f-b91e-5dc756047f6e",
+			"uuid": "38868e10-95ee-49cc-ab3f-6af9051ef965",
 			"trainings": [
 				{
-					"instanceId": "7b509a15-55b2-4424-a552-ae38a302ef5c"
+					"instanceId": "bf1d5b81-d520-42db-b073-1c4a66d813cc"
 				}
 			]
 		},
@@ -139,10 +139,10 @@
 			]
 		},
 		{
-			"uuid": "392fe9f2-a785-4c48-b840-53fbd1dc0387",
+			"uuid": "1016f500-ff6d-4a84-9b55-390b784b90a9",
 			"trainings": [
 				{
-					"instanceId": "42940d94-5c88-428f-b6e4-27c966370dd4"
+					"instanceId": "03bfca46-b549-485e-800e-6f3dd2087f4e"
 				}
 			]
 		},

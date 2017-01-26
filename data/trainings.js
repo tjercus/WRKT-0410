@@ -3348,7 +3348,7 @@
 	},
 	{
 		"uuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
-		"name": "5 x 3km @MP (25km)",
+		"name": "6 x 3km @MP (28km)",
 		"type": "workout",
 		"segments": [
 			{
@@ -3426,9 +3426,33 @@
 			{
 				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "ebf8c132-06d6-4fdb-bf00-4d06ba6c1391",
-				"distance": "6",
-				"duration": "00:33:00",
+				"distance": "2",
+				"duration": "00:11:00",
 				"pace": "05:30",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
+				"uuid": "095be067-5d12-47dc-a979-4415ef9f87d2",
+				"distance": "1",
+				"duration": "00:04:40",
+				"pace": "04:40",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
+				"uuid": "e0ba5065-986d-4e89-bf44-c435de9704c2",
+				"distance": "3",
+				"duration": "00:12:30",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
+				"uuid": "e46cc610-cebf-439c-a681-121e6d38e041",
+				"distance": "3",
+				"duration": "00:15:15",
+				"pace": "05:05",
 				"isValid": true
 			}
 		]
