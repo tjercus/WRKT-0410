@@ -147,10 +147,10 @@
 			]
 		},
 		{
-			"uuid": "aff39f40-a9bf-424c-972c-224dcecb7101",
+			"uuid": "47adeec2-97c6-40bd-834a-20b9f5f72441",
 			"trainings": [
 				{
-					"instanceId": "8d93060f-dcdc-4766-8d9d-d3363dac02b4"
+					"instanceId": "e68ccc57-b4d8-45bc-9151-14c3a52328aa"
 				}
 			]
 		},

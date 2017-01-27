@@ -28,6 +28,7 @@ export default class TrainingInstanceComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = DEFAULT_STATE;
+    this.loadTraining(this.props.training);
     this.exportTraining = this.exportTraining.bind(this);
     this.emitClearTraining = this.emitClearTraining.bind(this);
     //this.clearTrainingFromLocalState = this.clearTrainingFromLocalState.bind(this);
@@ -41,8 +42,6 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.loadTraining(this.props.training);
-
     // Coarse-grained segment handling
     this.props.eventbus.on(ee.SEGMENTS_UPDATE_EVT, (training) => {
       console.log(`TrainingInstanceComponent received SEGMENTS_UPDATE_EVT with ${training.uuid} versus ${this.state.uuid}`);

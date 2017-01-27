@@ -76,7 +76,7 @@ export default class TimelineComponent extends React.Component {
     // TODO, from datepicker or other UI component
     let weekStartDate = moment(this.state.startDate);
     let weeks = [];
-    console.log(`TimelineComponent render ${this.state.days.length}`);
+    console.log(`TimelineComponent render ${this.state.days.length} days`);
     let weekNr = 0;
     weeks = this.state.days.map(day => {
       let startIndex = weekNr * 7;

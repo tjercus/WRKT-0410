@@ -31,6 +31,7 @@ export default class DayStore {
     });
 
     eventbus.on(ee.DAY_LOAD_CMD, (dayUuid) => {
+      console.log(`DayStore caught DAY_LOAD_CMD and loads day [${dayUuid}] locally`);
       // caching
       const day = this.day;
       if (!day || (day.uuid !== dayUuid) && this.plan) {

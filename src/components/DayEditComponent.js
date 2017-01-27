@@ -24,6 +24,7 @@ export default class DayEditComponent extends React.Component {
     });
 
     this.props.eventbus.on(ee.DAY_LOAD_EVT, (day) => {
+      console.log(`DayEditComponent caught DAY_LOAD_EVT for day [${day.uuid}]`);
       this.setState({ day });
     });
 
@@ -60,8 +61,11 @@ export default class DayEditComponent extends React.Component {
 
     let selectedTrainingComponent = "none";
     if (this.state.day !== null && this.state.day.trainings && this.state.day.trainings.length > 0) {
+      console.log(`DayEditComponent render with a new TrainingInstanceComponent ${this.state.day.trainings.map((t) => {t.uuid + "|"} )}`);
       selectedTrainingComponent = <TrainingInstanceComponent
         eventbus={this.props.eventbus} training={this.state.day.trainings[this.state.selectedNr]} />;
+    } else {
+      console.log(`DayEditComponent render NOT with a new TrainingInstanceComponent`);
     }
 
     let trainingButtonListItems = this.state.day.trainings.map((training, i) => {

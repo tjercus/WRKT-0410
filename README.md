@@ -56,6 +56,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
+- Fix selected training in DayEditComp after switching a day from timeline
 - Close edit day dialog should persist changes
 - Show a dialog 'save current timeline?' when switching plans
 - Fix by on displaying a changed segment in DayEditComponent
