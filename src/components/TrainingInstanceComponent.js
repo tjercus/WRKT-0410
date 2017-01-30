@@ -21,16 +21,17 @@ const DEFAULT_STATE = {
 };
 
 /**
-* Is used in DayEditComponent to display segments and totals for an instance
+ * Is used in DayEditComponent to display segments and totals for an instance
+ * Does not use a Store for local state management, when a use clicks on 'persist' button,
+ * the local state is put on the eventbus so the DayStore can process it
 */
 export default class TrainingInstanceComponent extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = DEFAULT_STATE;
-    this.loadTraining(this.props.training);
     this.exportTraining = this.exportTraining.bind(this);
-    this.emitClearTraining = this.emitClearTraining.bind(this);
+    this.onClearTrainingClick = this.onClearTrainingClick.bind(this);
     //this.clearTrainingFromLocalState = this.clearTrainingFromLocalState.bind(this);
     this.addEmptySegment = this.addEmptySegment.bind(this);
     //this.loadTraining = this.loadTraining.bind(this);
@@ -39,35 +40,29 @@ export default class TrainingInstanceComponent extends React.Component {
     this.onNameChange = this.onNameChange.bind(this);
     this.onNameBlur = this.onNameBlur.bind(this);
     this.onTrainingTypeClick = this.onTrainingTypeClick.bind(this);
+    this.onPropagateChangesClick = this.onPropagateChangesClick.bind(this);
   }
 
   componentDidMount() {
-    // Coarse-grained segment handling
-    this.props.eventbus.on(ee.SEGMENTS_UPDATE_EVT, (training) => {
-      console.log(`TrainingInstanceComponent received SEGMENTS_UPDATE_EVT with ${training.uuid} versus ${this.state.uuid}`);
+    this.props.eventbus.on(ee.INSTANCE_LOAD_CMD, (training) => {
+      console.log(`TrainingInstanceComponent received INSTANCE_LOAD_CMD with ${training.uuid}`);
       console.log(`TrainingInstanceComponent received: ${JSON.stringify(training)}`);
-      if (training.uuid === this.state.uuid) {
-        this.setState({
-          segments: training.segments,
-          total: training.total,
-        });
-      }
-    });
-
-    this.props.eventbus.on(ee.INSTANCE_CLEAR_EVT, (uuid) => {
+      // TODO could this also work? this.setSate(training);
       this.setState({
-        segments: [],
-        total: DEFAULT_TOTAL,
+        uuid: training.uuid,
+        name: training.name,
+        type: training.type,
+        segments: training.segments,
+        total: training.total,
       });
     });
-
-    this.props.eventbus.emit(ee.INSTANCE_LOAD_EVT, this.props.training);
   }
 
-  loadTraining(training) {
-    this.setState(DEFAULT_STATE, () => this.setState(this.makeTraining(training)));
+  onPropagateChangesClick() {
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
   }
 
+  // TODO use from segmentUtils
   addEmptySegment() {
     let _segments = clone(this.state.segments);
     _segments.push({uuid: createUuid(), trainingUuid: this.state.uuid});
@@ -75,15 +70,14 @@ export default class TrainingInstanceComponent extends React.Component {
       segments: _segments,
       total: makeTrainingTotal(_segments),
     });
-    // this.props.eventbus.emit(ee.INSTANCE_SEGMENT_ADD_CMD, {trainingUuid: this.props.training.uuid});
   }
 
   exportTraining() {
-    console.log(JSON.stringify(this.props.training));
+    console.log(JSON.stringify(this.makeTraining(this.state)));
   }
 
-  emitClearTraining() {
-    this.props.eventbus.emit(ee.INSTANCE_CLEAR_CMD, this.state.uuid);
+  onClearTrainingClick() {
+    this.setState({});
   }
 
   onEditNameButtonClick(evt) {
@@ -97,17 +91,16 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   onNameBlur(evt) {
-    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
-  }
-
-  removeTraining() {
-    this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD);
+    this.setState({ name: evt.target.value });
   }
 
   onTrainingTypeClick(evt) {
     this.setState({type: evt.target.value});
-    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
-    // TODO test: 'should emit event when button clicked'
+    // TODO test: 'should update state when button clicked'
+  }
+
+  removeTraining() {
+    this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD, this.state.uuid);
   }
 
   /**
@@ -153,62 +146,75 @@ export default class TrainingInstanceComponent extends React.Component {
     const type1ButtonClassName = (this.state.type === "workout") ? "button-choice button-choice-selected" : "button-choice";
     const type2ButtonClassName = (this.state.type === "easy") ? "button-choice button-choice-selected" : "button-choice";
 
-    return (
-      <section className={panelClassName}>
-        <header className="panel-header">
-          {nameComponent}
-          <button id="edit-name-button" onClick={this.onEditNameButtonClick}
-                  className="button-small button-flat">{"edit"}</button>
-        </header>
-        <div className="panel-body">
-          <fieldset name="type">
-            Type of training &nbsp;
-            <button onClick={this.onTrainingTypeClick} value="workout"
-                    className={type1ButtonClassName}>{"workout"}</button>
-            <button onClick={this.onTrainingTypeClick} value="easy"
-                    className={type2ButtonClassName}>{"easy run"}</button>
-          </fieldset>
-          <table summary="training segments">
-            <thead>
-            <tr>
-              <th>Distance</th>
-              <th>Duration</th>
-              <th>Pace</th>
-              <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {segmentComponents}
-            </tbody>
-          </table>
-          <output name="totals">
-            <p>
-              {"Total distance:"} <em>{totalDistance}</em> {"km, "}
-              {"duration:"} <em>{this.state.total.duration}</em> {", "}
-              {"average pace:"} <em>
-              <time>{this.state.total.pace}</time>
-            </em>
-            </p>
-            <p>UUID: {this.state.uuid}</p>
-          </output>
-          <menu>
-            <button onClick={this.addEmptySegment} className="button-flat">add empty segment
-            </button>
-          </menu>
-          <menu>
-            <button onClick={this.exportTraining} className="button-flat">export training</button>
-            <button onClick={this.emitClearTraining} className="button-flat button-warning">clear
-              training
-            </button>
-            <button onClick={this.removeTraining} className="button-flat">remove training</button>
-          </menu>
-        </div>
-      </section>
-    );
+    if (this.state.uuid === null) {
+      return (<div>{"Click on a training to see or edit ..."}</div>);
+    } else {
+      return (
+        <section className={panelClassName}>
+          <header className="panel-header">
+            {nameComponent}
+            <button id="edit-name-button" onClick={this.onEditNameButtonClick}
+                    className="button-small button-flat">{"edit"}</button>
+          </header>
+          <div className="panel-body">
+            <fieldset name="type">
+              Type of training &nbsp;
+              <button onClick={this.onTrainingTypeClick} value="workout"
+                      className={type1ButtonClassName}>{"workout"}</button>
+              <button onClick={this.onTrainingTypeClick} value="easy"
+                      className={type2ButtonClassName}>{"easy run"}</button>
+            </fieldset>
+            <table summary="training segments">
+              <thead>
+              <tr>
+                <th>Distance</th>
+                <th>Duration</th>
+                <th>Pace</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              {segmentComponents}
+              </tbody>
+            </table>
+            <output name="totals">
+              <p>
+                {"Total distance:"} <em>{totalDistance}</em> {"km, "}
+                {"duration:"} <em>{this.state.total.duration}</em> {", "}
+                {"average pace:"} <em>
+                <time>{this.state.total.pace}</time>
+              </em>
+              </p>
+              <p>UUID: {this.state.uuid}</p>
+            </output>
+            <menu>
+              <button onClick={this.addEmptySegment} className="button-flat">
+                add empty segment
+              </button>
+            </menu>
+            <menu>
+              <button onClick={this.exportTraining} className="button-flat">
+                export training
+              </button>
+              <button onClick={this.onPropagateChangesClick} className="button-flat button-primary">
+                propagate changes
+              </button>
+            </menu>
+            <menu>
+              <button onClick={this.onClearTrainingClick} className="button-flat button-warning">
+                clear training
+              </button>
+              <button onClick={this.removeTraining} className="button-flat">
+                remove training
+              </button>
+            </menu>
+          </div>
+        </section>
+      );
+    }
   };
 }
 
 TrainingInstanceComponent.propTypes = {
-  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
-  training: React.PropTypes.shape(TRAINING_SHAPE).isRequired,
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired
 };

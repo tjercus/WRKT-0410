@@ -91,6 +91,20 @@ export function removeTrainingInstancesForDay(day, traininginstances) {
 }
 
 /**
+ *
+ * @param {Day} day - holds 1 or 2 trainings
+ * @param {TrainingInstance} instance - copy of a Training
+ * @returns {Day} is the modified day
+ */
+export function updateTrainingInstanceInDay(day, instance) {
+  const _day = clone(day);
+  const isInstance = _instance => String(_instance.uuid) === String(instance.uuid);
+  const index = _day.findIndex(isInstance);
+  _day.trainings[index] = instance;
+  return _day;
+}
+
+/**
  * 
  * @param {Training} training - with possibly un-augmented segments
  * @returns {Training} _training - with augmented segments

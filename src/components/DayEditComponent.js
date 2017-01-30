@@ -13,6 +13,7 @@ export default class DayEditComponent extends React.Component {
       dayUuid: null,
       day: {trainings: []},
       selectedNr: 0,
+      date: null
     };
     this.onLoadTrainingClick = this.onLoadTrainingClick.bind(this); // TODO phat arrow
     this.onCloseButtonClick = this.onCloseButtonClick.bind(this);
@@ -23,9 +24,10 @@ export default class DayEditComponent extends React.Component {
       this.setState({ isVisible: (menuItemName === this.props.from) });
     });
 
-    this.props.eventbus.on(ee.DAY_LOAD_EVT, (day) => {
+    this.props.eventbus.on(ee.DAY_LOAD_EVT, (day, date) => {
       console.log(`DayEditComponent caught DAY_LOAD_EVT for day [${day.uuid}]`);
-      this.setState({ day });
+      this.setState({ day: day, date: date });
+
     });
 
     // this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (segment) => {
@@ -40,7 +42,8 @@ export default class DayEditComponent extends React.Component {
    */
   onLoadTrainingClick(evt) {
     const nr = evt.target.value;
-    this.setState({ selectedNr: nr });
+    this.setState({ selectedNr: nr }); // TODO need to keep state for this?
+    console.log(`DayEditComponent.onLoadTrainingClick ${JSON.stringify(this.state.day)}`);
     this.props.eventbus.emit(ee.INSTANCE_LOAD_CMD, this.state.day.trainings[nr]);
   }
 
@@ -59,21 +62,15 @@ export default class DayEditComponent extends React.Component {
   render() {
     const panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
 
-    let selectedTrainingComponent = "none";
-    if (this.state.day !== null && this.state.day.trainings && this.state.day.trainings.length > 0) {
-      console.log(`DayEditComponent render with a new TrainingInstanceComponent ${this.state.day.trainings.map((t) => {t.uuid + "|"} )}`);
-      selectedTrainingComponent = <TrainingInstanceComponent
-        eventbus={this.props.eventbus} training={this.state.day.trainings[this.state.selectedNr]} />;
-    } else {
-      console.log(`DayEditComponent render NOT with a new TrainingInstanceComponent`);
-    }
-
     let trainingButtonListItems = this.state.day.trainings.map((training, i) => {
-      return <li key={i}>
+      return <li key={training.uuid}>
         <button onClick={this.onLoadTrainingClick} value={i}
                 className="button-small">{training.name}</button>
       </li>;
     });
+
+    // TODO print date for this day
+    // {this.state.date.toString()} // can be null
 
     return (
       <section className={panelClassName}>
@@ -85,7 +82,7 @@ export default class DayEditComponent extends React.Component {
           <ul>
             {trainingButtonListItems}
           </ul>
-          {selectedTrainingComponent}
+          <TrainingInstanceComponent eventbus={this.props.eventbus} />;
         </div>
       </section>
     );

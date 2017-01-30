@@ -1,5 +1,6 @@
 import EventEmitter from "eventemitter2";
 import { findDay } from "./timelineUtil";
+import { updateTrainingInstanceInDay } from "./trainingUtil";
 import {EventsEnum as ee} from "../constants";
 import {
   addSegment,
@@ -30,7 +31,7 @@ export default class DayStore {
       this.plan = plan;
     });
 
-    eventbus.on(ee.DAY_LOAD_CMD, (dayUuid) => {
+    eventbus.on(ee.DAY_LOAD_CMD, (dayUuid, date) => {
       console.log(`DayStore caught DAY_LOAD_CMD and loads day [${dayUuid}] locally`);
       // caching
       const day = this.day;
@@ -38,7 +39,7 @@ export default class DayStore {
         this.day = findDay(dayUuid, this.plan);
       }
       if (this.day) {
-        eventbus.emit(ee.DAY_LOAD_EVT, this.day);
+        eventbus.emit(ee.DAY_LOAD_EVT, this.day, date);
       }
     });
 
@@ -48,9 +49,14 @@ export default class DayStore {
       //eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
     //});
 
-    eventbus.on(ee.INSTANCE_UPDATE_CMD, (instance) => {});
-    eventbus.on(ee.INSTANCE_LOAD_CMD, (instance) => {});
+    /**
+     * emitted by TrainingInstanceComponent when user clicks 'save' button
+     */
+    eventbus.on(ee.INSTANCE_UPDATE_CMD, (instance) => {
+      this.day = updateTrainingInstanceInDay(this.day, instance);
+    });
 
+    // TODO decide if this logic should be here ...
     eventbus.on(ee.SEGMENT_UPDATE_CMD, (segment) => {
       console.log(`DayStore caught SEGMENT_UPDATE_CMD`);
       this.updateSegmentInStore(segment);
@@ -136,4 +142,6 @@ export default class DayStore {
        });
      }
    }
+
+
 }

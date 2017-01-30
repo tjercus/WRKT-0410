@@ -45,7 +45,7 @@ export default class NotificationComponent extends React.Component {
         msg = `Plan '${data.uuid}' is loaded in store`;
         break;
       case ee.DAY_LOAD_EVT:
-        msg = `Day '${data.uuid}' is loaded in DayStore`;
+        msg = `Day '${data.uuid}' ${data.date} is loaded in DayStore`;
         break;
       case ee.TRAINING_LOAD_EVT:
         msg = `Training '${data.uuid}' is loaded in store`;

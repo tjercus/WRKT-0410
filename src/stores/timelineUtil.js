@@ -104,7 +104,7 @@ export function flattenDays(days) {
 }
 
 /**
- * Give a uuid for a day, remove it"s trainings
+ * Given a uuid for a day, remove it's trainings
  * @param  {string} dayUuid - unique identifier for a day
  * @param  {Array<Day>} days - original list of days
  * @return {Array<Day>} days - without trainings for dayUuid
