@@ -63,6 +63,7 @@ export default class TimelineStore {
       eventbus.emit(ee.PLAN_AND_INSTANCES_PERSIST_CMD, persistablePlan, this.traininginstances);
     });
 
+    // TODO nobody throws this!
     eventbus.on(ee.DAY_UPDATE_CMD, (day) => {
       console.log("TimelineStore caught DAY_UPDATE_CMD: update local plan");
       const byUuid = _day => String(_day.uuid) === String(day.uuid);

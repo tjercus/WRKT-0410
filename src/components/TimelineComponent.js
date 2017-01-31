@@ -32,7 +32,8 @@ export default class TimelineComponent extends React.Component {
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate,
        isVisible: true });      
     });
-    this.props.eventbus.on(ee.DAY_UPDATE_EVT, (plan) => {
+    this.props.eventbus.on(ee.DAY_UPDATE_EVT, (day) => {
+      // TODO get local plan, update it and set back in state
       this.setState({ days: plan.days, name: plan.name, startDate: plan.startDate });
     });
     this.props.eventbus.on(ee.DAY_CLONE_EVT, (plan) => {

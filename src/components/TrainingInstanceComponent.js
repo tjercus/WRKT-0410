@@ -1,14 +1,14 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
-import {EventsEnum as ee, TRAINING_SHAPE} from "../constants";
-import {makeTrainingTotal} from "../stores/segmentUtil";
-import {clone, createUuid} from "../stores/miscUtil";
+import { EventsEnum as ee, TRAINING_SHAPE } from "../constants";
+import { makeTrainingTotal } from "../stores/segmentUtil";
+import { clone, createUuid } from "../stores/miscUtil";
 
 const DEFAULT_TOTAL = {
   distance: 0,
   duration: "00:00:00",
-  pace: "00:00"
+  pace: "00:00",
 };
 
 const DEFAULT_STATE = {
@@ -17,7 +17,7 @@ const DEFAULT_STATE = {
   type: null,
   segments: [],
   isNameEditable: false,
-  total: DEFAULT_TOTAL
+  total: DEFAULT_TOTAL,
 };
 
 /**
@@ -26,7 +26,6 @@ const DEFAULT_STATE = {
  * the local state is put on the eventbus so the DayStore can process it
 */
 export default class TrainingInstanceComponent extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = DEFAULT_STATE;
@@ -44,7 +43,7 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.on(ee.INSTANCE_LOAD_CMD, (training) => {
+    this.props.eventbus.on(ee.INSTANCE_LOAD_CMD, training => {
       console.log(`TrainingInstanceComponent received INSTANCE_LOAD_CMD with ${training.uuid}`);
       console.log(`TrainingInstanceComponent received: ${JSON.stringify(training)}`);
       // TODO could this also work? this.setSate(training);
@@ -65,7 +64,7 @@ export default class TrainingInstanceComponent extends React.Component {
   // TODO use from segmentUtils
   addEmptySegment() {
     let _segments = clone(this.state.segments);
-    _segments.push({uuid: createUuid(), trainingUuid: this.state.uuid});
+    _segments.push({ uuid: createUuid(), trainingUuid: this.state.uuid });
     this.setState({
       segments: _segments,
       total: makeTrainingTotal(_segments),
@@ -82,7 +81,7 @@ export default class TrainingInstanceComponent extends React.Component {
 
   onEditNameButtonClick(evt) {
     this.setState({
-      isNameEditable: !this.state.isNameEditable
+      isNameEditable: !this.state.isNameEditable,
     });
   }
 
@@ -95,7 +94,7 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   onTrainingTypeClick(evt) {
-    this.setState({type: evt.target.value});
+    this.setState({ type: evt.target.value });
     // TODO test: 'should update state when button clicked'
   }
 
@@ -114,8 +113,8 @@ export default class TrainingInstanceComponent extends React.Component {
       name: obj.name,
       type: obj.type,
       segments: obj.segments,
-      total: obj.total
-    }
+      total: obj.total,
+    };
   }
 
   render() {
@@ -125,56 +124,89 @@ export default class TrainingInstanceComponent extends React.Component {
 
     let nameComponent = "";
     if (this.state.isNameEditable) {
-      nameComponent = <input type="text" id="edit-name-textfield"
-                        name="edit-name-textfield" value={this.state.name}
-                        onChange={this.onNameChange} onBlur={this.onNameBlur}/>
+      nameComponent = (
+        <input
+          type="text"
+          id="edit-name-textfield"
+          name="edit-name-textfield"
+          value={this.state.name}
+          onChange={this.onNameChange}
+          onBlur={this.onNameBlur}
+        />
+      );
     } else {
       nameComponent = <span id="name-label">{this.state.name}</span>;
     }
 
     let segmentComponents = this.state.segments.map((segment, i) => {
-      return (<SegmentComponent key={i} eventbus={this.props.eventbus}
-                segment={segment} trainingUuid={this.state.uuid}/>);
+      return (
+        <SegmentComponent
+          key={i}
+          eventbus={this.props.eventbus}
+          segment={segment}
+          trainingUuid={this.state.uuid}
+        />
+      );
     });
 
     let totalDistance = 0;
     if (this.state.total && this.state.total.distance) {
-      totalDistance = (this.state.total.distance).toFixed(3);
+      totalDistance = this.state.total.distance.toFixed(3);
     }
 
     // TODO refactor to ButtonChoiceComponent
-    const type1ButtonClassName = (this.state.type === "workout") ? "button-choice button-choice-selected" : "button-choice";
-    const type2ButtonClassName = (this.state.type === "easy") ? "button-choice button-choice-selected" : "button-choice";
+    const type1ButtonClassName = this.state.type === "workout"
+      ? "button-choice button-choice-selected"
+      : "button-choice";
+    const type2ButtonClassName = this.state.type === "easy"
+      ? "button-choice button-choice-selected"
+      : "button-choice";
 
     if (this.state.uuid === null) {
-      return (<div>{"Click on a training to see or edit ..."}</div>);
+      return <div>{"Click on a training to see or edit ..."}</div>;
     } else {
       return (
         <section className={panelClassName}>
           <header className="panel-header">
             {nameComponent}
-            <button id="edit-name-button" onClick={this.onEditNameButtonClick}
-                    className="button-small button-flat">{"edit"}</button>
+            <button
+              id="edit-name-button"
+              onClick={this.onEditNameButtonClick}
+              className="button-small button-flat"
+            >
+              {"edit"}
+            </button>
           </header>
           <div className="panel-body">
             <fieldset name="type">
-              Type of training &nbsp;
-              <button onClick={this.onTrainingTypeClick} value="workout"
-                      className={type1ButtonClassName}>{"workout"}</button>
-              <button onClick={this.onTrainingTypeClick} value="easy"
-                      className={type2ButtonClassName}>{"easy run"}</button>
+              Type of training
+
+              <button
+                onClick={this.onTrainingTypeClick}
+                value="workout"
+                className={type1ButtonClassName}
+              >
+                {"workout"}
+              </button>
+              <button
+                onClick={this.onTrainingTypeClick}
+                value="easy"
+                className={type2ButtonClassName}
+              >
+                {"easy run"}
+              </button>
             </fieldset>
             <table summary="training segments">
               <thead>
-              <tr>
-                <th>Distance</th>
-                <th>Duration</th>
-                <th>Pace</th>
-                <th>Actions</th>
-              </tr>
+                <tr>
+                  <th>Distance</th>
+                  <th>Duration</th>
+                  <th>Pace</th>
+                  <th>Actions</th>
+                </tr>
               </thead>
               <tbody>
-              {segmentComponents}
+                {segmentComponents}
               </tbody>
             </table>
             <output name="totals">
@@ -182,8 +214,8 @@ export default class TrainingInstanceComponent extends React.Component {
                 {"Total distance:"} <em>{totalDistance}</em> {"km, "}
                 {"duration:"} <em>{this.state.total.duration}</em> {", "}
                 {"average pace:"} <em>
-                <time>{this.state.total.pace}</time>
-              </em>
+                  <time>{this.state.total.pace}</time>
+                </em>
               </p>
               <p>UUID: {this.state.uuid}</p>
             </output>
@@ -212,9 +244,9 @@ export default class TrainingInstanceComponent extends React.Component {
         </section>
       );
     }
-  };
+  }
 }
 
 TrainingInstanceComponent.propTypes = {
-  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired
+  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
 };

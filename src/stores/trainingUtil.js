@@ -1,5 +1,5 @@
 import { clone, hasProperty } from "./miscUtil";
-import {augmentSegmentData, makeTrainingTotal} from "./segmentUtil";
+import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
 
 /**
  * @typedef {Object} Training
@@ -21,8 +21,8 @@ export function findTraining(uuid, trainings) {
     throw new Error(`findTraining: a valid uuid [${uuid}] should be provided`);
   }
   const _instances = clone(trainings);
-  const isInstance = _instance => String(_instance.uuid) === String(uuid) ||
-    String(_instance.instanceId) === String(uuid);
+  const isInstance = _instance =>
+    String(_instance.uuid) === String(uuid) || String(_instance.instanceId) === String(uuid);
   const index = _instances.findIndex(isInstance);
   if (index < 0) {
     return null;
@@ -41,8 +41,7 @@ export function updateTraining(training, trainings) {
   const trainingClone = clone(training);
   const _trainings = clone(trainings);
   delete trainingClone.total;
-  const isInstance = _training => String(_training.uuid) === String(
-    trainingClone.uuid);
+  const isInstance = _training => String(_training.uuid) === String(trainingClone.uuid);
   const index = _trainings.findIndex(isInstance);
   if (index < 0) {
     throw new Error("updateTraining could not find training");
@@ -62,7 +61,7 @@ export function removeTrainingInstance(uuid, instances) {
   // TODO extract as constant 'byUuid'
   const isInstance = _instance => String(_instance.uuid) === String(uuid);
   const index = _instances.findIndex(isInstance);
-  _instances.splice((index > -1) ? index : _instances.length, 1);
+  _instances.splice(index > -1 ? index : _instances.length, 1);
   return _instances;
 }
 
@@ -73,19 +72,20 @@ export function removeTrainingInstance(uuid, instances) {
  * @return {Array<TrainingInstance>} list with traininginstances
  */
 export function removeTrainingInstancesForDay(day, traininginstances) {
-  if (day === null || !hasProperty(day, "uuid") || (!hasProperty(day,
-      "training") && !hasProperty(day, "trainings"))) {
+  if (
+    day === null ||
+      !hasProperty(day, "uuid") ||
+      !hasProperty(day, "training") && !hasProperty(day, "trainings")
+  ) {
     throw new Error("a valid day should be provided");
   }
   let _traininginstances = clone(traininginstances);
   if (hasProperty(day, "trainings")) {
-    day.trainings.forEach((_training) => {
-      _traininginstances = removeTrainingInstance(_training.instanceId,
-        _traininginstances);
+    day.trainings.forEach(_training => {
+      _traininginstances = removeTrainingInstance(_training.instanceId, _traininginstances);
     });
   } else {
-    _traininginstances = removeTrainingInstance(day.training.instanceId, clone(
-      traininginstances));
+    _traininginstances = removeTrainingInstance(day.training.instanceId, clone(traininginstances));
   }
   return _traininginstances;
 }
