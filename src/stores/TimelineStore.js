@@ -7,7 +7,7 @@ import {
   cloneDay,
   deleteDay,
 } from "./timelineUtil";
-import {EventsEnum as ee} from "../constants";
+import { EventsEnum as ee } from "../constants";
 import { removeTrainingInstancesForDay, updateTraining } from "./trainingUtil";
 import { clone, createUuid, hasProperty } from "./miscUtil";
 
@@ -18,7 +18,6 @@ import { clone, createUuid, hasProperty } from "./miscUtil";
  * TODO perhaps rename to 'Plan(s)Store'
  */
 export default class TimelineStore {
-
   /**
    * @param {EventEmitter} eventbus - decoupling
    */
@@ -29,12 +28,12 @@ export default class TimelineStore {
     this.traininginstances = [];
     this.selectedWeekNr = 0;
 
-    eventbus.on(ee.PLAN_SELECT_WEEK_CMD, (nr) => {
+    eventbus.on(ee.PLAN_SELECT_WEEK_CMD, nr => {
       this.selectedWeekNr = nr;
     });
 
     // NOTE that is up to the emitter to fetch and combine both sets
-    eventbus.on(ee.PLAN_FETCH_EVT, (planAndTraininginstances) => {
+    eventbus.on(ee.PLAN_FETCH_EVT, planAndTraininginstances => {
       console.time("PLAN_FETCH_EVT");
       if (!Array.isArray(planAndTraininginstances)) {
         throw new Error("PLAN_FETCH_EVT has no array with a plan and instances in it");
@@ -64,7 +63,7 @@ export default class TimelineStore {
     });
 
     // TODO nobody throws this!
-    eventbus.on(ee.DAY_UPDATE_CMD, (day) => {
+    eventbus.on(ee.DAY_UPDATE_CMD, day => {
       console.log("TimelineStore caught DAY_UPDATE_CMD: update local plan");
       const byUuid = _day => String(_day.uuid) === String(day.uuid);
       const index = this.plan.days.findIndex(byUuid);
@@ -77,18 +76,18 @@ export default class TimelineStore {
       eventbus.emit(ee.DAY_UPDATE_EVT, this.plan);
     });
 
-    eventbus.on(ee.DAY_EMPTY_CMD, ((dayUuid) => {
+    eventbus.on(ee.DAY_EMPTY_CMD, dayUuid => {
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       this.plan.days = removeTrainingsFromDay(oldDay, clone(this.plan.days));
       this.traininginstances = removeTrainingInstancesForDay(oldDay, clone(this.traininginstances));
       eventbus.emit(ee.DAY_EMPTY_EVT, this.plan);
-    }));
+    });
 
-    eventbus.on(ee.DAY_MOVE_CMD, ((dayUuid, positions) => {
+    eventbus.on(ee.DAY_MOVE_CMD, (dayUuid, positions) => {
       console.log(`TimelineStore on DAY_MOVE_CMD ${dayUuid}`);
       this.plan.days = moveDay(dayUuid, this.plan.days, positions);
       eventbus.emit(ee.DAY_MOVE_EVT, this.plan);
-    }));
+    });
 
     // TODO unit test this logic!
     eventbus.on(ee.DAY_CLONE_CMD, (dayUuid, position) => {
@@ -99,7 +98,7 @@ export default class TimelineStore {
       eventbus.emit(ee.DAY_CLONE_EVT, this.plan);
     });
 
-    eventbus.on(ee.DAY_DELETE_CMD, (dayUuid) => {
+    eventbus.on(ee.DAY_DELETE_CMD, dayUuid => {
       console.log(`TimelineStore on DAY_DELETE_CMD ${dayUuid}`);
       const oldDay = findDay(dayUuid, this.plan, this.traininginstances);
       this.traininginstances = removeTrainingInstancesForDay(oldDay, clone(this.traininginstances));
@@ -119,8 +118,10 @@ export default class TimelineStore {
       _training.uuid = newInstanceUuid;
       this.traininginstances.push(_training);
       // TODO modify augmentDay to accept one training as well as multiple trainings
-      const augmentedDay = augmentDay({ uuid: createUuid(), instanceId: newInstanceUuid },
-        this.traininginstances);
+      const augmentedDay = augmentDay(
+        { uuid: createUuid(), instanceId: newInstanceUuid },
+        this.traininginstances,
+      );
       this.insertDayIntoPlan(position, augmentedDay, this.selectedWeekNr);
       eventbus.emit(ee.TRAINING_TO_PLAN_EVT, this.plan);
     });
@@ -141,7 +142,7 @@ export default class TimelineStore {
     } else if (position === 0.5) {
       this.plan.days.splice(Math.round(this.traininginstances.length / 2), 0, augmentedDay);
     } else if (position === -1) {
-      this.plan.days.splice((weekNr * 7) + 4, 0, augmentedDay);
+      this.plan.days.splice(weekNr * 7 + 4, 0, augmentedDay);
     } else {
       this.plan.days.splice(position, 0, augmentedDay);
     }

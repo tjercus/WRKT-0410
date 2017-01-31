@@ -37,6 +37,8 @@ export const EventsEnum = Object.freeze(keyMirror({
   PLAN_PERSIST_CMD: null,
   PLAN_PERSIST_EVT: null,
   PLAN_PERSIST_ERROR_EVT: null,
+  PLAN_UPDATE_EVT: null,
+  PLAN_UPDATE_CMD: null,
   PLAN_AND_INSTANCES_PERSIST_CMD: null,
   PLANLIST_FETCH_CMD: null,
   PLANLIST_FETCH_EVT: null,

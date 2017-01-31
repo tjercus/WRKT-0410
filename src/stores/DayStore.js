@@ -26,7 +26,7 @@ export default class DayStore {
     this.day = {};
 
     eventbus.on(ee.DAY_LOAD_CMD, (day, date) => {
-      console.log(`DayStore caught DAY_LOAD_CMD and loads day [${dayUuid}] locally`);
+      console.log(`DayStore caught DAY_LOAD_CMD and loads day [${day.uuid}] locally`);
       this.day = day;
       eventbus.emit(ee.DAY_LOAD_EVT, day, date);
     });
