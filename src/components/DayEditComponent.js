@@ -27,7 +27,6 @@ export default class DayEditComponent extends React.Component {
     this.props.eventbus.on(ee.DAY_LOAD_EVT, (day, date) => {
       console.log(`DayEditComponent caught DAY_LOAD_EVT for day [${day.uuid}]`);
       this.setState({ day: day, date: date });
-
     });
 
     // this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (segment) => {
@@ -53,7 +52,6 @@ export default class DayEditComponent extends React.Component {
    */
   onCloseButtonClick(evt) {
     this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-timeline");
-    this.props.eventbus.emit(ee.DAY_UPDATE_CMD, this.state.day);
   }
 
   /**

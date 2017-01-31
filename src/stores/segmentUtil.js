@@ -68,19 +68,7 @@ export function addSegment(segment, segments, overwriteUuid = false) {
 export function updateSegment(segment, segments) {
   const segmentClone = augmentSegmentData(segment);
   const _segments = clone(segments);
-  /*
-  let i = 0;
-  segments.some((_segment) => {
-    if (_segment.uuid === segmentClone.uuid) {
-      this.segments[i] = segmentClone;
-      this.total = makeTrainingTotal(this.segments);
-      return true;
-    }
-    i++;
-  });
-  */
-
-  const isSeg = _segment => String(_segment.uuid) === String(segmentClone.uuid);
+   const isSeg = _segment => String(_segment.uuid) === String(segmentClone.uuid);
   const index = _segments.findIndex(isSeg);
   _segments[index] = segmentClone;
   return _segments;
@@ -89,7 +77,7 @@ export function updateSegment(segment, segments) {
 /**
  * Make totals for the collective segments in a training
  * @param {Array<Segment>} segments
- * @return {Object<Total>} total
+ * @return {Total} total
  */
 export function makeTrainingTotal(segments) {
   const totalObj = {
@@ -134,11 +122,7 @@ export function augmentSegmentData(segment) {
       _segment.distance = makeDistance(_segment);
     }
   }
-  if (isValidSegment(_segment)) {
-    _segment.isValid = true;
-  } else {
-    _segment.isValid = false;
-  }
+  _segment.isValid = isValidSegment(_segment);
   return _segment;
 }
 

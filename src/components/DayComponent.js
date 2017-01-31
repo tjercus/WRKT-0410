@@ -33,7 +33,8 @@ export default class DayComponent extends React.Component {
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-dayedit");
     console.log(`DayComponent.onEditClick: emit DAY_LOAD_CMD for day [${uuid}]`);
-    this.props.eventbus.emit(ee.DAY_LOAD_CMD, uuid, this.props.day);
+    // TODO pass 'date' for day as third argument
+    this.props.eventbus.emit(ee.DAY_LOAD_CMD, this.props.day);
   }
 
   onCloneToBeginClick(evt) {

@@ -24,23 +24,11 @@ export default class DayStore {
   constructor(eventbus) {
     this.eventbus = eventbus;
     this.day = {};
-    this.plan = {};
 
-    eventbus.on(ee.PLAN_LOAD_EVT, (plan) => {
-      console.log(`DayStore caught PLAN_LOAD_CMD and loads plan locally`);
-      this.plan = plan;
-    });
-
-    eventbus.on(ee.DAY_LOAD_CMD, (dayUuid, date) => {
+    eventbus.on(ee.DAY_LOAD_CMD, (day, date) => {
       console.log(`DayStore caught DAY_LOAD_CMD and loads day [${dayUuid}] locally`);
-      // caching
-      const day = this.day;
-      if (!day || (day.uuid !== dayUuid) && this.plan) {
-        this.day = findDay(dayUuid, this.plan);
-      }
-      if (this.day) {
-        eventbus.emit(ee.DAY_LOAD_EVT, this.day, date);
-      }
+      this.day = day;
+      eventbus.emit(ee.DAY_LOAD_EVT, day, date);
     });
 
     // throw DAY_UPDATE_EVT with a day as payload (so TimelineStore can update itself)
@@ -55,6 +43,7 @@ export default class DayStore {
     eventbus.on(ee.INSTANCE_UPDATE_CMD, (instance) => {
       console.log(`DayStore caught INSTANCE_UPDATE_CMD, trying to update day ${this.day.uuid}`);
       this.day = updateTrainingInstanceInDay(this.day, instance);
+      this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
     });
 
     // TODO decide if this logic should be here ...
