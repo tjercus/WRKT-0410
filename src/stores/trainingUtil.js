@@ -99,7 +99,7 @@ export function removeTrainingInstancesForDay(day, traininginstances) {
 export function updateTrainingInstanceInDay(day, instance) {
   const _day = clone(day);
   const isInstance = _instance => String(_instance.uuid) === String(instance.uuid);
-  const index = _day.findIndex(isInstance);
+  const index = _day.trainings.findIndex(isInstance);
   _day.trainings[index] = instance;
   return _day;
 }

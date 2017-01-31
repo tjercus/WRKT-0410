@@ -53,6 +53,7 @@ export default class DayStore {
      * emitted by TrainingInstanceComponent when user clicks 'save' button
      */
     eventbus.on(ee.INSTANCE_UPDATE_CMD, (instance) => {
+      console.log(`DayStore caught INSTANCE_UPDATE_CMD, trying to update day ${this.day.uuid}`);
       this.day = updateTrainingInstanceInDay(this.day, instance);
     });
 

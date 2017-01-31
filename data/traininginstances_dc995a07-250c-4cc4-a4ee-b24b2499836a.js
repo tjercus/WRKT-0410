@@ -2973,7 +2973,7 @@
 	},
 	{
 		"uuid": "39344058-9f99-47de-93da-7aae18903cb0",
-		"name": "Long run 30km @MP+12%",
+		"name": "Long run 34km @MP+11%",
 		"type": "workout",
 		"segments": [
 			{
@@ -2984,12 +2984,7 @@
 				"pace": "04:40",
 				"isValid": true
 			}
-		],
-		"total": {
-			"distance": 30,
-			"duration": "02:20:00",
-			"pace": "04:40"
-		}
+		]
 	},
 	{
 		"uuid": "eeeb39ab-4de2-420f-bc4c-ff3614bc6830",
