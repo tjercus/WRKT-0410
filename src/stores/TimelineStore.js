@@ -62,9 +62,9 @@ export default class TimelineStore {
       eventbus.emit(ee.PLAN_AND_INSTANCES_PERSIST_CMD, persistablePlan, this.traininginstances);
     });
 
-    // TODO nobody throws this!
-    eventbus.on(ee.DAY_UPDATE_CMD, day => {
-      console.log("TimelineStore caught DAY_UPDATE_CMD: update local plan");
+    // thrown by DayStore
+    eventbus.on(ee.DAY_UPDATE_EVT, day => {
+      console.log("TimelineStore caught DAY_UPDATE_EVT: update local plan");
       const byUuid = _day => String(_day.uuid) === String(day.uuid);
       const index = this.plan.days.findIndex(byUuid);
       this.plan.days[index] = day;
@@ -73,7 +73,7 @@ export default class TimelineStore {
         this.traininginstances = updateTraining(training, clone(this.traininginstances));
       });
 
-      eventbus.emit(ee.DAY_UPDATE_EVT, this.plan);
+      eventbus.emit(ee.PLAN_UPDATE_EVT, this.plan);
     });
 
     eventbus.on(ee.DAY_EMPTY_CMD, dayUuid => {

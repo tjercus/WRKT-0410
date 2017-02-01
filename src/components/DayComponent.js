@@ -101,10 +101,7 @@ export default class DayComponent extends React.Component {
 
     this.isNonRunDay(day) ? dayClassNames.push("day day-norun") : "";
 
-    if (moment(day.dfd).isSame(moment(new Date()), "day")) {
-      dayClassNames.push("today");
-    }
-
+    const isToday = moment(day.dfd).isSame(moment(new Date()), "day");
     let dayElements = [];
     let dayTotal = 0;
 
@@ -129,7 +126,7 @@ export default class DayComponent extends React.Component {
       dayElements.push(
         <section key={j + "-" + createUuid()} className={trainingClassNames.join(" ")}>
           <p className="training-name">{training.name}</p>
-        	{trainingTotal}          
+        	{trainingTotal}
         </section>
       );
 
@@ -137,7 +134,7 @@ export default class DayComponent extends React.Component {
     });
 
     return (
-      <td key={createUuid()} className={dayClassNames.join(" ")}>
+      <td key={createUuid()} id={isToday ? "today" : ""} className={dayClassNames.join(" ")}>
 		    <h3>{this.props.dayNr + 1}. {dateStr}</h3>
 		    {dayElements}
 		    <div className="day-total">{dayTotal.toFixed(2)} km today</div>

@@ -278,8 +278,8 @@ a {
   font-weight: bold;
   color: red;
 }
-.days-table section.today {
-  border: 2px solid orange;
+.days-table #today {
+  border: 5px solid #dacfcf;
 }
 .days-table section p {
   padding: 0.2em;
@@ -354,7 +354,7 @@ fieldset .button-choice-selected {
 [aria-hidden="false"] {
   display: block;
 }
-menu.day-secondary-actions-menu ul {  
+menu.day-secondary-actions-menu ul {
   list-style: none;
-  padding-left: 0;  
+  padding-left: 0;
 }

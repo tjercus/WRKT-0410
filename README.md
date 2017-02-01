@@ -15,9 +15,11 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Create a script that lists all eventbus subscriptions and emits per source file
 - Move propTypes to static class property above constructor
 - Progressive web application support
 - Try out immutable JS (in a branch!)
+- Try out react-material in a branch
 - Use TypeError instead of Error for checking parameters
 - yellow hint of change
 - Use webworkers, if possible, for paralel computing like augmentsegmentdata and calculate totals, see: https://github.com/substack/webworkify
@@ -33,8 +35,7 @@ Based on 'React eventemitter'.
 - button click 'animation'
 - button to switch metric/imperial
 - start the rest-api via gulp
-- Tape coverage with coverify/tape-istanbul
-- Formal flux architecture?
+- Tape coverage with nyc/coverify/tape-istanbul
 
 ### Training
 - Refactor TrainingComponent and TrainingInstanceComponent so they can use common code
@@ -56,7 +57,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
-- Fix selected training in DayEditComp after switching a day from timeline
+- Timeline should refresh after a day was edited
 - Performance tuning with 'key' as a repeatable value instead of random int or createUuid
 - Close edit day dialog should persist changes
 - Show a dialog 'save current timeline?' when switching plans
