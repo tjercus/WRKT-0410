@@ -5799,13 +5799,13 @@ rc@^1.1.2, rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~1.0.4"
 
-react-addons-test-utils@15.4.1, "react-addons-test-utils@>=0.13.3 <16.0.0", "react-addons-test-utils@^0.14.8 || ^15.0.1":
+react-addons-test-utils@15.x.x, "react-addons-test-utils@>=0.13.3 <16.0.0", "react-addons-test-utils@^0.14.8 || ^15.0.1":
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react-addons-test-utils/-/react-addons-test-utils-15.4.1.tgz#1e4caab151bf27cce26df5f9cb714f4fd8359ae1"
 
-react-dom@15.4.1:
-  version "15.4.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.1.tgz#d54c913261aaedb17adc20410d029dcc18a1344a"
+react-dom@15.x.x:
+  version "15.4.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.2.tgz#015363f05b0a1fd52ae9efdd3a0060d90695208f"
   dependencies:
     fbjs "^0.8.1"
     loose-envify "^1.1.0"
@@ -5831,7 +5831,7 @@ react-unit@2.0.0:
     react ">=0.13.3 <16.0.0"
     react-addons-test-utils ">=0.13.3 <16.0.0"
 
-"react@>=0.13.3 <16.0.0", react@^15.4.2:
+react@15.x.x, "react@>=0.13.3 <16.0.0":
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"
   dependencies:
