@@ -25,6 +25,7 @@
   "dependencies": {
     "bufferstreams": "1.1.1",
     "eventemitter2": "2.2.1",
+    "fileinput": "^0.2.0",
     "history": "4.4.1",
     "immutable": "3.8.1",
     "keymirror": "0.1.1",

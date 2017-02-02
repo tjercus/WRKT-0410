@@ -2820,7 +2820,7 @@ faucet@0.0.1:
     tape "~2.3.2"
     through2 "~0.2.3"
 
-fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.4:
+fbjs@^0.8.1, fbjs@^0.8.4:
   version "0.8.6"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.6.tgz#7eb67d6986b2d5007a9b6e92e0e7cb6f75cad290"
   dependencies:
@@ -2854,6 +2854,10 @@ file-entry-cache@^2.0.0:
 file-type@^3.1.0, file-type@^3.8.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-3.9.0.tgz#257a078384d1db8087bc449d107d52a52672b9e9"
+
+fileinput@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/fileinput/-/fileinput-0.2.0.tgz#03cc215626238e95e1e86890e24a57db400a4e16"
 
 filename-regex@^2.0.0:
   version "2.0.0"
@@ -5827,15 +5831,7 @@ react-unit@2.0.0:
     react ">=0.13.3 <16.0.0"
     react-addons-test-utils ">=0.13.3 <16.0.0"
 
-"react@>=0.13.3 <16.0.0":
-  version "15.0.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-15.0.2.tgz#63b95dfda563018a20c182300651ed933e0dd30c"
-  dependencies:
-    fbjs "^0.8.0"
-    loose-envify "^1.1.0"
-    object-assign "^4.0.1"
-
-react@^15.4.2:
+"react@>=0.13.3 <16.0.0", react@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"
   dependencies:
