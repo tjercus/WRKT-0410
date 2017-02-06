@@ -436,13 +436,16 @@
 				"duration": "00:04:40",
 				"pace": "04:40",
 				"isValid": true
+			},
+			{
+				"uuid": "03e41df2-273e-485e-82e2-1c782490b83e",
+				"trainingUuid": "be7adc38-8250-409d-8bfd-32bb7acc7268"
+			},
+			{
+				"uuid": "9485c461-27fd-4592-81d6-36004ec9a51c",
+				"trainingUuid": "be7adc38-8250-409d-8bfd-32bb7acc7268"
 			}
-		],
-		"total": {
-			"distance": 25,
-			"duration": "01:46:40",
-			"pace": "04:16"
-		}
+		]
 	},
 	{
 		"uuid": "5394d9b3-8971-4bb3-80c0-8fb99b2c1c7f",
