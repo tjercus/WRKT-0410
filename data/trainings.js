@@ -5164,5 +5164,99 @@
 				"isValid": true
 			}
 		]
+	},
+	{
+		"uuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+		"name": "Fartlek 90 min #1",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"uuid": "2b535042-e97a-47f7-8880-341c1c7f6829",
+				"distance": "2",
+				"duration": "00:10:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"uuid": "52334bc8-40c3-4962-b057-f081c0375b4c",
+				"distance": "2.25",
+				"duration": "00:08:04",
+				"pace": "03:35",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"uuid": "67e6c9b0-ea40-4b10-bd7d-612c08da8038",
+				"distance": 1.2,
+				"duration": "00:06:12",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"uuid": "e8fcb2ce-7af4-400e-bc9a-e958e20bddb0",
+				"distance": "3",
+				"duration": "00:12:09",
+				"pace": "04:03",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"uuid": "3496f985-3f8e-4112-b183-911f03ad555e",
+				"distance": 0.581,
+				"duration": "00:03:00",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"uuid": "af4ffea9-c240-43e8-9819-2714ce9a3e7f",
+				"distance": "2.25",
+				"duration": "00:08:04",
+				"pace": "03:35",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"uuid": "86f5cf71-55be-404e-b3ff-6ab22364f387",
+				"distance": 0.6,
+				"duration": "00:03:00",
+				"pace": "05:00",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"uuid": "e53d9b42-523d-42ed-8c34-28d5ae7827f9",
+				"distance": "2.5",
+				"duration": "00:10:25",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"uuid": "8296d9de-2cb9-45cb-abea-a72d848e808c",
+				"distance": "4.6",
+				"duration": "00:23:00",
+				"pace": "05:00",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
+		"name": "Easy run 20km @MP+20%",
+		"type": "easy",
+		"segments": [
+			{
+				"trainingUuid": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
+				"uuid": "48",
+				"distance": "20",
+				"duration": "01:40:00",
+				"pace": "05:00",
+				"isValid": true
+			}
+		]
 	}
 ]
