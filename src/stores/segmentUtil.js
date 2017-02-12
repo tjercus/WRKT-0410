@@ -99,7 +99,7 @@ export function makeTrainingTotal(segments) {
   } else if (hasNoRealValue(totalObj, "duration")) {
     totalObj.duration = makeDuration(totalObj);
   }
-  // console.log(`segmentUtils.makeTrainingTotal: ${JSON.stringify(totalObj)}`);
+  console.log(`segmentUtils.makeTrainingTotal: ${JSON.stringify(totalObj)}`);
   return totalObj;
 }
 
@@ -223,7 +223,7 @@ const formatDuration = duration =>
   `${lpad(duration.hours())}:${lpad(duration.minutes())}:${lpad(duration.seconds())}`;
 
 /**
- * @param {Segment} segment object
+ * @param {Segment|Object} segment object
  * @return {string} pace as mm:ss
  */
 const makePace = (segment) => {

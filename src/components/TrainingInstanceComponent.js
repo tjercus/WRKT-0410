@@ -55,6 +55,21 @@ export default class TrainingInstanceComponent extends React.Component {
         total: training.total,
       });
     });
+
+    this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
+      // TODO also support updating a second training
+      if (day.trainings[0].uuid === this.state.uuid) {
+        const training = day.trainings[0];
+        this.setState({
+          uuid: training.uuid,
+          name: training.name,
+          type: training.type,
+          segments: training.segments,
+          total: training.total,
+        });
+      }
+    });
+
   }
 
   onPropagateChangesClick() {
@@ -64,7 +79,9 @@ export default class TrainingInstanceComponent extends React.Component {
   // TODO use from segmentUtils
   addEmptySegment() {
     let _segments = clone(this.state.segments);
-    _segments.push({ uuid: createUuid(), trainingUuid: this.state.uuid });
+    _segments.push({ uuid: createUuid(), trainingUuid: this.state.uuid,  distance: 0,
+      duration: "00:00:00",
+      pace: "00:00"});
     this.setState({
       segments: _segments,
       total: makeTrainingTotal(_segments),
