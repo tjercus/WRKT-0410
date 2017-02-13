@@ -8,6 +8,7 @@ export default class SegmentComponent extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log(`SegmentComponent props ${JSON.stringify(props)}`);
 
     let isValid = true;
     if (hasProperty(props.segment, "isValid")) {
@@ -30,7 +31,6 @@ export default class SegmentComponent extends React.Component {
 
   componentDidMount() {
     this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (data) => {
-      console.log("SegmentComponent caught SEGMENT_UPDATE_EVT");
       if (String(this.state.uuid) === String(data.segment.uuid)) {
         this.setState({
           distance: data.segment.distance,
@@ -73,13 +73,13 @@ export default class SegmentComponent extends React.Component {
   }
 
   onCalcButtonClick(evt) {
-    // only ask store to do something when the segment was eligable for augmentation (one changed and one empty field)
+    // only ask store to do something when the segment was eligible for augmentation (one changed and one empty field)
     if (canAugment(this.state)) {
       this.setState({isValid: isValidSegment(this.state)});
-      console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligable for augment so SEGMENT_UPDATE_CMD`);
+      console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligible for augment so SEGMENT_UPDATE_CMD`);
       this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, this.state);
     } else {
-      console.log(`SegmentComponent.onCalcButtonClick concludes the segment is not eligable for augment so no action`);
+      console.log(`SegmentComponent.onCalcButtonClick concludes the segment is not eligible for augment so no action`);
     }
   }
 

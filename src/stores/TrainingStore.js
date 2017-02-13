@@ -97,7 +97,7 @@ export default class TrainingStore {
       this.removeSegmentFromStore(segment);
     });
     eventbus.on(ee.SEGMENT_CLONE_CMD, (segment) => {
-      console.log(`TrainingStore caught SEGMENT_CLONE_CMD with ${JSON.stringify(segment)}`);
+      // console.log(`TrainingStore caught SEGMENT_CLONE_CMD with ${JSON.stringify(segment)}`);
       this.addSegmentToStore(segment, true);
     });
   }
@@ -141,7 +141,7 @@ export default class TrainingStore {
   * @returns {void} - emit event instead
   */
   addSegmentToStore(segment, overwriteUuid = false) {
-    console.log(`TrainingStore.addSegmentToStore(${JSON.stringify(segment)}); overwrite uuid? ${overwriteUuid}`);
+    // console.log(`TrainingStore.addSegmentToStore(${JSON.stringify(segment)}); overwrite uuid? ${overwriteUuid}`);
     if (hasProperty(segment, "trainingUuid") && segment.trainingUuid === this.uuid) {
       console.log(`TrainingStore.addSegmentToStore(); segment.trainingUuid was EQUAL to the loaded training ${segment.trainingUuid}`);
       this.segments = addSegment(segment, this.segments, overwriteUuid);
@@ -176,7 +176,7 @@ export default class TrainingStore {
    * @returns {void} - emit event instead
    */
   updateSegmentInStore(segment) {
-    console.log(`TrainingStore.updateSegmentInStore() with ${JSON.stringify(segment)}`);
+    // console.log(`TrainingStore.updateSegmentInStore() with ${JSON.stringify(segment)}`);
     if (hasProperty(segment, "trainingUuid") && segment.trainingUuid === this.uuid) {
       const _segment = augmentSegmentData(segment);
       this.segments = updateSegment(_segment, this.segments);
@@ -187,7 +187,7 @@ export default class TrainingStore {
         total: this.total,
       });
     } else {
-      console.log(`TrainingStore.updateSegmentInStore IGNORING ${JSON.stringify(segment)}`);
+      // console.log(`TrainingStore.updateSegmentInStore IGNORING ${JSON.stringify(segment)}`);
     }
   }
 

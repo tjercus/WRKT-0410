@@ -22,8 +22,8 @@ const DEFAULT_STATE = {
 
 /**
  * Is used in DayEditComponent to display segments and totals for an instance
- * Does not use a Store for local state management, when a use clicks on 'persist' button,
- * the local state is put on the eventbus so the DayStore can process it
+ * NOTE: local events are emitted and do not setState directly.
+ * The DayStore processes the state when the TrainingInstance (loaded in the GUI) changes.
 */
 export default class TrainingInstanceComponent extends React.Component {
   constructor(props) {
@@ -40,6 +40,7 @@ export default class TrainingInstanceComponent extends React.Component {
     this.onNameBlur = this.onNameBlur.bind(this);
     this.onTrainingTypeClick = this.onTrainingTypeClick.bind(this);
     this.onPropagateChangesClick = this.onPropagateChangesClick.bind(this);
+    this.setDayInLocalState = this.setDayInLocalState.bind(this);
   }
 
   componentDidMount() {
@@ -56,35 +57,34 @@ export default class TrainingInstanceComponent extends React.Component {
       });
     });
 
-    this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
-      // TODO also support updating a second training
-      if (day.trainings[0].uuid === this.state.uuid) {
-        const training = day.trainings[0];
-        this.setState({
-          uuid: training.uuid,
-          name: training.name,
-          type: training.type,
-          segments: training.segments,
-          total: training.total,
-        });
-      }
+    this.props.eventbus.on(ee.DAY_LOAD_EVT, day => {
+      this.setDayInLocalState(day);
     });
-
+    this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
+      this.setDayInLocalState(day);
+    });
   }
 
   onPropagateChangesClick() {
+    // TODO propagate instance id instead of complete training
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
   }
 
   // TODO use from segmentUtils
   addEmptySegment() {
-    let _segments = clone(this.state.segments);
-    _segments.push({ uuid: createUuid(), trainingUuid: this.state.uuid,  distance: 0,
+    // let _segments = clone(this.state.segments);
+    // _segments.push({ uuid: createUuid(), trainingUuid: this.state.uuid,  distance: 0,
+    //   duration: "00:00:00", pace: "00:00"});
+    // this.setState({
+    //   segments: _segments,
+    //   total: makeTrainingTotal(_segments),
+    // });
+    this.props.eventbus.emit(ee.SEGMENT_ADD_CMD, {
+      uuid: createUuid(),
+      trainingUuid: this.state.uuid,
+      distance: 0,
       duration: "00:00:00",
-      pace: "00:00"});
-    this.setState({
-      segments: _segments,
-      total: makeTrainingTotal(_segments),
+      pace: "00:00",
     });
   }
 
@@ -104,15 +104,19 @@ export default class TrainingInstanceComponent extends React.Component {
 
   onNameChange(evt) {
     this.setState({ name: evt.target.value });
+    // TODO emit event do not set local state
+    // this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, {
   }
 
   onNameBlur(evt) {
     this.setState({ name: evt.target.value });
+    // TODO emit event do not set local state
   }
 
+  // TODO test: 'should emit event when button clicked'
   onTrainingTypeClick(evt) {
     this.setState({ type: evt.target.value });
-    // TODO test: 'should update state when button clicked'
+    // TODO emit event do not set local state
   }
 
   removeTraining() {
@@ -132,6 +136,23 @@ export default class TrainingInstanceComponent extends React.Component {
       segments: obj.segments,
       total: obj.total,
     };
+  }
+
+  setDayInLocalState(day) {
+    // TODO also support updating a second training
+    if (day.trainings[0].uuid === this.state.uuid) {
+      console.log(`TrainingInstanceComponent.js caught DAY_*_EVT ${JSON.stringify(day.trainings[0])}`);
+      const training = day.trainings[0];
+      this.setState({
+        uuid: training.uuid,
+        name: training.name,
+        type: training.type,
+        segments: training.segments,
+        total: training.total,
+      });
+    } else {
+      console.log(`TrainingInstanceComponent.js caught DAY_*_EVT first day uuid was NOT equal to the one in the state`);
+    }
   }
 
   render() {
@@ -156,6 +177,7 @@ export default class TrainingInstanceComponent extends React.Component {
     }
 
     let segmentComponents = this.state.segments.map((segment, i) => {
+      console.log(`TrainingInstanceComponent rendering segment: ${JSON.stringify(segment)}`);
       return (
         <SegmentComponent
           key={i}

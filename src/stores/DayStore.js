@@ -52,6 +52,7 @@ export default class DayStore {
       this.updateSegmentInStore(segment);
     });
     eventbus.on(ee.SEGMENT_ADD_CMD, (segment) => {
+      console.log(`DayStore caught SEGMENT_ADD_CMD`);
       this.addSegmentToStore(segment, false);
     });
     eventbus.on(ee.SEGMENT_REMOVE_CMD, (segment) => {
@@ -73,14 +74,18 @@ export default class DayStore {
       console.log(`DayStore.updateSegmentInStore after augmenting: ${JSON.stringify(_segment)}`);
       let updatedLocalTrainings = [];
       this.day.trainings.map(training => {
+        // TODO some segments DO NOT have a trainingUuid
         if (training.uuid === segment.trainingUuid) {
-          console.log(`DayStore.updateSegmentInStore training: ${JSON.stringify(training)}`);
+          console.log(`DayStore.updateSegmentInStore training before updating segment: ${JSON.stringify(training)}`);
           training.segments = updateSegment(_segment, clone(training.segments));
           training.total = makeTrainingTotal(clone(training.segments));
+          console.log(`DayStore.updateSegmentInStore training after updating segment: ${JSON.stringify(training)}`);
           updatedLocalTrainings.push(training);
+        } else {
+          console.log(`DayStore.updateSegmentInStore no-op: training.uuid [${training.uuid}] !== segment.trainingUuid [${segment.trainingUuid}]`);
         }
       });
-      console.log(`DayStore.updateSegmentInStore trainings: ${JSON.stringify(updatedLocalTrainings)}`);
+      // console.log(`DayStore.updateSegmentInStore trainings: ${JSON.stringify(updatedLocalTrainings)}`);
       this.day.trainings = updatedLocalTrainings;
       this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
     }
@@ -101,6 +106,7 @@ export default class DayStore {
         if (training.uuid === segment.trainingUuid) {
           training.segments = addSegment(_segment, clone(training.segments), overwriteUuid);
           training.total = makeTrainingTotal(clone(training.segments));
+          console.log(`DayStore.addSegmentInStore training after adding segment: ${JSON.stringify(training)}`);
           updatedLocalTrainings.push(training);
         }
       });

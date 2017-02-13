@@ -75,8 +75,7 @@ export default class DayEditComponent extends React.Component {
       <section className={panelClassName}>
         <header className="panel-header">
           <p>
-            {"Day Edit Screen"}
-            {" "}
+            {"Day Edit Screen "}
             <button onClick={this.onCloseButtonClick} className="button-flat">close</button>
           </p>
         </header>
@@ -85,7 +84,7 @@ export default class DayEditComponent extends React.Component {
           <ul>
             {trainingButtonListItems}
           </ul>
-          <TrainingInstanceComponent eventbus={this.props.eventbus} />;
+          <TrainingInstanceComponent eventbus={this.props.eventbus} />
         </div>
       </section>
     );

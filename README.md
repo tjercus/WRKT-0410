@@ -57,11 +57,10 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
+- Fix by on displaying a changed segment in DayEditComponent
 - Timeline should refresh after a day was edited
 - Performance tuning with 'key' as a repeatable value instead of random int or createUuid
-- Close edit day dialog should persist changes
 - Show a dialog 'save current timeline?' when switching plans
-- Fix by on displaying a changed segment in DayEditComponent
 - Use a Map (uuid as key) for segments in TrainingInstance
 - Use a Map (uuid as key) for days in a plan
 - feature: 'move training to another day'
