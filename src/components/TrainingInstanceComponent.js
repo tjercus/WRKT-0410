@@ -100,23 +100,23 @@ export default class TrainingInstanceComponent extends React.Component {
     this.setState({
       isNameEditable: !this.state.isNameEditable,
     });
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
   }
 
   onNameChange(evt) {
     this.setState({ name: evt.target.value });
-    // TODO emit event do not set local state
-    // this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, {
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
   }
 
   onNameBlur(evt) {
     this.setState({ name: evt.target.value });
-    // TODO emit event do not set local state
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
   }
 
   // TODO test: 'should emit event when button clicked'
   onTrainingTypeClick(evt) {
     this.setState({ type: evt.target.value });
-    // TODO emit event do not set local state
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
   }
 
   removeTraining() {

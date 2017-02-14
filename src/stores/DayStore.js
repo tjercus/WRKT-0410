@@ -119,7 +119,7 @@ export default class DayStore {
    /**
     * Remove segment from local collection of segments
     * @param {Segment} segment - data object
-    * @returns {Void} - emit event instead
+    * @returns {void} - emit event instead
     */
    removeSegmentFromStore(segment) {
      if (hasProperty(this.day, "uuid")) {
