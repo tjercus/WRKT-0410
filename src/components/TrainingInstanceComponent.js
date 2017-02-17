@@ -140,7 +140,7 @@ export default class TrainingInstanceComponent extends React.Component {
 
   setDayInLocalState(day) {
     // TODO also support updating a second training
-    if (day.trainings[0].uuid === this.state.uuid) {
+    if (day.trainings && day.trainings[0].uuid === this.state.uuid) {
       console.log(`TrainingInstanceComponent.js caught DAY_*_EVT ${JSON.stringify(day.trainings[0])}`);
       const training = day.trainings[0];
       this.setState({
@@ -152,6 +152,13 @@ export default class TrainingInstanceComponent extends React.Component {
       });
     } else {
       console.log(`TrainingInstanceComponent.js caught DAY_*_EVT first day uuid was NOT equal to the one in the state`);
+      this.setState(this.makeTraining({
+        uuid: null,
+        name: null,
+        type: null,
+        segments: null,
+        total: null, // { distance: 0, pace: "00:00", duration: "00:00:00" },
+      }));
     }
   }
 
@@ -176,11 +183,15 @@ export default class TrainingInstanceComponent extends React.Component {
       nameComponent = <span id="name-label">{this.state.name}</span>;
     }
 
-    let segmentComponents = this.state.segments.map((segment, i) => {
+    let segments = [];
+    if (this.state.segments !== null) {
+      segments = this.state.segments;
+    }
+    let segmentComponents = segments.map(segment => {
       console.log(`TrainingInstanceComponent rendering segment: ${JSON.stringify(segment)}`);
       return (
         <SegmentComponent
-          key={i}
+          key={segment.uuid}
           eventbus={this.props.eventbus}
           segment={segment}
           trainingUuid={this.state.uuid}

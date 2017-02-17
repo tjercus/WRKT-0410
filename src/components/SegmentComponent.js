@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter2";
-import {canAugment, isValidSegment, parseDuration} from "../stores/segmentUtil";
+import {canAugment, isValidSegment, parseDuration, augmentSegmentData} from "../stores/segmentUtil";
 import {createUuid, clone, hasProperty} from "../stores/miscUtil";
 import {EventsEnum as ee} from "../constants";
 
@@ -14,14 +14,14 @@ export default class SegmentComponent extends React.Component {
     if (hasProperty(props.segment, "isValid")) {
       isValid = props.segment.isValid;
     }
-    this.state = {
+    this.setState({
       trainingUuid: clone(props.trainingUuid),
       uuid: clone(props.segment.uuid),
       distance: clone(props.segment.distance),
       duration: clone(props.segment.duration),
       pace: clone(props.segment.pace),
       isValid: clone(isValid)
-    };
+    });
     this.onChange = this.onChange.bind(this);
     this.onCalcButtonClick = this.onCalcButtonClick.bind(this);
     this.onCloneButtonClick = this.onCloneButtonClick.bind(this);
@@ -40,6 +40,10 @@ export default class SegmentComponent extends React.Component {
         });
       }
     });
+  }
+
+  shouldComponentUpdate() {
+    // TODO implement
   }
 
   componentWillUnmount() {
@@ -65,6 +69,7 @@ export default class SegmentComponent extends React.Component {
         this.setState({uuid: createUuid()});
       }
     }
+    console.log(`SegmentComponent.onChange updated state: ${JSON.stringify(this.state)}`);
   }
 
   onDurationBlur(evt) {

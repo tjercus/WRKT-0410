@@ -3,34 +3,45 @@ import EventEmitter from "eventemitter2";
 import { EventsEnum as ee } from "../constants";
 
 import TrainingInstanceComponent from "./TrainingInstanceComponent";
+import {hasProperty} from "../stores/miscUtil";
+
+const DEFAULT_STATE = {
+  isVisible: false,
+  dayUuid: null,
+  day: { trainings: [] },
+  selectedNr: null,
+  date: null,
+};
 
 export default class DayEditComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isVisible: false,
-      dayUuid: null,
-      day: { trainings: [] },
-      selectedNr: 0,
-      date: null,
-    };
+    this.state = DEFAULT_STATE;
     this.onLoadTrainingClick = this.onLoadTrainingClick.bind(this); // TODO phat arrow
     this.onCloseButtonClick = this.onCloseButtonClick.bind(this);
   }
 
   componentDidMount() {
     this.props.eventbus.on(ee.MENU_CLICK_EVT, menuItemName => {
-      this.setState({ isVisible: menuItemName === this.props.from });
+      if (menuItemName === this.props.from) {
+        this.setState({isVisible: true});
+      } else {
+        // this.setState({isVisible: false});
+        console.log("TIC: wipe local state");
+        this.setState({
+          isVisible: false,
+          dayUuid: null,
+          day: { trainings: [] },
+          selectedNr: 0,
+          date: null,
+        });
+      }
     });
 
     this.props.eventbus.on(ee.DAY_LOAD_EVT, (day, date) => {
       console.log(`DayEditComponent caught DAY_LOAD_EVT for day [${day.uuid}]`);
       this.setState({ day: day, date: date });
     });
-    // this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (segment) => {
-    //   // TODO update total in the right day.trainings[x]
-    //   // this.day.trainings etc.
-    // });
   }
 
   /**
