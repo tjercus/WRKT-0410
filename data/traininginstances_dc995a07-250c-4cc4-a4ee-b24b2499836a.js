@@ -5803,25 +5803,9 @@
 	},
 	{
 		"uuid": "911ae7d8-234f-4aa1-9fc8-d93c744c966c",
-		"name": "8km @MP, 8km @strength",
+		"name": "17km @21KP",
 		"type": "workout",
 		"segments": [
-			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
-				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
-				"distance": "2",
-				"duration": "00:10:20",
-				"pace": "05:10",
-				"isValid": true
-			},
-			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
-				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
-				"distance": "8",
-				"duration": "00:33:20",
-				"pace": "04:10",
-				"isValid": true
-			},
 			{
 				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
@@ -5830,12 +5814,7 @@
 				"pace": "04:05",
 				"isValid": true
 			}
-		],
-		"total": {
-			"distance": 18,
-			"duration": "01:16:20",
-			"pace": "04:14"
-		}
+		]
 	},
 	{
 		"uuid": "cd5cf054-111a-4983-90ca-6b39de646135",
