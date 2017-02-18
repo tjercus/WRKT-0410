@@ -68,7 +68,7 @@ export function addSegment(segment, segments, overwriteUuid = false) {
 export function updateSegment(segment, segments) {
   const segmentClone = augmentSegmentData(segment);
   const _segments = clone(segments);
-   const isSeg = _segment => String(_segment.uuid) === String(segmentClone.uuid);
+  const isSeg = _segment => String(_segment.uuid) === String(segmentClone.uuid);
   const index = _segments.findIndex(isSeg);
   _segments[index] = segmentClone;
   return _segments;

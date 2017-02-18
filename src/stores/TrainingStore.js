@@ -87,6 +87,10 @@ export default class TrainingStore {
        this.getCurrentlyLoadedTraining(), position);
     });
 
+    eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
+      this.getSegment(segmentUuid, trainingUuid, this.uuid, this.segments);
+    });
+
     eventbus.on(ee.SEGMENT_UPDATE_CMD, (segment) => {
       this.updateSegmentInStore(segment);
     });
@@ -231,6 +235,23 @@ export default class TrainingStore {
       this.eventbus.emit(ee.TRAINING_LOAD_EVT, this.getCurrentlyLoadedTraining());
     } else {
       this.eventbus.emit(ee.TRAINING_LOAD_ERROR_EVT, "Training could not be found");
+    }
+  }
+
+  /**
+   * TODO move to segmentUtils
+   * Lookup/Get a segment by uuid from a loaded training (which has one or more segments)
+   * @param {string} segmentUuid
+   * @param {string} trainingUuid
+   * @param {string} loadedTrainingUuid
+   * @param {Array<Segment>} segments
+   * @returns {void} - emits event instead
+   */
+  getSegment(segmentUuid, trainingUuid, loadedTrainingUuid, segments) {
+    if (trainingUuid === loadedTrainingUuid) {
+      const isSeg = _segment => String(_segment.uuid) === String(segmentUuid);
+      const index = segments.findIndex(isSeg);
+      this.eventbus.emit(ee.SEGMENT_GET_EVT, segments[index]);
     }
   }
 

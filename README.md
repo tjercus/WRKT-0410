@@ -40,6 +40,7 @@ Based on 'React eventemitter'.
 ### Training
 - Refactor TrainingComponent and TrainingInstanceComponent so they can use common code
 - Multi column traininglist instead of one long list
+- Separate TrainingListStore to keep loaded list of Trainings
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline
 - validate should be more tolerant for invalid segments caluculated by rounding on seconds
