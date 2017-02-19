@@ -2,8 +2,7 @@ import React from "react";
 import EventEmitter from "eventemitter2";
 import SegmentComponent from "./SegmentComponent";
 import { EventsEnum as ee, TRAINING_SHAPE } from "../constants";
-import { makeTrainingTotal } from "../stores/segmentUtil";
-import { clone, createUuid } from "../stores/miscUtil";
+import { createUuid } from "../stores/miscUtil";
 
 const DEFAULT_TOTAL = {
   distance: 0,
@@ -11,7 +10,7 @@ const DEFAULT_TOTAL = {
   pace: "00:00",
 };
 
-const DEFAULT_STATE = {
+const DEFAULT_TRAINING = {
   uuid: null,
   name: "undefined",
   type: null,
@@ -28,12 +27,10 @@ const DEFAULT_STATE = {
 export default class TrainingInstanceComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = DEFAULT_STATE;
+    this.state.training = DEFAULT_TRAINING;
     this.exportTraining = this.exportTraining.bind(this);
     this.onClearTrainingClick = this.onClearTrainingClick.bind(this);
-    //this.clearTrainingFromLocalState = this.clearTrainingFromLocalState.bind(this);
     this.addEmptySegment = this.addEmptySegment.bind(this);
-    //this.loadTraining = this.loadTraining.bind(this);
     this.removeTraining = this.removeTraining.bind(this);
     this.onEditNameButtonClick = this.onEditNameButtonClick.bind(this);
     this.onNameChange = this.onNameChange.bind(this);
@@ -47,14 +44,7 @@ export default class TrainingInstanceComponent extends React.Component {
     this.props.eventbus.on(ee.INSTANCE_LOAD_CMD, training => {
       console.log(`TrainingInstanceComponent received INSTANCE_LOAD_CMD with ${training.uuid}`);
       console.log(`TrainingInstanceComponent received: ${JSON.stringify(training)}`);
-      // TODO could this also work? this.setSate(training);
-      this.setState({
-        uuid: training.uuid,
-        name: training.name,
-        type: training.type,
-        segments: training.segments,
-        total: training.total,
-      });
+      this.setState({training: training});
     });
 
     this.props.eventbus.on(ee.DAY_LOAD_EVT, day => {
@@ -63,22 +53,17 @@ export default class TrainingInstanceComponent extends React.Component {
     this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
       this.setDayInLocalState(day);
     });
+
+    // TODO handle segment_get_evt?
   }
 
   onPropagateChangesClick() {
     // TODO propagate instance id instead of complete training
-    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
   // TODO use from segmentUtils
   addEmptySegment() {
-    // let _segments = clone(this.state.segments);
-    // _segments.push({ uuid: createUuid(), trainingUuid: this.state.uuid,  distance: 0,
-    //   duration: "00:00:00", pace: "00:00"});
-    // this.setState({
-    //   segments: _segments,
-    //   total: makeTrainingTotal(_segments),
-    // });
     this.props.eventbus.emit(ee.SEGMENT_ADD_CMD, {
       uuid: createUuid(),
       trainingUuid: this.state.uuid,
@@ -89,38 +74,38 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   exportTraining() {
-    console.log(JSON.stringify(this.makeTraining(this.state)));
+    console.log(JSON.stringify(this.state.training));
   }
 
   onClearTrainingClick() {
-    this.setState({});
+    this.setState(DEFAULT_TRAINING);
   }
 
   onEditNameButtonClick(evt) {
     this.setState({
       isNameEditable: !this.state.isNameEditable,
     });
-    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
   onNameChange(evt) {
     this.setState({ name: evt.target.value });
-    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
   onNameBlur(evt) {
     this.setState({ name: evt.target.value });
-    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
   // TODO test: 'should emit event when button clicked'
   onTrainingTypeClick(evt) {
     this.setState({ type: evt.target.value });
-    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.makeTraining(this.state));
+    this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
   removeTraining() {
-    this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD, this.state.uuid);
+    this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD, this.state.training.uuid);
   }
 
   /**
@@ -128,37 +113,25 @@ export default class TrainingInstanceComponent extends React.Component {
    * @param  {Object} obj - training-like object
    * @returns {Training} training
    */
-  makeTraining(obj) {
-    return {
-      uuid: obj.uuid,
-      name: obj.name,
-      type: obj.type,
-      segments: obj.segments,
-      total: obj.total,
-    };
-  }
+  // makeTraining(obj) {
+  //   return {
+  //     uuid: obj.uuid,
+  //     name: obj.name,
+  //     type: obj.type,
+  //     segments: obj.segments,
+  //     total: obj.total,
+  //   };
+  // }
 
   setDayInLocalState(day) {
     // TODO also support updating a second training
     if (day.trainings && day.trainings[0].uuid === this.state.uuid) {
       console.log(`TrainingInstanceComponent.js caught DAY_*_EVT ${JSON.stringify(day.trainings[0])}`);
       const training = day.trainings[0];
-      this.setState({
-        uuid: training.uuid,
-        name: training.name,
-        type: training.type,
-        segments: training.segments,
-        total: training.total,
-      });
+      this.setState({training: training});
     } else {
       console.log(`TrainingInstanceComponent.js caught DAY_*_EVT first day uuid was NOT equal to the one in the state`);
-      this.setState(this.makeTraining({
-        uuid: null,
-        name: null,
-        type: null,
-        segments: null,
-        total: null, // { distance: 0, pace: "00:00", duration: "00:00:00" },
-      }));
+      this.setState({training: DEFAULT_TRAINING});
     }
   }
 
@@ -193,8 +166,8 @@ export default class TrainingInstanceComponent extends React.Component {
         <SegmentComponent
           key={segment.uuid}
           eventbus={this.props.eventbus}
-          segment={segment}
-          trainingUuid={this.state.uuid}
+          uuid={segment.uuid}
+          trainingUuid={this.state.training.uuid}
         />
       );
     });
@@ -212,7 +185,7 @@ export default class TrainingInstanceComponent extends React.Component {
       ? "button-choice button-choice-selected"
       : "button-choice";
 
-    if (this.state.uuid === null) {
+    if (this.state.training.uuid === null) {
       return <div>{"Click on a training to see or edit ..."}</div>;
     } else {
       return (
@@ -262,12 +235,12 @@ export default class TrainingInstanceComponent extends React.Component {
             <output name="totals">
               <p>
                 {"Total distance:"} <em>{totalDistance}</em> {"km, "}
-                {"duration:"} <em>{this.state.total.duration}</em> {", "}
+                {"duration:"} <em>{this.state.training.total.duration}</em> {", "}
                 {"average pace:"} <em>
-                  <time>{this.state.total.pace}</time>
+                  <time>{this.state.training.total.pace}</time>
                 </em>
               </p>
-              <p>UUID: {this.state.uuid}</p>
+              <p>UUID: {this.state.training.uuid}</p>
             </output>
             <menu>
               <button onClick={this.addEmptySegment} className="button-flat">
