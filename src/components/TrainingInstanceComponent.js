@@ -15,7 +15,6 @@ const DEFAULT_TRAINING = {
   name: "undefined",
   type: null,
   segments: [],
-  isNameEditable: false,
   total: DEFAULT_TOTAL,
 };
 
@@ -27,7 +26,10 @@ const DEFAULT_TRAINING = {
 export default class TrainingInstanceComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state.training = DEFAULT_TRAINING;
+    this.state = {
+      training: DEFAULT_TRAINING,
+      isNameEditable: false,
+    };
     this.exportTraining = this.exportTraining.bind(this);
     this.onClearTrainingClick = this.onClearTrainingClick.bind(this);
     this.addEmptySegment = this.addEmptySegment.bind(this);
@@ -138,7 +140,7 @@ export default class TrainingInstanceComponent extends React.Component {
   render() {
     let panelClassName = "panel";
 
-    console.log(`TrainingInstanceComponent rendered with ${this.state.uuid}`);
+    console.log(`TrainingInstanceComponent rendered with ${this.state.training.uuid}`);
 
     let nameComponent = "";
     if (this.state.isNameEditable) {
@@ -147,18 +149,18 @@ export default class TrainingInstanceComponent extends React.Component {
           type="text"
           id="edit-name-textfield"
           name="edit-name-textfield"
-          value={this.state.name}
+          value={this.state.training.name}
           onChange={this.onNameChange}
           onBlur={this.onNameBlur}
         />
       );
     } else {
-      nameComponent = <span id="name-label">{this.state.name}</span>;
+      nameComponent = <span id="name-label">{this.state.training.name}</span>;
     }
 
     let segments = [];
-    if (this.state.segments !== null) {
-      segments = this.state.segments;
+    if (this.state.training.segments !== null) {
+      segments = this.state.training.segments;
     }
     let segmentComponents = segments.map(segment => {
       console.log(`TrainingInstanceComponent rendering segment: ${JSON.stringify(segment)}`);
@@ -173,15 +175,15 @@ export default class TrainingInstanceComponent extends React.Component {
     });
 
     let totalDistance = 0;
-    if (this.state.total && this.state.total.distance) {
-      totalDistance = this.state.total.distance.toFixed(3);
+    if (this.state.training.total && this.state.training.total.distance) {
+      totalDistance = this.state.training.total.distance.toFixed(3);
     }
 
     // TODO refactor to ButtonChoiceComponent
-    const type1ButtonClassName = this.state.type === "workout"
+    const type1ButtonClassName = this.state.training.type === "workout"
       ? "button-choice button-choice-selected"
       : "button-choice";
-    const type2ButtonClassName = this.state.type === "easy"
+    const type2ButtonClassName = this.state.training.type === "easy"
       ? "button-choice button-choice-selected"
       : "button-choice";
 

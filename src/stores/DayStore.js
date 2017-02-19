@@ -46,6 +46,11 @@ export default class DayStore {
       this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
     });
 
+    eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
+      // TODO implement! perhaps join all segments from this.day.trainings and then search
+      this.getSegment(segmentUuid, this.day.trainings);
+    });
+
     // TODO decide if this logic should be here ...
     eventbus.on(ee.SEGMENT_UPDATE_CMD, (segment) => {
       console.log(`DayStore caught SEGMENT_UPDATE_CMD`);
@@ -61,6 +66,19 @@ export default class DayStore {
     eventbus.on(ee.SEGMENT_CLONE_CMD, (segment) => {
       this.addSegmentToStore(segment, true);
     });
+  }
+
+  // TODO replace this with better code
+  getSegment(segmentUuid, trainings) {
+    let segments = trainings[0].segments;
+    if (trainings[1]) {
+      segments = Object.assign(segments, trainings[1].segments);
+    }
+    const isSeg = _segment => String(_segment.uuid) === String(segmentUuid);
+    const index = segments.findIndex(isSeg);
+    if (index !== -1 && index > -1) {
+      this.eventbus.emit(ee.SEGMENT_GET_EVT, segments[index]);
+    }
   }
 
   /**
