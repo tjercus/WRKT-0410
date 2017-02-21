@@ -54,6 +54,7 @@ export default class SegmentComponent extends React.Component {
    * @param {Segment|Object} data can be a Segment or a wrapped Segment
    */
   onIncomingSegment(data) {
+    console.log(`SegmentComponent onIncomingSegment ${JSON.stringify(data)}`);
     let _segment = {};
     if (hasProperty(data, "segment")) {
       _segment = data.segment;
@@ -62,9 +63,13 @@ export default class SegmentComponent extends React.Component {
     }
 
     if (String(this.props.uuid) === String(_segment.uuid)) {
+      console.log(`SegmentComponent onIncomingSegment uuids are equal`);
       if (isMounted) {
+        console.log(`SegmentComponent onIncomingSegment component is mounted`);
         this.setState({segment: _segment});
       }
+    } else {
+      console.log(`SegmentComponent onIncomingSegment uuids are NOT equal ${this.props.uuid}/${_segment.uuid}`);
     }
   }
 
