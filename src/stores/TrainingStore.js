@@ -8,7 +8,7 @@ import {
   removeSegment,
   augmentSegmentData,
   updateSegment,
-  makeTrainingTotal,
+  makeTrainingTotal, findSegment
 } from "./segmentUtil";
 import {
   createUuid,
@@ -227,8 +227,7 @@ export default class TrainingStore {
       this.type = training.type;
 
       // TODO use trainingUtil.augmentTraining
-      const _segments = training.segments.map(segment => augmentSegmentData(
-        segment));
+      const _segments = training.segments.map(segment => augmentSegmentData(segment));
       this.segments = _segments;
       this.total = makeTrainingTotal(_segments);
 
@@ -249,9 +248,9 @@ export default class TrainingStore {
    */
   getSegment(segmentUuid, trainingUuid, loadedTrainingUuid, segments) {
     if (trainingUuid === loadedTrainingUuid) {
-      const isSeg = _segment => String(_segment.uuid) === String(segmentUuid);
-      const index = segments.findIndex(isSeg);
-      this.eventbus.emit(ee.SEGMENT_GET_EVT, segments[index]);
+      const segment = findSegment(segmentUuid, segments);
+      segment.trainingUuid = trainingUuid;
+      this.eventbus.emit(ee.SEGMENT_GET_EVT, segment);
     }
   }
 

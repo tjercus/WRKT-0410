@@ -53,6 +53,7 @@ export default class TrainingInstanceComponent extends React.Component {
       this.setDayInLocalState(day);
     });
     this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
+      console.log(`TIC on DAY_UPDATE_EVT with day ${JSON.stringify(day)}`);
       this.setDayInLocalState(day);
     });
 
@@ -68,7 +69,7 @@ export default class TrainingInstanceComponent extends React.Component {
   addEmptySegment() {
     this.props.eventbus.emit(ee.SEGMENT_ADD_CMD, {
       uuid: createUuid(),
-      trainingUuid: this.state.uuid,
+      trainingUuid: this.state.training.uuid,
       distance: 0,
       duration: "00:00:00",
       pace: "00:00",
@@ -125,9 +126,14 @@ export default class TrainingInstanceComponent extends React.Component {
   //   };
   // }
 
+  /**
+   *
+   * @param {Day} day - contains date and 1 or 2 trainings
+   * @returns {void}
+   */
   setDayInLocalState(day) {
     // TODO also support updating a second training
-    if (day.trainings && day.trainings[0].uuid === this.state.uuid) {
+    if (day.trainings && day.trainings[0].uuid === this.state.training.uuid) {
       console.log(`TrainingInstanceComponent.js caught DAY_*_EVT ${JSON.stringify(day.trainings[0])}`);
       const training = day.trainings[0];
       this.setState({training: training});

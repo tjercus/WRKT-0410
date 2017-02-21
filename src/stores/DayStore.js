@@ -31,12 +31,6 @@ export default class DayStore {
       eventbus.emit(ee.DAY_LOAD_EVT, day, date);
     });
 
-    // throw DAY_UPDATE_EVT with a day as payload (so TimelineStore can update itself)
-    //eventbus.on(ee.SEGMENTS_UPDATE_EVT", (training) => {
-      // TODO careful for race condition since methods below update/add/remove throw same event
-      //eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
-    //});
-
     /**
      * emitted by TrainingInstanceComponent when user clicks 'save' button
      */
@@ -47,7 +41,6 @@ export default class DayStore {
     });
 
     eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
-      // TODO implement! perhaps join all segments from this.day.trainings and then search
       this.getSegment(segmentUuid, this.day.trainings);
     });
 
@@ -70,12 +63,18 @@ export default class DayStore {
 
   // TODO replace this with better code
   getSegment(segmentUuid, trainings) {
+    if (!Array.isArray(trainings) || trainings.length === 0 ||
+      !hasProperty(trainings[0], "segments")) {
+      return;
+    }
     let segments = trainings[0].segments;
+
     if (trainings[1]) {
       segments = Object.assign(segments, trainings[1].segments);
     }
     const isSeg = _segment => String(_segment.uuid) === String(segmentUuid);
     const index = segments.findIndex(isSeg);
+    // TODO add trainingUuid to found segment
     if (index !== -1 && index > -1) {
       this.eventbus.emit(ee.SEGMENT_GET_EVT, segments[index]);
     }
@@ -117,7 +116,7 @@ export default class DayStore {
    */
   addSegmentToStore(segment, overwriteUuid) {
     if (hasProperty(this.day, "uuid")) {
-      console.log(`DayStore.addSegmentToStore`);
+      console.log(`DayStore.addSegmentToStore ${segment}`);
       const _segment = augmentSegmentData(segment);
       let updatedLocalTrainings = [];
       this.day.trainings.map(training => {
@@ -126,6 +125,8 @@ export default class DayStore {
           training.total = makeTrainingTotal(clone(training.segments));
           console.log(`DayStore.addSegmentInStore training after adding segment: ${JSON.stringify(training)}`);
           updatedLocalTrainings.push(training);
+        } else {
+          console.log(`DayStore.addSegmentInStore trainingUuid was NOT equal: ${training.uuid}`);
         }
       });
       console.log(`DayStore.addSegmentToStore trainings: ${JSON.stringify(updatedLocalTrainings)}`);

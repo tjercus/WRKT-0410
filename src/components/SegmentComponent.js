@@ -4,11 +4,13 @@ import {canAugment, isValidSegment, parseDuration, augmentSegmentData} from "../
 import {createUuid, clone, hasProperty} from "../stores/miscUtil";
 import {EventsEnum as ee} from "../constants";
 
+let isMounted = false;
+
 export default class SegmentComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(`SegmentComponent props ${JSON.stringify(props)}`);
+    // console.log(`SegmentComponent props ${JSON.stringify(props)}`);
 
     this.state = {}; // TODO set empty component?
 
@@ -17,24 +19,18 @@ export default class SegmentComponent extends React.Component {
     this.onCloneButtonClick = this.onCloneButtonClick.bind(this);
     this.onRemoveButtonClick = this.onRemoveButtonClick.bind(this);
     this.onDurationBlur = this.onDurationBlur.bind(this);
+    this.onIncomingSegment = this.onIncomingSegment.bind(this);
   }
 
   componentDidMount() {
     // got a segment from a loaded training in TrainingStore or TrainingInstanceStore
-    this.props.eventbus.on(ee.SEGMENT_GET_EVT, (segment) => {
-      if (String(this.props.uuid) === String(segment.uuid)) {
-        this.setState({segment: segment});
-      }
-    });
+    this.props.eventbus.on(ee.SEGMENT_GET_EVT, segment => this.onIncomingSegment(segment));
+    this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, data => this.onIncomingSegment(data));
 
-    this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (data) => {
-      if (String(this.props.uuid) === String(data.segment.uuid)) {
-        this.setState({segment: data.segment});
-      }
-    });
-
-    // immediately sent event after component mounted
+    // immediately send event after component mounted
     this.props.eventbus.emit(ee.SEGMENT_GET_CMD, this.props.uuid, this.props.trainingUuid);
+
+    isMounted = true;
   }
 
   shouldComponentUpdate() {
@@ -43,7 +39,33 @@ export default class SegmentComponent extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.eventbus.removeAllListeners(ee.SEGMENT_UPDATE_EVT);
+    //this.props.eventbus.removeAllListeners(ee.SEGMENT_UPDATE_EVT);
+    // this.props.eventbus.removeAllListeners([]);
+    this.props.eventbus.removeListener(ee.SEGMENT_UPDATE_EVT, this.onIncomingSegment);
+    this.props.eventbus.removeListener(ee.SEGMENT_GET_EVT, this.onIncomingSegment);
+  }
+
+  componentDidUnMount() {
+    isMounted = false;
+  }
+
+  /**
+   * Handle payload for incoming segments
+   * @param {Segment|Object} data can be a Segment or a wrapped Segment
+   */
+  onIncomingSegment(data) {
+    let _segment = {};
+    if (hasProperty(data, "segment")) {
+      _segment = data.segment;
+    } else {
+      _segment = data;
+    }
+
+    if (String(this.props.uuid) === String(_segment.uuid)) {
+      if (isMounted) {
+        this.setState({segment: _segment});
+      }
+    }
   }
 
   onChange(evt) {
@@ -89,7 +111,7 @@ export default class SegmentComponent extends React.Component {
   }
 
   onCloneButtonClick() {
-    console.log(`SegmentComponent throws a SEGMENT_CLONE_CMD with ${JSON.stringify(this.state.segment)}`);
+    console.log(`SegmentComponent emits a SEGMENT_CLONE_CMD with ${JSON.stringify(this.state.segment)}`);
     this.props.eventbus.emit(ee.SEGMENT_CLONE_CMD, this.state.segment);
   }
 

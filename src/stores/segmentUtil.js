@@ -60,6 +60,18 @@ export function addSegment(segment, segments, overwriteUuid = false) {
 }
 
 /**
+ * Find a segment in a list of segments
+ * @param {String} uuid - for segment
+ * @param {Array<Segment>} segments - arr
+ * @returns {Segment|null} found segment or null
+ */
+export function findSegment(uuid, segments) {
+  const _segments = clone(segments);
+  const isSeg = _segment => String(_segment.uuid) === String(uuid);
+  return _segments[_segments.findIndex(isSeg)];
+}
+
+/**
  * update segment in a list
  * @param  {Segment}  segment object
  * @param  {Array<Segment>} segments
