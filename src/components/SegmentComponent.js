@@ -14,12 +14,14 @@ export default class SegmentComponent extends React.Component {
 
     this.state = {}; // TODO set empty component?
 
+    /*
     this.onChange = this.onChange.bind(this);
     this.onCalcButtonClick = this.onCalcButtonClick.bind(this);
     this.onCloneButtonClick = this.onCloneButtonClick.bind(this);
     this.onRemoveButtonClick = this.onRemoveButtonClick.bind(this);
     this.onDurationBlur = this.onDurationBlur.bind(this);
     this.onIncomingSegment = this.onIncomingSegment.bind(this);
+    */
   }
 
   componentDidMount() {
@@ -57,7 +59,7 @@ export default class SegmentComponent extends React.Component {
    * Handle payload for incoming segments
    * @param {Segment|Object} data can be a Segment or a wrapped Segment
    */
-  onIncomingSegment(data) {
+  onIncomingSegment = (data) => {
     // console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment: raw data ${JSON.stringify(data)}`);
     let _segment = {};
     if (hasProperty(data, "segment")) {
@@ -75,9 +77,9 @@ export default class SegmentComponent extends React.Component {
     } else {
       console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment NOT responding to event for [${_segment.uuid}]`);
     }
-  }
+  };
 
-  onChange(evt) {
+  onChange = (evt) => {
     let val = evt.target.value;
     let name = evt.target.name;
     const _segment = this.state.segment;
@@ -99,16 +101,16 @@ export default class SegmentComponent extends React.Component {
       this.setState({segment: _segment});
     }
     console.log(`SegmentComponent.onChange updated state: ${JSON.stringify(this.state)}`);
-  }
+  };
 
-  onDurationBlur(evt) {
+  onDurationBlur = (evt) => {
     let val = evt.target.value;
     const _segment = clone(this.state.segment);
     _segment.duration = parseDuration(val);
     this.setState({segment: _segment});
-  }
+  };
 
-  onCalcButtonClick(evt) {
+  onCalcButtonClick = (evt) =>{
     // only ask store to do something when the segment was eligible for augmentation (one changed and one empty field)
     if (canAugment(this.state.segment)) {
       // this.setState({isValid: isValidSegment(this.state.segment)});
@@ -117,16 +119,16 @@ export default class SegmentComponent extends React.Component {
     } else {
       console.log(`SegmentComponent.onCalcButtonClick concludes the segment is not eligible for augment so no action`);
     }
-  }
+  };
 
-  onCloneButtonClick() {
+  onCloneButtonClick = () => {
     console.log(`SegmentComponent emits a SEGMENT_CLONE_CMD with ${JSON.stringify(this.state.segment)}`);
     this.props.eventbus.emit(ee.SEGMENT_CLONE_CMD, this.state.segment);
-  }
+  };
 
-  onRemoveButtonClick() {
+  onRemoveButtonClick = () => {
     this.props.eventbus.emit(ee.SEGMENT_REMOVE_CMD, this.state.segment);
-  }
+  };
 
   isDirtyValue(name, value) {
     return (this.state.segment[name] !== value);

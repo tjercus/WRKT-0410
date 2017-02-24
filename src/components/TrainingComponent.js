@@ -23,6 +23,7 @@ export default class TrainingComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = DEFAULT_STATE;
+    // TODO remove this with phat arrow method declarations
     this.exportTraining = this.exportTraining.bind(this);
     this.emitClearTraining = this.emitClearTraining.bind(this);
     this.emitPersistChanges = this.emitPersistChanges.bind(this);
@@ -65,11 +66,9 @@ export default class TrainingComponent extends React.Component {
       }
     });
     this.props.eventbus.on(ee.SEGMENT_REMOVE_EVT, (training) => {
-      this.setState({ segments: [], total: {} }, function() {
-        console.log("TrainingComponent emptied segments");
-        this.setState({ segments: training.segments, total: training.total }, function() {
-          console.log("TrainingComponent finished updating state with new segments");
-        });
+      // TODO 24-2-2017 broken, all segments are removed
+      this.setState({ segments: training.segments, total: training.total }, function() {
+        console.log("TrainingComponent finished updating state with new segments");
       });
     });
     this.props.eventbus.on(ee.TRAINING_CLEAR_EVT, (uuid) => {

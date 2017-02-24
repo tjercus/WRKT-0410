@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/tjercus/WRKT-0410",
   "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.23.0",
     "bufferstreams": "1.1.1",
     "eventemitter2": "2.2.1",
     "fileinput": "^0.2.0",

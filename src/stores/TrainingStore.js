@@ -88,7 +88,7 @@ export default class TrainingStore {
     });
 
     eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
-      this.getSegment(segmentUuid, trainingUuid, this.uuid, this.segments);
+      this.emitSegment(segmentUuid, trainingUuid, this.uuid, this.segments);
     });
 
     eventbus.on(ee.SEGMENT_UPDATE_CMD, (segment) => {
@@ -247,11 +247,13 @@ export default class TrainingStore {
    * @param {Array<Segment>} segments
    * @returns {void} - emits event instead
    */
-  getSegment(segmentUuid, trainingUuid, loadedTrainingUuid, segments) {
+  emitSegment(segmentUuid, trainingUuid, loadedTrainingUuid, segments) {
     if (trainingUuid === loadedTrainingUuid) {
       const segment = findSegment(segmentUuid, segments);
-      segment.trainingUuid = trainingUuid;
-      this.eventbus.emit(ee.SEGMENT_GET_EVT, segment);
+      if (segment !== undefined && segment !== null) {
+        segment.trainingUuid = trainingUuid;
+        this.eventbus.emit(ee.SEGMENT_GET_EVT, segment);
+      }
     }
   }
 
