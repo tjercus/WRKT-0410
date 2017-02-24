@@ -183,6 +183,7 @@ export default class TrainingStore {
     console.log(`TrainingStore.updateSegmentInStore() with ${JSON.stringify(segment)}`);
     if (hasProperty(segment, "trainingUuid") && segment.trainingUuid === this.uuid) {
       const _segment = augmentSegmentData(segment);
+      console.log(`TrainingStore.updateSegmentInStore() augmented as ${JSON.stringify(_segment)}`);
       this.segments = updateSegment(_segment, this.segments);
       this.total = makeTrainingTotal(this.segments);
       this.eventbus.emit(ee.SEGMENT_UPDATE_EVT, {
@@ -191,7 +192,7 @@ export default class TrainingStore {
         total: this.total,
       });
     } else {
-      console.log(`TrainingStore.updateSegmentInStore IGNORING ${JSON.stringify(segment)} versus ${this.uuid}`);
+      console.log(`TrainingStore.updateSegmentInStore IGNORING ${segment.trainingUuid} versus ${this.uuid}`);
     }
   }
 

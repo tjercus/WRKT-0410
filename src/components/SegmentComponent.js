@@ -23,14 +23,18 @@ export default class SegmentComponent extends React.Component {
   }
 
   componentDidMount() {
+    isMounted = true;
+
     // got a segment from a loaded training in TrainingStore or TrainingInstanceStore
     this.props.eventbus.on(ee.SEGMENT_GET_EVT, segment => this.onIncomingSegment(segment));
     this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, data => this.onIncomingSegment(data));
 
-    // immediately send event after component mounted
-    this.props.eventbus.emit(ee.SEGMENT_GET_CMD, this.props.uuid, this.props.trainingUuid);
-
-    isMounted = true;
+    // Note that TrainingComponent AND TrainingInstanceComponent will emit this after rendering
+    this.props.eventbus.on(ee.TRAINING_RENDER_EVT, (trainingUuid) => {
+      if (trainingUuid === this.props.trainingUuid) {
+        this.props.eventbus.emit(ee.SEGMENT_GET_CMD, this.props.uuid, this.props.trainingUuid);
+      }
+    });
   }
 
   shouldComponentUpdate() {

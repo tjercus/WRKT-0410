@@ -795,7 +795,7 @@
 				"distance": "10",
 				"duration": "00:55:00",
 				"pace": "05:30",
-				"isValid": true
+				"trainingUuid": "865d9482-d78a-4c51-8eb4-65d6ef6a3d22"
 			}
 		]
 	},

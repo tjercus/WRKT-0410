@@ -56,8 +56,14 @@ export default class TrainingInstanceComponent extends React.Component {
       console.log(`TIC on DAY_UPDATE_EVT with day ${JSON.stringify(day)}`);
       this.setDayInLocalState(day);
     });
+  }
 
-    // TODO handle segment_get_evt?
+  /**
+   * React built-in function called after 'render' phase. Notify the world.
+   */
+  componentDidUpdate() {
+    console.log(`TrainingInstanceComponent componentDidUpdate ${this.state.training.uuid}`);
+    this.props.eventbus.emit(ee.TRAINING_RENDER_EVT, this.state.training.uuid);
   }
 
   onPropagateChangesClick() {

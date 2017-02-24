@@ -39,6 +39,8 @@ export default class TrainingComponent extends React.Component {
     this.emitAddToMiddleOfPlan = this.emitAddToMiddleOfPlan.bind(this);
     this.emitAddToSelectedWeekOfPlan = this.emitAddToSelectedWeekOfPlan.bind(this);
     this.emitAddToPlan = this.emitAddToPlan.bind(this);
+    this.makeTraining = this.makeTraining.bind(this);
+    this.componentDidUpdate = this.componentDidUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -58,6 +60,8 @@ export default class TrainingComponent extends React.Component {
       console.log("TrainingComponent caught SEGMENT_UPDATE_EVT");
       if (data.uuid === this.uuid) {
         this.setState({ total: data.total });
+      } else {
+        console.log(`TrainingComponent NOT equal ${data.uuid}/${this.uuid}`);
       }
     });
     this.props.eventbus.on(ee.SEGMENT_REMOVE_EVT, (training) => {
@@ -73,8 +77,18 @@ export default class TrainingComponent extends React.Component {
     });
   }
 
+  /**
+   * React built-in function called after 'render' phase. Notify the world.
+   */
+  componentDidUpdate() {
+    console.log(`TrainingComponent componentDidUpdate ${this.state.uuid}`);
+    this.props.eventbus.emit(ee.TRAINING_RENDER_EVT, this.state.uuid);
+  }
+
   loadTraining(training) {
-    this.setState(DEFAULT_STATE, () => this.setState(this.makeTraining(training)));
+    this.setState(this.makeTraining(training), () => {
+      console.log(`TrainingComponent loadTraining setSate as: ${JSON.stringify(this.state)}`);
+    });
   }
 
   addEmptySegment() {
@@ -87,7 +101,12 @@ export default class TrainingComponent extends React.Component {
   }
 
   exportTraining() {
-    console.log(JSON.stringify({ uuid: this.state.uuid, name: this.state.name, segments: this.state.segments }));
+    console.log(JSON.stringify({
+      uuid: this.state.uuid,
+      name: this.state.name,
+      type: this.state.type,
+      segments: this.state.segments
+    }));
   }
 
   emitClearTraining() {
