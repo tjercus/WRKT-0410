@@ -118,28 +118,13 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   /**
-   * Create training object by selectively copying properties from another obj
-   * @param  {Object} obj - training-like object
-   * @returns {Training} training
-   */
-  // makeTraining(obj) {
-  //   return {
-  //     uuid: obj.uuid,
-  //     name: obj.name,
-  //     type: obj.type,
-  //     segments: obj.segments,
-  //     total: obj.total,
-  //   };
-  // }
-
-  /**
    *
    * @param {Day} day - contains date and 1 or 2 trainings
    * @returns {void}
    */
   setDayInLocalState(day) {
     // TODO also support updating a second training
-    if (day.trainings && day.trainings[0].uuid === this.state.training.uuid) {
+    if (day.trainings && day.trainings[0] && day.trainings[0].uuid === this.state.training.uuid) {
       console.log(`TrainingInstanceComponent.js caught DAY_*_EVT ${JSON.stringify(day.trainings[0])}`);
       const training = day.trainings[0];
       this.setState({training: training});

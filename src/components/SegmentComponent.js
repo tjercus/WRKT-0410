@@ -13,15 +13,6 @@ export default class SegmentComponent extends React.Component {
     console.log(`SegmentComponent props.uuid ${JSON.stringify(props.uuid)}`);
 
     this.state = {}; // TODO set empty component?
-
-    /*
-    this.onChange = this.onChange.bind(this);
-    this.onCalcButtonClick = this.onCalcButtonClick.bind(this);
-    this.onCloneButtonClick = this.onCloneButtonClick.bind(this);
-    this.onRemoveButtonClick = this.onRemoveButtonClick.bind(this);
-    this.onDurationBlur = this.onDurationBlur.bind(this);
-    this.onIncomingSegment = this.onIncomingSegment.bind(this);
-    */
   }
 
   componentDidMount() {
@@ -117,7 +108,7 @@ export default class SegmentComponent extends React.Component {
       console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligible for augment so SEGMENT_UPDATE_CMD`);
       this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, this.state.segment);
     } else {
-      console.log(`SegmentComponent.onCalcButtonClick concludes the segment is not eligible for augment so no action`);
+      console.log(`SegmentComponent.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is not eligible for augment so no action`);
     }
   };
 
