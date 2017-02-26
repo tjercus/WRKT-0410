@@ -1,5 +1,5 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import SegmentComponent from "./SegmentComponent";
 import {EventsEnum as ee} from "../constants";
 
@@ -56,17 +56,19 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.on(ee.SEGMENT_ADD_EVT, (training) => {
       this.setState({ segments: training.segments, total: training.total });
     });
-    // TODO find out why this is never caught:
-    this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (data) => {
-      console.log("TrainingComponent caught SEGMENT_UPDATE_EVT");
-      if (data.uuid === this.uuid) {
-        this.setState({ total: data.total });
-      } else {
-        console.log(`TrainingComponent NOT equal ${data.uuid}/${this.uuid}`);
-      }
-    });
+
+    // TODO temp disabled to see if this is a problem with race condition on refreshing segments too early
+    //
+    // this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (data) => {
+    //   console.log("TrainingComponent caught SEGMENT_UPDATE_EVT, only updating total, not segment");
+    //   if (data.uuid === this.state.uuid) {
+    //     this.setState({ total: data.total });
+    //   } else {
+    //     console.log(`TrainingComponent NOT equal ${data.uuid}/${this.state.uuid}`);
+    //   }
+    // });
+
     this.props.eventbus.on(ee.SEGMENT_REMOVE_EVT, (training) => {
-      // TODO 24-2-2017 broken, all segments are removed
       this.setState({ segments: training.segments, total: training.total }, function() {
         console.log("TrainingComponent finished updating state with new segments");
       });

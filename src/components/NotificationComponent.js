@@ -1,5 +1,5 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import {EventsEnum as ee} from "../constants";
 
 /**
@@ -18,7 +18,10 @@ export default class NotificationComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.eventbus.onAny((type, data) => {
+    // const that = this;
+    this.props.eventbus.onAny((data) => {
+      const type = this.props.eventbus.event;
+      console.log(`componentDidMount ${JSON.stringify(type)}`);
       if (type) {
         if (type === ee.SET_NOTIFICATION_TIMEOUT_CMD) {
           this.notificationTimeout = data;

@@ -1,5 +1,5 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import {EventsEnum as ee} from "../constants";
 import PlanEditComponent from "./PlanEditComponent";
 
@@ -13,7 +13,7 @@ export default class PlanListComponent extends React.Component {
       planlist: [],
       newPlanName: "new plan",
     };
-    this.onClick = this.onClick.bind(this);   
+    this.onClick = this.onClick.bind(this);
   }
 
   componentDidMount() {
@@ -39,7 +39,7 @@ export default class PlanListComponent extends React.Component {
     const uuid = evt.target.attributes[1].nodeValue;
     this.setState({selectedUid: uuid});
     this.props.eventbus.emit(ee.PLAN_FETCH_CMD, uuid);
-  } 
+  }
 
   render() {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";

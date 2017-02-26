@@ -1,5 +1,5 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import SegmentComponent from "./SegmentComponent";
 import { EventsEnum as ee, TRAINING_SHAPE } from "../constants";
 import { createUuid } from "../stores/miscUtil";

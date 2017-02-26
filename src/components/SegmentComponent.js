@@ -1,5 +1,5 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import {canAugment, isValidSegment, parseDuration, augmentSegmentData} from "../stores/segmentUtil";
 import {createUuid, clone, hasProperty} from "../stores/miscUtil";
 import {EventsEnum as ee} from "../constants";
@@ -21,6 +21,13 @@ export default class SegmentComponent extends React.Component {
     // got a segment from a loaded training in TrainingStore or TrainingInstanceStore
     this.props.eventbus.on(ee.SEGMENT_GET_EVT, segment => this.onIncomingSegment(segment));
     this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, data => this.onIncomingSegment(data));
+    // const that = this;
+    // this.props.eventbus.onAny(function(data) {
+    //   if (this.event === "SEGMENT_UPDATE_EVT") {
+    //     console.log(`SegmentComponent caught SEGMENT_UPDATE_EVT`);
+    //     that.onIncomingSegment(data);
+    //   }
+    // });
 
     // Note that TrainingComponent AND TrainingInstanceComponent will emit this after rendering
     this.props.eventbus.on(ee.TRAINING_RENDER_EVT, (trainingUuid) => {
@@ -36,6 +43,7 @@ export default class SegmentComponent extends React.Component {
   }
 
   componentWillUnmount() {
+   console.log(`SegmentComponent componentWillUnmount`);
     //this.props.eventbus.removeAllListeners(ee.SEGMENT_UPDATE_EVT);
     // this.props.eventbus.removeAllListeners([]);
     this.props.eventbus.removeListener(ee.SEGMENT_UPDATE_EVT, this.onIncomingSegment);
@@ -51,7 +59,7 @@ export default class SegmentComponent extends React.Component {
    * @param {Segment|Object} data can be a Segment or a wrapped Segment
    */
   onIncomingSegment = (data) => {
-    // console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment: raw data ${JSON.stringify(data)}`);
+    console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment: raw data ${JSON.stringify(data)}`);
     let _segment = {};
     if (hasProperty(data, "segment")) {
       _segment = data.segment;
@@ -66,7 +74,7 @@ export default class SegmentComponent extends React.Component {
         this.setState({segment: _segment});
       }
     } else {
-      console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment NOT responding to event for [${_segment.uuid}]`);
+      // console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment NOT responding to event for [${_segment.uuid}]`);
     }
   };
 
@@ -108,7 +116,7 @@ export default class SegmentComponent extends React.Component {
       console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligible for augment so SEGMENT_UPDATE_CMD`);
       this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, this.state.segment);
     } else {
-      console.log(`SegmentComponent.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is not eligible for augment so no action`);
+      // console.log(`SegmentComponent.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is not eligible for augment so no action`);
     }
   };
 

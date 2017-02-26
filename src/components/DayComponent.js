@@ -1,5 +1,5 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import {EventsEnum as ee} from "../constants";
 import moment from "moment";
 import { createUuid } from "../stores/miscUtil";

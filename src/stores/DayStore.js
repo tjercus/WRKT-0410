@@ -1,5 +1,3 @@
-import EventEmitter from "eventemitter2";
-import { findDay } from "./timelineUtil";
 import { updateTrainingInstanceInDay } from "./trainingUtil";
 import {EventsEnum as ee} from "../constants";
 import {

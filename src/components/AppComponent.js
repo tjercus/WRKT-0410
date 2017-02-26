@@ -1,5 +1,5 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import MenuComponent from "./MenuComponent";
 import PanelComponent from "./PanelComponent";
 import TrainingPanelComponent from "./TrainingPanelComponent";
@@ -27,7 +27,7 @@ export default class AppComponent extends React.Component {
     if (hasProperty(this.props, "eventbus")) {
       this.eventbus = this.props.eventbus;
     } else {
-      this.eventbus = new EventEmitter({ wildcard: true, maxListeners: 999999 });
+      this.eventbus = new EventEmitter();
     }
 
     // initially will receive data as empty TODO remove props so all data comes from eventbus

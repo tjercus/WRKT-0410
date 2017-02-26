@@ -1,4 +1,3 @@
-import EventEmitter from "eventemitter2";
 import {EventsEnum as ee} from "../constants";
 const HOST = "http://localhost:3333/";
 

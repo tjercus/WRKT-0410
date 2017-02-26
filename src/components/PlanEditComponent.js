@@ -1,5 +1,5 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import {EventsEnum as ee} from "../constants";
 
 import { createUuid } from "../stores/miscUtil";
@@ -8,7 +8,7 @@ export default class PlanEditComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {      
+    this.state = {
       newPlanName: "new plan",
       startDate: "2016-01-01"
     };

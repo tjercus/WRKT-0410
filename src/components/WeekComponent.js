@@ -1,5 +1,5 @@
 import React from "react";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import DayComponent from "./DayComponent";
 import {EventsEnum as ee} from "../constants";
 import { createUuid } from "../stores/miscUtil";
