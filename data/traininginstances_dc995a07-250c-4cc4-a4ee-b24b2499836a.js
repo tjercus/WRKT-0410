@@ -6095,5 +6095,61 @@
 			"duration": "01:16:20",
 			"pace": "04:14"
 		}
+	},
+	{
+		"uuid": "0714e33e-9008-4c73-8aa8-6958b66ec9fe",
+		"name": "30km with 10km @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "10",
+				"duration": "00:47:50",
+				"pace": "04:47",
+				"isValid": true,
+				"trainingUuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+			},
+			{
+				"uuid": "353098c1-9d80-44cd-99e1-f25175b1e885",
+				"distance": "10",
+				"duration": "00:49:40",
+				"pace": "04:58",
+				"isValid": true,
+				"trainingUuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+			},
+			{
+				"uuid": "96bf1bb8-c467-4bbd-b9e8-0447dd65076d",
+				"distance": "10.1",
+				"duration": "00:40:45",
+				"pace": "04:02",
+				"isValid": false,
+				"trainingUuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+			}
+		],
+		"total": {
+			"distance": 30.1,
+			"duration": "02:18:15",
+			"pace": "04:36"
+		}
+	},
+	{
+		"uuid": "4bcea08b-e294-4efa-b825-349455613f40",
+		"name": "Long run 30km @MP+12%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "30",
+				"duration": "02:20:00",
+				"pace": "04:40",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 30,
+			"duration": "02:20:00",
+			"pace": "04:40"
+		}
 	}
 ]
