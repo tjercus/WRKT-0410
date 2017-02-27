@@ -371,18 +371,18 @@
 			]
 		},
 		{
-			"uuid": "913ddddd-7322-420b-9a94-348ff798a59b",
-			"trainings": [
-				{
-					"instanceId": "6b84e3cc-2a93-4b95-a64b-e23a9782d5df"
-				}
-			]
-		},
-		{
 			"uuid": "bd051244-7e1c-4a37-870f-aa22bd3f75ac",
 			"trainings": [
 				{
 					"instanceId": "2a15fccf-5353-4e7f-9910-0a637a59240f"
+				}
+			]
+		},
+		{
+			"uuid": "45e3af3a-1c39-4ca4-95cf-8b7ae650aae1",
+			"trainings": [
+				{
+					"instanceId": "dd15da17-c63d-48ce-8b3d-6cf6f795a788"
 				}
 			]
 		},
@@ -615,6 +615,14 @@
 			"trainings": [
 				{
 					"instanceId": "f7b6395e-2178-4025-a879-90c3a3de9f02"
+				}
+			]
+		},
+		{
+			"uuid": "99640817-f5d1-4b5a-b437-cdc485d52848",
+			"trainings": [
+				{
+					"instanceId": "0bd8e780-2acf-4c03-8f9b-263160ea37eb"
 				}
 			]
 		}

@@ -59,14 +59,14 @@ export default class TrainingComponent extends React.Component {
 
     // TODO temp disabled to see if this is a problem with race condition on refreshing segments too early
     //
-    // this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (data) => {
-    //   console.log("TrainingComponent caught SEGMENT_UPDATE_EVT, only updating total, not segment");
-    //   if (data.uuid === this.state.uuid) {
-    //     this.setState({ total: data.total });
-    //   } else {
-    //     console.log(`TrainingComponent NOT equal ${data.uuid}/${this.state.uuid}`);
-    //   }
-    // });
+    this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (data) => {
+      console.log("TrainingComponent caught SEGMENT_UPDATE_EVT, only updating total, not segment");
+      if (data.uuid === this.state.uuid) {
+        this.setState({ total: data.total });
+      } else {
+        // console.log(`TrainingComponent NOT equal ${data.uuid}/${this.state.uuid}`);
+      }
+    });
 
     this.props.eventbus.on(ee.SEGMENT_REMOVE_EVT, (training) => {
       this.setState({ segments: training.segments, total: training.total }, function() {
@@ -82,7 +82,7 @@ export default class TrainingComponent extends React.Component {
    * React built-in function called after 'render' phase. Notify the world.
    */
   componentDidUpdate() {
-    console.log(`TrainingComponent componentDidUpdate ${this.state.uuid}`);
+    console.log(`TrainingComponent componentDidUpdate ${this.state.uuid} emitting TRAINING_RENDER_EVT`);
     this.props.eventbus.emit(ee.TRAINING_RENDER_EVT, this.state.uuid);
   }
 
@@ -236,7 +236,7 @@ export default class TrainingComponent extends React.Component {
             </fieldset>
             <table summary="training segments">
               <thead>
-                <tr><th>Distance</th><th>Duration</th><th>Pace</th><th>Actions</th></tr>
+                <tr><th>Distance</th><th>Duration</th><th>Pace</th><th>Actions</th><th>Info</th></tr>
               </thead>
               <tbody>
                 {segmentComponents}

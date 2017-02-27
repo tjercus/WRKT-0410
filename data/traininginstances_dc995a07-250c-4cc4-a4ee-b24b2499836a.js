@@ -5935,5 +5935,165 @@
 			"duration": "02:20:00",
 			"pace": "04:40"
 		}
+	},
+	{
+		"uuid": "dd15da17-c63d-48ce-8b3d-6cf6f795a788",
+		"name": "7 x 1m @16KP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
+				"distance": "2",
+				"duration": "00:11:10",
+				"pace": "05:35",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "0aceaaf9-41d5-48cb-b4b2-8e536fefd7db",
+				"distance": "1.6",
+				"duration": "00:06:50",
+				"pace": "04:16",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "f355d75b-6b29-4bd8-97de-0d606b0d0937",
+				"distance": "0.4",
+				"duration": "00:02:10",
+				"pace": "05:25",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "856e0477-1261-4cbd-bc7c-8e8653c2a705",
+				"distance": "1.6",
+				"duration": "00:06:50",
+				"pace": "04:16",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "09d367e5-8c23-45ad-ac6c-a8c2717b739d",
+				"distance": "0.4",
+				"duration": "00:02:10",
+				"pace": "05:25",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "f1652ef8-e31b-4949-85fe-a8fbb29097d9",
+				"distance": "1.6",
+				"duration": "00:06:50",
+				"pace": "04:16",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "ed17ce4c-34eb-4a3d-8746-7ee1aa6dc49a",
+				"distance": "0.4",
+				"duration": "00:02:10",
+				"pace": "05:25",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "4a5e10d3-d600-4b04-b39b-6ebfeaa20fdb",
+				"distance": "1.6",
+				"duration": "00:06:50",
+				"pace": "04:16",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "ad6bfc0b-41c4-4ed3-b200-15e00ea20024",
+				"distance": "0.4",
+				"duration": "00:02:10",
+				"pace": "05:25",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "dde40943-0c88-4a9b-ad94-d443c749f4f2",
+				"distance": "1.6",
+				"duration": "00:06:50",
+				"pace": "04:16",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "9cfdefcd-ff0a-4411-8fb2-4da05f648eb7",
+				"distance": "0.4",
+				"duration": "00:02:10",
+				"pace": "05:25",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "22e8f838-9eb9-4fd6-8bd6-71a8f21d9e31",
+				"distance": "1.6",
+				"duration": "00:06:50",
+				"pace": "04:16",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "c3e1eb2b-63cd-4763-af83-3558d62dddc9",
+				"distance": "0.4",
+				"duration": "00:02:10",
+				"pace": "05:25",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			},
+			{
+				"uuid": "934b0b08-4de4-4efe-8b02-5f6318131228",
+				"distance": "1.6",
+				"duration": "00:06:50",
+				"pace": "04:16",
+				"isValid": true,
+				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+			}
+		],
+		"total": {
+			"distance": 15.6,
+			"duration": "01:12:00",
+			"pace": "04:37"
+		}
+	},
+	{
+		"uuid": "0bd8e780-2acf-4c03-8f9b-263160ea37eb",
+		"name": "8km @MP, 8km @strength",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
+				"distance": "2",
+				"duration": "00:10:20",
+				"pace": "05:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
+				"distance": "8",
+				"duration": "00:33:20",
+				"pace": "04:10",
+				"isValid": true
+			},
+			{
+				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
+				"distance": "8",
+				"duration": "00:32:40",
+				"pace": "04:05",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 18,
+			"duration": "01:16:20",
+			"pace": "04:14"
+		}
 	}
 ]

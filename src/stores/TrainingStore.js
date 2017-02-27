@@ -180,19 +180,20 @@ export default class TrainingStore {
    * @returns {void} - emit event instead
    */
   updateSegmentInStore(segment) {
-    console.log(`TrainingStore.updateSegmentInStore() with ${JSON.stringify(segment)}`);
+    // console.log(`TrainingStore.updateSegmentInStore() with ${JSON.stringify(segment)}`);
     if (hasProperty(segment, "trainingUuid") && segment.trainingUuid === this.uuid) {
       const _segment = augmentSegmentData(segment);
-      console.log(`TrainingStore.updateSegmentInStore() augmented as ${JSON.stringify(_segment)}`);
+      // console.log(`TrainingStore.updateSegmentInStore() augmented as ${JSON.stringify(_segment)}`);
       this.segments = updateSegment(_segment, this.segments);
       this.total = makeTrainingTotal(this.segments);
+      // console.log(`TrainingStore.updateSegmentInStore emitting SEGMENT_UPDATE_EVT for ${segment.uuid}`);
       this.eventbus.emit(ee.SEGMENT_UPDATE_EVT, {
         uuid: segment.trainingUuid,
         segment: _segment,
         total: this.total,
       });
     } else {
-      console.log(`TrainingStore.updateSegmentInStore IGNORING ${segment.trainingUuid} versus ${this.uuid}`);
+      // console.log(`TrainingStore.updateSegmentInStore IGNORING ${segment.trainingUuid} versus ${this.uuid}`);
     }
   }
 

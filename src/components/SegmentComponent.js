@@ -10,7 +10,7 @@ export default class SegmentComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(`SegmentComponent props.uuid ${JSON.stringify(props.uuid)}`);
+    // console.log(`SegmentComponent props.uuid ${JSON.stringify(props.uuid)}`);
 
     this.state = {}; // TODO set empty component?
   }
@@ -21,13 +21,6 @@ export default class SegmentComponent extends React.Component {
     // got a segment from a loaded training in TrainingStore or TrainingInstanceStore
     this.props.eventbus.on(ee.SEGMENT_GET_EVT, segment => this.onIncomingSegment(segment));
     this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, data => this.onIncomingSegment(data));
-    // const that = this;
-    // this.props.eventbus.onAny(function(data) {
-    //   if (this.event === "SEGMENT_UPDATE_EVT") {
-    //     console.log(`SegmentComponent caught SEGMENT_UPDATE_EVT`);
-    //     that.onIncomingSegment(data);
-    //   }
-    // });
 
     // Note that TrainingComponent AND TrainingInstanceComponent will emit this after rendering
     this.props.eventbus.on(ee.TRAINING_RENDER_EVT, (trainingUuid) => {
@@ -44,8 +37,6 @@ export default class SegmentComponent extends React.Component {
 
   componentWillUnmount() {
    console.log(`SegmentComponent componentWillUnmount`);
-    //this.props.eventbus.removeAllListeners(ee.SEGMENT_UPDATE_EVT);
-    // this.props.eventbus.removeAllListeners([]);
     this.props.eventbus.removeListener(ee.SEGMENT_UPDATE_EVT, this.onIncomingSegment);
     this.props.eventbus.removeListener(ee.SEGMENT_GET_EVT, this.onIncomingSegment);
   }
@@ -94,12 +85,13 @@ export default class SegmentComponent extends React.Component {
           _segment.pace = val;
         break;
       }
-      if (this.state.uuid == null) {
+      if (_segment.uuid == null) {
+        console.info(`SegmentComponent.onChange uuid was null, setting a new one as ${_segment.uuid}`);
         _segment.uuid = createUuid();
       }
       this.setState({segment: _segment});
     }
-    console.log(`SegmentComponent.onChange updated state: ${JSON.stringify(this.state)}`);
+    // console.log(`SegmentComponent.onChange updated state: ${JSON.stringify(this.state)}`);
   };
 
   onDurationBlur = (evt) => {
@@ -150,6 +142,7 @@ export default class SegmentComponent extends React.Component {
           <button className="button-small" onClick={this.onCloneButtonClick}>Clone</button>
           <button className="button-small button-warning" onClick={this.onRemoveButtonClick}>Remove</button>
         </td>
+        <td><span>&nbsp;{_segment.uuid}</span></td>
       </tr>
     );
   }
