@@ -98,18 +98,25 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   onNameChange(evt) {
-    this.setState({ name: evt.target.value });
+    const _training = this.state.training;
+    _training.name = evt.target.value;
+    this.setState({ training: _training });
+    // TODO is this smart?
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
   onNameBlur(evt) {
+    const _training = this.state.training;
+    _training.name = evt.target.value;
     this.setState({ name: evt.target.value });
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
   // TODO test: 'should emit event when button clicked'
   onTrainingTypeClick(evt) {
-    this.setState({ type: evt.target.value });
+    const _training = this.state.training;
+    _training.type = evt.target.value;
+    this.setState({ training: _training });
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
