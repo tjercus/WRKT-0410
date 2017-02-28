@@ -4,19 +4,19 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from "sinon";
 
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 // Component under test
 import AppComponent from "../src/components/AppComponent";
 
 // TODO more DOM structure tests
 
-test("AppComponent should render the right DOM structure", (assert) => {  
+test("AppComponent should render the right DOM structure", (assert) => {
   const eventbus = new EventEmitter( {wildcard: true, maxListeners: 99} );
 
   // block eventbus.emit since it cause a long setTimeout via NotificationComponent
   sinon.stub(eventbus, "emit", function() {});
-  
+
   const component = mount(<AppComponent eventbus={eventbus} startWithDefaultTraining={false} />);
   //assert.equal(component.html(), "html");
   assert.equal(component.find("header[id='app-header']").length, 1);

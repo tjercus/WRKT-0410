@@ -7,7 +7,7 @@ import sinon from "sinon";
 // Component Under Test
 import TrainingListComponent from "../src/components/TrainingListComponent";
 // specific dependencies for CUT
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 
@@ -38,9 +38,9 @@ test("Component should re-render if store updates list", (assert) => {
 });
 
 /*
-test("Component should emit TRAINING_LOAD_CMD on button click", (assert) => {  
+test("Component should emit TRAINING_LOAD_CMD on button click", (assert) => {
   const emitSpy = sinon.spy(eventbus, "emit");
-  const component = mount(<TrainingListComponent eventbus={eventbus} />);  
+  const component = mount(<TrainingListComponent eventbus={eventbus} />);
   eventbus.emit("TRAININGS_FETCH_EVT", trainings);
   const button = component.find("a[value='0a705d04-6e7d-11e6-ba0f-7fcdd2cc0149']");
 

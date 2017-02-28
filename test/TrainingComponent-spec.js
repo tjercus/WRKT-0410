@@ -8,7 +8,7 @@ import sinon from "sinon";
 import TrainingComponent from "../src/components/TrainingComponent";
 import SegmentComponent from "../src/components/SegmentComponent";
 // specific dependencies for CUT
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 const emitSpy = sinon.spy(eventbus, "emit");
@@ -19,7 +19,7 @@ const segments = [{
   duration: "00:20:00",
   pace: "04:00"
 }];
-const training = { uuid: "uuid-training1", name: "my training", type: "easy", segments: segments, total: { distance: 5.1, duration: "01:23:45", pace: "03:59" } };  
+const training = { uuid: "uuid-training1", name: "my training", type: "easy", segments: segments, total: { distance: 5.1, duration: "01:23:45", pace: "03:59" } };
 
 test("TrainingComponent should initially render with an info message", (assert) => {
   let eventbus = sinon.spy();
@@ -28,16 +28,16 @@ test("TrainingComponent should initially render with an info message", (assert) 
   assert.end();
 });
 
-test("TrainingComponent should catch a MENU_CLICK_EVT", (assert) => {  
+test("TrainingComponent should catch a MENU_CLICK_EVT", (assert) => {
   onSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
-  eventbus.emit("MENU_CLICK_EVT", "Training");  
+  eventbus.emit("MENU_CLICK_EVT", "Training");
   assert.ok(onSpy.calledWith("MENU_CLICK_EVT"), "component should catch MENU_CLICK_EVT");
   assert.end();
 });
 
-test("TrainingComponent should render a training", (assert) => {  
-  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
+test("TrainingComponent should render a training", (assert) => {
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
   assert.equal(component.find("header.panel-header span").text(), "my training");
   assert.equal(component.find("fieldset[name='type'] button").length, 2, "should be two buttons to set 'type' of training");
@@ -48,29 +48,29 @@ test("TrainingComponent should render a training", (assert) => {
   assert.equal(buttons.first().text(), "add empty segment");
   assert.equal(buttons.at(1).text(), "add to loaded plan");
   assert.equal(buttons.at(2).text(), "export training");
-  assert.equal(buttons.at(3).text(), "clear training");  
+  assert.equal(buttons.at(3).text(), "clear training");
   assert.equal(buttons.at(4).text(), "clone training");
-  assert.equal(buttons.at(5).text(), "remove training");  
+  assert.equal(buttons.at(5).text(), "remove training");
   assert.equal(buttons.at(6).text(), "persist changes");
   //assert.ok(buttons.at(5).hasClass("button-warning"));
-  
+
   assert.end();
 });
 
 test("TrainingComponent should emit a TRAINING_CLONE_CMD", (assert) => {
   emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
-  eventbus.emit("TRAINING_LOAD_EVT", training);  
+  eventbus.emit("TRAINING_LOAD_EVT", training);
   component.find("menu button").at(4).simulate("click");
   assert.ok(emitSpy.calledWith("TRAINING_CLONE_CMD"), "component should emit TRAINING_CLONE_CMD");
   assert.end();
 });
 
-test("TrainingComponent should allow a toggle of trainingname as editable component", (assert) => {  
+test("TrainingComponent should allow a toggle of trainingname as editable component", (assert) => {
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   const BUTTON_SELECTOR = "button[id='edit-name-button']";
   const TEXTFIELD_SELECTOR = "input[id='edit-name-textfield']";
-  eventbus.emit("TRAINING_LOAD_EVT", training);  
+  eventbus.emit("TRAINING_LOAD_EVT", training);
   assert.equal(component.find(BUTTON_SELECTOR).length, 1, "initially: edit button visible");
   assert.equal(component.find(TEXTFIELD_SELECTOR).length, 0, "initially: inputfield not visible");
   component.find(BUTTON_SELECTOR).simulate("click");
@@ -87,7 +87,7 @@ test("TrainingComponent should emit a TRAINING_UPDATE_CMD", (assert) => {
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   const BUTTON_SELECTOR = "button[id='edit-name-button']";
   const TEXTFIELD_SELECTOR = "input[id='edit-name-textfield']";
-  eventbus.emit("TRAINING_LOAD_EVT", training);  
+  eventbus.emit("TRAINING_LOAD_EVT", training);
   component.find(BUTTON_SELECTOR).simulate("click");
   component.find(TEXTFIELD_SELECTOR).simulate("blur");
   assert.ok(emitSpy.calledWith("TRAINING_UPDATE_CMD"), "component should emit TRAINING_UPDATE_CMD");
@@ -96,9 +96,9 @@ test("TrainingComponent should emit a TRAINING_UPDATE_CMD", (assert) => {
 
 test("TrainingComponent should emit a TRAININGS_PERSIST_CMD", (assert) => {
   emitSpy.reset();
-  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
-  component.find("button[id='persist-button']").simulate("click");  
+  component.find("button[id='persist-button']").simulate("click");
   assert.ok(emitSpy.calledWith("TRAININGS_PERSIST_CMD"), "component should emit TRAININGS_PERSIST_CMD");
   assert.end();
 });
@@ -114,7 +114,7 @@ test("TrainingComponent should update total after a SEGMENT_UPDATE_EVT", (assert
     distance: 10,
     duration: "00:40:00",
     pace: "04:00"
-  };  
+  };
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
   // increase distance and empty duration
@@ -130,7 +130,7 @@ test("TrainingComponent should update total after a SEGMENT_UPDATE_EVT", (assert
 
 test("TrainingComponent should pre-select a button for the right type of training", (assert) => {
   //emitSpy.reset();
-  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
   //component.find("button[id='persist-button']").simulate("click");
   assert.ok(component.find("button[value='easy']").hasClass("button-choice-selected"), "easy button should be selected");
@@ -141,7 +141,7 @@ test("TrainingComponent should pre-select a button for the right type of trainin
 
 test("TrainingComponent should mark a 'group choice button' for the right type of training", (assert) => {
   //emitSpy.reset();
-  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
   component.find("button[value='workout']").simulate("click");
   assert.ok(component.find("button[value='workout']").hasClass("button-choice-selected"));
@@ -151,7 +151,7 @@ test("TrainingComponent should mark a 'group choice button' for the right type o
 
 test("TrainingComponent should emit a TRAINING_TO_PLAN_CMD", (assert) => {
   emitSpy.reset();
-  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);  
+  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
   component.find("button[value='add-to-plan']").simulate("click");
   assert.ok(emitSpy.calledWith("TRAINING_TO_PLAN_CMD"), "component should emit TRAINING_TO_PLAN_CMD");

@@ -8,7 +8,7 @@ import sinon from "sinon";
 // Component Under Test
 import SegmentComponent from "../src/components/SegmentComponent";
 // specific dependencies for CUT
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 const emitSpy = sinon.spy(eventbus, "emit");
@@ -34,18 +34,18 @@ test("SegmentComponent should emit SEGMENT_UPDATE_CMD when it can augment on cal
     distance: 5,
     duration: "",
     pace: "05:00"
-  };  
+  };
   emitSpy.reset();
   const component = mount(<SegmentComponent eventbus={eventbus} segment={augmentableSegment} trainingUuid={trainingUuid}/>);
-  component.find(".segment button.button-primary").simulate("click");  
+  component.find(".segment button.button-primary").simulate("click");
   assert.ok(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should emit SEGMENT_UPDATE_CMD");
   assert.end();
 });
 
-test("SegmentComponent should NOT emit SEGMENT_UPDATE_CMD when it can NOT augment on calc button click", (assert) => {  
+test("SegmentComponent should NOT emit SEGMENT_UPDATE_CMD when it can NOT augment on calc button click", (assert) => {
   emitSpy.reset();
   const component = mount(<SegmentComponent eventbus={eventbus} segment={segment} trainingUuid={trainingUuid}/>);
-  component.find(".segment button.button-primary").simulate("click");  
+  component.find(".segment button.button-primary").simulate("click");
   assert.notOk(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should NOT emit SEGMENT_UPDATE_CMD");
   assert.end();
 });

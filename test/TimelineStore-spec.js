@@ -2,7 +2,7 @@
 import test from "tape";
 import {clone} from "../src/stores/miscUtil";
 import TimelineStore from "../src/stores/TimelineStore";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 import sinon from "sinon";
 /**
  * Tests for {@link TimelineStore.js}
