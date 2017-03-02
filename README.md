@@ -38,6 +38,7 @@ Based on 'React eventemitter'.
 - Tape coverage with nyc/coverify/tape-istanbul
 
 ### Training
+- Unregister listeners on remove events (SegmentComponent et al.)
 - Refactor TrainingComponent and TrainingInstanceComponent so they can use common code
 - Multi column traininglist instead of one long list
 - Separate TrainingListStore to keep loaded list of Trainings
@@ -59,7 +60,7 @@ Based on 'React eventemitter'.
 
 ### Timeline/Plan
 - Fix by on displaying a changed segment in DayEditComponent
-- Timeline should refresh after a day was edited
+- (Timeline should refresh after a day was edited)
 - Performance tuning with 'key' as a repeatable value instead of random int or createUuid
 - Show a dialog 'save current timeline?' when switching plans
 - Use a Map (uuid as key) for segments in TrainingInstance
