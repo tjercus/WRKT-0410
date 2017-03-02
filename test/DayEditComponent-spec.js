@@ -8,7 +8,7 @@ import moment from "moment";
 // Component Under Test
 import DayEditComponent from "../src/components/DayEditComponent";
 // specific dependencies for CUT
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 
@@ -45,7 +45,7 @@ test("Component should emit event on button press", (assert) => {
   const component = mount(<DayComponent eventbus={eventbus} />);
 
   component.find('button').simulate('click');
-  
+
   assert.ok(emitSpy.calledWith("PLAN_ADD_CMD"));
   assert.end();
 });

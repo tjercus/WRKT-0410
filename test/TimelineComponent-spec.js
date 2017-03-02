@@ -7,7 +7,7 @@ import sinon from "sinon";
 // Component Under Test
 import TimelineComponent from "../src/components/TimelineComponent";
 // specific dependencies for CUT
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 const emitSpy = sinon.spy(eventbus, "emit");

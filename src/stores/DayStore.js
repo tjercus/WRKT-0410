@@ -114,7 +114,7 @@ export default class DayStore {
    */
   addSegmentToStore(segment, overwriteUuid) {
     if (hasProperty(this.day, "uuid")) {
-      console.log(`DayStore.addSegmentToStore ${segment}`);
+      console.log(`DayStore.addSegmentToStore ${JSON.stringify(segment)}`);
       const _segment = augmentSegmentData(segment);
       let updatedLocalTrainings = [];
       this.day.trainings.map(training => {

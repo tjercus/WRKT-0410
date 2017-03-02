@@ -7,7 +7,7 @@ import sinon from "sinon";
 // Component Under Test
 import PlanEditComponent from "../src/components/PlanEditComponent";
 // specific dependencies for CUT
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 
@@ -16,8 +16,8 @@ const plans = [
   {"uuid": "0a705d04-6e7d-11e6-ba0f-7fcdd2cc0149", "name" : "plan two"}
 ];
 
-test("Component should render", (assert) => {  
-  const component = mount(<PlanEditComponent eventbus={eventbus} />);  
+test("Component should render", (assert) => {
+  const component = mount(<PlanEditComponent eventbus={eventbus} />);
 
   assert.equal(component.state("newPlanName"), "new plan", "the name field should have a default value");
   assert.ok(component.find('input').hasClass("type-text"));

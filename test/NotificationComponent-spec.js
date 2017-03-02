@@ -7,11 +7,11 @@ import sinon from "sinon";
 // Component Under Test
 import NotificationComponent from "../src/components/NotificationComponent";
 // specific dependencies for CUT
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 
-test("NotificationComponent should render", (assert) => {  
+test("NotificationComponent should render", (assert) => {
   //const onSpy = sinon.spy(eventbus, "on");
   const component = mount(<NotificationComponent eventbus={eventbus} />);
   assert.equal(component.html(), '<div class="notification-panel"><ul></ul></div>');
@@ -26,5 +26,5 @@ test("NotificationComponent should render an event as notification", (assert) =>
   assert.end();
 });
 
-//eventbus.emit("MENU_CLICK_EVT", "Training");  
+//eventbus.emit("MENU_CLICK_EVT", "Training");
   //assert.ok(onSpy.calledWith("MENU_CLICK_EVT"), "component should catch MENU_CLICK_EVT");

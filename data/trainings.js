@@ -5377,5 +5377,36 @@
 				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			}
 		]
+	},
+	{
+		"uuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42",
+		"name": "30km with 10km @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "10",
+				"duration": "00:47:50",
+				"pace": "04:47",
+				"isValid": true,
+				"trainingUuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+			},
+			{
+				"uuid": "353098c1-9d80-44cd-99e1-f25175b1e885",
+				"distance": "10",
+				"duration": "00:49:40",
+				"pace": "04:58",
+				"isValid": true,
+				"trainingUuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+			},
+			{
+				"uuid": "96bf1bb8-c467-4bbd-b9e8-0447dd65076d",
+				"distance": "10.1",
+				"duration": "00:40:45",
+				"pace": "04:02",
+				"isValid": false,
+				"trainingUuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+			}
+		]
 	}
 ]

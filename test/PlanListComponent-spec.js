@@ -7,7 +7,7 @@ import sinon from "sinon";
 // Component Under Test
 import PlanListComponent from "../src/components/PlanListComponent";
 // specific dependencies for CUT
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 const eventbus = new EventEmitter({ wildcard: true, maxListeners: 99 });
 
@@ -16,7 +16,7 @@ const plans = [
   {"uuid": "0a705d04-6e7d-11e6-ba0f-7fcdd2cc0149", "name" : "plan two"}
 ];
 
-test("Component should render", (assert) => {  
+test("Component should render", (assert) => {
   //const onSpy = sinon.spy(eventbus, "on");
   const component = mount(<PlanListComponent eventbus={eventbus} />);
 

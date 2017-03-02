@@ -1,7 +1,7 @@
 import test from "tape";
 import sinon from "sinon";
 import TrainingStore from "../src/stores/TrainingStore";
-import EventEmitter from "eventemitter2";
+import EventEmitter from "eventemitter4";
 
 /**
  * Tests for {@link TrainingStore.js}
@@ -163,15 +163,15 @@ test("TrainingStore should listen to TRAINING_TO_PLAN_CMD and emit TRAINING_CLON
 
 test("TrainingStore should listen to SEGMENT_UPDATE_CMD", (assert) => {
   let eventbus = new EventEmitter({ wildcard: true, maxListeners: 3, verbose: true });
-  let emitSpy = sinon.spy(eventbus, "emit");  
+  let emitSpy = sinon.spy(eventbus, "emit");
   const trainings = [];
   trainings.push(training);
   const store = new TrainingStore(eventbus, trainings);
   // ask store to load training with segments via eventbus
-  eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");  
+  eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
   const updatableSegment = { "uuid": "100", "distance": 10, "pace": "@5KP" }
-  
-  eventbus.emit("SEGMENT_UPDATE_CMD", updatableSegment);  
+
+  eventbus.emit("SEGMENT_UPDATE_CMD", updatableSegment);
 
   for (let i = 0, len = emitSpy.args.length; i < len; i++) {
     if (emitSpy.args[i][0] === "SEGMENT_UPDATE_EVT") {
@@ -190,12 +190,12 @@ test("TrainingStore should listen to SEGMENT_UPDATE_CMD", (assert) => {
 
 /* // TODO enable after introducing fetch for Node.js or overwrite import for fetch
 test("should listen to TRAININGS_PERSIST_CMD and write to disk", (assert) => {
-  let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true}); 
+  let eventbus = new EventEmitter({wildcard: true, maxListeners: 3, verbose: true});
   let emitSpy = sinon.spy(eventbus, "emit");
   const trainings = [];
   trainings.push(training);
   const store = new TrainingStore(eventbus, trainings);
-  eventbus.emit("TRAININGS_PERSIST_CMD");  
+  eventbus.emit("TRAININGS_PERSIST_CMD");
   assert.ok(emitSpy.calledWith("TRAININGS_PERSIST_EVT"));
   assert.end();
 });
