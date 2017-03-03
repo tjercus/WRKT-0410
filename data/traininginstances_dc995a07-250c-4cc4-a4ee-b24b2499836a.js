@@ -7071,5 +7071,44 @@
 			"duration": "01:09:45",
 			"pace": "05:10"
 		}
+	},
+	{
+		"uuid": "112cf232-3eff-448b-9e40-2b5db7a659d3",
+		"name": "20k @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "47",
+				"distance": "20",
+				"pace": "04:07",
+				"duration": "01:22:20",
+				"isValid": true,
+				"trainingUuid": "1f43de2e-fd9a-480f-882e-e23ec02a0afe"
+			}
+		],
+		"total": {
+			"distance": 20,
+			"duration": "01:22:20",
+			"pace": "04:07"
+		}
+	},
+	{
+		"uuid": "df4c84e2-0afe-49d2-bd6d-c90944919aaa",
+		"name": "Easy run 13.5km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "13.5",
+				"duration": "01:09:45",
+				"pace": "05:10",
+				"isValid": true
+			}
+		],
+		"total": {
+			"distance": 13.5,
+			"duration": "01:09:45",
+			"pace": "05:10"
+		}
 	}
 ]

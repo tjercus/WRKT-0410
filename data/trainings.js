@@ -1704,10 +1704,11 @@
 		"segments": [
 			{
 				"uuid": "47",
-				"distance": 16,
-				"pace": "04:10",
-				"duration": "01:06:40",
-				"isValid": true
+				"distance": "20",
+				"pace": "04:07",
+				"duration": "01:22:20",
+				"isValid": true,
+				"trainingUuid": "1f43de2e-fd9a-480f-882e-e23ec02a0afe"
 			}
 		]
 	},
