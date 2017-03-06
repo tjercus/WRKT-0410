@@ -13,6 +13,9 @@ export default class WeekComponent extends React.Component {
 
   // TODO move to timelineUtil
   calcDayTotal(day)  {
+    if (!day.trainings || day.trainings.length === 0) {
+      return 0;
+    }
     if (day.trainings.length === 1) {
       return day.trainings[0].total.distance;
     } else {

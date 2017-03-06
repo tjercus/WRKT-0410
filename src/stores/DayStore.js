@@ -89,7 +89,7 @@ export default class DayStore {
       console.log(`DayStore.updateSegmentInStore after augmenting: ${JSON.stringify(_segment)}`);
       let updatedLocalTrainings = [];
       this.day.trainings.map(training => {
-        // TODO some segments DO NOT have a trainingUuid
+        // TODO FIX BUG HERE
         if (training.uuid === segment.trainingUuid) {
           console.log(`DayStore.updateSegmentInStore training before updating segment: ${JSON.stringify(training)}`);
           training.segments = updateSegment(_segment, clone(training.segments));
@@ -101,8 +101,10 @@ export default class DayStore {
         }
       });
       // console.log(`DayStore.updateSegmentInStore trainings: ${JSON.stringify(updatedLocalTrainings)}`);
-      this.day.trainings = updatedLocalTrainings;
-      this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
+      if (updatedLocalTrainings.length > 0) {
+        this.day.trainings = updatedLocalTrainings;
+        this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
+      }
     }
   }
 
