@@ -106,12 +106,25 @@ export function updateTrainingInstanceInDay(day, instance) {
 
 /**
  * 
- * @param {Training} training - with possibly un-augmented segments
- * @returns {Training} _training - with augmented segments
+ * @param {Training|TrainingInstance} training - with possibly un-augmented segments
+ * @returns {Training|TrainingInstance} _training - with augmented segments
  */
 export function augmentTraining(training) {
-  const _segments = training.segments.map(segment => augmentSegmentData(segment));
+  const _segments = training.segments.map(segment =>
+    linkSegmentToTraining(training, augmentSegmentData(segment)));
   training.segments = _segments;
   training.total = makeTrainingTotal(_segments);
   return training;
 }
+
+/**
+ * Annotate segment with trainingUuid property
+ * @param {TrainingInstance} training - the training
+ * @param {Segment} segment - the segment under fire
+ */
+const linkSegmentToTraining = (training, segment) => {
+  const _segment = clone(segment);
+  _segment.trainingUuid = training.uuid;
+  console.log(`augmentTraining ${JSON.stringify(_segment)}`);
+  return _segment;
+};
