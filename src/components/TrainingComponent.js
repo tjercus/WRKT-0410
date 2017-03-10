@@ -1,28 +1,13 @@
 import React from "react";
 import EventEmitter from "eventemitter4";
 import SegmentComponent from "./SegmentComponent";
-import {EventsEnum as ee} from "../constants";
-
-const DEFAULT_TOTAL = {
-  distance: 0,
-  duration: "00:00:00",
-  pace: "00:00"
-};
-
-const DEFAULT_STATE = {
-  uuid: null,
-  name: "undefined",
-  type: null,
-  segments: [],
-  isNameEditable: false,
-  total: DEFAULT_TOTAL
-};
+import {EventsEnum as ee, DEFAULT_TOTAL, DEFAULT_TRAINING} from "../constants";
 
 export default class TrainingComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = DEFAULT_STATE;
+    this.state = DEFAULT_TRAINING;
     // TODO remove this with phat arrow method declarations
     this.exportTraining = this.exportTraining.bind(this);
     this.emitClearTraining = this.emitClearTraining.bind(this);
@@ -92,9 +77,10 @@ export default class TrainingComponent extends React.Component {
     });
   }
 
+  // TODO unit test this!
   addEmptySegment() {
     this.props.eventbus.emit(ee.SEGMENT_ADD_CMD,
-      Object.assign({trainingUuid: this.state.uuid}, DEFAULT_TOTAL));
+      Object.assign({}, DEFAULT_TOTAL, {trainingUuid: this.state.uuid}));
   }
 
   emitPersistChanges() {
@@ -158,7 +144,7 @@ export default class TrainingComponent extends React.Component {
   }
 
   clearTrainingFromLocalState() {
-    this.setState(DEFAULT_STATE);
+    this.setState(DEFAULT_TRAINING);
   }
 
   onTypeClick(evt) {

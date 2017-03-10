@@ -63,12 +63,15 @@ export default class DayStore {
   getSegment(segmentUuid, trainings) {
     if (!Array.isArray(trainings) || trainings.length === 0 ||
       !hasProperty(trainings[0], "segments")) {
+      console.log("DayStore.getSegment has a problem with trainings");
       return;
     }
     let segments = trainings[0].segments;
 
     if (trainings[1]) {
-      segments = Object.assign(segments, trainings[1].segments);
+      console.log("before");
+      segments = Object.assign({}, segments, trainings[1].segments);
+      console.log("after");
     }
     const isSeg = _segment => String(_segment.uuid) === String(segmentUuid);
     const index = segments.findIndex(isSeg);

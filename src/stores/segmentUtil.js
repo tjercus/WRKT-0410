@@ -111,7 +111,7 @@ export function makeTrainingTotal(segments) {
   } else if (hasNoRealValue(totalObj, "duration")) {
     totalObj.duration = makeDuration(totalObj);
   }
-  console.log(`segmentUtils.makeTrainingTotal: ${JSON.stringify(totalObj)}`);
+  // console.log(`segmentUtils.makeTrainingTotal: ${JSON.stringify(totalObj)}`);
   return totalObj;
 }
 

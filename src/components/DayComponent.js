@@ -2,7 +2,8 @@ import React from "react";
 import EventEmitter from "eventemitter4";
 import {EventsEnum as ee} from "../constants";
 import moment from "moment";
-import { createUuid } from "../stores/miscUtil";
+import { createUuid, hasProperty} from "../stores/miscUtil";
+import {DEFAULT_TRAINING} from "../constants";
 
 /**
  * TODO use eventbus to implement buttonclicks
@@ -91,6 +92,10 @@ export default class DayComponent extends React.Component {
     //console.log(`DayComponent timestamp ${day.dfd}`);
     if (!day.trainings) {
       throw new Error(`Day [${day.uuid}] should have a plural property 'trainings'`);
+    }
+    if (!day.trainings[0] || !hasProperty(day.trainings[0], "uuid")) {
+      console.error(`DayComponent render without a proper training for day ${day.uuid}`);
+      day.trainings.push(DEFAULT_TRAINING);
     }
 
     let dateStr = moment(day.dfd).format(DAY_HEADER_DATE_FORMAT);

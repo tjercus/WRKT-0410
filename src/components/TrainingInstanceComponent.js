@@ -1,14 +1,8 @@
 import React from "react";
 import EventEmitter from "eventemitter4";
 import SegmentComponent from "./SegmentComponent";
-import { EventsEnum as ee, TRAINING_SHAPE } from "../constants";
+import { EventsEnum as ee, TRAINING_SHAPE, DEFAULT_TOTAL } from "../constants";
 import { createUuid } from "../stores/miscUtil";
-
-const DEFAULT_TOTAL = {
-  distance: 0,
-  duration: "00:00:00",
-  pace: "00:00",
-};
 
 const DEFAULT_TRAINING = {
   uuid: null,

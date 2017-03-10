@@ -96,3 +96,18 @@ export const TRAINING_SHAPE = Object.freeze({
     segments: React.PropTypes.array.isRequired,
     total: React.PropTypes.object.isRequired
 });
+
+export const DEFAULT_TOTAL = {
+  distance: 0,
+  duration: "00:00:00",
+  pace: "00:00"
+};
+
+export const DEFAULT_TRAINING = {
+  uuid: null,
+  name: "undefined",
+  type: null,
+  segments: [],
+  isNameEditable: false,
+  total: DEFAULT_TOTAL
+};

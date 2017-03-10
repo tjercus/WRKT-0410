@@ -5,7 +5,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "fc01c1bf-5f5e-4f4c-9718-e503efe05935",
+				"obsolete": "fc01c1bf-5f5e-4f4c-9718-e503efe05935",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "25.2",
 				"duration": "01:55:00",
@@ -63,7 +63,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "97473ec5-9244-44c6-a06a-89c24dd804be",
+				"obsolete": "97473ec5-9244-44c6-a06a-89c24dd804be",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "28",
 				"duration": "02:08:20",
@@ -83,7 +83,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "8c12a07f-aa83-4e99-9869-3a89ecebf7ff",
+				"obsolete": "8c12a07f-aa83-4e99-9869-3a89ecebf7ff",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "32",
 				"duration": "02:26:40",
@@ -103,7 +103,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -258,7 +258,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -266,7 +266,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -274,7 +274,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -282,7 +282,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -290,7 +290,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -298,7 +298,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -306,7 +306,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -314,7 +314,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -322,7 +322,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -330,7 +330,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "05ec5bb1-9918-4ea4-a9f9-572941c0cf62",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -338,7 +338,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1d03d54c-75b7-412f-8204-579c9d1765cf",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -358,7 +358,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -366,7 +366,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -374,7 +374,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -382,7 +382,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -390,7 +390,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -398,7 +398,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -406,7 +406,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -414,7 +414,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -422,7 +422,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -430,7 +430,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "05ec5bb1-9918-4ea4-a9f9-572941c0cf62",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -439,11 +439,11 @@
 			},
 			{
 				"uuid": "03e41df2-273e-485e-82e2-1c782490b83e",
-				"trainingUuid": "be7adc38-8250-409d-8bfd-32bb7acc7268"
+				"obsolete": "be7adc38-8250-409d-8bfd-32bb7acc7268"
 			},
 			{
 				"uuid": "9485c461-27fd-4592-81d6-36004ec9a51c",
-				"trainingUuid": "be7adc38-8250-409d-8bfd-32bb7acc7268"
+				"obsolete": "be7adc38-8250-409d-8bfd-32bb7acc7268"
 			}
 		]
 	},
@@ -453,7 +453,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "0623a52f-3b7c-4a03-99a4-ff507af7aef7",
+				"obsolete": "0623a52f-3b7c-4a03-99a4-ff507af7aef7",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "28",
 				"duration": "02:12:04",
@@ -543,7 +543,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -551,7 +551,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -559,7 +559,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -567,7 +567,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -575,7 +575,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -583,7 +583,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -591,7 +591,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -599,7 +599,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -607,7 +607,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -641,7 +641,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -649,7 +649,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -657,7 +657,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -665,7 +665,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -673,7 +673,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -681,7 +681,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -689,7 +689,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -697,7 +697,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -705,7 +705,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -864,7 +864,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
+				"obsolete": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "7",
 				"duration": "00:37:20",
@@ -872,7 +872,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
+				"obsolete": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
 				"uuid": "d32ef0b4-9792-4a3e-ac50-b4b4d99e9cd6",
 				"distance": "7",
 				"duration": "00:29:10",
@@ -880,7 +880,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
+				"obsolete": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
 				"uuid": "d9968e28-9c66-4b27-af64-ddffde64fd4d",
 				"distance": "3",
 				"duration": "00:11:45",
@@ -888,7 +888,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
+				"obsolete": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
 				"uuid": "7f5ea5db-f794-4036-ab57-df6d0f10f945",
 				"distance": "3",
 				"duration": "00:11:00",
@@ -903,7 +903,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -911,7 +911,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f3eff8d9-c2e5-47c5-936c-726a4b76ad22",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -919,7 +919,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "accbbe4e-8388-4c30-9783-3d866a461fe2",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -927,7 +927,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8c0950a6-d03b-4037-8b5d-c4063e23e407",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -935,7 +935,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f8dd056a-0052-494d-a50d-9181d5d387e0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -943,7 +943,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "3db6d2aa-35c9-409f-b08a-4a4ad511b0c4",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -951,7 +951,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e29390a0-59da-43d2-a193-95be34b1411e",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -959,7 +959,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f5c9914c-275f-4a0a-b703-384683f30f07",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -967,7 +967,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "1f18b13e-3f0b-4465-bf37-c0d122d88f9f",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -975,7 +975,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "9438a8e2-ef9d-497f-8f59-ba57cd792930",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -983,7 +983,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "440de7d6-6479-4866-afc4-236beab7f059",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -991,7 +991,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "727c6e32-1cdc-4bfb-acb4-8f37d91b2ca4",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -999,7 +999,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a5e07dcb-bdb4-47cd-8abe-3b0947f9ad63",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1007,7 +1007,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f93bc559-e8e4-49f2-aebe-10c6a68fae16",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1015,7 +1015,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e85f1d6a-4cd3-4084-b876-0266de68cd61",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1023,7 +1023,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "20aa6cb8-aeba-42b1-b975-6effcdc3c903",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1031,7 +1031,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "49b05778-c8a5-43e4-b9ee-a272fa084a35",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1039,7 +1039,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "67908f84-a3f6-4605-b25a-c849bf5dbb2d",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1047,7 +1047,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "85126497-365b-4e08-937b-8d86bc543b8c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1055,7 +1055,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a1b11640-27d6-47b1-9479-f87ace5370ba",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1063,7 +1063,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "842a090a-a623-4a2f-8cab-f296d703d790",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1071,7 +1071,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e2c3f6f0-a2cf-4130-bdb1-73271b3a2023",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1079,7 +1079,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4d6ee8a3-b5e3-4690-a90b-5baad95ca335",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1087,7 +1087,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "63498504-df1a-4523-b717-4d169cb436d1",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1095,7 +1095,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b40c409d-0ba3-4a68-bd90-9c5b3d6de5c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1103,7 +1103,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e5506048-9daa-4822-97ea-2d2ba073b025",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1111,7 +1111,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "696680b7-f97f-403c-96fc-f2a3b7270ae0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1119,7 +1119,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa808eb2-0a10-47be-8801-1ee4e3a7ecba",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1127,7 +1127,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "065e6212-0da7-4d28-8e97-acaeb4e63be3",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1135,7 +1135,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "11441cf9-0407-4867-a51b-695440c09b54",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1143,7 +1143,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd386338-32b2-4045-9c9c-34edbbc73a60",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1151,7 +1151,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b5eb6ca3-70e2-47dd-b56d-ef960e0c0105",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1159,7 +1159,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd217fbf-639f-4efb-ba2a-0474701459c0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1167,7 +1167,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a13d4220-b7ff-43c8-b7d7-918b5e45fb1f",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1175,7 +1175,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "52360e78-9682-4652-998a-c7df2499f5bf",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1183,7 +1183,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f46e8d08-c4be-4a87-a415-a65bdbe389ae",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1191,7 +1191,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "10a55e93-2264-4269-9192-992b38bc5a2c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1199,7 +1199,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb38214b-87e4-4c24-9b05-0f739af0695a",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1207,7 +1207,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "005ca46f-d5e3-4eba-bd85-91f868001d4c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1215,7 +1215,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "dc9ac93f-44c1-4260-8909-6bfd85951e83",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1223,7 +1223,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb3d9990-5384-4d7f-b3bb-ceaa36d463c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1231,7 +1231,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c01685c5-eaef-426a-ac69-ff9843a1f8db",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1239,7 +1239,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8643f154-cc9d-4e18-83ad-cc1c68c011df",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1247,7 +1247,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "ff658b6a-68e8-46bc-9e89-45f3c72cbc6d",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1255,7 +1255,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "477ce033-4871-429b-b3d0-88448e63d5c4",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1263,7 +1263,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4a8104b6-a445-4153-85ac-17f0454fb6b2",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1271,7 +1271,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa87640f-d50d-4ac2-a091-08ffae6afde0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1279,7 +1279,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2993f6e3-26dc-4eee-8e38-779d557d6fc1",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1287,7 +1287,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "195390f3-5a93-40f0-8303-88408c8d0860",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1295,7 +1295,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7fe86822-86bc-4c27-82de-2c6dbe304420",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1303,7 +1303,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "36f10b79-512e-4bf9-9738-47191de9dfbd",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1311,7 +1311,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "792185de-4aaf-469a-a10d-7dc6c7f69ed2",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1319,7 +1319,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "42992afa-410a-4a09-aed1-1bfa04caf333",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1327,7 +1327,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7277e9cf-5132-423a-9fe7-14bd85d36495",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1335,7 +1335,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "6074ab52-bd69-4518-900f-4d3f8db4775b",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1343,7 +1343,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c6c3f36e-f8d3-436e-b332-aca49063da68",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1351,7 +1351,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2788592e-284b-4e2e-ae01-2774779f7f51",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1359,7 +1359,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b46d3c43-2921-44ec-ad31-7b631636d7e9",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1367,7 +1367,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "14e8d2ac-eaf6-49f6-a288-a0318492f52f",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1375,7 +1375,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f4e01be4-fc1b-44c3-97eb-5325451de2e1",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -1414,7 +1414,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "4.5",
 				"duration": "00:23:15",
@@ -1422,7 +1422,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "1d3f25f0-1888-42bb-bb8b-7fb00edccb54",
 				"distance": 0.545,
 				"duration": "00:02:00",
@@ -1430,7 +1430,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "f4e3e645-22a0-4631-bc1c-eb76163c6b95",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1438,7 +1438,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "6e3a0e51-883c-41ad-970e-18b06c9f4abd",
 				"distance": 0.545,
 				"duration": "00:02:00",
@@ -1446,7 +1446,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "65daa21d-c0f1-46c3-a609-ebeca9defc3f",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1454,7 +1454,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "109c4d50-99cd-4b54-9212-ebaf7fdcd814",
 				"distance": 0.545,
 				"duration": "00:02:00",
@@ -1462,7 +1462,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "52a0efed-b24a-453e-be3c-c067602edc4c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1470,7 +1470,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "d5639c13-e0b2-4ffb-8225-6a3710da208f",
 				"distance": 0.545,
 				"duration": "00:02:00",
@@ -1478,7 +1478,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "930b3cfb-49af-4510-acd1-c0e7f0c7b924",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1486,7 +1486,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "88a9a65b-b1b4-4ae1-a31b-b6d74c2bdaba",
 				"distance": 0.545,
 				"duration": "00:02:00",
@@ -1494,7 +1494,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "41011652-efe1-4967-b43f-8025390cacf4",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1502,7 +1502,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "fbd07575-cd5e-4611-835b-25716fe91e0e",
 				"distance": 0.545,
 				"duration": "00:02:00",
@@ -1510,7 +1510,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "6da903d8-34de-400e-8ae1-c3aee14b9d73",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1518,7 +1518,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "1325ca61-2897-44f0-845c-a2927ffc7146",
 				"distance": 0.545,
 				"duration": "00:02:00",
@@ -1526,7 +1526,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "e87c75bb-37c9-491f-b7d0-8ce50e005a5f",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1534,7 +1534,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "bae58b12-d059-4961-8e05-f08b72642a37",
 				"distance": 0.545,
 				"duration": "00:02:00",
@@ -1542,7 +1542,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "53b1495e-18bb-4b2f-a691-6893f2e3369a",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1550,7 +1550,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "e59ec962-b966-4ee8-82e4-fd1a9c89b315",
 				"distance": 0.545,
 				"duration": "00:02:00",
@@ -1558,7 +1558,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "a1b96ea1-20d4-4c15-b036-cca50f344da8",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -1566,7 +1566,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
+				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "cb02a474-9df7-4536-88ed-cc38c1e808b9",
 				"distance": "5",
 				"duration": "00:25:50",
@@ -1657,7 +1657,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "1",
 				"duration": "00:05:30",
@@ -1665,7 +1665,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:12:15",
@@ -1673,7 +1673,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:04:50",
@@ -1681,7 +1681,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:15",
@@ -1689,7 +1689,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:04:50",
@@ -1697,7 +1697,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:15",
@@ -1705,7 +1705,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:04:50",
@@ -1713,7 +1713,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:15",
@@ -1733,83 +1733,87 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:11:00",
 				"pace": "005:30",
-				"isValid": false
+				"isValid": false,
+				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
 				"pace": "03:59",
-				"isValid": false
+				"isValid": false,
+				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
 				"pace": "05:00",
-				"isValid": true
+				"isValid": true,
+				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
 				"pace": "04:03",
-				"isValid": false
+				"isValid": false,
+				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
 				"pace": "05:00",
-				"isValid": true
+				"isValid": true,
+				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
 				"pace": "04:04",
-				"isValid": false
+				"isValid": false,
+				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
 				"pace": "05:00",
-				"isValid": true
+				"isValid": true,
+				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
 				"pace": "04:03",
-				"isValid": false
+				"isValid": false,
+				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "5eb4f0ae-11c4-4ae9-92d1-34f517f2b88c",
 				"distance": "0.7",
 				"duration": "00:03:30",
 				"pace": "05:00",
-				"isValid": true
+				"isValid": true,
+				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
 			}
-		],
-		"total": {
-			"distance": 17.7,
-			"duration": "01:17:57",
-			"pace": "04:24"
-		}
+		]
 	},
 	{
 		"uuid": "6b84e3cc-2a93-4b95-a64b-e23a9782d5df",
@@ -1817,7 +1821,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
@@ -1825,7 +1829,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
@@ -1833,7 +1837,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
@@ -1853,7 +1857,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
@@ -1861,7 +1865,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
@@ -1869,7 +1873,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
@@ -1927,7 +1931,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
+				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
@@ -1947,7 +1951,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:11:00",
@@ -1955,7 +1959,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
@@ -1963,7 +1967,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -1971,7 +1975,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -1979,7 +1983,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -1987,7 +1991,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
@@ -1995,7 +1999,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -2003,7 +2007,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -2011,7 +2015,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
+				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "af9fc74f-6cdc-462b-9fbd-046e40765724",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -2019,7 +2023,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
+				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "a8bc6d7b-4f4d-4d4e-b57d-3f7c9edfd023",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -2034,7 +2038,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
+				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "1",
 				"duration": "00:05:30",
@@ -2042,7 +2046,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
@@ -2050,7 +2054,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -2058,7 +2062,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -2066,7 +2070,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -2074,7 +2078,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
@@ -2082,7 +2086,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -2090,7 +2094,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -2098,7 +2102,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
+				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "af9fc74f-6cdc-462b-9fbd-046e40765724",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -2106,7 +2110,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
+				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "a8bc6d7b-4f4d-4d4e-b57d-3f7c9edfd023",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -2221,7 +2225,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2241,7 +2245,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2261,7 +2265,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2281,7 +2285,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "97473ec5-9244-44c6-a06a-89c24dd804be",
+				"obsolete": "97473ec5-9244-44c6-a06a-89c24dd804be",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "28",
 				"duration": "02:08:20",
@@ -2301,7 +2305,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2321,7 +2325,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
+				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
@@ -2474,7 +2478,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2494,7 +2498,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2514,7 +2518,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2534,7 +2538,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2573,7 +2577,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "a7106807-2934-4017-b662-068fa9747445",
+				"obsolete": "a7106807-2934-4017-b662-068fa9747445",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "18",
 				"duration": "01:15:00",
@@ -2593,7 +2597,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "bc0e935d-8904-4968-b927-45709b895c32",
+				"obsolete": "bc0e935d-8904-4968-b927-45709b895c32",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "25",
 				"duration": "01:49:10",
@@ -2613,7 +2617,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "684db1c9-40fa-486c-b3af-c55167ce9680",
+				"obsolete": "684db1c9-40fa-486c-b3af-c55167ce9680",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "28",
 				"duration": "02:02:16",
@@ -2633,7 +2637,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "57014016-c994-4a21-ae3c-9d729430afa7",
+				"obsolete": "57014016-c994-4a21-ae3c-9d729430afa7",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "29",
 				"duration": "02:10:30",
@@ -2672,7 +2676,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2692,7 +2696,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -2712,7 +2716,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8011",
 				"distance": "4",
 				"duration": "00:22:00",
@@ -2727,7 +2731,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231",
 				"distance": 0.273,
 				"duration": "00:01:30",
@@ -2784,7 +2788,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "7fa9d5d8-1990-47c3-87d1-882bc71cdf1d",
 				"distance": "3",
 				"duration": "00:15:30",
@@ -2804,7 +2808,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -2812,7 +2816,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -2820,7 +2824,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -2828,7 +2832,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -2836,7 +2840,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -2844,7 +2848,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -2852,7 +2856,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -2860,7 +2864,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -2868,7 +2872,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -2876,7 +2880,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
+				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "ebf8c132-06d6-4fdb-bf00-4d06ba6c1391",
 				"distance": "6",
 				"duration": "00:33:00",
@@ -2896,7 +2900,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:11:00",
@@ -2904,7 +2908,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
@@ -2912,7 +2916,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -2920,7 +2924,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -2928,7 +2932,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -2936,7 +2940,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
@@ -2944,7 +2948,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -2952,7 +2956,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -2960,7 +2964,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "5eb4f0ae-11c4-4ae9-92d1-34f517f2b88c",
 				"distance": "0.7",
 				"duration": "00:03:30",
@@ -2980,7 +2984,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
+				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
@@ -3023,7 +3027,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-sdkj4763",
 				"distance": 0.273,
 				"duration": "00:01:30",
@@ -3038,7 +3042,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-34875",
 				"distance": 0.273,
 				"duration": "00:01:30",
@@ -3053,7 +3057,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-dkgh475",
 				"distance": 0.273,
 				"duration": "00:01:30",
@@ -3115,7 +3119,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-sdkj4763",
 				"distance": 0.273,
 				"duration": "00:01:30",
@@ -3130,7 +3134,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-34875",
 				"distance": 0.273,
 				"duration": "00:01:30",
@@ -3145,7 +3149,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
+				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-dkgh475",
 				"distance": 0.273,
 				"duration": "00:01:30",
@@ -3179,7 +3183,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -3218,7 +3222,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -3257,7 +3261,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -3265,7 +3269,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3273,7 +3277,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -3281,7 +3285,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3289,7 +3293,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -3297,7 +3301,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3305,7 +3309,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -3313,7 +3317,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3321,7 +3325,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -3341,7 +3345,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
@@ -3349,7 +3353,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
@@ -3357,7 +3361,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
@@ -3396,7 +3400,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "748e8ce4-a466-47ac-9d02-dfb9aad56519",
+				"obsolete": "748e8ce4-a466-47ac-9d02-dfb9aad56519",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "35",
 				"duration": "03:00:50",
@@ -3416,7 +3420,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -3424,7 +3428,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3432,7 +3436,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -3440,7 +3444,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3448,7 +3452,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -3456,7 +3460,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3464,7 +3468,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -3472,7 +3476,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3480,7 +3484,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -3488,7 +3492,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "05ec5bb1-9918-4ea4-a9f9-572941c0cf62",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3496,7 +3500,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
+				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "0ed8eb9a-6f04-4051-b74e-fceceb98eb24",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -3535,7 +3539,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
+				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -3543,7 +3547,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
+				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3551,7 +3555,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
+				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -3559,7 +3563,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
+				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3567,7 +3571,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
+				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -3575,7 +3579,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
+				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3583,7 +3587,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
+				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -3591,7 +3595,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
+				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3599,7 +3603,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
+				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:15:30",
@@ -3638,7 +3642,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "56567b1b-9cb9-423b-85c7-fe75230305b1",
+				"obsolete": "56567b1b-9cb9-423b-85c7-fe75230305b1",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "10",
 				"duration": "00:38:45",
@@ -3646,7 +3650,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "56567b1b-9cb9-423b-85c7-fe75230305b1",
+				"obsolete": "56567b1b-9cb9-423b-85c7-fe75230305b1",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "10",
 				"duration": "00:39:45",
@@ -3825,7 +3829,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -3833,7 +3837,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3841,7 +3845,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -3849,7 +3853,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3857,7 +3861,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -3865,7 +3869,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3873,7 +3877,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -3881,7 +3885,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3889,7 +3893,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -3897,7 +3901,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
+				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "ebf8c132-06d6-4fdb-bf00-4d06ba6c1391",
 				"distance": "2",
 				"duration": "00:11:00",
@@ -3905,7 +3909,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
+				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "095be067-5d12-47dc-a979-4415ef9f87d2",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -3913,7 +3917,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
+				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "e0ba5065-986d-4e89-bf44-c435de9704c2",
 				"distance": "3",
 				"duration": "00:12:30",
@@ -3921,7 +3925,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "28979dbe-d667-4184-a6df-5bdec4b77325",
+				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "e46cc610-cebf-439c-a681-121e6d38e041",
 				"distance": "3",
 				"duration": "00:15:15",
@@ -3941,7 +3945,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "53999aa8-1d8e-11e6-b7a8-3715f4688b6a",
+				"obsolete": "53999aa8-1d8e-11e6-b7a8-3715f4688b6a",
 				"uuid": "999",
 				"distance": 20,
 				"duration": "01:35:40",
@@ -3960,7 +3964,7 @@
 		"name": "4 x 3km @strength (18.1km)",
 		"segments": [
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:09:17",
@@ -3968,7 +3972,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:41",
@@ -3976,7 +3980,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:04:45",
@@ -3984,7 +3988,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:11:41",
@@ -3992,7 +3996,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:04:45",
@@ -4000,7 +4004,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:11:50",
@@ -4008,7 +4012,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:04:45",
@@ -4016,7 +4020,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:00",
@@ -4024,7 +4028,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "5eb4f0ae-11c4-4ae9-92d1-34f517f2b88c",
 				"distance": "1.1",
 				"duration": "00:05:41",
@@ -4044,7 +4048,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:09:17",
@@ -4052,7 +4056,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:41",
@@ -4060,7 +4064,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:04:45",
@@ -4068,7 +4072,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:11:41",
@@ -4076,7 +4080,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:04:45",
@@ -4084,7 +4088,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:11:50",
@@ -4092,7 +4096,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:04:45",
@@ -4100,7 +4104,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:00",
@@ -4108,7 +4112,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
+				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "5eb4f0ae-11c4-4ae9-92d1-34f517f2b88c",
 				"distance": "1.1",
 				"duration": "00:05:41",
@@ -4128,7 +4132,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -4136,7 +4140,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -4144,7 +4148,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -4152,7 +4156,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -4160,7 +4164,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "e205ca91-2bcf-46fc-8a7b-b57e6cef7671",
+				"obsolete": "e205ca91-2bcf-46fc-8a7b-b57e6cef7671",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "1.5",
 				"duration": "00:06:15",
@@ -4168,7 +4172,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "e205ca91-2bcf-46fc-8a7b-b57e6cef7671",
+				"obsolete": "e205ca91-2bcf-46fc-8a7b-b57e6cef7671",
 				"uuid": "0ca6251a-d026-49b0-a876-db5450907aba",
 				"distance": "12",
 				"duration": "01:04:00",
@@ -4176,7 +4180,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "e205ca91-2bcf-46fc-8a7b-b57e6cef7671",
+				"obsolete": "e205ca91-2bcf-46fc-8a7b-b57e6cef7671",
 				"uuid": "36cc4b33-5418-483f-9809-60c8b1653f7a",
 				"distance": "2",
 				"duration": "00:10:30",
@@ -4215,7 +4219,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -4235,7 +4239,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "8c12a07f-aa83-4e99-9869-3a89ecebf7ff",
+				"obsolete": "8c12a07f-aa83-4e99-9869-3a89ecebf7ff",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "32",
 				"duration": "02:26:40",
@@ -4255,7 +4259,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -4263,7 +4267,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -4271,7 +4275,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -4279,7 +4283,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -4287,7 +4291,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -4295,7 +4299,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -4303,7 +4307,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -4311,7 +4315,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -4319,7 +4323,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -4327,7 +4331,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "0ca6251a-d026-49b0-a876-db5450907aba",
 				"distance": "4",
 				"duration": "00:20:40",
@@ -4347,7 +4351,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4355,7 +4359,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f3eff8d9-c2e5-47c5-936c-726a4b76ad22",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4363,7 +4367,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "accbbe4e-8388-4c30-9783-3d866a461fe2",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4371,7 +4375,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8c0950a6-d03b-4037-8b5d-c4063e23e407",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4379,7 +4383,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f8dd056a-0052-494d-a50d-9181d5d387e0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4387,7 +4391,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "3db6d2aa-35c9-409f-b08a-4a4ad511b0c4",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4395,7 +4399,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e29390a0-59da-43d2-a193-95be34b1411e",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4403,7 +4407,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f5c9914c-275f-4a0a-b703-384683f30f07",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4411,7 +4415,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "1f18b13e-3f0b-4465-bf37-c0d122d88f9f",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4419,7 +4423,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "9438a8e2-ef9d-497f-8f59-ba57cd792930",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4427,7 +4431,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "440de7d6-6479-4866-afc4-236beab7f059",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4435,7 +4439,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "727c6e32-1cdc-4bfb-acb4-8f37d91b2ca4",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4443,7 +4447,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a5e07dcb-bdb4-47cd-8abe-3b0947f9ad63",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4451,7 +4455,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f93bc559-e8e4-49f2-aebe-10c6a68fae16",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4459,7 +4463,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e85f1d6a-4cd3-4084-b876-0266de68cd61",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4467,7 +4471,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "20aa6cb8-aeba-42b1-b975-6effcdc3c903",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4475,7 +4479,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "49b05778-c8a5-43e4-b9ee-a272fa084a35",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4483,7 +4487,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "67908f84-a3f6-4605-b25a-c849bf5dbb2d",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4491,7 +4495,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "85126497-365b-4e08-937b-8d86bc543b8c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4499,7 +4503,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a1b11640-27d6-47b1-9479-f87ace5370ba",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4507,7 +4511,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "842a090a-a623-4a2f-8cab-f296d703d790",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4515,7 +4519,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e2c3f6f0-a2cf-4130-bdb1-73271b3a2023",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4523,7 +4527,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4d6ee8a3-b5e3-4690-a90b-5baad95ca335",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4531,7 +4535,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "63498504-df1a-4523-b717-4d169cb436d1",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4539,7 +4543,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b40c409d-0ba3-4a68-bd90-9c5b3d6de5c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4547,7 +4551,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e5506048-9daa-4822-97ea-2d2ba073b025",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4555,7 +4559,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "696680b7-f97f-403c-96fc-f2a3b7270ae0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4563,7 +4567,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa808eb2-0a10-47be-8801-1ee4e3a7ecba",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4571,7 +4575,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "065e6212-0da7-4d28-8e97-acaeb4e63be3",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4579,7 +4583,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "11441cf9-0407-4867-a51b-695440c09b54",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4587,7 +4591,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd386338-32b2-4045-9c9c-34edbbc73a60",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4595,7 +4599,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b5eb6ca3-70e2-47dd-b56d-ef960e0c0105",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4603,7 +4607,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd217fbf-639f-4efb-ba2a-0474701459c0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4611,7 +4615,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a13d4220-b7ff-43c8-b7d7-918b5e45fb1f",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4619,7 +4623,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "52360e78-9682-4652-998a-c7df2499f5bf",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4627,7 +4631,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f46e8d08-c4be-4a87-a415-a65bdbe389ae",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4635,7 +4639,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "10a55e93-2264-4269-9192-992b38bc5a2c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4643,7 +4647,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb38214b-87e4-4c24-9b05-0f739af0695a",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4651,7 +4655,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "005ca46f-d5e3-4eba-bd85-91f868001d4c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4659,7 +4663,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "dc9ac93f-44c1-4260-8909-6bfd85951e83",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4667,7 +4671,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb3d9990-5384-4d7f-b3bb-ceaa36d463c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4675,7 +4679,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c01685c5-eaef-426a-ac69-ff9843a1f8db",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4683,7 +4687,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8643f154-cc9d-4e18-83ad-cc1c68c011df",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4691,7 +4695,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "ff658b6a-68e8-46bc-9e89-45f3c72cbc6d",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4699,7 +4703,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "477ce033-4871-429b-b3d0-88448e63d5c4",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4707,7 +4711,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4a8104b6-a445-4153-85ac-17f0454fb6b2",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4715,7 +4719,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa87640f-d50d-4ac2-a091-08ffae6afde0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4723,7 +4727,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2993f6e3-26dc-4eee-8e38-779d557d6fc1",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4731,7 +4735,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "195390f3-5a93-40f0-8303-88408c8d0860",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4739,7 +4743,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7fe86822-86bc-4c27-82de-2c6dbe304420",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4747,7 +4751,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "36f10b79-512e-4bf9-9738-47191de9dfbd",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4755,7 +4759,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "792185de-4aaf-469a-a10d-7dc6c7f69ed2",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4763,7 +4767,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "42992afa-410a-4a09-aed1-1bfa04caf333",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4771,7 +4775,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7277e9cf-5132-423a-9fe7-14bd85d36495",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4779,7 +4783,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "6074ab52-bd69-4518-900f-4d3f8db4775b",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4787,7 +4791,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c6c3f36e-f8d3-436e-b332-aca49063da68",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4795,7 +4799,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2788592e-284b-4e2e-ae01-2774779f7f51",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4803,7 +4807,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b46d3c43-2921-44ec-ad31-7b631636d7e9",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4811,7 +4815,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "14e8d2ac-eaf6-49f6-a288-a0318492f52f",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4819,7 +4823,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f4e01be4-fc1b-44c3-97eb-5325451de2e1",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4858,7 +4862,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4866,7 +4870,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f3eff8d9-c2e5-47c5-936c-726a4b76ad22",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4874,7 +4878,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "accbbe4e-8388-4c30-9783-3d866a461fe2",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4882,7 +4886,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8c0950a6-d03b-4037-8b5d-c4063e23e407",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4890,7 +4894,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f8dd056a-0052-494d-a50d-9181d5d387e0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4898,7 +4902,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "3db6d2aa-35c9-409f-b08a-4a4ad511b0c4",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4906,7 +4910,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e29390a0-59da-43d2-a193-95be34b1411e",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4914,7 +4918,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f5c9914c-275f-4a0a-b703-384683f30f07",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4922,7 +4926,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "1f18b13e-3f0b-4465-bf37-c0d122d88f9f",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4930,7 +4934,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "9438a8e2-ef9d-497f-8f59-ba57cd792930",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4938,7 +4942,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "440de7d6-6479-4866-afc4-236beab7f059",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4946,7 +4950,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "727c6e32-1cdc-4bfb-acb4-8f37d91b2ca4",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4954,7 +4958,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a5e07dcb-bdb4-47cd-8abe-3b0947f9ad63",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4962,7 +4966,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f93bc559-e8e4-49f2-aebe-10c6a68fae16",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4970,7 +4974,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e85f1d6a-4cd3-4084-b876-0266de68cd61",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4978,7 +4982,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "20aa6cb8-aeba-42b1-b975-6effcdc3c903",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -4986,7 +4990,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "49b05778-c8a5-43e4-b9ee-a272fa084a35",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -4994,7 +4998,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "67908f84-a3f6-4605-b25a-c849bf5dbb2d",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5002,7 +5006,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "85126497-365b-4e08-937b-8d86bc543b8c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5010,7 +5014,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a1b11640-27d6-47b1-9479-f87ace5370ba",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5018,7 +5022,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "842a090a-a623-4a2f-8cab-f296d703d790",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5026,7 +5030,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e2c3f6f0-a2cf-4130-bdb1-73271b3a2023",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5034,7 +5038,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4d6ee8a3-b5e3-4690-a90b-5baad95ca335",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5042,7 +5046,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "63498504-df1a-4523-b717-4d169cb436d1",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5050,7 +5054,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b40c409d-0ba3-4a68-bd90-9c5b3d6de5c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5058,7 +5062,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e5506048-9daa-4822-97ea-2d2ba073b025",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5066,7 +5070,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "696680b7-f97f-403c-96fc-f2a3b7270ae0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5074,7 +5078,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa808eb2-0a10-47be-8801-1ee4e3a7ecba",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5082,7 +5086,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "065e6212-0da7-4d28-8e97-acaeb4e63be3",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5090,7 +5094,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "11441cf9-0407-4867-a51b-695440c09b54",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5098,7 +5102,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd386338-32b2-4045-9c9c-34edbbc73a60",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5106,7 +5110,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b5eb6ca3-70e2-47dd-b56d-ef960e0c0105",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5114,7 +5118,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd217fbf-639f-4efb-ba2a-0474701459c0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5122,7 +5126,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a13d4220-b7ff-43c8-b7d7-918b5e45fb1f",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5130,7 +5134,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "52360e78-9682-4652-998a-c7df2499f5bf",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5138,7 +5142,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f46e8d08-c4be-4a87-a415-a65bdbe389ae",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5146,7 +5150,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "10a55e93-2264-4269-9192-992b38bc5a2c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5154,7 +5158,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb38214b-87e4-4c24-9b05-0f739af0695a",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5162,7 +5166,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "005ca46f-d5e3-4eba-bd85-91f868001d4c",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5170,7 +5174,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "dc9ac93f-44c1-4260-8909-6bfd85951e83",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5178,7 +5182,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb3d9990-5384-4d7f-b3bb-ceaa36d463c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5186,7 +5190,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c01685c5-eaef-426a-ac69-ff9843a1f8db",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5194,7 +5198,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8643f154-cc9d-4e18-83ad-cc1c68c011df",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5202,7 +5206,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "ff658b6a-68e8-46bc-9e89-45f3c72cbc6d",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5210,7 +5214,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "477ce033-4871-429b-b3d0-88448e63d5c4",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5218,7 +5222,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4a8104b6-a445-4153-85ac-17f0454fb6b2",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5226,7 +5230,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa87640f-d50d-4ac2-a091-08ffae6afde0",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5234,7 +5238,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2993f6e3-26dc-4eee-8e38-779d557d6fc1",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5242,7 +5246,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "195390f3-5a93-40f0-8303-88408c8d0860",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5250,7 +5254,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7fe86822-86bc-4c27-82de-2c6dbe304420",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5258,7 +5262,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "36f10b79-512e-4bf9-9738-47191de9dfbd",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5266,7 +5270,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "792185de-4aaf-469a-a10d-7dc6c7f69ed2",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5274,7 +5278,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "42992afa-410a-4a09-aed1-1bfa04caf333",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5282,7 +5286,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7277e9cf-5132-423a-9fe7-14bd85d36495",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5290,7 +5294,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "6074ab52-bd69-4518-900f-4d3f8db4775b",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5298,7 +5302,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c6c3f36e-f8d3-436e-b332-aca49063da68",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5306,7 +5310,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2788592e-284b-4e2e-ae01-2774779f7f51",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5314,7 +5318,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b46d3c43-2921-44ec-ad31-7b631636d7e9",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5322,7 +5326,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "14e8d2ac-eaf6-49f6-a288-a0318492f52f",
 				"distance": 0.194,
 				"duration": "00:01:00",
@@ -5330,7 +5334,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
+				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f4e01be4-fc1b-44c3-97eb-5325451de2e1",
 				"distance": 0.282,
 				"duration": "00:01:00",
@@ -5350,7 +5354,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -5358,7 +5362,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -5366,7 +5370,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -5374,7 +5378,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -5382,7 +5386,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -5390,7 +5394,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -5398,7 +5402,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -5406,7 +5410,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -5414,7 +5418,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "c555e2d3-7f59-4be4-a9bd-2248be9e144b",
+				"obsolete": "c555e2d3-7f59-4be4-a9bd-2248be9e144b",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:15:30",
@@ -5434,7 +5438,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
+				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
@@ -5454,7 +5458,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -5474,7 +5478,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -5494,7 +5498,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -5571,7 +5575,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -5591,7 +5595,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "2b535042-e97a-47f7-8880-341c1c7f6829",
 				"distance": "2",
 				"duration": "00:10:00",
@@ -5599,7 +5603,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "52334bc8-40c3-4962-b057-f081c0375b4c",
 				"distance": "2.25",
 				"duration": "00:08:04",
@@ -5607,7 +5611,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "67e6c9b0-ea40-4b10-bd7d-612c08da8038",
 				"distance": 1.2,
 				"duration": "00:06:12",
@@ -5615,7 +5619,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "e8fcb2ce-7af4-400e-bc9a-e958e20bddb0",
 				"distance": "3",
 				"duration": "00:12:09",
@@ -5623,7 +5627,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "3496f985-3f8e-4112-b183-911f03ad555e",
 				"distance": 0.581,
 				"duration": "00:03:00",
@@ -5631,7 +5635,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "af4ffea9-c240-43e8-9819-2714ce9a3e7f",
 				"distance": "2.25",
 				"duration": "00:08:04",
@@ -5639,7 +5643,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "86f5cf71-55be-404e-b3ff-6ab22364f387",
 				"distance": 0.6,
 				"duration": "00:03:00",
@@ -5647,7 +5651,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "e53d9b42-523d-42ed-8c34-28d5ae7827f9",
 				"distance": "2.5",
 				"duration": "00:10:25",
@@ -5655,7 +5659,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
+				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "8296d9de-2cb9-45cb-abea-a72d848e808c",
 				"distance": "4.6",
 				"duration": "00:23:00",
@@ -5675,7 +5679,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
+				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
@@ -5695,7 +5699,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
+				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
@@ -5710,7 +5714,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -5718,7 +5722,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -5726,7 +5730,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -5734,7 +5738,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -5742,7 +5746,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -5750,7 +5754,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -5758,7 +5762,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -5766,7 +5770,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -5774,7 +5778,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "4",
 				"duration": "00:16:40",
@@ -5782,7 +5786,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "671c43e2-eaf1-44ea-8afb-135379a16642",
+				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "0ca6251a-d026-49b0-a876-db5450907aba",
 				"distance": "4",
 				"duration": "00:20:40",
@@ -5802,7 +5806,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
@@ -5817,7 +5821,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -5837,7 +5841,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
+				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
@@ -5857,7 +5861,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -5877,7 +5881,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
+				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
@@ -5897,7 +5901,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
+				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
@@ -5917,7 +5921,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
+				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
@@ -5942,7 +5946,7 @@
 				"duration": "00:11:10",
 				"pace": "05:35",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "0aceaaf9-41d5-48cb-b4b2-8e536fefd7db",
@@ -5950,7 +5954,7 @@
 				"duration": "00:06:50",
 				"pace": "04:16",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "f355d75b-6b29-4bd8-97de-0d606b0d0937",
@@ -5958,7 +5962,7 @@
 				"duration": "00:02:10",
 				"pace": "05:25",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "856e0477-1261-4cbd-bc7c-8e8653c2a705",
@@ -5966,7 +5970,7 @@
 				"duration": "00:06:50",
 				"pace": "04:16",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "09d367e5-8c23-45ad-ac6c-a8c2717b739d",
@@ -5974,7 +5978,7 @@
 				"duration": "00:02:10",
 				"pace": "05:25",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "f1652ef8-e31b-4949-85fe-a8fbb29097d9",
@@ -5982,7 +5986,7 @@
 				"duration": "00:06:50",
 				"pace": "04:16",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "ed17ce4c-34eb-4a3d-8746-7ee1aa6dc49a",
@@ -5990,7 +5994,7 @@
 				"duration": "00:02:10",
 				"pace": "05:25",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "4a5e10d3-d600-4b04-b39b-6ebfeaa20fdb",
@@ -5998,7 +6002,7 @@
 				"duration": "00:06:50",
 				"pace": "04:16",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "ad6bfc0b-41c4-4ed3-b200-15e00ea20024",
@@ -6006,7 +6010,7 @@
 				"duration": "00:02:10",
 				"pace": "05:25",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "dde40943-0c88-4a9b-ad94-d443c749f4f2",
@@ -6014,7 +6018,7 @@
 				"duration": "00:06:50",
 				"pace": "04:16",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "9cfdefcd-ff0a-4411-8fb2-4da05f648eb7",
@@ -6022,7 +6026,7 @@
 				"duration": "00:02:10",
 				"pace": "05:25",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "22e8f838-9eb9-4fd6-8bd6-71a8f21d9e31",
@@ -6030,7 +6034,7 @@
 				"duration": "00:06:50",
 				"pace": "04:16",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "c3e1eb2b-63cd-4763-af83-3558d62dddc9",
@@ -6038,7 +6042,7 @@
 				"duration": "00:02:10",
 				"pace": "05:25",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			},
 			{
 				"uuid": "934b0b08-4de4-4efe-8b02-5f6318131228",
@@ -6046,7 +6050,7 @@
 				"duration": "00:06:50",
 				"pace": "04:16",
 				"isValid": true,
-				"trainingUuid": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
 			}
 		],
 		"total": {
@@ -6061,7 +6065,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
@@ -6069,7 +6073,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
@@ -6077,7 +6081,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
@@ -6102,7 +6106,7 @@
 				"duration": "00:47:50",
 				"pace": "04:47",
 				"isValid": true,
-				"trainingUuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+				"obsolete": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
 			},
 			{
 				"uuid": "353098c1-9d80-44cd-99e1-f25175b1e885",
@@ -6110,7 +6114,7 @@
 				"duration": "00:49:40",
 				"pace": "04:58",
 				"isValid": true,
-				"trainingUuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+				"obsolete": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
 			},
 			{
 				"uuid": "96bf1bb8-c467-4bbd-b9e8-0447dd65076d",
@@ -6118,7 +6122,7 @@
 				"duration": "00:40:45",
 				"pace": "04:02",
 				"isValid": false,
-				"trainingUuid": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+				"obsolete": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
 			}
 		],
 		"total": {
@@ -6133,7 +6137,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
+				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
@@ -6153,7 +6157,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:05:30",
 				"pace": "05:30",
@@ -6161,7 +6165,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
@@ -6169,7 +6173,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
@@ -6177,7 +6181,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
@@ -6185,7 +6189,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
@@ -6193,7 +6197,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
@@ -6201,7 +6205,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
@@ -6209,7 +6213,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
@@ -6217,7 +6221,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
@@ -6225,7 +6229,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
@@ -6233,7 +6237,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
@@ -6241,7 +6245,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
@@ -6249,7 +6253,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
@@ -6257,7 +6261,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
@@ -6265,7 +6269,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
+				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1.7",
 				"duration": "00:08:32",
 				"pace": "05:01",
@@ -6290,7 +6294,7 @@
 				"duration": "02:04:00",
 				"pace": "05:10",
 				"isValid": true,
-				"trainingUuid": "d6c0db21-d293-4bb9-bafa-5f414c8f7b1d"
+				"obsolete": "d6c0db21-d293-4bb9-bafa-5f414c8f7b1d"
 			}
 		],
 		"total": {
@@ -6324,7 +6328,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
+				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "1",
 				"duration": "00:05:30",
@@ -6332,7 +6336,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
@@ -6340,7 +6344,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -6348,7 +6352,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -6356,7 +6360,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -6364,7 +6368,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
@@ -6372,7 +6376,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -6380,7 +6384,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
+				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -6388,7 +6392,7 @@
 				"isValid": false
 			},
 			{
-				"trainingUuid": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
+				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "af9fc74f-6cdc-462b-9fbd-046e40765724",
 				"distance": "1",
 				"duration": "00:05:00",
@@ -6396,7 +6400,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
+				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "a8bc6d7b-4f4d-4d4e-b57d-3f7c9edfd023",
 				"distance": "3",
 				"duration": "00:12:08",
@@ -6435,7 +6439,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6455,7 +6459,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6475,7 +6479,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6495,7 +6499,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6515,7 +6519,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6535,7 +6539,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6574,7 +6578,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6594,7 +6598,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6614,7 +6618,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6634,7 +6638,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6654,7 +6658,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
@@ -6662,7 +6666,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
@@ -6670,7 +6674,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "25f58de3-bf56-4200-b545-ac24eb5524a9",
+				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
@@ -6690,7 +6694,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6710,7 +6714,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6730,7 +6734,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6750,7 +6754,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6770,7 +6774,7 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -6778,7 +6782,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -6786,7 +6790,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -6794,7 +6798,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -6802,7 +6806,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -6810,7 +6814,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -6818,7 +6822,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "300e6611-5f48-46d3-af7a-78caa387fff4",
+				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
@@ -6826,7 +6830,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "new-training",
+				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
@@ -6834,7 +6838,7 @@
 				"isValid": true
 			},
 			{
-				"trainingUuid": "c555e2d3-7f59-4be4-a9bd-2248be9e144b",
+				"obsolete": "c555e2d3-7f59-4be4-a9bd-2248be9e144b",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:15:30",
@@ -6854,7 +6858,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "5c377189-43a0-46b0-a005-fda8bce511a1",
+				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
@@ -6996,7 +7000,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"trainingUuid": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
+				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
@@ -7078,7 +7082,7 @@
 				"pace": "04:07",
 				"duration": "01:22:20",
 				"isValid": true,
-				"trainingUuid": "1f43de2e-fd9a-480f-882e-e23ec02a0afe"
+				"obsolete": "1f43de2e-fd9a-480f-882e-e23ec02a0afe"
 			}
 		],
 		"total": {
@@ -7105,5 +7109,38 @@
 			"duration": "01:09:45",
 			"pace": "05:10"
 		}
+	},
+	{
+		"uuid": "f7d27a20-0cd7-412d-a4b7-7f1655e2d44b",
+		"name": "20k @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "47",
+				"distance": "20",
+				"pace": "04:07",
+				"duration": "01:22:20",
+				"isValid": true,
+				"obsolete": "112cf232-3eff-448b-9e40-2b5db7a659d3"
+			}
+		],
+		"total": {
+			"distance": 20,
+			"duration": "01:22:20",
+			"pace": "04:07"
+		}
+	},
+	{
+		"uuid": "99f89898-eed9-4803-9fa5-8a24357a09e6",
+		"name": "19.2km @MP",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "dkng-9456",
+				"distance": "19.2",
+				"pace": "04:07",
+				"duration": "01:18:30"
+			}
+		]
 	}
 ]

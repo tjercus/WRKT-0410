@@ -51,6 +51,7 @@ export function findDay(dayUuid, plan, trainings = []) {
     console.log(`The day you requested (${JSON.stringify(_days[index])}) will be augmented using ${trainings.length} traininginstances`);
     return augmentDay(_days[index], clone(trainings));
   } else {
+    console.log("findDay was called without a list of trainings, returning without augmenting");
     return _days[index];
   }
 }

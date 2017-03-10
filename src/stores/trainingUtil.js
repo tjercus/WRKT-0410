@@ -125,6 +125,6 @@ export function augmentTraining(training) {
 const linkSegmentToTraining = (training, segment) => {
   const _segment = clone(segment);
   _segment.trainingUuid = training.uuid;
-  console.log(`augmentTraining ${JSON.stringify(_segment)}`);
+  // console.log(`linkSegmentToTraining ${JSON.stringify(_segment)}`);
   return _segment;
 };
