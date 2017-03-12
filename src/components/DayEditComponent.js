@@ -3,22 +3,25 @@ import EventEmitter from "eventemitter4";
 import { EventsEnum as ee } from "../constants";
 
 import TrainingInstanceComponent from "./TrainingInstanceComponent";
-import {hasProperty} from "../stores/miscUtil";
-
-const DEFAULT_STATE = {
-  isVisible: false,
-  dayUuid: null,
-  day: { trainings: [] },
-  selectedNr: null,
-  date: null,
-};
 
 export default class DayEditComponent extends React.Component {
+
+  static propTypes = {
+    eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+    name: React.PropTypes.string.isRequired, // panel name
+    from: React.PropTypes.string.isRequired, // related menu item name
+  };
+
+  state = {
+    isVisible: false,
+    dayUuid: null,
+    day: { trainings: [] },
+    selectedNr: null,
+    date: null,
+  };
+
   constructor(props) {
     super(props);
-    this.state = DEFAULT_STATE;
-    this.onLoadTrainingClick = this.onLoadTrainingClick.bind(this); // TODO phat arrow
-    this.onCloseButtonClick = this.onCloseButtonClick.bind(this);
   }
 
   componentDidMount() {
@@ -48,20 +51,24 @@ export default class DayEditComponent extends React.Component {
    * @param {SyntheticEvent} evt
    * @returns {void}
    */
-  onLoadTrainingClick(evt) {
+  onLoadTrainingClick = (evt) => {
     const nr = evt.target.value;
     this.setState({ selectedNr: nr }); // TODO need to keep state for this?
     console.log(`DayEditComponent.onLoadTrainingClick ${JSON.stringify(this.state.day)}`);
     this.props.eventbus.emit(ee.INSTANCE_LOAD_CMD, this.state.day.trainings[nr]);
-  }
+  };
 
   /**
    * @param {SyntheticEvent} evt
    * @returns {void} - emits on eventbus instead
    */
-  onCloseButtonClick(evt) {
+  onCloseButtonClick = (evt) => {
     this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-timeline");
-  }
+  };
+
+  onAddTrainingButtonClick = (evt) => {
+    this.props.eventbus.emit(ee.TRAINING_TO_DAY_CMD, this.state.day.uuid, {});
+  };
 
   /**
   * React render
@@ -92,6 +99,7 @@ export default class DayEditComponent extends React.Component {
         </header>
         <div className="panel-body">
           <h3>{"Trainings"}</h3>
+          <button onClick={this.onAddTrainingButtonClick} className="button-flat">add another training</button>
           <ul>
             {trainingButtonListItems}
           </ul>
@@ -101,9 +109,3 @@ export default class DayEditComponent extends React.Component {
     );
   }
 }
-
-DayEditComponent.propTypes = {
-  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
-  name: React.PropTypes.string.isRequired, // panel name
-  from: React.PropTypes.string.isRequired, // related menu item name
-};

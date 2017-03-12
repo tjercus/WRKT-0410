@@ -14,7 +14,8 @@
     "deploy": "gulp deploy",
     "test": "babel-tape-runner test/*-spec.js | faucet",
     "test-e2e": "casperjs test test/e2e/*-spec.js",
-    "lint": "./node_modules/.bin/eslint ./src || exit 0"
+    "lint": "./node_modules/.bin/eslint ./src || exit 0",
+    "server": "node rest-api.js"
   },
   "author": "Tjerk Valentijn",
   "license": "MIT",
@@ -46,7 +47,7 @@
     "babel-plugin-transform-es2015-function-name": "6.9.0",
     "babel-preset-es2015": "6.18.0",
     "babel-preset-react": "6.16.0",
-    "babel-preset-stage-0": "6.16.0",
+    "babel-preset-stage-0": "^6.22.0",
     "babel-tape-runner": "2.0.1",
     "babelify": "7.3.0",
     "browser-sync": "2.18.5",

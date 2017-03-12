@@ -1,5 +1,5 @@
 import { updateTrainingInstanceInDay } from "./trainingUtil";
-import {EventsEnum as ee} from "../constants";
+import {EventsEnum as ee, DEFAULT_TRAINING} from "../constants";
 import {
   addSegment,
   removeSegment,
@@ -57,6 +57,17 @@ export default class DayStore {
     eventbus.on(ee.SEGMENT_CLONE_CMD, (segment) => {
       this.addSegmentToStore(segment, true);
     });
+
+    eventbus.on(ee.TRAINING_TO_DAY_CMD, (dayUuid, training) => {
+      if (this.day.uuid === dayUuid) {
+        // TODO if training is null or {} then push empty object
+        if (training === {} || training === null) {
+          training = DEFAULT_TRAINING;
+        }
+        this.day.trainings.push(training);
+        eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
+      }
+    });
   }
 
   // TODO replace this with better code
@@ -92,7 +103,6 @@ export default class DayStore {
       console.log(`DayStore.updateSegmentInStore after augmenting: ${JSON.stringify(_segment)}`);
       let updatedLocalTrainings = [];
       this.day.trainings.map(training => {
-        // TODO FIX BUG HERE
         if (training.uuid === segment.trainingUuid) {
           console.log(`DayStore.updateSegmentInStore training before updating segment: ${JSON.stringify(training)}`);
           training.segments = updateSegment(_segment, clone(training.segments));
