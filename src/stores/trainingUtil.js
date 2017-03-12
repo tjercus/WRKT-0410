@@ -10,6 +10,12 @@ import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
  * @alias TrainingInstance
  */
 
+export function NotFoundException(msg) {
+  function toString() {
+    return `NotFoundException: ${msg}`;
+  }
+}
+
 /**
  * Finds a training or an instance
  * @param  {string} uuid - id
@@ -44,7 +50,7 @@ export function updateTraining(training, trainings) {
   const isInstance = _training => String(_training.uuid) === String(trainingClone.uuid);
   const index = _trainings.findIndex(isInstance);
   if (index < 0) {
-    throw new Error("updateTraining could not find training");
+    throw new NotFoundException("updateTraining could not find training");
   }
   _trainings[index] = trainingClone;
   return _trainings;
@@ -105,7 +111,7 @@ export function updateTrainingInstanceInDay(day, instance) {
 }
 
 /**
- * 
+ *
  * @param {Training|TrainingInstance} training - with possibly un-augmented segments
  * @returns {Training|TrainingInstance} _training - with augmented segments
  */

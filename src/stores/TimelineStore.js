@@ -8,7 +8,7 @@ import {
   deleteDay,
 } from "./timelineUtil";
 import { EventsEnum as ee } from "../constants";
-import { removeTrainingInstancesForDay, updateTraining } from "./trainingUtil";
+import { removeTrainingInstancesForDay, updateTraining, NotFoundException} from "./trainingUtil";
 import { clone, createUuid, hasProperty } from "./miscUtil";
 
 /**
@@ -70,7 +70,14 @@ export default class TimelineStore {
       this.plan.days[index] = day;
 
       day.trainings.map(training => {
-        this.traininginstances = updateTraining(training, clone(this.traininginstances));
+        // provide for the situation where a second training is added instead of updated
+        try {
+          this.traininginstances = updateTraining(training, clone(this.traininginstances));
+        } catch (exc) {
+          if (exc instanceof NotFoundException) {
+            this.traininginstances.push(training);
+          }
+        }
       });
 
       eventbus.emit(ee.PLAN_UPDATE_EVT, this.plan);
