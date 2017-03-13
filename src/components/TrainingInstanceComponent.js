@@ -115,7 +115,7 @@ export default class TrainingInstanceComponent extends React.Component {
 
   removeTraining = () => {
     this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD, this.state.training.uuid);
-  }
+  };
 
   /**
    *
@@ -123,20 +123,15 @@ export default class TrainingInstanceComponent extends React.Component {
    * @returns {void}
    */
   setDayInLocalState = (day) => {
-    // TODO also support updating a second training
-    if (day.trainings && day.trainings[0] && day.trainings[0].uuid === this.state.training.uuid) {
-      console.log(`TrainingInstanceComponent.js caught DAY_*_EVT ${JSON.stringify(day.trainings[0])}`);
-      const training = day.trainings[0];
-      this.setState({training: training});
-    } else {
-      console.log(`TrainingInstanceComponent.js caught DAY_*_EVT first day uuid was NOT equal to the one in the state`);
-      this.setState({training: DEFAULT_TRAINING});
-    }
+    day.trainings.map(training => {
+      if (training.uuid === this.state.training.uuid) {
+        this.setState({training: training});
+      }
+    });
   };
 
   render() {
     let panelClassName = "panel";
-
     console.log(`TrainingInstanceComponent rendered with ${this.state.training.uuid}`);
 
     let nameComponent = "";
