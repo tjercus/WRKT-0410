@@ -16,6 +16,7 @@ export const EventsEnum = Object.freeze(keyMirror({
   DAY_UPDATE_EVT: null,
   INSTANCE_CLEAR_CMD: null,
   INSTANCE_CLEAR_EVT: null,
+  INSTANCE_CREATE_CMD: null,
   INSTANCE_LOAD_CMD: null,
   INSTANCE_LOAD_EVT: null,
   INSTANCE_REMOVE_CMD: null,
@@ -76,8 +77,6 @@ export const EventsEnum = Object.freeze(keyMirror({
   TRAINING_REMOVE_EVT: null,
   TRAINING_TO_PLAN_CMD: null,
   TRAINING_TO_PLAN_EVT: null,
-  TRAINING_TO_DAY_CMD: null,
-
   TRAINING_UPDATE_CMD: null,
   TRAINING_UPDATE_EVT: null,
   TRAININGS_FETCH_CMD: null,

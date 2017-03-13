@@ -66,8 +66,13 @@ export default class DayEditComponent extends React.Component {
     this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-timeline");
   };
 
+  /**
+   * Open a new training in the context of the day
+   * @param {SyntheticEvent} evt
+   * @returns {void} - emits on eventbus instead
+   */
   onAddTrainingButtonClick = (evt) => {
-    this.props.eventbus.emit(ee.TRAINING_TO_DAY_CMD, this.state.day.uuid, {});
+    this.props.eventbus.emit(ee.INSTANCE_CREATE_CMD, this.state.day.uuid);
   };
 
   /**

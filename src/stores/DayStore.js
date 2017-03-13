@@ -7,7 +7,7 @@ import {
   updateSegment,
   makeTrainingTotal,
 } from "./segmentUtil";
-import {clone, hasProperty} from "./miscUtil";
+import {clone, hasProperty, createUuid} from "./miscUtil";
 
 /**
  * Holds data for editing a day
@@ -32,7 +32,7 @@ export default class DayStore {
     /**
      * emitted by TrainingInstanceComponent when user clicks 'save' button
      */
-    eventbus.on(ee.INSTANCE_UPDATE_CMD, (instance) => {
+    eventbus.on(ee.INSTANCE_UPDATE_CMD, instance => {
       console.log(`DayStore caught INSTANCE_UPDATE_CMD, trying to update day ${this.day.uuid}`);
       this.day = updateTrainingInstanceInDay(this.day, instance);
       this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
@@ -43,11 +43,11 @@ export default class DayStore {
     });
 
     // TODO decide if this logic should be here ...
-    eventbus.on(ee.SEGMENT_UPDATE_CMD, (segment) => {
+    eventbus.on(ee.SEGMENT_UPDATE_CMD, segment => {
       console.log(`DayStore caught SEGMENT_UPDATE_CMD`);
       this.updateSegmentInStore(segment);
     });
-    eventbus.on(ee.SEGMENT_ADD_CMD, (segment) => {
+    eventbus.on(ee.SEGMENT_ADD_CMD, segment => {
       console.log(`DayStore caught SEGMENT_ADD_CMD`);
       this.addSegmentToStore(segment, false);
     });
@@ -58,12 +58,10 @@ export default class DayStore {
       this.addSegmentToStore(segment, true);
     });
 
-    eventbus.on(ee.TRAINING_TO_DAY_CMD, (dayUuid, training) => {
+    eventbus.on(ee.INSTANCE_CREATE_CMD, dayUuid => {
       if (this.day.uuid === dayUuid) {
-        // TODO if training is null or {} then push empty object
-        if (training === {} || training === null) {
-          training = DEFAULT_TRAINING;
-        }
+        const training = DEFAULT_TRAINING;
+        training.uuid = createUuid();
         this.day.trainings.push(training);
         eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
       }

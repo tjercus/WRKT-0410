@@ -12,25 +12,20 @@ const DAY_HEADER_DATE_FORMAT = "dddd, DD-MM-YYYY";
 
 export default class DayComponent extends React.Component {
 
+  static propTypes = {
+    eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+    day: React.PropTypes.object.isRequired,
+    dayNr: React.PropTypes.number.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
       secondaryMenuHidden: true,
     };
-    //this.onCycleLengthButtonClick = this.onCycleLengthButtonClick.bind(this);
-    this.onEditClick = this.onEditClick.bind(this);
-    //this.onEmptyClick = this.onEmptyClick.bind(this);
-    this.onCloneToBeginClick = this.onCloneToBeginClick.bind(this);
-    this.onCloneToMiddleClick = this.onCloneToMiddleClick.bind(this);
-    this.onCloneClick = this.onCloneClick.bind(this);
-    this.onCloneToSelectedWeekClick = this.onCloneToSelectedWeekClick.bind(this);
-    this.onMoveLeftClick = this.onMoveLeftClick.bind(this);
-    this.onMoveRightClick = this.onMoveRightClick.bind(this);
-    this.onDeleteClick = this.onDeleteClick.bind(this);
-    this.onSecondaryMenuClick = this.onSecondaryMenuClick.bind(this);
   }
 
-  onEditClick(evt) {
+  onEditClick = (evt) => {
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-dayedit");
     console.log(`DayComponent.onEditClick: emit DAY_LOAD_CMD for day [${uuid}]`);
@@ -38,41 +33,41 @@ export default class DayComponent extends React.Component {
     this.props.eventbus.emit(ee.DAY_LOAD_CMD, this.props.day);
   }
 
-  onCloneToBeginClick(evt) {
+  onCloneToBeginClick = (evt) => {
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid, 0);
   }
 
-  onCloneToMiddleClick(evt) {
+  onCloneToMiddleClick = (evt) => {
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid, 0.5);
   }
 
-  onCloneClick(evt) {
+  onCloneClick = (evt) =>{
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid);
   }
 
-  onCloneToSelectedWeekClick(evt) {
+  onCloneToSelectedWeekClick = (evt) => {
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid, -1);
   }
 
-  onMoveLeftClick(evt) {
+  onMoveLeftClick = (evt) => {
     this.props.eventbus.emit(ee.DAY_MOVE_CMD, evt.target.value, -1);
   }
 
-  onMoveRightClick(evt) {
+  onMoveRightClick = (evt) => {
     this.props.eventbus.emit(ee.DAY_MOVE_CMD, evt.target.value, 1);
   }
 
-  onDeleteClick(evt) {
+  onDeleteClick = (evt) => {
     const uuid = evt.target.attributes[1].nodeValue;
     console.log(`DayComponent.onDeleteClick ${uuid}`);
     this.props.eventbus.emit(ee.DAY_DELETE_CMD, uuid);
   }
 
-  onSecondaryMenuClick(evt) {
+  onSecondaryMenuClick = (evt) => {
     this.setState({secondaryMenuHidden: !this.state.secondaryMenuHidden});
   }
 
@@ -162,9 +157,3 @@ export default class DayComponent extends React.Component {
     );
   }
 }
-
-DayComponent.propTypes = {
-  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
-  day: React.PropTypes.object.isRequired,
-  dayNr: React.PropTypes.number.isRequired,
-};

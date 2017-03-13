@@ -1,16 +1,8 @@
 import React from "react";
 import EventEmitter from "eventemitter4";
 import SegmentComponent from "./SegmentComponent";
-import { EventsEnum as ee, TRAINING_SHAPE, DEFAULT_TOTAL } from "../constants";
+import { EventsEnum as ee, TRAINING_SHAPE, DEFAULT_TOTAL, DEFAULT_TRAINING } from "../constants";
 import { createUuid } from "../stores/miscUtil";
-
-const DEFAULT_TRAINING = {
-  uuid: null,
-  name: "undefined",
-  type: null,
-  segments: [],
-  total: DEFAULT_TOTAL,
-};
 
 /**
  * Is used in DayEditComponent to display segments and totals for an instance
@@ -18,22 +10,17 @@ const DEFAULT_TRAINING = {
  * The DayStore processes the state when the TrainingInstance (loaded in the GUI) changes.
 */
 export default class TrainingInstanceComponent extends React.Component {
+
+  static propTypes = {
+    eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
       training: DEFAULT_TRAINING,
       isNameEditable: false,
     };
-    this.exportTraining = this.exportTraining.bind(this);
-    this.onClearTrainingClick = this.onClearTrainingClick.bind(this);
-    this.addEmptySegment = this.addEmptySegment.bind(this);
-    this.removeTraining = this.removeTraining.bind(this);
-    this.onEditNameButtonClick = this.onEditNameButtonClick.bind(this);
-    this.onNameChange = this.onNameChange.bind(this);
-    this.onNameBlur = this.onNameBlur.bind(this);
-    this.onTrainingTypeClick = this.onTrainingTypeClick.bind(this);
-    this.onPropagateChangesClick = this.onPropagateChangesClick.bind(this);
-    this.setDayInLocalState = this.setDayInLocalState.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +37,18 @@ export default class TrainingInstanceComponent extends React.Component {
       console.log(`TIC on DAY_UPDATE_EVT with day ${JSON.stringify(day)}`);
       this.setDayInLocalState(day);
     });
+
+    // this.props.eventbus.on(ee.INSTANCE_CREATE_CMD, dayUuid => {
+    //   if (this.state.day.uuid === dayUuid) {
+    //     // create a new training and add it to the day
+    //     // const training = DEFAULT_TRAINING;
+    //     // training.uuid = createUuid();
+    //     // const day = this.state.day;
+    //     // day.trainings.push(training);
+    //     // this.setDayInLocalState(day);
+    //     this.setState(DEFAULT_TRAINING);
+    //   }
+    // });
   }
 
   /**
@@ -60,13 +59,13 @@ export default class TrainingInstanceComponent extends React.Component {
     this.props.eventbus.emit(ee.TRAINING_RENDER_EVT, this.state.training.uuid);
   }
 
-  onPropagateChangesClick() {
+  onPropagateChangesClick = () => {
     // TODO propagate instance id instead of complete training
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
-  }
+  };
 
   // TODO use from segmentUtils
-  addEmptySegment() {
+  addEmptySegment = () => {
     this.props.eventbus.emit(ee.SEGMENT_ADD_CMD, {
       uuid: createUuid(),
       trainingUuid: this.state.training.uuid,
@@ -74,24 +73,24 @@ export default class TrainingInstanceComponent extends React.Component {
       duration: "00:00:00",
       pace: "00:00",
     });
-  }
+  };
 
-  exportTraining() {
+  exportTraining = () => {
     console.log(JSON.stringify(this.state.training));
   }
 
-  onClearTrainingClick() {
+  onClearTrainingClick = () => {
     this.setState(DEFAULT_TRAINING);
   }
 
-  onEditNameButtonClick(evt) {
+  onEditNameButtonClick = (evt) => {
     this.setState({
       isNameEditable: !this.state.isNameEditable,
     });
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
-  onNameChange(evt) {
+  onNameChange = (evt) => {
     const _training = this.state.training;
     _training.name = evt.target.value;
     this.setState({ training: _training });
@@ -99,7 +98,7 @@ export default class TrainingInstanceComponent extends React.Component {
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
-  onNameBlur(evt) {
+  onNameBlur = (evt) => {
     const _training = this.state.training;
     _training.name = evt.target.value;
     this.setState({ name: evt.target.value });
@@ -107,14 +106,14 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   // TODO test: 'should emit event when button clicked'
-  onTrainingTypeClick(evt) {
+  onTrainingTypeClick = (evt) => {
     const _training = this.state.training;
     _training.type = evt.target.value;
     this.setState({ training: _training });
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   }
 
-  removeTraining() {
+  removeTraining = () => {
     this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD, this.state.training.uuid);
   }
 
@@ -123,7 +122,7 @@ export default class TrainingInstanceComponent extends React.Component {
    * @param {Day} day - contains date and 1 or 2 trainings
    * @returns {void}
    */
-  setDayInLocalState(day) {
+  setDayInLocalState = (day) => {
     // TODO also support updating a second training
     if (day.trainings && day.trainings[0] && day.trainings[0].uuid === this.state.training.uuid) {
       console.log(`TrainingInstanceComponent.js caught DAY_*_EVT ${JSON.stringify(day.trainings[0])}`);
@@ -133,7 +132,7 @@ export default class TrainingInstanceComponent extends React.Component {
       console.log(`TrainingInstanceComponent.js caught DAY_*_EVT first day uuid was NOT equal to the one in the state`);
       this.setState({training: DEFAULT_TRAINING});
     }
-  }
+  };
 
   render() {
     let panelClassName = "panel";
@@ -270,6 +269,3 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 }
 
-TrainingInstanceComponent.propTypes = {
-  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
-};

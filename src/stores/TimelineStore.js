@@ -74,6 +74,7 @@ export default class TimelineStore {
         try {
           this.traininginstances = updateTraining(training, clone(this.traininginstances));
         } catch (exc) {
+          console.log(exc);
           if (exc instanceof NotFoundException) {
             this.traininginstances.push(training);
           }

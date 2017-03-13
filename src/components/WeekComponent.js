@@ -6,9 +6,14 @@ import { createUuid } from "../stores/miscUtil";
 
 export default class WeekComponent extends React.Component {
 
+  static propTypes = {
+    eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+    week: React.PropTypes.object.isRequired,
+    selectedWeekNr: React.PropTypes.number.isRequired,
+  };
+
   constructor(props) {
     super(props);
-    this.onSelectButtonClick = this.onSelectButtonClick.bind(this);
   }
 
   // TODO move to timelineUtil
@@ -18,8 +23,11 @@ export default class WeekComponent extends React.Component {
     }
     if (day.trainings.length === 1) {
       return day.trainings[0].total.distance;
-    } else {
+    } else if (day.trainings.length === 2) {
       return (day.trainings[0].total.distance + day.trainings[1].total.distance);
+    } else {
+      console.log("WeekComponent: there where nog trainings, so total was 0");
+      return 0;
     }
   }
 
@@ -51,13 +59,7 @@ export default class WeekComponent extends React.Component {
       </tr>);
   }
 
-  onSelectButtonClick(evt) {
+  onSelectButtonClick = (evt) => {
     this.props.eventbus.emit(ee.PLAN_SELECT_WEEK_CMD, this.props.week.weekNr);
   }
 }
-
-WeekComponent.propTypes = {
-  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
-  week: React.PropTypes.object.isRequired,
-  selectedWeekNr: React.PropTypes.number.isRequired,
-};
