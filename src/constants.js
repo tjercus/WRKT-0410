@@ -106,7 +106,7 @@ export const DEFAULT_TOTAL = {
 
 export const DEFAULT_TRAINING = {
   uuid: null,
-  name: "undefined",
+  name: "Empty Training",
   type: null,
   segments: [],
   isNameEditable: false,

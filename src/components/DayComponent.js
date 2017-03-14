@@ -124,7 +124,7 @@ export default class DayComponent extends React.Component {
 
       // TODO extract DayTrainingComponent
       dayElements.push(
-        <section key={j + "-" + createUuid()} className={trainingClassNames.join(" ")}>
+        <section key={j + "-" + training.uuid} className={trainingClassNames.join(" ")}>
           <p className="training-name">{training.name}</p>
         	{trainingTotal}
         </section>

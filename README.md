@@ -15,6 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Use Immutable.Record for all datatypes (Training, Segment, Total ...)
 - Create a script that lists all eventbus subscriptions and emits per source file
 - Move propTypes to static class property above constructor
 - Progressive web application support
