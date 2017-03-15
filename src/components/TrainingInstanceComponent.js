@@ -33,6 +33,8 @@ export default class TrainingInstanceComponent extends React.Component {
     this.props.eventbus.on(ee.DAY_LOAD_EVT, day => {
       this.setDayInLocalState(day);
     });
+
+    // TODO perhaps not catch this event
     this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
       console.log(`TIC on DAY_UPDATE_EVT with day ${JSON.stringify(day)}`);
       this.setDayInLocalState(day);
@@ -60,7 +62,7 @@ export default class TrainingInstanceComponent extends React.Component {
   }
 
   onPropagateChangesClick = () => {
-    // TODO propagate instance id instead of complete training
+    // TODO propagate instance id instead of complete training, but only for updates
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
   };
 
