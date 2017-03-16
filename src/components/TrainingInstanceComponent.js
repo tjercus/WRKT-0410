@@ -63,7 +63,11 @@ export default class TrainingInstanceComponent extends React.Component {
 
   onPropagateChangesClick = () => {
     // TODO propagate instance id instead of complete training, but only for updates
+
+    // TODO how tot differentiate between update and insert?
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
+
+    this.props.eventbus.emit(ee.INSTANCE_ADD_CMD, this.state.training);
   };
 
   // TODO use from segmentUtils

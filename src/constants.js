@@ -14,6 +14,7 @@ export const EventsEnum = Object.freeze(keyMirror({
   DAY_MOVE_EVT: null,
   DAY_UPDATE_CMD: null,
   DAY_UPDATE_EVT: null,
+  INSTANCE_ADD_CMD: null,
   INSTANCE_CLEAR_CMD: null,
   INSTANCE_CLEAR_EVT: null,
   INSTANCE_CREATE_CMD: null,
