@@ -34,6 +34,7 @@ export default class DayStore {
      */
     eventbus.on(ee.INSTANCE_UPDATE_CMD, instance => {
       console.log(`DayStore caught INSTANCE_UPDATE_CMD, trying to update day ${this.day.uuid}`);
+      // TODO support a second training, insert instead of update
       this.day = updateTrainingInstanceInDay(this.day, instance);
       this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
     });
