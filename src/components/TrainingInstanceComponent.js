@@ -77,18 +77,18 @@ export default class TrainingInstanceComponent extends React.Component {
 
   exportTraining = () => {
     console.log(JSON.stringify(this.state.training));
-  }
+  };
 
   onClearTrainingClick = () => {
     this.setState(DEFAULT_TRAINING);
-  }
+  };
 
   onEditNameButtonClick = (evt) => {
     this.setState({
       isNameEditable: !this.state.isNameEditable,
     });
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
-  }
+  };
 
   onNameChange = (evt) => {
     const _training = this.state.training;
@@ -96,14 +96,14 @@ export default class TrainingInstanceComponent extends React.Component {
     this.setState({ training: _training });
     // TODO is this smart?
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
-  }
+  };
 
   onNameBlur = (evt) => {
     const _training = this.state.training;
     _training.name = evt.target.value;
     this.setState({ name: evt.target.value });
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
-  }
+  };
 
   // TODO test: 'should emit event when button clicked'
   onTrainingTypeClick = (evt) => {
@@ -111,7 +111,7 @@ export default class TrainingInstanceComponent extends React.Component {
     _training.type = evt.target.value;
     this.setState({ training: _training });
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
-  }
+  };
 
   removeTraining = () => {
     this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD, this.state.training.uuid);
