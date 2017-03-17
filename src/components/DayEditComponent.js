@@ -47,7 +47,7 @@ export default class DayEditComponent extends React.Component {
     });
 
     this.props.eventbus.on(ee.DAY_UPDATE_EVT, (day, date) => {
-      console.log(`DayEditComponent caught DAY_UPDATE_EVT for day [${day.uuid}] with ${day.trainings.length}`);
+      console.log(`DayEditComponent caught DAY_UPDATE_EVT for day [${day.uuid}] with ${day.trainings.length} trainings`);
       this.setState({ day: day, date: date });
     });
   }

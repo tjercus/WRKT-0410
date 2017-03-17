@@ -106,6 +106,9 @@ export function updateTrainingInstanceInDay(day, instance) {
   const _day = clone(day);
   const isInstance = _instance => String(_instance.uuid) === String(instance.uuid);
   const index = _day.trainings.findIndex(isInstance);
+  if (index < 0) {
+    throw new NotFoundException("updateTrainingInstanceInDay could not find training in this day");
+  }
   _day.trainings[index] = instance;
   return _day;
 }

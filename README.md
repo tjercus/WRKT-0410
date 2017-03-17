@@ -60,7 +60,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
-- Fix by on displaying a changed segment in DayEditComponent
+- Fix bug on edding a segment on a newly inserted second training for a day in DayEditComponent/DayStore
 - (Timeline should refresh after a day was edited)
 - Performance tuning with 'key' as a repeatable value instead of random int or createUuid
 - Show a dialog 'save current timeline?' when switching plans

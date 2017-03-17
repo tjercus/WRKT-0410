@@ -30,15 +30,15 @@ export default class TrainingInstanceComponent extends React.Component {
       this.setState({training: training});
     });
 
-    this.props.eventbus.on(ee.DAY_LOAD_EVT, day => {
-      this.setDayInLocalState(day);
-    });
-
-    // TODO perhaps not catch this event
-    this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
-      console.log(`TIC on DAY_UPDATE_EVT with day ${JSON.stringify(day)}`);
-      this.setDayInLocalState(day);
-    });
+    // this.props.eventbus.on(ee.DAY_LOAD_EVT, day => {
+    //   this.setDayInLocalState(day);
+    // });
+    //
+    // // TODO perhaps not catch this event
+    // this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
+    //   console.log(`TIC on DAY_UPDATE_EVT with day ${JSON.stringify(day)}`);
+    //   this.setDayInLocalState(day);
+    // });
 
     // this.props.eventbus.on(ee.INSTANCE_CREATE_CMD, dayUuid => {
     //   if (this.state.day.uuid === dayUuid) {
@@ -63,11 +63,9 @@ export default class TrainingInstanceComponent extends React.Component {
 
   onPropagateChangesClick = () => {
     // TODO propagate instance id instead of complete training, but only for updates
-
-    // TODO how tot differentiate between update and insert?
     this.props.eventbus.emit(ee.INSTANCE_UPDATE_CMD, this.state.training);
-
-    this.props.eventbus.emit(ee.INSTANCE_ADD_CMD, this.state.training);
+    // TODO how to differentiate between update and insert?
+    //this.props.eventbus.emit(ee.INSTANCE_ADD_CMD, this.state.training);
   };
 
   // TODO use from segmentUtils
@@ -128,6 +126,7 @@ export default class TrainingInstanceComponent extends React.Component {
    * @param {Day} day - contains date and 1 or 2 trainings
    * @returns {void}
    */
+  /*
   setDayInLocalState = (day) => {
     day.trainings.map(training => {
       if (training.uuid === this.state.training.uuid) {
@@ -135,6 +134,7 @@ export default class TrainingInstanceComponent extends React.Component {
       }
     });
   };
+  */
 
   render() {
     let panelClassName = "panel";

@@ -1,4 +1,4 @@
-import { updateTrainingInstanceInDay } from "./trainingUtil";
+import { updateTrainingInstanceInDay, NotFoundException} from "./trainingUtil";
 import {EventsEnum as ee, DEFAULT_TRAINING} from "../constants";
 import {
   addSegment,
@@ -29,20 +29,42 @@ export default class DayStore {
       eventbus.emit(ee.DAY_LOAD_EVT, day, date);
     });
 
+    eventbus.on(ee.INSTANCE_CREATE_CMD, dayUuid => {
+      console.log(`DayStore caught INSTANCE_CREATE_CMD`);
+      if (this.day.uuid === dayUuid) {
+        console.log(`DayStore pushing a new training to local day ${this.day.uuid}`);
+        const training = DEFAULT_TRAINING;
+        training.uuid = createUuid();
+        this.day.trainings.push(training);
+
+        eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
+        eventbus.emit(ee.INSTANCE_LOAD_CMD, training);
+      } else {
+        console.log(`DayStore COULD NOT UPDATE local day since uuids are not equal ${this.day.uuid}/${dayUuid}`);
+      }
+    });
+
     /**
      * emitted by TrainingInstanceComponent when user clicks 'save' button
      */
     eventbus.on(ee.INSTANCE_UPDATE_CMD, instance => {
-      console.log(`DayStore caught INSTANCE_UPDATE_CMD, trying to update day ${this.day.uuid}`);
-      this.day = updateTrainingInstanceInDay(this.day, instance);
+      console.log(`DayStore caught INSTANCE_UPDATE_CMD, trying to update local day ${this.day.uuid}`);
+      try {
+        this.day = updateTrainingInstanceInDay(this.day, instance);
+      } catch (exc) {
+        // TODO or:
+        if (exc instanceof NotFoundException) {
+          this.day = this.day.trainings.push(instance);
+        }
+      }
       this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
     });
 
-    eventbus.on(ee.INSTANCE_ADD_CMD, instance => {
-      console.log(`DayStore caught INSTANCE_ADD_CMD, trying to update day ${this.day.uuid}`);
-      this.day = this.day.trainings.push(instance);
-      this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
-    });
+    // eventbus.on(ee.INSTANCE_ADD_CMD, instance => {
+    //   console.log(`DayStore caught INSTANCE_ADD_CMD, trying to update day ${this.day.uuid}`);
+    //   this.day = this.day.trainings.push(instance);
+    //   this.eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
+    // });
 
     eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
       this.getSegment(segmentUuid, this.day.trainings);
@@ -62,15 +84,6 @@ export default class DayStore {
     });
     eventbus.on(ee.SEGMENT_CLONE_CMD, (segment) => {
       this.addSegmentToStore(segment, true);
-    });
-
-    eventbus.on(ee.INSTANCE_CREATE_CMD, dayUuid => {
-      if (this.day.uuid === dayUuid) {
-        const training = DEFAULT_TRAINING;
-        training.uuid = createUuid();
-        this.day.trainings.push(training);
-        eventbus.emit(ee.DAY_UPDATE_EVT, this.day);
-      }
     });
   }
 
