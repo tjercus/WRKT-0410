@@ -563,18 +563,18 @@
 			]
 		},
 		{
-			"uuid": "6b79bb19-7a59-4864-9c78-3de21e03c7d2",
+			"uuid": "c2a01eb4-480b-4832-985b-4e4c73275741",
 			"trainings": [
 				{
-					"instanceId": "9edc4f2e-fd73-412e-8b31-e807f8ffe51a"
+					"instanceId": "d3e56dd1-e239-46d5-a7af-f08e2481dcd2"
 				}
 			]
 		},
 		{
-			"uuid": "07552dda-e4aa-4765-8ec4-c1f4158aabe4",
+			"uuid": "0f1e9511-0336-4b35-9eeb-6237463a2743",
 			"trainings": [
 				{
-					"instanceId": "0e4e188c-cbb8-48a4-b518-4a88f0fc55d9"
+					"instanceId": "b886ba4b-9bb3-4668-b230-0a8775ddc230"
 				}
 			]
 		},
@@ -587,18 +587,18 @@
 			]
 		},
 		{
-			"uuid": "a11ceb60-d37a-4f21-91b6-1ed7d29f56e5",
+			"uuid": "d25fc81f-5431-4202-ba66-aaf943ac068d",
 			"trainings": [
 				{
-					"instanceId": "406ca3d0-f03b-4114-a311-875671a12718"
+					"instanceId": "0766eb3f-f9f8-485e-97ac-5ab43f2349d9"
 				}
 			]
 		},
 		{
-			"uuid": "c2a01eb4-480b-4832-985b-4e4c73275741",
+			"uuid": "2896c596-d99d-4e8c-a44b-9e3ab75fb9e4",
 			"trainings": [
 				{
-					"instanceId": "d3e56dd1-e239-46d5-a7af-f08e2481dcd2"
+					"instanceId": "a56e1fd9-4a8c-4577-a536-e21aae668b72"
 				}
 			]
 		},

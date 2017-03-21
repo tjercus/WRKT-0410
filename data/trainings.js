@@ -5621,5 +5621,20 @@
 				"isValid": true
 			}
 		]
+	},
+	{
+		"uuid": "a5aca942-de2a-4057-9b2b-5884aa442094",
+		"name": "30km @MP+17%",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "48",
+				"distance": "30",
+				"duration": "02:35:30",
+				"pace": "05:11",
+				"isValid": true,
+				"trainingUuid": "a5aca942-de2a-4057-9b2b-5884aa442094"
+			}
+		]
 	}
 ]
