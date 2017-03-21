@@ -150,14 +150,15 @@ export default class DayStore {
       const _segment = augmentSegmentData(segment);
       let updatedLocalTrainings = [];
       this.day.trainings.map(training => {
+        // TODO found the bug! it only adds one training 
         if (training.uuid === segment.trainingUuid) {
           training.segments = addSegment(_segment, clone(training.segments), overwriteUuid);
           training.total = makeTrainingTotal(clone(training.segments));
-          console.log(`DayStore.addSegmentInStore training after adding segment: ${JSON.stringify(training)}`);
-          updatedLocalTrainings.push(training);
+          console.log(`DayStore.addSegmentInStore training after adding segment: ${JSON.stringify(training)}`);          
         } else {
           console.log(`DayStore.addSegmentInStore trainingUuid was NOT equal: ${training.uuid}`);
         }
+        updatedLocalTrainings.push(training);
       });
       console.log(`DayStore.addSegmentToStore trainings: ${JSON.stringify(updatedLocalTrainings)}`);
       this.day.trainings = updatedLocalTrainings;

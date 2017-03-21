@@ -6,6 +6,13 @@ import { EventsEnum as ee } from "../constants";
 import WeekComponent from "./WeekComponent";
 
 export default class TimelineComponent extends React.Component {
+
+  static propTypes = {
+    eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+    name: React.PropTypes.string.isRequired,
+    from: React.PropTypes.string.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -131,8 +138,4 @@ export default class TimelineComponent extends React.Component {
   }
 }
 
-TimelineComponent.propTypes = {
-  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
-  name: React.PropTypes.string.isRequired,
-  from: React.PropTypes.string.isRequired,
-};
+
