@@ -100,10 +100,10 @@ export default class DayStore {
       _segments = Object.assign({}, trainings[0].segments, trainings[1].segments);
     }
     const isSeg = _segment => String(_segment.uuid) === String(segmentUuid);
-    const index = segments.findIndex(isSeg);
+    const index = _segments.findIndex(isSeg);
     // TODO add trainingUuid to found segment
     if (index !== -1 && index > -1) {
-      this.eventbus.emit(ee.SEGMENT_GET_EVT, segments[index]);
+      this.eventbus.emit(ee.SEGMENT_GET_EVT, _segments[index]);
     }
   }
 
