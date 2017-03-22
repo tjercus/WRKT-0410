@@ -94,12 +94,10 @@ export default class DayStore {
       console.log("DayStore.getSegment has a problem with trainings");
       return;
     }
-    let segments = trainings[0].segments;
+    let _segments = trainings[0].segments;
 
     if (trainings[1]) {
-      console.log("before");
-      segments = Object.assign({}, segments, trainings[1].segments);
-      console.log("after");
+      _segments = Object.assign({}, trainings[0].segments, trainings[1].segments);
     }
     const isSeg = _segment => String(_segment.uuid) === String(segmentUuid);
     const index = segments.findIndex(isSeg);
@@ -124,11 +122,11 @@ export default class DayStore {
           console.log(`DayStore.updateSegmentInStore training before updating segment: ${JSON.stringify(training)}`);
           training.segments = updateSegment(_segment, clone(training.segments));
           training.total = makeTrainingTotal(clone(training.segments));
-          console.log(`DayStore.updateSegmentInStore training after updating segment: ${JSON.stringify(training)}`);
-          updatedLocalTrainings.push(training);
+          console.log(`DayStore.updateSegmentInStore training after updating segment: ${JSON.stringify(training)}`);          
         } else {
           console.log(`DayStore.updateSegmentInStore no-op: training.uuid [${training.uuid}] !== segment.trainingUuid [${segment.trainingUuid}]`);
         }
+        updatedLocalTrainings.push(training);
       });
       // console.log(`DayStore.updateSegmentInStore trainings: ${JSON.stringify(updatedLocalTrainings)}`);
       if (updatedLocalTrainings.length > 0) {
