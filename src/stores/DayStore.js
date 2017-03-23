@@ -97,8 +97,9 @@ export default class DayStore {
     let _segments = trainings[0].segments;
 
     if (trainings[1]) {
-      _segments = Object.assign({}, trainings[0].segments, trainings[1].segments);
+      _segments = _segments.concat(trainings[1].segments);
     }
+    console.log(`DayStore.getSegment segments: ${JSON.stringify(_segments)}`);
     const isSeg = _segment => String(_segment.uuid) === String(segmentUuid);
     const index = _segments.findIndex(isSeg);
     // TODO add trainingUuid to found segment

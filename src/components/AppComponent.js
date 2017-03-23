@@ -45,7 +45,7 @@ export default class AppComponent extends React.Component {
     this.eventbus.emit(ee.TRAININGS_FETCH_CMD);
     if (this.props.startWithDefaultTraining) {
       setTimeout(() => this.eventbus.emit(ee.TRAINING_LOAD_CMD, "new-training"),
-        200);
+        500);
     }
   }
 
