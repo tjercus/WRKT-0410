@@ -5,28 +5,13 @@ import {EventsEnum as ee, DEFAULT_TOTAL, DEFAULT_TRAINING} from "../constants";
 
 export default class TrainingComponent extends React.Component {
 
+  static propTypes = {
+    eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+  };
+
   constructor(props) {
     super(props);
-    this.state = DEFAULT_TRAINING;
-    // TODO remove this with phat arrow method declarations
-    this.exportTraining = this.exportTraining.bind(this);
-    this.emitClearTraining = this.emitClearTraining.bind(this);
-    this.emitPersistChanges = this.emitPersistChanges.bind(this);
-    this.clearTrainingFromLocalState = this.clearTrainingFromLocalState.bind(this);
-    this.addEmptySegment = this.addEmptySegment.bind(this);
-    this.loadTraining = this.loadTraining.bind(this);
-    this.cloneTraining = this.cloneTraining.bind(this);
-    this.removeTraining = this.removeTraining.bind(this);
-    this.onEditNameButtonClick = this.onEditNameButtonClick.bind(this);
-    this.onNameChange = this.onNameChange.bind(this);
-    this.onNameBlur = this.onNameBlur.bind(this);
-    this.onTypeClick = this.onTypeClick.bind(this);
-    this.emitAddToBeginOfPlan = this.emitAddToBeginOfPlan.bind(this);
-    this.emitAddToMiddleOfPlan = this.emitAddToMiddleOfPlan.bind(this);
-    this.emitAddToSelectedWeekOfPlan = this.emitAddToSelectedWeekOfPlan.bind(this);
-    this.emitAddToPlan = this.emitAddToPlan.bind(this);
-    this.makeTraining = this.makeTraining.bind(this);
-    this.componentDidUpdate = this.componentDidUpdate.bind(this);
+    this.state = DEFAULT_TRAINING;    
   }
 
   componentDidMount() {
@@ -71,23 +56,23 @@ export default class TrainingComponent extends React.Component {
     this.props.eventbus.emit(ee.TRAINING_RENDER_EVT, this.state.uuid);
   }
 
-  loadTraining(training) {
+  loadTraining = (training) => {
     this.setState(this.makeTraining(training), () => {
       console.log(`TrainingComponent loadTraining setSate as: ${JSON.stringify(this.state)}`);
     });
   }
 
   // TODO unit test this!
-  addEmptySegment() {
+  addEmptySegment = () => {
     this.props.eventbus.emit(ee.SEGMENT_ADD_CMD,
       Object.assign({}, DEFAULT_TOTAL, {trainingUuid: this.state.uuid}));
   }
 
-  emitPersistChanges() {
+  emitPersistChanges = () => {
     this.props.eventbus.emit(ee.TRAININGS_PERSIST_CMD, null);
   }
 
-  exportTraining() {
+  exportTraining = () => {
     console.log(JSON.stringify({
       uuid: this.state.uuid,
       name: this.state.name,
@@ -96,58 +81,58 @@ export default class TrainingComponent extends React.Component {
     }));
   }
 
-  emitClearTraining() {
+  emitClearTraining = () => {
     this.props.eventbus.emit(ee.TRAINING_CLEAR_CMD, this.state.uuid);
   }
 
-  onEditNameButtonClick(evt) {
+  onEditNameButtonClick = (evt) => {
     //const inverseState =
     this.setState({ isNameEditable: !this.state.isNameEditable });
   }
 
-  onNameChange(evt) {
+  onNameChange = (evt) => {
     this.setState({ name: evt.target.value });
   }
 
-  onNameBlur(evt) {
+  onNameBlur = (evt) => {
     console.log(`onNameBlur ${this.state.name}`);
     this.props.eventbus.emit(ee.TRAINING_UPDATE_CMD, this.makeTraining(this.state));
   }
 
-  cloneTraining() {
+  cloneTraining = () => {
     // TODO custom alert
     console.log("Training cloned and selected");
     this.props.eventbus.emit(ee.TRAINING_CLONE_CMD);
   }
 
-  removeTraining() {
+  removeTraining = () => {
     this.props.eventbus.emit(ee.TRAINING_REMOVE_CMD);
   }
 
-  emitAddToBeginOfPlan() {
+  emitAddToBeginOfPlan = () => {
     console.log("TrainingComponent.emitAddToBeginOfPlan TRAINING_TO_PLAN_CMD with zero");
     this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD, 0);
   }
 
-  emitAddToMiddleOfPlan() {
+  emitAddToMiddleOfPlan = () => {
     console.log("TrainingComponent.emitAddToMiddleOfPlan TRAINING_TO_PLAN_CMD with middle");
     this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD, 0.5);
   }
 
-  emitAddToPlan() {
+  emitAddToPlan = () => {
     console.log("TrainingComponent.emitAddToPlan TRAINING_TO_PLAN_CMD without zero");
     this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD);
   }
 
-  emitAddToSelectedWeekOfPlan() {
+  emitAddToSelectedWeekOfPlan = () => {
     this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD, -1);
   }
 
-  clearTrainingFromLocalState() {
+  clearTrainingFromLocalState = () => {
     this.setState(DEFAULT_TRAINING);
   }
 
-  onTypeClick(evt) {
+  onTypeClick = (evt) => {
     this.setState({ type: evt.target.value }, () => {
       this.props.eventbus.emit(ee.TRAINING_UPDATE_CMD, this.makeTraining(this.state));
       // TODO test: 'should emit event when button clicked'
@@ -159,7 +144,7 @@ export default class TrainingComponent extends React.Component {
    * @param  {Object} obj - training-like object
    * @returns {Training} training
    */
-  makeTraining(obj) {
+  makeTraining = (obj) => {
     return {
       uuid: obj.uuid,
       name: obj.name,
@@ -272,6 +257,3 @@ export default class TrainingComponent extends React.Component {
   }
 };
 
-TrainingComponent.propTypes = {
-  eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
-};
