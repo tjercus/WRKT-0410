@@ -1,6 +1,6 @@
 import test from "tape";
 
-import {createUuid, clone, hasNoRealValue, lpad, hasProperty} from "../src/stores/miscUtil";
+import {createUuid, clone, hasNoRealValue, lpad, hasProperty, removeProperty} from "../src/stores/miscUtil";
 
 // miscUtil-spec.js 
 test("createUuid should create a unique valid uuid", (assert) => {
@@ -120,6 +120,29 @@ test("hasProperty should work with empty object", (assert) => {
 test("hasProperty should work with null object", (assert) => {
   const obj = null;
   assert.equal(hasProperty(obj, "uuid"), false, "should conclude false for null object");
+  assert.end();
+});
+
+test("removeProperty happyflow", (assert) => {
+  const obj = {
+    "uuid": "98456fgjdkj",
+    "name": "wobble",
+  };
+  const newObj = removeProperty(obj, "uuid");
+  console.dir(obj);
+  assert.equal(hasProperty(newObj, "uuid"), false, "should remove a property");
+  assert.equal(hasProperty(newObj, "name"), true, "should not remove another property");
+  assert.end();
+});
+
+test("removeProperty should work on non-existing property", (assert) => {
+  const obj = {
+    uuid: "98456fgjdkj",
+    name: "wobble",
+  };
+  const newObj = removeProperty(obj, "not_here");
+  assert.equal(hasProperty(newObj, "uuid"), true, "should not remove a property");
+  assert.equal(hasProperty(newObj, "name"), true, "should not remove another property");
   assert.end();
 });
 

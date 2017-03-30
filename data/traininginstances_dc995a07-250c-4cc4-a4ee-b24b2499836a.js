@@ -6285,12 +6285,11 @@
 		"type": "easy",
 		"segments": [
 			{
-				"uuid": "48",
+				"uuid": "984576dfghdf",
 				"distance": "15.4",
 				"duration": "01:14:35",
 				"pace": "04:51",
 				"isValid": false,
-				"obsolete": "d6c0db21-d293-4bb9-bafa-5f414c8f7b1d",
 				"trainingUuid": "76b32cf7-1141-4a63-b880-96a9d1ccb2d7"
 			}
 		]
@@ -7739,27 +7738,12 @@
 		}
 	},
 	{
-		"uuid": "a9c5927b-1dd1-47a9-830b-c0ea264c1da5",
-		"name": "Easy run 13.5km",
-		"type": "easy",
-		"segments": [
-			{
-				"uuid": "48",
-				"distance": "2",
-				"duration": "",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "98846b8d-9ed7-43a0-92c8-1702db1e8ad0"
-			}
-		]
-	},
-	{
 		"uuid": "25beec2e-c87b-48c1-9644-c53e91d799a5",
 		"name": "Easy run 13.5km",
 		"type": "easy",
 		"segments": [
 			{
-				"uuid": "48",
+				"uuid": "b7e0dc92-150e-11e7-8d62-63ac0b0e2d07",
 				"distance": "13.5",
 				"duration": "01:09:45",
 				"pace": "05:10",
@@ -7779,7 +7763,7 @@
 		"type": "easy",
 		"segments": [
 			{
-				"uuid": "48",
+				"uuid": "b6db05f2-150e-11e7-b2e0-57da2ba84448",
 				"distance": "13.5",
 				"duration": "01:09:45",
 				"pace": "05:10",

@@ -10,6 +10,7 @@ import {
   clone,
   createUuid,
   hasProperty,
+  removeProperty,
 } from "./miscUtil";
 
 /**
@@ -41,7 +42,7 @@ export function findDay(dayUuid, plan, trainings = []) {
   const byUuid = (_day) => String(_day.uuid) === String(dayUuid);
   const index = _days.findIndex(byUuid);
   if (index < 0) {
-    throw new Error(`findDay could not find day with ${dayUuid}`);
+    throw new Error(`findDay could not find day with ${dayUuid} ${JSON.stringify(_days)}`);
   } else {
     console.log(`timelineUtil.findDay index ${index}`);
   }
@@ -58,9 +59,9 @@ export function findDay(dayUuid, plan, trainings = []) {
 
 /**
  * lookup training for a day by uuid and add it to itself
- * @param { Object } day - flattened day object with ref to inflated day
- * @param { Array<TrainingInstance> } trainings - list of augmented TrainingInstance objects
- * @return { Day } - augmented day
+ * @param {Object} day - flattened day object with ref to inflated day
+ * @param {Array<TrainingInstance>} trainings - list of augmented TrainingInstance objects
+ * @return {Day} - augmented day
  */
 export function augmentDay(day, trainings) {
   if (trainings.length === 0) {
@@ -97,6 +98,9 @@ export function flattenDays(days) {
   _days.forEach((_day) => {
     const flattenedTrainings = [];
     for (let i = 0, len = _day.trainings.length; i < len; i++) {
+      // TODO create function removeTrainingIds oid
+      let _segments = _day.trainings[i].segments.map(_segment => {removeProperty(_segment, "trainingId")});
+      _day.trainings[i].segments = _segments;
       flattenedTrainings.push({ instanceId: _day.trainings[i].uuid });
     }
     flattenedDays.push({ uuid: _day.uuid, trainings: flattenedTrainings });

@@ -28,7 +28,7 @@ test("SegmentComponent should set values after SEGMENT_UPDATE_EVT", (assert) => 
   assert.end();
 });
 
-test("SegmentComponent should emit SEGMENT_UPDATE_CMD when it can augment on calc button click", (assert) => {
+test.only("SegmentComponent should emit SEGMENT_UPDATE_CMD when it can augment on calc button click", (assert) => {
   const augmentableSegment = {
     uuid: "uuid-segment2",
     distance: 5,
@@ -37,7 +37,7 @@ test("SegmentComponent should emit SEGMENT_UPDATE_CMD when it can augment on cal
   };
   emitSpy.reset();
   const component = mount(<SegmentComponent eventbus={eventbus} segment={augmentableSegment} trainingUuid={trainingUuid}/>);
-  component.find(".segment button.button-primary").simulate("click");
+  component.find("tr.segment .button-primary").simulate("click");
   assert.ok(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should emit SEGMENT_UPDATE_CMD");
   assert.end();
 });

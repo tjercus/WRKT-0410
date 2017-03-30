@@ -126,9 +126,10 @@ test("TimelineStore should listen to DAY_CLONE_CMD with position", (assert) => {
   let emitSpy = sinon.spy(eventbus, "emit");
   const store = new TimelineStore(eventbus);
   eventbus.emit("PLAN_FETCH_EVT", [makePlanClone(), traininginstances]);
-  assert.equal(store.plan.days.length, 1, "initially there should be one day");
-
+  assert.equal(store.plan.days.length, 1, `initially there should be one day: ${store.plan.days[0].uuid}`);
+  
   let training = {
+    uuid: "409568-dkv-40956",
     name: "another training",
     type: "workout",
     segments: [
@@ -138,13 +139,13 @@ test("TimelineStore should listen to DAY_CLONE_CMD with position", (assert) => {
         "pace": "05:30"
       }
     ]
-  }
-  let newDay = {};
-  newDay.uuid = "blah-999";
-  newDay.trainings = [training];
-  eventbus.emit("DAY_CLONE_CMD", newDay.uuid, 0);
+  } 
 
-  assert.equal(store.plan.days.length, 2, "day should be added to plan");
-  assert.equal(store.plan.days[0].uuid, "blah-999", "day should be added to plan first");
-  assert.end();
+  eventbus.emit("DAY_CLONE_CMD", 1, 0);
+  
+  // setTimeout(() => {
+    assert.equal(store.plan.days.length, 2, "day should be added to plan");
+    assert.equal(store.plan.days[1].uuid, "1", "cloned original day should now be at second position");
+    assert.end();
+  // }, 2000);
 });

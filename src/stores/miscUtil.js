@@ -40,10 +40,18 @@ export function hasNoRealValue(obj, name) {
 }
 
 export function hasProperty(obj, propname) {
-  if (obj === null) {
+  if (!obj || obj === null) {
     return false;
   }
   return Object.prototype.hasOwnProperty.call(obj, propname);
+}
+
+export function removeProperty(obj, propname) {
+  const _obj = clone(obj);
+  if (hasProperty(_obj, propname)) {
+    delete obj[propname];
+  }
+  return obj;
 }
 
 const hasNothing = (value) =>

@@ -726,9 +726,6 @@
 			"uuid": "54b9ee05-e629-4407-8c55-c40da2538ec1",
 			"trainings": [
 				{
-					"instanceId": "a9c5927b-1dd1-47a9-830b-c0ea264c1da5"
-				},
-				{
 					"instanceId": "76b32cf7-1141-4a63-b880-96a9d1ccb2d7"
 				}
 			]

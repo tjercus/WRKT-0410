@@ -118,10 +118,13 @@ export function updateTrainingInstanceInDay(day, instance) {
  * @param {Training|TrainingInstance} training - with possibly un-augmented segments
  * @returns {Training|TrainingInstance} _training - with augmented segments
  */
-export function augmentTraining(training) {
+export function augmentTraining(training) {  
+  console.log(`augmentTraining 1 [${training.uuid}] segments: ${JSON.stringify(training.segments)}`);
+
   const _segments = training.segments.map(segment =>
     linkSegmentToTraining(training, augmentSegmentData(segment)));
   training.segments = _segments;
+  console.log(`augmentTraining 2 [${training.uuid}] segments: ${JSON.stringify(_segments)}`);
   training.total = makeTrainingTotal(_segments);
   return training;
 }

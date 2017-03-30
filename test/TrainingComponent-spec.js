@@ -28,14 +28,6 @@ test("TrainingComponent should initially render with an info message", (assert) 
   assert.end();
 });
 
-test("TrainingComponent should catch a MENU_CLICK_EVT", (assert) => {
-  onSpy.reset();
-  const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
-  eventbus.emit("MENU_CLICK_EVT", "Training");
-  assert.ok(onSpy.calledWith("MENU_CLICK_EVT"), "component should catch MENU_CLICK_EVT");
-  assert.end();
-});
-
 test("TrainingComponent should render a training", (assert) => {
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
@@ -43,16 +35,18 @@ test("TrainingComponent should render a training", (assert) => {
   assert.equal(component.find("fieldset[name='type'] button").length, 2, "should be two buttons to set 'type' of training");
   assert.equal(component.find("SegmentComponent").length, 1);
   assert.equal(component.find("output[name='totals']").length, 1);
-  assert.equal(component.find("menu").length, 3);
+  assert.equal(component.find("menu").length, 4);
   const buttons = component.find("menu button");
   assert.equal(buttons.first().text(), "add empty segment");
-  assert.equal(buttons.at(1).text(), "add to loaded plan");
-  assert.equal(buttons.at(2).text(), "export training");
-  assert.equal(buttons.at(3).text(), "clear training");
-  assert.equal(buttons.at(4).text(), "clone training");
-  assert.equal(buttons.at(5).text(), "remove training");
-  assert.equal(buttons.at(6).text(), "persist changes");
-  //assert.ok(buttons.at(5).hasClass("button-warning"));
+  assert.equal(buttons.at(1).text(), "add to begin of plan");
+  assert.equal(buttons.at(2).text(), "add to middle of plan");
+  assert.equal(buttons.at(3).text(), "add to end of plan");
+  assert.equal(buttons.at(4).text(), "add to selected week");
+  assert.equal(buttons.at(5).text(), "export training");
+  assert.equal(buttons.at(6).text(), "clear training");
+  assert.equal(buttons.at(7).text(), "clone training");
+  assert.equal(buttons.at(8).text(), "remove training");
+  assert.equal(buttons.at(9).text(), "persist changes");
 
   assert.end();
 });
@@ -61,7 +55,7 @@ test("TrainingComponent should emit a TRAINING_CLONE_CMD", (assert) => {
   emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
-  component.find("menu button").at(4).simulate("click");
+  component.find("menu button").at(7).simulate("click");
   assert.ok(emitSpy.calledWith("TRAINING_CLONE_CMD"), "component should emit TRAINING_CLONE_CMD");
   assert.end();
 });
@@ -120,7 +114,7 @@ test("TrainingComponent should update total after a SEGMENT_UPDATE_EVT", (assert
   // increase distance and empty duration
   const segmentComponent = component.find(SegmentComponent).get(0);
   segmentComponent.setState({distance: 10, duration: ""});
-  eventbus.emit("SEGMENT_UPDATE_EVT", {segment: segment, total: total});
+  eventbus.emit("SEGMENT_UPDATE_EVT", {uuid: training.uuid, segment: segment, total: total});
   // check total in GUI/state
   assert.equal(component.state("total").distance, 10);
   assert.equal(component.state("total").duration, "00:40:00");
