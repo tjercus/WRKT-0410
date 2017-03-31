@@ -1,5 +1,5 @@
 [
- 	{
+	{
 		"uuid": "a1ee31cc-a2a8-4c6d-bd29-d2ca8d8ae916",
 		"name": "Easy run",
 		"type": "easy",

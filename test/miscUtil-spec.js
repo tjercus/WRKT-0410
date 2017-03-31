@@ -123,13 +123,19 @@ test("hasProperty should work with null object", (assert) => {
   assert.end();
 });
 
+test("hasProperty should work with defined key with undefined object", (assert) => {
+  const obj = {"uuid": [undefined]};
+  assert.equal(hasProperty(obj, "uuid"), true, "should conclude true for undefined value");
+  assert.end();
+});
+
 test("removeProperty happyflow", (assert) => {
   const obj = {
     "uuid": "98456fgjdkj",
     "name": "wobble",
   };
   const newObj = removeProperty(obj, "uuid");
-  console.dir(obj);
+  assert.equal(JSON.stringify(obj), '{"name":"wobble"}');
   assert.equal(hasProperty(newObj, "uuid"), false, "should remove a property");
   assert.equal(hasProperty(newObj, "name"), true, "should not remove another property");
   assert.end();

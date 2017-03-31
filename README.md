@@ -15,11 +15,11 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- Use horizontal packaging/modulestructure (training, segment, timeline, day)
 - Use Immutable.Record for all datatypes (Training, Segment, Total ...)
 - Create a script that lists all eventbus subscriptions and emits per source file
 - Move propTypes to static class property above constructor
 - Progressive web application support
-- Try out immutable JS (in a branch!)
 - Try out react-material in a branch
 - Use TypeError instead of Error for checking parameters
 - yellow hint of change

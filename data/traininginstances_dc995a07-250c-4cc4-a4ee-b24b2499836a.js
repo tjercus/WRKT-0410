@@ -5,12 +5,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "fc01c1bf-5f5e-4f4c-9718-e503efe05935",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "25.2",
 				"duration": "01:55:00",
-				"pace": "04:34",
-				"isValid": false
+				"pace": "04:34"
 			}
 		],
 		"total": {
@@ -28,8 +26,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -47,8 +44,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -63,12 +59,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "97473ec5-9244-44c6-a06a-89c24dd804be",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "28",
 				"duration": "02:08:20",
-				"pace": "04:35",
-				"isValid": true
+				"pace": "04:35"
 			}
 		],
 		"total": {
@@ -83,12 +77,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "8c12a07f-aa83-4e99-9869-3a89ecebf7ff",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "32",
 				"duration": "02:26:40",
-				"pace": "04:35",
-				"isValid": true
+				"pace": "04:35"
 			}
 		],
 		"total": {
@@ -103,12 +95,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -125,78 +115,67 @@
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "12.5",
 				"duration": "01:04:35",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
 				"uuid": "db81f196-3f52-46d1-8e91-846633575d3f",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "b4efc063-1040-4427-9b8e-11ec1cedbeed",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "f0313c56-18b2-41aa-9c88-f5e71a363990",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "10f73895-35cc-4765-81b6-aa5675d123f8",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "3e92f72f-111a-4e4f-9b98-001b2a380889",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "fa192a93-a58f-4b9b-b7cd-8427e29426b8",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "5d4b0eb5-9e29-4f93-b200-152c1c014640",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "b445327d-7f83-455f-84ad-4502591d81aa",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "d5f35b51-b78b-472d-bc64-ea1e9d438739",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "b8e4ffff-e4ed-46d5-9608-1c637870447b",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			}
 		],
 		"total": {
@@ -214,36 +193,31 @@
 				"uuid": "41",
 				"distance": 5,
 				"pace": "05:10",
-				"duration": "00:25:50",
-				"isValid": true
+				"duration": "00:25:50"
 			},
 			{
 				"uuid": "42",
 				"distance": 5,
 				"pace": "04:40",
-				"duration": "00:23:20",
-				"isValid": true
+				"duration": "00:23:20"
 			},
 			{
 				"uuid": "43",
 				"distance": 5,
 				"pace": "04:30",
-				"duration": "00:22:30",
-				"isValid": true
+				"duration": "00:22:30"
 			},
 			{
 				"uuid": "44",
 				"distance": 5,
 				"pace": "04:20",
-				"duration": "00:21:40",
-				"isValid": true
+				"duration": "00:21:40"
 			},
 			{
 				"uuid": "45",
 				"distance": 10,
 				"pace": "04:10",
-				"duration": "00:41:40",
-				"isValid": true
+				"duration": "00:41:40"
 			}
 		],
 		"total": {
@@ -258,92 +232,70 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "new-training",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "05ec5bb1-9918-4ea4-a9f9-572941c0cf62",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1d03d54c-75b7-412f-8204-579c9d1765cf",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			}
 		],
 		"total": {
@@ -358,92 +310,70 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "05ec5bb1-9918-4ea4-a9f9-572941c0cf62",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"uuid": "03e41df2-273e-485e-82e2-1c782490b83e",
-				"obsolete": "be7adc38-8250-409d-8bfd-32bb7acc7268"
+				"uuid": "03e41df2-273e-485e-82e2-1c782490b83e"
 			},
 			{
-				"uuid": "9485c461-27fd-4592-81d6-36004ec9a51c",
-				"obsolete": "be7adc38-8250-409d-8bfd-32bb7acc7268"
+				"uuid": "9485c461-27fd-4592-81d6-36004ec9a51c"
 			}
 		]
 	},
@@ -453,12 +383,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "0623a52f-3b7c-4a03-99a4-ff507af7aef7",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "28",
 				"duration": "02:12:04",
-				"pace": "04:43",
-				"isValid": true
+				"pace": "04:43"
 			}
 		],
 		"total": {
@@ -476,8 +404,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -495,8 +422,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -514,8 +440,7 @@
 				"uuid": "999",
 				"distance": 20,
 				"pace": "04:45",
-				"duration": "01:35:00",
-				"isValid": true
+				"duration": "01:35:00"
 			}
 		],
 		"total": {
@@ -543,76 +468,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "new-training",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			}
 		]
 	},
@@ -625,8 +532,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -641,76 +547,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			}
 		],
 		"total": {
@@ -728,71 +616,61 @@
 				"uuid": "8011",
 				"distance": 2,
 				"pace": "05:30",
-				"duration": "00:11:00",
-				"isValid": true
+				"duration": "00:11:00"
 			},
 			{
 				"uuid": "8121",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
 				"uuid": "8231",
 				"duration": "00:01:00",
 				"pace": "05:30",
-				"distance": 0.182,
-				"isValid": true
+				"distance": 0.182
 			},
 			{
 				"uuid": "8121",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
 				"uuid": "8231",
 				"duration": "00:01:00",
 				"pace": "05:30",
-				"distance": 0.182,
-				"isValid": true
+				"distance": 0.182
 			},
 			{
 				"uuid": "8121",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
 				"uuid": "8231",
 				"duration": "00:01:00",
 				"pace": "05:30",
-				"distance": 0.182,
-				"isValid": true
+				"distance": 0.182
 			},
 			{
 				"uuid": "8121",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
 				"uuid": "8231",
 				"duration": "00:01:00",
 				"pace": "05:30",
-				"distance": 0.182,
-				"isValid": true
+				"distance": 0.182
 			},
 			{
 				"uuid": "9291",
 				"distance": 2,
 				"pace": "05:30",
-				"duration": "00:11:00",
-				"isValid": true
+				"duration": "00:11:00"
 			}
 		],
 		"total": {
@@ -810,8 +688,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -829,8 +706,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -848,8 +724,7 @@
 				"uuid": "47",
 				"distance": 16,
 				"pace": "04:10",
-				"duration": "01:06:40",
-				"isValid": true
+				"duration": "01:06:40"
 			}
 		],
 		"total": {
@@ -864,36 +739,28 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "7",
 				"duration": "00:37:20",
-				"pace": "05:20",
-				"isValid": true
+				"pace": "05:20"
 			},
 			{
-				"obsolete": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
 				"uuid": "d32ef0b4-9792-4a3e-ac50-b4b4d99e9cd6",
 				"distance": "7",
 				"duration": "00:29:10",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
 				"uuid": "d9968e28-9c66-4b27-af64-ddffde64fd4d",
 				"distance": "3",
 				"duration": "00:11:45",
-				"pace": "03:55",
-				"isValid": true
+				"pace": "03:55"
 			},
 			{
-				"obsolete": "f28c79cc-0afc-4f2e-8a1e-bf512dcbeb6b",
 				"uuid": "7f5ea5db-f794-4036-ab57-df6d0f10f945",
 				"distance": "3",
 				"duration": "00:11:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			}
 		]
 	},
@@ -903,484 +770,364 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f3eff8d9-c2e5-47c5-936c-726a4b76ad22",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:33",
-				"isValid": true
+				"pace": "03:33"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "accbbe4e-8388-4c30-9783-3d866a461fe2",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8c0950a6-d03b-4037-8b5d-c4063e23e407",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f8dd056a-0052-494d-a50d-9181d5d387e0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "3db6d2aa-35c9-409f-b08a-4a4ad511b0c4",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e29390a0-59da-43d2-a193-95be34b1411e",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f5c9914c-275f-4a0a-b703-384683f30f07",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "1f18b13e-3f0b-4465-bf37-c0d122d88f9f",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "9438a8e2-ef9d-497f-8f59-ba57cd792930",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "440de7d6-6479-4866-afc4-236beab7f059",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "727c6e32-1cdc-4bfb-acb4-8f37d91b2ca4",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a5e07dcb-bdb4-47cd-8abe-3b0947f9ad63",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f93bc559-e8e4-49f2-aebe-10c6a68fae16",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e85f1d6a-4cd3-4084-b876-0266de68cd61",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "20aa6cb8-aeba-42b1-b975-6effcdc3c903",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "49b05778-c8a5-43e4-b9ee-a272fa084a35",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "67908f84-a3f6-4605-b25a-c849bf5dbb2d",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "85126497-365b-4e08-937b-8d86bc543b8c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a1b11640-27d6-47b1-9479-f87ace5370ba",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "842a090a-a623-4a2f-8cab-f296d703d790",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e2c3f6f0-a2cf-4130-bdb1-73271b3a2023",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4d6ee8a3-b5e3-4690-a90b-5baad95ca335",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "63498504-df1a-4523-b717-4d169cb436d1",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b40c409d-0ba3-4a68-bd90-9c5b3d6de5c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e5506048-9daa-4822-97ea-2d2ba073b025",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "696680b7-f97f-403c-96fc-f2a3b7270ae0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa808eb2-0a10-47be-8801-1ee4e3a7ecba",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "065e6212-0da7-4d28-8e97-acaeb4e63be3",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "11441cf9-0407-4867-a51b-695440c09b54",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd386338-32b2-4045-9c9c-34edbbc73a60",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b5eb6ca3-70e2-47dd-b56d-ef960e0c0105",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd217fbf-639f-4efb-ba2a-0474701459c0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a13d4220-b7ff-43c8-b7d7-918b5e45fb1f",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "52360e78-9682-4652-998a-c7df2499f5bf",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f46e8d08-c4be-4a87-a415-a65bdbe389ae",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "10a55e93-2264-4269-9192-992b38bc5a2c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb38214b-87e4-4c24-9b05-0f739af0695a",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "005ca46f-d5e3-4eba-bd85-91f868001d4c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "dc9ac93f-44c1-4260-8909-6bfd85951e83",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb3d9990-5384-4d7f-b3bb-ceaa36d463c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c01685c5-eaef-426a-ac69-ff9843a1f8db",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8643f154-cc9d-4e18-83ad-cc1c68c011df",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "ff658b6a-68e8-46bc-9e89-45f3c72cbc6d",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "477ce033-4871-429b-b3d0-88448e63d5c4",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4a8104b6-a445-4153-85ac-17f0454fb6b2",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa87640f-d50d-4ac2-a091-08ffae6afde0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2993f6e3-26dc-4eee-8e38-779d557d6fc1",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "195390f3-5a93-40f0-8303-88408c8d0860",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7fe86822-86bc-4c27-82de-2c6dbe304420",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "36f10b79-512e-4bf9-9738-47191de9dfbd",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "792185de-4aaf-469a-a10d-7dc6c7f69ed2",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "42992afa-410a-4a09-aed1-1bfa04caf333",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7277e9cf-5132-423a-9fe7-14bd85d36495",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "6074ab52-bd69-4518-900f-4d3f8db4775b",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c6c3f36e-f8d3-436e-b332-aca49063da68",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2788592e-284b-4e2e-ae01-2774779f7f51",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b46d3c43-2921-44ec-ad31-7b631636d7e9",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "14e8d2ac-eaf6-49f6-a288-a0318492f52f",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f4e01be4-fc1b-44c3-97eb-5325451de2e1",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			}
 		],
 		"total": {
@@ -1398,8 +1145,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -1414,164 +1160,124 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "4.5",
 				"duration": "00:23:15",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "1d3f25f0-1888-42bb-bb8b-7fb00edccb54",
 				"distance": 0.545,
 				"duration": "00:02:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "f4e3e645-22a0-4631-bc1c-eb76163c6b95",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "6e3a0e51-883c-41ad-970e-18b06c9f4abd",
 				"distance": 0.545,
 				"duration": "00:02:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "65daa21d-c0f1-46c3-a609-ebeca9defc3f",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "109c4d50-99cd-4b54-9212-ebaf7fdcd814",
 				"distance": 0.545,
 				"duration": "00:02:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "52a0efed-b24a-453e-be3c-c067602edc4c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "d5639c13-e0b2-4ffb-8225-6a3710da208f",
 				"distance": 0.545,
 				"duration": "00:02:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "930b3cfb-49af-4510-acd1-c0e7f0c7b924",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "88a9a65b-b1b4-4ae1-a31b-b6d74c2bdaba",
 				"distance": 0.545,
 				"duration": "00:02:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "41011652-efe1-4967-b43f-8025390cacf4",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "fbd07575-cd5e-4611-835b-25716fe91e0e",
 				"distance": 0.545,
 				"duration": "00:02:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "6da903d8-34de-400e-8ae1-c3aee14b9d73",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "1325ca61-2897-44f0-845c-a2927ffc7146",
 				"distance": 0.545,
 				"duration": "00:02:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "e87c75bb-37c9-491f-b7d0-8ce50e005a5f",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "bae58b12-d059-4961-8e05-f08b72642a37",
 				"distance": 0.545,
 				"duration": "00:02:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "53b1495e-18bb-4b2f-a691-6893f2e3369a",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "e59ec962-b966-4ee8-82e4-fd1a9c89b315",
 				"distance": 0.545,
 				"duration": "00:02:00",
-				"pace": "03:40",
-				"isValid": true
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "a1b96ea1-20d4-4c15-b036-cca50f344da8",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "b7fdfb7a-ef7a-4d0b-8060-f0b3c76e631e",
 				"uuid": "cb02a474-9df7-4536-88ed-cc38c1e808b9",
 				"distance": "5",
 				"duration": "00:25:50",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -1589,8 +1295,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -1608,8 +1313,7 @@
 				"uuid": "999",
 				"distance": 20,
 				"pace": "05:00",
-				"duration": "01:40:00",
-				"isValid": true
+				"duration": "01:40:00"
 			}
 		]
 	},
@@ -1622,8 +1326,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -1641,8 +1344,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -1657,68 +1359,52 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "new-training",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "1",
 				"duration": "00:05:30",
-				"pace": "005:30",
-				"isValid": false
+				"pace": "005:30"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:12:15",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:04:50",
-				"pace": "04:50",
-				"isValid": true
+				"pace": "04:50"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:15",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:04:50",
-				"pace": "04:50",
-				"isValid": true
+				"pace": "04:50"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:15",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:04:50",
-				"pace": "04:50",
-				"isValid": true
+				"pace": "04:50"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:15",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			}
 		],
 		"total": {
@@ -1733,85 +1419,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:11:00",
-				"pace": "005:30",
-				"isValid": false,
-				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
+				"pace": "005:30"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
-				"pace": "03:59",
-				"isValid": false,
-				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
+				"pace": "03:59"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true,
-				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false,
-				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true,
-				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
-				"pace": "04:04",
-				"isValid": false,
-				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
+				"pace": "04:04"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true,
-				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false,
-				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "5eb4f0ae-11c4-4ae9-92d1-34f517f2b88c",
 				"distance": "0.7",
 				"duration": "00:03:30",
-				"pace": "05:00",
-				"isValid": true,
-				"trainingUuid": "67a7a521-b3bf-4c4d-a918-19ab83bd9b2a"
+				"pace": "05:00"
 			}
 		]
 	},
@@ -1821,28 +1480,22 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			}
 		],
 		"total": {
@@ -1857,28 +1510,22 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			}
 		],
 		"total": {
@@ -1896,8 +1543,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -1915,8 +1561,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -1931,12 +1576,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			}
 		],
 		"total": {
@@ -1951,84 +1594,64 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:11:00",
-				"pace": "005:30",
-				"isValid": false
+				"pace": "005:30"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
-				"pace": "03:59",
-				"isValid": false
+				"pace": "03:59"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
-				"pace": "04:04",
-				"isValid": false
+				"pace": "04:04"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "af9fc74f-6cdc-462b-9fbd-046e40765724",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "a8bc6d7b-4f4d-4d4e-b57d-3f7c9edfd023",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			}
 		]
 	},
@@ -2038,84 +1661,64 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "1",
 				"duration": "00:05:30",
-				"pace": "005:30",
-				"isValid": false
+				"pace": "005:30"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
-				"pace": "03:59",
-				"isValid": false
+				"pace": "03:59"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
-				"pace": "04:04",
-				"isValid": false
+				"pace": "04:04"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "af9fc74f-6cdc-462b-9fbd-046e40765724",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "a8bc6d7b-4f4d-4d4e-b57d-3f7c9edfd023",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			}
 		],
 		"total": {
@@ -2133,8 +1736,7 @@
 				"uuid": "999",
 				"distance": 20,
 				"pace": "05:00",
-				"duration": "01:40:00",
-				"isValid": true
+				"duration": "01:40:00"
 			}
 		],
 		"total": {
@@ -2152,8 +1754,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2171,8 +1772,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -2190,8 +1790,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2209,8 +1808,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2225,12 +1823,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2245,12 +1841,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2265,12 +1859,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2285,12 +1877,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "97473ec5-9244-44c6-a06a-89c24dd804be",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "28",
 				"duration": "02:08:20",
-				"pace": "04:35",
-				"isValid": true
+				"pace": "04:35"
 			}
 		],
 		"total": {
@@ -2305,12 +1895,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2325,12 +1913,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			}
 		],
 		"total": {
@@ -2348,8 +1934,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2367,8 +1952,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -2386,8 +1970,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2405,8 +1988,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2424,8 +2006,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2443,8 +2024,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2462,8 +2042,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2478,12 +2057,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2498,12 +2075,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2518,12 +2093,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2538,12 +2111,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2561,8 +2132,7 @@
 				"uuid": "47",
 				"distance": 16,
 				"pace": "04:10",
-				"duration": "01:06:40",
-				"isValid": true
+				"duration": "01:06:40"
 			}
 		],
 		"total": {
@@ -2577,12 +2147,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "a7106807-2934-4017-b662-068fa9747445",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "18",
 				"duration": "01:15:00",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			}
 		],
 		"total": {
@@ -2597,12 +2165,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "bc0e935d-8904-4968-b927-45709b895c32",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "25",
 				"duration": "01:49:10",
-				"pace": "04:22",
-				"isValid": true
+				"pace": "04:22"
 			}
 		],
 		"total": {
@@ -2617,12 +2183,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "684db1c9-40fa-486c-b3af-c55167ce9680",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "28",
 				"duration": "02:02:16",
-				"pace": "04:22",
-				"isValid": true
+				"pace": "04:22"
 			}
 		],
 		"total": {
@@ -2637,12 +2201,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "57014016-c994-4a21-ae3c-9d729430afa7",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "29",
 				"duration": "02:10:30",
-				"pace": "04:30",
-				"isValid": true
+				"pace": "04:30"
 			}
 		],
 		"total": {
@@ -2660,8 +2222,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2676,12 +2237,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2696,12 +2255,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2716,84 +2273,70 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8011",
 				"distance": "4",
 				"duration": "00:22:00",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
-				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231",
 				"distance": 0.273,
 				"duration": "00:01:30",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
 				"uuid": "8231",
 				"duration": "00:01:00",
 				"pace": "05:30",
-				"distance": 0.182,
-				"isValid": true
+				"distance": 0.182
 			},
 			{
 				"uuid": "8121",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
 				"uuid": "8231",
 				"duration": "00:01:00",
 				"pace": "05:30",
-				"distance": 0.182,
-				"isValid": true
+				"distance": 0.182
 			},
 			{
 				"uuid": "8121",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
 				"uuid": "8231",
 				"duration": "00:01:00",
 				"pace": "05:30",
-				"distance": 0.182,
-				"isValid": true
+				"distance": 0.182
 			},
 			{
 				"uuid": "9291",
 				"distance": 2,
 				"pace": "05:30",
-				"duration": "00:11:00",
-				"isValid": true
+				"duration": "00:11:00"
 			},
 			{
-				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "7fa9d5d8-1990-47c3-87d1-882bc71cdf1d",
 				"distance": "3",
 				"duration": "00:15:30",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -2808,84 +2351,64 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "new-training",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "ebf8c132-06d6-4fdb-bf00-4d06ba6c1391",
 				"distance": "6",
 				"duration": "00:33:00",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			}
 		],
 		"total": {
@@ -2900,76 +2423,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:11:00",
-				"pace": "005:30",
-				"isValid": false
+				"pace": "005:30"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
-				"pace": "03:59",
-				"isValid": false
+				"pace": "03:59"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
-				"pace": "04:04",
-				"isValid": false
+				"pace": "04:04"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "5eb4f0ae-11c4-4ae9-92d1-34f517f2b88c",
 				"distance": "0.7",
 				"duration": "00:03:30",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			}
 		],
 		"total": {
@@ -2984,12 +2489,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			}
 		]
 	},
@@ -3002,81 +2505,67 @@
 				"uuid": "8011-df84735",
 				"distance": "4",
 				"duration": "00:22:00",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121-skdj7435",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
 				"uuid": "8231",
 				"distance": 0.273,
 				"duration": "00:01:30",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121-skdj4875",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
-				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-sdkj4763",
 				"distance": 0.273,
 				"duration": "00:01:30",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121-kgf7",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
-				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-34875",
 				"distance": 0.273,
 				"duration": "00:01:30",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121-384756",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
-				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-dkgh475",
 				"distance": 0.273,
 				"duration": "00:01:30",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "9291-83475d",
 				"distance": 2,
 				"pace": "05:30",
-				"duration": "00:11:00",
-				"isValid": true
+				"duration": "00:11:00"
 			},
 			{
 				"uuid": "7fa9d5d8-1990-47c3-87d1-882bc71cdf1d",
 				"distance": "3",
 				"duration": "00:15:30",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -3094,81 +2583,67 @@
 				"uuid": "8011-df84735",
 				"distance": "4",
 				"duration": "00:22:00",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121-skdj7435",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
 				"uuid": "8231",
 				"distance": 0.273,
 				"duration": "00:01:30",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121-skdj4875",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
-				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-sdkj4763",
 				"distance": 0.273,
 				"duration": "00:01:30",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121-kgf7",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
-				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-34875",
 				"distance": 0.273,
 				"duration": "00:01:30",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "8121-384756",
 				"distance": 2,
 				"pace": "03:50",
-				"duration": "00:07:40",
-				"isValid": true
+				"duration": "00:07:40"
 			},
 			{
-				"obsolete": "dedb5450-31f0-11e6-a9b1-2b5e45ce0b8a",
 				"uuid": "8231-dkgh475",
 				"distance": 0.273,
 				"duration": "00:01:30",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
 				"uuid": "9291-83475d",
 				"distance": 2,
 				"pace": "05:30",
-				"duration": "00:11:00",
-				"isValid": true
+				"duration": "00:11:00"
 			},
 			{
 				"uuid": "7fa9d5d8-1990-47c3-87d1-882bc71cdf1d",
 				"distance": "3",
 				"duration": "00:15:30",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -3183,12 +2658,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -3206,8 +2679,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -3222,12 +2694,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -3245,8 +2715,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -3261,76 +2730,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			}
 		],
 		"total": {
@@ -3345,28 +2796,22 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			}
 		],
 		"total": {
@@ -3384,8 +2829,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -3400,12 +2844,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "748e8ce4-a466-47ac-9d02-dfb9aad56519",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "35",
 				"duration": "03:00:50",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -3420,92 +2862,70 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "05ec5bb1-9918-4ea4-a9f9-572941c0cf62",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "886867de-18e0-4e2b-9ea4-acac7080c4c4",
 				"uuid": "0ed8eb9a-6f04-4051-b74e-fceceb98eb24",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			}
 		],
 		"total": {
@@ -3523,8 +2943,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -3539,76 +2958,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "7bdc90fa-7d67-4f0c-9317-1868f0e5ed18",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:15:30",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -3626,8 +3027,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -3642,20 +3042,16 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "56567b1b-9cb9-423b-85c7-fe75230305b1",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "10",
 				"duration": "00:38:45",
-				"pace": "03:53",
-				"isValid": false
+				"pace": "03:53"
 			},
 			{
-				"obsolete": "56567b1b-9cb9-423b-85c7-fe75230305b1",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "10",
 				"duration": "00:39:45",
-				"pace": "03:59",
-				"isValid": false
+				"pace": "03:59"
 			}
 		]
 	},
@@ -3668,8 +3064,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -3687,8 +3082,7 @@
 				"uuid": "47",
 				"distance": "42.2",
 				"duration": "02:55:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			}
 		],
 		"total": {
@@ -3705,78 +3099,67 @@
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "12.5",
 				"duration": "01:04:35",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
 				"uuid": "db81f196-3f52-46d1-8e91-846633575d3f",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "b4efc063-1040-4427-9b8e-11ec1cedbeed",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "f0313c56-18b2-41aa-9c88-f5e71a363990",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "10f73895-35cc-4765-81b6-aa5675d123f8",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "3e92f72f-111a-4e4f-9b98-001b2a380889",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "fa192a93-a58f-4b9b-b7cd-8427e29426b8",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "5d4b0eb5-9e29-4f93-b200-152c1c014640",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "b445327d-7f83-455f-84ad-4502591d81aa",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "d5f35b51-b78b-472d-bc64-ea1e9d438739",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			},
 			{
 				"uuid": "b8e4ffff-e4ed-46d5-9608-1c637870447b",
 				"distance": "0.1",
 				"duration": "00:00:19",
-				"pace": "03:10",
-				"isValid": true
+				"pace": "03:10"
 			}
 		],
 		"total": {
@@ -3794,8 +3177,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -3813,8 +3195,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -3829,108 +3210,82 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "new-training",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "ebf8c132-06d6-4fdb-bf00-4d06ba6c1391",
 				"distance": "2",
 				"duration": "00:11:00",
-				"pace": "05:30",
-				"isValid": true
+				"pace": "05:30"
 			},
 			{
-				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "095be067-5d12-47dc-a979-4415ef9f87d2",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "e0ba5065-986d-4e89-bf44-c435de9704c2",
 				"distance": "3",
 				"duration": "00:12:30",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "28979dbe-d667-4184-a6df-5bdec4b77325",
 				"uuid": "e46cc610-cebf-439c-a681-121e6d38e041",
 				"distance": "3",
 				"duration": "00:15:15",
-				"pace": "05:05",
-				"isValid": true
+				"pace": "05:05"
 			}
 		],
 		"total": {
@@ -3945,12 +3300,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "53999aa8-1d8e-11e6-b7a8-3715f4688b6a",
 				"uuid": "999",
 				"distance": 20,
 				"duration": "01:35:40",
-				"pace": "04:47",
-				"isValid": true
+				"pace": "04:47"
 			}
 		],
 		"total": {
@@ -3964,76 +3317,58 @@
 		"name": "4 x 3km @strength (18.1km)",
 		"segments": [
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:09:17",
-				"pace": "04:39",
-				"isValid": false
+				"pace": "04:39"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:41",
-				"pace": "03:54",
-				"isValid": false
+				"pace": "03:54"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:04:45",
-				"pace": "04:45",
-				"isValid": true
+				"pace": "04:45"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:11:41",
-				"pace": "03:54",
-				"isValid": false
+				"pace": "03:54"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:04:45",
-				"pace": "04:45",
-				"isValid": true
+				"pace": "04:45"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:11:50",
-				"pace": "03:57",
-				"isValid": false
+				"pace": "03:57"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:04:45",
-				"pace": "04:45",
-				"isValid": true
+				"pace": "04:45"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:00",
-				"pace": "04:00",
-				"isValid": true
+				"pace": "04:00"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "5eb4f0ae-11c4-4ae9-92d1-34f517f2b88c",
 				"distance": "1.1",
 				"duration": "00:05:41",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -4048,76 +3383,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:09:17",
-				"pace": "04:39",
-				"isValid": false
+				"pace": "04:39"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:41",
-				"pace": "03:54",
-				"isValid": false
+				"pace": "03:54"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:04:45",
-				"pace": "04:45",
-				"isValid": true
+				"pace": "04:45"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:11:41",
-				"pace": "03:54",
-				"isValid": false
+				"pace": "03:54"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:04:45",
-				"pace": "04:45",
-				"isValid": true
+				"pace": "04:45"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:11:50",
-				"pace": "03:57",
-				"isValid": false
+				"pace": "03:57"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:04:45",
-				"pace": "04:45",
-				"isValid": true
+				"pace": "04:45"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:00",
-				"pace": "04:00",
-				"isValid": true
+				"pace": "04:00"
 			},
 			{
-				"obsolete": "8175792f-3607-42fe-94b1-972f8fbd0eaf",
 				"uuid": "5eb4f0ae-11c4-4ae9-92d1-34f517f2b88c",
 				"distance": "1.1",
 				"duration": "00:05:41",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -4132,60 +3449,46 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "e205ca91-2bcf-46fc-8a7b-b57e6cef7671",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "1.5",
 				"duration": "00:06:15",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "e205ca91-2bcf-46fc-8a7b-b57e6cef7671",
 				"uuid": "0ca6251a-d026-49b0-a876-db5450907aba",
 				"distance": "12",
 				"duration": "01:04:00",
-				"pace": "05:20",
-				"isValid": true
+				"pace": "05:20"
 			},
 			{
-				"obsolete": "e205ca91-2bcf-46fc-8a7b-b57e6cef7671",
 				"uuid": "36cc4b33-5418-483f-9809-60c8b1653f7a",
 				"distance": "2",
 				"duration": "00:10:30",
-				"pace": "05:15",
-				"isValid": true
+				"pace": "05:15"
 			}
 		],
 		"total": {
@@ -4203,8 +3506,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -4219,12 +3521,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -4239,12 +3539,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "8c12a07f-aa83-4e99-9869-3a89ecebf7ff",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "32",
 				"duration": "02:26:40",
-				"pace": "04:35",
-				"isValid": true
+				"pace": "04:35"
 			}
 		],
 		"total": {
@@ -4259,84 +3557,64 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "0ca6251a-d026-49b0-a876-db5450907aba",
 				"distance": "4",
 				"duration": "00:20:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -4351,484 +3629,364 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f3eff8d9-c2e5-47c5-936c-726a4b76ad22",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:33",
-				"isValid": true
+				"pace": "03:33"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "accbbe4e-8388-4c30-9783-3d866a461fe2",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8c0950a6-d03b-4037-8b5d-c4063e23e407",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f8dd056a-0052-494d-a50d-9181d5d387e0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "3db6d2aa-35c9-409f-b08a-4a4ad511b0c4",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e29390a0-59da-43d2-a193-95be34b1411e",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f5c9914c-275f-4a0a-b703-384683f30f07",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "1f18b13e-3f0b-4465-bf37-c0d122d88f9f",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "9438a8e2-ef9d-497f-8f59-ba57cd792930",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "440de7d6-6479-4866-afc4-236beab7f059",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "727c6e32-1cdc-4bfb-acb4-8f37d91b2ca4",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a5e07dcb-bdb4-47cd-8abe-3b0947f9ad63",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f93bc559-e8e4-49f2-aebe-10c6a68fae16",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e85f1d6a-4cd3-4084-b876-0266de68cd61",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "20aa6cb8-aeba-42b1-b975-6effcdc3c903",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "49b05778-c8a5-43e4-b9ee-a272fa084a35",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "67908f84-a3f6-4605-b25a-c849bf5dbb2d",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "85126497-365b-4e08-937b-8d86bc543b8c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a1b11640-27d6-47b1-9479-f87ace5370ba",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "842a090a-a623-4a2f-8cab-f296d703d790",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e2c3f6f0-a2cf-4130-bdb1-73271b3a2023",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4d6ee8a3-b5e3-4690-a90b-5baad95ca335",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "63498504-df1a-4523-b717-4d169cb436d1",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b40c409d-0ba3-4a68-bd90-9c5b3d6de5c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e5506048-9daa-4822-97ea-2d2ba073b025",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "696680b7-f97f-403c-96fc-f2a3b7270ae0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa808eb2-0a10-47be-8801-1ee4e3a7ecba",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "065e6212-0da7-4d28-8e97-acaeb4e63be3",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "11441cf9-0407-4867-a51b-695440c09b54",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd386338-32b2-4045-9c9c-34edbbc73a60",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b5eb6ca3-70e2-47dd-b56d-ef960e0c0105",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd217fbf-639f-4efb-ba2a-0474701459c0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a13d4220-b7ff-43c8-b7d7-918b5e45fb1f",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "52360e78-9682-4652-998a-c7df2499f5bf",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f46e8d08-c4be-4a87-a415-a65bdbe389ae",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "10a55e93-2264-4269-9192-992b38bc5a2c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb38214b-87e4-4c24-9b05-0f739af0695a",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "005ca46f-d5e3-4eba-bd85-91f868001d4c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "dc9ac93f-44c1-4260-8909-6bfd85951e83",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb3d9990-5384-4d7f-b3bb-ceaa36d463c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c01685c5-eaef-426a-ac69-ff9843a1f8db",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8643f154-cc9d-4e18-83ad-cc1c68c011df",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "ff658b6a-68e8-46bc-9e89-45f3c72cbc6d",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "477ce033-4871-429b-b3d0-88448e63d5c4",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4a8104b6-a445-4153-85ac-17f0454fb6b2",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa87640f-d50d-4ac2-a091-08ffae6afde0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2993f6e3-26dc-4eee-8e38-779d557d6fc1",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "195390f3-5a93-40f0-8303-88408c8d0860",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7fe86822-86bc-4c27-82de-2c6dbe304420",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "36f10b79-512e-4bf9-9738-47191de9dfbd",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "792185de-4aaf-469a-a10d-7dc6c7f69ed2",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "42992afa-410a-4a09-aed1-1bfa04caf333",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7277e9cf-5132-423a-9fe7-14bd85d36495",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "6074ab52-bd69-4518-900f-4d3f8db4775b",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c6c3f36e-f8d3-436e-b332-aca49063da68",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2788592e-284b-4e2e-ae01-2774779f7f51",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b46d3c43-2921-44ec-ad31-7b631636d7e9",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "14e8d2ac-eaf6-49f6-a288-a0318492f52f",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f4e01be4-fc1b-44c3-97eb-5325451de2e1",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			}
 		],
 		"total": {
@@ -4846,8 +4004,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -4862,484 +4019,364 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f3eff8d9-c2e5-47c5-936c-726a4b76ad22",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:33",
-				"isValid": true
+				"pace": "03:33"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "accbbe4e-8388-4c30-9783-3d866a461fe2",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8c0950a6-d03b-4037-8b5d-c4063e23e407",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f8dd056a-0052-494d-a50d-9181d5d387e0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "3db6d2aa-35c9-409f-b08a-4a4ad511b0c4",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e29390a0-59da-43d2-a193-95be34b1411e",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f5c9914c-275f-4a0a-b703-384683f30f07",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "1f18b13e-3f0b-4465-bf37-c0d122d88f9f",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "9438a8e2-ef9d-497f-8f59-ba57cd792930",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "440de7d6-6479-4866-afc4-236beab7f059",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "727c6e32-1cdc-4bfb-acb4-8f37d91b2ca4",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a5e07dcb-bdb4-47cd-8abe-3b0947f9ad63",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f93bc559-e8e4-49f2-aebe-10c6a68fae16",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e85f1d6a-4cd3-4084-b876-0266de68cd61",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "20aa6cb8-aeba-42b1-b975-6effcdc3c903",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "49b05778-c8a5-43e4-b9ee-a272fa084a35",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "67908f84-a3f6-4605-b25a-c849bf5dbb2d",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "85126497-365b-4e08-937b-8d86bc543b8c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a1b11640-27d6-47b1-9479-f87ace5370ba",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "842a090a-a623-4a2f-8cab-f296d703d790",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e2c3f6f0-a2cf-4130-bdb1-73271b3a2023",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4d6ee8a3-b5e3-4690-a90b-5baad95ca335",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "63498504-df1a-4523-b717-4d169cb436d1",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b40c409d-0ba3-4a68-bd90-9c5b3d6de5c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "e5506048-9daa-4822-97ea-2d2ba073b025",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "696680b7-f97f-403c-96fc-f2a3b7270ae0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa808eb2-0a10-47be-8801-1ee4e3a7ecba",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "065e6212-0da7-4d28-8e97-acaeb4e63be3",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "11441cf9-0407-4867-a51b-695440c09b54",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd386338-32b2-4045-9c9c-34edbbc73a60",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b5eb6ca3-70e2-47dd-b56d-ef960e0c0105",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "bd217fbf-639f-4efb-ba2a-0474701459c0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "a13d4220-b7ff-43c8-b7d7-918b5e45fb1f",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "52360e78-9682-4652-998a-c7df2499f5bf",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f46e8d08-c4be-4a87-a415-a65bdbe389ae",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "10a55e93-2264-4269-9192-992b38bc5a2c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb38214b-87e4-4c24-9b05-0f739af0695a",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "005ca46f-d5e3-4eba-bd85-91f868001d4c",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "dc9ac93f-44c1-4260-8909-6bfd85951e83",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "fb3d9990-5384-4d7f-b3bb-ceaa36d463c8",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c01685c5-eaef-426a-ac69-ff9843a1f8db",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "8643f154-cc9d-4e18-83ad-cc1c68c011df",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "ff658b6a-68e8-46bc-9e89-45f3c72cbc6d",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "477ce033-4871-429b-b3d0-88448e63d5c4",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "4a8104b6-a445-4153-85ac-17f0454fb6b2",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "aa87640f-d50d-4ac2-a091-08ffae6afde0",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2993f6e3-26dc-4eee-8e38-779d557d6fc1",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "195390f3-5a93-40f0-8303-88408c8d0860",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7fe86822-86bc-4c27-82de-2c6dbe304420",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "36f10b79-512e-4bf9-9738-47191de9dfbd",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "792185de-4aaf-469a-a10d-7dc6c7f69ed2",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "42992afa-410a-4a09-aed1-1bfa04caf333",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "7277e9cf-5132-423a-9fe7-14bd85d36495",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "6074ab52-bd69-4518-900f-4d3f8db4775b",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "c6c3f36e-f8d3-436e-b332-aca49063da68",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "2788592e-284b-4e2e-ae01-2774779f7f51",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "b46d3c43-2921-44ec-ad31-7b631636d7e9",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "14e8d2ac-eaf6-49f6-a288-a0318492f52f",
 				"distance": 0.194,
 				"duration": "00:01:00",
-				"pace": "05:10",
-				"isValid": false
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "4a8d3158-6e9f-4e98-882a-6453003eaf6c",
 				"uuid": "f4e01be4-fc1b-44c3-97eb-5325451de2e1",
 				"distance": 0.282,
 				"duration": "00:01:00",
-				"pace": "03:40",
-				"isValid": false
+				"pace": "03:40"
 			}
 		],
 		"total": {
@@ -5354,76 +4391,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "c555e2d3-7f59-4be4-a9bd-2248be9e144b",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:15:30",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -5438,12 +4457,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			}
 		],
 		"total": {
@@ -5458,12 +4475,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -5478,12 +4493,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -5498,12 +4511,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -5521,8 +4532,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -5540,8 +4550,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -5559,8 +4568,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -5575,13 +4583,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "21",
 				"duration": "01:47:48",
-				"pace": "05:08",
-				"isValid": true,
-				"trainingUuid": "69466e03-cb57-440d-8214-ec2a3b5f87b0"
+				"pace": "05:08"
 			}
 		]
 	},
@@ -5591,76 +4596,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "2b535042-e97a-47f7-8880-341c1c7f6829",
 				"distance": "2",
 				"duration": "00:10:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "52334bc8-40c3-4962-b057-f081c0375b4c",
 				"distance": "2.25",
 				"duration": "00:08:04",
-				"pace": "03:35",
-				"isValid": true
+				"pace": "03:35"
 			},
 			{
-				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "67e6c9b0-ea40-4b10-bd7d-612c08da8038",
 				"distance": 1.2,
 				"duration": "00:06:12",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "e8fcb2ce-7af4-400e-bc9a-e958e20bddb0",
 				"distance": "3",
 				"duration": "00:12:09",
-				"pace": "04:03",
-				"isValid": true
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "3496f985-3f8e-4112-b183-911f03ad555e",
 				"distance": 0.581,
 				"duration": "00:03:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "af4ffea9-c240-43e8-9819-2714ce9a3e7f",
 				"distance": "2.25",
 				"duration": "00:08:04",
-				"pace": "03:35",
-				"isValid": true
+				"pace": "03:35"
 			},
 			{
-				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "86f5cf71-55be-404e-b3ff-6ab22364f387",
 				"distance": 0.6,
 				"duration": "00:03:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "e53d9b42-523d-42ed-8c34-28d5ae7827f9",
 				"distance": "2.5",
 				"duration": "00:10:25",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "0d97f780-d7b7-4ca2-81d7-ca3bd3921bcc",
 				"uuid": "8296d9de-2cb9-45cb-abea-a72d848e808c",
 				"distance": "4.6",
 				"duration": "00:23:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			}
 		],
 		"total": {
@@ -5675,12 +4662,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			}
 		],
 		"total": {
@@ -5695,12 +4680,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			}
 		]
 	},
@@ -5710,84 +4693,64 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "4",
 				"duration": "00:16:40",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "671c43e2-eaf1-44ea-8afb-135379a16642",
 				"uuid": "0ca6251a-d026-49b0-a876-db5450907aba",
 				"distance": "4",
 				"duration": "00:20:40",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -5802,12 +4765,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			}
 		]
 	},
@@ -5817,12 +4778,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -5837,12 +4796,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			}
 		],
 		"total": {
@@ -5857,12 +4814,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -5877,12 +4832,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			}
 		],
 		"total": {
@@ -5897,12 +4850,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			}
 		],
 		"total": {
@@ -5917,12 +4868,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			}
 		],
 		"total": {
@@ -5940,113 +4889,85 @@
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "2",
 				"duration": "00:11:10",
-				"pace": "05:35",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "05:35"
 			},
 			{
 				"uuid": "0aceaaf9-41d5-48cb-b4b2-8e536fefd7db",
 				"distance": "1.6",
 				"duration": "00:06:50",
-				"pace": "04:16",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "04:16"
 			},
 			{
 				"uuid": "f355d75b-6b29-4bd8-97de-0d606b0d0937",
 				"distance": "0.4",
 				"duration": "00:02:10",
-				"pace": "05:25",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "05:25"
 			},
 			{
 				"uuid": "856e0477-1261-4cbd-bc7c-8e8653c2a705",
 				"distance": "1.6",
 				"duration": "00:06:50",
-				"pace": "04:16",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "04:16"
 			},
 			{
 				"uuid": "09d367e5-8c23-45ad-ac6c-a8c2717b739d",
 				"distance": "0.4",
 				"duration": "00:02:10",
-				"pace": "05:25",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "05:25"
 			},
 			{
 				"uuid": "f1652ef8-e31b-4949-85fe-a8fbb29097d9",
 				"distance": "1.6",
 				"duration": "00:06:50",
-				"pace": "04:16",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "04:16"
 			},
 			{
 				"uuid": "ed17ce4c-34eb-4a3d-8746-7ee1aa6dc49a",
 				"distance": "0.4",
 				"duration": "00:02:10",
-				"pace": "05:25",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "05:25"
 			},
 			{
 				"uuid": "4a5e10d3-d600-4b04-b39b-6ebfeaa20fdb",
 				"distance": "1.6",
 				"duration": "00:06:50",
-				"pace": "04:16",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "04:16"
 			},
 			{
 				"uuid": "ad6bfc0b-41c4-4ed3-b200-15e00ea20024",
 				"distance": "0.4",
 				"duration": "00:02:10",
-				"pace": "05:25",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "05:25"
 			},
 			{
 				"uuid": "dde40943-0c88-4a9b-ad94-d443c749f4f2",
 				"distance": "1.6",
 				"duration": "00:06:50",
-				"pace": "04:16",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "04:16"
 			},
 			{
 				"uuid": "9cfdefcd-ff0a-4411-8fb2-4da05f648eb7",
 				"distance": "0.4",
 				"duration": "00:02:10",
-				"pace": "05:25",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "05:25"
 			},
 			{
 				"uuid": "22e8f838-9eb9-4fd6-8bd6-71a8f21d9e31",
 				"distance": "1.6",
 				"duration": "00:06:50",
-				"pace": "04:16",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "04:16"
 			},
 			{
 				"uuid": "c3e1eb2b-63cd-4763-af83-3558d62dddc9",
 				"distance": "0.4",
 				"duration": "00:02:10",
-				"pace": "05:25",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "05:25"
 			},
 			{
 				"uuid": "934b0b08-4de4-4efe-8b02-5f6318131228",
 				"distance": "1.6",
 				"duration": "00:06:50",
-				"pace": "04:16",
-				"isValid": true,
-				"obsolete": "1182edd5-a5c4-4ec8-a81c-a1602d9541d4"
+				"pace": "04:16"
 			}
 		],
 		"total": {
@@ -6061,28 +4982,22 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			}
 		],
 		"total": {
@@ -6100,25 +5015,19 @@
 				"uuid": "48",
 				"distance": "10",
 				"duration": "00:47:50",
-				"pace": "04:47",
-				"isValid": true,
-				"obsolete": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+				"pace": "04:47"
 			},
 			{
 				"uuid": "353098c1-9d80-44cd-99e1-f25175b1e885",
 				"distance": "10",
 				"duration": "00:49:40",
-				"pace": "04:58",
-				"isValid": true,
-				"obsolete": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+				"pace": "04:58"
 			},
 			{
 				"uuid": "96bf1bb8-c467-4bbd-b9e8-0447dd65076d",
 				"distance": "10.1",
 				"duration": "00:40:45",
-				"pace": "04:02",
-				"isValid": false,
-				"obsolete": "57a67cfa-8304-4ff5-980f-f07e56a25c42"
+				"pace": "04:02"
 			}
 		],
 		"total": {
@@ -6133,12 +5042,10 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "41f0381e-7649-4a10-9e6e-9549b961ffb1",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "30",
 				"duration": "02:20:00",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			}
 		],
 		"total": {
@@ -6153,124 +5060,94 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:05:30",
 				"pace": "05:30",
-				"uuid": "39f2734e-eb29-4dfd-9252-cabc9389cd2d",
-				"isValid": true
+				"uuid": "39f2734e-eb29-4dfd-9252-cabc9389cd2d"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
-				"uuid": "06c2b375-417f-4b85-ae9a-7d029b073009",
-				"isValid": true
+				"uuid": "06c2b375-417f-4b85-ae9a-7d029b073009"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
-				"uuid": "b1107e9f-34f8-41f5-8e8a-ffefe6db7183",
-				"isValid": true
+				"uuid": "b1107e9f-34f8-41f5-8e8a-ffefe6db7183"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
-				"uuid": "cc3b90b9-00cd-49b6-85c7-ad28e77ed20a",
-				"isValid": true
+				"uuid": "cc3b90b9-00cd-49b6-85c7-ad28e77ed20a"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
-				"uuid": "b5d1f45b-8d0b-4adf-883a-30b3b1f562d0",
-				"isValid": true
+				"uuid": "b5d1f45b-8d0b-4adf-883a-30b3b1f562d0"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
-				"uuid": "a959c8cd-c54e-4ea3-a1c2-3049df2e9379",
-				"isValid": true
+				"uuid": "a959c8cd-c54e-4ea3-a1c2-3049df2e9379"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
-				"uuid": "f72578c6-db30-482b-a3df-38cf48316602",
-				"isValid": true
+				"uuid": "f72578c6-db30-482b-a3df-38cf48316602"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
-				"uuid": "4dc62814-4e08-4e76-ae48-45542bc713fc",
-				"isValid": true
+				"uuid": "4dc62814-4e08-4e76-ae48-45542bc713fc"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
-				"uuid": "3b9b868c-98fa-44c1-b803-2080974c3c1c",
-				"isValid": true
+				"uuid": "3b9b868c-98fa-44c1-b803-2080974c3c1c"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
-				"uuid": "d93f9dcb-e4cf-44cc-879f-c6bc3f7420a0",
-				"isValid": true
+				"uuid": "d93f9dcb-e4cf-44cc-879f-c6bc3f7420a0"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
-				"uuid": "b18863cf-01ec-44f3-ab93-42b04787bd9c",
-				"isValid": true
+				"uuid": "b18863cf-01ec-44f3-ab93-42b04787bd9c"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
-				"uuid": "f6059fad-8bfb-4a87-8250-56495992e36f",
-				"isValid": true
+				"uuid": "f6059fad-8bfb-4a87-8250-56495992e36f"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:04:20",
 				"pace": "04:20",
-				"uuid": "aa7635b9-8981-43cf-9bde-c2ebe4c2e29a",
-				"isValid": true
+				"uuid": "aa7635b9-8981-43cf-9bde-c2ebe4c2e29a"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1",
 				"duration": "00:03:55",
 				"pace": "03:55",
-				"uuid": "33e60e93-7c08-4356-96a8-a340977d982f",
-				"isValid": true
+				"uuid": "33e60e93-7c08-4356-96a8-a340977d982f"
 			},
 			{
-				"obsolete": "44d9d228-6683-4843-bfeb-feaa6e75bc1d",
 				"distance": "1.7",
 				"duration": "00:08:32",
 				"pace": "05:01",
-				"uuid": "42aebfc5-8dac-48b2-bc08-df212d3b9b2d",
-				"isValid": true
+				"uuid": "42aebfc5-8dac-48b2-bc08-df212d3b9b2d"
 			}
 		],
 		"total": {
@@ -6288,9 +5165,7 @@
 				"uuid": "984576dfghdf",
 				"distance": "15.4",
 				"duration": "01:14:35",
-				"pace": "04:51",
-				"isValid": false,
-				"trainingUuid": "76b32cf7-1141-4a63-b880-96a9d1ccb2d7"
+				"pace": "04:51"
 			}
 		]
 	},
@@ -6303,9 +5178,7 @@
 				"uuid": "48",
 				"distance": "25",
 				"duration": "02:09:30",
-				"pace": "05:11",
-				"isValid": false,
-				"trainingUuid": "2769a3a2-1018-4a87-862d-18792e8a435b"
+				"pace": "05:11"
 			}
 		]
 	},
@@ -6315,84 +5188,64 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "1",
 				"duration": "00:05:30",
-				"pace": "005:30",
-				"isValid": false
+				"pace": "005:30"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
-				"pace": "03:59",
-				"isValid": false
+				"pace": "03:59"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
-				"pace": "04:04",
-				"isValid": false
+				"pace": "04:04"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "af9fc74f-6cdc-462b-9fbd-046e40765724",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "a8bc6d7b-4f4d-4d4e-b57d-3f7c9edfd023",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false
+				"pace": "04:03"
 			}
 		],
 		"total": {
@@ -6410,8 +5263,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -6426,13 +5278,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "12.5",
 				"duration": "01:05:20",
-				"pace": "05:14",
-				"isValid": false,
-				"trainingUuid": "5c23a387-f760-4628-b667-68514d08e271"
+				"pace": "05:14"
 			}
 		]
 	},
@@ -6442,12 +5291,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6462,12 +5309,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6482,12 +5327,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6502,12 +5345,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6522,12 +5363,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6545,8 +5384,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6561,12 +5399,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6581,12 +5417,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6601,13 +5435,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "6",
 				"duration": "00:31:00",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "c84041b0-b3b8-4209-9457-bff6587bfc5e"
+				"pace": "05:10"
 			}
 		]
 	},
@@ -6617,12 +5448,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6637,28 +5466,22 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "2",
 				"duration": "00:10:20",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "098dd730-be44-4199-94a4-70ae5b6c0b0a",
 				"distance": "8",
 				"duration": "00:33:20",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "25f58de3-bf56-4200-b545-ac24eb5524a9",
 				"uuid": "5560f5c7-8976-4e06-ac52-ad80e122ef09",
 				"distance": "8",
 				"duration": "00:32:40",
-				"pace": "04:05",
-				"isValid": true
+				"pace": "04:05"
 			}
 		],
 		"total": {
@@ -6673,12 +5496,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6693,12 +5514,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6713,12 +5532,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6733,12 +5550,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6753,76 +5568,58 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "300e6611-5f48-46d3-af7a-78caa387fff4",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
-				"obsolete": "new-training",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:04:40",
-				"pace": "04:40",
-				"isValid": true
+				"pace": "04:40"
 			},
 			{
-				"obsolete": "c555e2d3-7f59-4be4-a9bd-2248be9e144b",
 				"uuid": "db1fb2e2-e887-4156-83d1-7215ff59dfff",
 				"distance": "3",
 				"duration": "00:15:30",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6837,12 +5634,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -6860,92 +5655,79 @@
 				"uuid": "1",
 				"distance": 2,
 				"duration": "00:13:00",
-				"pace": "06:30",
-				"isValid": true
+				"pace": "06:30"
 			},
 			{
 				"uuid": "2",
 				"distance": 1.6,
 				"duration": "00:06:30",
-				"pace": "04:04",
-				"isValid": true
+				"pace": "04:04"
 			},
 			{
 				"uuid": "3",
 				"distance": 0.4,
 				"duration": "00:02:20",
-				"pace": "05:50",
-				"isValid": true
+				"pace": "05:50"
 			},
 			{
 				"uuid": "4",
 				"distance": 1.6,
 				"duration": "00:06:30",
-				"pace": "04:04",
-				"isValid": true
+				"pace": "04:04"
 			},
 			{
 				"uuid": "5",
 				"distance": 0.4,
 				"duration": "00:02:20",
-				"pace": "05:50",
-				"isValid": true
+				"pace": "05:50"
 			},
 			{
 				"uuid": "6",
 				"distance": 1.6,
 				"duration": "00:06:30",
-				"pace": "04:04",
-				"isValid": true
+				"pace": "04:04"
 			},
 			{
 				"uuid": "7",
 				"distance": 0.4,
 				"duration": "00:02:20",
-				"pace": "05:50",
-				"isValid": true
+				"pace": "05:50"
 			},
 			{
 				"uuid": "8",
 				"distance": 1.6,
 				"duration": "00:06:30",
-				"pace": "04:04",
-				"isValid": true
+				"pace": "04:04"
 			},
 			{
 				"uuid": "9",
 				"distance": 0.4,
 				"duration": "00:02:20",
-				"pace": "05:50",
-				"isValid": true
+				"pace": "05:50"
 			},
 			{
 				"uuid": "10",
 				"distance": 1.6,
 				"duration": "00:06:30",
-				"pace": "04:04",
-				"isValid": true
+				"pace": "04:04"
 			},
 			{
 				"uuid": "11",
 				"distance": 0.4,
 				"duration": "00:02:20",
-				"pace": "05:50",
-				"isValid": true
+				"pace": "05:50"
 			},
 			{
 				"uuid": "12",
 				"distance": 1.6,
 				"duration": "00:06:30",
-				"pace": "04:04",
-				"isValid": true
+				"pace": "04:04"
 			},
 			{
 				"uuid": "13",
 				"distance": 2,
 				"duration": "00:14:00",
-				"pace": "07:00",
-				"isValid": true
+				"pace": "07:00"
 			}
 		],
 		"total": {
@@ -6963,8 +5745,7 @@
 				"uuid": "50",
 				"distance": 2,
 				"pace": "05:00",
-				"duration": "00:10:00",
-				"isValid": true
+				"duration": "00:10:00"
 			}
 		],
 		"total": {
@@ -6979,12 +5760,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			}
 		],
 		"total": {
@@ -7002,8 +5781,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7021,8 +5799,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7040,8 +5817,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7059,9 +5835,7 @@
 				"uuid": "47",
 				"distance": "20",
 				"pace": "04:07",
-				"duration": "01:22:20",
-				"isValid": true,
-				"obsolete": "1f43de2e-fd9a-480f-882e-e23ec02a0afe"
+				"duration": "01:22:20"
 			}
 		],
 		"total": {
@@ -7079,8 +5853,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7098,9 +5871,7 @@
 				"uuid": "47",
 				"distance": "20",
 				"pace": "04:07",
-				"duration": "01:22:20",
-				"isValid": true,
-				"obsolete": "112cf232-3eff-448b-9e40-2b5db7a659d3"
+				"duration": "01:22:20"
 			}
 		],
 		"total": {
@@ -7128,68 +5899,52 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "7",
 				"duration": "00:28:00",
-				"pace": "04:00",
-				"isValid": true
+				"pace": "04:00"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "7",
 				"duration": "00:28:25",
-				"pace": "04:04",
-				"isValid": false
+				"pace": "04:04"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:05:10",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "7",
 				"duration": "00:28:53",
-				"pace": "04:08",
-				"isValid": false
+				"pace": "04:08"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:05:20",
-				"pace": "05:20",
-				"isValid": true
+				"pace": "05:20"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "7",
 				"duration": "00:28:46",
-				"pace": "04:07",
-				"isValid": false
+				"pace": "04:07"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:05:40",
-				"pace": "05:40",
-				"isValid": true
+				"pace": "05:40"
 			}
 		],
 		"total": {
@@ -7204,68 +5959,52 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "dbfbe268-7bf6-11e6-8e95-2bf4e70d1ab3",
 				"distance": "7",
 				"duration": "00:28:00",
-				"pace": "04:00",
-				"isValid": true
+				"pace": "04:00"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "ee70583e-e8e8-4e40-8c10-4d879ea533ec",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true
+				"pace": "05:00"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "68b28aad-5cc6-4091-b8a9-4a03582eb037",
 				"distance": "7",
 				"duration": "00:28:25",
-				"pace": "04:04",
-				"isValid": false
+				"pace": "04:04"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "7d5aefcf-41f7-4f1a-9c40-0131ed48fa6e",
 				"distance": "1",
 				"duration": "00:05:10",
-				"pace": "05:10",
-				"isValid": true
+				"pace": "05:10"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "d0892595-b444-4ff5-b030-90bebb2403d5",
 				"distance": "7",
 				"duration": "00:28:53",
-				"pace": "04:08",
-				"isValid": false
+				"pace": "04:08"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "783e3fc3-4ee7-458b-9c46-2b91697cea88",
 				"distance": "1",
 				"duration": "00:05:20",
-				"pace": "05:20",
-				"isValid": true
+				"pace": "05:20"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "a8c3f85b-57ac-4d0b-8b0e-858e26425638",
 				"distance": "7",
 				"duration": "00:28:46",
-				"pace": "04:07",
-				"isValid": false
+				"pace": "04:07"
 			},
 			{
-				"trainingUuid": "232af7c4-f55f-4bb3-860b-f28ec6bc1f58",
 				"uuid": "1f26d7fc-44cf-4f69-9c06-45734f152889",
 				"distance": "1",
 				"duration": "00:05:40",
-				"pace": "05:40",
-				"isValid": true
+				"pace": "05:40"
 			}
 		],
 		"total": {
@@ -7283,9 +6022,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "ad0eeeb7-7be4-4a56-82f8-d372be5aaf13"
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7303,9 +6040,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "45f83486-76a6-47ca-a31b-292b27eb20a0"
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7323,9 +6058,7 @@
 				"uuid": "48",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "45f83486-76a6-47ca-a31b-292b27eb20a0"
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7340,13 +6073,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "b4fc6bb1-35a6-4bdb-8ec4-2d7aba845fa3",
 				"uuid": "48",
 				"distance": "20",
 				"duration": "01:40:00",
-				"pace": "05:00",
-				"isValid": true,
-				"trainingUuid": "e7db0f24-42fa-4ce0-b6bc-e17c8f0f142d"
+				"pace": "05:00"
 			}
 		],
 		"total": {
@@ -7364,9 +6094,7 @@
 				"uuid": "48",
 				"distance": "30",
 				"duration": "02:35:30",
-				"pace": "05:11",
-				"isValid": true,
-				"trainingUuid": "a5aca942-de2a-4057-9b2b-5884aa442094"
+				"pace": "05:11"
 			}
 		],
 		"total": {
@@ -7381,13 +6109,10 @@
 		"type": "easy",
 		"segments": [
 			{
-				"obsolete": "5c377189-43a0-46b0-a005-fda8bce511a1",
 				"uuid": "46",
 				"distance": "18",
 				"duration": "01:33:00",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "a83b8080-bba5-4911-9a95-450facce8948"
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7402,94 +6127,64 @@
 		"type": "workout",
 		"segments": [
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "f2be0fa1-80d0-4c27-9461-05b14537e7ca",
 				"distance": "1",
 				"duration": "00:05:30",
-				"pace": "005:30",
-				"isValid": false,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "005:30"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "d213dd2f-cf30-413f-98ac-2dce83aecff7",
 				"distance": "3",
 				"duration": "00:11:58",
-				"pace": "03:59",
-				"isValid": false,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "03:59"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4111591b-644c-4d0f-8787-a5bd46002d22",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "1eb2bdaf-af3c-48d0-adf9-203d140820d1",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "2b3c7286-9f5c-4e27-a1f4-a14e296d7e55",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "70f6fd1b-3ec9-4506-85c4-f98814d76a69",
 				"distance": "3",
 				"duration": "00:12:13",
-				"pace": "04:04",
-				"isValid": false,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "04:04"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "a572ad26-a5e0-4141-ac5f-b11910893661",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "72cc7fed-7ee1-4395-bf7c-bca92b75d7ae",
 				"uuid": "4964d246-41f6-4837-9987-c4ae0fd229eb",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "04:03"
 			},
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "af9fc74f-6cdc-462b-9fbd-046e40765724",
 				"distance": "1",
 				"duration": "00:05:00",
-				"pace": "05:00",
-				"isValid": true,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "05:00"
 			},
 			{
-				"obsolete": "5b79e624-5c7c-44e5-b6e7-0cf16802a5dc",
 				"uuid": "a8bc6d7b-4f4d-4d4e-b57d-3f7c9edfd023",
 				"distance": "3",
 				"duration": "00:12:08",
-				"pace": "04:03",
-				"isValid": false,
-				"trainingUuid": "55826aaf-1cb9-44bb-92a7-3255aab1aec2"
+				"pace": "04:03"
 			}
 		],
 		"total": {
@@ -7507,9 +6202,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "225df065-b949-418a-8ee8-d7ca53102ac1"
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7527,193 +6220,145 @@
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "2",
 				"duration": "00:11:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "20fd07fe-e98a-411e-a8fe-a5fb8d1dd19a",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "5bb4936f-028d-4eab-b528-3d9a73678a4f",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "d9e5d295-6c89-4e9d-88b1-e5e77d3bc7df",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "ad915a0e-c0b1-4fe5-94c8-054338b04edb",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "e2b66985-5f71-4663-ab5a-41278e9c4b39",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "2fed8fbe-5b2d-4b20-a9bd-995759e62ed9",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "01a14177-aec6-465b-a191-efcde5d97338",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "901cf294-b0eb-4dfa-9c9d-b028663f3d1b",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "23ff8290-7dbb-43ec-83d4-a57e85f05ad4",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "0dcd102a-52cb-4771-88bf-c4fcdd90b1d9",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "7d9bc92e-7e30-4b8b-904a-778ca5631088",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "54a6d044-51b6-457c-8248-12cb6ed4edc0",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "7d3670fb-26d5-4d20-b4b4-c58dab6eba19",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "005338d0-de7b-4df0-97ee-d941b9959e43",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "5e60abea-0352-43e5-bc13-b6b9ea628d70",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "d89cdef3-5d19-4e5a-b1fe-830ce2cc6061",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "7a1d81fe-13ee-420f-8736-7b90600d561f",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "10a9c49b-71eb-4525-ada1-d24cae3a430a",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "3ebde1e8-b6e1-47a7-8b14-e5bdb883a9ac",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "e2ab5fc1-6415-4923-bbf6-49302a846f70",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "6da94111-79ac-4de4-86f5-18501eb9cdc2",
 				"distance": "0.4",
 				"duration": "00:01:28",
-				"pace": "03:40",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "03:40"
 			},
 			{
 				"uuid": "de23d69a-ac95-4a5e-9a79-72086ec6ec8d",
 				"distance": 0.182,
 				"duration": "00:01:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			},
 			{
 				"uuid": "819aa65a-7708-47ea-8c1c-a102a467613c",
 				"distance": "2",
 				"duration": "00:11:00",
-				"pace": "05:30",
-				"isValid": true,
-				"trainingUuid": "a20f0d29-b4f7-4df4-a773-caf0b07d6bd6"
+				"pace": "05:30"
 			}
 		]
 	},
@@ -7726,9 +6371,7 @@
 				"uuid": "48",
 				"distance": "16",
 				"duration": "01:22:40",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "4cb25959-166d-465b-be36-ef22cf3c9668"
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7746,9 +6389,7 @@
 				"uuid": "b7e0dc92-150e-11e7-8d62-63ac0b0e2d07",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "98846b8d-9ed7-43a0-92c8-1702db1e8ad0"
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7766,9 +6407,7 @@
 				"uuid": "b6db05f2-150e-11e7-b2e0-57da2ba84448",
 				"distance": "13.5",
 				"duration": "01:09:45",
-				"pace": "05:10",
-				"isValid": true,
-				"trainingUuid": "98846b8d-9ed7-43a0-92c8-1702db1e8ad0"
+				"pace": "05:10"
 			}
 		],
 		"total": {
@@ -7783,28 +6422,22 @@
 		"type": "workout",
 		"segments": [
 			{
-				"trainingUuid": "abb7a7f2-40af-4415-8306-5ef6a414fa18",
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "15",
 				"duration": "01:11:15",
-				"pace": "04:45",
-				"isValid": true
+				"pace": "04:45"
 			},
 			{
 				"uuid": "91829934-9dd0-403d-ba33-a7ac859c24d0",
-				"trainingUuid": "abb7a7f2-40af-4415-8306-5ef6a414fa18",
 				"distance": "5",
 				"duration": "00:20:50",
-				"pace": "04:10",
-				"isValid": true
+				"pace": "04:10"
 			},
 			{
 				"uuid": "a138f930-d720-4f5a-b098-c9aecd833966",
-				"trainingUuid": "abb7a7f2-40af-4415-8306-5ef6a414fa18",
 				"distance": "5",
 				"duration": "00:20:00",
-				"pace": "04:00",
-				"isValid": true
+				"pace": "04:00"
 			}
 		]
 	}

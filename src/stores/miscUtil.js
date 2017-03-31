@@ -46,12 +46,18 @@ export function hasProperty(obj, propname) {
   return Object.prototype.hasOwnProperty.call(obj, propname);
 }
 
+/**
+ * Remove a property from an object
+ * @param {any} obj 
+ * @param {string} propname
+ */
 export function removeProperty(obj, propname) {
   const _obj = clone(obj);
   if (hasProperty(_obj, propname)) {
-    delete obj[propname];
+    delete _obj[propname];
   }
-  return obj;
+  console.log(`removeProperty concludes: ${JSON.stringify(_obj)}`);
+  return _obj;
 }
 
 const hasNothing = (value) =>

@@ -1,4 +1,4 @@
-import { clone, hasProperty } from "./miscUtil";
+import { clone, hasProperty, removeProperty } from "./miscUtil";
 import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
 
 /**
@@ -119,6 +119,13 @@ export function updateTrainingInstanceInDay(day, instance) {
  * @returns {Training|TrainingInstance} _training - with augmented segments
  */
 export function augmentTraining(training) {  
+  if (typeof training === "undefined" || training === null) {
+    console.error("augmentTraining received an undefined training");
+  }
+  if (typeof training.segments === "undefined" || training.segments === null) {
+    console.warn("augmentTraining received a training without segments");
+    return training;
+  }
   console.log(`augmentTraining 1 [${training.uuid}] segments: ${JSON.stringify(training.segments)}`);
 
   const _segments = training.segments.map(segment =>
@@ -140,3 +147,16 @@ const linkSegmentToTraining = (training, segment) => {
   // console.log(`linkSegmentToTraining ${JSON.stringify(_segment)}`);
   return _segment;
 };
+
+/**
+ * Strips a training of stuff it does not need for persisting
+ * @param {TrainingInstance} instance - full, verbose, annotated
+ * @returns {TrainingInstance} instance - stripped, clean, save-able
+ */
+export function cleanTraining(instance) {
+  let _segments = instance.segments.map(_segment => {
+    return removeProperty(removeProperty(removeProperty(_segment, "trainingUuid"), "isValid"), "obsolete");
+  });
+  instance.segments = _segments;
+  return instance;
+}

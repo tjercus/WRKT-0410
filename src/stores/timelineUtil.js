@@ -2,6 +2,7 @@
 import pureSwap from "pure-swap";
 import {
   findTraining,
+  cleanTraining,
 } from "./trainingUtil";
 import {
   makeTrainingTotal,
@@ -97,10 +98,7 @@ export function flattenDays(days) {
   const flattenedDays = [];
   _days.forEach((_day) => {
     const flattenedTrainings = [];
-    for (let i = 0, len = _day.trainings.length; i < len; i++) {
-      // TODO create function removeTrainingIds oid
-      let _segments = _day.trainings[i].segments.map(_segment => {removeProperty(_segment, "trainingId")});
-      _day.trainings[i].segments = _segments;
+    for (let i = 0, len = _day.trainings.length; i < len; i++) {      
       flattenedTrainings.push({ instanceId: _day.trainings[i].uuid });
     }
     flattenedDays.push({ uuid: _day.uuid, trainings: flattenedTrainings });
@@ -194,6 +192,15 @@ export function deleteDay(dayUuid, days) {
     _days.splice(index, 1);
   }
   return _days;
+}
+
+/**
+ * Clean a list of instances
+ * @param {Array<TrainingInstance>} instances - to be cleaned
+ * @returns {Array<TrainingInstance>} instances - cleaned for persistance
+ */
+export function cleanTrainingInstances(instances)  {  
+  return instances.map(_instance => {return cleanTraining(_instance)});  
 }
 
 /**

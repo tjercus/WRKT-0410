@@ -1,9 +1,11 @@
 import test from "tape";
+import { hasProperty } from "../src/stores/miscUtil";
 import {
   findTraining,  
   updateTraining,
   removeTrainingInstance,
   removeTrainingInstancesForDay,  
+  cleanTraining,
 } from "../src/stores/trainingUtil";
 
 /**
@@ -42,7 +44,7 @@ const segments = [
 ];
 
 test("findTraining should find a training by uuid", (assert) => {  
-  let training = findTraining("blah-11", trainings);  
+  let training = findTraining("blah-11", trainings);
   assert.equal(true, (typeof training === "object"));
   assert.equal(training.uuid, "blah-11");
   assert.equal(training.name, "name11");
@@ -79,5 +81,22 @@ test("removeTrainingInstance should not delete when day is not found", (assert) 
   assert.equal(trainings.length, 3, "initial size of list");
   const trainingInstances = removeTrainingInstance("123-not-exists-456", trainings);
   assert.equal(trainingInstances.length, 3, "nothing should be removed");
+  assert.end();
+});
+
+test("cleanTraining should remove trainingUuid property", (assert) => {  
+  let training = findTraining("blah-10", trainings);
+  training.segments = [];
+  training.segments.push({
+    uuid: "seg-10",
+    trainingUuid: "blah-10",
+    distance: 12,
+    duration: "01:00:00",
+    pace: "05:00",    
+  });
+  const cleanedTraining = cleanTraining(training);
+  assert.equal(cleanedTraining.segments[0].uuid, "seg-10");
+  assert.false(hasProperty(cleanedTraining, "trainingUuid"));
+
   assert.end();
 });

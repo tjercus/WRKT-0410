@@ -6,6 +6,7 @@ import {
   moveDay,
   cloneDay,
   deleteDay,
+  cleanTrainingInstances
 } from "./timelineUtil";
 import { EventsEnum as ee } from "../constants";
 import { removeTrainingInstancesForDay, updateTraining, NotFoundException} from "./trainingUtil";
@@ -39,7 +40,7 @@ export default class TimelineStore {
         throw new Error("PLAN_FETCH_EVT has no array with a plan and instances in it");
       }
       const plan = planAndTraininginstances[0];
-      if (!Object.prototype.hasOwnProperty.call(plan, "uuid")) {
+      if (!hasProperty(plan, "uuid")) {
         throw new Error("PLAN_FETCH_EVT did not receive a proper day");
       }
       const traininginstances = planAndTraininginstances[1];
@@ -59,7 +60,7 @@ export default class TimelineStore {
         days: flattenDays(this.plan.days),
         startDate: this.plan.startDate,
       };
-      eventbus.emit(ee.PLAN_AND_INSTANCES_PERSIST_CMD, persistablePlan, this.traininginstances);
+      eventbus.emit(ee.PLAN_AND_INSTANCES_PERSIST_CMD, persistablePlan, cleanTrainingInstances(this.traininginstances));
     });
 
     // thrown by DayStore

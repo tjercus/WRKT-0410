@@ -184,7 +184,7 @@ test("cloneDay should clone a day if it is augmented", (assert) => {
   const day = augmentedDays[0];
   const cloner = cloneDay(day);
   assert.notEqual(cloner.uuid, day.uuid, "clone should have it's own uuid");
-  assert.notEqual(cloner.trainings[0].uuid, day.trainings[0].uuid, "clones training should have its own uuid");
+  assert.notEqual(cloner.trainings[0].uuid, day.trainings[0].uuid, "clones training should have its oswn uuid");
   assert.equal(cloner.trainings[0].name, day.trainings[0].name, "clones training should have same name");
   assert.end();
 });
@@ -222,5 +222,15 @@ test("moveDay should move a day later when a position integer is provided", (ass
   const days = moveDay(1, augmentedDays, 1);
   assert.equal(days[0].uuid, "2", "originally first day should be at position two");
   assert.equal(days[1].uuid, "1", "originally second day should be at position one");
+  assert.end();
+});
+
+test("cleanTrainingInstances should remove trainingUuids from segments in a list of traininginstances", (assert) => {
+  const cleanedInstances = cleanTrainingInstances(plan.days[6], trainingInstances);
+  assert.ok(typeof day === "object");
+  assert.notOk(day === null);
+  assert.equal(day.trainings[0].name, "name-16");
+  assert.equal(day.trainings[1].name, "name-19");
+  assert.equal(day.trainings.length, 2, "not enough trainings (" + day.trainings.length + ") where found");
   assert.end();
 });
