@@ -9,8 +9,8 @@ Based on 'React eventemitter'.
 
 ## tests
  1. npm install -g babel-tape-runner faucet tape-watch
- 2. babel-tape-runner src/*-spec.js | faucet
- 3. tape-watch -r babel-register src/*-spec.js | faucet
+ 2. babel-tape-runner src/**/*-spec.js | faucet
+ 3. tape-watch -r babel-register src/**/*-spec.js | faucet
 
 ## TODOS
 
@@ -18,7 +18,6 @@ Based on 'React eventemitter'.
 - replace class with factory (exception for React.Class)
 - Use Immutable.Record for all datatypes (Training, Segment, Total ...)
 - Create a script that lists all eventbus subscriptions and emits per source file
-- Move propTypes to static class property above constructor
 - Progressive web application support
 - Try out react-material in a branch
 - Use TypeError instead of Error for checking parameters
