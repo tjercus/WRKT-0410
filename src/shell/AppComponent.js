@@ -10,7 +10,7 @@ import NotificationComponent from "../shell/NotificationComponent";
 import PlanListComponent from "../plan/PlanListComponent";
 
 import TrainingStore from "../training/TrainingStore";
-import DayStore from "../day/DayStore";
+import dayStore from "../day/dayStore";
 import TimelineStore from "../plan/TimelineStore";
 import { clone, hasProperty } from "../shell/objectUtil";
 import packageJSON from "../../package.json";
@@ -36,7 +36,7 @@ export default class AppComponent extends React.Component {
     }
 
     // initially will receive data as empty TODO remove props so all data comes from eventbus
-    new DayStore(this.eventbus);
+    dayStore(this.eventbus);
     new TrainingStore(this.eventbus, clone(trainings));
     new TimelineStore(this.eventbus);
 

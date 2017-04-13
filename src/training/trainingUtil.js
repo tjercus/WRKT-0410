@@ -1,6 +1,3 @@
-import { clone, hasProperty, removeProperty } from "../shell/objectUtil";
-import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
-
 /**
  * @typedef {Object} Training
  * @property {string} uuid
@@ -9,6 +6,8 @@ import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
  * @property {Total} total
  * @alias TrainingInstance
  */
+import {clone, createUuid, hasProperty, removeProperty} from "../shell/objectUtil";
+import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
 
 export function NotFoundException(msg) {
   function toString() {
@@ -94,6 +93,20 @@ export function removeTrainingInstancesForDay(day, traininginstances) {
     _traininginstances = removeTrainingInstance(day.training.instanceId, clone(traininginstances));
   }
   return _traininginstances;
+}
+
+/**
+ * @param {Day} day - to be changed
+ * @param {TrainingInstance} instance - trainingInstance
+ * @returns {Day} day - modified
+ */
+export function addTrainingInstanceToDay(day, instance) {
+  const _instance = clone(instance);
+  // _instance.uuid = createUuid();
+  const _trainings = clone(day.trainings);
+  _trainings.push(_instance);
+  day.trainings = _trainings;
+  return day;
 }
 
 /**
