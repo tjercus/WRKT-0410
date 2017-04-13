@@ -9,13 +9,13 @@ Based on 'React eventemitter'.
 
 ## tests
  1. npm install -g babel-tape-runner faucet tape-watch
- 2. babel-tape-runner test/*-spec.js | faucet
- 3. tape-watch -r babel-register test/*-spec.js | faucet
+ 2. babel-tape-runner src/*-spec.js | faucet
+ 3. tape-watch -r babel-register src/*-spec.js | faucet
 
 ## TODOS
 
 ### App
-- Use horizontal packaging/modulestructure (training, segment, timeline, day)
+- replace class with factory (exception for React.Class)
 - Use Immutable.Record for all datatypes (Training, Segment, Total ...)
 - Create a script that lists all eventbus subscriptions and emits per source file
 - Move propTypes to static class property above constructor

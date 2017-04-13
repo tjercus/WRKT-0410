@@ -12,8 +12,8 @@
     "watch": "gulp watch",
     "build": "gulp build",
     "deploy": "gulp deploy",
-    "test": "babel-tape-runner test/*-spec.js | faucet",
-    "test-e2e": "casperjs test test/e2e/*-spec.js",
+    "test": "babel-tape-runner src/**/*-spec.js | faucet",
+    "test-e2e": "casperjs test src/**/*-e2e.spec.js",
     "lint": "./node_modules/.bin/eslint ./src || exit 0",
     "server": "node rest-api.js"
   },
