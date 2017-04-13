@@ -10,7 +10,7 @@ import {
 } from "./timelineUtil";
 import { EventsEnum as ee } from "../constants";
 import { removeTrainingInstancesForDay, updateTraining, NotFoundException} from "./trainingUtil";
-import { clone, createUuid, hasProperty } from "./miscUtil";
+import { clone, createUuid, hasProperty } from "./objectUtil";
 
 /**
  * Supports the 'Timeline' aka the 'Default plan', currently only one plan is

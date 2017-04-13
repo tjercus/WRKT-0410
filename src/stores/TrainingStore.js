@@ -8,13 +8,14 @@ import {
   removeSegment,
   augmentSegmentData,
   updateSegment,
-  makeTrainingTotal, findSegment
+  makeTrainingTotal,
+  findSegment
 } from "./segmentUtil";
 import {
   createUuid,
   clone,
   hasProperty,
-} from "./miscUtil";
+} from "./objectUtil";
 import {EventsEnum as ee} from "../constants";
 
 /**

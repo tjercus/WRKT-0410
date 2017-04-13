@@ -2,7 +2,7 @@ import React from "react";
 import EventEmitter from "eventemitter4";
 import {EventsEnum as ee} from "../constants";
 
-import { createUuid } from "../stores/miscUtil";
+import { createUuid } from "../stores/objectUtil";
 
 export default class PlanEditComponent extends React.Component {
 

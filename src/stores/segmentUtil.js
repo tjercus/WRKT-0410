@@ -5,7 +5,7 @@ import {
   hasNoRealValue,
   lpad,
   hasProperty,
-} from "./miscUtil";
+} from "./objectUtil";
 
 /**
  * @typedef {Object} Segment

@@ -2,7 +2,7 @@ import React from "react";
 import EventEmitter from "eventemitter4";
 import SegmentComponent from "./SegmentComponent";
 import { EventsEnum as ee, TRAINING_SHAPE, DEFAULT_TOTAL, DEFAULT_TRAINING } from "../constants";
-import { createUuid } from "../stores/miscUtil";
+import { createUuid } from "../stores/objectUtil";
 
 /**
  * Is used in DayEditComponent to display segments and totals for an instance

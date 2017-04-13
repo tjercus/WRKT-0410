@@ -7,7 +7,7 @@ import {
   updateSegment,
   makeTrainingTotal,
 } from "./segmentUtil";
-import {clone, hasProperty, createUuid} from "./miscUtil";
+import {clone, hasProperty, createUuid} from "./objectUtil";
 
 /**
  * Holds data for editing a day

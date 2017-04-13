@@ -1,7 +1,7 @@
 import React from "react";
 import EventEmitter from "eventemitter4";
 import {canAugment, isValidSegment, parseDuration, augmentSegmentData} from "../stores/segmentUtil";
-import {createUuid, clone, hasProperty} from "../stores/miscUtil";
+import {createUuid, clone, hasProperty} from "../stores/objectUtil";
 import {EventsEnum as ee} from "../constants";
 
 let isMounted = false;

@@ -26,7 +26,7 @@ Based on 'React eventemitter'.
 - Use webworkers, if possible, for paralel computing like augmentsegmentdata and calculate totals, see: https://github.com/substack/webworkify
 - Use a round iconset (see 'movescount') or perhaps a flat one (see google icons)
 - Replace 'for loops' by higher order function calls
-- Refactor removeX(uuid, array) functions into one generic in miscUtils
+- Refactor removeX(uuid, array) functions into one generic in objectUtil/arrayUtil
 - React components should always use a callback when doing stuff after setState
 - functional testing with nightowl or cypress
 - Introduce Flow for type checking

@@ -1,5 +1,5 @@
 import test from "tape";
-import { hasProperty } from "../src/stores/miscUtil";
+import { hasProperty } from "../src/stores/objectUtil";
 import {
   findTraining,  
   updateTraining,

@@ -1,4 +1,4 @@
-import { clone, hasProperty, removeProperty } from "./miscUtil";
+import { clone, hasProperty, removeProperty } from "./objectUtil";
 import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
 
 /**

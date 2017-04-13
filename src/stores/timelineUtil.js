@@ -12,7 +12,7 @@ import {
   createUuid,
   hasProperty,
   removeProperty,
-} from "./miscUtil";
+} from "./objectUtil";
 
 /**
  * @typedef {Object} Plan
