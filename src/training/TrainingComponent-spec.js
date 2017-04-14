@@ -147,6 +147,7 @@ test("TrainingComponent should emit a TRAINING_TO_PLAN_CMD", (assert) => {
   emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
+  // assert.equals("wobble", component.html());
   component.find("button[value='add-to-plan']").simulate("click");
   assert.ok(emitSpy.calledWith("TRAINING_TO_PLAN_CMD"), "component should emit TRAINING_TO_PLAN_CMD");
   assert.end();

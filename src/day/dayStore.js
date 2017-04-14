@@ -1,3 +1,6 @@
+/**
+ * Holds data for editing a day
+*/
 import { updateTrainingInstanceInDay, addTrainingInstanceToDay, augmentTrainingNotFoundException } from "../training/trainingUtil";
 import { EventsEnum as ee, DEFAULT_TRAINING } from "../shell/constants";
 import {
@@ -5,15 +8,12 @@ import {
   removeSegment,
   augmentSegmentData,
   updateSegment,
-  makeTrainingTotal,
+  makeTrainingTotal, findSegment,
 } from "../training/segmentUtil";
 import { clone, hasProperty, createUuid } from "../shell/objectUtil";
 
 let day = {};
 
-/**
- * Holds data for editing a day
-*/
 const dayStore = eventbus => {
 
   eventbus.on(ee.DAY_LOAD_CMD, (_day, date) => {
@@ -61,7 +61,10 @@ const dayStore = eventbus => {
   // });
 
   eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
-    getSegment(segmentUuid, day.trainings);
+    const segment = findSegment(segmentUuid, day.trainings.filter(training => training.segments));
+    if (segment) {
+      eventbus.emit(ee.SEGMENT_GET_EVT, segment);
+    }
   });
 
   // TODO decide if this logic should be here ...
@@ -79,28 +82,6 @@ const dayStore = eventbus => {
   eventbus.on(ee.SEGMENT_CLONE_CMD, segment => {
     addSegmentToStore(segment, true);
   });
-
-  // TODO replace this with better code
-  const getSegment = (segmentUuid, trainings) => {
-    if (
-      !Array.isArray(trainings) || trainings.length === 0 || !hasProperty(trainings[0], "segments")
-    ) {
-      console.log("DayStore.getSegment has a problem with trainings");
-      return;
-    }
-    let _segments = trainings[0].segments;
-
-    if (trainings[1]) {
-      _segments = _segments.concat(trainings[1].segments);
-    }
-    console.log(`DayStore.getSegment segments: ${JSON.stringify(_segments)}`);
-    const isSeg = _segment => String(_segment.uuid) === String(segmentUuid);
-    const index = _segments.findIndex(isSeg);
-    // TODO add trainingUuid to found segment
-    if (index !== -1 && index > -1) {
-      eventbus.emit(ee.SEGMENT_GET_EVT, _segments[index]);
-    }
-  };
 
   /**
    * Update given segment in list of segments

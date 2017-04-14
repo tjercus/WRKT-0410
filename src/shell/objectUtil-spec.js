@@ -136,7 +136,8 @@ test("removeProperty happyflow", (assert) => {
     "name": "wobble",
   };
   const newObj = removeProperty(obj, "uuid");
-  assert.equal(JSON.stringify(obj), '{"name":"wobble"}');
+  assert.equal(JSON.stringify(obj), '{"uuid":"98456fgjdkj","name":"wobble"}');
+  assert.equal(JSON.stringify(newObj), '{"name":"wobble"}');
   assert.equal(hasProperty(newObj, "uuid"), false, "should remove a property");
   assert.equal(hasProperty(newObj, "name"), true, "should not remove another property");
   assert.end();

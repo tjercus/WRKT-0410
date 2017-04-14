@@ -1,3 +1,6 @@
+/**
+ * @Tests for {@link TimelineStore.js}
+ */
 import test from "tape";
 import {
   findPlan,
@@ -7,13 +10,11 @@ import {
   augmentDay,
   cloneDay,
   deleteDay,
-  moveDay
+  moveDay, cleanTrainingInstances
 }
-from "./timelineUtil";
+  from "./timelineUtil";
+import {hasProperty} from "../shell/objectUtil";
 
-/**
- * @Tests for {@link TimelineStore.js}
- */
 let plan = {
   "uuid": "91556686-232b-11e6-8b5a-5bcc30180900",
   "name": "10k plan #1",
@@ -40,7 +41,7 @@ let trainingInstances = [{
   "name": "name10",
   "type": "workout",
   "segments": [
-    { "uuid": "99", "distance": 2.000, "duration": "00:11:00" },
+    { "uuid": "99", "distance": 2.000, "duration": "00:11:00", trainingUuid: "blah-10" },
     { "uuid": "100", "distance": 1.600, "pace": "@10KP" }
   ]
 }, {
@@ -226,11 +227,10 @@ test("moveDay should move a day later when a position integer is provided", (ass
 });
 
 test("cleanTrainingInstances should remove trainingUuids from segments in a list of traininginstances", (assert) => {
-  const cleanedInstances = cleanTrainingInstances(plan.days[6], trainingInstances);
-  assert.ok(typeof day === "object");
-  assert.notOk(day === null);
-  assert.equal(day.trainings[0].name, "name-16");
-  assert.equal(day.trainings[1].name, "name-19");
-  assert.equal(day.trainings.length, 2, "not enough trainings (" + day.trainings.length + ") where found");
+  const cleanedInstances = cleanTrainingInstances(trainingInstances);
+  assert.ok(typeof cleanedInstances === "object");
+  assert.notOk(cleanedInstances === null);
+  assert.notOk(hasProperty(trainingInstances[0].segments[0], "trainingUuid"));
+
   assert.end();
 });

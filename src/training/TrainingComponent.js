@@ -152,7 +152,7 @@ export default class TrainingComponent extends React.Component {
       segments: obj.segments,
       total: obj.total
     }
-  }
+  };
 
   render() {
     let panelClassName = "panel";
@@ -226,9 +226,9 @@ export default class TrainingComponent extends React.Component {
             </menu>
             <menu>
               <button onClick={this.emitAddToBeginOfPlan} value="add-to-plan" className="button-flat">add to begin of plan</button>
-              <button onClick={this.emitAddToMiddleOfPlan} value="add-to-plan" className="button-flat">add to middle of plan</button>
-              <button onClick={this.emitAddToPlan} value="add-to-plan" className="button-flat">add to end of plan</button>
-              <button onClick={this.emitAddToSelectedWeekOfPlan} value="add-to-plan" className="button-flat">add to selected week</button>
+              <button onClick={this.emitAddToMiddleOfPlan} value="add-to-middle-plan" className="button-flat">add to middle of plan</button>
+              <button onClick={this.emitAddToPlan} value="add-to-end-plan" className="button-flat">add to end of plan</button>
+              <button onClick={this.emitAddToSelectedWeekOfPlan} value="add-to-selected" className="button-flat">add to selected week</button>
             </menu>
             <menu>
               <button onClick={this.exportTraining} className="button-flat">export training</button>
