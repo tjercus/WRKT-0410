@@ -11,7 +11,7 @@ import PlanListComponent from "../plan/PlanListComponent";
 
 import TrainingStore from "../training/TrainingStore";
 import dayStore from "../day/dayStore";
-import TimelineStore from "../plan/TimelineStore";
+import timelineStore from "../plan/timelineStore";
 import { clone, hasProperty } from "../shell/objectUtil";
 import packageJSON from "../../package.json";
 import RemoteDataService from "../shell/RemoteDataService";
@@ -38,7 +38,7 @@ export default class AppComponent extends React.Component {
     // initially will receive data as empty TODO remove props so all data comes from eventbus
     dayStore(this.eventbus);
     new TrainingStore(this.eventbus, clone(trainings));
-    new TimelineStore(this.eventbus);
+    timelineStore(this.eventbus);
 
     new RemoteDataService(this.eventbus);
   }

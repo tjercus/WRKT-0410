@@ -1,7 +1,10 @@
 /**
  * Holds data for editing a day
 */
-import { updateTrainingInstanceInDay, addTrainingInstanceToDay, augmentTrainingNotFoundException } from "../training/trainingUtil";
+import {
+  updateTrainingInstanceInDay, addTrainingInstanceToDay, augmentTrainingNotFoundException,
+  NotFoundException
+} from "../training/trainingUtil";
 import { EventsEnum as ee, DEFAULT_TRAINING } from "../shell/constants";
 import {
   addSegment,
@@ -18,6 +21,9 @@ const dayStore = eventbus => {
 
   eventbus.on(ee.DAY_LOAD_CMD, (_day, date) => {
     day = {..._day};
+    console.log("---------------------");
+    console.log(day);
+    console.log("---------------------");
     // day = Object.assign({}, _day);
     console.log(`DayStore caught DAY_LOAD_CMD and loads day [${day.uuid}] locally`);
     eventbus.emit(ee.DAY_LOAD_EVT, day, date);
@@ -61,9 +67,13 @@ const dayStore = eventbus => {
   // });
 
   eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
-    const segment = findSegment(segmentUuid, day.trainings.filter(training => training.segments));
-    if (segment) {
-      eventbus.emit(ee.SEGMENT_GET_EVT, segment);
+    if (typeof day !== "undefined" && day !== null && hasProperty(day, "trainings")) {
+      const segment = findSegment(segmentUuid, day.trainings.filter(training => training.segments));
+      if (segment) {
+        eventbus.emit(ee.SEGMENT_GET_EVT, segment);
+      }
+    } else {
+      console.warn("dayStore SEGMENT_GET_CMD without loaded day");
     }
   });
 

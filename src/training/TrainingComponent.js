@@ -60,17 +60,17 @@ export default class TrainingComponent extends React.Component {
     this.setState(this.makeTraining(training), () => {
       console.log(`TrainingComponent loadTraining setSate as: ${JSON.stringify(this.state)}`);
     });
-  }
+  };
 
   // TODO unit test this!
   addEmptySegment = () => {
     this.props.eventbus.emit(ee.SEGMENT_ADD_CMD,
       Object.assign({}, DEFAULT_TOTAL, {trainingUuid: this.state.uuid}));
-  }
+  };
 
   emitPersistChanges = () => {
     this.props.eventbus.emit(ee.TRAININGS_PERSIST_CMD, null);
-  }
+  };
 
   exportTraining = () => {
     console.log(JSON.stringify({
@@ -79,35 +79,35 @@ export default class TrainingComponent extends React.Component {
       type: this.state.type,
       segments: this.state.segments
     }));
-  }
+  };
 
   emitClearTraining = () => {
     this.props.eventbus.emit(ee.TRAINING_CLEAR_CMD, this.state.uuid);
-  }
+  };
 
   onEditNameButtonClick = (evt) => {
     //const inverseState =
     this.setState({ isNameEditable: !this.state.isNameEditable });
-  }
+  };
 
   onNameChange = (evt) => {
     this.setState({ name: evt.target.value });
-  }
+  };
 
   onNameBlur = (evt) => {
     console.log(`onNameBlur ${this.state.name}`);
     this.props.eventbus.emit(ee.TRAINING_UPDATE_CMD, this.makeTraining(this.state));
-  }
+  };
 
   cloneTraining = () => {
     // TODO custom alert
     console.log("Training cloned and selected");
     this.props.eventbus.emit(ee.TRAINING_CLONE_CMD);
-  }
+  };
 
   removeTraining = () => {
     this.props.eventbus.emit(ee.TRAINING_REMOVE_CMD);
-  }
+  };
 
   emitAddToBeginOfPlan = () => {
     console.log("TrainingComponent.emitAddToBeginOfPlan TRAINING_TO_PLAN_CMD with zero");
