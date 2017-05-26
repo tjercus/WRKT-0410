@@ -544,7 +544,7 @@ test("updateSegment should update a segment", (assert) => {
   assert.end();
 });
 
-test("findSegment should find a segment", (assert) => {
+test.only("findSegment should find a segment", (assert) => {
   const segment = {
     uuid: "88888",
     pace: "44:44"
@@ -553,7 +553,6 @@ test("findSegment should find a segment", (assert) => {
     uuid: "99999",
     pace: "55:55"
   };
-  assert.equal(segments.length, 10, "initially there should be 10 segments");
   const foundSegment = findSegment(segment.uuid, [segment, segment2]);
   assert.equal(foundSegment.uuid, "88888", "finding a segment by id from a collection");
   assert.end();

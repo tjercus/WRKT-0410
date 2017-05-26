@@ -69,8 +69,17 @@ const dayStore = eventbus => {
   eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
     console.info("dayStore SEGMENT_GET_CMD looking for segment in store ...");
     if (typeof day !== "undefined" && day !== null && hasProperty(day, "trainings")) {
-      const segment = findSegment(segmentUuid, day.trainings.filter(training => training.segments));
-      if (segment) {
+      // TODO solve more elegantly
+      // const segment = findSegment(segmentUuid, day.trainings.map(_training => {return _training.segments}));
+      const acc = [];
+      day.trainings.forEach(_training => {
+        _training.segments.forEach(_segment => {
+          acc.push(_segment);
+        });
+      });
+      const segment = findSegment(segmentUuid, acc);
+
+      if (segment !== null) {
         console.info("dayStore SEGMENT_GET_CMD found segment, emitting it!");
         eventbus.emit(ee.SEGMENT_GET_EVT, segment);
       } else {
