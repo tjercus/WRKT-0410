@@ -1,11 +1,4 @@
-/**
- * @typedef {Object} Training
- * @property {string} uuid
- * @property {string} type
- * @segments {Array<Segment>} segments
- * @property {Total} total
- * @alias TrainingInstance
- */
+
 import {clone, createUuid, hasProperty, removeProperty} from "../shell/objectUtil";
 import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
 
@@ -58,8 +51,8 @@ export function updateTraining(training, trainings) {
 /**
  * Remove a training from a list of TrainingInstances
  * @param  {string} uuid - id
- * @param  {Array<TrainingInstances>} instances - the collection to search
- * @return  {Array<TrainingInstances>} instances - the updated collection
+ * @param  {Array<TrainingInstance>} instances - the collection to search
+ * @return  {Array<TrainingInstance>} instances - the updated collection
  */
 export function removeTrainingInstance(uuid, instances) {
   const _instances = clone(instances);

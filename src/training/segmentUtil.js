@@ -8,22 +8,6 @@ import {
 import { lpad } from "./numberUtil"
 
 /**
- * @typedef {Object} Segment
- * @property {string} uuid
- * @property {string} trainingUuid - the parent object
- * @property {number} distance
- * @property {string} duration
- * @property {string} pace
- */
-
-/**
- * @typedef {Object} Total
- * @property {number} distance
- * @property {string} duration
- * @property {string} pace
- */
-
-/**
  * Remove a segment from a list
  * @param  {Segment} segment - object
  * @param  {Array<Segment>} segments - list

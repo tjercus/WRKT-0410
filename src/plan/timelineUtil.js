@@ -15,20 +15,6 @@ import {
 } from "../shell/objectUtil";
 
 /**
- * @typedef {Object} Plan
- * @property {string} uuid
- * @property {string} name
- * @property {Array<Day>} days
- * @property {string} startDate
- */
-
-/**
- * @typedef {Object} Day
- * @property {string} uuid
- * @property {Array<Training>} trainings
- */
-
-/**
  * Find a day in a list of days for a plan, augment the trainings in the day
  * @param  {string} dayUuid - identifier
  * @param  {Plan} plan - contains days

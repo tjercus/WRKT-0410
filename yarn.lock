@@ -7063,11 +7063,7 @@ underscore@1.7.x:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.7.0.tgz#6bbaf0877500d36be34ecaa584e0db9fef035209"
 
-underscore@1.x.x:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
-
-underscore@jashkenas/underscore:
+underscore@1.x.x, underscore@jashkenas/underscore:
   version "1.8.3"
   resolved "https://codeload.github.com/jashkenas/underscore/tar.gz/d4f52aa6966b096512d57ee553b3d9355cc5b49e"
 
