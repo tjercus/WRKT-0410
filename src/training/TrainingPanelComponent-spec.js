@@ -16,7 +16,7 @@ const onSpy = sinon.spy(eventbus, "on");
 test("TrainingPanelComponent should initially render with an info message", (assert) => {
   let eventbus = sinon.spy();
   const component = shallow(<TrainingPanelComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
-  assert.equal(component.find("div").text(), "Please choose a training from the left-hand list");
+  assert.equal(component.find("TrainingComponent").length, 1);
   assert.end();
 });
 

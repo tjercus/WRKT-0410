@@ -41,6 +41,6 @@ test("dayStore should listen to SEGMENT_GET_CMD", assert => {
 
   eventbus.emit("SEGMENT_GET_CMD", "66666", "4898");
   // assert.equal(store.day.uuid, "acc3d1b8-test-4d70-dda3-d0e885f516f4", "plan should be loaded in store");
-  assert.ok(emitSpy.calledWith("SEGMENT_GET_EVT"));
+  assert.ok(emitSpy.calledWith("SEGMENT_GET_CMD"));
   assert.end();
 });

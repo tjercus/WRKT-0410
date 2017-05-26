@@ -29,7 +29,7 @@ export function findDay(dayUuid, plan, trainings = []) {
   const byUuid = (_day) => String(_day.uuid) === String(dayUuid);
   const index = _days.findIndex(byUuid);
   if (index < 0) {
-    throw new Error(`findDay could not find day with ${dayUuid} ${JSON.stringify(_days)}`);
+    throw new Error(`findDay could not find day with ${dayUuid}`);
   } else {
     console.log(`timelineUtil.findDay index ${index}`);
   }

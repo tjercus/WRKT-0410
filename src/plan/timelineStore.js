@@ -27,7 +27,7 @@ let selectedWeekNr = 0;
  * TODO perhaps rename to 'Plan(s)Store'
  */
 /**
- * @param {EventEmitter} eventbus - decoupling
+ * @param {EventEmitter|Emitter} eventbus - decoupling
  */
 const timelineStore = eventbus => {
 
@@ -119,12 +119,12 @@ const timelineStore = eventbus => {
   });
 
   eventbus.on(ee.TRAINING_CLONE_AS_INSTANCE_CMD, (training, position) => {
-    if (!hasProperty(this, "plan")) {
-      throw new Error("Cloning a day before a plan was loaded in TimelineStore");
-    }
-    if (!hasProperty(plan, "days")) {
-      throw new Error("Cloning a day before days are loaded in TimelineStore");
-    }
+    // if (!hasProperty(this, "plan")) {
+    //   throw new Error("Cloning a day before a plan was loaded in TimelineStore");
+    // }
+    // if (!hasProperty(plan, "days")) {
+    //   throw new Error("Cloning a day before days are loaded in TimelineStore");
+    // }
     const _training = clone(training);
     const newInstanceUuid = createUuid();
     _training.uuid = newInstanceUuid;
@@ -158,6 +158,8 @@ const timelineStore = eventbus => {
       plan.days.splice(position, 0, augmentedDay);
     }
   }
+
+  return this;
 };
 
 export default timelineStore;

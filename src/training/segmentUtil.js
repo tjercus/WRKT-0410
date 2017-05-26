@@ -50,6 +50,7 @@ export function addSegment(segment, segments, overwriteUuid = false) {
  * @returns {Segment|null} found segment or null
  */
 export function findSegment(uuid, segments) {
+  console.log(`findSegment ${uuid}`, JSON.stringify(segments));
   const _segments = clone(segments);
   const isSeg = _segment => String(_segment.uuid) === String(uuid);
   return _segments[_segments.findIndex(isSeg)];

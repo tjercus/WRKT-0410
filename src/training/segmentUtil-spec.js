@@ -9,6 +9,7 @@ import {
   removeSegment,
   addSegment,
   updateSegment,
+  findSegment
 } from "./segmentUtil";
 
 /**
@@ -540,5 +541,20 @@ test("updateSegment should update a segment", (assert) => {
   assert.equal(segments.length, 10, "updating should not increase the original list");
   assert.equal(newSegments.length, 10, "updating should not increase the returned list");
   assert.equal(newSegments[2].toString(), segment.toString(), "segment should be overwritten");
+  assert.end();
+});
+
+test("findSegment should find a segment", (assert) => {
+  const segment = {
+    uuid: "88888",
+    pace: "44:44"
+  };
+  const segment2 = {
+    uuid: "99999",
+    pace: "55:55"
+  };
+  assert.equal(segments.length, 10, "initially there should be 10 segments");
+  const foundSegment = findSegment(segment.uuid, [segment, segment2]);
+  assert.equal(foundSegment.uuid, "88888", "finding a segment by id from a collection");
   assert.end();
 });

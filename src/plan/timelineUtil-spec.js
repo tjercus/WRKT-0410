@@ -140,7 +140,7 @@ test("findDay should find a day by nr", (assert) => {
 
 test("findDay should throw Error when a day could not be found by nr", (assert) => {
   try {
-    findDay(999999, plan, trainingInstances);
+    findDay("999999", plan, trainingInstances);
   } catch (error) {
     assert.equal(error.message, "findDay could not find day with 999999");
   }

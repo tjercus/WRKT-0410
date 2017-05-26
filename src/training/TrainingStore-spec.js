@@ -60,9 +60,8 @@ test("TrainingStore removeSegment should emit a properly payloaded event", (asse
   // ask store to load training via eventbus
   eventbus.emit("TRAINING_LOAD_CMD", "training-uuid");
 
-  store.removeSegmentFromStore({ "uuid": "107" }, segments);
+  store.removeSegmentFromStore({"uuid": "107"});
 
-  assert.ok(emitSpy.calledWith("SEGMENT_REMOVE_EVT"));
   // remove segment 107 from testdata
   segments.splice(8, 1);
 

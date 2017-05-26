@@ -67,10 +67,14 @@ const dayStore = eventbus => {
   // });
 
   eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
+    console.info("dayStore SEGMENT_GET_CMD looking for segment in store ...");
     if (typeof day !== "undefined" && day !== null && hasProperty(day, "trainings")) {
       const segment = findSegment(segmentUuid, day.trainings.filter(training => training.segments));
       if (segment) {
+        console.info("dayStore SEGMENT_GET_CMD found segment, emitting it!");
         eventbus.emit(ee.SEGMENT_GET_EVT, segment);
+      } else {
+        console.warn("dayStore SEGMENT_GET_CMD could not find segment");
       }
     } else {
       console.warn("dayStore SEGMENT_GET_CMD without loaded day");

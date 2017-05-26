@@ -34,6 +34,8 @@ export default class SegmentComponent extends React.Component {
         this.props.eventbus.emit(ee.SEGMENT_GET_CMD, this.props.uuid, this.props.trainingUuid);
       }
     });
+
+    this.props.eventbus.emit(ee.SEGMENT_GET_CMD, this.props.uuid, this.props.trainingUuid);
   }
 
   shouldComponentUpdate() {
@@ -91,7 +93,7 @@ export default class SegmentComponent extends React.Component {
           _segment.pace = val;
         break;
       }
-      if (_segment.uuid == null) {
+      if (_segment.uuid === null) {
         console.info(`SegmentComponent.onChange uuid was null, setting a new one as ${_segment.uuid}`);
         _segment.uuid = createUuid();
       }
