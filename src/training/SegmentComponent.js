@@ -59,7 +59,9 @@ export default class SegmentComponent extends React.Component {
    */
   onIncomingSegment = (data) => {
     console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment: raw data ${JSON.stringify(data)}`);
-    let _segment = {};
+    let _segment = {
+      uuid: null
+    };
     if (hasProperty(data, "segment")) {
       _segment = data.segment;
     } else {
@@ -73,7 +75,7 @@ export default class SegmentComponent extends React.Component {
         this.setState({segment: _segment});
       }
     } else {
-      // console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment NOT responding to event for [${_segment.uuid}]`);
+      console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment NOT responding to event for [${_segment.uuid}]`);
     }
   };
 

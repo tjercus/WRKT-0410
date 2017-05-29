@@ -80,7 +80,7 @@ const dayStore = eventbus => {
       const segment = findSegment(segmentUuid, acc);
 
       if (segment !== null) {
-        console.info("dayStore SEGMENT_GET_CMD found segment, emitting it!");
+        console.info("dayStore SEGMENT_GET_CMD found segment, emitting it as SEGMENT_GET_EVT!");
         eventbus.emit(ee.SEGMENT_GET_EVT, segment);
       } else {
         console.warn("dayStore SEGMENT_GET_CMD could not find segment");
