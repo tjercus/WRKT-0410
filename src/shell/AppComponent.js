@@ -14,7 +14,7 @@ import dayStore from "../day/dayStore";
 import timelineStore from "../plan/timelineStore";
 import {clone, hasProperty} from "../shell/objectUtil";
 import packageJSON from "../../package.json";
-import RemoteDataService from "../shell/RemoteDataService";
+import remoteDataService from "./remoteDataService";
 
 import {EventsEnum as ee} from "./constants";
 
@@ -39,8 +39,7 @@ export default class AppComponent extends React.Component {
     dayStore(this.eventbus);
     trainingStore(this.eventbus);
     timelineStore(this.eventbus);
-
-    new RemoteDataService(this.eventbus);
+    remoteDataService(this.eventbus);
   }
 
   componentDidMount() {

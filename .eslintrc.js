@@ -6,6 +6,7 @@ module.exports = {
    "import"
   ],
   rules: {
+    "object-curly-spaces": 0,
     "arrow-parens": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "quotes": [1, "double"], // specify whether double or single quotes should be used

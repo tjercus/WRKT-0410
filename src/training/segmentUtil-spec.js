@@ -1,10 +1,10 @@
 import test from "tape";
-import {  
+import {
   makeTrainingTotal,
   augmentSegmentData,
   isDirtySegment,
   canAugment,
-  isValidSegment,  
+  isValidSegment,
   parseDuration,
   removeSegment,
   addSegment,
@@ -171,11 +171,11 @@ test("makeTrainingTotal with a zero'd segment should return an object with compl
 });
 
 test("augmentSegmentData should augment with distance", (assert) => {
-  let segment = {    
+  let segment = {
     duration: "01:06:48",
     pace: "05:10"
   };
-  var augmentedSegment = augmentSegmentData(segment);  
+  var augmentedSegment = augmentSegmentData(segment);
   assert.equal(true, (typeof augmentedSegment.distance === "number"));
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
@@ -188,7 +188,7 @@ test("augmentSegmentData should augment with duration", (assert) => {
     distance: 12.929,
     pace: "05:10"
   };
-  var augmentedSegment = augmentSegmentData(segment);  
+  var augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");
@@ -200,7 +200,7 @@ test("augmentSegmentData should augment with a duration in only seconds", (asser
     duration: "00:00:40",
     pace: "06:00"
   };
-  var augmentedSegment = augmentSegmentData(segment);  
+  var augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 0.111);
   assert.equal(augmentedSegment.duration, "00:00:40");
   assert.equal(augmentedSegment.pace, "06:00");
@@ -212,7 +212,7 @@ test("augmentSegmentData should augment with pace", (assert) => {
     distance: 12.929,
     duration: "01:06:48"
   };
-  var augmentedSegment = augmentSegmentData(segment);  
+  var augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");
@@ -220,11 +220,11 @@ test("augmentSegmentData should augment with pace", (assert) => {
 });
 
 test("augmentSegmentData should augment with distance", (assert) => {
-  let segment = {    
+  let segment = {
     duration: "01:06:48",
     pace: "05:10"
   };
-  var augmentedSegment = augmentSegmentData(segment);  
+  var augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");
@@ -232,11 +232,11 @@ test("augmentSegmentData should augment with distance", (assert) => {
 });
 
 test("augmentSegmentData should work with named paces", (assert) => {
-  let segment = {    
+  let segment = {
     duration: "01:06:48",
     pace: "@RECOV"
   };
-  var augmentedSegment = augmentSegmentData(segment);  
+  var augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 12.145);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:30");
@@ -283,8 +283,8 @@ test("isDirtySegment should detect a dirty segment", (assert) => {
     pace: "05:10"
   };
 
-  var isDirty = isDirtySegment(segment, segments);  
-  assert.ok(isDirty);  
+  var isDirty = isDirtySegment(segment, segments);
+  assert.ok(isDirty);
   assert.end();
 });
 
@@ -303,7 +303,7 @@ test("isDirtySegment should NOT detect a dirty segment", (assert) => {
     pace: "05:10"
   };
 
-  var isDirty = isDirtySegment(segment, segments);  
+  var isDirty = isDirtySegment(segment, segments);
   assert.notOk(isDirty);
   assert.end();
 });
@@ -312,10 +312,10 @@ test("canAugment should return true when 2 out of 3 items are present", (assert)
   let segment = {
     duration: "01:06:48",
     pace: "05:10"
-  }; 
+  };
 
-  let itCan = canAugment(segment);  
-  assert.ok(itCan);  
+  let itCan = canAugment(segment);
+  assert.ok(itCan);
   assert.end();
 });
 
@@ -324,9 +324,9 @@ test("canAugment should return false when 3 out of 3 items are present", (assert
     distance: 12.929,
     duration: "01:06:48",
     pace: "05:10"
-  }; 
+  };
 
-  let itCan = canAugment(segment);  
+  let itCan = canAugment(segment);
   assert.notOk(itCan);
   assert.end();
 });
@@ -336,9 +336,9 @@ test("canAugment should return false when 2 out of 3 items are zero'd but has pa
     distance: 0,
     duration: "00:00:00",
     pace: "05:10"
-  }; 
+  };
 
-  let itCan = canAugment(segment);  
+  let itCan = canAugment(segment);
   assert.notOk(itCan);
   assert.end();
 });
@@ -348,9 +348,9 @@ test("canAugment should return false when 2 out of 3 items are zero'd but has di
     distance: 12,
     duration: "00:00:00",
     pace: "00:00"
-  }; 
+  };
 
-  let itCan = canAugment(segment);  
+  let itCan = canAugment(segment);
   assert.notOk(itCan);
   assert.end();
 });
@@ -360,9 +360,9 @@ test("canAugment should return false when 2 out of 3 items are zero'd but has du
     distance: 0,
     duration: "00:24:53",
     pace: "00:00"
-  }; 
+  };
 
-  let itCan = canAugment(segment);  
+  let itCan = canAugment(segment);
   assert.notOk(itCan);
   assert.end();
 });
@@ -373,10 +373,10 @@ test("canAugment should return true when duration is zero'd", (assert) => {
     distance: 12,
     duration: "00:00:00",
     pace: "05:10"
-  }; 
+  };
 
-  let itCan = canAugment(segment);  
-  assert.ok(itCan);  
+  let itCan = canAugment(segment);
+  assert.ok(itCan);
   assert.end();
 });
 
@@ -385,10 +385,10 @@ test("canAugment should return true when distance is zero'd", (assert) => {
     distance: 0,
     duration: "00:12:11",
     pace: "05:10"
-  }; 
+  };
 
-  let itCan = canAugment(segment);  
-  assert.ok(itCan);  
+  let itCan = canAugment(segment);
+  assert.ok(itCan);
   assert.end();
 });
 
@@ -397,10 +397,10 @@ test("canAugment should return true when pace is zero'd", (assert) => {
     distance: 12,
     duration: "00:12:11",
     pace: "00:00"
-  }; 
+  };
 
-  let itCan = canAugment(segment);  
-  assert.ok(itCan);  
+  let itCan = canAugment(segment);
+  assert.ok(itCan);
   assert.end();
 });
 
@@ -409,9 +409,9 @@ test("isValidSegment should detect a valid segment", (assert) => {
     distance: 12.929,
     duration: "01:06:48",
     pace: "05:10"
-  }; 
+  };
 
-  let isValid = isValidSegment(segment);  
+  let isValid = isValidSegment(segment);
   assert.ok(isValid);
   assert.end();
 });
@@ -421,14 +421,14 @@ test("isValidSegment should detect a NOT valid segment", (assert) => {
     distance: 5,
     duration: "01:012:12",
     pace: "03:49"
-  }; 
+  };
 
-  let isValid = isValidSegment(segment);  
+  let isValid = isValidSegment(segment);
   assert.notOk(isValid);
   assert.end();
 });
 
-test("parseDuration should NOT parse duration when input is not parsable from int", (assert) => {  
+test("parseDuration should NOT parse duration when input is not parsable from int", (assert) => {
   assert.equal(parseDuration(null), null, "should return null on null");
   assert.equal(parseDuration(""), "", "should return empty string on empty string");
   assert.equal(parseDuration(0), "00:00:00", "should 00:00:00 on zero int");
@@ -436,7 +436,7 @@ test("parseDuration should NOT parse duration when input is not parsable from in
 });
 
 test("parseDuration should parse duration as int minutes to duration as string", (assert) => {
-  const data = [    
+  const data = [
     {input: 60, output: "01:00:00"},
     {input: 59, output: "00:59:00"},
     {input: 65, output: "01:05:00"},
@@ -522,9 +522,9 @@ test("addSegment should add a segment twice", (assert) => {
     pace: "55:55"
   };
   assert.equal(segments.length, 10, "initially there should be 10 segments");
-  const newSegments = addSegment(segment2, addSegment(segment, segments));  
+  const newSegments = addSegment(segment2, addSegment(segment, segments));
   assert.equal(segments.length, 10, "adding should not alter the original list");
-  assert.equal(newSegments.length, 12, "after adding there should be 11 segments");  
+  assert.equal(newSegments.length, 12, "after adding there should be 11 segments");
   assert.end();
 });
 
@@ -537,14 +537,14 @@ test("updateSegment should update a segment", (assert) => {
     pace: "03:49"
   };
   assert.equal(segments.length, 10, "initially there should be 10 segments");
-  const newSegments = updateSegment(segment, segments);  
+  const newSegments = updateSegment(segment, segments);
   assert.equal(segments.length, 10, "updating should not increase the original list");
   assert.equal(newSegments.length, 10, "updating should not increase the returned list");
   assert.equal(newSegments[2].toString(), segment.toString(), "segment should be overwritten");
   assert.end();
 });
 
-test.only("findSegment should find a segment", (assert) => {
+test("findSegment should find a segment", (assert) => {
   const segment = {
     uuid: "88888",
     pace: "44:44"

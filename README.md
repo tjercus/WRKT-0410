@@ -15,7 +15,7 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
-- replace class with factory (exception for React.Class)
+- Appshell pattern for offline first
 - Use Immutable.Record for all datatypes (Training, Segment, Total ...)
 - Create a script that lists all eventbus subscriptions and emits per source file
 - Progressive web application support

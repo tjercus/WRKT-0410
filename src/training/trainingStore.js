@@ -105,7 +105,6 @@ const trainingStore = eventbus => {
     addSegmentToStore(segment, true);
   });
 
-
   /**
    * Clone currently loaded training in the collection which is
    *  currently loaded in store and then emit some events
