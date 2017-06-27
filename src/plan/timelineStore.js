@@ -25,9 +25,9 @@ let selectedWeekNr = 0;
  *  supported.
  * TODO allow input from a GUI-list (ex: 'PlansListComponent')
  * TODO perhaps rename to 'Plan(s)Store'
- */
-/**
+ *
  * @param {EventEmitter|Emitter} eventbus - decoupling
+ * @returns {timelineStore} this - itself
  */
 const timelineStore = eventbus => {
 
@@ -143,6 +143,7 @@ const timelineStore = eventbus => {
    * @param {number} position - where to insert
    * @param {Day} augmentedDay - what to insert
    * @param {number} weekNr - in which week to insert it
+   * @returns {void} - modfies local state instead
    */
   const insertDayIntoPlan = (position, augmentedDay, weekNr) => {
     console.log(`TimelineStore insert day into plan @${position}`);
@@ -157,7 +158,7 @@ const timelineStore = eventbus => {
     } else {
       plan.days.splice(position, 0, augmentedDay);
     }
-  }
+  };
 
   return this;
 };

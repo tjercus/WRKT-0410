@@ -1,6 +1,6 @@
 import test from "tape";
 import sinon from "sinon";
-import TrainingStore from "./TrainingStore";
+import TrainingStore from "./trainingStore";
 import EventEmitter from "eventemitter4";
 
 /**

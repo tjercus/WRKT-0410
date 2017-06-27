@@ -90,7 +90,7 @@ const dayStore = eventbus => {
     }
   });
 
-  // TODO decide if this logic should be here ...
+  // TODO decide if the logic should be here ...
   eventbus.on(ee.SEGMENT_UPDATE_CMD, segment => {
     console.log(`DayStore caught SEGMENT_UPDATE_CMD`);
     updateSegmentInStore(segment);

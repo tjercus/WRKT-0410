@@ -1,5 +1,17 @@
 
 /**
+ * @interface Training
+ * @property {string} uuid
+ * @property {string} type
+ * @segments {Array<Segment>} segments
+ * @property {Total} total
+ */
+
+/**
+ * @interface TrainingInstance
+ */
+
+/**
  * @interface Plan
  * @property {string} uuid
  * @property {string} name
@@ -11,15 +23,6 @@
  * @interface Day
  * @property {string} uuid
  * @property {Array<Training>} trainings
- */
-
-/**
- * @interface Training
- * @property {string} uuid
- * @property {string} type
- * @segments {Array<Segment>} segments
- * @property {Total} total
- * @alias TrainingInstance
  */
 
 /**

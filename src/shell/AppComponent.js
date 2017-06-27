@@ -9,10 +9,10 @@ import DayEditComponent from "../day/DayEditComponent";
 import NotificationComponent from "../shell/NotificationComponent";
 import PlanListComponent from "../plan/PlanListComponent";
 
-import TrainingStore from "../training/TrainingStore";
+import trainingStore from "../training/trainingStore";
 import dayStore from "../day/dayStore";
 import timelineStore from "../plan/timelineStore";
-import { clone, hasProperty } from "../shell/objectUtil";
+import {clone, hasProperty} from "../shell/objectUtil";
 import packageJSON from "../../package.json";
 import RemoteDataService from "../shell/RemoteDataService";
 
@@ -37,7 +37,7 @@ export default class AppComponent extends React.Component {
 
     // initially will receive data as empty TODO remove props so all data comes from eventbus
     dayStore(this.eventbus);
-    new TrainingStore(this.eventbus, clone(trainings));
+    trainingStore(this.eventbus);
     timelineStore(this.eventbus);
 
     new RemoteDataService(this.eventbus);
@@ -61,19 +61,19 @@ export default class AppComponent extends React.Component {
       <div>
         <header id="app-header">
           <h1>WRKT-0410 {version}</h1>
-          <MenuComponent eventbus={this.eventbus} />
+          <MenuComponent eventbus={this.eventbus}/>
         </header>
         <article id="container">
           <aside id="container-aside">
-            <TrainingListComponent eventbus={this.eventbus} name="Traininglist" from="menu-item-training" />
+            <TrainingListComponent eventbus={this.eventbus} name="Traininglist" from="menu-item-training"/>
           </aside>
           <main>
-            <NotificationComponent eventbus={this.eventbus} />
-            <TrainingPanelComponent eventbus={this.eventbus} name="Training" from="menu-item-training" />
-            <TimelineComponent eventbus={this.eventbus} name="Timeline" from="menu-item-timeline" />
-            <PanelComponent eventbus={this.eventbus} name="Settings" from="menu-item-settings" />
-            <DayEditComponent eventbus={this.eventbus} name="DayEdit" from="menu-item-dayedit" />
-            <PlanListComponent eventbus={this.eventbus} name="PlanList" from="menu-item-planlist" />
+            <NotificationComponent eventbus={this.eventbus}/>
+            <TrainingPanelComponent eventbus={this.eventbus} name="Training" from="menu-item-training"/>
+            <TimelineComponent eventbus={this.eventbus} name="Timeline" from="menu-item-timeline"/>
+            <PanelComponent eventbus={this.eventbus} name="Settings" from="menu-item-settings"/>
+            <DayEditComponent eventbus={this.eventbus} name="DayEdit" from="menu-item-dayedit"/>
+            <PlanListComponent eventbus={this.eventbus} name="PlanList" from="menu-item-planlist"/>
           </main>
         </article>
       </div>

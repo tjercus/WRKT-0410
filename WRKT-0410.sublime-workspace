@@ -185,7 +185,7 @@
 			],
 			[
 				"len",
-				"length	(TrainingStore.js)"
+				"length	(trainingStore.js)"
 			],
 			[
 				"curr",
@@ -241,7 +241,7 @@
 			],
 			[
 				"str",
-				"stringify	(TrainingStore.js)"
+				"stringify	(trainingStore.js)"
 			],
 			[
 				"TRA",
@@ -552,7 +552,7 @@
 			}
 		},
 		{
-			"file": "src/stores/TrainingStore.js",
+			"file": "src/stores/trainingStore.js",
 			"settings":
 			{
 				"buffer_size": 7204,
@@ -673,7 +673,7 @@
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainingUtil.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/plans.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/miscUtil.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/TrainingStore.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainingStore.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/timelineUtil.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/AppComponent.js",
@@ -1127,7 +1127,7 @@
 				},
 				{
 					"buffer": 4,
-					"file": "src/stores/TrainingStore.js",
+					"file": "src/stores/trainingStore.js",
 					"semi_transient": false,
 					"settings":
 					{
