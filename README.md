@@ -38,14 +38,14 @@ Based on 'React eventemitter'.
 - Tape coverage with nyc/coverify/tape-istanbul
 
 ### Training
+- Multi column traininglist instead of one long list
+- introduce tags
+- validate should be more tolerant for invalid segments caluculated by rounding on seconds
 - Unregister listeners on remove events (SegmentComponent et al.)
 - Refactor TrainingComponent and TrainingInstanceComponent so they can use common code
-- Multi column traininglist instead of one long list
 - Separate TrainingListStore to keep loaded list of Trainings
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline
-- validate should be more tolerant for invalid segments caluculated by rounding on seconds
-- introduce tags
 - unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
 - move segment up or down

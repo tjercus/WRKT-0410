@@ -20,11 +20,10 @@ let day = {};
 const dayStore = eventbus => {
 
   eventbus.on(ee.DAY_LOAD_CMD, (_day, date) => {
-    day = {..._day};
+    day = _day;
     console.log("---------------------");
     console.log(day);
     console.log("---------------------");
-    // day = Object.assign({}, _day);
     console.log(`DayStore caught DAY_LOAD_CMD and loads day [${day.uuid}] locally`);
     eventbus.emit(ee.DAY_LOAD_EVT, day, date);
   });
@@ -66,11 +65,9 @@ const dayStore = eventbus => {
   //   eventbus.emit(ee.DAY_UPDATE_EVT, day);
   // });
 
-  eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid, trainingUuid) => {
-    console.info("dayStore SEGMENT_GET_CMD looking for segment in store ...");
+  eventbus.on(ee.SEGMENT_GET_CMD, (segmentUuid) => {
+    console.info("dayStore SEGMENT_GET_CMD looking for segment in store ...", segmentUuid);
     if (typeof day !== "undefined" && day !== null && hasProperty(day, "trainings")) {
-      // TODO solve more elegantly
-      // const segment = findSegment(segmentUuid, day.trainings.map(_training => {return _training.segments}));
       const acc = [];
       day.trainings.forEach(_training => {
         _training.segments.forEach(_segment => {
@@ -79,11 +76,12 @@ const dayStore = eventbus => {
       });
       const segment = findSegment(segmentUuid, acc);
 
-      if (segment !== null) {
+      if (typeof segment !== "undefined" && segment !== null) {
         console.info("dayStore SEGMENT_GET_CMD found segment, emitting it as SEGMENT_GET_EVT!");
+        console.log("segment:", JSON.stringify(segment));
         eventbus.emit(ee.SEGMENT_GET_EVT, segment);
       } else {
-        console.warn("dayStore SEGMENT_GET_CMD could not find segment");
+        console.warn("dayStore SEGMENT_GET_CMD could not find segment", segmentUuid);
       }
     } else {
       console.warn("dayStore SEGMENT_GET_CMD without loaded day");

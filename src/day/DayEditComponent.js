@@ -68,6 +68,7 @@ export default class DayEditComponent extends React.Component {
    * @returns {void} - emits on eventbus instead
    */
   onCloseButtonClick = (evt) => {
+    // this.props.eventbus.emit(ee.INSTANCE_LOAD_CMD, {});
     this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-timeline");
   };
 

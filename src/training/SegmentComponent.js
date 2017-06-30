@@ -44,7 +44,7 @@ export default class SegmentComponent extends React.Component {
   }
 
   componentWillUnmount() {
-   console.log(`SegmentComponent componentWillUnmount`);
+    console.log(`SegmentComponent componentWillUnmount`);
     this.props.eventbus.removeListener(ee.SEGMENT_UPDATE_EVT, this.onIncomingSegment);
     this.props.eventbus.removeListener(ee.SEGMENT_GET_EVT, this.onIncomingSegment);
   }
@@ -84,16 +84,16 @@ export default class SegmentComponent extends React.Component {
     let name = evt.target.name;
     const _segment = this.state.segment;
     if (this.isDirtyValue(name, val)) {
-      switch(name) {
+      switch (name) {
         case "distance":
           _segment.distance = val;
-        break;
+          break;
         case "duration":
           _segment.duration = val;
-        break;
+          break;
         case "pace":
           _segment.pace = val;
-        break;
+          break;
       }
       if (_segment.uuid === null) {
         console.info(`SegmentComponent.onChange uuid was null, setting a new one as ${_segment.uuid}`);
@@ -111,7 +111,7 @@ export default class SegmentComponent extends React.Component {
     this.setState({segment: _segment});
   };
 
-  onCalcButtonClick = (evt) =>{
+  onCalcButtonClick = (evt) => {
     // only ask store to do something when the segment was eligible for augmentation (one changed and one empty field)
     if (canAugment(this.state.segment)) {
       // this.setState({isValid: isValidSegment(this.state.segment)});
@@ -136,7 +136,14 @@ export default class SegmentComponent extends React.Component {
   }
 
   render() {
-    let _segment = {distance: 0, duration: "00:00:00", pace: "00:00", isValid: true, uuid: this.props.uuid, trainingUuid: this.props.trainingUuid};
+    let _segment = {
+      distance: 0,
+      duration: "00:00:00",
+      pace: "00:00",
+      isValid: true,
+      uuid: this.props.uuid,
+      trainingUuid: this.props.trainingUuid
+    };
     if (this.state.segment) {
       _segment = this.state.segment;
     }
@@ -144,9 +151,11 @@ export default class SegmentComponent extends React.Component {
     // <span>@400: {makePaceAt400(this.state.pace)}</span>
     return (
       <tr className={rowClassName}>
-        <td><input type="text" name="distance" value={_segment.distance} onChange={this.onChange} className="type-double" /></td>
-        <td><input type="text" name="duration" value={_segment.duration} onChange={this.onChange} onBlur={this.onDurationBlur} className="type-duration" /></td>
-        <td><input type="text" name="pace" value={_segment.pace} onChange={this.onChange} className="type-time" /></td>
+        <td><input type="text" name="distance" value={_segment.distance} onChange={this.onChange}
+                   className="type-double"/></td>
+        <td><input type="text" name="duration" value={_segment.duration} onChange={this.onChange}
+                   onBlur={this.onDurationBlur} className="type-duration"/></td>
+        <td><input type="text" name="pace" value={_segment.pace} onChange={this.onChange} className="type-time"/></td>
         <td>
           <button className="button-small button-primary" onClick={this.onCalcButtonClick}>Calc</button>
           <button className="button-small" onClick={this.onCloneButtonClick}>Clone</button>
