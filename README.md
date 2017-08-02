@@ -41,7 +41,7 @@ Based on 'React eventemitter'.
 - Multi column traininglist instead of one long list
 - introduce tags
 - validate should be more tolerant for invalid segments caluculated by rounding on seconds
-- Unregister listeners on remove events (SegmentComponent et al.)
+- Unregister listeners on remove events (SegmentView et al.)
 - Refactor TrainingComponent and TrainingInstanceComponent so they can use common code
 - Separate TrainingListStore to keep loaded list of Trainings
 - Fix bug in updateTraining (?)

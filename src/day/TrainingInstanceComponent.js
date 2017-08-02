@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter4";
-import SegmentComponent from "../training/SegmentComponent";
+import SegmentContainer from "../training/SegmentContainer";
 import { EventsEnum as ee, TRAINING_SHAPE, DEFAULT_TOTAL, DEFAULT_TRAINING } from "../shell/constants";
 import { createUuid } from "../shell/objectUtil";
 
@@ -163,7 +163,7 @@ export default class TrainingInstanceComponent extends React.Component {
     let segmentComponents = segments.map(segment => {
       console.log(`TrainingInstanceComponent rendering segment: ${JSON.stringify(segment)}`);
       return (
-        <SegmentComponent
+        <SegmentContainer
           key={segment.uuid}
           eventbus={this.props.eventbus}
           uuid={segment.uuid}

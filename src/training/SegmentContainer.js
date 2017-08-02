@@ -6,7 +6,7 @@ import {EventsEnum as ee} from "../shell/constants";
 
 let isMounted = false;
 
-export default class SegmentComponent extends React.Component {
+export default class SegmentContainer extends React.Component {
 
   static propTypes = {
     eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
@@ -16,7 +16,7 @@ export default class SegmentComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    // console.log(`SegmentComponent props.uuid ${JSON.stringify(props.uuid)}`);
+    // console.log(`SegmentView props.uuid ${JSON.stringify(props.uuid)}`);
 
     this.state = {}; // TODO set empty component?
   }
@@ -101,7 +101,7 @@ export default class SegmentComponent extends React.Component {
       }
       this.setState({segment: _segment});
     }
-    // console.log(`SegmentComponent.onChange updated state: ${JSON.stringify(this.state)}`);
+    // console.log(`SegmentView.onChange updated state: ${JSON.stringify(this.state)}`);
   };
 
   onDurationBlur = (evt) => {
@@ -118,7 +118,7 @@ export default class SegmentComponent extends React.Component {
       console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligible for augment so SEGMENT_UPDATE_CMD`);
       this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, this.state.segment);
     } else {
-      // console.log(`SegmentComponent.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is not eligible for augment so no action`);
+      // console.log(`SegmentView.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is not eligible for augment so no action`);
     }
   };
 
@@ -147,23 +147,13 @@ export default class SegmentComponent extends React.Component {
     if (this.state.segment) {
       _segment = this.state.segment;
     }
-    let rowClassName = (_segment.isValid) ? "segment valid" : "segment invalid";
-    // <span>@400: {makePaceAt400(this.state.pace)}</span>
-    return (
-      <tr className={rowClassName}>
-        <td><input type="text" name="distance" value={_segment.distance} onChange={this.onChange}
-                   className="type-double"/></td>
-        <td><input type="text" name="duration" value={_segment.duration} onChange={this.onChange}
-                   onBlur={this.onDurationBlur} className="type-duration"/></td>
-        <td><input type="text" name="pace" value={_segment.pace} onChange={this.onChange} className="type-time"/></td>
-        <td>
-          <button className="button-small button-primary" onClick={this.onCalcButtonClick}>Calc</button>
-          <button className="button-small" onClick={this.onCloneButtonClick}>Clone</button>
-          <button className="button-small button-warning" onClick={this.onRemoveButtonClick}>Remove</button>
-        </td>
-        <td><span>&nbsp;{_segment.uuid}</span></td>
-      </tr>
-    );
+    return <segmentView
+      segment={_segment}
+      onChange={this.onChange}
+      onCalcButtonClick={this.onCalcButtonClick}
+      onCloneButtonClick={this.onCloneButtonClick}
+      onRemoveButtonClick={this.onRemoveButtonClick}
+    />;
   }
-};
 
+}

@@ -6,7 +6,7 @@ import sinon from "sinon";
 
 // Component Under Test
 import TrainingComponent from "./TrainingComponent";
-import SegmentComponent from "./SegmentComponent";
+import SegmentContainer from "./SegmentContainer";
 // specific dependencies for CUT
 import EventEmitter from "eventemitter4";
 
@@ -33,7 +33,7 @@ test("TrainingComponent should render a training", (assert) => {
   eventbus.emit("TRAINING_LOAD_EVT", training);
   assert.equal(component.find("header.panel-header span").text(), "my training");
   assert.equal(component.find("fieldset[name='type'] button").length, 2, "should be two buttons to set 'type' of training");
-  assert.equal(component.find("SegmentComponent").length, 1);
+  assert.equal(component.find("SegmentContainer").length, 1);
   assert.equal(component.find("output[name='totals']").length, 1);
   assert.equal(component.find("menu").length, 4);
   const buttons = component.find("menu button");
@@ -112,8 +112,8 @@ test("TrainingComponent should update total after a SEGMENT_UPDATE_EVT", (assert
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
   // increase distance and empty duration
-  const segmentComponent = component.find(SegmentComponent).get(0);
-  segmentComponent.setState({distance: 10, duration: ""});
+  const segmentContainer = component.find(SegmentContainer).get(0);
+  segmentContainer.setState({distance: 10, duration: ""});
   eventbus.emit("SEGMENT_UPDATE_EVT", {uuid: training.uuid, segment: segment, total: total});
   // check total in GUI/state
   assert.equal(component.state("total").distance, 10);

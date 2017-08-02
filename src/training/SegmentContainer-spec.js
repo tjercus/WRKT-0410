@@ -6,7 +6,7 @@ import { shallow, mount } from "enzyme";
 import sinon from "sinon";
 
 // Component Under Test
-import SegmentComponent from "../training/SegmentComponent";
+import SegmentContainer from "./SegmentContainer";
 // specific dependencies for CUT
 import EventEmitter from "eventemitter4";
 
@@ -21,16 +21,16 @@ const segment = {
   pace: "03:59"
 };
 
-test("SegmentComponent should render with empty values by default", (assert) => {
+test("SegmentView should render with empty values by default", (assert) => {
   assert.end();
 });
 
-test("SegmentComponent should set values after SEGMENT_UPDATE_EVT", (assert) => {
+test("SegmentView should set values after SEGMENT_UPDATE_EVT", (assert) => {
   assert.end();
 });
 
 // TODO fix
-test.skip("SegmentComponent should emit SEGMENT_UPDATE_CMD when it can augment on calc button click", (assert) => {
+test.skip("SegmentView should emit SEGMENT_UPDATE_CMD when it can augment on calc button click", (assert) => {
   const augmentableSegment = {
     uuid: "uuid-segment2",
     trainingUuid: "43956798",
@@ -39,29 +39,29 @@ test.skip("SegmentComponent should emit SEGMENT_UPDATE_CMD when it can augment o
     pace: "05:00"
   };
   emitSpy.reset();
-  const component = mount(<SegmentComponent eventbus={eventbus} uuid={augmentableSegment.uuid} trainingUuid={trainingUuid}/>);
+  const component = mount(<SegmentContainer eventbus={eventbus} uuid={augmentableSegment.uuid} trainingUuid={trainingUuid}/>);
   component.find("tr.segment .button-primary").simulate("click");
   assert.ok(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should emit SEGMENT_UPDATE_CMD");
   assert.end();
 });
 
-test("SegmentComponent should NOT emit SEGMENT_UPDATE_CMD when it can NOT augment on calc button click", (assert) => {
+test("SegmentView should NOT emit SEGMENT_UPDATE_CMD when it can NOT augment on calc button click", (assert) => {
   emitSpy.reset();
-  const component = mount(<SegmentComponent eventbus={eventbus} uuid={segment.uuid} trainingUuid={trainingUuid}/>);
+  const component = mount(<SegmentContainer eventbus={eventbus} uuid={segment.uuid} trainingUuid={trainingUuid}/>);
   component.find(".segment button.button-primary").simulate("click");
   assert.notOk(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should NOT emit SEGMENT_UPDATE_CMD");
   assert.end();
 });
 
-test("SegmentComponent should emit SEGMENT_CLONE_CMD when button clicked", (assert) => {
+test("SegmentView should emit SEGMENT_CLONE_CMD when button clicked", (assert) => {
   assert.end();
 });
 
-test("SegmentComponent should emit SEGMENT_REMOVE_CMD when button clicked", (assert) => {
+test("SegmentView should emit SEGMENT_REMOVE_CMD when button clicked", (assert) => {
   assert.end();
 });
 
-test("SegmentComponent should set css class 'invalid' when appropriate", (assert) => {
+test("SegmentView should set css class 'invalid' when appropriate", (assert) => {
   assert.end();
 });
 

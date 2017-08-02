@@ -1,6 +1,6 @@
 import React from "react";
 import EventEmitter from "eventemitter4";
-import SegmentComponent from "./SegmentComponent";
+import SegmentContainer from "./SegmentContainer";
 import {EventsEnum as ee, DEFAULT_TOTAL, DEFAULT_TRAINING} from "../shell/constants";
 
 export default class TrainingComponent extends React.Component {
@@ -172,7 +172,7 @@ export default class TrainingComponent extends React.Component {
     let segments = this.state.segments || [];
     let segmentComponents = [];
     segments.forEach((segment, i) => {
-      segmentComponents.push(<SegmentComponent key={i}
+      segmentComponents.push(<SegmentContainer key={i}
                                                eventbus={this.props.eventbus}
                                                uuid={segment.uuid}
                                                trainingUuid={this.state.uuid} />);
