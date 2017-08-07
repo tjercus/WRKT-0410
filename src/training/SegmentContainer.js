@@ -147,6 +147,7 @@ export default class SegmentContainer extends React.Component {
     if (this.state.segment) {
       _segment = this.state.segment;
     }
+    console.log("SegmentController.render");
     return <segmentView
       segment={_segment}
       onChange={this.onChange}
