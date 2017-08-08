@@ -1,7 +1,7 @@
 import React from "react";
 import EventEmitter from "eventemitter4";
 import {EventsEnum as ee} from "../shell/constants";
-import TrainingComponent from "./TrainingComponent";
+import TrainingContainer from "./TrainingContainer";
 
 export default class TrainingPanelComponent extends React.Component {
 
@@ -30,7 +30,7 @@ export default class TrainingPanelComponent extends React.Component {
     let panelClassName = this.state.isVisible ? "panel visible" : "panel hidden";
     return (
       <div className={panelClassName}>
-        <TrainingComponent eventbus={this.eventbus} />
+        <TrainingContainer eventbus={this.eventbus} />
       </div>
     );
   }

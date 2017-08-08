@@ -5,7 +5,7 @@ import { shallow, mount } from "enzyme";
 import sinon from "sinon";
 
 // Component Under Test
-import TrainingComponent from "./TrainingComponent";
+import TrainingComponent from "./TrainingContainer";
 import SegmentContainer from "./SegmentContainer";
 // specific dependencies for CUT
 import EventEmitter from "eventemitter4";
@@ -21,14 +21,14 @@ const segments = [{
 }];
 const training = { uuid: "uuid-training1", name: "my training", type: "easy", segments: segments, total: { distance: 5.1, duration: "01:23:45", pace: "03:59" } };
 
-test("TrainingComponent should initially render with an info message", (assert) => {
+test("TrainingContainer should initially render with an info message", (assert) => {
   let eventbus = sinon.spy();
   const component = shallow(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   assert.equal(component.find("div").text(), "Please choose a training from the left-hand list");
   assert.end();
 });
 
-test("TrainingComponent should render a training", (assert) => {
+test("TrainingContainer should render a training", (assert) => {
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
   assert.equal(component.find("header.panel-header span").text(), "my training");
@@ -51,7 +51,7 @@ test("TrainingComponent should render a training", (assert) => {
   assert.end();
 });
 
-test("TrainingComponent should emit a TRAINING_CLONE_CMD", (assert) => {
+test("TrainingContainer should emit a TRAINING_CLONE_CMD", (assert) => {
   emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
@@ -60,7 +60,7 @@ test("TrainingComponent should emit a TRAINING_CLONE_CMD", (assert) => {
   assert.end();
 });
 
-test("TrainingComponent should allow a toggle of trainingname as editable component", (assert) => {
+test("TrainingContainer should allow a toggle of trainingname as editable component", (assert) => {
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   const BUTTON_SELECTOR = "button[id='edit-name-button']";
   const TEXTFIELD_SELECTOR = "input[id='edit-name-textfield']";
@@ -76,7 +76,7 @@ test("TrainingComponent should allow a toggle of trainingname as editable compon
   assert.end();
 });
 
-test("TrainingComponent should emit a TRAINING_UPDATE_CMD", (assert) => {
+test("TrainingContainer should emit a TRAINING_UPDATE_CMD", (assert) => {
   emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   const BUTTON_SELECTOR = "button[id='edit-name-button']";
@@ -88,7 +88,7 @@ test("TrainingComponent should emit a TRAINING_UPDATE_CMD", (assert) => {
   assert.end();
 });
 
-test("TrainingComponent should emit a TRAININGS_PERSIST_CMD", (assert) => {
+test("TrainingContainer should emit a TRAININGS_PERSIST_CMD", (assert) => {
   emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
@@ -97,7 +97,7 @@ test("TrainingComponent should emit a TRAININGS_PERSIST_CMD", (assert) => {
   assert.end();
 });
 
-test("TrainingComponent should update total after a SEGMENT_UPDATE_EVT", (assert) => {
+test("TrainingContainer should update total after a SEGMENT_UPDATE_EVT", (assert) => {
   const segment = {
     uuid: "uuid-segment2",
     distance: 10,
@@ -122,7 +122,7 @@ test("TrainingComponent should update total after a SEGMENT_UPDATE_EVT", (assert
   assert.end();
 });
 
-test("TrainingComponent should pre-select a button for the right type of training", (assert) => {
+test("TrainingContainer should pre-select a button for the right type of training", (assert) => {
   //emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
@@ -133,7 +133,7 @@ test("TrainingComponent should pre-select a button for the right type of trainin
   assert.end();
 });
 
-test("TrainingComponent should mark a 'group choice button' for the right type of training", (assert) => {
+test("TrainingContainer should mark a 'group choice button' for the right type of training", (assert) => {
   //emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);
@@ -143,7 +143,7 @@ test("TrainingComponent should mark a 'group choice button' for the right type o
   assert.end();
 });
 
-test("TrainingComponent should emit a TRAINING_TO_PLAN_CMD", (assert) => {
+test("TrainingContainer should emit a TRAINING_TO_PLAN_CMD", (assert) => {
   emitSpy.reset();
   const component = mount(<TrainingComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("TRAINING_LOAD_EVT", training);

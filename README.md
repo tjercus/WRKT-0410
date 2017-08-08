@@ -42,7 +42,7 @@ Based on 'React eventemitter'.
 - introduce tags
 - validate should be more tolerant for invalid segments caluculated by rounding on seconds
 - Unregister listeners on remove events (SegmentView et al.)
-- Refactor TrainingComponent and TrainingInstanceComponent so they can use common code
+- Refactor TrainingContainer and TrainingInstanceComponent so they can use common code
 - Separate TrainingListStore to keep loaded list of Trainings
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline

@@ -16,11 +16,11 @@ const onSpy = sinon.spy(eventbus, "on");
 test("TrainingPanelComponent should initially render with an info message", (assert) => {
   let eventbus = sinon.spy();
   const component = shallow(<TrainingPanelComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
-  assert.equal(component.find("TrainingComponent").length, 1);
+  assert.equal(component.find("TrainingContainer").length, 1);
   assert.end();
 });
 
-test("TrainingComponent should catch a MENU_CLICK_EVT", (assert) => {
+test("TrainingContainer should catch a MENU_CLICK_EVT", (assert) => {
   onSpy.reset();
   const component = mount(<TrainingPanelComponent eventbus={eventbus} name="Training" from="menu-item-training" />);
   eventbus.emit("MENU_CLICK_EVT", "Training");

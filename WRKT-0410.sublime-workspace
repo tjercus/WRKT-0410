@@ -81,7 +81,7 @@
 			],
 			[
 				"button-",
-				"button-warning	(TrainingComponent-spec.js)"
+				"button-warning	(TrainingContainer-spec.js)"
 			],
 			[
 				"fla",
@@ -640,7 +640,7 @@
 	"file_history":
 	[
 		"/home/tjerk/projects/WRKT-0410/src/stores/segmentUtil.js",
-		"/home/tjerk/projects/WRKT-0410/src/components/TrainingComponent.js",
+		"/home/tjerk/projects/WRKT-0410/src/components/TrainingContainer.js",
 		"/home/tjerk/projects/WRKT-0410/test/segmentUtil-spec.js",
 		"/home/tjerk/projects/WRKT-0410/src/components/TimelineComponent.js",
 		"/home/tjerk/projects/WRKT-0410/src/components/DayComponent.js",
@@ -659,7 +659,7 @@
 		"/home/tjerk/projects/WRKT-0410/test/timelineUtil-spec.js",
 		"/home/tjerk/projects/WRKT-0410/test/trainingUtil-spec.js",
 		"/home/tjerk/projects/WRKT-0410/test/trainingStore-spec.js",
-		"/home/tjerk/projects/WRKT-0410/test/TrainingComponent-spec.js",
+		"/home/tjerk/projects/WRKT-0410/test/TrainingContainer-spec.js",
 		"/home/tjerk/projects/WRKT-0410/rest-api.js",
 		"/home/tjerk/projects/WRKT-0410/test/TimelineStore-spec.js",
 		"/home/tjerk/projects/WRKT-0410/test/SegmentView-spec.js",
@@ -675,7 +675,7 @@
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/miscUtil.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainingStore.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/timelineUtil.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingComponent.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingContainer.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/AppComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/trainings.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/stores/traininginstances.js",
@@ -694,7 +694,7 @@
 		"/home/tvalentijn/.config/sublime-text-3/Packages/User/Side Bar.sublime-settings",
 		"/home/tvalentijn/.config/sublime-text-3/Packages/Babel/Babel.sublime-settings",
 		"/home/tvalentijn/projects/lab/WRKT-0410/node_modules/eventemitter2/lib/eventemitter2.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingComponent-spec.js.old",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingContainer-spec.js.old",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/PanelComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/TrainingListComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/test/e2e/App-spec.js",
@@ -714,7 +714,7 @@
 		"/home/tvalentijn/projects/lab/WRKT-0410/WRKT-0410.sublime-project",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/MenuComponent.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/ DayEditComponent.js",
-		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingComponent-spec.js",
+		"/home/tvalentijn/projects/lab/WRKT-0410/test/TrainingContainer-spec.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/components/constants.js",
 		"/home/tvalentijn/projects/lab/WRKT-0410/index.html",
 		"/home/tvalentijn/projects/lab/WRKT-0410/src/images/favicon.ico",
@@ -838,7 +838,7 @@
 			"SEGMENT_UPDATE_EVT",
 			"TRAINING_UPDATE_CMD",
 			"TRAINING_UPDATE_EVT",
-			"\"TrainingComponent",
+			"\"TrainingContainer",
 			"TRAINING_LOAD_EVT",
 			"runSequence",
 			"req.",
@@ -963,7 +963,7 @@
 			"[object Object]",
 			"\"",
 			"_events.",
-			"TrainingComponent",
+			"TrainingContainer",
 			"\"",
 			"\"@LRP\"",
 			"\"@RECOV\"",
