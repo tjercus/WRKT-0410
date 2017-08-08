@@ -4,7 +4,7 @@
  * @returns {XML} react jsx
  * @constructor
  */
-const segmentView = props => {
+const SegmentView = props => {
   let _segment = props.segment;
   let rowClassName = (_segment.isValid) ? "segment valid" : "segment invalid";
   // <span>@400: {makePaceAt400(props.state.pace)}</span>
@@ -28,4 +28,4 @@ const segmentView = props => {
   );
 };
 
-export default segmentView;
+export default SegmentView;

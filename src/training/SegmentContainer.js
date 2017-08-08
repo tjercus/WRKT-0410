@@ -3,6 +3,7 @@ import EventEmitter from "eventemitter4";
 import {canAugment, isValidSegment, parseDuration, augmentSegmentData} from "./segmentUtil";
 import {createUuid, clone, hasProperty} from "../shell/objectUtil";
 import {EventsEnum as ee} from "../shell/constants";
+import SegmentView from "./SegmentView";
 
 let isMounted = false;
 
@@ -147,8 +148,7 @@ export default class SegmentContainer extends React.Component {
     if (this.state.segment) {
       _segment = this.state.segment;
     }
-    console.log("SegmentController.render");
-    return <segmentView
+    return <SegmentView
       segment={_segment}
       onChange={this.onChange}
       onCalcButtonClick={this.onCalcButtonClick}
