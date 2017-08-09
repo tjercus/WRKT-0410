@@ -7,7 +7,7 @@ export default class NameComponent extends React.Component {
     super(props);
     // console.log(`SegmentView props.uuid ${JSON.stringify(props.uuid)}`);
 
-    this.state = {}; // TODO set empty component?
+    this.state = {};
   }
 
   onEditNameButtonClick = evt => {
@@ -16,23 +16,28 @@ export default class NameComponent extends React.Component {
     });
   };
 
-  render() {
-    let nameComponent = "";
-    if (this.state.isNameEditable) {
-      nameComponent = <span>
+  static renderNameComponentTextField(config) {
+    if (config.isNameEditable) {
+      return (
         <input type="text"
-                     id="edit-name-textfield"
-                     name="edit-name-textfield"
-                     value={this.props.name}
-                     onChange={this.props.onNameChange}
-                     onBlur={this.props.onNameBlur} />
-              <button id="edit-name-button" onClick={this.onEditNameButtonClick}
-                      className="button-small button-flat">{"edit"}</button>
-      </span>;
+               id="edit-name-textfield"
+               name="edit-name-textfield"
+               value={config.name}
+               onChange={config.onNameChange}
+               onBlur={config.onNameBlur} />
+      );
     } else {
-      nameComponent = <span id="name-label">{this.props.name}</span>;
+      return (<span id="name-label">{config.name}</span>);
     }
-    return nameComponent;
   }
 
+  render() {
+    const config = {...this.props, isNameEditable: this.state.isNameEditable};
+    return <span>
+      {NameComponent.renderNameComponentTextField(config)}
+      <button id="edit-name-button"
+              onClick={this.onEditNameButtonClick}
+              className="button-small button-flat">{"edit"}</button>
+    </span>;
+  }
 }
