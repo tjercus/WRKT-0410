@@ -409,63 +409,96 @@
 	},
 	{
 		"uuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f",
-		"name": "10k #2, 2m + 4 x 1m @10KP",
+		"name": "10k #2, 2m + 4 x 1m @10KP 2",
 		"type": "workout",
 		"segments": [
 			{
 				"uuid": "14",
 				"distance": 2,
-				"duration": "00:12:00"
+				"duration": "00:12:00",
+				"pace": "06:00",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "15",
 				"distance": 3.2,
-				"pace": "@10KP"
+				"pace": "03:40",
+				"duration": "00:11:44",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "16",
 				"distance": 0.8,
-				"duration": "00:05:00"
+				"duration": "00:05:00",
+				"pace": "06:15",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "17",
 				"distance": 1.6,
-				"pace": "@10KP"
+				"pace": "03:40",
+				"duration": "00:05:52",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "18",
 				"distance": 0.6,
-				"duration": "00:03:30"
+				"duration": "00:03:30",
+				"pace": "05:50",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "19",
 				"distance": 1.6,
-				"pace": "@10KP"
+				"pace": "03:40",
+				"duration": "00:05:52",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "20",
 				"distance": 0.6,
-				"duration": "00:03:30"
+				"duration": "00:03:30",
+				"pace": "05:50",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "21",
 				"distance": 1.6,
-				"pace": "@10KP"
+				"pace": "03:40",
+				"duration": "00:05:52",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "22",
 				"distance": 0.6,
-				"duration": "00:03:30"
+				"duration": "00:03:30",
+				"pace": "05:50",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "23",
 				"distance": 1.6,
-				"pace": "@10KP"
+				"pace": "03:40",
+				"duration": "00:05:52",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			},
 			{
 				"uuid": "24",
 				"distance": 1,
-				"duration": "00:05:30"
+				"duration": "00:05:30",
+				"pace": "05:30",
+				"isValid": true,
+				"trainingUuid": "c72c714d-a0bf-41a0-a2da-5b94814c078f"
 			}
 		]
 	},
