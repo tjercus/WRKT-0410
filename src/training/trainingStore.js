@@ -180,17 +180,19 @@ const trainingStore = eventbus => {
    */
   const updateSegmentInStore = segment => {
     if (hasProperty(segment, "trainingUuid") && segment.trainingUuid === uuid) {
+      console.log("trainingStore: update segment in store", JSON.stringify(segment));
       const _segment = augmentSegmentData(segment);
       segments = updateSegment(_segment, segments);
       total = makeTrainingTotal(segments);
       eventbus.emit(ee.SEGMENT_UPDATE_EVT, {
         uuid: segment.trainingUuid,
         segment: _segment,
+        segments,
         total,
       });
+      console.log("trainingStore: update segment in store, AFTER:", JSON.stringify(segments));
     } else {
-      // console.log(`TrainingStore.updateSegmentInStore IGNORING
-      //  ${segment.trainingUuid} versus ${this.uuid}`);
+       console.log(`TrainingStore.updateSegmentInStore IGNORING ${segment.trainingUuid} versus ${uuid}`);
     }
   };
 

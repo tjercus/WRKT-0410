@@ -166,8 +166,7 @@ export default class TrainingInstanceComponent extends React.Component {
         <SegmentContainer
           key={segment.uuid}
           eventbus={this.props.eventbus}
-          uuid={segment.uuid}
-          trainingUuid={this.state.training.uuid}
+          segment={segment}
         />
       );
     });

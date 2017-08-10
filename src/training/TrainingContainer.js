@@ -31,11 +31,11 @@ export default class TrainingContainer extends React.Component {
     // TODO temp disabled to see if this is a problem with race condition on refreshing segments too early
     //
     this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, (data) => {
-      console.log("TrainingContainer caught SEGMENT_UPDATE_EVT, only updating total, not segment");
+      console.log("TrainingContainer caught SEGMENT_UPDATE_EVT, updating total AND segment");
       if (data.uuid === this.state.uuid) {
-        this.setState({ total: data.total });
+        this.setState({ segments: data.segments, total: data.total });
       } else {
-        // console.log(`TrainingContainer NOT equal ${data.uuid}/${this.state.uuid}`);
+        console.log(`TrainingContainer NOT equal ${data.uuid}/${this.state.uuid}`);
       }
     });
 
@@ -138,7 +138,7 @@ export default class TrainingContainer extends React.Component {
   /**
    * Create training object by selectively copying properties from another obj
    * @param  {Object} obj - training-like object
-   * @returns {Training} training
+   * @returns {Object<Training>} training
    */
   makeTraining = (obj) => {
     return {
@@ -151,6 +151,7 @@ export default class TrainingContainer extends React.Component {
   };
 
   render() {
+    console.log("TrainingContainer.render:", JSON.stringify(this.makeTraining(this.state)));
     return <TrainingView training={this.makeTraining(this.state)}
                          onNameChange={this.onNameChange}
                          onNameBlur={this.onNameBlur}

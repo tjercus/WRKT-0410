@@ -9,6 +9,7 @@ import NameComponent from "./NameComponent";
  * @constructor
  */
 const TrainingView = props => {
+  console.log("TrainingView: ", console.log(JSON.stringify(props)));
   let panelClassName = "panel";
   let segments = props.training.segments || [];
   let segmentComponents = [];
@@ -16,8 +17,7 @@ const TrainingView = props => {
   segments.forEach((segment, i) => {
     segmentComponents.push(<SegmentContainer key={i}
                                              eventbus={props.eventbus}
-                                             uuid={segment.uuid}
-                                             trainingUuid={props.training.uuid}/>);
+                                             segment={segment} />);
   });
 
   let totalDistance = 0;

@@ -11,32 +11,18 @@ export default class SegmentContainer extends React.Component {
 
   static propTypes = {
     eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
-    uuid: React.PropTypes.string.isRequired,
-    trainingUuid: React.PropTypes.string.isRequired,
+    segment: React.PropTypes.object.isRequired,
   };
 
   constructor(props) {
     super(props);
-    // console.log(`SegmentView props.uuid ${JSON.stringify(props.uuid)}`);
 
-    this.state = {}; // TODO set empty component?
+    // pass segment to state from props
+    this.state = { segment: props.segment };
   }
 
   componentDidMount() {
     isMounted = true;
-
-    // got a segment from a loaded training in TrainingStore or TrainingInstanceStore
-    this.props.eventbus.on(ee.SEGMENT_GET_EVT, segment => this.onIncomingSegment(segment));
-    this.props.eventbus.on(ee.SEGMENT_UPDATE_EVT, data => this.onIncomingSegment(data));
-
-    // Note that TrainingContainer AND TrainingInstanceComponent will emit this after rendering
-    this.props.eventbus.on(ee.TRAINING_RENDER_EVT, (trainingUuid) => {
-      if (trainingUuid === this.props.trainingUuid) {
-        this.props.eventbus.emit(ee.SEGMENT_GET_CMD, this.props.uuid, this.props.trainingUuid);
-      }
-    });
-
-    this.props.eventbus.emit(ee.SEGMENT_GET_CMD, this.props.uuid, this.props.trainingUuid);
   }
 
   shouldComponentUpdate() {
@@ -46,39 +32,11 @@ export default class SegmentContainer extends React.Component {
 
   componentWillUnmount() {
     console.log(`SegmentComponent componentWillUnmount`);
-    this.props.eventbus.removeListener(ee.SEGMENT_UPDATE_EVT, this.onIncomingSegment);
-    this.props.eventbus.removeListener(ee.SEGMENT_GET_EVT, this.onIncomingSegment);
   }
 
   componentDidUnMount() {
     isMounted = false;
   }
-
-  /**
-   * Handle payload for incoming segments
-   * @param {Segment|Object} data can be a Segment or a wrapped Segment
-   */
-  onIncomingSegment = (data) => {
-    console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment: raw data ${JSON.stringify(data)}`);
-    let _segment = {
-      uuid: null
-    };
-    if (hasProperty(data, "segment")) {
-      _segment = data.segment;
-    } else {
-      _segment = data;
-    }
-
-    if (String(this.props.uuid) === String(_segment.uuid)) {
-      console.log(`SegmentComponent onIncomingSegment uuids are equal as ${_segment.uuid}`);
-      if (isMounted) {
-        console.log(`SegmentComponent onIncomingSegment component is mounted`);
-        this.setState({segment: _segment});
-      }
-    } else {
-      console.log(`SegmentComponent [${this.props.uuid}] onIncomingSegment NOT responding to event for [${_segment.uuid}]`);
-    }
-  };
 
   onChange = (evt) => {
     let val = evt.target.value;
@@ -114,13 +72,13 @@ export default class SegmentContainer extends React.Component {
 
   onCalcButtonClick = (evt) => {
     // only ask store to do something when the segment was eligible for augmentation (one changed and one empty field)
-    if (canAugment(this.state.segment)) {
-      // this.setState({isValid: isValidSegment(this.state.segment)});
-      console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligible for augment so SEGMENT_UPDATE_CMD`);
+    //if (canAugment(this.state.segment)) {
+      // console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligible for augment so SEGMENT_UPDATE_CMD`);
+      console.log(`SegmentView.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)}`);
       this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, this.state.segment);
-    } else {
+    //} else {
       // console.log(`SegmentView.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is not eligible for augment so no action`);
-    }
+    //}
   };
 
   onCloneButtonClick = () => {
