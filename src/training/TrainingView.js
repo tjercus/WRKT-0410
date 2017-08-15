@@ -9,7 +9,7 @@ import NameComponent from "./NameComponent";
  * @constructor
  */
 const TrainingView = props => {
-  console.log("TrainingView: ", console.log(JSON.stringify(props)));
+  console.log("TrainingView: ", JSON.stringify(props));
   let panelClassName = "panel";
   let segments = props.training.segments || [];
   let segmentComponents = [];

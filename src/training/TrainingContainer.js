@@ -25,6 +25,7 @@ export default class TrainingContainer extends React.Component {
     // });
 
     this.props.eventbus.on(ee.SEGMENT_ADD_EVT, (training) => {
+      console.log("TrainingContainer received a SEGMENT_ADD_EVT");
       this.setState({ segments: training.segments, total: training.total });
     });
 

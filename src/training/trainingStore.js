@@ -154,6 +154,9 @@ const trainingStore = eventbus => {
         segments,
         total,
       });
+    } else {
+      console.log(`TrainingStore.addSegmentToStore(); segment.trainingUuid was NOT 
+      EQUAL to the loaded training ${segment.trainingUuid}`);
     }
   };
 
