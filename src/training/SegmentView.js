@@ -8,6 +8,7 @@ const SegmentView = props => {
   let _segment = props.segment;
   let rowClassName = (_segment.isValid) ? "segment valid" : "segment invalid";
   // <span>@400: {makePaceAt400(props.state.pace)}</span>
+  console.log("SegmentView", JSON.stringify(_segment));
   return (
     <tr className={rowClassName}>
       <td><input type="text" name="distance" value={_segment.distance} onChange={props.onChange}
@@ -23,7 +24,7 @@ const SegmentView = props => {
         <button className="button-small button-warning" onClick={props.onRemoveButtonClick}>Remove
         </button>
       </td>
-      <td><span>&nbsp;{_segment.uuid}</span></td>
+      <td><span>&nbsp;{_segment.uuid} @ {new Date().getTime()}</span></td>
     </tr>
   );
 };

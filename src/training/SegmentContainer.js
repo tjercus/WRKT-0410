@@ -19,7 +19,7 @@ export default class SegmentContainer extends React.Component {
 
     // pass segment to state from props
     this.state = { segment: props.segment };
-    console.log("SegmentContainer.constructor", JSON.stringify(props));
+    console.log("SegmentContainer.constructor", JSON.stringify(this.state));
   }
 
   componentDidMount() {
@@ -75,7 +75,7 @@ export default class SegmentContainer extends React.Component {
     // only ask store to do something when the segment was eligible for augmentation (one changed and one empty field)
     //if (canAugment(this.state.segment)) {
       // console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligible for augment so SEGMENT_UPDATE_CMD`);
-    console.log(`SegmentView.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)}`);
+    console.log(`SegmentView.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is updateable`);
     this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, this.state.segment);
     //} else {
       // console.log(`SegmentView.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is not eligible for augment so no action`);

@@ -54,7 +54,7 @@ export default class TrainingContainer extends React.Component {
    * React built-in function called after 'render' phase. Notify the world.
    */
   componentDidUpdate() {
-    console.log(`TrainingComponent componentDidUpdate ${this.state.uuid} emitting TRAINING_RENDER_EVT`);
+    console.log(`TrainingContainer componentDidUpdate ${this.state.uuid} emitting TRAINING_RENDER_EVT`);
     this.props.eventbus.emit(ee.TRAINING_RENDER_EVT, this.state.uuid);
   }
 
