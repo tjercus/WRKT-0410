@@ -16,19 +16,14 @@ export default class SegmentContainer extends React.Component {
 
   constructor(props) {
     super(props);
-
-    // pass segment to state from props
-    this.state = { segment: props.segment };
-    console.log("SegmentContainer.constructor", JSON.stringify(this.state));
+    this.state = {};
+    console.log("SegmentContainer.constructor"); // , JSON.stringify(this.state)
   }
 
   componentDidMount() {
     isMounted = true;
-  }
-
-  shouldComponentUpdate() {
-    // TODO implement
-    return true;
+    // pass segment to state from props
+    this.setState({ segment: this.props.segment}, () => {console.log("SegmentContainer.mounted, state loaded from props")});
   }
 
   componentWillUnmount() {
