@@ -5669,5 +5669,50 @@
 				"trainingUuid": "a5aca942-de2a-4057-9b2b-5884aa442094"
 			}
 		]
+	},
+	{
+		"uuid": "79c784af-3560-41bb-ad6f-97373b5d2520",
+		"name": "10 km @strength",
+		"type": "workout",
+		"segments": [
+			{
+				"uuid": "ce613392-49de-47ce-ba5a-14d5553fb460",
+				"distance": "10",
+				"duration": "00:39:40",
+				"pace": "03:58",
+				"isValid": true,
+				"trainingUuid": "79c784af-3560-41bb-ad6f-97373b5d2520"
+			}
+		]
+	},
+	{
+		"uuid": "11b77aa9-7de5-4576-9e58-55a791a0df21",
+		"name": "21.5km @MP+18%",
+		"type": "workout",
+		"segments": [
+			{
+				"trainingUuid": "11b77aa9-7de5-4576-9e58-55a791a0df21",
+				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
+				"distance": "21.5",
+				"duration": "01:43:34",
+				"pace": "04:49",
+				"isValid": true
+			}
+		]
+	},
+	{
+		"uuid": "ebdfc8e2-1e67-4383-928c-2ae31e969ec7",
+		"name": "Easy run 13.6km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "46",
+				"distance": "13.6",
+				"duration": "01:10:57",
+				"pace": "05:13",
+				"trainingUuid": "ebdfc8e2-1e67-4383-928c-2ae31e969ec7",
+				"isValid": true
+			}
+		]
 	}
 ]

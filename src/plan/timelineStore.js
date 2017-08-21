@@ -21,9 +21,6 @@ let traininginstances = [];
 let selectedWeekNr = 0;
 
 /**
- * Supports the 'Timeline' aka the 'Default plan', currently only one plan is
- *  supported.
- * TODO allow input from a GUI-list (ex: 'PlansListComponent')
  * TODO perhaps rename to 'Plan(s)Store'
  *
  * @param {EventEmitter|Emitter} eventbus - decoupling
@@ -53,6 +50,7 @@ const timelineStore = eventbus => {
     plan = _plan;
     eventbus.emit(ee.PLAN_LOAD_EVT, plan);
     console.timeEnd("PLAN_FETCH_EVT");
+    console.log("timelineStore loaded a plan:", JSON.stringify(plan));
   });
 
   eventbus.on(ee.PLAN_PERSIST_CMD, () => {
