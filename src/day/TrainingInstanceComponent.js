@@ -164,7 +164,7 @@ export default class TrainingInstanceComponent extends React.Component {
       console.log(`TrainingInstanceComponent rendering segment: ${JSON.stringify(segment)}`);
       return (
         <SegmentContainer
-          key={segment.uuid}
+          key={createUuid()}
           eventbus={this.props.eventbus}
           segment={segment}
         />

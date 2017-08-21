@@ -1,3 +1,5 @@
+import React from "react";
+
 /**
  * View Component as pure function for rendering one Segment
  * @param {Object} props

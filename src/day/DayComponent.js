@@ -31,45 +31,45 @@ export default class DayComponent extends React.Component {
     console.log(`DayComponent.onEditClick: emit DAY_LOAD_CMD for day [${uuid}]`);
     // TODO pass 'date' for day as third argument
     this.props.eventbus.emit(ee.DAY_LOAD_CMD, this.props.day);
-  }
+  };
 
   onCloneToBeginClick = (evt) => {
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid, 0);
-  }
+  };
 
   onCloneToMiddleClick = (evt) => {
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid, 0.5);
-  }
+  };
 
   onCloneClick = (evt) =>{
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid);
-  }
+  };
 
   onCloneToSelectedWeekClick = (evt) => {
     const uuid = evt.target.attributes[1].nodeValue;
     this.props.eventbus.emit(ee.DAY_CLONE_CMD, uuid, -1);
-  }
+  };
 
   onMoveLeftClick = (evt) => {
     this.props.eventbus.emit(ee.DAY_MOVE_CMD, evt.target.value, -1);
-  }
+  };
 
   onMoveRightClick = (evt) => {
     this.props.eventbus.emit(ee.DAY_MOVE_CMD, evt.target.value, 1);
-  }
+  };
 
   onDeleteClick = (evt) => {
     const uuid = evt.target.attributes[1].nodeValue;
     console.log(`DayComponent.onDeleteClick ${uuid}`);
     this.props.eventbus.emit(ee.DAY_DELETE_CMD, uuid);
-  }
+  };
 
   onSecondaryMenuClick = (evt) => {
     this.setState({secondaryMenuHidden: !this.state.secondaryMenuHidden});
-  }
+  };
 
   // TODO days from config
   isNonWorkday(aDay) {

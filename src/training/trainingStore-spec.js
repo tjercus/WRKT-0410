@@ -116,7 +116,7 @@ test("TrainingStore should listen to TRAINING_TO_PLAN_CMD and emit TRAINING_CLON
   setUp();
 
   eventbus.emit("TRAINING_TO_PLAN_CMD");
-
+  
   assert.ok(emitSpy.calledWith("TRAINING_CLONE_AS_INSTANCE_CMD"));
   for (let i = 0, len = emitSpy.args.length; i < len; i++) {
     if (emitSpy.args[i][0] === "TRAINING_CLONE_AS_INSTANCE_CMD") {

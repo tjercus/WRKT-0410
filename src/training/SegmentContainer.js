@@ -17,13 +17,14 @@ export default class SegmentContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    console.log("SegmentContainer.constructor"); // , JSON.stringify(this.state)
+    console.log("SegmentContainer.constructor", JSON.stringify(this.state.segment));
   }
 
   componentDidMount() {
     isMounted = true;
     // pass segment to state from props
-    this.setState({ segment: this.props.segment}, () => {console.log("SegmentContainer.mounted, state loaded from props")});
+    this.setState({ segment: this.props.segment},
+      () => {console.log("SegmentContainer.mounted, state loaded from props")});
   }
 
   componentWillUnmount() {
@@ -33,6 +34,8 @@ export default class SegmentContainer extends React.Component {
   componentDidUnMount() {
     isMounted = false;
   }
+
+  shouldComponentUpdate = () => true;
 
   onChange = (evt) => {
     let val = evt.target.value;
@@ -51,34 +54,30 @@ export default class SegmentContainer extends React.Component {
           break;
       }
       if (_segment.uuid === null) {
-        console.info(`SegmentComponent.onChange uuid was null, setting a new one as ${_segment.uuid}`);
+        console.info(`SegmentContainer.onChange uuid was null, setting a new one as ${_segment.uuid}`);
         _segment.uuid = createUuid();
       }
       this.setState({segment: _segment});
     }
-    // console.log(`SegmentView.onChange updated state: ${JSON.stringify(this.state)}`);
   };
 
-  onDurationBlur = (evt) => {
+  onDurationBlur = evt => {
     let val = evt.target.value;
     const _segment = clone(this.state.segment);
     _segment.duration = parseDuration(val);
     this.setState({segment: _segment});
   };
 
-  onCalcButtonClick = (evt) => {
+  onCalcButtonClick = evt => {
     // only ask store to do something when the segment was eligible for augmentation (one changed and one empty field)
-    //if (canAugment(this.state.segment)) {
-      // console.log(`SegmentComponent.onCalcButtonClick concludes the segment IS eligible for augment so SEGMENT_UPDATE_CMD`);
-    console.log(`SegmentView.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is updateable`);
-    this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, this.state.segment);
-    //} else {
-      // console.log(`SegmentView.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is not eligible for augment so no action`);
-    //}
+    if (canAugment(this.state.segment)) {
+      console.log(`SegmentContainer.onCalcButtonClick concludes the segment ${JSON.stringify(this.state.segment)} is updateable`);
+      this.props.eventbus.emit(ee.SEGMENT_UPDATE_CMD, this.state.segment);
+    }
   };
 
   onCloneButtonClick = () => {
-    console.log(`SegmentComponent emits a SEGMENT_CLONE_CMD with ${JSON.stringify(this.state.segment)}`);
+    console.log(`SegmentContainer emits a SEGMENT_CLONE_CMD with ${JSON.stringify(this.state.segment)}`);
     this.props.eventbus.emit(ee.SEGMENT_CLONE_CMD, this.state.segment);
   };
 
@@ -102,6 +101,7 @@ export default class SegmentContainer extends React.Component {
     if (this.state.segment) {
       _segment = this.state.segment;
     }
+    console.log("SegmentContainer.render", JSON.stringify(_segment));
     return <SegmentView
       segment={_segment}
       onChange={this.onChange}

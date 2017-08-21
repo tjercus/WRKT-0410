@@ -21,16 +21,16 @@ const segment = {
   pace: "03:59"
 };
 
-test("SegmentView should render with empty values by default", (assert) => {
+test("SegmentContainer should render with empty values by default", (assert) => {
   assert.end();
 });
 
-test("SegmentView should set values after SEGMENT_UPDATE_EVT", (assert) => {
+test("SegmentContainer should set values after SEGMENT_UPDATE_EVT", (assert) => {
   assert.end();
 });
 
 // TODO fix
-test.skip("SegmentView should emit SEGMENT_UPDATE_CMD when it can augment on calc button click", (assert) => {
+test("SegmentContainer should emit SEGMENT_UPDATE_CMD when it can augment on calc button click", (assert) => {
   const augmentableSegment = {
     uuid: "uuid-segment2",
     trainingUuid: "43956798",
@@ -39,29 +39,29 @@ test.skip("SegmentView should emit SEGMENT_UPDATE_CMD when it can augment on cal
     pace: "05:00"
   };
   emitSpy.reset();
-  const component = mount(<SegmentContainer eventbus={eventbus} uuid={augmentableSegment.uuid} trainingUuid={trainingUuid}/>);
+  const component = mount(<SegmentContainer eventbus={eventbus} segment={segment} />);
   component.find("tr.segment .button-primary").simulate("click");
   assert.ok(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should emit SEGMENT_UPDATE_CMD");
   assert.end();
 });
 
-test("SegmentView should NOT emit SEGMENT_UPDATE_CMD when it can NOT augment on calc button click", (assert) => {
+test("SegmentContainer should NOT emit SEGMENT_UPDATE_CMD when it can NOT augment on calc button click", (assert) => {
   emitSpy.reset();
-  const component = mount(<SegmentContainer eventbus={eventbus} uuid={segment.uuid} trainingUuid={trainingUuid}/>);
+  const component = mount(<SegmentContainer eventbus={eventbus} segment={segment} />);
   component.find(".segment button.button-primary").simulate("click");
   assert.notOk(emitSpy.calledWith("SEGMENT_UPDATE_CMD"), "component should NOT emit SEGMENT_UPDATE_CMD");
   assert.end();
 });
 
-test("SegmentView should emit SEGMENT_CLONE_CMD when button clicked", (assert) => {
+test("SegmentContainer should emit SEGMENT_CLONE_CMD when button clicked", (assert) => {
   assert.end();
 });
 
-test("SegmentView should emit SEGMENT_REMOVE_CMD when button clicked", (assert) => {
+test("SegmentContainer should emit SEGMENT_REMOVE_CMD when button clicked", (assert) => {
   assert.end();
 });
 
-test("SegmentView should set css class 'invalid' when appropriate", (assert) => {
+test("SegmentContainer should set css class 'invalid' when appropriate", (assert) => {
   assert.end();
 });
 

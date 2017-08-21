@@ -1,6 +1,7 @@
 import * as React from "react";
 import SegmentContainer from "./SegmentContainer";
 import NameComponent from "./NameComponent";
+import {createUuid} from "../shell/objectUtil";
 
 /**
  * View Component as pure function for rendering one Training
@@ -9,15 +10,16 @@ import NameComponent from "./NameComponent";
  * @constructor
  */
 const TrainingView = props => {
-  console.log("TrainingView: ", JSON.stringify(props));
+  console.log("TrainingView received props: ", JSON.stringify(props));
   let panelClassName = "panel";
-  let segments = props.training.segments || [];
-  let segmentComponents = [];
-
-  segments.forEach((segment, i) => {
-    segmentComponents.push(<SegmentContainer key={i}
-                                             eventbus={props.eventbus}
-                                             segment={segment} />);
+  // let segments = props.training.segments || [];
+  let segmentComponents = props.training.segments.map((segment, i) => {
+    console.log("TrainingView, individual segment being iterated", JSON.stringify(segment));
+    // IMPORTANT: using a new key every time TrainingView is called is the only way to force
+    //  React to re-render the list with the latest props
+    return (<SegmentContainer key={createUuid()}
+                              eventbus={props.eventbus}
+                              segment={segment} />);
   });
 
   let totalDistance = 0;
