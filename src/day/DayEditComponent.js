@@ -4,6 +4,14 @@ import { EventsEnum as ee } from "../shell/constants";
 
 import TrainingInstanceComponent from "./TrainingInstanceComponent";
 
+const DEFAULT_STATE = {
+  isVisible: false,
+  dayUuid: null,
+  day: { trainings: [] },
+  selectedNr: null,
+  date: null,
+};
+
 export default class DayEditComponent extends React.Component {
 
   static propTypes = {
@@ -12,13 +20,7 @@ export default class DayEditComponent extends React.Component {
     from: React.PropTypes.string.isRequired, // related menu item name
   };
 
-  state = {
-    isVisible: false,
-    dayUuid: null,
-    day: { trainings: [] },
-    selectedNr: null,
-    date: null,
-  };
+  state = DEFAULT_STATE;
 
   constructor(props) {
     super(props);
@@ -29,15 +31,8 @@ export default class DayEditComponent extends React.Component {
       if (menuItemName === this.props.from) {
         this.setState({isVisible: true});
       } else {
-        // this.setState({isVisible: false});
-        console.log("TIC: wipe local state");
-        this.setState({
-          isVisible: false,
-          dayUuid: null,
-          day: { trainings: [] },
-          selectedNr: 0,
-          date: null,
-        });
+        console.log("DayEditComponent: wipe local state");
+        this.setState(DEFAULT_STATE);
       }
     });
 
@@ -56,7 +51,7 @@ export default class DayEditComponent extends React.Component {
    * @param {SyntheticEvent} evt
    * @returns {void}
    */
-  onLoadTrainingClick = (evt) => {
+  onLoadTrainingClick = evt => {
     const nr = evt.target.value;
     this.setState({ selectedNr: nr }); // TODO need to keep state for this?
     console.log(`DayEditComponent.onLoadTrainingClick ${JSON.stringify(this.state.day)}`);
@@ -68,7 +63,6 @@ export default class DayEditComponent extends React.Component {
    * @returns {void} - emits on eventbus instead
    */
   onCloseButtonClick = (evt) => {
-    // this.props.eventbus.emit(ee.INSTANCE_LOAD_CMD, {});
     this.props.eventbus.emit(ee.MENU_CLICK_EVT, "menu-item-timeline");
   };
 
@@ -82,6 +76,7 @@ export default class DayEditComponent extends React.Component {
   };
 
   /**
+   * // TODO replace TIC with TrainingContainer and friends so TIC can be removed
   * React render
   */
   render() {
@@ -103,10 +98,8 @@ export default class DayEditComponent extends React.Component {
     return (
       <section className={panelClassName}>
         <header className="panel-header">
-          <p>
-            {"Day Edit Screen "}
-            <button onClick={this.onCloseButtonClick} className="button-flat">close</button>
-          </p>
+          {"Day Edit Screen "}
+          <button onClick={this.onCloseButtonClick} className="button-flat">close</button>
         </header>
         <div className="panel-body">
           <h3>{"Trainings"}</h3>
@@ -114,7 +107,7 @@ export default class DayEditComponent extends React.Component {
           <ul>
             {trainingButtonListItems}
           </ul>
-          <TrainingInstanceComponent eventbus={this.props.eventbus} />
+          <TrainingInstanceComponent eventbus={this.props.eventbus} className="panel-card" />
         </div>
       </section>
     );

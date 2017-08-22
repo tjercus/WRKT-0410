@@ -30,6 +30,13 @@ export default class TrainingInstanceComponent extends React.Component {
       this.setState({training: training});
     });
 
+    this.props.eventbus.on(ee.INSTANCE_REMOVE_EVT, training => {
+      console.log(`TrainingInstanceComponent received INSTANCE_REMOVE_EVT with ${training.uuid}`);
+      if (training.uuid === this.state.training.uuid) {
+        this.setState({training: DEFAULT_TRAINING, isNameEditable: false});
+      }
+    });
+
     // this.props.eventbus.on(ee.DAY_LOAD_EVT, day => {
     //   this.setDayInLocalState(day);
     // });
@@ -118,7 +125,8 @@ export default class TrainingInstanceComponent extends React.Component {
   };
 
   removeTraining = () => {
-    this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD, this.state.training.uuid);
+    console.log(`TrainingInstanceCommand.removeTraining ${this.state.training.uuid}`);
+    this.props.eventbus.emit(ee.INSTANCE_REMOVE_CMD, this.state.training);
   };
 
   /**

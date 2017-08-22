@@ -59,8 +59,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
-- fix day edit screen, multiday edit and remove
-- (Timeline should refresh after a day was edited)
+- replace TIC with TrainingContainer and friends so TIC can be removed
 - Performance tuning with 'key' as a repeatable value instead of random int or createUuid
 - Show a dialog 'save current timeline?' when switching plans
 - Use a Map (uuid as key) for segments in TrainingInstance
@@ -68,7 +67,7 @@ Based on 'React eventemitter'.
 - feature: 'move training to another day'
 - feature: 'add training as 2nd training 2 a day'
 - fix handling of ADD_PLAN_EVT
-- load new plan afeter ADD_PLAN_EVT?
+- load new plan after ADD_PLAN_EVT?
 - button for 'compact view'
 - button for 'ultra compact view'
 - edit feature should open in a modal popup

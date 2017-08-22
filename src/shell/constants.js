@@ -21,6 +21,7 @@ export const EventsEnum = Object.freeze(keyMirror({
   INSTANCE_LOAD_CMD: null,
   INSTANCE_LOAD_EVT: null,
   INSTANCE_REMOVE_CMD: null,
+  INSTANCE_REMOVE_EVT: null,
   INSTANCE_UPDATE_CMD: null,
   INSTANCE_SEGMENT_ADD_CMD: null,
   INSTANCES_PERSIST_EVT: null,

@@ -3,7 +3,7 @@
 */
 import {
   updateTrainingInstanceInDay, addTrainingInstanceToDay, augmentTrainingNotFoundException,
-  NotFoundException
+  NotFoundException, removeTrainingInstance
 } from "../training/trainingUtil";
 import { EventsEnum as ee, DEFAULT_TRAINING } from "../shell/constants";
 import {
@@ -57,6 +57,12 @@ const dayStore = eventbus => {
       }
     }
     eventbus.emit(ee.DAY_UPDATE_EVT, day);
+  });
+
+  eventbus.on(ee.INSTANCE_REMOVE_CMD, instance => {
+    day.trainings = removeTrainingInstance(instance.uuid, day.trainings);
+    eventbus.emit(ee.DAY_UPDATE_EVT, day);
+    eventbus.emit(ee.INSTANCE_REMOVE_EVT, instance);
   });
 
   // eventbus.on(ee.INSTANCE_ADD_CMD, instance => {
