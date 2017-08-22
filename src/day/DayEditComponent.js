@@ -6,7 +6,6 @@ import TrainingInstanceComponent from "./TrainingInstanceComponent";
 
 const DEFAULT_STATE = {
   isVisible: false,
-  dayUuid: null,
   day: { trainings: [] },
   selectedNr: null,
   date: null,

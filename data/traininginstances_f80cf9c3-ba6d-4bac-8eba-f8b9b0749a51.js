@@ -178,21 +178,16 @@
 	},
 	{
 		"uuid": "328f1ca2-cfa2-4840-8395-2ac0427294bb",
-		"name": "Long run 28km @MP+17%",
+		"name": "Long run 28km @MP+15%",
 		"type": "workout",
 		"segments": [
 			{
 				"uuid": "5663acb8-21b4-11e6-bacc-57515eb97ad5",
 				"distance": "28",
-				"duration": "02:13:00",
-				"pace": "04:45"
+				"duration": "02:11:01",
+				"pace": "04:41"
 			}
-		],
-		"total": {
-			"distance": 28,
-			"duration": "02:13:00",
-			"pace": "04:45"
-		}
+		]
 	},
 	{
 		"uuid": "67c381a3-e459-4a2e-9fca-c5f3e0af35d9",
@@ -209,12 +204,26 @@
 	},
 	{
 		"uuid": "6f4e528e-9cc8-4312-bd79-31c8c487823d",
-		"name": "Easy run 13.5km",
+		"name": "Easy run 10km",
 		"type": "easy",
 		"segments": [
 			{
 				"uuid": "0f6a34c7-53e0-488f-b921-1f518617b172",
-				"distance": "14.1",
+				"distance": "12",
+				"duration": "01:04:00",
+				"pace": "05:20"
+			}
+		],
+		"isNameEditable": false
+	},
+	{
+		"uuid": "801b06d8-2ddc-4073-9cab-914b8dc654eb",
+		"name": "Easy run 12km",
+		"type": "easy",
+		"segments": [
+			{
+				"uuid": "0f6a34c7-53e0-488f-b921-1f518617b172",
+				"distance": "12",
 				"duration": "",
 				"pace": "05:20"
 			}

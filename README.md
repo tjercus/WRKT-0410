@@ -59,6 +59,9 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
+- Fix: switching days should reload day and trainings in store and therefore in views
+- Fix: clone day should replace uuid's for trainings
+- Fix: clone training/day should replace uuid's for segments
 - replace TIC with TrainingContainer and friends so TIC can be removed
 - Performance tuning with 'key' as a repeatable value instead of random int or createUuid
 - Show a dialog 'save current timeline?' when switching plans
