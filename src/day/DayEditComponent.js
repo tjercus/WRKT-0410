@@ -85,7 +85,7 @@ export default class DayEditComponent extends React.Component {
     let trainingButtonListItems = this.state.day.trainings.map((training, i) => {
       return (
         <li key={training.uuid}>
-          <button onClick={this.onLoadTrainingClick} value={i} className="button-small">
+          <button onClick={this.onLoadTrainingClick} value={i} className="button-flat">
             {training.name}
           </button>
         </li>
@@ -98,16 +98,15 @@ export default class DayEditComponent extends React.Component {
     return (
       <section className={panelClassName}>
         <header className="panel-header">
-          {"Day Edit Screen "}
+          {"Day Edit Screen"}
+          <button onClick={this.onAddTrainingButtonClick} className="button-flat">add another training</button>
           <button onClick={this.onCloseButtonClick} className="button-flat">close</button>
         </header>
         <div className="panel-body">
-          <h3>{"Trainings"}</h3>
-          <button onClick={this.onAddTrainingButtonClick} className="button-flat">add another training</button>
-          <ul>
+          <ol>
             {trainingButtonListItems}
-          </ul>
-          <TrainingInstanceComponent eventbus={this.props.eventbus} className="panel-card" />
+          </ol>
+          <TrainingInstanceComponent eventbus={this.props.eventbus} />
         </div>
       </section>
     );

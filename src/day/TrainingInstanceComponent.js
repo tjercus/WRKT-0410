@@ -145,7 +145,7 @@ export default class TrainingInstanceComponent extends React.Component {
   */
 
   render() {
-    let panelClassName = "panel";
+    let panelClassName = "panel panel-card";
     console.log(`TrainingInstanceComponent rendered with ${this.state.training.uuid}`);
 
     let nameComponent = "";
@@ -209,8 +209,7 @@ export default class TrainingInstanceComponent extends React.Component {
           </header>
           <div className="panel-body">
             <fieldset name="type">
-              Type of training
-
+              {"Type of training "}
               <button
                 onClick={this.onTrainingTypeClick}
                 value="workout"
