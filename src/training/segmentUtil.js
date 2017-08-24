@@ -271,7 +271,7 @@ const isDuration = (str) => {
 /**
  * Translate a pace with an @ to a real pace
  * @param  {string} pace is a description starting with an @
- * @return {string} realPace is conical pace as mm:ss
+ * @return {string} realPace is pace as mm:ss
  */
 const translateNamedPace = (pace) => {
   if (pace === undefined || pace === null || !pace.startsWith("@")) {
@@ -285,21 +285,21 @@ const translateNamedPace = (pace) => {
     case "@LRP":
       return "04:45";
     case "@MP":
-      return "04:10";
+      return "04:05";
     case "@MP+5%":
-      return "04:22";
+      return "04:17";
     case "@21KP":
-      return "03:55";
+      return "03:53";
     case "@16KP":
-      return "03:50";
+      return "03:49";
     case "@LT":
-      return "03:50";
+      return "03:49";
     case "@10KP":
-      return "03:40";
+      return "03:36";
     case "@5KP":
-      return "03:33";
+      return "03:30";
     case "@3KP":
-      return "03:24";
+      return "03:21";
     case "@MIP":
       return "03:10";
     default:
