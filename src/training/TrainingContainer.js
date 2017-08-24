@@ -16,6 +16,7 @@ export default class TrainingContainer extends React.Component {
   }
 
   componentDidMount() {
+    // TODO support multiple instances of this by making them unique in some way
     this.props.eventbus.on(ee.TRAINING_LOAD_EVT, (training) => {
       console.log(`TrainingComponent received TRAINING_LOAD_EVT with ${training.uuid}`);
       this.loadTraining(training);
@@ -54,8 +55,6 @@ export default class TrainingContainer extends React.Component {
    * React built-in function called after 'render' phase. Notify the world.
    */
   componentDidUpdate() {
-    console.log(`TrainingContainer componentDidUpdate ${this.state.uuid} emitting TRAINING_RENDER_EVT`);
-    this.props.eventbus.emit(ee.TRAINING_RENDER_EVT, this.state.uuid);
   }
 
   loadTraining = (training) => {

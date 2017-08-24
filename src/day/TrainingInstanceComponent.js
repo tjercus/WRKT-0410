@@ -36,36 +36,12 @@ export default class TrainingInstanceComponent extends React.Component {
         this.setState({training: DEFAULT_TRAINING, isNameEditable: false});
       }
     });
-
-    // this.props.eventbus.on(ee.DAY_LOAD_EVT, day => {
-    //   this.setDayInLocalState(day);
-    // });
-    //
-    // // TODO perhaps not catch this event
-    // this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
-    //   console.log(`TIC on DAY_UPDATE_EVT with day ${JSON.stringify(day)}`);
-    //   this.setDayInLocalState(day);
-    // });
-
-    // this.props.eventbus.on(ee.INSTANCE_CREATE_CMD, dayUuid => {
-    //   if (this.state.day.uuid === dayUuid) {
-    //     // create a new training and add it to the day
-    //     // const training = DEFAULT_TRAINING;
-    //     // training.uuid = createUuid();
-    //     // const day = this.state.day;
-    //     // day.trainings.push(training);
-    //     // this.setDayInLocalState(day);
-    //     this.setState(DEFAULT_TRAINING);
-    //   }
-    // });
   }
 
   /**
    * React built-in function called after 'render' phase. Notify the world.
    */
   componentDidUpdate() {
-    console.log(`TrainingInstanceComponent componentDidUpdate ${this.state.training.uuid}`);
-    this.props.eventbus.emit(ee.TRAINING_RENDER_EVT, this.state.training.uuid);
   }
 
   onPropagateChangesClick = () => {

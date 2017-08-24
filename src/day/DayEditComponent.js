@@ -2,7 +2,7 @@ import React from "react";
 import EventEmitter from "eventemitter4";
 import { EventsEnum as ee } from "../shell/constants";
 
-import TrainingInstanceComponent from "./TrainingInstanceComponent";
+import TrainingContainer from "../training/TrainingContainer";
 
 const DEFAULT_STATE = {
   isVisible: false,
@@ -105,7 +105,7 @@ export default class DayEditComponent extends React.Component {
           <ol>
             {trainingButtonListItems}
           </ol>
-          <TrainingInstanceComponent eventbus={this.props.eventbus} />
+          <TrainingContainer eventbus={this.props.eventbus} />
         </div>
       </section>
     );
