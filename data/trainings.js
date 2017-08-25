@@ -1,8 +1,8 @@
 [
 	{
 		"uuid": "new-training",
-		"name": "New Training",
-		"type": "workout",
+		"name": "10km easy run",
+		"type": "easy",
 		"segments": []
 	},
 	{
