@@ -105,7 +105,7 @@ export default class DayEditComponent extends React.Component {
           <ol>
             {trainingButtonListItems}
           </ol>
-          <TrainingContainer eventbus={this.props.eventbus} />
+          <TrainingContainer eventbus={this.props.eventbus} handlesTrainingInstance={true} />
         </div>
       </section>
     );

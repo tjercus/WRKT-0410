@@ -8,6 +8,7 @@ export default class TrainingContainer extends React.Component {
 
   static propTypes = {
     eventbus: React.PropTypes.instanceOf(EventEmitter).isRequired,
+    handlesTrainingInstance: React.PropTypes.boolean,
   };
 
   constructor(props) {
@@ -16,14 +17,26 @@ export default class TrainingContainer extends React.Component {
   }
 
   componentDidMount() {
-    // TODO support multiple instances of this by making them unique in some way
-    this.props.eventbus.on(ee.TRAINING_LOAD_EVT, (training) => {
-      console.log(`TrainingComponent received TRAINING_LOAD_EVT with ${training.uuid}`);
-      this.loadTraining(training);
-    });
-    // this.props.eventbus.on(ee.TRAINING_UPDATE_EVT, (training) => {
-    //   this.loadTraining(training);
-    // });
+    // supports loading one Training and one TrainingInstance at the same time in memory
+    if (this.props.handlesTrainingInstance && this.props.handlesTrainingInstance === true) {
+      this.props.eventbus.on(ee.INSTANCE_LOAD_CMD, instance => {
+        console.log(`TrainingComponent received INSTANCE_LOAD_CMD with ${instance.uuid}`);
+        console.log(`TrainingComponent received: ${JSON.stringify(instance)}`);
+        this.loadTraining(instance);
+      });
+    } else {
+      // TODO support multiple instances of this by making them unique in some way
+      this.props.eventbus.on(ee.TRAINING_LOAD_EVT, training => {
+        console.log(`TrainingComponent received TRAINING_LOAD_EVT with ${training.uuid}`);
+        this.loadTraining(training);
+      });
+      this.props.eventbus.on(ee.INSTANCE_REMOVE_EVT, training => {
+        console.log(`TrainingInstanceComponent received INSTANCE_REMOVE_EVT with ${training.uuid}`);
+        if (training.uuid === this.state.training.uuid) {
+          this.setState({training: DEFAULT_TRAINING, isNameEditable: false});
+        }
+      });
+    }
 
     this.props.eventbus.on(ee.SEGMENT_ADD_EVT, (training) => {
       console.log("TrainingContainer received a SEGMENT_ADD_EVT");
