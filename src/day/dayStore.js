@@ -46,6 +46,7 @@ const dayStore = eventbus => {
   /**
      * emitted by TrainingInstanceComponent when user clicks 'save' button
      */
+  /*
   eventbus.on(ee.INSTANCE_UPDATE_CMD, instance => {
     console.log(`DayStore caught INSTANCE_UPDATE_CMD, trying to update local day ${day.uuid}`);
     try {
@@ -58,6 +59,7 @@ const dayStore = eventbus => {
     }
     eventbus.emit(ee.DAY_UPDATE_EVT, day);
   });
+  */
 
   eventbus.on(ee.INSTANCE_REMOVE_CMD, instance => {
     day.trainings = removeTrainingInstance(instance.uuid, day.trainings);
@@ -166,10 +168,10 @@ const dayStore = eventbus => {
           training.segments = addSegment(_segment, clone(training.segments), overwriteUuid);
           training.total = makeTrainingTotal(clone(training.segments));
           console.log(
-            `DayStore.addSegmentInStore training after adding segment: ${JSON.stringify(training)}`,
+            `DayStore.addSegmentToStore training after adding segment: ${JSON.stringify(training)}`,
           );
         } else {
-          console.log(`DayStore.addSegmentInStore trainingUuid was NOT equal: ${training.uuid}`);
+          console.log(`DayStore.addSegmentToStore trainingUuid was NOT equal: ${training.uuid}`);
         }
         updatedLocalTrainings.push(training);
       });

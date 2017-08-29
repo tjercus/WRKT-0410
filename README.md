@@ -59,7 +59,7 @@ Based on 'React eventemitter'.
 - repeat segment in data
 
 ### Timeline/Plan
-- Fix: refresh DayEditComponent -> TrainingContainer after clone segment 
+- TrainingComponent: some buttons are not applicable for instances 
 - Performance tuning with 'key' as a repeatable value instead of random int or createUuid
 - Show a dialog 'save current timeline?' when switching plans
 - Use a Map (uuid as key) for segments in TrainingInstance

@@ -20,21 +20,29 @@ export default class TrainingContainer extends React.Component {
     // supports loading one Training and one TrainingInstance at the same time in memory
     if (this.props.handlesTrainingInstance && this.props.handlesTrainingInstance === true) {
       this.props.eventbus.on(ee.INSTANCE_LOAD_CMD, instance => {
-        console.log(`TrainingComponent received INSTANCE_LOAD_CMD with ${instance.uuid}`);
-        console.log(`TrainingComponent received: ${JSON.stringify(instance)}`);
+        console.log(`TrainingContainer received INSTANCE_LOAD_CMD with ${instance.uuid}`);
+        console.log(`TrainingContainer received: ${JSON.stringify(instance)}`);
         this.loadTraining(instance);
+      });
+      this.props.eventbus.on(ee.INSTANCE_REMOVE_EVT, instance => {
+        console.log(`TrainingContainer received INSTANCE_REMOVE_EVT with ${instance.uuid}`);
+        if (instance.uuid === this.state.uuid) {
+          this.loadTraining(instance);
+        }
+      });
+      this.props.eventbus.on(ee.DAY_UPDATE_EVT, day => {
+        console.log(`TrainingContainer received DAY_UPDATE_EVT`);
+        day.trainings.map(_instance => {
+          if (_instance.uuid === this.state.uuid) {
+            this.loadTraining(_instance);
+          }
+        });
       });
     } else {
       // TODO support multiple instances of this by making them unique in some way
       this.props.eventbus.on(ee.TRAINING_LOAD_EVT, training => {
-        console.log(`TrainingComponent received TRAINING_LOAD_EVT with ${training.uuid}`);
+        console.log(`TrainingContainer received TRAINING_LOAD_EVT with ${training.uuid}`);
         this.loadTraining(training);
-      });
-      this.props.eventbus.on(ee.INSTANCE_REMOVE_EVT, training => {
-        console.log(`TrainingInstanceComponent received INSTANCE_REMOVE_EVT with ${training.uuid}`);
-        if (training.uuid === this.state.training.uuid) {
-          this.setState({training: DEFAULT_TRAINING, isNameEditable: false});
-        }
       });
     }
 
