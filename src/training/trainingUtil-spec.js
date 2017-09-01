@@ -4,12 +4,13 @@ import {
   findTraining,  
   updateTraining,
   removeTrainingInstance,
-  removeTrainingInstancesForDay,  
+  removeTrainingInstancesForDay,
+  cloneTrainingInstanceInDay,
   cleanTraining,
 } from "./trainingUtil";
 
 /**
- * Tests for {@link ../training/trainingUtil.js}
+ * Tests for {@link trainingUtil.js}
  */
 const trainings = [{
     uuid: "blah-10",
@@ -74,6 +75,13 @@ test("removeTrainingInstancesForDay should delete all instances linked in a day"
   assert.equal(trainings.length, 3, "initial size of list");
   const trainingInstances = removeTrainingInstancesForDay(days[0], trainings);
   assert.equal(trainingInstances.length, 1, "two out of three should be removed");
+  assert.end();
+});
+
+test("cloneTrainingInstancesInDay should clone an existing instance in a day", (assert) => {
+  assert.equal(trainings.length, 3, "initial size of list");
+  const day = cloneTrainingInstanceInDay(days[0], "blah-10");
+  assert.equal(day.trainings.length, 4, "should find 4 trainings");
   assert.end();
 });
 

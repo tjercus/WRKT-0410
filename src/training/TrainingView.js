@@ -27,6 +27,8 @@ const TrainingView = props => {
     totalDistance = (props.training.total.distance).toFixed(3);
   }
 
+  let buttonClassName = (props.handlesTrainingInstance) ? "button-flat hidden" : "button-flat";
+
 // TODO refactor to ButtonChoiceComponent
   const type1ButtonClassName = (props.training.type === "workout")
     ? "button-choice button-choice-selected" : "button-choice";
@@ -101,7 +103,7 @@ const TrainingView = props => {
             <button onClick={props.removeTraining} className="button-flat">remove training</button>
           </menu>
           <menu>
-            <button onClick={props.emitPersistChanges} className="button-flat" id="persist-button">
+            <button onClick={props.emitPersistChanges} className={buttonClassName} id="persist-button">
               persist changes
             </button>
           </menu>

@@ -3,7 +3,7 @@
  * @interface Training
  * @property {string} uuid
  * @property {string} type
- * @segments {Array<Segment>} segments
+ * @property {Array<Segment>} segments
  * @property {Total} total
  */
 

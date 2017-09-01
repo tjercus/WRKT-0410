@@ -99,7 +99,7 @@ export default class TrainingContainer extends React.Component {
       uuid: this.state.uuid,
       name: this.state.name,
       type: this.state.type,
-      segments: this.state.segments
+      segments: this.state.segments,
     }));
   };
 
@@ -119,11 +119,12 @@ export default class TrainingContainer extends React.Component {
   cloneTraining = () => {
     // TODO custom alert
     console.log("Training cloned and selected");
-    this.props.eventbus.emit(ee.TRAINING_CLONE_CMD);
+    this.props.eventbus.emit(ee.TRAINING_CLONE_CMD, this.state.uuid);
   };
 
+  /* TODO check if this works in both dayStore and trainingStore */
   removeTraining = () => {
-    this.props.eventbus.emit(ee.TRAINING_REMOVE_CMD);
+    this.props.eventbus.emit(ee.TRAINING_REMOVE_CMD, this.state.uuid);
   };
 
   emitAddToBeginOfPlan = () => {
@@ -136,11 +137,13 @@ export default class TrainingContainer extends React.Component {
     this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD, 0.5);
   };
 
+  /* TODO check if this works in both dayStore and trainingStore */
   emitAddToPlan = () => {
     console.log("TrainingContainer.emitAddToPlan TRAINING_TO_PLAN_CMD without zero");
     this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD);
   };
 
+  /* TODO check if this works in both dayStore and trainingStore */
   emitAddToSelectedWeekOfPlan = () => {
     this.props.eventbus.emit(ee.TRAINING_TO_PLAN_CMD, -1);
   };
@@ -159,7 +162,7 @@ export default class TrainingContainer extends React.Component {
   /**
    * Create training object by selectively copying properties from another obj
    * @param  {Object} obj - training-like object
-   * @returns {Object<Training>} training
+   * @returns {Object<Training|TrainingInstance>} training
    */
   makeTraining = (obj) => {
     return {
@@ -167,13 +170,14 @@ export default class TrainingContainer extends React.Component {
       name: obj.name,
       type: obj.type,
       segments: obj.segments,
-      total: obj.total
+      total: obj.total,
     }
   };
 
   render() {
     console.log("TrainingContainer.render:", JSON.stringify(this.makeTraining(this.state)));
     return <TrainingView training={this.makeTraining(this.state)}
+                         handlesTrainingInstance={this.props.handlesTrainingInstance}
                          onNameChange={this.onNameChange}
                          onNameBlur={this.onNameBlur}
                          onEditNameButtonClick={this.onEditNameButtonClick}

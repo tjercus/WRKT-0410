@@ -89,6 +89,25 @@ export function removeTrainingInstancesForDay(day, traininginstances) {
 }
 
 /**
+ * Clone a TrainingInstance in a Day
+ * @param {Day} day - holds instances
+ * @param {string} uuid - instance id
+ * @returns {Day} _day - modified day
+ */
+export function cloneTrainingInstanceInDay(day, uuid) {
+  const _day = clone(day);
+  const _instances = clone(_day.trainings);
+  const _instance = findTraining(uuid, _instances);
+  if (_instance !== null) {
+    const _instanceClone = clone(_instance);
+    _instanceClone.uuid = createUuid();
+    _instances.push(_instanceClone);
+    _day.trainings = _instances;
+  }
+  return _day;
+}
+
+/**
  * @param {Day} day - to be changed
  * @param {TrainingInstance} instance - trainingInstance
  * @returns {Day} day - modified

@@ -15,7 +15,9 @@ Based on 'React eventemitter'.
 ## TODOS
 
 ### App
+- react-motion for animating transition
 - Appshell pattern for offline first
+- Introduce Service Worker
 - Use Immutable.Record for all datatypes (Training, Segment, Total ...)
 - Create a script that lists all eventbus subscriptions and emits per source file
 - Progressive web application support
@@ -62,6 +64,7 @@ Based on 'React eventemitter'.
 - TrainingComponent: some buttons are not applicable for instances 
 - Performance tuning with 'key' as a repeatable value instead of random int or createUuid
 - Show a dialog 'save current timeline?' when switching plans
+- Use a draggable list as used in react-motion (last demo)
 - Use a Map (uuid as key) for segments in TrainingInstance
 - Use a Map (uuid as key) for days in a plan
 - feature: 'move training to another day'

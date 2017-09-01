@@ -55,30 +55,40 @@ const trainingStore = eventbus => {
   eventbus.on(ee.TRAININGS_UPDATE_CMD, () => {
     eventbus.emit(ee.TRAININGS_UPDATE_EVT, trainings);
   });
-  eventbus.on(ee.TRAINING_LOAD_CMD, (uuid) => {
-    clearTraining();
-    loadTraining(uuid);
+  eventbus.on(ee.TRAINING_LOAD_CMD, _uuid => {
+    if (_uuid === uuid) {
+      clearTraining();
+      loadTraining(uuid);
+    }
   });
-  eventbus.on(ee.TRAINING_CLEAR_CMD, (uuid) => {
-    clearTraining();
-    eventbus.emit(ee.TRAINING_CLEAR_EVT, uuid);
+  eventbus.on(ee.TRAINING_CLEAR_CMD, _uuid => {
+    if (_uuid === uuid) {
+      clearTraining();
+      eventbus.emit(ee.TRAINING_CLEAR_EVT, _uuid);
+    }
   });
-  eventbus.on(ee.TRAINING_CLONE_CMD, () => {
-    cloneLoadedTrainingInStore();
+  eventbus.on(ee.TRAINING_CLONE_CMD, _uuid => {
+    if (_uuid === uuid) {
+      cloneLoadedTrainingInStore();
+    }
   });
 
-  eventbus.on(ee.TRAINING_REMOVE_CMD, () => {
-    // TODO rename like removeTrainingOrInstance
-    trainings = removeTrainingInstance(uuid, trainings);
-    eventbus.emit(ee.TRAINING_LOAD_CMD, "new-training");
-    eventbus.emit(ee.TRAINING_REMOVE_EVT, trainings);
+  eventbus.on(ee.TRAINING_REMOVE_CMD, _uuid => {
+    if (_uuid === uuid) {
+      // TODO rename like removeTrainingOrInstance
+      trainings = removeTrainingInstance(uuid, trainings);
+      eventbus.emit(ee.TRAINING_LOAD_CMD, "new-training");
+      eventbus.emit(ee.TRAINING_REMOVE_EVT, trainings);
+    }
   });
 
-  eventbus.on(ee.TRAINING_UPDATE_CMD, (training) => {
-    // currently only 'name' and 'type' can be updated (besides 'segments')
-    name = training.name;
-    type = training.type;
-    updateTrainingInStore(training);
+  eventbus.on(ee.TRAINING_UPDATE_CMD, training => {
+    if (training.uuid === uuid) {
+      // currently only 'name' and 'type' can be updated (besides 'segments')
+      name = training.name;
+      type = training.type;
+      updateTrainingInStore(training);
+    }
   });
 
   eventbus.on(ee.TRAINING_TO_PLAN_CMD, (position) => {
@@ -91,10 +101,10 @@ const trainingStore = eventbus => {
     emitSegment(segmentUuid, trainingUuid, uuid, segments);
   });
 
-  eventbus.on(ee.SEGMENT_UPDATE_CMD, (segment) => {
+  eventbus.on(ee.SEGMENT_UPDATE_CMD, segment => {
     updateSegmentInStore(segment);
   });
-  eventbus.on(ee.SEGMENT_ADD_CMD, (segment) => {
+  eventbus.on(ee.SEGMENT_ADD_CMD, segment => {
     addSegmentToStore(segment);
   });
   eventbus.on(ee.SEGMENT_REMOVE_CMD, (segment) => {
@@ -201,7 +211,7 @@ const trainingStore = eventbus => {
 
   /**
    * Empty class scoped variables containing data for the currently loaded training
-   * @returns {void} - purely work on class data
+   * @returns {void} - purely work on module scoped data
    */
   const clearTraining = () => {
     uuid = null;
