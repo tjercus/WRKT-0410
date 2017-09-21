@@ -56,10 +56,9 @@ const trainingStore = eventbus => {
     eventbus.emit(ee.TRAININGS_UPDATE_EVT, trainings);
   });
   eventbus.on(ee.TRAINING_LOAD_CMD, _uuid => {
-    if (_uuid === uuid) {
-      clearTraining();
-      loadTraining(uuid);
-    }
+    console.log(`trainingStore on TRAINING_LOAD_CMD with ${_uuid} comparing to ${uuid}`);
+    clearTraining();
+    loadTraining(_uuid);
   });
   eventbus.on(ee.TRAINING_CLEAR_CMD, _uuid => {
     if (_uuid === uuid) {
