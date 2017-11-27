@@ -13,13 +13,13 @@ import { lpad } from "./numberUtil"
  * @param  {Array<Segment>} segments - list
  * @returns {Array<Segment>} segments - list
  */
-export function removeSegment(segment, segments) {
+export const removeSegment = (segment, segments) => {
   const _segments = clone(segments);
   const isSeg = _segment => String(_segment.uuid) === String(segment.uuid);
   const index = _segments.findIndex(isSeg);
   _segments.splice((index > -1) ? index : _segments.length, 1);
   return _segments;
-}
+};
 
 /**
  * Add a segment to a list
@@ -27,7 +27,7 @@ export function removeSegment(segment, segments) {
  * @param  {Array<Segment>} segments
  * @param {boolean} overwriteUuid?
  */
-export function addSegment(segment, segments, overwriteUuid = false) {
+export const addSegment = (segment, segments, overwriteUuid = false) => {
   console.log(`segmentUtils.addSegment original ${JSON.stringify(segment)}`);
   const _segment = clone(segment);
   const _segments = clone(segments);
@@ -41,7 +41,7 @@ export function addSegment(segment, segments, overwriteUuid = false) {
   console.log(`segmentUtils.addSegment after augmenting ${JSON.stringify(augmentedSegment)}`);
   _segments.push(augmentedSegment);
   return _segments;
-}
+};
 
 /**
  * Find a segment in a list of segments
@@ -49,12 +49,12 @@ export function addSegment(segment, segments, overwriteUuid = false) {
  * @param {Array<Segment>} segments - arr
  * @returns {Segment|null} found segment or null
  */
-export function findSegment(uuid, segments) {
+export const findSegment = (uuid, segments) => {
   console.log(`findSegment ${uuid}`, JSON.stringify(segments));
   const _segments = clone(segments);
   const isSeg = _segment => String(_segment.uuid) === String(uuid);
   return _segments.find(isSeg);
-}
+};
 
 /**
  * update segment in a list
@@ -62,21 +62,21 @@ export function findSegment(uuid, segments) {
  * @param  {Array<Segment>} segments
  * @return {Array<Segment>} segments
  */
-export function updateSegment(segment, segments) {
+export const updateSegment = (segment, segments) => {
   const segmentClone = augmentSegmentData(segment);
   const _segments = clone(segments);
   const isSeg = _segment => String(_segment.uuid) === String(segmentClone.uuid);
   const index = _segments.findIndex(isSeg);
   _segments[index] = segmentClone;
   return _segments;
-}
+};
 
 /**
  * Make totals for the collective segments in a training
  * @param {Array<Segment>} segments
  * @return {Total} total
  */
-export function makeTrainingTotal(segments) {
+export const makeTrainingTotal = segments => {
   const totalObj = {
     distance: 0,
     duration: "00:00:00",
@@ -98,14 +98,14 @@ export function makeTrainingTotal(segments) {
   }
   // console.log(`segmentUtils.makeTrainingTotal: ${JSON.stringify(totalObj)}`);
   return totalObj;
-}
+};
 
 /**
  * Calculate transient segment data based on present data
  * @param  {Segment} segment
  * @return {Segment} segment
  */
-export function augmentSegmentData(segment) {
+export const augmentSegmentData = segment => {
   const _segment = clone(segment);
   _segment.pace = translateNamedPace(_segment.pace);
   if (canAugment(_segment)) {
@@ -121,7 +121,7 @@ export function augmentSegmentData(segment) {
   }
   _segment.isValid = isValidSegment(_segment);
   return _segment;
-}
+};
 
 /**
  * Was a segment changed?
@@ -129,7 +129,7 @@ export function augmentSegmentData(segment) {
  * @param  {Array<Segment>} segments
  * @return {boolean} is the segment dirty compared to what collection holds?
  */
-export function isDirtySegment(segment, segments) {
+export const isDirtySegment = (segment, segments) => {
   const _segment = clone(segment);
   const _segments = clone(segments);
   let storedSegment = null;
@@ -145,28 +145,28 @@ export function isDirtySegment(segment, segments) {
   return (storedSegment.distance !== _segment.distance
     || storedSegment.duration !== _segment.duration
     || storedSegment.pace !== _segment.pace);
-}
+};
 
 /**
  * Can a segment be augmented or is it complete or too incomplete?
  * @param  {Segment} segment is part of a training
  * @return {boolean} if augmentable
  */
-export function canAugment(segment) {
+export const canAugment = segment => {
   const _segment = clone(segment);
   let augmentCount = 0;
   if (hasNoRealValue(_segment, "distance")) augmentCount++;
   if (hasNoRealValue(_segment, "duration")) augmentCount++;
   if (hasNoRealValue(_segment, "pace")) augmentCount++;
   return augmentCount === 1;
-}
+};
 
 /**
  * Given a Segment with enough data, is the data valid?
  * @param  {Segment}  segment [description]
  * @return {boolean}         [description]
  */
-export function isValidSegment(segment) {
+export const isValidSegment = segment => {
   const segmentClone = clone(segment);
   // if (makeDistance(segmentClone).toString()
   //    !== Number(segmentClone.distance).toFixed(3).toString()) {
@@ -175,28 +175,27 @@ export function isValidSegment(segment) {
   if (makeDuration(segmentClone) !== segmentClone.duration) {
     return false;
   }
-  if (makePace(segmentClone) !== segmentClone.pace) {
-    return false;
-  }
-  return true;
-}
+  return makePace(segmentClone) === segmentClone.pace;
+};
 
 /**
  * parse a duration from:
  * a. int minutes to a duration as string 00:00:00
  * b. from 00:00 to 00:00:00
  * @param {string} duration as string HH:mm:ss
- * @return {Duration} as a moment.js obj
+ * @return {Duration|string} as a moment.js obj
  */
-export function parseDuration(duration) {
-  if (duration !== null && duration !== "" && !isNaN(duration)) {
-    return moment("2016-01-01").minutes(duration).format("HH:mm:ss");
-  }
-  if (duration !== null && duration !== "" && duration.length === 5) {
-    return `00:${duration}`;
+export const parseDuration = duration => {
+  if (duration !== null && duration !== "") {
+    if (!isNaN(duration)) {
+      return moment("2016-01-01").minutes(duration).format("HH:mm:ss");
+    }
+    if (duration.length === 5) {
+      return `00:${duration}`;
+    }
   }
   return duration;
-}
+};
 
 /**
  * TODO unit test and fix
@@ -223,7 +222,7 @@ const formatDuration = duration =>
  * @param {Segment|Object} segment object
  * @return {string} pace as mm:ss
  */
-const makePace = (segment) => {
+const makePace = segment => {
   const _segment = clone(segment);
   const durationObj = moment.duration(_segment.duration);
   const seconds = durationObj.asSeconds();
@@ -236,21 +235,20 @@ const makePace = (segment) => {
  * Make duration based on distance and pace
  * @return {string} HH:mm:ss as: ex: 5:10 * 12.93 km = 1:6:48
  */
-const makeDuration = (segment) => {
+const makeDuration = segment => {
   const _segment = clone(segment);
   const paceObj = moment.duration(_segment.pace);
   const seconds = paceObj.asSeconds() / 60;
   const totalSeconds = Math.round(seconds * _segment.distance);
   const durationObj = moment.duration(totalSeconds, "seconds");
-  const formattedDuration = formatDuration(durationObj);
-  return formattedDuration;
+  return formatDuration(durationObj);
 };
 
 /**
  * @param {Segment} segment object
  * @return {number} distance. Calculated distance based on duration / pace
  */
-const makeDistance = (segment) => {
+const makeDistance = segment => {
   const _segment = clone(segment);
   const paceObj = moment.duration(_segment.pace);
   const durationObj = moment.duration(_segment.duration);
@@ -273,7 +271,7 @@ const isDuration = (str) => {
  * @param  {string} pace is a description starting with an @
  * @return {string} realPace is pace as mm:ss
  */
-const translateNamedPace = (pace) => {
+const translateNamedPace = pace => {
   if (pace === undefined || pace === null || !pace.startsWith("@")) {
     return pace;
   }

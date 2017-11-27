@@ -1,12 +1,16 @@
-
-import {clone, createUuid, hasProperty, removeProperty} from "../shell/objectUtil";
+import { clone, createUuid, hasProperty, removeProperty } from "../shell/objectUtil";
 import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
 
-export function NotFoundException(msg) {
+/**
+ *
+ * @param {string} msg - message
+ * @returns {NotFoundException} - exception
+ */
+export const NotFoundException = msg => {
   function toString() {
     return `NotFoundException: ${msg}`;
   }
-}
+};
 
 /**
  * Finds a training or an instance
@@ -14,7 +18,7 @@ export function NotFoundException(msg) {
  * @param  {Array<Training|TrainingInstance>} trainings - the collection to search
  * @return {Training|TrainingInstance} findable
  */
-export function findTraining(uuid, trainings) {
+export const findTraining = (uuid, trainings) => {
   if (uuid === null || uuid === undefined) {
     throw new Error(`findTraining: a valid uuid [${uuid}] should be provided`);
   }
@@ -25,9 +29,8 @@ export function findTraining(uuid, trainings) {
   if (index < 0) {
     return null;
   }
-
   return augmentTraining(_instances[index]);
-}
+};
 
 /**
  * Overwrite a Training in a list of Training elements
@@ -35,7 +38,7 @@ export function findTraining(uuid, trainings) {
  * @param  {Array<Training>} trainings - the collection to search
  * @return  {Array<Training>} trainings - the updated collection
  */
-export function updateTraining(training, trainings) {
+export const updateTraining = (training, trainings) => {
   const trainingClone = clone(training);
   const _trainings = clone(trainings);
   delete trainingClone.total;
@@ -46,7 +49,7 @@ export function updateTraining(training, trainings) {
   }
   _trainings[index] = trainingClone;
   return _trainings;
-}
+};
 
 /**
  * Remove a training from a list of TrainingInstances
@@ -54,14 +57,14 @@ export function updateTraining(training, trainings) {
  * @param  {Array<TrainingInstance>} instances - the collection to search
  * @return  {Array<TrainingInstance>} instances - the updated collection
  */
-export function removeTrainingInstance(uuid, instances) {
+export const removeTrainingInstance = (uuid, instances) => {
   const _instances = clone(instances);
   // TODO extract as constant 'byUuid'
   const isInstance = _instance => String(_instance.uuid) === String(uuid);
   const index = _instances.findIndex(isInstance);
   _instances.splice(index > -1 ? index : _instances.length, 1);
   return _instances;
-}
+};
 
 /**
  * Remove all traininginstances from the list that are associated to a give day
@@ -69,7 +72,7 @@ export function removeTrainingInstance(uuid, instances) {
  * @param  {Array<TrainingInstance>} traininginstances - list to search
  * @return {Array<TrainingInstance>} list with traininginstances
  */
-export function removeTrainingInstancesForDay(day, traininginstances) {
+export const removeTrainingInstancesForDay = (day, traininginstances) => {
   if (
     day === null ||
       !hasProperty(day, "uuid") ||
@@ -86,7 +89,7 @@ export function removeTrainingInstancesForDay(day, traininginstances) {
     _traininginstances = removeTrainingInstance(day.training.instanceId, clone(traininginstances));
   }
   return _traininginstances;
-}
+};
 
 /**
  * Clone a TrainingInstance in a Day
@@ -94,7 +97,7 @@ export function removeTrainingInstancesForDay(day, traininginstances) {
  * @param {string} uuid - instance id
  * @returns {Day} _day - modified day
  */
-export function cloneTrainingInstanceInDay(day, uuid) {
+export const cloneTrainingInstanceInDay = (day, uuid) => {
   const _day = clone(day);
   const _instances = clone(_day.trainings);
   const _instance = findTraining(uuid, _instances);
@@ -105,21 +108,21 @@ export function cloneTrainingInstanceInDay(day, uuid) {
     _day.trainings = _instances;
   }
   return _day;
-}
+};
 
 /**
  * @param {Day} day - to be changed
  * @param {TrainingInstance} instance - trainingInstance
  * @returns {Day} day - modified
  */
-export function addTrainingInstanceToDay(day, instance) {
+export const addTrainingInstanceToDay = (day, instance) => {
   const _instance = clone(instance);
   // _instance.uuid = createUuid();
   const _trainings = clone(day.trainings);
   _trainings.push(_instance);
   day.trainings = _trainings;
   return day;
-}
+};
 
 /**
  *
@@ -127,7 +130,7 @@ export function addTrainingInstanceToDay(day, instance) {
  * @param {TrainingInstance} instance - copy of a Training
  * @returns {Day} is the modified day
  */
-export function updateTrainingInstanceInDay(day, instance) {
+export const updateTrainingInstanceInDay = (day, instance) => {
   const _day = clone(day);
   const isInstance = _instance => String(_instance.uuid) === String(instance.uuid);
   const index = _day.trainings.findIndex(isInstance);
@@ -136,14 +139,14 @@ export function updateTrainingInstanceInDay(day, instance) {
   }
   _day.trainings[index] = instance;
   return _day;
-}
+};
 
 /**
  *
  * @param {Training|TrainingInstance} training - with possibly un-augmented segments
  * @returns {Training|TrainingInstance} _training - with augmented segments
  */
-export function augmentTraining(training) {  
+export const augmentTraining = training => {
   if (typeof training === "undefined" || training === null) {
     console.error("augmentTraining received an undefined training");
   }
@@ -151,7 +154,9 @@ export function augmentTraining(training) {
     console.warn("augmentTraining received a training without segments");
     return training;
   }
-  console.log(`augmentTraining 1 [${training.uuid}] segments: ${JSON.stringify(training.segments)}`);
+  console.log(
+    `augmentTraining 1 [${training.uuid}] segments: ${JSON.stringify(training.segments)}`,
+  );
 
   const _segments = training.segments.map(segment =>
     linkSegmentToTraining(training, augmentSegmentData(segment)));
@@ -159,7 +164,23 @@ export function augmentTraining(training) {
   console.log(`augmentTraining 2 [${training.uuid}] segments: ${JSON.stringify(_segments)}`);
   training.total = makeTrainingTotal(_segments);
   return training;
-}
+};
+
+/**
+ * Strips a training of stuff it does not need for persisting
+ * @param {TrainingInstance} instance - full, verbose, annotated
+ * @returns {TrainingInstance} instance - stripped, clean, save-able
+ */
+export const cleanTraining = instance => {
+  let _segments = instance.segments.map(_segment => {
+    return removeProperty(
+      removeProperty(removeProperty(_segment, "trainingUuid"), "isValid"),
+      "obsolete",
+    );
+  });
+  instance.segments = _segments;
+  return instance;
+};
 
 /**
  * Annotate segment with trainingUuid property
@@ -172,16 +193,3 @@ const linkSegmentToTraining = (training, segment) => {
   // console.log(`linkSegmentToTraining ${JSON.stringify(_segment)}`);
   return _segment;
 };
-
-/**
- * Strips a training of stuff it does not need for persisting
- * @param {TrainingInstance} instance - full, verbose, annotated
- * @returns {TrainingInstance} instance - stripped, clean, save-able
- */
-export function cleanTraining(instance) {
-  let _segments = instance.segments.map(_segment => {
-    return removeProperty(removeProperty(removeProperty(_segment, "trainingUuid"), "isValid"), "obsolete");
-  });
-  instance.segments = _segments;
-  return instance;
-}

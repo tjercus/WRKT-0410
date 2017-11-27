@@ -79,9 +79,9 @@ test("removeTrainingInstancesForDay should delete all instances linked in a day"
 });
 
 test("cloneTrainingInstancesInDay should clone an existing instance in a day", (assert) => {
-  assert.equal(trainings.length, 3, "initial size of list");
+  assert.equal(days[0].trainings.length, 2, "initial size of list");
   const day = cloneTrainingInstanceInDay(days[0], "blah-10");
-  assert.equal(day.trainings.length, 4, "should find 4 trainings");
+  assert.equal(day.trainings.length, 3, "should find 3 trainings");
   assert.end();
 });
 

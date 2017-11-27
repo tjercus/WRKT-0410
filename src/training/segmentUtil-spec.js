@@ -13,7 +13,7 @@ import {
 } from "./segmentUtil";
 
 /**
- * Tests for {@link trainingUtil.js}
+ * Tests for {@link ./segmentUtil.js}
  */
 const trainings = [{
     uuid: "blah-10",
@@ -48,7 +48,7 @@ const segments = [
 ];
 
 test("makeTrainingTotal should return an object with zeros when there is no data", (assert) => {
-  var total = makeTrainingTotal([]);
+  let total = makeTrainingTotal([]);
   assert.equal(total.distance, 0);
   assert.equal(total.duration, "00:00:00");
   assert.equal(total.pace, "00:00");
@@ -60,7 +60,7 @@ test("makeTrainingTotal should calculate complete data on one segment without pa
     distance: 16,
     duration: "01:10:23"
   };
-  var total = makeTrainingTotal([segment]);
+  let total = makeTrainingTotal([segment]);
   assert.equal(total.distance, 16.000);
   assert.equal(total.duration, "01:10:23");
   assert.equal(total.pace, "04:24");
@@ -75,7 +75,7 @@ test("makeTrainingTotal should return an object with complete data on two segmen
     distance: 16,
     duration: "00:59:02"
   }];
-  var total = makeTrainingTotal(segments);
+  let total = makeTrainingTotal(segments);
   assert.equal(total.distance, 32.000);
   assert.equal(total.duration, "02:09:25");
   assert.equal(total.pace, "04:03");
@@ -90,7 +90,7 @@ test("makeTrainingTotal with three digit decimal precision distances should retu
     distance: 4.64,
     duration: "00:28:04"
   }];
-  var total = makeTrainingTotal(segments);
+  let total = makeTrainingTotal(segments);
   assert.equal(total.distance, 5.720);
   assert.equal(total.duration, "00:35:47");
   assert.equal(total.pace, "06:15");
@@ -106,7 +106,7 @@ test("makeTrainingTotal should return an object with complete data when one segm
     uuid: "skdjfskdj",
     trainingUtil: "4598ndfngd",
   }];
-  var total = makeTrainingTotal(segments);
+  let total = makeTrainingTotal(segments);
   assert.equal(total.distance, 16.000);
   assert.equal(total.duration, "01:10:23");
   assert.equal(total.pace, "04:24");
@@ -119,7 +119,7 @@ test("makeTrainingTotal should return an object with complete data on one segmen
     distance: 12.930,
     pace: "05:10"
   }];
-  var total = makeTrainingTotal(segments);
+  let total = makeTrainingTotal(segments);
   console.log("CONCLUSIE: " + JSON.stringify(total));
   assert.equal(total.distance, 12.930);
   assert.equal(total.duration, "01:06:48");
@@ -135,7 +135,7 @@ test("makeTrainingTotal should return an object with complete data on two segmen
     distance: 11.042,
     pace: "02:59"
   }];
-  var total = makeTrainingTotal(segments);
+  let total = makeTrainingTotal(segments);
   assert.equal(total.duration, "01:26:50");
   assert.end();
 });
@@ -148,7 +148,7 @@ test("makeTrainingTotal with two segments with mixed missing data should return 
     duration: "00:58:12",
     pace: "02:59"
   }];
-  var total = makeTrainingTotal(segments);
+  let total = makeTrainingTotal(segments);
   assert.equal(total.duration, "01:52:05");
   assert.end();
 });
@@ -163,7 +163,7 @@ test("makeTrainingTotal with a zero'd segment should return an object with compl
     duration: "00:25:00",
     pace: "05:00"
   }];
-  var total = makeTrainingTotal(segments);
+  let total = makeTrainingTotal(segments);
   assert.equal(total.distance, 5.000);
   assert.equal(total.duration, "00:25:00");
   assert.equal(total.pace, "05:00");
@@ -175,7 +175,7 @@ test("augmentSegmentData should augment with distance", (assert) => {
     duration: "01:06:48",
     pace: "05:10"
   };
-  var augmentedSegment = augmentSegmentData(segment);
+  let augmentedSegment = augmentSegmentData(segment);
   assert.equal(true, (typeof augmentedSegment.distance === "number"));
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
@@ -188,7 +188,7 @@ test("augmentSegmentData should augment with duration", (assert) => {
     distance: 12.929,
     pace: "05:10"
   };
-  var augmentedSegment = augmentSegmentData(segment);
+  let augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");
@@ -200,7 +200,7 @@ test("augmentSegmentData should augment with a duration in only seconds", (asser
     duration: "00:00:40",
     pace: "06:00"
   };
-  var augmentedSegment = augmentSegmentData(segment);
+  let augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 0.111);
   assert.equal(augmentedSegment.duration, "00:00:40");
   assert.equal(augmentedSegment.pace, "06:00");
@@ -212,7 +212,7 @@ test("augmentSegmentData should augment with pace", (assert) => {
     distance: 12.929,
     duration: "01:06:48"
   };
-  var augmentedSegment = augmentSegmentData(segment);
+  let augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");
@@ -224,7 +224,7 @@ test("augmentSegmentData should augment with distance", (assert) => {
     duration: "01:06:48",
     pace: "05:10"
   };
-  var augmentedSegment = augmentSegmentData(segment);
+  let augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 12.929);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:10");
@@ -236,7 +236,7 @@ test("augmentSegmentData should work with named paces", (assert) => {
     duration: "01:06:48",
     pace: "@RECOV"
   };
-  var augmentedSegment = augmentSegmentData(segment);
+  let augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 12.145);
   assert.equal(augmentedSegment.duration, "01:06:48");
   assert.equal(augmentedSegment.pace, "05:30");
@@ -248,10 +248,10 @@ test("augmentSegmentData should work with named paces 2", (assert) => {
     distance: 10,
     pace: "@5KP",
   };
-  var augmentedSegment = augmentSegmentData(segment);
+  let augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 10);
-  assert.equal(augmentedSegment.duration, "00:35:30");
-  assert.equal(augmentedSegment.pace, "03:33");
+  assert.equal(augmentedSegment.duration, "00:35:00");
+  assert.equal(augmentedSegment.pace, "03:30");
   assert.end();
 });
 
@@ -261,7 +261,7 @@ test("augmentSegmentData should augment with a duration in only zeros", (assert)
     duration: "00:00:00",
     pace: "04:30"
   };
-  var augmentedSegment = augmentSegmentData(segment);
+  let augmentedSegment = augmentSegmentData(segment);
   assert.equal(augmentedSegment.distance, 5);
   assert.equal(augmentedSegment.duration, "00:22:30");
   assert.equal(augmentedSegment.pace, "04:30");
@@ -283,7 +283,7 @@ test("isDirtySegment should detect a dirty segment", (assert) => {
     pace: "05:10"
   };
 
-  var isDirty = isDirtySegment(segment, segments);
+  let isDirty = isDirtySegment(segment, segments);
   assert.ok(isDirty);
   assert.end();
 });
@@ -303,7 +303,7 @@ test("isDirtySegment should NOT detect a dirty segment", (assert) => {
     pace: "05:10"
   };
 
-  var isDirty = isDirtySegment(segment, segments);
+  let isDirty = isDirtySegment(segment, segments);
   assert.notOk(isDirty);
   assert.end();
 });
