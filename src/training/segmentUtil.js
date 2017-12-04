@@ -182,7 +182,7 @@ export const isValidSegment = segment => {
  * parse a duration from:
  * a. int minutes to a duration as string 00:00:00
  * b. from 00:00 to 00:00:00
- * @param {string} duration as string HH:mm:ss
+ * @param {string|number} duration as string, format: HH:mm:ss or int, ex: 945
  * @return {Duration|string} as a moment.js obj
  */
 export const parseDuration = duration => {
