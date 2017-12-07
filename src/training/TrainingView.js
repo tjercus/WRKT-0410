@@ -1,7 +1,7 @@
 import * as React from "react";
 import SegmentContainer from "./SegmentContainer";
 import NameComponent from "./NameComponent";
-import {createUuid} from "../shell/objectUtil";
+import {createUuid} from "object-utils-2";
 
 /**
  * View Component as pure function for rendering one Training

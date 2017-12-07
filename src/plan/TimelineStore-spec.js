@@ -1,6 +1,6 @@
 
 import test from "tape";
-import {clone} from "../shell/objectUtil";
+import {clone} from "object-utils-2";
 import timelineStore from "./timelineStore";
 import EventEmitter from "eventemitter4";
 import sinon from "sinon";

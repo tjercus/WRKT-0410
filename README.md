@@ -48,7 +48,7 @@ Based on 'React eventemitter'.
 - Separate TrainingListStore to keep loaded list of Trainings
 - Fix bug in updateTraining (?)
 - disable persist button when webservice is offline
-- unit tests for makeTrainingTotal should loop over a list/table of testdata instead of separate tests
+- unit tests for makeSegmentsTotal should loop over a list/table of testdata instead of separate tests
 - mark segment type
 - move segment up or down
 - info as 400 pace (800, 1200, 1600)

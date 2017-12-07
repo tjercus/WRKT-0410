@@ -14,7 +14,7 @@ import {
   updateTraining,
   NotFoundException
 } from "../training/trainingUtil";
-import {clone, createUuid, hasProperty} from "../shell/objectUtil";
+import {clone, createUuid, hasProperty} from "object-utils-2";
 
 let plan = [];
 let traininginstances = [];

@@ -1,5 +1,5 @@
 import test from "tape";
-import { hasProperty } from "../shell/objectUtil";
+import { hasProperty } from "object-utils-2";
 import {
   findTraining,  
   updateTraining,

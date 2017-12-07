@@ -2,7 +2,7 @@ import React from "react";
 import EventEmitter from "eventemitter4";
 import {EventsEnum as ee} from "../shell/constants";
 import moment from "moment";
-import { createUuid, hasProperty} from "../shell/objectUtil";
+import { createUuid, hasProperty } from "object-utils-2";
 import {DEFAULT_TRAINING} from "../shell/constants";
 
 /**

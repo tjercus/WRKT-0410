@@ -13,7 +13,7 @@ import {
   moveDay, cleanTrainingInstances
 }
   from "./timelineUtil";
-import {hasProperty} from "../shell/objectUtil";
+import {hasProperty} from "object-utils-2";
 
 let plan = {
   "uuid": "91556686-232b-11e6-8b5a-5bcc30180900",

@@ -333,7 +333,7 @@
 			],
 			[
 				"ma",
-				"makeTrainingTotal"
+				"makeSegmentsTotal"
 			],
 			[
 				"lo",
@@ -875,7 +875,7 @@
 			"new Event",
 			"new EventManager",
 			"TRAINING_LOAD_EVT",
-			"makeTrainingTotal(",
+			"makeSegmentsTotal(",
 			"00:00:00",
 			"21k",
 			"hasNoRealValue",

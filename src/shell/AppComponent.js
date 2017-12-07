@@ -12,7 +12,7 @@ import PlanListComponent from "../plan/PlanListComponent";
 import trainingStore from "../training/trainingStore";
 import dayStore from "../day/dayStore";
 import timelineStore from "../plan/timelineStore";
-import {clone, hasProperty} from "../shell/objectUtil";
+import {clone, hasProperty} from "object-utils-2";
 import packageJSON from "../../package.json";
 import remoteDataService from "./remoteDataService";
 

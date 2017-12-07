@@ -11,9 +11,9 @@ import {
   removeSegment,
   augmentSegmentData,
   updateSegment,
-  makeTrainingTotal, findSegment,
-} from "../training/segmentUtil";
-import { clone, hasProperty, createUuid } from "../shell/objectUtil";
+  makeSegmentsTotal, findSegment,
+} from "activity-segment";
+import { clone, hasProperty, createUuid } from "object-utils-2";
 
 let day = {};
 
@@ -135,7 +135,7 @@ const dayStore = eventbus => {
             )}`,
           );
           training.segments = updateSegment(_segment, clone(training.segments));
-          training.total = makeTrainingTotal(clone(training.segments));
+          training.total = makeSegmentsTotal(clone(training.segments));
           console.log(
             `DayStore.updateSegmentInStore training after updating segment: ${JSON.stringify(
               training,
@@ -171,7 +171,7 @@ const dayStore = eventbus => {
         // TODO found the bug! it only adds one training
         if (training.uuid === segment.trainingUuid) {
           training.segments = addSegment(_segment, clone(training.segments), overwriteUuid);
-          training.total = makeTrainingTotal(clone(training.segments));
+          training.total = makeSegmentsTotal(clone(training.segments));
           console.log(
             `DayStore.addSegmentToStore training after adding segment: ${JSON.stringify(training)}`,
           );
@@ -199,7 +199,7 @@ const dayStore = eventbus => {
       day.trainings.map(training => {
         if (training.uuid === segment.trainingUuid) {
           training.segments = removeSegment(_segment, clone(training.segments));
-          training.total = makeTrainingTotal(clone(training.segments));
+          training.total = makeSegmentsTotal(clone(training.segments));
         }
         updatedLocalTrainings.push(training);
       });

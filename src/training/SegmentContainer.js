@@ -1,7 +1,7 @@
 import React from "react";
 import EventEmitter from "eventemitter4";
-import {canAugment, isValidSegment, parseDuration, augmentSegmentData} from "./segmentUtil";
-import {createUuid, clone, hasProperty} from "../shell/objectUtil";
+import {canAugment, isValidSegment, parseDuration, augmentSegmentData} from "activity-segment";
+import {createUuid, clone, hasProperty} from "object-utils-2";
 import {EventsEnum as ee} from "../shell/constants";
 import SegmentView from "./SegmentView";
 

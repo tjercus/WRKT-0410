@@ -5,14 +5,14 @@ import {
   cleanTraining,
 } from "../training/trainingUtil";
 import {
-  makeTrainingTotal,
-} from "../training/segmentUtil";
+  makeSegmentsTotal,
+} from "activity-segment";
 import {
   clone,
   createUuid,
   hasProperty,
   removeProperty,
-} from "../shell/objectUtil";
+} from "object-utils-2";
 
 /**
  * Find a day in a list of days for a plan, augment the trainings in the day
@@ -67,7 +67,7 @@ export function augmentDay(day, trainings) {
     if (hasProperty(_day.trainings[i], "instanceId")) {
       _day.trainings[i] = findTraining(_day.trainings[i].instanceId, _trainings);
     }
-    _day.trainings[i].total = makeTrainingTotal(_day.trainings[i].segments);
+    _day.trainings[i].total = makeSegmentsTotal(_day.trainings[i].segments);
   }
   //console.log(`timelineUtils.augmentDay ${JSON.stringify(_day)}`);
   return _day;

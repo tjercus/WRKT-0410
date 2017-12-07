@@ -8,14 +8,14 @@ import {
   removeSegment,
   augmentSegmentData,
   updateSegment,
-  makeTrainingTotal,
+  makeSegmentsTotal,
   findSegment,
-} from "./segmentUtil";
+} from "activity-segment";
 import {
   createUuid,
   clone,
   hasProperty,
-} from "../shell/objectUtil";
+} from "object-utils-2";
 import {EventsEnum as ee} from "../shell/constants";
 
 let trainings = {};
@@ -126,7 +126,7 @@ const trainingStore = eventbus => {
     _training.name = `${name} (clone)`;
     _training.type = clone(type);
     _training.segments = clone(segments);
-    _training.total = makeTrainingTotal(_training.segments);
+    _training.total = makeSegmentsTotal(_training.segments);
     _trainings.push(_training);
     trainings = _trainings;
     eventbus.emit(ee.TRAINING_ADD_EVT, _trainings);
@@ -157,7 +157,7 @@ const trainingStore = eventbus => {
       console.log(`TrainingStore.addSegmentToStore(); segment.trainingUuid was 
       EQUAL to the loaded training ${segment.trainingUuid}`);
       segments = addSegment(segment, segments, overwriteUuid);
-      total = makeTrainingTotal(segments);
+      total = makeSegmentsTotal(segments);
       eventbus.emit(ee.SEGMENT_ADD_EVT, {
         uuid: segment.trainingUuid,
         segments,
@@ -177,7 +177,7 @@ const trainingStore = eventbus => {
   const removeSegmentFromStore = segment => {
     if (segment.trainingUuid !== uuid) return;
     segments = removeSegment(segment, segments);
-    total = makeTrainingTotal(segments);
+    total = makeSegmentsTotal(segments);
     eventbus.emit(ee.SEGMENT_REMOVE_EVT, {
       uuid: segment.trainingUuid,
       segments,
@@ -195,7 +195,7 @@ const trainingStore = eventbus => {
       console.log("trainingStore: update segment in store", JSON.stringify(segment));
       const _segment = augmentSegmentData(segment);
       segments = updateSegment(_segment, segments);
-      total = makeTrainingTotal(segments);
+      total = makeSegmentsTotal(segments);
       eventbus.emit(ee.SEGMENT_UPDATE_EVT, {
         uuid: segment.trainingUuid,
         segment: _segment,
@@ -242,7 +242,7 @@ const trainingStore = eventbus => {
       // TODO use trainingUtil.augmentTraining
       const _segments = training.segments.map(segment => augmentSegmentData(segment));
       segments = _segments;
-      total = makeTrainingTotal(_segments);
+      total = makeSegmentsTotal(_segments);
 
       eventbus.emit(ee.TRAINING_LOAD_EVT, getCurrentlyLoadedTraining());
     } else {

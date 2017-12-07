@@ -1,5 +1,5 @@
-import { clone, createUuid, hasProperty, removeProperty } from "../shell/objectUtil";
-import { augmentSegmentData, makeTrainingTotal } from "./segmentUtil";
+import { clone, createUuid, hasProperty, removeProperty } from "object-utils-2";
+import { augmentSegmentData, makeSegmentsTotal } from "activity-segment";
 
 /**
  *
@@ -162,7 +162,7 @@ export const augmentTraining = training => {
     linkSegmentToTraining(training, augmentSegmentData(segment)));
   training.segments = _segments;
   console.log(`augmentTraining 2 [${training.uuid}] segments: ${JSON.stringify(_segments)}`);
-  training.total = makeTrainingTotal(_segments);
+  training.total = makeSegmentsTotal(_segments);
   return training;
 };
 
