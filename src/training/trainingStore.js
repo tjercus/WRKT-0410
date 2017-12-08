@@ -251,7 +251,6 @@ const trainingStore = eventbus => {
   };
 
   /**
-   * TODO move to segmentUtils
    * Lookup/Get a segment by uuid from a loaded training (which has one or more segments)
    * @param {string} segmentUuid - uuid
    * @param {string} trainingUuid - uuid
