@@ -42,6 +42,7 @@ let total = {
 const trainingStore = eventbus => {
   eventbus.on(ee.TRAININGS_FETCH_EVT, (trainingsFromServer) => {
     trainings = trainingsFromServer;
+    console.log("trainingStore on TRAININGS_FETCH_EVT", trainings.length);
   });
 
   eventbus.on(ee.TRAININGS_PERSIST_CMD, _trainings => {
@@ -230,7 +231,7 @@ const trainingStore = eventbus => {
    * @returns {void} - emit event instead
    */
   const loadTraining = (_uuid) => {
-    if (trainings.length === 0) {
+    if (trainings === null || trainings === undefined || trainings.length === 0) {
       throw new Error("TrainingStore.loadTraining needs a list of trainings");
     }
     const training = findTraining(_uuid, trainings);

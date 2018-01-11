@@ -22,6 +22,9 @@ export const findTraining = (uuid, trainings) => {
   if (uuid === null || uuid === undefined) {
     throw new Error(`findTraining: a valid uuid [${uuid}] should be provided`);
   }
+  if (trainings === null || trainings === undefined) {
+    throw new Error(`findTraining: a valid collection of trainings should be provided`);
+  }
   const _instances = clone(trainings);
   const isInstance = _instance =>
     String(_instance.uuid) === String(uuid) || String(_instance.instanceId) === String(uuid);
@@ -99,7 +102,7 @@ export const removeTrainingInstancesForDay = (day, traininginstances) => {
  */
 export const cloneTrainingInstanceInDay = (day, uuid) => {
   const _day = clone(day);
-  const _instances = clone(_day.trainings);
+  const _instances = clone(_day.trainings || []);
   const _instance = findTraining(uuid, _instances);
   if (_instance !== null) {
     const _instanceClone = clone(_instance);

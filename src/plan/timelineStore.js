@@ -16,7 +16,7 @@ import {
 } from "../training/trainingUtil";
 import {clone, createUuid, hasProperty} from "object-utils-2";
 
-let plan = [];
+let plan = {days: []};
 let traininginstances = [];
 let selectedWeekNr = 0;
 
@@ -66,7 +66,15 @@ const timelineStore = eventbus => {
 
   // thrown by DayStore
   eventbus.on(ee.DAY_UPDATE_EVT, day => {
-    console.log("TimelineStore caught DAY_UPDATE_EVT: update local plan");
+    if (day === null || day === undefined) {
+      console.error("timelineStore caught DAY_UPDATE_EVT with undefined day, returning ...");
+      return null;
+    }
+    if (!hasProperty(day, "trainings")) {
+      day.trainings = [];
+    }
+
+    console.log("timelineStore caught DAY_UPDATE_EVT: update local plan");
     const byUuid = _day => String(_day.uuid) === String(day.uuid);
     const index = plan.days.findIndex(byUuid);
     plan.days[index] = day;

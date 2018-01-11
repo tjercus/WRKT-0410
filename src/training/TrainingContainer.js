@@ -118,7 +118,7 @@ export default class TrainingContainer extends React.Component {
 
   cloneTraining = () => {
     // TODO custom alert
-    console.log("Training cloned and selected");
+    console.log("TrainingContainer sending a clone request, uuid:", this.state.uuid);
     this.props.eventbus.emit(ee.TRAINING_CLONE_CMD, this.state.uuid);
   };
 
